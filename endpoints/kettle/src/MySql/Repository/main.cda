@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="ActionsPerDay" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="DocumentsPerDay" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="ActionsPerDay"
+               id="ActionsPerDay"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="2013-01-01" name="dtFromParam" type="String"/>
+         <Parameter default="2013-01-01" name="dtToParam" type="String"/>
+      </Parameters>
+      <Query>select
+ d.id as date_id,
+ coalesce(sum(a.num),0) as actions
+from
+ dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id
+where
+ d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')
+group by
+ d.id
+order by
+ d.id asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="DocumentsPerDay"
+               id="DocumentsPerDay"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="2013-01-01" name="dtFromParam" type="String"/>
+         <Parameter default="2013-01-01" name="dtToParam" type="String"/>
+      </Parameters>
+      <Query>select
+ dat.id as date_id,
+ (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Number,
+ (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Mb
+from
+ dm_dim_dates dat
+where
+ dat.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')
+group by
+ dat.id
+order by
+ dat.id asc</Query>
+   </DataAccess>
+</CDADescriptor>
