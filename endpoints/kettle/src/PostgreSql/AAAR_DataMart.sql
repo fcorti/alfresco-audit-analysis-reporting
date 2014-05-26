@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.1.10
--- Started on 2013-11-19 22:03:52 CET
+-- Started on 2014-05-26 23:13:34 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -13,7 +13,18 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- TOC entry 206 (class 3079 OID 11681)
+-- TOC entry 2256 (class 1262 OID 16384)
+-- Name: AAAR_DataMart; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 208 (class 3079 OID 11681)
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -21,8 +32,8 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2242 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 2259 (class 0 OID 0)
+-- Dependencies: 208
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
 
@@ -32,7 +43,46 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 161 (class 1259 OID 17274)
+-- TOC entry 206 (class 1259 OID 17235)
+-- Dependencies: 6
+-- Name: seq_dm_custom_metadata_id; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE seq_dm_custom_metadata_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.seq_dm_custom_metadata_id OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 207 (class 1259 OID 17255)
+-- Dependencies: 1989 1990 1991 1992 1993 6
+-- Name: dm_custom_metadata; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE dm_custom_metadata (
+    id smallint DEFAULT nextval('seq_dm_custom_metadata_id'::regclass) NOT NULL,
+    name character varying(255) NOT NULL,
+    is_document_type character(1) DEFAULT 'N'::bpchar NOT NULL,
+    is_folder_type character(1) DEFAULT 'N'::bpchar NOT NULL,
+    is_aspect character(1) DEFAULT 'N'::bpchar NOT NULL,
+    is_active character(1) DEFAULT 'Y'::bpchar NOT NULL,
+    alfresco_id smallint NOT NULL
+);
+
+
+ALTER TABLE public.dm_custom_metadata OWNER TO postgres;
+
+--
+-- TOC entry 161 (class 1259 OID 16386)
 -- Dependencies: 6
 -- Name: seq_dm_dim_actions_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -47,13 +97,9 @@ CREATE SEQUENCE seq_dm_dim_actions_id
 
 ALTER TABLE public.seq_dm_dim_actions_id OWNER TO postgres;
 
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
 --
--- TOC entry 162 (class 1259 OID 17276)
--- Dependencies: 1969 6
+-- TOC entry 162 (class 1259 OID 16388)
+-- Dependencies: 1975 6
 -- Name: dm_dim_actions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -68,8 +114,8 @@ CREATE TABLE dm_dim_actions (
 ALTER TABLE public.dm_dim_actions OWNER TO postgres;
 
 --
--- TOC entry 163 (class 1259 OID 17280)
--- Dependencies: 1970 6
+-- TOC entry 163 (class 1259 OID 16392)
+-- Dependencies: 1976 6
 -- Name: dm_dim_alfresco; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -88,7 +134,7 @@ CREATE TABLE dm_dim_alfresco (
 ALTER TABLE public.dm_dim_alfresco OWNER TO postgres;
 
 --
--- TOC entry 164 (class 1259 OID 17287)
+-- TOC entry 164 (class 1259 OID 16399)
 -- Dependencies: 6
 -- Name: dm_dim_dates; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -104,7 +150,7 @@ CREATE TABLE dm_dim_dates (
 ALTER TABLE public.dm_dim_dates OWNER TO postgres;
 
 --
--- TOC entry 165 (class 1259 OID 17290)
+-- TOC entry 165 (class 1259 OID 16402)
 -- Dependencies: 6
 -- Name: seq_dm_dim_documents_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -120,8 +166,8 @@ CREATE SEQUENCE seq_dm_dim_documents_id
 ALTER TABLE public.seq_dm_dim_documents_id OWNER TO postgres;
 
 --
--- TOC entry 166 (class 1259 OID 17292)
--- Dependencies: 1971 6
+-- TOC entry 166 (class 1259 OID 16404)
+-- Dependencies: 1977 6
 -- Name: dm_dim_documents; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -151,7 +197,7 @@ CREATE TABLE dm_dim_documents (
 ALTER TABLE public.dm_dim_documents OWNER TO postgres;
 
 --
--- TOC entry 167 (class 1259 OID 17299)
+-- TOC entry 167 (class 1259 OID 16411)
 -- Dependencies: 6
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -167,8 +213,8 @@ CREATE SEQUENCE seq_dm_dim_folders_id
 ALTER TABLE public.seq_dm_dim_folders_id OWNER TO postgres;
 
 --
--- TOC entry 168 (class 1259 OID 17301)
--- Dependencies: 1972 6
+-- TOC entry 168 (class 1259 OID 16413)
+-- Dependencies: 1978 6
 -- Name: dm_dim_folders; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -192,7 +238,7 @@ CREATE TABLE dm_dim_folders (
 ALTER TABLE public.dm_dim_folders OWNER TO postgres;
 
 --
--- TOC entry 169 (class 1259 OID 17308)
+-- TOC entry 169 (class 1259 OID 16420)
 -- Dependencies: 6
 -- Name: dm_dim_hours; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -206,7 +252,7 @@ CREATE TABLE dm_dim_hours (
 ALTER TABLE public.dm_dim_hours OWNER TO postgres;
 
 --
--- TOC entry 170 (class 1259 OID 17311)
+-- TOC entry 170 (class 1259 OID 16423)
 -- Dependencies: 6
 -- Name: seq_dm_dim_mime_types_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -222,8 +268,8 @@ CREATE SEQUENCE seq_dm_dim_mime_types_id
 ALTER TABLE public.seq_dm_dim_mime_types_id OWNER TO postgres;
 
 --
--- TOC entry 171 (class 1259 OID 17313)
--- Dependencies: 1973 6
+-- TOC entry 171 (class 1259 OID 16425)
+-- Dependencies: 1979 6
 -- Name: dm_dim_mime_types; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -238,7 +284,7 @@ CREATE TABLE dm_dim_mime_types (
 ALTER TABLE public.dm_dim_mime_types OWNER TO postgres;
 
 --
--- TOC entry 172 (class 1259 OID 17320)
+-- TOC entry 172 (class 1259 OID 16432)
 -- Dependencies: 6
 -- Name: dm_dim_minutes; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -253,7 +299,7 @@ CREATE TABLE dm_dim_minutes (
 ALTER TABLE public.dm_dim_minutes OWNER TO postgres;
 
 --
--- TOC entry 173 (class 1259 OID 17323)
+-- TOC entry 173 (class 1259 OID 16435)
 -- Dependencies: 6
 -- Name: dm_dim_months; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -269,7 +315,7 @@ CREATE TABLE dm_dim_months (
 ALTER TABLE public.dm_dim_months OWNER TO postgres;
 
 --
--- TOC entry 174 (class 1259 OID 17326)
+-- TOC entry 174 (class 1259 OID 16438)
 -- Dependencies: 6
 -- Name: seq_dm_dim_node_types_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -285,8 +331,8 @@ CREATE SEQUENCE seq_dm_dim_node_types_id
 ALTER TABLE public.seq_dm_dim_node_types_id OWNER TO postgres;
 
 --
--- TOC entry 175 (class 1259 OID 17328)
--- Dependencies: 1974 6
+-- TOC entry 175 (class 1259 OID 16440)
+-- Dependencies: 1980 6
 -- Name: dm_dim_node_types; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -302,7 +348,7 @@ CREATE TABLE dm_dim_node_types (
 ALTER TABLE public.dm_dim_node_types OWNER TO postgres;
 
 --
--- TOC entry 176 (class 1259 OID 17335)
+-- TOC entry 176 (class 1259 OID 16447)
 -- Dependencies: 6
 -- Name: seq_dm_dim_paths_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -318,8 +364,8 @@ CREATE SEQUENCE seq_dm_dim_paths_id
 ALTER TABLE public.seq_dm_dim_paths_id OWNER TO postgres;
 
 --
--- TOC entry 177 (class 1259 OID 17337)
--- Dependencies: 1975 6
+-- TOC entry 177 (class 1259 OID 16449)
+-- Dependencies: 1981 6
 -- Name: dm_dim_paths; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -336,7 +382,7 @@ CREATE TABLE dm_dim_paths (
 ALTER TABLE public.dm_dim_paths OWNER TO postgres;
 
 --
--- TOC entry 178 (class 1259 OID 17344)
+-- TOC entry 178 (class 1259 OID 16456)
 -- Dependencies: 6
 -- Name: seq_dm_dim_users_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -352,8 +398,8 @@ CREATE SEQUENCE seq_dm_dim_users_id
 ALTER TABLE public.seq_dm_dim_users_id OWNER TO postgres;
 
 --
--- TOC entry 179 (class 1259 OID 17346)
--- Dependencies: 1976 6
+-- TOC entry 179 (class 1259 OID 16458)
+-- Dependencies: 1982 6
 -- Name: dm_dim_users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -368,7 +414,7 @@ CREATE TABLE dm_dim_users (
 ALTER TABLE public.dm_dim_users OWNER TO postgres;
 
 --
--- TOC entry 180 (class 1259 OID 17353)
+-- TOC entry 180 (class 1259 OID 16465)
 -- Dependencies: 6
 -- Name: dm_dim_years; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -382,7 +428,7 @@ CREATE TABLE dm_dim_years (
 ALTER TABLE public.dm_dim_years OWNER TO postgres;
 
 --
--- TOC entry 181 (class 1259 OID 17359)
+-- TOC entry 181 (class 1259 OID 16471)
 -- Dependencies: 6
 -- Name: dm_fact_actions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -402,8 +448,8 @@ CREATE TABLE dm_fact_actions (
 ALTER TABLE public.dm_fact_actions OWNER TO postgres;
 
 --
--- TOC entry 182 (class 1259 OID 17362)
--- Dependencies: 1977 1978 1979 1980 1981 1982 6
+-- TOC entry 182 (class 1259 OID 16474)
+-- Dependencies: 1983 1984 1985 1986 1987 1988 6
 -- Name: dm_reports; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -427,7 +473,7 @@ CREATE TABLE dm_reports (
 ALTER TABLE public.dm_reports OWNER TO postgres;
 
 --
--- TOC entry 183 (class 1259 OID 17374)
+-- TOC entry 183 (class 1259 OID 16486)
 -- Dependencies: 6
 -- Name: log_channels; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -451,7 +497,7 @@ CREATE TABLE log_channels (
 ALTER TABLE public.log_channels OWNER TO postgres;
 
 --
--- TOC entry 184 (class 1259 OID 17380)
+-- TOC entry 184 (class 1259 OID 16492)
 -- Dependencies: 6
 -- Name: log_job; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -480,7 +526,7 @@ CREATE TABLE log_job (
 ALTER TABLE public.log_job OWNER TO postgres;
 
 --
--- TOC entry 185 (class 1259 OID 17386)
+-- TOC entry 185 (class 1259 OID 16498)
 -- Dependencies: 6
 -- Name: log_jobentry; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -507,7 +553,7 @@ CREATE TABLE log_jobentry (
 ALTER TABLE public.log_jobentry OWNER TO postgres;
 
 --
--- TOC entry 186 (class 1259 OID 17392)
+-- TOC entry 186 (class 1259 OID 16504)
 -- Dependencies: 6
 -- Name: log_performance; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -534,7 +580,7 @@ CREATE TABLE log_performance (
 ALTER TABLE public.log_performance OWNER TO postgres;
 
 --
--- TOC entry 187 (class 1259 OID 17398)
+-- TOC entry 187 (class 1259 OID 16510)
 -- Dependencies: 6
 -- Name: log_step; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -559,7 +605,7 @@ CREATE TABLE log_step (
 ALTER TABLE public.log_step OWNER TO postgres;
 
 --
--- TOC entry 188 (class 1259 OID 17404)
+-- TOC entry 188 (class 1259 OID 16516)
 -- Dependencies: 6
 -- Name: log_transformations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -588,7 +634,7 @@ CREATE TABLE log_transformations (
 ALTER TABLE public.log_transformations OWNER TO postgres;
 
 --
--- TOC entry 189 (class 1259 OID 17410)
+-- TOC entry 189 (class 1259 OID 16522)
 -- Dependencies: 6
 -- Name: ope_audits; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -611,7 +657,7 @@ CREATE TABLE ope_audits (
 ALTER TABLE public.ope_audits OWNER TO postgres;
 
 --
--- TOC entry 190 (class 1259 OID 17416)
+-- TOC entry 190 (class 1259 OID 16528)
 -- Dependencies: 6
 -- Name: ope_cmis_document_parent; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -627,7 +673,7 @@ CREATE TABLE ope_cmis_document_parent (
 ALTER TABLE public.ope_cmis_document_parent OWNER TO postgres;
 
 --
--- TOC entry 191 (class 1259 OID 17422)
+-- TOC entry 191 (class 1259 OID 16534)
 -- Dependencies: 6
 -- Name: stg_audits; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -645,7 +691,7 @@ CREATE TABLE stg_audits (
 ALTER TABLE public.stg_audits OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 17428)
+-- TOC entry 192 (class 1259 OID 16540)
 -- Dependencies: 6
 -- Name: stg_cmis_documents; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -682,7 +728,7 @@ CREATE TABLE stg_cmis_documents (
 ALTER TABLE public.stg_cmis_documents OWNER TO postgres;
 
 --
--- TOC entry 193 (class 1259 OID 17434)
+-- TOC entry 193 (class 1259 OID 16546)
 -- Dependencies: 6
 -- Name: stg_cmis_documents_partial; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -719,7 +765,7 @@ CREATE TABLE stg_cmis_documents_partial (
 ALTER TABLE public.stg_cmis_documents_partial OWNER TO postgres;
 
 --
--- TOC entry 194 (class 1259 OID 17440)
+-- TOC entry 194 (class 1259 OID 16552)
 -- Dependencies: 6
 -- Name: stg_cmis_folders; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -745,7 +791,7 @@ CREATE TABLE stg_cmis_folders (
 ALTER TABLE public.stg_cmis_folders OWNER TO postgres;
 
 --
--- TOC entry 195 (class 1259 OID 17446)
+-- TOC entry 195 (class 1259 OID 16558)
 -- Dependencies: 6
 -- Name: stg_cmis_folders_partial; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -771,8 +817,8 @@ CREATE TABLE stg_cmis_folders_partial (
 ALTER TABLE public.stg_cmis_folders_partial OWNER TO postgres;
 
 --
--- TOC entry 196 (class 1259 OID 17452)
--- Dependencies: 2190 6
+-- TOC entry 196 (class 1259 OID 16564)
+-- Dependencies: 2205 6
 -- Name: vw_cmis_documents_and_folders_path; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -783,8 +829,8 @@ CREATE VIEW vw_cmis_documents_and_folders_path AS
 ALTER TABLE public.vw_cmis_documents_and_folders_path OWNER TO postgres;
 
 --
--- TOC entry 197 (class 1259 OID 17457)
--- Dependencies: 2191 6
+-- TOC entry 197 (class 1259 OID 16569)
+-- Dependencies: 2206 6
 -- Name: vw_dm_dim_dates; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -795,8 +841,8 @@ CREATE VIEW vw_dm_dim_dates AS
 ALTER TABLE public.vw_dm_dim_dates OWNER TO postgres;
 
 --
--- TOC entry 198 (class 1259 OID 17461)
--- Dependencies: 2192 6
+-- TOC entry 198 (class 1259 OID 16573)
+-- Dependencies: 2207 6
 -- Name: vw_dm_dim_documents; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -807,8 +853,8 @@ CREATE VIEW vw_dm_dim_documents AS
 ALTER TABLE public.vw_dm_dim_documents OWNER TO postgres;
 
 --
--- TOC entry 199 (class 1259 OID 17465)
--- Dependencies: 2193 6
+-- TOC entry 199 (class 1259 OID 16577)
+-- Dependencies: 2208 6
 -- Name: vw_dm_dim_flag_immutable; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -819,8 +865,8 @@ CREATE VIEW vw_dm_dim_flag_immutable AS
 ALTER TABLE public.vw_dm_dim_flag_immutable OWNER TO postgres;
 
 --
--- TOC entry 200 (class 1259 OID 17469)
--- Dependencies: 2194 6
+-- TOC entry 200 (class 1259 OID 16581)
+-- Dependencies: 2209 6
 -- Name: vw_dm_dim_flag_latest_major_version; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -831,8 +877,8 @@ CREATE VIEW vw_dm_dim_flag_latest_major_version AS
 ALTER TABLE public.vw_dm_dim_flag_latest_major_version OWNER TO postgres;
 
 --
--- TOC entry 201 (class 1259 OID 17473)
--- Dependencies: 2195 6
+-- TOC entry 201 (class 1259 OID 16585)
+-- Dependencies: 2210 6
 -- Name: vw_dm_dim_flag_latest_version; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -843,8 +889,8 @@ CREATE VIEW vw_dm_dim_flag_latest_version AS
 ALTER TABLE public.vw_dm_dim_flag_latest_version OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 17477)
--- Dependencies: 2196 6
+-- TOC entry 202 (class 1259 OID 16589)
+-- Dependencies: 2211 6
 -- Name: vw_dm_dim_flag_major_version; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -855,8 +901,8 @@ CREATE VIEW vw_dm_dim_flag_major_version AS
 ALTER TABLE public.vw_dm_dim_flag_major_version OWNER TO postgres;
 
 --
--- TOC entry 203 (class 1259 OID 17481)
--- Dependencies: 2197 6
+-- TOC entry 203 (class 1259 OID 16593)
+-- Dependencies: 2212 6
 -- Name: vw_dm_dim_minutes; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -867,8 +913,8 @@ CREATE VIEW vw_dm_dim_minutes AS
 ALTER TABLE public.vw_dm_dim_minutes OWNER TO postgres;
 
 --
--- TOC entry 204 (class 1259 OID 17485)
--- Dependencies: 2198 6
+-- TOC entry 204 (class 1259 OID 16597)
+-- Dependencies: 2213 6
 -- Name: vw_dm_fact_documents; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -879,8 +925,8 @@ CREATE VIEW vw_dm_fact_documents AS
 ALTER TABLE public.vw_dm_fact_documents OWNER TO postgres;
 
 --
--- TOC entry 205 (class 1259 OID 17489)
--- Dependencies: 2199 6
+-- TOC entry 205 (class 1259 OID 16601)
+-- Dependencies: 2214 6
 -- Name: vw_dm_min_date; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -891,203 +937,220 @@ CREATE VIEW vw_dm_min_date AS
 ALTER TABLE public.vw_dm_min_date OWNER TO postgres;
 
 --
--- TOC entry 2201 (class 0 OID 17276)
--- Dependencies: 162 2235
+-- TOC entry 2251 (class 0 OID 17255)
+-- Dependencies: 207 2252
+-- Data for Name: dm_custom_metadata; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2216 (class 0 OID 16388)
+-- Dependencies: 162 2252
 -- Data for Name: dm_dim_actions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2202 (class 0 OID 17280)
--- Dependencies: 163 2235
+-- TOC entry 2217 (class 0 OID 16392)
+-- Dependencies: 163 2252
 -- Data for Name: dm_dim_alfresco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO dm_dim_alfresco (id, "desc", login, password, url, url_audit_suffix, url_cmis_suffix, is_active) VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=100000', '/alfresco/service/api/cmis', 'Y');
+INSERT INTO dm_dim_alfresco (id, "desc", login, password, url, url_audit_suffix, url_cmis_suffix, is_active) VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://192.168.1.7:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000', '/alfresco/service/api/cmis', 'Y');
 
 
 --
--- TOC entry 2203 (class 0 OID 17287)
--- Dependencies: 164 2235
+-- TOC entry 2218 (class 0 OID 16399)
+-- Dependencies: 164 2252
 -- Data for Name: dm_dim_dates; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2205 (class 0 OID 17292)
--- Dependencies: 166 2235
+-- TOC entry 2220 (class 0 OID 16404)
+-- Dependencies: 166 2252
 -- Data for Name: dm_dim_documents; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2207 (class 0 OID 17301)
--- Dependencies: 168 2235
+-- TOC entry 2222 (class 0 OID 16413)
+-- Dependencies: 168 2252
 -- Data for Name: dm_dim_folders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2208 (class 0 OID 17308)
--- Dependencies: 169 2235
+-- TOC entry 2223 (class 0 OID 16420)
+-- Dependencies: 169 2252
 -- Data for Name: dm_dim_hours; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2210 (class 0 OID 17313)
--- Dependencies: 171 2235
+-- TOC entry 2225 (class 0 OID 16425)
+-- Dependencies: 171 2252
 -- Data for Name: dm_dim_mime_types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2211 (class 0 OID 17320)
--- Dependencies: 172 2235
+-- TOC entry 2226 (class 0 OID 16432)
+-- Dependencies: 172 2252
 -- Data for Name: dm_dim_minutes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2212 (class 0 OID 17323)
--- Dependencies: 173 2235
+-- TOC entry 2227 (class 0 OID 16435)
+-- Dependencies: 173 2252
 -- Data for Name: dm_dim_months; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2214 (class 0 OID 17328)
--- Dependencies: 175 2235
+-- TOC entry 2229 (class 0 OID 16440)
+-- Dependencies: 175 2252
 -- Data for Name: dm_dim_node_types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2216 (class 0 OID 17337)
--- Dependencies: 177 2235
+-- TOC entry 2231 (class 0 OID 16449)
+-- Dependencies: 177 2252
 -- Data for Name: dm_dim_paths; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2218 (class 0 OID 17346)
--- Dependencies: 179 2235
+-- TOC entry 2233 (class 0 OID 16458)
+-- Dependencies: 179 2252
 -- Data for Name: dm_dim_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2219 (class 0 OID 17353)
--- Dependencies: 180 2235
+-- TOC entry 2234 (class 0 OID 16465)
+-- Dependencies: 180 2252
 -- Data for Name: dm_dim_years; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2220 (class 0 OID 17359)
--- Dependencies: 181 2235
+-- TOC entry 2235 (class 0 OID 16471)
+-- Dependencies: 181 2252
 -- Data for Name: dm_fact_actions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2221 (class 0 OID 17362)
--- Dependencies: 182 2235
+-- TOC entry 2236 (class 0 OID 16474)
+-- Dependencies: 182 2252
 -- Data for Name: dm_reports; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (5, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'audit_use.prpt', 'audit_use.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (6, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'document_active_users.prpt', 'document_active_users.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (7, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'document_hours_of_activity.prpt', 'document_hours_of_activity.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (8, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'document_mime_types.prpt', 'document_mime_types.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (9, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'document_size.prpt', 'document_size.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (10, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'document_types.prpt', 'document_types.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (11, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'folder_types.prpt', 'folder_types.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (1, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'audit_creation.prpt', 'audit_creation.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (2, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'audit_details.prpt', 'audit_details.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (3, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'audit_login.prpt', 'audit_login.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (4, 'http://localhost:8080/pentaho', 'admin', 'password', '/', 'audit_topTen.prpt', 'audit_topTen.pdf', 'localhost', 1121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (5, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_use.prpt', 'audit_use.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (6, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_active_users.prpt', 'document_active_users.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (7, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_hours_of_activity.prpt', 'document_hours_of_activity.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (8, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_mime_types.prpt', 'document_mime_types.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (9, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_size.prpt', 'document_size.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (10, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_types.prpt', 'document_types.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (11, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'folder_types.prpt', 'folder_types.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (1, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_creation.prpt', 'audit_creation.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (2, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_details.prpt', 'audit_details.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (3, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_login.prpt', 'audit_login.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO dm_reports (id, pentaho_url, pentaho_login, pentaho_password, pentaho_path, prpt_name, name, alfresco_ftp, alfresco_port, alfresco_login, alfresco_password, alfresco_path, is_active) VALUES (4, 'http://localhost:8080:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_topTen.prpt', 'audit_topTen.pdf', '192.168.1.7', 121, 'admin', 'admin', 'alfresco', 'Y');
 
 
 --
--- TOC entry 2222 (class 0 OID 17374)
--- Dependencies: 183 2235
+-- TOC entry 2237 (class 0 OID 16486)
+-- Dependencies: 183 2252
 -- Data for Name: log_channels; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2223 (class 0 OID 17380)
--- Dependencies: 184 2235
+-- TOC entry 2238 (class 0 OID 16492)
+-- Dependencies: 184 2252
 -- Data for Name: log_job; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2224 (class 0 OID 17386)
--- Dependencies: 185 2235
+-- TOC entry 2239 (class 0 OID 16498)
+-- Dependencies: 185 2252
 -- Data for Name: log_jobentry; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2225 (class 0 OID 17392)
--- Dependencies: 186 2235
+-- TOC entry 2240 (class 0 OID 16504)
+-- Dependencies: 186 2252
 -- Data for Name: log_performance; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2226 (class 0 OID 17398)
--- Dependencies: 187 2235
+-- TOC entry 2241 (class 0 OID 16510)
+-- Dependencies: 187 2252
 -- Data for Name: log_step; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2227 (class 0 OID 17404)
--- Dependencies: 188 2235
+-- TOC entry 2242 (class 0 OID 16516)
+-- Dependencies: 188 2252
 -- Data for Name: log_transformations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2228 (class 0 OID 17410)
--- Dependencies: 189 2235
+-- TOC entry 2243 (class 0 OID 16522)
+-- Dependencies: 189 2252
 -- Data for Name: ope_audits; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2229 (class 0 OID 17416)
--- Dependencies: 190 2235
+-- TOC entry 2244 (class 0 OID 16528)
+-- Dependencies: 190 2252
 -- Data for Name: ope_cmis_document_parent; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2243 (class 0 OID 0)
+-- TOC entry 2260 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: seq_dm_custom_metadata_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('seq_dm_custom_metadata_id', 1, false);
+
+
+--
+-- TOC entry 2261 (class 0 OID 0)
 -- Dependencies: 161
 -- Name: seq_dm_dim_actions_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1096,7 +1159,7 @@ SELECT pg_catalog.setval('seq_dm_dim_actions_id', 1, true);
 
 
 --
--- TOC entry 2244 (class 0 OID 0)
+-- TOC entry 2262 (class 0 OID 0)
 -- Dependencies: 165
 -- Name: seq_dm_dim_documents_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1105,7 +1168,7 @@ SELECT pg_catalog.setval('seq_dm_dim_documents_id', 1, true);
 
 
 --
--- TOC entry 2245 (class 0 OID 0)
+-- TOC entry 2263 (class 0 OID 0)
 -- Dependencies: 167
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1114,7 +1177,7 @@ SELECT pg_catalog.setval('seq_dm_dim_folders_id', 8837, true);
 
 
 --
--- TOC entry 2246 (class 0 OID 0)
+-- TOC entry 2264 (class 0 OID 0)
 -- Dependencies: 170
 -- Name: seq_dm_dim_mime_types_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1123,7 +1186,7 @@ SELECT pg_catalog.setval('seq_dm_dim_mime_types_id', 1, true);
 
 
 --
--- TOC entry 2247 (class 0 OID 0)
+-- TOC entry 2265 (class 0 OID 0)
 -- Dependencies: 174
 -- Name: seq_dm_dim_node_types_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1132,7 +1195,7 @@ SELECT pg_catalog.setval('seq_dm_dim_node_types_id', 1, true);
 
 
 --
--- TOC entry 2248 (class 0 OID 0)
+-- TOC entry 2266 (class 0 OID 0)
 -- Dependencies: 176
 -- Name: seq_dm_dim_paths_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1141,7 +1204,7 @@ SELECT pg_catalog.setval('seq_dm_dim_paths_id', 1, true);
 
 
 --
--- TOC entry 2249 (class 0 OID 0)
+-- TOC entry 2267 (class 0 OID 0)
 -- Dependencies: 178
 -- Name: seq_dm_dim_users_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1150,48 +1213,58 @@ SELECT pg_catalog.setval('seq_dm_dim_users_id', 1, true);
 
 
 --
--- TOC entry 2230 (class 0 OID 17422)
--- Dependencies: 191 2235
+-- TOC entry 2245 (class 0 OID 16534)
+-- Dependencies: 191 2252
 -- Data for Name: stg_audits; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2231 (class 0 OID 17428)
--- Dependencies: 192 2235
+-- TOC entry 2246 (class 0 OID 16540)
+-- Dependencies: 192 2252
 -- Data for Name: stg_cmis_documents; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2232 (class 0 OID 17434)
--- Dependencies: 193 2235
+-- TOC entry 2247 (class 0 OID 16546)
+-- Dependencies: 193 2252
 -- Data for Name: stg_cmis_documents_partial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2233 (class 0 OID 17440)
--- Dependencies: 194 2235
+-- TOC entry 2248 (class 0 OID 16552)
+-- Dependencies: 194 2252
 -- Data for Name: stg_cmis_folders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2234 (class 0 OID 17446)
--- Dependencies: 195 2235
+-- TOC entry 2249 (class 0 OID 16558)
+-- Dependencies: 195 2252
 -- Data for Name: stg_cmis_folders_partial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1985 (class 2606 OID 17494)
--- Dependencies: 162 162 2236
+-- TOC entry 2063 (class 2606 OID 17264)
+-- Dependencies: 207 207 2253
+-- Name: pk_dm_custom_metadata; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY dm_custom_metadata
+    ADD CONSTRAINT pk_dm_custom_metadata PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1996 (class 2606 OID 16606)
+-- Dependencies: 162 162 2253
 -- Name: pk_dm_dim_action; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1200,8 +1273,8 @@ ALTER TABLE ONLY dm_dim_actions
 
 
 --
--- TOC entry 1991 (class 2606 OID 17496)
--- Dependencies: 164 164 2236
+-- TOC entry 2002 (class 2606 OID 16608)
+-- Dependencies: 164 164 2253
 -- Name: pk_dm_dim_dates; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1210,8 +1283,8 @@ ALTER TABLE ONLY dm_dim_dates
 
 
 --
--- TOC entry 1995 (class 2606 OID 17498)
--- Dependencies: 166 166 2236
+-- TOC entry 2006 (class 2606 OID 16610)
+-- Dependencies: 166 166 2253
 -- Name: pk_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1220,8 +1293,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2001 (class 2606 OID 17500)
--- Dependencies: 168 168 2236
+-- TOC entry 2012 (class 2606 OID 16612)
+-- Dependencies: 168 168 2253
 -- Name: pk_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1230,8 +1303,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2006 (class 2606 OID 17502)
--- Dependencies: 169 169 2236
+-- TOC entry 2017 (class 2606 OID 16614)
+-- Dependencies: 169 169 2253
 -- Name: pk_dm_dim_hours; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1240,8 +1313,8 @@ ALTER TABLE ONLY dm_dim_hours
 
 
 --
--- TOC entry 2009 (class 2606 OID 17504)
--- Dependencies: 171 171 2236
+-- TOC entry 2020 (class 2606 OID 16616)
+-- Dependencies: 171 171 2253
 -- Name: pk_dm_dim_mime_types; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1250,8 +1323,8 @@ ALTER TABLE ONLY dm_dim_mime_types
 
 
 --
--- TOC entry 2012 (class 2606 OID 17506)
--- Dependencies: 172 172 2236
+-- TOC entry 2023 (class 2606 OID 16618)
+-- Dependencies: 172 172 2253
 -- Name: pk_dm_dim_minutes; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1260,8 +1333,8 @@ ALTER TABLE ONLY dm_dim_minutes
 
 
 --
--- TOC entry 2015 (class 2606 OID 17508)
--- Dependencies: 173 173 2236
+-- TOC entry 2026 (class 2606 OID 16620)
+-- Dependencies: 173 173 2253
 -- Name: pk_dm_dim_months; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1270,8 +1343,8 @@ ALTER TABLE ONLY dm_dim_months
 
 
 --
--- TOC entry 2018 (class 2606 OID 17510)
--- Dependencies: 175 175 2236
+-- TOC entry 2029 (class 2606 OID 16622)
+-- Dependencies: 175 175 2253
 -- Name: pk_dm_dim_node_types; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1280,8 +1353,8 @@ ALTER TABLE ONLY dm_dim_node_types
 
 
 --
--- TOC entry 2021 (class 2606 OID 17512)
--- Dependencies: 177 177 2236
+-- TOC entry 2032 (class 2606 OID 16624)
+-- Dependencies: 177 177 2253
 -- Name: pk_dm_dim_path; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1290,8 +1363,8 @@ ALTER TABLE ONLY dm_dim_paths
 
 
 --
--- TOC entry 2024 (class 2606 OID 17514)
--- Dependencies: 179 179 2236
+-- TOC entry 2035 (class 2606 OID 16626)
+-- Dependencies: 179 179 2253
 -- Name: pk_dm_dim_users; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1300,8 +1373,8 @@ ALTER TABLE ONLY dm_dim_users
 
 
 --
--- TOC entry 2027 (class 2606 OID 17516)
--- Dependencies: 180 180 2236
+-- TOC entry 2038 (class 2606 OID 16628)
+-- Dependencies: 180 180 2253
 -- Name: pk_dm_dim_years; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1310,8 +1383,8 @@ ALTER TABLE ONLY dm_dim_years
 
 
 --
--- TOC entry 2035 (class 2606 OID 17518)
--- Dependencies: 190 190 190 190 2236
+-- TOC entry 2046 (class 2606 OID 16630)
+-- Dependencies: 190 190 190 190 2253
 -- Name: pk_ope_cmis_document_parent; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1320,8 +1393,8 @@ ALTER TABLE ONLY ope_cmis_document_parent
 
 
 --
--- TOC entry 2029 (class 2606 OID 17520)
--- Dependencies: 182 182 2236
+-- TOC entry 2040 (class 2606 OID 16632)
+-- Dependencies: 182 182 2253
 -- Name: pk_reports; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1330,8 +1403,8 @@ ALTER TABLE ONLY dm_reports
 
 
 --
--- TOC entry 1988 (class 2606 OID 17522)
--- Dependencies: 163 163 2236
+-- TOC entry 1999 (class 2606 OID 16634)
+-- Dependencies: 163 163 2253
 -- Name: pk_stg_alfresco; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1340,8 +1413,8 @@ ALTER TABLE ONLY dm_dim_alfresco
 
 
 --
--- TOC entry 2037 (class 2606 OID 17524)
--- Dependencies: 191 191 191 191 2236
+-- TOC entry 2048 (class 2606 OID 16636)
+-- Dependencies: 191 191 191 191 2253
 -- Name: pk_stg_audit; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1350,8 +1423,8 @@ ALTER TABLE ONLY stg_audits
 
 
 --
--- TOC entry 2033 (class 2606 OID 17526)
--- Dependencies: 189 189 189 189 2236
+-- TOC entry 2044 (class 2606 OID 16638)
+-- Dependencies: 189 189 189 189 2253
 -- Name: pk_stg_audit_extended; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1360,8 +1433,8 @@ ALTER TABLE ONLY ope_audits
 
 
 --
--- TOC entry 2040 (class 2606 OID 17528)
--- Dependencies: 192 192 192 2236
+-- TOC entry 2051 (class 2606 OID 16640)
+-- Dependencies: 192 192 192 2253
 -- Name: uni_cmis_document; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1370,8 +1443,8 @@ ALTER TABLE ONLY stg_cmis_documents
 
 
 --
--- TOC entry 2043 (class 2606 OID 17530)
--- Dependencies: 193 193 193 2236
+-- TOC entry 2054 (class 2606 OID 16642)
+-- Dependencies: 193 193 193 2253
 -- Name: uni_cmis_document_partial; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1380,8 +1453,8 @@ ALTER TABLE ONLY stg_cmis_documents_partial
 
 
 --
--- TOC entry 2046 (class 2606 OID 17532)
--- Dependencies: 194 194 194 2236
+-- TOC entry 2057 (class 2606 OID 16644)
+-- Dependencies: 194 194 194 2253
 -- Name: uni_cmis_folder_id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1390,8 +1463,8 @@ ALTER TABLE ONLY stg_cmis_folders
 
 
 --
--- TOC entry 2049 (class 2606 OID 17534)
--- Dependencies: 195 195 195 2236
+-- TOC entry 2060 (class 2606 OID 16646)
+-- Dependencies: 195 195 195 2253
 -- Name: uni_cmis_folder_partial__id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1400,8 +1473,8 @@ ALTER TABLE ONLY stg_cmis_folders_partial
 
 
 --
--- TOC entry 1997 (class 2606 OID 17536)
--- Dependencies: 166 166 166 2236
+-- TOC entry 2008 (class 2606 OID 16648)
+-- Dependencies: 166 166 166 2253
 -- Name: unq_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1410,8 +1483,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2003 (class 2606 OID 17538)
--- Dependencies: 168 168 168 2236
+-- TOC entry 2014 (class 2606 OID 16650)
+-- Dependencies: 168 168 168 2253
 -- Name: unq_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1420,8 +1493,17 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 1983 (class 1259 OID 17539)
--- Dependencies: 162 2236
+-- TOC entry 2061 (class 1259 OID 17270)
+-- Dependencies: 207 2253
+-- Name: idx_dm_custom_metadata; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX idx_dm_custom_metadata ON dm_custom_metadata USING btree (id);
+
+
+--
+-- TOC entry 1994 (class 1259 OID 16651)
+-- Dependencies: 162 2253
 -- Name: idx_dm_dim_actions; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1429,8 +1511,8 @@ CREATE INDEX idx_dm_dim_actions ON dm_dim_actions USING btree (id);
 
 
 --
--- TOC entry 1986 (class 1259 OID 17540)
--- Dependencies: 163 2236
+-- TOC entry 1997 (class 1259 OID 16652)
+-- Dependencies: 163 2253
 -- Name: idx_dm_dim_alfresco; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1438,8 +1520,8 @@ CREATE INDEX idx_dm_dim_alfresco ON dm_dim_alfresco USING btree (id);
 
 
 --
--- TOC entry 1989 (class 1259 OID 17541)
--- Dependencies: 164 2236
+-- TOC entry 2000 (class 1259 OID 16653)
+-- Dependencies: 164 2253
 -- Name: idx_dm_dim_dates; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1447,8 +1529,8 @@ CREATE INDEX idx_dm_dim_dates ON dm_dim_dates USING btree (id);
 
 
 --
--- TOC entry 1992 (class 1259 OID 17542)
--- Dependencies: 166 2236
+-- TOC entry 2003 (class 1259 OID 16654)
+-- Dependencies: 166 2253
 -- Name: idx_dm_dim_documents; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1456,8 +1538,8 @@ CREATE INDEX idx_dm_dim_documents ON dm_dim_documents USING btree (id);
 
 
 --
--- TOC entry 1993 (class 1259 OID 17543)
--- Dependencies: 166 166 2236
+-- TOC entry 2004 (class 1259 OID 16655)
+-- Dependencies: 166 166 2253
 -- Name: idx_dm_dim_documents_src_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1465,8 +1547,8 @@ CREATE INDEX idx_dm_dim_documents_src_id ON dm_dim_documents USING btree (alfres
 
 
 --
--- TOC entry 1998 (class 1259 OID 17544)
--- Dependencies: 168 2236
+-- TOC entry 2009 (class 1259 OID 16656)
+-- Dependencies: 168 2253
 -- Name: idx_dm_dim_folders; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1474,8 +1556,8 @@ CREATE INDEX idx_dm_dim_folders ON dm_dim_folders USING btree (id);
 
 
 --
--- TOC entry 1999 (class 1259 OID 17545)
--- Dependencies: 168 168 2236
+-- TOC entry 2010 (class 1259 OID 16657)
+-- Dependencies: 168 168 2253
 -- Name: idx_dm_dim_folders_src_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1483,8 +1565,8 @@ CREATE INDEX idx_dm_dim_folders_src_id ON dm_dim_folders USING btree (alfresco_i
 
 
 --
--- TOC entry 2004 (class 1259 OID 17546)
--- Dependencies: 169 2236
+-- TOC entry 2015 (class 1259 OID 16658)
+-- Dependencies: 169 2253
 -- Name: idx_dm_dim_hours; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1492,8 +1574,8 @@ CREATE INDEX idx_dm_dim_hours ON dm_dim_hours USING btree (id);
 
 
 --
--- TOC entry 2007 (class 1259 OID 17547)
--- Dependencies: 171 2236
+-- TOC entry 2018 (class 1259 OID 16659)
+-- Dependencies: 171 2253
 -- Name: idx_dm_dim_mime_types; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1501,8 +1583,8 @@ CREATE INDEX idx_dm_dim_mime_types ON dm_dim_mime_types USING btree (id);
 
 
 --
--- TOC entry 2010 (class 1259 OID 17548)
--- Dependencies: 172 2236
+-- TOC entry 2021 (class 1259 OID 16660)
+-- Dependencies: 172 2253
 -- Name: idx_dm_dim_minutes; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1510,8 +1592,8 @@ CREATE INDEX idx_dm_dim_minutes ON dm_dim_minutes USING btree (id);
 
 
 --
--- TOC entry 2013 (class 1259 OID 17549)
--- Dependencies: 173 2236
+-- TOC entry 2024 (class 1259 OID 16661)
+-- Dependencies: 173 2253
 -- Name: idx_dm_dim_months; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1519,8 +1601,8 @@ CREATE INDEX idx_dm_dim_months ON dm_dim_months USING btree (id);
 
 
 --
--- TOC entry 2016 (class 1259 OID 17550)
--- Dependencies: 175 2236
+-- TOC entry 2027 (class 1259 OID 16662)
+-- Dependencies: 175 2253
 -- Name: idx_dm_dim_node_types; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1528,8 +1610,8 @@ CREATE INDEX idx_dm_dim_node_types ON dm_dim_node_types USING btree (id);
 
 
 --
--- TOC entry 2019 (class 1259 OID 17551)
--- Dependencies: 177 2236
+-- TOC entry 2030 (class 1259 OID 16663)
+-- Dependencies: 177 2253
 -- Name: idx_dm_dim_paths; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1537,8 +1619,8 @@ CREATE INDEX idx_dm_dim_paths ON dm_dim_paths USING btree (id);
 
 
 --
--- TOC entry 2022 (class 1259 OID 17552)
--- Dependencies: 179 2236
+-- TOC entry 2033 (class 1259 OID 16664)
+-- Dependencies: 179 2253
 -- Name: idx_dm_dim_users; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1546,8 +1628,8 @@ CREATE INDEX idx_dm_dim_users ON dm_dim_users USING btree (id);
 
 
 --
--- TOC entry 2025 (class 1259 OID 17553)
--- Dependencies: 180 2236
+-- TOC entry 2036 (class 1259 OID 16665)
+-- Dependencies: 180 2253
 -- Name: idx_dm_dim_years; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1555,8 +1637,8 @@ CREATE INDEX idx_dm_dim_years ON dm_dim_years USING btree (id);
 
 
 --
--- TOC entry 2030 (class 1259 OID 17554)
--- Dependencies: 188 2236
+-- TOC entry 2041 (class 1259 OID 16666)
+-- Dependencies: 188 2253
 -- Name: idx_log_transformations_1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1564,8 +1646,8 @@ CREATE INDEX idx_log_transformations_1 ON log_transformations USING btree (id_ba
 
 
 --
--- TOC entry 2031 (class 1259 OID 17555)
--- Dependencies: 188 188 188 2236
+-- TOC entry 2042 (class 1259 OID 16667)
+-- Dependencies: 188 188 188 2253
 -- Name: idx_log_transformations_2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1573,8 +1655,8 @@ CREATE INDEX idx_log_transformations_2 ON log_transformations USING btree (error
 
 
 --
--- TOC entry 2038 (class 1259 OID 17556)
--- Dependencies: 192 192 192 2236
+-- TOC entry 2049 (class 1259 OID 16668)
+-- Dependencies: 192 192 192 2253
 -- Name: idx_stg_cmis_documents_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1582,8 +1664,8 @@ CREATE INDEX idx_stg_cmis_documents_key ON stg_cmis_documents USING btree (alfre
 
 
 --
--- TOC entry 2041 (class 1259 OID 17557)
--- Dependencies: 193 193 193 2236
+-- TOC entry 2052 (class 1259 OID 16669)
+-- Dependencies: 193 193 193 2253
 -- Name: idx_stg_cmis_documents_partial_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1591,8 +1673,8 @@ CREATE INDEX idx_stg_cmis_documents_partial_key ON stg_cmis_documents_partial US
 
 
 --
--- TOC entry 2044 (class 1259 OID 17558)
--- Dependencies: 194 194 194 2236
+-- TOC entry 2055 (class 1259 OID 16670)
+-- Dependencies: 194 194 194 2253
 -- Name: idx_stg_cmis_folders_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1600,8 +1682,8 @@ CREATE INDEX idx_stg_cmis_folders_key ON stg_cmis_folders USING btree (alfresco_
 
 
 --
--- TOC entry 2047 (class 1259 OID 17559)
--- Dependencies: 195 195 195 2236
+-- TOC entry 2058 (class 1259 OID 16671)
+-- Dependencies: 195 195 195 2253
 -- Name: idx_stg_cmis_folders_partial_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1609,8 +1691,8 @@ CREATE INDEX idx_stg_cmis_folders_partial_key ON stg_cmis_folders_partial USING 
 
 
 --
--- TOC entry 2086 (class 2606 OID 17560)
--- Dependencies: 2039 192 190 192 190 2236
+-- TOC entry 2100 (class 2606 OID 16672)
+-- Dependencies: 190 190 192 192 2050 2253
 -- Name: fk_cmis_document_parent_document; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1619,8 +1701,8 @@ ALTER TABLE ONLY ope_cmis_document_parent
 
 
 --
--- TOC entry 2087 (class 2606 OID 17565)
--- Dependencies: 194 190 190 194 2045 2236
+-- TOC entry 2101 (class 2606 OID 16677)
+-- Dependencies: 190 190 194 194 2056 2253
 -- Name: fk_cmis_document_parent_parent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1629,8 +1711,18 @@ ALTER TABLE ONLY ope_cmis_document_parent
 
 
 --
--- TOC entry 2050 (class 2606 OID 17570)
--- Dependencies: 163 162 1987 2236
+-- TOC entry 2103 (class 2606 OID 17265)
+-- Dependencies: 207 1998 163 2253
+-- Name: fk_dm_custom_metadata_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY dm_custom_metadata
+    ADD CONSTRAINT fk_dm_custom_metadata_dm_dim_alfresco FOREIGN KEY (alfresco_id) REFERENCES dm_dim_alfresco(id);
+
+
+--
+-- TOC entry 2064 (class 2606 OID 16682)
+-- Dependencies: 162 163 1998 2253
 -- Name: fk_dm_dim_action_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1639,8 +1731,8 @@ ALTER TABLE ONLY dm_dim_actions
 
 
 --
--- TOC entry 2051 (class 2606 OID 17575)
--- Dependencies: 173 2014 164 2236
+-- TOC entry 2065 (class 2606 OID 16687)
+-- Dependencies: 164 173 2025 2253
 -- Name: fk_dm_dim_dates_dm_dim_months; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1649,8 +1741,8 @@ ALTER TABLE ONLY dm_dim_dates
 
 
 --
--- TOC entry 2052 (class 2606 OID 17580)
--- Dependencies: 166 163 1987 2236
+-- TOC entry 2066 (class 2606 OID 16692)
+-- Dependencies: 166 1998 163 2253
 -- Name: fk_dm_dim_documents_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1659,8 +1751,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2053 (class 2606 OID 17585)
--- Dependencies: 164 1990 166 2236
+-- TOC entry 2067 (class 2606 OID 16697)
+-- Dependencies: 164 2001 166 2253
 -- Name: fk_dm_dim_documents_dm_dim_dates_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1669,8 +1761,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2054 (class 2606 OID 17590)
--- Dependencies: 166 1990 164 2236
+-- TOC entry 2068 (class 2606 OID 16702)
+-- Dependencies: 166 164 2001 2253
 -- Name: fk_dm_dim_documents_dm_dim_dates_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1679,8 +1771,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2055 (class 2606 OID 17595)
--- Dependencies: 2000 168 166 2236
+-- TOC entry 2069 (class 2606 OID 16707)
+-- Dependencies: 166 2011 168 2253
 -- Name: fk_dm_dim_documents_dm_dim_folders_parent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1689,8 +1781,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2056 (class 2606 OID 17600)
--- Dependencies: 2008 171 166 2236
+-- TOC entry 2070 (class 2606 OID 16712)
+-- Dependencies: 166 2019 171 2253
 -- Name: fk_dm_dim_documents_dm_dim_mime_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1699,8 +1791,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2057 (class 2606 OID 17605)
--- Dependencies: 172 2011 166 2236
+-- TOC entry 2071 (class 2606 OID 16717)
+-- Dependencies: 166 2022 172 2253
 -- Name: fk_dm_dim_documents_dm_dim_minutes_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1709,8 +1801,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2058 (class 2606 OID 17610)
--- Dependencies: 166 2011 172 2236
+-- TOC entry 2072 (class 2606 OID 16722)
+-- Dependencies: 166 2022 172 2253
 -- Name: fk_dm_dim_documents_dm_dim_minutes_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1719,8 +1811,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2059 (class 2606 OID 17615)
--- Dependencies: 2017 166 175 2236
+-- TOC entry 2073 (class 2606 OID 16727)
+-- Dependencies: 2028 175 166 2253
 -- Name: fk_dm_dim_documents_dm_dim_node_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1729,8 +1821,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2060 (class 2606 OID 17620)
--- Dependencies: 179 166 2023 2236
+-- TOC entry 2074 (class 2606 OID 16732)
+-- Dependencies: 179 2034 166 2253
 -- Name: fk_dm_dim_documents_dm_dim_users_creator; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1739,8 +1831,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2061 (class 2606 OID 17625)
--- Dependencies: 2023 166 179 2236
+-- TOC entry 2075 (class 2606 OID 16737)
+-- Dependencies: 179 2034 166 2253
 -- Name: fk_dm_dim_documents_dm_dim_users_last_modifier; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1749,8 +1841,8 @@ ALTER TABLE ONLY dm_dim_documents
 
 
 --
--- TOC entry 2062 (class 2606 OID 17630)
--- Dependencies: 1987 168 163 2236
+-- TOC entry 2076 (class 2606 OID 16742)
+-- Dependencies: 1998 163 168 2253
 -- Name: fk_dm_dim_folders_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1759,8 +1851,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2063 (class 2606 OID 17635)
--- Dependencies: 164 1990 168 2236
+-- TOC entry 2077 (class 2606 OID 16747)
+-- Dependencies: 168 164 2001 2253
 -- Name: fk_dm_dim_folders_dm_dim_dates_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1769,8 +1861,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2064 (class 2606 OID 17640)
--- Dependencies: 1990 164 168 2236
+-- TOC entry 2078 (class 2606 OID 16752)
+-- Dependencies: 2001 168 164 2253
 -- Name: fk_dm_dim_folders_dm_dim_dates_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1779,8 +1871,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2065 (class 2606 OID 17645)
--- Dependencies: 168 2000 168 2236
+-- TOC entry 2079 (class 2606 OID 16757)
+-- Dependencies: 168 2011 168 2253
 -- Name: fk_dm_dim_folders_dm_dim_folders_aprent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1789,8 +1881,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2066 (class 2606 OID 17650)
--- Dependencies: 168 2011 172 2236
+-- TOC entry 2080 (class 2606 OID 16762)
+-- Dependencies: 168 172 2022 2253
 -- Name: fk_dm_dim_folders_dm_dim_minutes_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1799,8 +1891,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2067 (class 2606 OID 17655)
--- Dependencies: 168 2011 172 2236
+-- TOC entry 2081 (class 2606 OID 16767)
+-- Dependencies: 168 172 2022 2253
 -- Name: fk_dm_dim_folders_dm_dim_minutes_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1809,8 +1901,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2068 (class 2606 OID 17660)
--- Dependencies: 168 2017 175 2236
+-- TOC entry 2082 (class 2606 OID 16772)
+-- Dependencies: 168 175 2028 2253
 -- Name: fk_dm_dim_folders_dm_dim_node_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1819,8 +1911,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2069 (class 2606 OID 17665)
--- Dependencies: 168 2023 179 2236
+-- TOC entry 2083 (class 2606 OID 16777)
+-- Dependencies: 168 179 2034 2253
 -- Name: fk_dm_dim_folders_dm_dim_users_creator; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1829,8 +1921,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2070 (class 2606 OID 17670)
--- Dependencies: 2023 168 179 2236
+-- TOC entry 2084 (class 2606 OID 16782)
+-- Dependencies: 168 179 2034 2253
 -- Name: fk_dm_dim_folders_dm_dim_users_last_modifier; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1839,8 +1931,8 @@ ALTER TABLE ONLY dm_dim_folders
 
 
 --
--- TOC entry 2071 (class 2606 OID 17675)
--- Dependencies: 1987 171 163 2236
+-- TOC entry 2085 (class 2606 OID 16787)
+-- Dependencies: 171 163 1998 2253
 -- Name: fk_dm_dim_mime_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1849,8 +1941,8 @@ ALTER TABLE ONLY dm_dim_mime_types
 
 
 --
--- TOC entry 2072 (class 2606 OID 17680)
--- Dependencies: 172 169 2005 2236
+-- TOC entry 2086 (class 2606 OID 16792)
+-- Dependencies: 2016 169 172 2253
 -- Name: fk_dm_dim_minutes_dm_dim_hours; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1859,8 +1951,8 @@ ALTER TABLE ONLY dm_dim_minutes
 
 
 --
--- TOC entry 2073 (class 2606 OID 17685)
--- Dependencies: 180 173 2026 2236
+-- TOC entry 2087 (class 2606 OID 16797)
+-- Dependencies: 180 173 2037 2253
 -- Name: fk_dm_dim_months_dm_dim_years; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1869,8 +1961,8 @@ ALTER TABLE ONLY dm_dim_months
 
 
 --
--- TOC entry 2074 (class 2606 OID 17690)
--- Dependencies: 163 175 1987 2236
+-- TOC entry 2088 (class 2606 OID 16802)
+-- Dependencies: 163 1998 175 2253
 -- Name: fk_dm_dim_node_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1879,8 +1971,8 @@ ALTER TABLE ONLY dm_dim_node_types
 
 
 --
--- TOC entry 2075 (class 2606 OID 17695)
--- Dependencies: 163 1987 177 2236
+-- TOC entry 2089 (class 2606 OID 16807)
+-- Dependencies: 177 1998 163 2253
 -- Name: fk_dm_dim_path_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1889,8 +1981,8 @@ ALTER TABLE ONLY dm_dim_paths
 
 
 --
--- TOC entry 2076 (class 2606 OID 17700)
--- Dependencies: 177 168 2000 2236
+-- TOC entry 2090 (class 2606 OID 16812)
+-- Dependencies: 177 2011 168 2253
 -- Name: fk_dm_dim_path_dm_dim_folders; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1899,8 +1991,8 @@ ALTER TABLE ONLY dm_dim_paths
 
 
 --
--- TOC entry 2077 (class 2606 OID 17705)
--- Dependencies: 177 1994 166 2236
+-- TOC entry 2091 (class 2606 OID 16817)
+-- Dependencies: 177 2005 166 2253
 -- Name: fk_dm_dim_paths_dm_dim_documents; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1909,8 +2001,8 @@ ALTER TABLE ONLY dm_dim_paths
 
 
 --
--- TOC entry 2078 (class 2606 OID 17710)
--- Dependencies: 1987 163 179 2236
+-- TOC entry 2092 (class 2606 OID 16822)
+-- Dependencies: 163 1998 179 2253
 -- Name: fk_dm_dim_users_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1919,8 +2011,8 @@ ALTER TABLE ONLY dm_dim_users
 
 
 --
--- TOC entry 2079 (class 2606 OID 17715)
--- Dependencies: 162 181 1984 2236
+-- TOC entry 2093 (class 2606 OID 16827)
+-- Dependencies: 181 162 1995 2253
 -- Name: fk_dm_fact_actions_dm_dim_actions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1929,8 +2021,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2080 (class 2606 OID 17720)
--- Dependencies: 1987 163 181 2236
+-- TOC entry 2094 (class 2606 OID 16832)
+-- Dependencies: 1998 163 181 2253
 -- Name: fk_dm_fact_actions_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1939,8 +2031,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2081 (class 2606 OID 17725)
--- Dependencies: 164 181 1990 2236
+-- TOC entry 2095 (class 2606 OID 16837)
+-- Dependencies: 181 164 2001 2253
 -- Name: fk_dm_fact_actions_dm_dim_dates; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1949,8 +2041,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2082 (class 2606 OID 17730)
--- Dependencies: 181 172 2011 2236
+-- TOC entry 2096 (class 2606 OID 16842)
+-- Dependencies: 172 2022 181 2253
 -- Name: fk_dm_fact_actions_dm_dim_minutes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1959,8 +2051,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2083 (class 2606 OID 17735)
--- Dependencies: 181 177 2020 2236
+-- TOC entry 2097 (class 2606 OID 16847)
+-- Dependencies: 177 2031 181 2253
 -- Name: fk_dm_fact_actions_dm_dim_paths; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1969,8 +2061,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2084 (class 2606 OID 17740)
--- Dependencies: 179 2023 181 2236
+-- TOC entry 2098 (class 2606 OID 16852)
+-- Dependencies: 2034 181 179 2253
 -- Name: fk_dm_fact_actions_dm_dim_users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1979,8 +2071,8 @@ ALTER TABLE ONLY dm_fact_actions
 
 
 --
--- TOC entry 2088 (class 2606 OID 17745)
--- Dependencies: 1987 163 191 2236
+-- TOC entry 2102 (class 2606 OID 16857)
+-- Dependencies: 191 1998 163 2253
 -- Name: fk_stg_audit_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1989,8 +2081,8 @@ ALTER TABLE ONLY stg_audits
 
 
 --
--- TOC entry 2085 (class 2606 OID 17750)
--- Dependencies: 189 1987 163 2236
+-- TOC entry 2099 (class 2606 OID 16862)
+-- Dependencies: 163 189 1998 2253
 -- Name: fk_stg_audit_extended_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1999,7 +2091,7 @@ ALTER TABLE ONLY ope_audits
 
 
 --
--- TOC entry 2241 (class 0 OID 0)
+-- TOC entry 2258 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -2010,7 +2102,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2013-11-19 22:03:52 CET
+-- Completed on 2014-05-26 23:13:35 CEST
 
 --
 -- PostgreSQL database dump complete
