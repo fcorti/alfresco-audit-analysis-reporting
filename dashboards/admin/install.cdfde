@@ -7148,6 +7148,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -7224,6 +7244,26 @@
       "name": "expression",
       "value": "function f() {\n    // Dashboard refresh.\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/install', {\n        alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n        alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n        alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n        alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n        alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n        alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n        alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n        alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n        databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n        databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n        databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n        databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n        databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n        databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n        databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n        databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n        databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n        kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n        kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n    });\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -7304,6 +7344,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -7378,8 +7438,28 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    var pentahoUrlValue = window.location.protocol + \"//\" + window.location.host + \"/pentaho\";\n\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','installFromConfiguration',{\n\n        params: {\n            configurationFile: Dashboards.getParameterValue('${p:configurationFile}'),\n            pentahoUrl: pentahoUrlValue,\n            pentahoLogin: Dashboards.getComponentByName('${p:pentahoLogin}'),\n            pentahoPassword: Dashboards.getComponentByName('${p:pentahoPassword}')\n        },\n\n        success: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed with success!<br><br>Now you can start using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed!<br><br>Please, check the tomcat log but ignore Errors with description '...Folder/File [...] exists, failing.' because they are not real errors.<br><br>Refresh CDA cache in Tools->Refresh->CDA cache before using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        }\n    });\n}",
+      "value": "function f() {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    var pentahoUrlValue = window.location.protocol + \"//\" + window.location.host;\n    if (!pentahoUrlValue.contains(window.location.port)) {\n        \":\" + window.location.port;\n    }\n    pentahoUrlValue += \"/pentaho\";\n    alert(pentahoUrlValue);\n\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','installFromConfiguration',{\n\n        params: {\n            configurationFile: Dashboards.getParameterValue('${p:configurationFile}'),\n            pentahoUrl: pentahoUrlValue,\n            pentahoLogin: Dashboards.getComponentByName('${p:pentahoLogin}'),\n            pentahoPassword: Dashboards.getComponentByName('${p:pentahoPassword}')\n        },\n\n        success: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed with success!<br><br>Now you can start using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed!<br><br>Please, check the tomcat log but ignore Errors with description '...Folder/File [...] exists, failing.' because they are not real errors.<br><br>Refresh CDA cache in Tools->Refresh->CDA cache before using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        }\n    });\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -7608,5 +7688,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/system/AAAR/dashboards/install.cdfde"
+ "filename": "/system/AAAR/dashboards/admin/install.cdfde"
 }

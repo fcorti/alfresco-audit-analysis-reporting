@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `AAAR_DataMart` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `AAAR_DataMart`;
--- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: AAAR_DataMart
 -- ------------------------------------------------------
--- Server version	5.5.32-0ubuntu0.12.04.1
+-- Server version	5.5.37-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -78,8 +78,6 @@ CREATE TABLE `dm_fact_actions` (
 -- Dumping data for table `dm_fact_actions`
 --
 
-/*!40000 ALTER TABLE `dm_fact_actions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_fact_actions` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_minutes`
@@ -102,8 +100,6 @@ CREATE TABLE `dm_dim_minutes` (
 -- Dumping data for table `dm_dim_minutes`
 --
 
-/*!40000 ALTER TABLE `dm_dim_minutes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_minutes` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_min_date`
@@ -148,9 +144,7 @@ CREATE TABLE `dm_reports` (
 -- Dumping data for table `dm_reports`
 --
 
-/*!40000 ALTER TABLE `dm_reports` DISABLE KEYS */;
-INSERT INTO `dm_reports` VALUES (1,'http://localhost:8080/pentaho','admin','password','/','audit_login.prpt','audit_login.pdf','localhost',1121,'admin','admin','alfresco','Y'),(2,'http://localhost:8080/pentaho','admin','password','/','audit_creation.prpt','audit_creation.pdf','localhost',1121,'admin','admin','alfresco','Y'),(3,'http://localhost:8080/pentaho','admin','password','/','audit_use.prpt','audit_use.pdf','localhost',1121,'admin','admin','alfresco','Y'),(4,'http://localhost:8080/pentaho','admin','password','/','audit_topTen.prpt','audit_topTen.pdf','localhost',1121,'admin','admin','alfresco','Y'),(5,'http://localhost:8080/pentaho','admin','password','/','audit_details.prpt','audit_details.pdf','localhost',1121,'admin','admin','alfresco','Y'),(6,'http://localhost:8080/pentaho','admin','password','/','document_active_users.prpt','document_active_users.pdf','localhost',1121,'admin','admin','alfresco','Y'),(7,'http://localhost:8080/pentaho','admin','password','/','document_hours_of_activity.prpt','document_hours_of_activity.pdf','localhost',1121,'admin','admin','alfresco','Y'),(8,'http://localhost:8080/pentaho','admin','password','/','document_mime_types.prpt','document_mime_types.pdf','localhost',1121,'admin','admin','alfresco','Y'),(9,'http://localhost:8080/pentaho','admin','password','/','document_size.prpt','document_size.pdf','localhost',1121,'admin','admin','alfresco','Y'),(10,'http://localhost:8080/pentaho','admin','password','/','document_types.prpt','document_types.pdf','localhost',1121,'admin','admin','alfresco','Y'),(11,'http://localhost:8080/pentaho','admin','password','/','folder_types.prpt','folder_types.pdf','localhost',1121,'admin','admin','alfresco','Y');
-/*!40000 ALTER TABLE `dm_reports` ENABLE KEYS */;
+INSERT INTO `dm_reports` VALUES (1,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','audit_login.prpt','audit_login.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(2,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','audit_creation.prpt','audit_creation.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(3,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','audit_use.prpt','audit_use.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(4,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','audit_topTen.prpt','audit_topTen.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(5,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','audit_details.prpt','audit_details.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(6,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','document_active_users.prpt','document_active_users.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(7,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','document_hours_of_activity.prpt','document_hours_of_activity.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(8,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','document_mime_types.prpt','document_mime_types.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(9,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','document_size.prpt','document_size.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(10,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','document_types.prpt','document_types.pdf','192.168.1.7',121,'admin','admin','alfresco','Y'),(11,'http://localhost:8080/pentaho','admin','password','/public/AAAR/Reports','folder_types.prpt','folder_types.pdf','192.168.1.7',121,'admin','admin','alfresco','Y');
 
 --
 -- Temporary table structure for view `vw_dm_min_date_sub2`
@@ -200,8 +194,6 @@ CREATE TABLE `log_transformations` (
 -- Dumping data for table `log_transformations`
 --
 
-/*!40000 ALTER TABLE `log_transformations` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_transformations` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_dim_flag_latest_version`
@@ -243,8 +235,6 @@ CREATE TABLE `log_channels` (
 -- Dumping data for table `log_channels`
 --
 
-/*!40000 ALTER TABLE `log_channels` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_channels` ENABLE KEYS */;
 
 --
 -- Table structure for table `ope_audits`
@@ -274,8 +264,6 @@ CREATE TABLE `ope_audits` (
 -- Dumping data for table `ope_audits`
 --
 
-/*!40000 ALTER TABLE `ope_audits` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ope_audits` ENABLE KEYS */;
 
 --
 -- Table structure for table `stg_cmis_documents_partial`
@@ -319,8 +307,6 @@ CREATE TABLE `stg_cmis_documents_partial` (
 -- Dumping data for table `stg_cmis_documents_partial`
 --
 
-/*!40000 ALTER TABLE `stg_cmis_documents_partial` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stg_cmis_documents_partial` ENABLE KEYS */;
 
 --
 -- Table structure for table `log_job`
@@ -354,8 +340,6 @@ CREATE TABLE `log_job` (
 -- Dumping data for table `log_job`
 --
 
-/*!40000 ALTER TABLE `log_job` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_job` ENABLE KEYS */;
 
 --
 -- Table structure for table `ope_cmis_document_parent`
@@ -381,8 +365,6 @@ CREATE TABLE `ope_cmis_document_parent` (
 -- Dumping data for table `ope_cmis_document_parent`
 --
 
-/*!40000 ALTER TABLE `ope_cmis_document_parent` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ope_cmis_document_parent` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_paths`
@@ -412,8 +394,6 @@ CREATE TABLE `dm_dim_paths` (
 -- Dumping data for table `dm_dim_paths`
 --
 
-/*!40000 ALTER TABLE `dm_dim_paths` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_paths` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_actions`
@@ -437,8 +417,6 @@ CREATE TABLE `dm_dim_actions` (
 -- Dumping data for table `dm_dim_actions`
 --
 
-/*!40000 ALTER TABLE `dm_dim_actions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_actions` ENABLE KEYS */;
 
 --
 -- Table structure for table `log_performance`
@@ -470,8 +448,6 @@ CREATE TABLE `log_performance` (
 -- Dumping data for table `log_performance`
 --
 
-/*!40000 ALTER TABLE `log_performance` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_performance` ENABLE KEYS */;
 
 --
 -- Table structure for table `log_step`
@@ -501,8 +477,6 @@ CREATE TABLE `log_step` (
 -- Dumping data for table `log_step`
 --
 
-/*!40000 ALTER TABLE `log_step` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_step` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `generator_65536`
@@ -540,8 +514,6 @@ CREATE TABLE `stg_audits` (
 -- Dumping data for table `stg_audits`
 --
 
-/*!40000 ALTER TABLE `stg_audits` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stg_audits` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_dim_dates`
@@ -585,8 +557,6 @@ CREATE TABLE `dm_dim_dates` (
 -- Dumping data for table `dm_dim_dates`
 --
 
-/*!40000 ALTER TABLE `dm_dim_dates` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_dates` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_hours`
@@ -606,8 +576,6 @@ CREATE TABLE `dm_dim_hours` (
 -- Dumping data for table `dm_dim_hours`
 --
 
-/*!40000 ALTER TABLE `dm_dim_hours` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_hours` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_dim_minutes`
@@ -658,8 +626,6 @@ CREATE TABLE `dm_dim_years` (
 -- Dumping data for table `dm_dim_years`
 --
 
-/*!40000 ALTER TABLE `dm_dim_years` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_years` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `generator_256`
@@ -697,8 +663,6 @@ CREATE TABLE `dm_dim_mime_types` (
 -- Dumping data for table `dm_dim_mime_types`
 --
 
-/*!40000 ALTER TABLE `dm_dim_mime_types` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_mime_types` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_alfresco`
@@ -724,9 +688,7 @@ CREATE TABLE `dm_dim_alfresco` (
 -- Dumping data for table `dm_dim_alfresco`
 --
 
-/*!40000 ALTER TABLE `dm_dim_alfresco` DISABLE KEYS */;
-INSERT INTO `dm_dim_alfresco` VALUES (1,'Default','admin','admin','http://localhost:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=100000','/alfresco/service/api/cmis','Y');
-/*!40000 ALTER TABLE `dm_dim_alfresco` ENABLE KEYS */;
+INSERT INTO `dm_dim_alfresco` VALUES (1,'Default','admin','admin','http://192.168.1.7:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000','/alfresco/service/api/cmis','Y');
 
 --
 -- Table structure for table `dm_dim_node_types`
@@ -752,8 +714,6 @@ CREATE TABLE `dm_dim_node_types` (
 -- Dumping data for table `dm_dim_node_types`
 --
 
-/*!40000 ALTER TABLE `dm_dim_node_types` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_node_types` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_min_date_sub1`
@@ -791,8 +751,6 @@ CREATE TABLE `dm_dim_users` (
 -- Dumping data for table `dm_dim_users`
 --
 
-/*!40000 ALTER TABLE `dm_dim_users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_users` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_months`
@@ -816,8 +774,6 @@ CREATE TABLE `dm_dim_months` (
 -- Dumping data for table `dm_dim_months`
 --
 
-/*!40000 ALTER TABLE `dm_dim_months` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_months` ENABLE KEYS */;
 
 --
 -- Table structure for table `dm_dim_folders`
@@ -866,8 +822,6 @@ CREATE TABLE `dm_dim_folders` (
 -- Dumping data for table `dm_dim_folders`
 --
 
-/*!40000 ALTER TABLE `dm_dim_folders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_folders` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `vw_dm_dim_flag_latest_major_version`
@@ -924,8 +878,6 @@ CREATE TABLE `stg_cmis_documents` (
 -- Dumping data for table `stg_cmis_documents`
 --
 
-/*!40000 ALTER TABLE `stg_cmis_documents` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stg_cmis_documents` ENABLE KEYS */;
 
 --
 -- Table structure for table `stg_cmis_folders_partial`
@@ -958,8 +910,6 @@ CREATE TABLE `stg_cmis_folders_partial` (
 -- Dumping data for table `stg_cmis_folders_partial`
 --
 
-/*!40000 ALTER TABLE `stg_cmis_folders_partial` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stg_cmis_folders_partial` ENABLE KEYS */;
 
 --
 -- Table structure for table `stg_cmis_folders`
@@ -992,8 +942,6 @@ CREATE TABLE `stg_cmis_folders` (
 -- Dumping data for table `stg_cmis_folders`
 --
 
-/*!40000 ALTER TABLE `stg_cmis_folders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stg_cmis_folders` ENABLE KEYS */;
 
 --
 -- Temporary table structure for view `generator_16`
@@ -1063,8 +1011,32 @@ CREATE TABLE `dm_dim_documents` (
 -- Dumping data for table `dm_dim_documents`
 --
 
-/*!40000 ALTER TABLE `dm_dim_documents` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dm_dim_documents` ENABLE KEYS */;
+
+--
+-- Table structure for table `dm_custom_metadata`
+--
+
+DROP TABLE IF EXISTS `dm_custom_metadata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dm_custom_metadata` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `is_document_type` char(1) NOT NULL DEFAULT 'N',
+  `is_folder_type` char(1) NOT NULL DEFAULT 'N',
+  `is_aspect` char(1) NOT NULL DEFAULT 'N',
+  `is_active` char(1) NOT NULL DEFAULT 'Y',
+  `alfresco_id` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_dm_custom_metadata_dm_dim_alfresco` (`alfresco_id`),
+  CONSTRAINT `fk_dm_custom_metadata_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dm_custom_metadata`
+--
+
 
 --
 -- Temporary table structure for view `vw_dm_dim_documents`
@@ -1142,8 +1114,6 @@ CREATE TABLE `log_jobentry` (
 -- Dumping data for table `log_jobentry`
 --
 
-/*!40000 ALTER TABLE `log_jobentry` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_jobentry` ENABLE KEYS */;
 
 --
 -- Final view structure for view `vw_dm_dim_flag_major_version`
@@ -1439,3 +1409,4 @@ CREATE TABLE `log_jobentry` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2014-05-12 19:42:11
