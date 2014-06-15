@@ -958,7 +958,7 @@ ALTER TABLE public.vw_dm_min_date OWNER TO postgres;
 -- Data for Name: dm_dim_alfresco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO dm_dim_alfresco (id, "desc", login, password, url, url_audit_suffix, url_cmis_suffix, is_active) VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://192.168.1.7:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000', '/alfresco/service/api/cmis', 'Y');
+INSERT INTO dm_dim_alfresco (id, "desc", login, password, url, url_audit_suffix, url_cmis_suffix, is_active) VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://192.168.1.7:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000', '/alfresco/cmisatom', 'Y');
 
 
 --

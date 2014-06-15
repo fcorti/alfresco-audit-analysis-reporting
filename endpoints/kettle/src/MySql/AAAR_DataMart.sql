@@ -688,7 +688,7 @@ CREATE TABLE `dm_dim_alfresco` (
 -- Dumping data for table `dm_dim_alfresco`
 --
 
-INSERT INTO `dm_dim_alfresco` VALUES (1,'Default','admin','admin','http://192.168.1.7:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000','/alfresco/service/api/cmis','Y');
+INSERT INTO `dm_dim_alfresco` VALUES (1,'Default','admin','admin','http://192.168.1.7:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000','/alfresco/cmisatom','Y');
 
 --
 -- Table structure for table `dm_dim_node_types`
