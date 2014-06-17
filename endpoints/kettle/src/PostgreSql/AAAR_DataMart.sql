@@ -462,7 +462,7 @@ CREATE TABLE dm_reports (
     prpt_name character varying(1024) NOT NULL,
     name character varying DEFAULT 1024 NOT NULL,
     alfresco_ftp character varying DEFAULT 1024 NOT NULL,
-    alfresco_port smallint NOT NULL,
+    alfresco_port integer NOT NULL,
     alfresco_login character varying DEFAULT 100 NOT NULL,
     alfresco_password character varying DEFAULT 100 NOT NULL,
     alfresco_path character varying DEFAULT 1024 NOT NULL,

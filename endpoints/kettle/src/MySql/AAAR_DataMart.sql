@@ -131,7 +131,7 @@ CREATE TABLE `dm_reports` (
   `prpt_name` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `alfresco_ftp` varchar(255) NOT NULL,
-  `alfresco_port` smallint(16) NOT NULL,
+  `alfresco_port` mediumint(9) NOT NULL,
   `alfresco_login` varchar(255) NOT NULL,
   `alfresco_password` varchar(255) NOT NULL,
   `alfresco_path` varchar(255) NOT NULL,
