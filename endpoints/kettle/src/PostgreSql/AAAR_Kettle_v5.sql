@@ -2,9 +2,9 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.1.10
--- Dumped by pg_dump version 9.1.10
--- Started on 2014-06-17 22:10:16 CEST
+-- Dumped from database version 9.1.13
+-- Dumped by pg_dump version 9.1.13
+-- Started on 2014-06-18 01:15:24 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -36,7 +36,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 161 (class 1259 OID 16886)
+-- TOC entry 161 (class 1259 OID 18926)
 -- Dependencies: 6
 -- Name: r_cluster; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -55,7 +55,7 @@ CREATE TABLE r_cluster (
 ALTER TABLE public.r_cluster OWNER TO postgres;
 
 --
--- TOC entry 162 (class 1259 OID 16892)
+-- TOC entry 162 (class 1259 OID 18932)
 -- Dependencies: 161 6
 -- Name: r_cluster_id_cluster_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -80,7 +80,7 @@ ALTER SEQUENCE r_cluster_id_cluster_seq OWNED BY r_cluster.id_cluster;
 
 
 --
--- TOC entry 163 (class 1259 OID 16894)
+-- TOC entry 163 (class 1259 OID 18934)
 -- Dependencies: 6
 -- Name: r_cluster_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -95,7 +95,7 @@ CREATE TABLE r_cluster_slave (
 ALTER TABLE public.r_cluster_slave OWNER TO postgres;
 
 --
--- TOC entry 164 (class 1259 OID 16897)
+-- TOC entry 164 (class 1259 OID 18937)
 -- Dependencies: 6 163
 -- Name: r_cluster_slave_id_cluster_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -120,7 +120,7 @@ ALTER SEQUENCE r_cluster_slave_id_cluster_slave_seq OWNED BY r_cluster_slave.id_
 
 
 --
--- TOC entry 165 (class 1259 OID 16899)
+-- TOC entry 165 (class 1259 OID 18939)
 -- Dependencies: 6
 -- Name: r_condition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -140,7 +140,7 @@ CREATE TABLE r_condition (
 ALTER TABLE public.r_condition OWNER TO postgres;
 
 --
--- TOC entry 166 (class 1259 OID 16905)
+-- TOC entry 166 (class 1259 OID 18945)
 -- Dependencies: 165 6
 -- Name: r_condition_id_condition_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -165,7 +165,7 @@ ALTER SEQUENCE r_condition_id_condition_seq OWNED BY r_condition.id_condition;
 
 
 --
--- TOC entry 167 (class 1259 OID 16907)
+-- TOC entry 167 (class 1259 OID 18947)
 -- Dependencies: 6
 -- Name: r_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -189,7 +189,7 @@ CREATE TABLE r_database (
 ALTER TABLE public.r_database OWNER TO postgres;
 
 --
--- TOC entry 168 (class 1259 OID 16913)
+-- TOC entry 168 (class 1259 OID 18953)
 -- Dependencies: 6
 -- Name: r_database_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -205,7 +205,7 @@ CREATE TABLE r_database_attribute (
 ALTER TABLE public.r_database_attribute OWNER TO postgres;
 
 --
--- TOC entry 169 (class 1259 OID 16919)
+-- TOC entry 169 (class 1259 OID 18959)
 -- Dependencies: 6 168
 -- Name: r_database_attribute_id_database_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -230,7 +230,7 @@ ALTER SEQUENCE r_database_attribute_id_database_attribute_seq OWNED BY r_databas
 
 
 --
--- TOC entry 170 (class 1259 OID 16921)
+-- TOC entry 170 (class 1259 OID 18961)
 -- Dependencies: 6
 -- Name: r_database_contype; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -245,7 +245,7 @@ CREATE TABLE r_database_contype (
 ALTER TABLE public.r_database_contype OWNER TO postgres;
 
 --
--- TOC entry 171 (class 1259 OID 16927)
+-- TOC entry 171 (class 1259 OID 18967)
 -- Dependencies: 6 170
 -- Name: r_database_contype_id_database_contype_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -270,7 +270,7 @@ ALTER SEQUENCE r_database_contype_id_database_contype_seq OWNED BY r_database_co
 
 
 --
--- TOC entry 172 (class 1259 OID 16929)
+-- TOC entry 172 (class 1259 OID 18969)
 -- Dependencies: 6 167
 -- Name: r_database_id_database_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -295,7 +295,7 @@ ALTER SEQUENCE r_database_id_database_seq OWNED BY r_database.id_database;
 
 
 --
--- TOC entry 173 (class 1259 OID 16931)
+-- TOC entry 173 (class 1259 OID 18971)
 -- Dependencies: 6
 -- Name: r_database_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -310,7 +310,7 @@ CREATE TABLE r_database_type (
 ALTER TABLE public.r_database_type OWNER TO postgres;
 
 --
--- TOC entry 174 (class 1259 OID 16937)
+-- TOC entry 174 (class 1259 OID 18977)
 -- Dependencies: 6 173
 -- Name: r_database_type_id_database_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -335,7 +335,7 @@ ALTER SEQUENCE r_database_type_id_database_type_seq OWNED BY r_database_type.id_
 
 
 --
--- TOC entry 175 (class 1259 OID 16939)
+-- TOC entry 175 (class 1259 OID 18979)
 -- Dependencies: 6
 -- Name: r_dependency; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -352,7 +352,7 @@ CREATE TABLE r_dependency (
 ALTER TABLE public.r_dependency OWNER TO postgres;
 
 --
--- TOC entry 176 (class 1259 OID 16945)
+-- TOC entry 176 (class 1259 OID 18985)
 -- Dependencies: 175 6
 -- Name: r_dependency_id_dependency_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -377,7 +377,7 @@ ALTER SEQUENCE r_dependency_id_dependency_seq OWNED BY r_dependency.id_dependenc
 
 
 --
--- TOC entry 177 (class 1259 OID 16947)
+-- TOC entry 177 (class 1259 OID 18987)
 -- Dependencies: 6
 -- Name: r_directory; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -392,7 +392,7 @@ CREATE TABLE r_directory (
 ALTER TABLE public.r_directory OWNER TO postgres;
 
 --
--- TOC entry 178 (class 1259 OID 16950)
+-- TOC entry 178 (class 1259 OID 18990)
 -- Dependencies: 6 177
 -- Name: r_directory_id_directory_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -417,7 +417,7 @@ ALTER SEQUENCE r_directory_id_directory_seq OWNED BY r_directory.id_directory;
 
 
 --
--- TOC entry 179 (class 1259 OID 16952)
+-- TOC entry 179 (class 1259 OID 18992)
 -- Dependencies: 6
 -- Name: r_element; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -432,7 +432,7 @@ CREATE TABLE r_element (
 ALTER TABLE public.r_element OWNER TO postgres;
 
 --
--- TOC entry 180 (class 1259 OID 16958)
+-- TOC entry 180 (class 1259 OID 18998)
 -- Dependencies: 6
 -- Name: r_element_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -449,7 +449,7 @@ CREATE TABLE r_element_attribute (
 ALTER TABLE public.r_element_attribute OWNER TO postgres;
 
 --
--- TOC entry 181 (class 1259 OID 16964)
+-- TOC entry 181 (class 1259 OID 19004)
 -- Dependencies: 6 180
 -- Name: r_element_attribute_id_element_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -474,7 +474,7 @@ ALTER SEQUENCE r_element_attribute_id_element_attribute_seq OWNED BY r_element_a
 
 
 --
--- TOC entry 182 (class 1259 OID 16966)
+-- TOC entry 182 (class 1259 OID 19006)
 -- Dependencies: 179 6
 -- Name: r_element_id_element_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -499,7 +499,7 @@ ALTER SEQUENCE r_element_id_element_seq OWNED BY r_element.id_element;
 
 
 --
--- TOC entry 183 (class 1259 OID 16968)
+-- TOC entry 183 (class 1259 OID 19008)
 -- Dependencies: 6
 -- Name: r_element_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -515,7 +515,7 @@ CREATE TABLE r_element_type (
 ALTER TABLE public.r_element_type OWNER TO postgres;
 
 --
--- TOC entry 184 (class 1259 OID 16974)
+-- TOC entry 184 (class 1259 OID 19014)
 -- Dependencies: 183 6
 -- Name: r_element_type_id_element_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -540,7 +540,7 @@ ALTER SEQUENCE r_element_type_id_element_type_seq OWNED BY r_element_type.id_ele
 
 
 --
--- TOC entry 185 (class 1259 OID 16976)
+-- TOC entry 185 (class 1259 OID 19016)
 -- Dependencies: 6
 -- Name: r_job; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -569,7 +569,7 @@ CREATE TABLE r_job (
 ALTER TABLE public.r_job OWNER TO postgres;
 
 --
--- TOC entry 186 (class 1259 OID 16982)
+-- TOC entry 186 (class 1259 OID 19022)
 -- Dependencies: 6
 -- Name: r_job_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -587,7 +587,7 @@ CREATE TABLE r_job_attribute (
 ALTER TABLE public.r_job_attribute OWNER TO postgres;
 
 --
--- TOC entry 187 (class 1259 OID 16988)
+-- TOC entry 187 (class 1259 OID 19028)
 -- Dependencies: 186 6
 -- Name: r_job_attribute_id_job_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -612,7 +612,7 @@ ALTER SEQUENCE r_job_attribute_id_job_attribute_seq OWNED BY r_job_attribute.id_
 
 
 --
--- TOC entry 188 (class 1259 OID 16990)
+-- TOC entry 188 (class 1259 OID 19030)
 -- Dependencies: 6
 -- Name: r_job_hop; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -631,7 +631,7 @@ CREATE TABLE r_job_hop (
 ALTER TABLE public.r_job_hop OWNER TO postgres;
 
 --
--- TOC entry 189 (class 1259 OID 16993)
+-- TOC entry 189 (class 1259 OID 19033)
 -- Dependencies: 6 188
 -- Name: r_job_hop_id_job_hop_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -656,7 +656,7 @@ ALTER SEQUENCE r_job_hop_id_job_hop_seq OWNED BY r_job_hop.id_job_hop;
 
 
 --
--- TOC entry 190 (class 1259 OID 16995)
+-- TOC entry 190 (class 1259 OID 19035)
 -- Dependencies: 185 6
 -- Name: r_job_id_job_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -681,7 +681,7 @@ ALTER SEQUENCE r_job_id_job_seq OWNED BY r_job.id_job;
 
 
 --
--- TOC entry 191 (class 1259 OID 16997)
+-- TOC entry 191 (class 1259 OID 19037)
 -- Dependencies: 6
 -- Name: r_job_lock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -698,7 +698,7 @@ CREATE TABLE r_job_lock (
 ALTER TABLE public.r_job_lock OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 17003)
+-- TOC entry 192 (class 1259 OID 19043)
 -- Dependencies: 6 191
 -- Name: r_job_lock_id_job_lock_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -723,7 +723,7 @@ ALTER SEQUENCE r_job_lock_id_job_lock_seq OWNED BY r_job_lock.id_job_lock;
 
 
 --
--- TOC entry 193 (class 1259 OID 17005)
+-- TOC entry 193 (class 1259 OID 19045)
 -- Dependencies: 6
 -- Name: r_job_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -737,7 +737,7 @@ CREATE TABLE r_job_note (
 ALTER TABLE public.r_job_note OWNER TO postgres;
 
 --
--- TOC entry 194 (class 1259 OID 17008)
+-- TOC entry 194 (class 1259 OID 19048)
 -- Dependencies: 6
 -- Name: r_jobentry; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -754,7 +754,7 @@ CREATE TABLE r_jobentry (
 ALTER TABLE public.r_jobentry OWNER TO postgres;
 
 --
--- TOC entry 195 (class 1259 OID 17014)
+-- TOC entry 195 (class 1259 OID 19054)
 -- Dependencies: 6
 -- Name: r_jobentry_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -773,7 +773,7 @@ CREATE TABLE r_jobentry_attribute (
 ALTER TABLE public.r_jobentry_attribute OWNER TO postgres;
 
 --
--- TOC entry 196 (class 1259 OID 17020)
+-- TOC entry 196 (class 1259 OID 19060)
 -- Dependencies: 6 195
 -- Name: r_jobentry_attribute_id_jobentry_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -798,7 +798,7 @@ ALTER SEQUENCE r_jobentry_attribute_id_jobentry_attribute_seq OWNED BY r_jobentr
 
 
 --
--- TOC entry 197 (class 1259 OID 17022)
+-- TOC entry 197 (class 1259 OID 19062)
 -- Dependencies: 6
 -- Name: r_jobentry_copy; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -819,7 +819,7 @@ CREATE TABLE r_jobentry_copy (
 ALTER TABLE public.r_jobentry_copy OWNER TO postgres;
 
 --
--- TOC entry 198 (class 1259 OID 17025)
+-- TOC entry 198 (class 1259 OID 19065)
 -- Dependencies: 6 197
 -- Name: r_jobentry_copy_id_jobentry_copy_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -844,7 +844,7 @@ ALTER SEQUENCE r_jobentry_copy_id_jobentry_copy_seq OWNED BY r_jobentry_copy.id_
 
 
 --
--- TOC entry 199 (class 1259 OID 17027)
+-- TOC entry 199 (class 1259 OID 19067)
 -- Dependencies: 6
 -- Name: r_jobentry_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -859,7 +859,7 @@ CREATE TABLE r_jobentry_database (
 ALTER TABLE public.r_jobentry_database OWNER TO postgres;
 
 --
--- TOC entry 200 (class 1259 OID 17030)
+-- TOC entry 200 (class 1259 OID 19070)
 -- Dependencies: 194 6
 -- Name: r_jobentry_id_jobentry_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -884,7 +884,7 @@ ALTER SEQUENCE r_jobentry_id_jobentry_seq OWNED BY r_jobentry.id_jobentry;
 
 
 --
--- TOC entry 201 (class 1259 OID 17032)
+-- TOC entry 201 (class 1259 OID 19072)
 -- Dependencies: 6
 -- Name: r_jobentry_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -899,7 +899,7 @@ CREATE TABLE r_jobentry_type (
 ALTER TABLE public.r_jobentry_type OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 17038)
+-- TOC entry 202 (class 1259 OID 19078)
 -- Dependencies: 201 6
 -- Name: r_jobentry_type_id_jobentry_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -924,7 +924,7 @@ ALTER SEQUENCE r_jobentry_type_id_jobentry_type_seq OWNED BY r_jobentry_type.id_
 
 
 --
--- TOC entry 203 (class 1259 OID 17040)
+-- TOC entry 203 (class 1259 OID 19080)
 -- Dependencies: 6
 -- Name: r_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -946,7 +946,7 @@ CREATE TABLE r_log (
 ALTER TABLE public.r_log OWNER TO postgres;
 
 --
--- TOC entry 204 (class 1259 OID 17046)
+-- TOC entry 204 (class 1259 OID 19086)
 -- Dependencies: 6 203
 -- Name: r_log_id_log_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -971,7 +971,7 @@ ALTER SEQUENCE r_log_id_log_seq OWNED BY r_log.id_log;
 
 
 --
--- TOC entry 205 (class 1259 OID 17048)
+-- TOC entry 205 (class 1259 OID 19088)
 -- Dependencies: 6
 -- Name: r_loglevel; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -986,7 +986,7 @@ CREATE TABLE r_loglevel (
 ALTER TABLE public.r_loglevel OWNER TO postgres;
 
 --
--- TOC entry 206 (class 1259 OID 17054)
+-- TOC entry 206 (class 1259 OID 19094)
 -- Dependencies: 205 6
 -- Name: r_loglevel_id_loglevel_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1011,7 +1011,7 @@ ALTER SEQUENCE r_loglevel_id_loglevel_seq OWNED BY r_loglevel.id_loglevel;
 
 
 --
--- TOC entry 207 (class 1259 OID 17056)
+-- TOC entry 207 (class 1259 OID 19096)
 -- Dependencies: 6
 -- Name: r_namespace; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1025,7 +1025,7 @@ CREATE TABLE r_namespace (
 ALTER TABLE public.r_namespace OWNER TO postgres;
 
 --
--- TOC entry 208 (class 1259 OID 17062)
+-- TOC entry 208 (class 1259 OID 19102)
 -- Dependencies: 207 6
 -- Name: r_namespace_id_namespace_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1050,7 +1050,7 @@ ALTER SEQUENCE r_namespace_id_namespace_seq OWNED BY r_namespace.id_namespace;
 
 
 --
--- TOC entry 209 (class 1259 OID 17064)
+-- TOC entry 209 (class 1259 OID 19104)
 -- Dependencies: 6
 -- Name: r_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1082,7 +1082,7 @@ CREATE TABLE r_note (
 ALTER TABLE public.r_note OWNER TO postgres;
 
 --
--- TOC entry 210 (class 1259 OID 17070)
+-- TOC entry 210 (class 1259 OID 19110)
 -- Dependencies: 6 209
 -- Name: r_note_id_note_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1107,7 +1107,7 @@ ALTER SEQUENCE r_note_id_note_seq OWNED BY r_note.id_note;
 
 
 --
--- TOC entry 211 (class 1259 OID 17072)
+-- TOC entry 211 (class 1259 OID 19112)
 -- Dependencies: 6
 -- Name: r_partition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1122,7 +1122,7 @@ CREATE TABLE r_partition (
 ALTER TABLE public.r_partition OWNER TO postgres;
 
 --
--- TOC entry 212 (class 1259 OID 17075)
+-- TOC entry 212 (class 1259 OID 19115)
 -- Dependencies: 211 6
 -- Name: r_partition_id_partition_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1147,7 +1147,7 @@ ALTER SEQUENCE r_partition_id_partition_seq OWNED BY r_partition.id_partition;
 
 
 --
--- TOC entry 213 (class 1259 OID 17077)
+-- TOC entry 213 (class 1259 OID 19117)
 -- Dependencies: 6
 -- Name: r_partition_schema; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1163,7 +1163,7 @@ CREATE TABLE r_partition_schema (
 ALTER TABLE public.r_partition_schema OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1259 OID 17083)
+-- TOC entry 214 (class 1259 OID 19123)
 -- Dependencies: 213 6
 -- Name: r_partition_schema_id_partition_schema_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1188,7 +1188,7 @@ ALTER SEQUENCE r_partition_schema_id_partition_schema_seq OWNED BY r_partition_s
 
 
 --
--- TOC entry 215 (class 1259 OID 17085)
+-- TOC entry 215 (class 1259 OID 19125)
 -- Dependencies: 6
 -- Name: r_repository_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1205,7 +1205,7 @@ CREATE TABLE r_repository_log (
 ALTER TABLE public.r_repository_log OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 17091)
+-- TOC entry 216 (class 1259 OID 19131)
 -- Dependencies: 215 6
 -- Name: r_repository_log_id_repository_log_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1230,7 +1230,7 @@ ALTER SEQUENCE r_repository_log_id_repository_log_seq OWNED BY r_repository_log.
 
 
 --
--- TOC entry 217 (class 1259 OID 17093)
+-- TOC entry 217 (class 1259 OID 19133)
 -- Dependencies: 6
 -- Name: r_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1253,7 +1253,7 @@ CREATE TABLE r_slave (
 ALTER TABLE public.r_slave OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 17099)
+-- TOC entry 218 (class 1259 OID 19139)
 -- Dependencies: 6 217
 -- Name: r_slave_id_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1278,7 +1278,7 @@ ALTER SEQUENCE r_slave_id_slave_seq OWNED BY r_slave.id_slave;
 
 
 --
--- TOC entry 219 (class 1259 OID 17101)
+-- TOC entry 219 (class 1259 OID 19141)
 -- Dependencies: 6
 -- Name: r_step; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1301,7 +1301,7 @@ CREATE TABLE r_step (
 ALTER TABLE public.r_step OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 17107)
+-- TOC entry 220 (class 1259 OID 19147)
 -- Dependencies: 6
 -- Name: r_step_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1320,7 +1320,7 @@ CREATE TABLE r_step_attribute (
 ALTER TABLE public.r_step_attribute OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 17113)
+-- TOC entry 221 (class 1259 OID 19153)
 -- Dependencies: 6 220
 -- Name: r_step_attribute_id_step_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1345,7 +1345,7 @@ ALTER SEQUENCE r_step_attribute_id_step_attribute_seq OWNED BY r_step_attribute.
 
 
 --
--- TOC entry 222 (class 1259 OID 17115)
+-- TOC entry 222 (class 1259 OID 19155)
 -- Dependencies: 6
 -- Name: r_step_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1360,7 +1360,7 @@ CREATE TABLE r_step_database (
 ALTER TABLE public.r_step_database OWNER TO postgres;
 
 --
--- TOC entry 223 (class 1259 OID 17118)
+-- TOC entry 223 (class 1259 OID 19158)
 -- Dependencies: 219 6
 -- Name: r_step_id_step_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1385,7 +1385,7 @@ ALTER SEQUENCE r_step_id_step_seq OWNED BY r_step.id_step;
 
 
 --
--- TOC entry 224 (class 1259 OID 17120)
+-- TOC entry 224 (class 1259 OID 19160)
 -- Dependencies: 6
 -- Name: r_step_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1401,7 +1401,7 @@ CREATE TABLE r_step_type (
 ALTER TABLE public.r_step_type OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 17126)
+-- TOC entry 225 (class 1259 OID 19166)
 -- Dependencies: 6 224
 -- Name: r_step_type_id_step_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1426,7 +1426,7 @@ ALTER SEQUENCE r_step_type_id_step_type_seq OWNED BY r_step_type.id_step_type;
 
 
 --
--- TOC entry 226 (class 1259 OID 17128)
+-- TOC entry 226 (class 1259 OID 19168)
 -- Dependencies: 6
 -- Name: r_trans_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1444,7 +1444,7 @@ CREATE TABLE r_trans_attribute (
 ALTER TABLE public.r_trans_attribute OWNER TO postgres;
 
 --
--- TOC entry 227 (class 1259 OID 17134)
+-- TOC entry 227 (class 1259 OID 19174)
 -- Dependencies: 6 226
 -- Name: r_trans_attribute_id_trans_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1469,7 +1469,7 @@ ALTER SEQUENCE r_trans_attribute_id_trans_attribute_seq OWNED BY r_trans_attribu
 
 
 --
--- TOC entry 228 (class 1259 OID 17136)
+-- TOC entry 228 (class 1259 OID 19176)
 -- Dependencies: 6
 -- Name: r_trans_cluster; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1484,7 +1484,7 @@ CREATE TABLE r_trans_cluster (
 ALTER TABLE public.r_trans_cluster OWNER TO postgres;
 
 --
--- TOC entry 229 (class 1259 OID 17139)
+-- TOC entry 229 (class 1259 OID 19179)
 -- Dependencies: 6 228
 -- Name: r_trans_cluster_id_trans_cluster_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1509,7 +1509,7 @@ ALTER SEQUENCE r_trans_cluster_id_trans_cluster_seq OWNED BY r_trans_cluster.id_
 
 
 --
--- TOC entry 230 (class 1259 OID 17141)
+-- TOC entry 230 (class 1259 OID 19181)
 -- Dependencies: 6
 -- Name: r_trans_hop; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1526,7 +1526,7 @@ CREATE TABLE r_trans_hop (
 ALTER TABLE public.r_trans_hop OWNER TO postgres;
 
 --
--- TOC entry 231 (class 1259 OID 17144)
+-- TOC entry 231 (class 1259 OID 19184)
 -- Dependencies: 230 6
 -- Name: r_trans_hop_id_trans_hop_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1551,7 +1551,7 @@ ALTER SEQUENCE r_trans_hop_id_trans_hop_seq OWNED BY r_trans_hop.id_trans_hop;
 
 
 --
--- TOC entry 232 (class 1259 OID 17146)
+-- TOC entry 232 (class 1259 OID 19186)
 -- Dependencies: 6
 -- Name: r_trans_lock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1568,7 +1568,7 @@ CREATE TABLE r_trans_lock (
 ALTER TABLE public.r_trans_lock OWNER TO postgres;
 
 --
--- TOC entry 233 (class 1259 OID 17152)
+-- TOC entry 233 (class 1259 OID 19192)
 -- Dependencies: 232 6
 -- Name: r_trans_lock_id_trans_lock_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1593,7 +1593,7 @@ ALTER SEQUENCE r_trans_lock_id_trans_lock_seq OWNED BY r_trans_lock.id_trans_loc
 
 
 --
--- TOC entry 234 (class 1259 OID 17154)
+-- TOC entry 234 (class 1259 OID 19194)
 -- Dependencies: 6
 -- Name: r_trans_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1607,7 +1607,7 @@ CREATE TABLE r_trans_note (
 ALTER TABLE public.r_trans_note OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1259 OID 17157)
+-- TOC entry 235 (class 1259 OID 19197)
 -- Dependencies: 6
 -- Name: r_trans_partition_schema; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1622,7 +1622,7 @@ CREATE TABLE r_trans_partition_schema (
 ALTER TABLE public.r_trans_partition_schema OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1259 OID 17160)
+-- TOC entry 236 (class 1259 OID 19200)
 -- Dependencies: 6 235
 -- Name: r_trans_partition_schema_id_trans_partition_schema_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1647,7 +1647,7 @@ ALTER SEQUENCE r_trans_partition_schema_id_trans_partition_schema_seq OWNED BY r
 
 
 --
--- TOC entry 237 (class 1259 OID 17162)
+-- TOC entry 237 (class 1259 OID 19202)
 -- Dependencies: 6
 -- Name: r_trans_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1662,7 +1662,7 @@ CREATE TABLE r_trans_slave (
 ALTER TABLE public.r_trans_slave OWNER TO postgres;
 
 --
--- TOC entry 238 (class 1259 OID 17165)
+-- TOC entry 238 (class 1259 OID 19205)
 -- Dependencies: 237 6
 -- Name: r_trans_slave_id_trans_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1687,7 +1687,7 @@ ALTER SEQUENCE r_trans_slave_id_trans_slave_seq OWNED BY r_trans_slave.id_trans_
 
 
 --
--- TOC entry 239 (class 1259 OID 17167)
+-- TOC entry 239 (class 1259 OID 19207)
 -- Dependencies: 6
 -- Name: r_trans_step_condition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1702,7 +1702,7 @@ CREATE TABLE r_trans_step_condition (
 ALTER TABLE public.r_trans_step_condition OWNER TO postgres;
 
 --
--- TOC entry 240 (class 1259 OID 17170)
+-- TOC entry 240 (class 1259 OID 19210)
 -- Dependencies: 6
 -- Name: r_transformation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1740,7 +1740,7 @@ CREATE TABLE r_transformation (
 ALTER TABLE public.r_transformation OWNER TO postgres;
 
 --
--- TOC entry 241 (class 1259 OID 17176)
+-- TOC entry 241 (class 1259 OID 19216)
 -- Dependencies: 240 6
 -- Name: r_transformation_id_transformation_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1765,7 +1765,7 @@ ALTER SEQUENCE r_transformation_id_transformation_seq OWNED BY r_transformation.
 
 
 --
--- TOC entry 242 (class 1259 OID 17178)
+-- TOC entry 242 (class 1259 OID 19218)
 -- Dependencies: 6
 -- Name: r_user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1783,7 +1783,7 @@ CREATE TABLE r_user (
 ALTER TABLE public.r_user OWNER TO postgres;
 
 --
--- TOC entry 243 (class 1259 OID 17184)
+-- TOC entry 243 (class 1259 OID 19224)
 -- Dependencies: 242 6
 -- Name: r_user_id_user_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1808,7 +1808,7 @@ ALTER SEQUENCE r_user_id_user_seq OWNED BY r_user.id_user;
 
 
 --
--- TOC entry 244 (class 1259 OID 17186)
+-- TOC entry 244 (class 1259 OID 19226)
 -- Dependencies: 6
 -- Name: r_value; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1825,7 +1825,7 @@ CREATE TABLE r_value (
 ALTER TABLE public.r_value OWNER TO postgres;
 
 --
--- TOC entry 245 (class 1259 OID 17192)
+-- TOC entry 245 (class 1259 OID 19232)
 -- Dependencies: 244 6
 -- Name: r_value_id_value_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1850,7 +1850,7 @@ ALTER SEQUENCE r_value_id_value_seq OWNED BY r_value.id_value;
 
 
 --
--- TOC entry 246 (class 1259 OID 17194)
+-- TOC entry 246 (class 1259 OID 19234)
 -- Dependencies: 6
 -- Name: r_version; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1867,7 +1867,7 @@ CREATE TABLE r_version (
 ALTER TABLE public.r_version OWNER TO postgres;
 
 --
--- TOC entry 247 (class 1259 OID 17197)
+-- TOC entry 247 (class 1259 OID 19237)
 -- Dependencies: 6 246
 -- Name: r_version_id_version_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
@@ -1892,7 +1892,7 @@ ALTER SEQUENCE r_version_id_version_seq OWNED BY r_version.id_version;
 
 
 --
--- TOC entry 2078 (class 2604 OID 17199)
+-- TOC entry 2078 (class 2604 OID 19239)
 -- Dependencies: 162 161
 -- Name: id_cluster; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1901,7 +1901,7 @@ ALTER TABLE ONLY r_cluster ALTER COLUMN id_cluster SET DEFAULT nextval('r_cluste
 
 
 --
--- TOC entry 2079 (class 2604 OID 17200)
+-- TOC entry 2079 (class 2604 OID 19240)
 -- Dependencies: 164 163
 -- Name: id_cluster_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1910,7 +1910,7 @@ ALTER TABLE ONLY r_cluster_slave ALTER COLUMN id_cluster_slave SET DEFAULT nextv
 
 
 --
--- TOC entry 2080 (class 2604 OID 17201)
+-- TOC entry 2080 (class 2604 OID 19241)
 -- Dependencies: 166 165
 -- Name: id_condition; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1919,7 +1919,7 @@ ALTER TABLE ONLY r_condition ALTER COLUMN id_condition SET DEFAULT nextval('r_co
 
 
 --
--- TOC entry 2081 (class 2604 OID 17202)
+-- TOC entry 2081 (class 2604 OID 19242)
 -- Dependencies: 172 167
 -- Name: id_database; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1928,7 +1928,7 @@ ALTER TABLE ONLY r_database ALTER COLUMN id_database SET DEFAULT nextval('r_data
 
 
 --
--- TOC entry 2082 (class 2604 OID 17203)
+-- TOC entry 2082 (class 2604 OID 19243)
 -- Dependencies: 169 168
 -- Name: id_database_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1937,7 +1937,7 @@ ALTER TABLE ONLY r_database_attribute ALTER COLUMN id_database_attribute SET DEF
 
 
 --
--- TOC entry 2083 (class 2604 OID 17204)
+-- TOC entry 2083 (class 2604 OID 19244)
 -- Dependencies: 171 170
 -- Name: id_database_contype; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1946,7 +1946,7 @@ ALTER TABLE ONLY r_database_contype ALTER COLUMN id_database_contype SET DEFAULT
 
 
 --
--- TOC entry 2084 (class 2604 OID 17205)
+-- TOC entry 2084 (class 2604 OID 19245)
 -- Dependencies: 174 173
 -- Name: id_database_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1955,7 +1955,7 @@ ALTER TABLE ONLY r_database_type ALTER COLUMN id_database_type SET DEFAULT nextv
 
 
 --
--- TOC entry 2085 (class 2604 OID 17206)
+-- TOC entry 2085 (class 2604 OID 19246)
 -- Dependencies: 176 175
 -- Name: id_dependency; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1964,7 +1964,7 @@ ALTER TABLE ONLY r_dependency ALTER COLUMN id_dependency SET DEFAULT nextval('r_
 
 
 --
--- TOC entry 2086 (class 2604 OID 17207)
+-- TOC entry 2086 (class 2604 OID 19247)
 -- Dependencies: 178 177
 -- Name: id_directory; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1973,7 +1973,7 @@ ALTER TABLE ONLY r_directory ALTER COLUMN id_directory SET DEFAULT nextval('r_di
 
 
 --
--- TOC entry 2087 (class 2604 OID 17208)
+-- TOC entry 2087 (class 2604 OID 19248)
 -- Dependencies: 182 179
 -- Name: id_element; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1982,7 +1982,7 @@ ALTER TABLE ONLY r_element ALTER COLUMN id_element SET DEFAULT nextval('r_elemen
 
 
 --
--- TOC entry 2088 (class 2604 OID 17209)
+-- TOC entry 2088 (class 2604 OID 19249)
 -- Dependencies: 181 180
 -- Name: id_element_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -1991,7 +1991,7 @@ ALTER TABLE ONLY r_element_attribute ALTER COLUMN id_element_attribute SET DEFAU
 
 
 --
--- TOC entry 2089 (class 2604 OID 17210)
+-- TOC entry 2089 (class 2604 OID 19250)
 -- Dependencies: 184 183
 -- Name: id_element_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2000,7 +2000,7 @@ ALTER TABLE ONLY r_element_type ALTER COLUMN id_element_type SET DEFAULT nextval
 
 
 --
--- TOC entry 2090 (class 2604 OID 17211)
+-- TOC entry 2090 (class 2604 OID 19251)
 -- Dependencies: 190 185
 -- Name: id_job; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2009,7 +2009,7 @@ ALTER TABLE ONLY r_job ALTER COLUMN id_job SET DEFAULT nextval('r_job_id_job_seq
 
 
 --
--- TOC entry 2091 (class 2604 OID 17212)
+-- TOC entry 2091 (class 2604 OID 19252)
 -- Dependencies: 187 186
 -- Name: id_job_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2018,7 +2018,7 @@ ALTER TABLE ONLY r_job_attribute ALTER COLUMN id_job_attribute SET DEFAULT nextv
 
 
 --
--- TOC entry 2092 (class 2604 OID 17213)
+-- TOC entry 2092 (class 2604 OID 19253)
 -- Dependencies: 189 188
 -- Name: id_job_hop; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2027,7 +2027,7 @@ ALTER TABLE ONLY r_job_hop ALTER COLUMN id_job_hop SET DEFAULT nextval('r_job_ho
 
 
 --
--- TOC entry 2093 (class 2604 OID 17214)
+-- TOC entry 2093 (class 2604 OID 19254)
 -- Dependencies: 192 191
 -- Name: id_job_lock; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2036,7 +2036,7 @@ ALTER TABLE ONLY r_job_lock ALTER COLUMN id_job_lock SET DEFAULT nextval('r_job_
 
 
 --
--- TOC entry 2094 (class 2604 OID 17215)
+-- TOC entry 2094 (class 2604 OID 19255)
 -- Dependencies: 200 194
 -- Name: id_jobentry; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2045,7 +2045,7 @@ ALTER TABLE ONLY r_jobentry ALTER COLUMN id_jobentry SET DEFAULT nextval('r_jobe
 
 
 --
--- TOC entry 2095 (class 2604 OID 17216)
+-- TOC entry 2095 (class 2604 OID 19256)
 -- Dependencies: 196 195
 -- Name: id_jobentry_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2054,7 +2054,7 @@ ALTER TABLE ONLY r_jobentry_attribute ALTER COLUMN id_jobentry_attribute SET DEF
 
 
 --
--- TOC entry 2096 (class 2604 OID 17217)
+-- TOC entry 2096 (class 2604 OID 19257)
 -- Dependencies: 198 197
 -- Name: id_jobentry_copy; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2063,7 +2063,7 @@ ALTER TABLE ONLY r_jobentry_copy ALTER COLUMN id_jobentry_copy SET DEFAULT nextv
 
 
 --
--- TOC entry 2097 (class 2604 OID 17218)
+-- TOC entry 2097 (class 2604 OID 19258)
 -- Dependencies: 202 201
 -- Name: id_jobentry_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2072,7 +2072,7 @@ ALTER TABLE ONLY r_jobentry_type ALTER COLUMN id_jobentry_type SET DEFAULT nextv
 
 
 --
--- TOC entry 2098 (class 2604 OID 17219)
+-- TOC entry 2098 (class 2604 OID 19259)
 -- Dependencies: 204 203
 -- Name: id_log; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2081,7 +2081,7 @@ ALTER TABLE ONLY r_log ALTER COLUMN id_log SET DEFAULT nextval('r_log_id_log_seq
 
 
 --
--- TOC entry 2099 (class 2604 OID 17220)
+-- TOC entry 2099 (class 2604 OID 19260)
 -- Dependencies: 206 205
 -- Name: id_loglevel; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2090,7 +2090,7 @@ ALTER TABLE ONLY r_loglevel ALTER COLUMN id_loglevel SET DEFAULT nextval('r_logl
 
 
 --
--- TOC entry 2100 (class 2604 OID 17221)
+-- TOC entry 2100 (class 2604 OID 19261)
 -- Dependencies: 208 207
 -- Name: id_namespace; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2099,7 +2099,7 @@ ALTER TABLE ONLY r_namespace ALTER COLUMN id_namespace SET DEFAULT nextval('r_na
 
 
 --
--- TOC entry 2101 (class 2604 OID 17222)
+-- TOC entry 2101 (class 2604 OID 19262)
 -- Dependencies: 210 209
 -- Name: id_note; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2108,7 +2108,7 @@ ALTER TABLE ONLY r_note ALTER COLUMN id_note SET DEFAULT nextval('r_note_id_note
 
 
 --
--- TOC entry 2102 (class 2604 OID 17223)
+-- TOC entry 2102 (class 2604 OID 19263)
 -- Dependencies: 212 211
 -- Name: id_partition; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2117,7 +2117,7 @@ ALTER TABLE ONLY r_partition ALTER COLUMN id_partition SET DEFAULT nextval('r_pa
 
 
 --
--- TOC entry 2103 (class 2604 OID 17224)
+-- TOC entry 2103 (class 2604 OID 19264)
 -- Dependencies: 214 213
 -- Name: id_partition_schema; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2126,7 +2126,7 @@ ALTER TABLE ONLY r_partition_schema ALTER COLUMN id_partition_schema SET DEFAULT
 
 
 --
--- TOC entry 2104 (class 2604 OID 17225)
+-- TOC entry 2104 (class 2604 OID 19265)
 -- Dependencies: 216 215
 -- Name: id_repository_log; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2135,7 +2135,7 @@ ALTER TABLE ONLY r_repository_log ALTER COLUMN id_repository_log SET DEFAULT nex
 
 
 --
--- TOC entry 2105 (class 2604 OID 17226)
+-- TOC entry 2105 (class 2604 OID 19266)
 -- Dependencies: 218 217
 -- Name: id_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2144,7 +2144,7 @@ ALTER TABLE ONLY r_slave ALTER COLUMN id_slave SET DEFAULT nextval('r_slave_id_s
 
 
 --
--- TOC entry 2106 (class 2604 OID 17227)
+-- TOC entry 2106 (class 2604 OID 19267)
 -- Dependencies: 223 219
 -- Name: id_step; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2153,7 +2153,7 @@ ALTER TABLE ONLY r_step ALTER COLUMN id_step SET DEFAULT nextval('r_step_id_step
 
 
 --
--- TOC entry 2107 (class 2604 OID 17228)
+-- TOC entry 2107 (class 2604 OID 19268)
 -- Dependencies: 221 220
 -- Name: id_step_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2162,7 +2162,7 @@ ALTER TABLE ONLY r_step_attribute ALTER COLUMN id_step_attribute SET DEFAULT nex
 
 
 --
--- TOC entry 2108 (class 2604 OID 17229)
+-- TOC entry 2108 (class 2604 OID 19269)
 -- Dependencies: 225 224
 -- Name: id_step_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2171,7 +2171,7 @@ ALTER TABLE ONLY r_step_type ALTER COLUMN id_step_type SET DEFAULT nextval('r_st
 
 
 --
--- TOC entry 2109 (class 2604 OID 17230)
+-- TOC entry 2109 (class 2604 OID 19270)
 -- Dependencies: 227 226
 -- Name: id_trans_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2180,7 +2180,7 @@ ALTER TABLE ONLY r_trans_attribute ALTER COLUMN id_trans_attribute SET DEFAULT n
 
 
 --
--- TOC entry 2110 (class 2604 OID 17231)
+-- TOC entry 2110 (class 2604 OID 19271)
 -- Dependencies: 229 228
 -- Name: id_trans_cluster; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2189,7 +2189,7 @@ ALTER TABLE ONLY r_trans_cluster ALTER COLUMN id_trans_cluster SET DEFAULT nextv
 
 
 --
--- TOC entry 2111 (class 2604 OID 17232)
+-- TOC entry 2111 (class 2604 OID 19272)
 -- Dependencies: 231 230
 -- Name: id_trans_hop; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2198,7 +2198,7 @@ ALTER TABLE ONLY r_trans_hop ALTER COLUMN id_trans_hop SET DEFAULT nextval('r_tr
 
 
 --
--- TOC entry 2112 (class 2604 OID 17233)
+-- TOC entry 2112 (class 2604 OID 19273)
 -- Dependencies: 233 232
 -- Name: id_trans_lock; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2207,7 +2207,7 @@ ALTER TABLE ONLY r_trans_lock ALTER COLUMN id_trans_lock SET DEFAULT nextval('r_
 
 
 --
--- TOC entry 2113 (class 2604 OID 17234)
+-- TOC entry 2113 (class 2604 OID 19274)
 -- Dependencies: 236 235
 -- Name: id_trans_partition_schema; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2216,7 +2216,7 @@ ALTER TABLE ONLY r_trans_partition_schema ALTER COLUMN id_trans_partition_schema
 
 
 --
--- TOC entry 2114 (class 2604 OID 17235)
+-- TOC entry 2114 (class 2604 OID 19275)
 -- Dependencies: 238 237
 -- Name: id_trans_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2225,7 +2225,7 @@ ALTER TABLE ONLY r_trans_slave ALTER COLUMN id_trans_slave SET DEFAULT nextval('
 
 
 --
--- TOC entry 2115 (class 2604 OID 17236)
+-- TOC entry 2115 (class 2604 OID 19276)
 -- Dependencies: 241 240
 -- Name: id_transformation; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2234,7 +2234,7 @@ ALTER TABLE ONLY r_transformation ALTER COLUMN id_transformation SET DEFAULT nex
 
 
 --
--- TOC entry 2116 (class 2604 OID 17237)
+-- TOC entry 2116 (class 2604 OID 19277)
 -- Dependencies: 243 242
 -- Name: id_user; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2243,7 +2243,7 @@ ALTER TABLE ONLY r_user ALTER COLUMN id_user SET DEFAULT nextval('r_user_id_user
 
 
 --
--- TOC entry 2117 (class 2604 OID 17238)
+-- TOC entry 2117 (class 2604 OID 19278)
 -- Dependencies: 245 244
 -- Name: id_value; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2252,7 +2252,7 @@ ALTER TABLE ONLY r_value ALTER COLUMN id_value SET DEFAULT nextval('r_value_id_v
 
 
 --
--- TOC entry 2118 (class 2604 OID 17239)
+-- TOC entry 2118 (class 2604 OID 19279)
 -- Dependencies: 247 246
 -- Name: id_version; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -2261,7 +2261,7 @@ ALTER TABLE ONLY r_version ALTER COLUMN id_version SET DEFAULT nextval('r_versio
 
 
 --
--- TOC entry 2230 (class 0 OID 16886)
+-- TOC entry 2230 (class 0 OID 18926)
 -- Dependencies: 161 2317
 -- Data for Name: r_cluster; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2278,7 +2278,7 @@ SELECT pg_catalog.setval('r_cluster_id_cluster_seq', 1, false);
 
 
 --
--- TOC entry 2232 (class 0 OID 16894)
+-- TOC entry 2232 (class 0 OID 18934)
 -- Dependencies: 163 2317
 -- Data for Name: r_cluster_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2295,7 +2295,7 @@ SELECT pg_catalog.setval('r_cluster_slave_id_cluster_slave_seq', 1, false);
 
 
 --
--- TOC entry 2234 (class 0 OID 16899)
+-- TOC entry 2234 (class 0 OID 18939)
 -- Dependencies: 165 2317
 -- Data for Name: r_condition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2315,7 +2315,7 @@ SELECT pg_catalog.setval('r_condition_id_condition_seq', 1, false);
 
 
 --
--- TOC entry 2236 (class 0 OID 16907)
+-- TOC entry 2236 (class 0 OID 18947)
 -- Dependencies: 167 2317
 -- Data for Name: r_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2324,7 +2324,7 @@ INSERT INTO r_database (id_database, name, id_database_type, id_database_contype
 
 
 --
--- TOC entry 2237 (class 0 OID 16913)
+-- TOC entry 2237 (class 0 OID 18953)
 -- Dependencies: 168 2317
 -- Data for Name: r_database_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2352,7 +2352,7 @@ SELECT pg_catalog.setval('r_database_attribute_id_database_attribute_seq', 1, fa
 
 
 --
--- TOC entry 2239 (class 0 OID 16921)
+-- TOC entry 2239 (class 0 OID 18961)
 -- Dependencies: 170 2317
 -- Data for Name: r_database_contype; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2383,7 +2383,7 @@ SELECT pg_catalog.setval('r_database_id_database_seq', 1, false);
 
 
 --
--- TOC entry 2242 (class 0 OID 16931)
+-- TOC entry 2242 (class 0 OID 18971)
 -- Dependencies: 173 2317
 -- Data for Name: r_database_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2448,7 +2448,7 @@ SELECT pg_catalog.setval('r_database_type_id_database_type_seq', 1, false);
 
 
 --
--- TOC entry 2244 (class 0 OID 16939)
+-- TOC entry 2244 (class 0 OID 18979)
 -- Dependencies: 175 2317
 -- Data for Name: r_dependency; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2465,7 +2465,7 @@ SELECT pg_catalog.setval('r_dependency_id_dependency_seq', 1, false);
 
 
 --
--- TOC entry 2246 (class 0 OID 16947)
+-- TOC entry 2246 (class 0 OID 18987)
 -- Dependencies: 177 2317
 -- Data for Name: r_directory; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2490,7 +2490,7 @@ SELECT pg_catalog.setval('r_directory_id_directory_seq', 1, false);
 
 
 --
--- TOC entry 2248 (class 0 OID 16952)
+-- TOC entry 2248 (class 0 OID 18992)
 -- Dependencies: 179 2317
 -- Data for Name: r_element; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2498,7 +2498,7 @@ SELECT pg_catalog.setval('r_directory_id_directory_seq', 1, false);
 
 
 --
--- TOC entry 2249 (class 0 OID 16958)
+-- TOC entry 2249 (class 0 OID 18998)
 -- Dependencies: 180 2317
 -- Data for Name: r_element_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2524,7 +2524,7 @@ SELECT pg_catalog.setval('r_element_id_element_seq', 1, false);
 
 
 --
--- TOC entry 2252 (class 0 OID 16968)
+-- TOC entry 2252 (class 0 OID 19008)
 -- Dependencies: 183 2317
 -- Data for Name: r_element_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2541,7 +2541,7 @@ SELECT pg_catalog.setval('r_element_type_id_element_type_seq', 1, false);
 
 
 --
--- TOC entry 2254 (class 0 OID 16976)
+-- TOC entry 2254 (class 0 OID 19016)
 -- Dependencies: 185 2317
 -- Data for Name: r_job; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2555,22 +2555,22 @@ INSERT INTO r_job (id_job, id_directory, name, description, extended_description
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (11, 4, 'Get CMIS documents and folders', NULL, 'Init staging environment with documents and folders informations.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:12.792', 'admin', '2014-06-08 19:06:26.716', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (13, 6, 'Create structures', NULL, NULL, NULL, 0, -1, NULL, 'admin', '2014-05-27 08:05:05.635', 'admin', '2014-05-31 17:06:05.198', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (16, 4, 'Get CMIS custom metadata', NULL, 'Init staging environment with custom metadata.', NULL, 0, 1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-11 19:14:54.318', true, false, true, NULL);
-INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (9, 3, 'Init nodes operational', NULL, 'Init operational environment regarding nodes, cleaning and getting updated.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:12.248', 'admin', '2014-06-15 11:39:13.722', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (18, 4, 'Set tuple_id for custom type and aspect', NULL, 'Init staging environment with tuple_id for custom types and aspects informations.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-15 11:48:42.841', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (3, 1, 'Get nodes', NULL, 'Get the nodes flow from the sources.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:10.517', 'admin', '2014-06-15 11:49:17.717', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (6, 2, 'Init nodes data mart', NULL, 'Init data mart environment regarding nodes, cleaning and getting updated.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:11.379', 'admin', '2014-06-15 11:52:03.721', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (19, 2, 'Dimension update for custom metadata', NULL, NULL, NULL, 0, -1, NULL, 'admin', '2014-05-27 08:04:59.882', 'admin', '2014-06-15 11:53:45.892', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (20, 8, 'Update for custom metadata', NULL, NULL, NULL, 0, -1, NULL, 'admin', '2014-05-27 08:05:00.862', 'admin', '2014-06-15 11:55:17.036', true, false, true, NULL);
-INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (15, 4, 'Get CMIS custom metadata in staging', NULL, 'Init staging environment regarding nodes, cleaning and getting updated about custom data.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-08 17:45:25.857', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (1, 1, 'Get all', NULL, 'Get all the flows from the sources.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:09.938', 'admin', '2014-06-15 18:12:15.315', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (21, 5, 'Get all on a server', NULL, 'Get all the flows from the sources.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:09.938', 'admin', '2014-06-15 18:12:57.256', true, false, true, NULL);
-INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (22, 4, 'Get CMIS custom types and aspects', NULL, 'Init staging environment with custom types and aspects informations.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-17 21:55:20.613', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (17, 4, 'Set tuple_id for custom types and aspects', NULL, 'Init staging environment with tuple_id for custom types and aspects informations.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-17 21:59:39.866', true, false, true, NULL);
 INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (10, 3, 'Init nodes staging', NULL, 'Init staging environment regarding nodes, cleaning and getting updated.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:12.546', 'admin', '2014-06-17 22:03:09.392', true, false, true, NULL);
+INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (23, 4, 'Get CMIS custom metadata in staging', NULL, 'Init staging environment regarding nodes, cleaning and getting updated about custom data.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-18 01:09:39.606', true, false, true, NULL);
+INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (22, 4, 'Get CMIS custom types and aspects', NULL, 'Init staging environment with custom types and aspects informations.', NULL, 0, -1, 'log_job', 'admin', '2013-05-11 16:09:24', 'admin', '2014-06-18 01:09:44.924', true, false, true, NULL);
+INSERT INTO r_job (id_job, id_directory, name, description, extended_description, job_version, job_status, id_database_log, table_name_log, created_user, created_date, modified_user, modified_date, use_batch_id, pass_batch_id, use_logfield, shared_file) VALUES (9, 3, 'Init nodes operational', NULL, 'Init operational environment regarding nodes, cleaning and getting updated.', NULL, 0, -1, 'log_job', 'admin', '2013-11-20 20:13:12.248', 'admin', '2014-06-18 01:11:58.018', true, false, true, NULL);
 
 
 --
--- TOC entry 2255 (class 0 OID 16982)
+-- TOC entry 2255 (class 0 OID 19022)
 -- Dependencies: 186 2317
 -- Data for Name: r_job_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -3645,177 +3645,6 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10894, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10895, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10896, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9874, 9, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9875, 9, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9876, 9, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9877, 9, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9878, 9, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9879, 9, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9880, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9881, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9882, 9, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9883, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9884, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9885, 9, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9886, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9887, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9888, 9, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9889, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9890, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9891, 9, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9892, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9893, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9894, 9, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9895, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9896, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9897, 9, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9898, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9899, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9900, 9, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9901, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9902, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9903, 9, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9904, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9905, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9906, 9, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9907, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9908, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9909, 9, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9910, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9911, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9912, 9, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9913, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9914, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9915, 9, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9916, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9917, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9918, 9, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9919, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9920, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9921, 9, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9922, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9923, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9924, 9, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9925, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9926, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9927, 9, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9928, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9929, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9930, 9, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9931, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9932, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9933, 9, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9934, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9935, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9936, 9, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9937, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9938, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9939, 9, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9940, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9941, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9942, 9, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9943, 9, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9944, 9, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9945, 9, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9946, 9, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9947, 9, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9948, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9949, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9950, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9951, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9952, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9953, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9954, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9955, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9956, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9957, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9958, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9959, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9960, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9961, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9962, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9963, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9964, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9965, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9966, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9967, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9968, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9969, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9970, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9971, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9972, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9973, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9974, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9975, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9976, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9977, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9978, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9979, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9980, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9981, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9982, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9983, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9984, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9985, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9986, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9987, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9988, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9989, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9990, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9991, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9992, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9993, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9994, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9995, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9996, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9997, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9998, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (9999, 9, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10000, 9, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10001, 9, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10002, 9, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10003, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10004, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10005, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10006, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10007, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10008, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10009, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10010, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10011, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10012, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10013, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10014, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10015, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10016, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10017, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10018, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10019, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10020, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10021, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10022, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10023, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10024, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10025, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10026, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10027, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10028, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10029, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10030, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10031, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10032, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10033, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10034, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10035, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10036, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10037, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10038, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10039, 9, 0, 'PARAM_KEY', 0, 'alfresco_id');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10040, 9, 0, 'PARAM_DEFAULT', 0, '1');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10041, 9, 0, 'PARAM_DESC', 0, 'Alfresco identifier.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10042, 9, 1, 'PARAM_KEY', 0, 'get_parents');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10043, 9, 1, 'PARAM_DEFAULT', 0, 'true');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10044, 9, 1, 'PARAM_DESC', 0, 'Get the nodes'' parent.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10897, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10898, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (10899, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
@@ -4689,40 +4518,38 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11116, 3, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11117, 3, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11118, 3, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7549, 15, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7550, 15, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7551, 15, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7552, 15, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7553, 15, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7554, 15, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7555, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7556, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7557, 15, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7558, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7559, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7560, 15, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7561, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7562, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7563, 15, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7564, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7565, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7566, 15, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7567, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7568, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7569, 15, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7570, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7571, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7572, 15, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7573, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7574, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7575, 15, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7576, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7577, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7578, 15, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7579, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7580, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7581, 15, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7582, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15006, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15007, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15008, 9, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15009, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15010, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15011, 9, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15012, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15013, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15014, 9, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15015, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15016, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15017, 9, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15018, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15019, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15020, 9, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15021, 9, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15022, 9, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15023, 9, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15024, 9, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15025, 9, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15026, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15027, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15028, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15029, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15030, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15031, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15032, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15033, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15034, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15035, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15036, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15037, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11119, 3, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11120, 3, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11121, 3, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
@@ -4770,7 +4597,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11163, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11164, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11165, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7583, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15038, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11166, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11167, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11168, 3, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
@@ -4856,166 +4683,90 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11248, 3, 1, 'PARAM_KEY', 0, 'get_parents');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11249, 3, 1, 'PARAM_DEFAULT', 0, 'true');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (11250, 3, 1, 'PARAM_DESC', 0, 'Flag to get the nodes'' parent.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7584, 15, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7585, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7586, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7587, 15, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7588, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7589, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7590, 15, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7591, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7592, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7593, 15, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7594, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7595, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7596, 15, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7597, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7598, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7599, 15, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7600, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7601, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7602, 15, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7603, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7604, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7605, 15, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7606, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7607, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7608, 15, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7609, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7610, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7611, 15, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7612, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7613, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7614, 15, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7615, 15, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7616, 15, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7617, 15, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7618, 15, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7619, 15, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7620, 15, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7621, 15, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7622, 15, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7623, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7624, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7625, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7626, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7627, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7628, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7629, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7630, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7631, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7632, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7633, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7634, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7635, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7636, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7637, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7638, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7639, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7640, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7641, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7642, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7643, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7644, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7645, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7646, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7647, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7648, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7649, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7650, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7651, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7652, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7653, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7654, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7655, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7656, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7657, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7658, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7659, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7660, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7661, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7662, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7663, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7664, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7665, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7666, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7667, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7668, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7669, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7670, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7671, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7672, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7673, 15, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7674, 15, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7675, 15, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7676, 15, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7677, 15, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7678, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7679, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7680, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7681, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7682, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7683, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7684, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7685, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7686, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7687, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7688, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7689, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7690, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7691, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7692, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7693, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7694, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7695, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7696, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7697, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7698, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7699, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7700, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7701, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7702, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7703, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7704, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7705, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7706, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7707, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7708, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7709, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7710, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7711, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7712, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7713, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7714, 15, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7715, 15, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7716, 15, 0, 'PARAM_DESC', 0, 'CMIS url of Alfresco.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7717, 15, 1, 'PARAM_KEY', 0, 'alfresco_id');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7718, 15, 1, 'PARAM_DEFAULT', 0, '1');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7719, 15, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7720, 15, 2, 'PARAM_KEY', 0, 'alfresco_login');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7721, 15, 2, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7722, 15, 2, 'PARAM_DESC', 0, 'Alfresco''s login.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7723, 15, 3, 'PARAM_KEY', 0, 'alfresco_password');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7724, 15, 3, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7725, 15, 3, 'PARAM_DESC', 0, 'Alfresco''s password.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7726, 15, 4, 'PARAM_KEY', 0, 'is_aspect');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7727, 15, 4, 'PARAM_DEFAULT', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7728, 15, 4, 'PARAM_DESC', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7729, 15, 5, 'PARAM_KEY', 0, 'is_document_type');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7730, 15, 5, 'PARAM_DEFAULT', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7731, 15, 5, 'PARAM_DESC', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7732, 15, 6, 'PARAM_KEY', 0, 'is_folder_type');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7733, 15, 6, 'PARAM_DEFAULT', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7734, 15, 6, 'PARAM_DESC', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7735, 15, 7, 'PARAM_KEY', 0, 'staging_partial_table_name');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7736, 15, 7, 'PARAM_DEFAULT', 0, 'stg_cmis_aspects_ag_branch_partial');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7737, 15, 7, 'PARAM_DESC', 0, 'Staging table name for partial data.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7738, 15, 8, 'PARAM_KEY', 0, 'staging_table_name');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7739, 15, 8, 'PARAM_DEFAULT', 0, 'stg_cmis_aspects_ag_branch');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7740, 15, 8, 'PARAM_DESC', 0, 'Staging table name.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7741, 15, 9, 'PARAM_KEY', 0, 'type_name');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7742, 15, 9, 'PARAM_DEFAULT', 0, 'ag:branch');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (7743, 15, 9, 'PARAM_DESC', 0, 'Type name.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15039, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15040, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15041, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15042, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15043, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15044, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15045, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15046, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15047, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15048, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15049, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15050, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15051, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15052, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15053, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15054, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15055, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15056, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15057, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15058, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15059, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15060, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15061, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15062, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15063, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15064, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15065, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15066, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15067, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15068, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15069, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15070, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15071, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15072, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15073, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15074, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15075, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15076, 9, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15077, 9, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15078, 9, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15079, 9, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15080, 9, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15081, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15082, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15083, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15084, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15085, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15086, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15087, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15088, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15089, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15090, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15091, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15092, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15093, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15094, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15095, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15096, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15097, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15098, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15099, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15100, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15101, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15102, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15103, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15104, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15105, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15106, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15107, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15108, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15109, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15110, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15111, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15112, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15113, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15114, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15115, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15116, 9, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15117, 9, 0, 'PARAM_KEY', 0, 'alfresco_id');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15118, 9, 0, 'PARAM_DEFAULT', 0, '1');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15119, 9, 0, 'PARAM_DESC', 0, 'Alfresco identifier.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15120, 9, 1, 'PARAM_KEY', 0, 'get_parents');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15121, 9, 1, 'PARAM_DEFAULT', 0, 'true');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15122, 9, 1, 'PARAM_DESC', 0, 'Get the nodes'' parent.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (12106, 19, 0, 'LOG_SIZE_LIMIT', 0, NULL);
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (12107, 19, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, NULL);
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (12108, 19, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
@@ -5687,183 +5438,6 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13133, 21, 1, 'PARAM_DEFAULT', 0, 'true');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13134, 21, 1, 'PARAM_DESC', 0, 'Get the nodes'' parent.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13135, 14, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13136, 22, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13137, 22, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13138, 22, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13139, 22, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13140, 22, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13141, 22, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13142, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13143, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13144, 22, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13145, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13146, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13147, 22, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13148, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13149, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13150, 22, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13151, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13152, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13153, 22, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13154, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13155, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13156, 22, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13157, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13158, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13159, 22, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13160, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13161, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13162, 22, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13163, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13164, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13165, 22, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13166, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13167, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13168, 22, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13169, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13170, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13171, 22, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13172, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13173, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13174, 22, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13175, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13176, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13177, 22, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13178, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13179, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13180, 22, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13181, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13182, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13183, 22, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13184, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13185, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13186, 22, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13187, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13188, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13189, 22, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13190, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13191, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13192, 22, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13193, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13194, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13195, 22, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13196, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13197, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13198, 22, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13199, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13200, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13201, 22, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13202, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13203, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13204, 22, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13205, 22, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13206, 22, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13207, 22, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13208, 22, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13209, 22, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13210, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13211, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13212, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13213, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13214, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13215, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13216, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13217, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13218, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13219, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13220, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13221, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13222, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13223, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13224, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13225, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13226, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13227, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13228, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13229, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13230, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13231, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13232, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13233, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13234, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13235, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13236, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13237, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13238, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13239, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13240, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13241, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13242, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13243, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13244, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13245, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13246, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13247, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13248, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13249, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13250, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13251, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13252, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13253, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13254, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13255, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13256, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13257, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13258, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13259, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13260, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13261, 22, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13262, 22, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13263, 22, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13264, 22, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13265, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13266, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13267, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13268, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13269, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13270, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13271, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13272, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13273, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13274, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13275, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13276, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13277, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13278, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13279, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13280, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13281, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13282, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13283, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13284, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13285, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13286, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13287, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13288, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13289, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13290, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13291, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13292, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13293, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13294, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13295, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13296, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13297, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13298, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13299, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13300, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13301, 22, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13302, 22, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13303, 22, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13304, 22, 1, 'PARAM_KEY', 0, 'alfresco_id');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13305, 22, 1, 'PARAM_DEFAULT', 0, '1');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13306, 22, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13307, 22, 2, 'PARAM_KEY', 0, 'alfresco_login');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13308, 22, 2, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13309, 22, 2, 'PARAM_DESC', 0, 'Alfresco login for the CMIS connection.');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13310, 22, 3, 'PARAM_KEY', 0, 'alfresco_password');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13311, 22, 3, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13312, 22, 3, 'PARAM_DESC', 0, 'Alfresco password for the CMIS connection.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13313, 17, 0, 'LOG_SIZE_LIMIT', 0, NULL);
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13314, 17, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13315, 17, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
@@ -6209,6 +5783,433 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13655, 10, 0, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13656, 10, 0, 'PARAM_DEFAULT', 0, '1');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13657, 10, 0, 'PARAM_DESC', 0, 'Alfresco identifier.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (13658, 15, 0, 'LOG_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14580, 23, 0, 'LOG_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14581, 23, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14582, 23, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14583, 23, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14584, 23, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14585, 23, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14586, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14587, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14588, 23, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14589, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14590, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14591, 23, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14592, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14593, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14594, 23, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14595, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14596, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14597, 23, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14598, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14599, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14600, 23, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14601, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14602, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14603, 23, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14604, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14605, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14606, 23, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14607, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14608, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14609, 23, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14610, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14611, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14612, 23, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14613, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14614, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14615, 23, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14616, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14617, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14618, 23, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14619, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14620, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14621, 23, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14622, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14623, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14624, 23, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14625, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14626, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14627, 23, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14628, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14629, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14630, 23, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14631, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14632, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14633, 23, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14634, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14635, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14636, 23, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14637, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14638, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14639, 23, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14640, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14641, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14642, 23, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14643, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14644, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14645, 23, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14646, 23, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14647, 23, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14648, 23, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14649, 23, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14650, 23, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14651, 23, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14652, 23, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14653, 23, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14654, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14655, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14656, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14657, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14658, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14659, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14660, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14661, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14662, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14663, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14664, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14665, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14666, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14667, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14668, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14669, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14670, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14671, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14672, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14673, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14674, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14675, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14676, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14677, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14678, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14679, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14680, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14681, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14682, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14683, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14684, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14685, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14686, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14687, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14688, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14689, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14690, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14691, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14692, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14693, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14694, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14695, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14696, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14697, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14698, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14699, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14700, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14701, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14702, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14703, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14704, 23, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14705, 23, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14706, 23, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14707, 23, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14708, 23, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14709, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14710, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14711, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14712, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14713, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14714, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14715, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14716, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14717, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14718, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14719, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14720, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14721, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14722, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14723, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14724, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14725, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14726, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14727, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14728, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14729, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14730, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14731, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14732, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14733, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14734, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14735, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14736, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14737, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14738, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14739, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14740, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14741, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14742, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14743, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14744, 23, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14745, 23, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14746, 23, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14747, 23, 0, 'PARAM_DESC', 0, 'CMIS url of Alfresco.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14748, 23, 1, 'PARAM_KEY', 0, 'alfresco_id');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14749, 23, 1, 'PARAM_DEFAULT', 0, '1');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14750, 23, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14751, 23, 2, 'PARAM_KEY', 0, 'alfresco_login');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14752, 23, 2, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14753, 23, 2, 'PARAM_DESC', 0, 'Alfresco''s login.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14754, 23, 3, 'PARAM_KEY', 0, 'alfresco_password');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14755, 23, 3, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14756, 23, 3, 'PARAM_DESC', 0, 'Alfresco''s password.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14757, 23, 4, 'PARAM_KEY', 0, 'is_aspect');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14758, 23, 4, 'PARAM_DEFAULT', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14759, 23, 4, 'PARAM_DESC', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14760, 23, 5, 'PARAM_KEY', 0, 'is_document_type');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14761, 23, 5, 'PARAM_DEFAULT', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14762, 23, 5, 'PARAM_DESC', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14763, 23, 6, 'PARAM_KEY', 0, 'is_folder_type');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14764, 23, 6, 'PARAM_DEFAULT', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14765, 23, 6, 'PARAM_DESC', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14766, 23, 7, 'PARAM_KEY', 0, 'staging_partial_table_name');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14767, 23, 7, 'PARAM_DEFAULT', 0, 'stg_cmis_aspects_ag_branch');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14768, 23, 7, 'PARAM_DESC', 0, 'Staging table name for partial data.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14769, 23, 8, 'PARAM_KEY', 0, 'staging_table_name');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14770, 23, 8, 'PARAM_DEFAULT', 0, 'stg_cmis_aspects_ag_branch');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14771, 23, 8, 'PARAM_DESC', 0, 'Staging table name.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14772, 23, 9, 'PARAM_KEY', 0, 'type_name');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14773, 23, 9, 'PARAM_DEFAULT', 0, 'ag:brach');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14774, 23, 9, 'PARAM_DESC', 0, 'Type name.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14775, 22, 0, 'LOG_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14776, 22, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14777, 22, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14778, 22, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14779, 22, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14780, 22, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14781, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14782, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14783, 22, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14784, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14785, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14786, 22, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14787, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14788, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14789, 22, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14790, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14791, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14792, 22, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14793, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14794, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14795, 22, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14796, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14797, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14798, 22, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14799, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14800, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14801, 22, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14802, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14803, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14804, 22, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14805, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14806, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14807, 22, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14808, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14809, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14810, 22, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14811, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14812, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14813, 22, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14814, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14815, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14816, 22, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14817, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14818, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14819, 22, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14820, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14821, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14822, 22, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14823, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14824, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14825, 22, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14826, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14827, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14828, 22, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14829, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14830, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14831, 22, 0, 'JOB_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14832, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14833, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14834, 22, 0, 'JOB_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14835, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14836, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14837, 22, 0, 'JOB_LOG_TABLE_FIELD_ID19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14838, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME19', 0, 'START_JOB_ENTRY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14839, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14840, 22, 0, 'JOB_LOG_TABLE_FIELD_ID20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14841, 22, 0, 'JOB_LOG_TABLE_FIELD_NAME20', 0, 'CLIENT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14842, 22, 0, 'JOB_LOG_TABLE_FIELD_ENABLED20', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14843, 22, 0, 'JOBLOG_TABLE_INTERVAL', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14844, 22, 0, 'JOBLOG_TABLE_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14845, 22, 0, 'JOB_ENTRY_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14846, 22, 0, 'JOB_ENTRY_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14847, 22, 0, 'JOB_ENTRY_LOG_TABLE_TABLE_NAME', 0, 'log_jobEntry');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14848, 22, 0, 'JOB_ENTRY_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14849, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14850, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14851, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14852, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14853, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14854, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14855, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14856, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14857, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14858, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID3', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14859, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14860, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14861, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID4', 0, 'JOBENTRYNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14862, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14863, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14864, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14865, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME5', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14866, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14867, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14868, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME6', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14869, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14870, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14871, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME7', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14872, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14873, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14874, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME8', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14875, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14876, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14877, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME9', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14878, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14879, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14880, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME10', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14881, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14882, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14883, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME11', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14884, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14885, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14886, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME12', 0, 'RESULT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14887, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14888, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14889, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME13', 0, 'NR_RESULT_ROWS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14890, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14891, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14892, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME14', 0, 'NR_RESULT_FILES');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14893, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14894, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14895, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME15', 0, 'LOG_FIELD');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14896, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED15', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14897, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ID16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14898, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_NAME16', 0, 'COPY_NR');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14899, 22, 0, 'JOB_ENTRY_LOG_TABLE_FIELD_ENABLED16', 0, 'N');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14900, 22, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14901, 22, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14902, 22, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, 'log_channels');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14903, 22, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14904, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14905, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14906, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14907, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14908, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14909, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14910, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14911, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14912, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14913, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14914, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14915, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14916, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14917, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14918, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14919, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14920, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14921, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14922, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14923, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14924, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14925, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14926, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14927, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14928, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14929, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14930, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14931, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14932, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14933, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14934, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14935, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14936, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14937, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14938, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14939, 22, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14940, 22, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14941, 22, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14942, 22, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14943, 22, 1, 'PARAM_KEY', 0, 'alfresco_id');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14944, 22, 1, 'PARAM_DEFAULT', 0, '1');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14945, 22, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14946, 22, 2, 'PARAM_KEY', 0, 'alfresco_login');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14947, 22, 2, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14948, 22, 2, 'PARAM_DESC', 0, 'Alfresco login for the CMIS connection.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14949, 22, 3, 'PARAM_KEY', 0, 'alfresco_password');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14950, 22, 3, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14951, 22, 3, 'PARAM_DESC', 0, 'Alfresco password for the CMIS connection.');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14952, 9, 0, 'LOG_SIZE_LIMIT', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14953, 9, 0, 'JOB_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14954, 9, 0, 'JOB_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14955, 9, 0, 'JOB_LOG_TABLE_TABLE_NAME', 0, 'log_job');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14956, 9, 0, 'JOB_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14957, 9, 0, 'JOB_LOG_TABLE_FIELD_ID0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14958, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME0', 0, 'ID_JOB');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14959, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14960, 9, 0, 'JOB_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14961, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14962, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14963, 9, 0, 'JOB_LOG_TABLE_FIELD_ID2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14964, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME2', 0, 'JOBNAME');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14965, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14966, 9, 0, 'JOB_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14967, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14968, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14969, 9, 0, 'JOB_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14970, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14971, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14972, 9, 0, 'JOB_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14973, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14974, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14975, 9, 0, 'JOB_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14976, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14977, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14978, 9, 0, 'JOB_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14979, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14980, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14981, 9, 0, 'JOB_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14982, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14983, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14984, 9, 0, 'JOB_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14985, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14986, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14987, 9, 0, 'JOB_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14988, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14989, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14990, 9, 0, 'JOB_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14991, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14992, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14993, 9, 0, 'JOB_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14994, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14995, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14996, 9, 0, 'JOB_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14997, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14998, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (14999, 9, 0, 'JOB_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15000, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15001, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15002, 9, 0, 'JOB_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15003, 9, 0, 'JOB_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15004, 9, 0, 'JOB_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (15005, 9, 0, 'JOB_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
 
 
 --
@@ -6221,7 +6222,7 @@ SELECT pg_catalog.setval('r_job_attribute_id_job_attribute_seq', 1, false);
 
 
 --
--- TOC entry 2257 (class 0 OID 16990)
+-- TOC entry 2257 (class 0 OID 19030)
 -- Dependencies: 188 2317
 -- Data for Name: r_job_hop; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6229,9 +6230,6 @@ SELECT pg_catalog.setval('r_job_attribute_id_job_attribute_seq', 1, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (66, 2, 79, 80, true, true, true);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (67, 2, 80, 81, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (68, 2, 81, 82, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (303, 15, 324, 327, true, true, true);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (304, 15, 327, 328, true, false, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (305, 15, 327, 329, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (72, 4, 87, 88, true, true, true);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (73, 4, 88, 89, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (74, 5, 90, 91, true, true, true);
@@ -6255,9 +6253,6 @@ INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_co
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (505, 20, 540, 541, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (506, 20, 541, 539, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (507, 20, 541, 542, true, false, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (306, 15, 329, 326, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (307, 15, 326, 330, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (308, 15, 330, 325, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (376, 16, 397, 398, true, true, true);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (377, 16, 402, 403, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (378, 16, 403, 405, true, true, false);
@@ -6319,14 +6314,6 @@ INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_co
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (373, 11, 384, 395, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (374, 11, 396, 388, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (375, 11, 386, 396, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (428, 9, 449, 450, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (429, 9, 451, 452, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (430, 9, 453, 449, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (431, 9, 448, 453, true, true, true);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (432, 9, 450, 454, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (433, 9, 454, 451, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (434, 9, 452, 455, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (435, 9, 454, 455, true, false, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (445, 18, 470, 472, true, true, true);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (446, 18, 472, 471, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (447, 18, 472, 473, true, false, false);
@@ -6348,11 +6335,6 @@ INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_co
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (520, 1, 557, 558, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (521, 21, 560, 561, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (522, 21, 559, 560, true, true, true);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (523, 22, 563, 564, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (524, 22, 562, 565, true, true, true);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (525, 22, 565, 563, true, true, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (526, 22, 565, 566, true, false, false);
-INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (527, 22, 564, 566, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (528, 17, 568, 569, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (529, 17, 567, 570, true, true, true);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (530, 17, 570, 568, true, true, false);
@@ -6362,6 +6344,24 @@ INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_co
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (534, 10, 574, 575, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (535, 10, 573, 574, true, true, false);
 INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (536, 10, 575, 576, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (563, 23, 606, 609, true, true, true);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (564, 23, 609, 610, true, false, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (565, 23, 609, 611, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (566, 23, 611, 608, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (567, 23, 608, 612, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (568, 23, 612, 607, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (569, 22, 613, 615, true, true, true);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (570, 22, 615, 614, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (571, 22, 615, 616, true, false, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (572, 22, 614, 617, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (573, 9, 619, 620, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (574, 9, 621, 622, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (575, 9, 623, 619, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (576, 9, 618, 623, true, true, true);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (577, 9, 620, 624, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (578, 9, 624, 621, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (579, 9, 622, 625, true, true, false);
+INSERT INTO r_job_hop (id_job_hop, id_job, id_jobentry_copy_from, id_jobentry_copy_to, enabled, evaluation, unconditional) VALUES (580, 9, 624, 625, true, false, false);
 
 
 --
@@ -6383,7 +6383,7 @@ SELECT pg_catalog.setval('r_job_id_job_seq', 1, false);
 
 
 --
--- TOC entry 2260 (class 0 OID 16997)
+-- TOC entry 2260 (class 0 OID 19037)
 -- Dependencies: 191 2317
 -- Data for Name: r_job_lock; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6400,7 +6400,7 @@ SELECT pg_catalog.setval('r_job_lock_id_job_lock_seq', 1, false);
 
 
 --
--- TOC entry 2262 (class 0 OID 17005)
+-- TOC entry 2262 (class 0 OID 19045)
 -- Dependencies: 193 2317
 -- Data for Name: r_job_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6410,7 +6410,7 @@ INSERT INTO r_job_note (id_job, id_note) VALUES (16, 4);
 
 
 --
--- TOC entry 2263 (class 0 OID 17008)
+-- TOC entry 2263 (class 0 OID 19048)
 -- Dependencies: 194 2317
 -- Data for Name: r_jobentry; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6419,10 +6419,6 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (80, 2, 46, 'Init audit staging', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (81, 2, 46, 'Init audit operational', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (82, 2, 46, 'Init audit data mart', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (324, 15, 66, 'START', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (325, 15, 46, 'Get CMIS custom metadata', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (326, 15, 76, 'Clean staging', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (327, 15, 73, 'Table exists', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (87, 4, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (88, 4, 76, 'Get all id', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (89, 4, 46, 'Create and upload report', NULL);
@@ -6446,9 +6442,6 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (471, 18, 76, 'Set tuple_id for types and aspects', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (472, 18, 73, 'Table exists', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (473, 18, 72, 'Success', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (328, 15, 85, 'Write To Log', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (329, 15, 85, 'Write To Log 2', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (330, 15, 76, 'Init auto_increment', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (485, 3, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (486, 3, 46, 'Init nodes staging', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (487, 3, 46, 'Init nodes operational', NULL);
@@ -6519,14 +6512,6 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (515, 6, 67, 'Clean dm_dim_paths', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (516, 6, 67, 'Update path', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (517, 6, 46, 'Dimension update for custom metadata', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (448, 9, 66, 'START', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (449, 9, 76, 'Get alfresco connection params', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (450, 9, 67, 'Clean cmis operational', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (451, 9, 76, 'Get objectId for the folders', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (452, 9, 76, 'Set folder''s children', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (453, 9, 76, 'Get last document update', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (454, 9, 65, 'Simple evaluation', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (455, 9, 46, 'Set tuple_id for custom types and aspects', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (533, 19, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (534, 19, 76, 'Get all custom metadata', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (535, 19, 46, 'Dimension update for custom metadata', NULL);
@@ -6536,6 +6521,7 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (539, 20, 76, 'Dimension update for document types', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (540, 20, 73, 'Table exists', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (541, 20, 65, 'is_document_type', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (606, 23, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (542, 20, 65, 'is_folder_type', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (543, 20, 76, 'Dimension update for folder types', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (544, 20, 72, 'Success', NULL);
@@ -6548,11 +6534,11 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (559, 21, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (560, 21, 46, 'Get audit', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (561, 21, 46, 'Get nodes', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (562, 22, 66, 'START', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (563, 22, 76, 'Get all custom metadata', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (564, 22, 46, 'Get staging for custom metadata', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (565, 22, 30, 'Evaluate rows number in a table', NULL);
-INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (566, 22, 72, 'Success', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (607, 23, 46, 'Get CMIS custom metadata', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (608, 23, 76, 'Clean staging', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (609, 23, 73, 'Table exists', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (610, 23, 85, 'Write To Log', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (611, 23, 85, 'Write To Log 2', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (567, 17, 66, 'START', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (568, 17, 76, 'Get all custom metadata', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (569, 17, 46, 'Set tuple_id for custom type and aspect', NULL);
@@ -6563,10 +6549,24 @@ INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (574, 10, 67, 'Clean cmis staging', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (575, 10, 46, 'Get CMIS documents and folders', NULL);
 INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (576, 10, 46, 'Get CMIS custom types and aspects', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (612, 23, 76, 'Init auto_increment', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (613, 22, 66, 'START', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (614, 22, 76, 'Get all custom metadata', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (615, 22, 30, 'Evaluate rows number in a table', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (616, 22, 72, 'Success', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (617, 22, 46, 'Get CMIS custom metadata in staging', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (618, 9, 66, 'START', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (619, 9, 76, 'Get alfresco connection params', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (620, 9, 67, 'Clean cmis operational', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (621, 9, 76, 'Get objectId for the folders', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (622, 9, 76, 'Set folder''s children', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (623, 9, 76, 'Get last document update', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (624, 9, 65, 'Simple evaluation', NULL);
+INSERT INTO r_jobentry (id_jobentry, id_job, id_jobentry_type, name, description) VALUES (625, 9, 46, 'Set tuple_id for custom types and aspects', NULL);
 
 
 --
--- TOC entry 2264 (class 0 OID 17014)
+-- TOC entry 2264 (class 0 OID 19054)
 -- Dependencies: 195 2317
 -- Data for Name: r_jobentry_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6659,92 +6659,88 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (1603, 2, 82, 0, 'parameter_stream_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (1604, 2, 82, 0, 'parameter_value', 0.00, '${alfresco_id}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (1605, 2, 82, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6850, 15, 324, 0, 'start', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6851, 15, 324, 0, 'dummy', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6852, 15, 324, 0, 'repeat', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6853, 15, 324, 0, 'schedulerType', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6854, 15, 324, 0, 'intervalSeconds', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6855, 15, 324, 0, 'intervalMinutes', 60.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6856, 15, 324, 0, 'hour', 12.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6857, 15, 324, 0, 'minutes', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6858, 15, 324, 0, 'weekDay', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6859, 15, 324, 0, 'dayOfMonth', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6860, 15, 325, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6861, 15, 325, 0, 'job_object_id', 0.00, '16');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6862, 15, 325, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6863, 15, 325, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6864, 15, 325, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6865, 15, 325, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6866, 15, 325, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6867, 15, 325, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6868, 15, 325, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6869, 15, 325, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6870, 15, 325, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6871, 15, 325, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6872, 15, 325, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6873, 15, 325, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6874, 15, 325, 0, 'loglevel', 0.00, 'Nothing');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6875, 15, 325, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6876, 15, 325, 0, 'pass_export', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6877, 15, 325, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6878, 15, 325, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6879, 15, 325, 0, 'expand_remote_job', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6880, 15, 325, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6881, 15, 325, 0, 'force_separate_logging', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6882, 15, 325, 0, 'parameter_name', 0.00, 'alfresco_cmis_url');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6883, 15, 325, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6884, 15, 325, 0, 'parameter_value', 0.00, '${alfresco_cmis_url}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6885, 15, 325, 1, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6886, 15, 325, 1, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6887, 15, 325, 1, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6888, 15, 325, 2, 'parameter_name', 0.00, 'alfresco_login');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6889, 15, 325, 2, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6890, 15, 325, 2, 'parameter_value', 0.00, '${alfresco_login}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6891, 15, 325, 3, 'parameter_name', 0.00, 'alfresco_password');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6892, 15, 325, 3, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6893, 15, 325, 3, 'parameter_value', 0.00, '${alfresco_password}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6894, 15, 325, 4, 'parameter_name', 0.00, 'is_aspect');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6895, 15, 325, 4, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6896, 15, 325, 4, 'parameter_value', 0.00, '${is_aspect}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6897, 15, 325, 5, 'parameter_name', 0.00, 'is_document_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6898, 15, 325, 5, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6899, 15, 325, 5, 'parameter_value', 0.00, '${is_document_type}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6900, 15, 325, 6, 'parameter_name', 0.00, 'is_folder_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6901, 15, 325, 6, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6902, 15, 325, 6, 'parameter_value', 0.00, '${is_folder_type}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6903, 15, 325, 7, 'parameter_name', 0.00, 'staging_partial_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6904, 15, 325, 7, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6905, 15, 325, 7, 'parameter_value', 0.00, '${staging_partial_table_name}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6906, 15, 325, 8, 'parameter_name', 0.00, 'staging_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6907, 15, 325, 8, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6908, 15, 325, 8, 'parameter_value', 0.00, '${staging_table_name}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6909, 15, 325, 9, 'parameter_name', 0.00, 'type_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6910, 15, 325, 9, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6911, 15, 325, 9, 'parameter_value', 0.00, '${type_name}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6912, 15, 325, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6913, 15, 326, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6914, 15, 326, 0, 'trans_object_id', 0.00, '27');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6915, 15, 326, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6916, 15, 326, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6917, 15, 326, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6918, 15, 326, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6919, 15, 326, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6920, 15, 326, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6921, 15, 326, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6922, 15, 326, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6923, 15, 326, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6924, 15, 326, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6925, 15, 326, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6926, 15, 326, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6927, 15, 326, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6928, 15, 326, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6929, 15, 326, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6930, 15, 326, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6931, 15, 326, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6932, 15, 326, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6933, 15, 326, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6934, 15, 326, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6935, 15, 326, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13014, 9, 621, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13015, 9, 621, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13016, 9, 621, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13017, 9, 621, 0, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13018, 9, 621, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13019, 9, 621, 0, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13020, 9, 621, 1, 'parameter_name', 0.00, 'last_update');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13021, 9, 621, 1, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13022, 9, 621, 1, 'parameter_value', 0.00, '${last_update}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13023, 9, 621, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13024, 9, 622, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13025, 9, 622, 0, 'trans_object_id', 0.00, '19');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13026, 9, 622, 0, 'name', 0.00, 'Set folder''s children');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13027, 9, 622, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13028, 9, 622, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13029, 9, 622, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13030, 9, 622, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13031, 9, 622, 0, 'exec_per_row', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13032, 9, 622, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13033, 9, 622, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13034, 9, 622, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13035, 9, 622, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13036, 9, 622, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13037, 9, 622, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13038, 9, 622, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13039, 9, 622, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13040, 9, 622, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13041, 9, 622, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13042, 9, 622, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13043, 9, 622, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13044, 9, 622, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13045, 9, 622, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13046, 9, 622, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13047, 9, 622, 0, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13048, 9, 622, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13049, 9, 622, 0, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13050, 9, 622, 1, 'parameter_name', 0.00, 'alfresco_cmis_url');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13051, 9, 622, 1, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13052, 9, 622, 1, 'parameter_value', 0.00, '${alfresco_cmis_url}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13053, 9, 622, 2, 'parameter_name', 0.00, 'alfresco_login');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13054, 9, 622, 2, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13055, 9, 622, 2, 'parameter_value', 0.00, '${alfresco_login}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13056, 9, 622, 3, 'parameter_name', 0.00, 'alfresco_password');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13057, 9, 622, 3, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13058, 9, 622, 3, 'parameter_value', 0.00, '${alfresco_password}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13059, 9, 622, 4, 'parameter_name', 0.00, 'cmis_parentid');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13060, 9, 622, 4, 'parameter_stream_name', 0.00, 'cmis_parentid');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13061, 9, 622, 4, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13062, 9, 622, 5, 'parameter_name', 0.00, 'cmis_parentpath');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13063, 9, 622, 5, 'parameter_stream_name', 0.00, 'cmis_parentpath');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13064, 9, 622, 5, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13065, 9, 622, 6, 'parameter_name', 0.00, 'cmis_last_update');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13066, 9, 622, 6, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13067, 9, 622, 6, 'parameter_value', 0.00, '${cmis_last_update}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13068, 9, 622, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13069, 9, 623, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13070, 9, 623, 0, 'trans_object_id', 0.00, '14');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13071, 9, 623, 0, 'name', 0.00, 'Get last document update');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13072, 9, 623, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13073, 9, 623, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13074, 9, 623, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13075, 9, 623, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13076, 9, 623, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13077, 9, 623, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13078, 9, 623, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13079, 9, 623, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13080, 9, 623, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13081, 9, 623, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13082, 9, 623, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13083, 9, 623, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13084, 9, 623, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13085, 9, 623, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13086, 9, 623, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13087, 9, 623, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13088, 9, 623, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13089, 9, 623, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13090, 9, 623, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13091, 9, 623, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13092, 9, 623, 0, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13093, 9, 623, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13094, 9, 623, 0, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13095, 9, 623, 0, 'pass_all_parameters', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8401, 16, 397, 0, 'start', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (1697, 4, 87, 0, 'start', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (1698, 4, 87, 0, 'dummy', 0.00, 'N');
@@ -7085,191 +7081,51 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2224, 8, 116, 1, 'parameter_stream_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2225, 8, 116, 1, 'parameter_value', 0.00, '${json_path}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2226, 8, 116, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9570, 9, 448, 0, 'start', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9571, 9, 448, 0, 'dummy', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9572, 9, 448, 0, 'repeat', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9573, 9, 448, 0, 'schedulerType', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9574, 9, 448, 0, 'intervalSeconds', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9575, 9, 448, 0, 'intervalMinutes', 60.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9576, 9, 448, 0, 'hour', 12.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9577, 9, 448, 0, 'minutes', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9578, 9, 448, 0, 'weekDay', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9579, 9, 448, 0, 'dayOfMonth', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9580, 9, 449, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9581, 9, 449, 0, 'trans_object_id', 0.00, '12');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9582, 9, 449, 0, 'name', 0.00, 'Get alfresco connection params');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9583, 9, 449, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9584, 9, 449, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9585, 9, 449, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9586, 9, 449, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9587, 9, 449, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9588, 9, 449, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9589, 9, 449, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9590, 9, 449, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9591, 9, 449, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9592, 9, 449, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9593, 9, 449, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9594, 9, 449, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9595, 9, 449, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9596, 9, 449, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9597, 9, 449, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9598, 9, 449, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9599, 9, 449, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9600, 9, 449, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9601, 9, 449, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9602, 9, 449, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9603, 9, 449, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9604, 9, 449, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9605, 9, 449, 0, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9606, 9, 449, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9607, 9, 450, 0, 'id_database', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9608, 9, 450, 0, 'connection', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9609, 9, 450, 0, 'sql', 0.00, 'delete from ope_cmis_document_parent where alfresco_id = ${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9610, 9, 450, 0, 'useVariableSubstitution', 0.00, 'T');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9611, 9, 450, 0, 'sqlfromfile', 0.00, 'F');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9612, 9, 450, 0, 'sqlfilename', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9613, 9, 450, 0, 'sendOneStatement', 0.00, 'F');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9614, 9, 451, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9615, 9, 451, 0, 'trans_object_id', 0.00, '17');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9616, 9, 451, 0, 'name', 0.00, 'Get objectId for the folders');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9617, 9, 451, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9618, 9, 451, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9619, 9, 451, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9620, 9, 451, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9621, 9, 451, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9622, 9, 451, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9623, 9, 451, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9624, 9, 451, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9625, 9, 451, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9626, 9, 451, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9627, 9, 451, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9628, 9, 451, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9629, 9, 451, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9630, 9, 451, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9631, 9, 451, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9632, 9, 451, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9633, 9, 451, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9634, 9, 451, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9635, 9, 451, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9636, 9, 451, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9637, 9, 451, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9638, 9, 451, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9639, 9, 451, 0, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9640, 9, 451, 1, 'parameter_name', 0.00, 'last_update');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9641, 9, 451, 1, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9642, 9, 451, 1, 'parameter_value', 0.00, '${last_update}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9643, 9, 451, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9644, 9, 452, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9645, 9, 452, 0, 'trans_object_id', 0.00, '19');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9646, 9, 452, 0, 'name', 0.00, 'Set folder''s children');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9647, 9, 452, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9648, 9, 452, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9649, 9, 452, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9650, 9, 452, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9651, 9, 452, 0, 'exec_per_row', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9652, 9, 452, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9653, 9, 452, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9654, 9, 452, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9655, 9, 452, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9656, 9, 452, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9657, 9, 452, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9658, 9, 452, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9659, 9, 452, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9660, 9, 452, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9661, 9, 452, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9662, 9, 452, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9663, 9, 452, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9664, 9, 452, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9665, 9, 452, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9666, 9, 452, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9667, 9, 452, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9668, 9, 452, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9669, 9, 452, 0, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9670, 9, 452, 1, 'parameter_name', 0.00, 'alfresco_cmis_url');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9671, 9, 452, 1, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9672, 9, 452, 1, 'parameter_value', 0.00, '${alfresco_cmis_url}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9673, 9, 452, 2, 'parameter_name', 0.00, 'alfresco_login');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9674, 9, 452, 2, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9675, 9, 452, 2, 'parameter_value', 0.00, '${alfresco_login}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9676, 9, 452, 3, 'parameter_name', 0.00, 'alfresco_password');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9677, 9, 452, 3, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9678, 9, 452, 3, 'parameter_value', 0.00, '${alfresco_password}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9679, 9, 452, 4, 'parameter_name', 0.00, 'cmis_parentid');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9680, 9, 452, 4, 'parameter_stream_name', 0.00, 'cmis_parentid');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9681, 9, 452, 4, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9682, 9, 452, 5, 'parameter_name', 0.00, 'cmis_parentpath');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9683, 9, 452, 5, 'parameter_stream_name', 0.00, 'cmis_parentpath');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9684, 9, 452, 5, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9685, 9, 452, 6, 'parameter_name', 0.00, 'cmis_last_update');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9686, 9, 452, 6, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9687, 9, 452, 6, 'parameter_value', 0.00, '${cmis_last_update}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9688, 9, 452, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9689, 9, 453, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9690, 9, 453, 0, 'trans_object_id', 0.00, '14');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9691, 9, 453, 0, 'name', 0.00, 'Get last document update');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9692, 9, 453, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9693, 9, 453, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9694, 9, 453, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9695, 9, 453, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9696, 9, 453, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9697, 9, 453, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9698, 9, 453, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9699, 9, 453, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9700, 9, 453, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9701, 9, 453, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9702, 9, 453, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9703, 9, 453, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9704, 9, 453, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9705, 9, 453, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9706, 9, 453, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9707, 9, 453, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9708, 9, 453, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9709, 9, 453, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9710, 9, 453, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6936, 15, 326, 0, 'parameter_name', 0.00, 'query');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6937, 15, 326, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6938, 15, 326, 0, 'parameter_value', 0.00, 'delete from ${staging_table_name} where alfresco_id=${alfresco_id};');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6939, 15, 326, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6940, 15, 327, 0, 'tablename', 0.00, '${staging_table_name}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6941, 15, 327, 0, 'schemaname', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6942, 15, 327, 0, 'id_database', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6943, 15, 327, 0, 'connection', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6944, 15, 328, 0, 'logmessage', 0.00, 'Type/aspect ''${type_name}'' is not imported because table structures are not defined.
-Please, execute the structure creation one more time.');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6945, 15, 328, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6946, 15, 328, 0, 'logsubject', 0.00, 'Type name not imported.');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6947, 15, 329, 0, 'logmessage', 0.00, 'Type/aspect ''${type_name}'' is going to be imported.');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6948, 15, 329, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6949, 15, 329, 0, 'logsubject', 0.00, 'Type name is going to be imported.');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13096, 9, 624, 0, 'valuetype', 0.00, 'variable');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13097, 9, 624, 0, 'fieldname', 0.00, '${getParents}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13098, 9, 624, 0, 'variablename', 0.00, 'get_parents');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13099, 9, 624, 0, 'fieldtype', 0.00, 'boolean');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13100, 9, 624, 0, 'mask', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13101, 9, 624, 0, 'comparevalue', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13102, 9, 624, 0, 'minvalue', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13103, 9, 624, 0, 'maxvalue', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13104, 9, 624, 0, 'successcondition', 0.00, 'equal');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13105, 9, 624, 0, 'successnumbercondition', 0.00, 'equal');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13106, 9, 624, 0, 'successbooleancondition', 0.00, 'true');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13107, 9, 624, 0, 'successwhenvarset', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13108, 9, 625, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13109, 9, 625, 0, 'job_object_id', 0.00, '17');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13110, 9, 625, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13111, 9, 625, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13112, 9, 625, 0, 'file_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8402, 16, 397, 0, 'dummy', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10026, 18, 470, 0, 'start', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6950, 15, 330, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6951, 15, 330, 0, 'trans_object_id', 0.00, '27');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6952, 15, 330, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6953, 15, 330, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6954, 15, 330, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6955, 15, 330, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6956, 15, 330, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6957, 15, 330, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6958, 15, 330, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6959, 15, 330, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6960, 15, 330, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6961, 15, 330, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6962, 15, 330, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6963, 15, 330, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6964, 15, 330, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6965, 15, 330, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6966, 15, 330, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6967, 15, 330, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6968, 15, 330, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6969, 15, 330, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6970, 15, 330, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6971, 15, 330, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6972, 15, 330, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6973, 15, 330, 0, 'parameter_name', 0.00, 'query');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6974, 15, 330, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6975, 15, 330, 0, 'parameter_value', 0.00, 'SELECT setval(''seq_${staging_partial_table_name}_id'', 1, true);');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (6976, 15, 330, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13113, 9, 625, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13114, 9, 625, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13115, 9, 625, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13116, 9, 625, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13117, 9, 625, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13118, 9, 625, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13119, 9, 625, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13120, 9, 625, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13121, 9, 625, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13122, 9, 625, 0, 'loglevel', 0.00, 'Nothing');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13123, 9, 625, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13124, 9, 625, 0, 'pass_export', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13125, 9, 625, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13126, 9, 625, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13127, 9, 625, 0, 'expand_remote_job', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13128, 9, 625, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13129, 9, 625, 0, 'force_separate_logging', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13130, 9, 625, 0, 'parameter_name', 0.00, 'alfresco_cmis_url');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13131, 9, 625, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13132, 9, 625, 0, 'parameter_value', 0.00, '${alfresco_cmis_url}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13133, 9, 625, 1, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13134, 9, 625, 1, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13135, 9, 625, 1, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13136, 9, 625, 2, 'parameter_name', 0.00, 'alfresco_login');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13137, 9, 625, 2, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13138, 9, 625, 2, 'parameter_value', 0.00, '${alfresco_login}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8403, 16, 397, 0, 'repeat', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8404, 16, 397, 0, 'schedulerType', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8405, 16, 397, 0, 'intervalSeconds', 0.00, NULL);
@@ -7346,6 +7202,7 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8475, 16, 399, 4, 'parameter_value', 0.00, '${cmis_last_update}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8476, 16, 399, 5, 'parameter_name', 0.00, 'modified_documents_cmis_contentstreamlength');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8477, 16, 399, 5, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8560, 16, 405, 0, 'replacevars', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8478, 16, 399, 5, 'parameter_value', 0.00, '${modified_documents_cmis_contentstreamlength}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8479, 16, 399, 6, 'parameter_name', 0.00, 'modified_documents_cmis_name');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8480, 16, 399, 6, 'parameter_stream_name', 0.00, NULL);
@@ -7438,14 +7295,6 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2777, 12, 145, 0, 'wait_until_finished', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2778, 12, 145, 0, 'follow_abort_remote', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (2779, 12, 145, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9711, 9, 453, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9712, 9, 453, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9713, 9, 453, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9714, 9, 453, 0, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9715, 9, 453, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9716, 9, 454, 0, 'valuetype', 0.00, 'variable');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9717, 9, 454, 0, 'fieldname', 0.00, '${getParents}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9718, 9, 454, 0, 'variablename', 0.00, 'get_parents');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8549, 16, 403, 0, 'sql', 0.00, 'insert into ${staging_table_name}
 select *, null as tuple_id
 from ${staging_partial_table_name}
@@ -7460,7 +7309,6 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8557, 16, 404, 0, 'variable_name', 0.00, 'loop');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8558, 16, 404, 0, 'variable_value', 0.00, 'false');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8559, 16, 404, 0, 'variable_type', 0.00, 'JVM');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8560, 16, 405, 0, 'replacevars', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8561, 16, 405, 0, 'filename', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8562, 16, 405, 0, 'file_variable_type', 0.00, 'CURRENT_JOB');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8563, 16, 405, 0, 'variable_name', 0.00, 'modified_documents_cmis_contentstreamlength');
@@ -7653,51 +7501,7 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8630, 16, 408, 2, 'parameter_value', 0.00, '${modified_folders_name}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8631, 16, 408, 3, 'parameter_name', 0.00, 'unmodified_folders_name');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8632, 16, 408, 3, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9719, 9, 454, 0, 'fieldtype', 0.00, 'boolean');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9720, 9, 454, 0, 'mask', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9721, 9, 454, 0, 'comparevalue', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9722, 9, 454, 0, 'minvalue', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9723, 9, 454, 0, 'maxvalue', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9724, 9, 454, 0, 'successcondition', 0.00, 'equal');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3101, 13, 157, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9725, 9, 454, 0, 'successnumbercondition', 0.00, 'equal');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9726, 9, 454, 0, 'successbooleancondition', 0.00, 'true');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9727, 9, 454, 0, 'successwhenvarset', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9728, 9, 455, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9729, 9, 455, 0, 'job_object_id', 0.00, '17');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9730, 9, 455, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9731, 9, 455, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9732, 9, 455, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9733, 9, 455, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9734, 9, 455, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9735, 9, 455, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9736, 9, 455, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9737, 9, 455, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9738, 9, 455, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9739, 9, 455, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9740, 9, 455, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9741, 9, 455, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9742, 9, 455, 0, 'loglevel', 0.00, 'Nothing');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9743, 9, 455, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9744, 9, 455, 0, 'pass_export', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9745, 9, 455, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9746, 9, 455, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9747, 9, 455, 0, 'expand_remote_job', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9748, 9, 455, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9749, 9, 455, 0, 'force_separate_logging', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9750, 9, 455, 0, 'parameter_name', 0.00, 'alfresco_cmis_url');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9751, 9, 455, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9752, 9, 455, 0, 'parameter_value', 0.00, '${alfresco_cmis_url}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9753, 9, 455, 1, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9754, 9, 455, 1, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9755, 9, 455, 1, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9756, 9, 455, 2, 'parameter_name', 0.00, 'alfresco_login');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9757, 9, 455, 2, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9758, 9, 455, 2, 'parameter_value', 0.00, '${alfresco_login}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9759, 9, 455, 3, 'parameter_name', 0.00, 'alfresco_password');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9760, 9, 455, 3, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9761, 9, 455, 3, 'parameter_value', 0.00, '${alfresco_password}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (9762, 9, 455, 0, 'pass_all_parameters', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10670, 6, 506, 0, 'start', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10671, 6, 506, 0, 'dummy', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10672, 6, 506, 0, 'repeat', 0.00, 'N');
@@ -7779,6 +7583,7 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8666, 16, 409, 2, 'parameter_value', 0.00, '${modified_folders_name}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8667, 16, 409, 3, 'parameter_name', 0.00, 'unmodified_folders_name');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8668, 16, 409, 3, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3008, 13, 155, 0, 'dir_path', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8669, 16, 409, 3, 'parameter_value', 0.00, '${unmodified_folders_name}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8670, 16, 409, 0, 'pass_all_parameters', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8671, 16, 410, 0, 'specification_method', 0.00, 'rep_ref');
@@ -7998,7 +7803,6 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3005, 13, 155, 0, 'specification_method', 0.00, 'rep_ref');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3006, 13, 155, 0, 'trans_object_id', 0.00, '24');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3007, 13, 155, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3008, 13, 155, 0, 'dir_path', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3009, 13, 155, 0, 'file_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3010, 13, 155, 0, 'arg_from_previous', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (3011, 13, 155, 0, 'params_from_previous', 0.00, 'N');
@@ -8370,6 +8174,7 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8744, 16, 413, 0, 'maxvalue', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8745, 16, 413, 0, 'successcondition', 0.00, 'equal');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8746, 16, 413, 0, 'successnumbercondition', 0.00, 'equal');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8159, 11, 385, 0, 'set_logfile', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8747, 16, 413, 0, 'successbooleancondition', 0.00, 'false');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8748, 16, 413, 0, 'successwhenvarset', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8749, 16, 414, 0, 'specification_method', 0.00, 'rep_ref');
@@ -8476,7 +8281,6 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8156, 11, 385, 0, 'exec_per_row', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8157, 11, 385, 0, 'clear_rows', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8158, 11, 385, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8159, 11, 385, 0, 'set_logfile', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8160, 11, 385, 0, 'add_date', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8161, 11, 385, 0, 'add_time', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8162, 11, 385, 0, 'logfile', 0.00, NULL);
@@ -8684,6 +8488,15 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8320, 11, 392, 9, 'variable_name', 0.00, 'unmodified_folders_name');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8321, 11, 392, 9, 'variable_value', 0.00, '${new_unmodified_folders_name}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8322, 11, 392, 9, 'variable_type', 0.00, 'CURRENT_JOB');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10028, 18, 470, 0, 'repeat', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10029, 18, 470, 0, 'schedulerType', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10030, 18, 470, 0, 'intervalSeconds', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10031, 18, 470, 0, 'intervalMinutes', 60.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10032, 18, 470, 0, 'hour', 12.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10033, 18, 470, 0, 'minutes', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10034, 18, 470, 0, 'weekDay', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10035, 18, 470, 0, 'dayOfMonth', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10036, 18, 471, 0, 'specification_method', 0.00, 'rep_ref');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8323, 11, 393, 0, 'logmessage', 0.00, 'new_modified_documents_cmis_contentstreamlength = ${new_modified_documents_cmis_contentstreamlength}
 new_modified_documents_name = ${new_modified_documents_name}
 new_unmodified_documents_cmis_contentstreamlength = ${new_unmodified_documents_cmis_contentstreamlength}
@@ -8788,15 +8601,6 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8399, 11, 396, 3, 'parameter_value', 0.00, '${unmodified_folders_name}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (8400, 11, 396, 0, 'pass_all_parameters', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10027, 18, 470, 0, 'dummy', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10028, 18, 470, 0, 'repeat', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10029, 18, 470, 0, 'schedulerType', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10030, 18, 470, 0, 'intervalSeconds', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10031, 18, 470, 0, 'intervalMinutes', 60.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10032, 18, 470, 0, 'hour', 12.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10033, 18, 470, 0, 'minutes', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10034, 18, 470, 0, 'weekDay', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10035, 18, 470, 0, 'dayOfMonth', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10036, 18, 471, 0, 'specification_method', 0.00, 'rep_ref');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10037, 18, 471, 0, 'trans_object_id', 0.00, '33');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10038, 18, 471, 0, 'name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (10039, 18, 471, 0, 'dir_path', 0.00, NULL);
@@ -9549,112 +9353,10 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11873, 21, 561, 1, 'parameter_stream_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11874, 21, 561, 1, 'parameter_value', 0.00, '${get_parents}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11875, 21, 561, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11876, 22, 562, 0, 'start', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11877, 22, 562, 0, 'dummy', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11878, 22, 562, 0, 'repeat', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11879, 22, 562, 0, 'schedulerType', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11880, 22, 562, 0, 'intervalSeconds', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11881, 22, 562, 0, 'intervalMinutes', 60.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11882, 22, 562, 0, 'hour', 12.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11883, 22, 562, 0, 'minutes', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11884, 22, 562, 0, 'weekDay', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11885, 22, 562, 0, 'dayOfMonth', 1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11886, 22, 563, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11887, 22, 563, 0, 'trans_object_id', 0.00, '29');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11888, 22, 563, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11889, 22, 563, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11890, 22, 563, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11891, 22, 563, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11892, 22, 563, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11893, 22, 563, 0, 'exec_per_row', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11894, 22, 563, 0, 'clear_rows', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11895, 22, 563, 0, 'clear_files', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11896, 22, 563, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11897, 22, 563, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11898, 22, 563, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11899, 22, 563, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11900, 22, 563, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11901, 22, 563, 0, 'loglevel', 0.00, 'Basic');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11902, 22, 563, 0, 'cluster', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11903, 22, 563, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11904, 22, 563, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11905, 22, 563, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11906, 22, 563, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11907, 22, 563, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11908, 22, 563, 0, 'logging_remote_work', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11909, 22, 563, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11910, 22, 563, 0, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11911, 22, 563, 0, 'parameter_value', 0.00, '${alfresco_id}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11912, 22, 563, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11913, 22, 564, 0, 'specification_method', 0.00, 'rep_ref');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11914, 22, 564, 0, 'job_object_id', 0.00, '15');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11915, 22, 564, 0, 'name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11916, 22, 564, 0, 'dir_path', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11917, 22, 564, 0, 'file_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11918, 22, 564, 0, 'arg_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11919, 22, 564, 0, 'params_from_previous', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11920, 22, 564, 0, 'exec_per_row', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11921, 22, 564, 0, 'set_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11922, 22, 564, 0, 'add_date', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11923, 22, 564, 0, 'add_time', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11924, 22, 564, 0, 'logfile', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11925, 22, 564, 0, 'logext', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11926, 22, 564, 0, 'set_append_logfile', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11927, 22, 564, 0, 'loglevel', 0.00, 'Nothing');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11928, 22, 564, 0, 'slave_server_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11929, 22, 564, 0, 'pass_export', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11930, 22, 564, 0, 'wait_until_finished', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11931, 22, 564, 0, 'follow_abort_remote', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11932, 22, 564, 0, 'expand_remote_job', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11933, 22, 564, 0, 'create_parent_folder', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11934, 22, 564, 0, 'force_separate_logging', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11935, 22, 564, 0, 'parameter_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11936, 22, 564, 0, 'parameter_stream_name', 0.00, 'alfresco_id');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11937, 22, 564, 0, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11938, 22, 564, 1, 'parameter_name', 0.00, 'alfresco_cmis_url');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11939, 22, 564, 1, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11940, 22, 564, 1, 'parameter_value', 0.00, '${alfresco_cmis_url}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11941, 22, 564, 2, 'parameter_name', 0.00, 'alfresco_login');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11942, 22, 564, 2, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11943, 22, 564, 2, 'parameter_value', 0.00, '${alfresco_login}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11944, 22, 564, 3, 'parameter_name', 0.00, 'alfresco_password');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11945, 22, 564, 3, 'parameter_stream_name', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11946, 22, 564, 3, 'parameter_value', 0.00, '${alfresco_password}');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11947, 22, 564, 4, 'parameter_name', 0.00, 'staging_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11948, 22, 564, 4, 'parameter_stream_name', 0.00, 'staging_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11949, 22, 564, 4, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11950, 22, 564, 5, 'parameter_name', 0.00, 'staging_partial_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11951, 22, 564, 5, 'parameter_stream_name', 0.00, 'staging_partial_table_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11952, 22, 564, 5, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11953, 22, 564, 6, 'parameter_name', 0.00, 'is_aspect');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11954, 22, 564, 6, 'parameter_stream_name', 0.00, 'is_aspect');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11955, 22, 564, 6, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11956, 22, 564, 7, 'parameter_name', 0.00, 'is_document_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11957, 22, 564, 7, 'parameter_stream_name', 0.00, 'is_document_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11958, 22, 564, 7, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11959, 22, 564, 8, 'parameter_name', 0.00, 'is_folder_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11960, 22, 564, 8, 'parameter_stream_name', 0.00, 'is_folder_type');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11961, 22, 564, 8, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11962, 22, 564, 9, 'parameter_name', 0.00, 'type_name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11963, 22, 564, 9, 'parameter_stream_name', 0.00, 'name');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11964, 22, 564, 9, 'parameter_value', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11965, 22, 564, 0, 'pass_all_parameters', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11966, 22, 565, 0, 'id_database', -1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11967, 22, 565, 0, 'connection', -1.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11968, 22, 565, 0, 'schemaname', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11969, 22, 565, 0, 'tablename', 0.00, NULL);
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11970, 22, 565, 0, 'success_condition', 0.00, 'rows_count_greater');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11971, 22, 565, 0, 'limit', 0.00, '0');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11972, 22, 565, 0, 'custom_sql', 0.00, 'SELECT *
-FROM dm_custom_metadata
-WHERE
- dm_custom_metadata.is_active = ''Y''
- AND dm_custom_metadata.alfresco_id = ${alfresco_id}
-');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11973, 22, 565, 0, 'is_custom_sql', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11974, 22, 565, 0, 'is_usevars', 0.00, 'Y');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11975, 22, 565, 0, 'add_rows_result', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11976, 22, 565, 0, 'clear_result_rows', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13139, 9, 625, 3, 'parameter_name', 0.00, 'alfresco_password');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13140, 9, 625, 3, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13141, 9, 625, 3, 'parameter_value', 0.00, '${alfresco_password}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13142, 9, 625, 0, 'pass_all_parameters', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11977, 17, 567, 0, 'start', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11978, 17, 567, 0, 'dummy', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (11979, 17, 567, 0, 'repeat', 0.00, 'N');
@@ -9850,6 +9552,304 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12162, 10, 576, 3, 'parameter_stream_name', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12163, 10, 576, 3, 'parameter_value', 0.00, '${alfresco_password}');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12164, 10, 576, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12722, 23, 606, 0, 'start', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12723, 23, 606, 0, 'dummy', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12724, 23, 606, 0, 'repeat', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12725, 23, 606, 0, 'schedulerType', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12726, 23, 606, 0, 'intervalSeconds', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12727, 23, 606, 0, 'intervalMinutes', 60.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12728, 23, 606, 0, 'hour', 12.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12729, 23, 606, 0, 'minutes', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12730, 23, 606, 0, 'weekDay', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12731, 23, 606, 0, 'dayOfMonth', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12732, 23, 607, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12733, 23, 607, 0, 'job_object_id', 0.00, '16');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12734, 23, 607, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12735, 23, 607, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12736, 23, 607, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12737, 23, 607, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12738, 23, 607, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12739, 23, 607, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12740, 23, 607, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12741, 23, 607, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12742, 23, 607, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12743, 23, 607, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12744, 23, 607, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12745, 23, 607, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12746, 23, 607, 0, 'loglevel', 0.00, 'Nothing');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12747, 23, 607, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12748, 23, 607, 0, 'pass_export', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12749, 23, 607, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12750, 23, 607, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12751, 23, 607, 0, 'expand_remote_job', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12752, 23, 607, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12753, 23, 607, 0, 'force_separate_logging', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12754, 23, 607, 0, 'parameter_name', 0.00, 'alfresco_cmis_url');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12755, 23, 607, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12756, 23, 607, 0, 'parameter_value', 0.00, '${alfresco_cmis_url}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12757, 23, 607, 1, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12758, 23, 607, 1, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12759, 23, 607, 1, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12760, 23, 607, 2, 'parameter_name', 0.00, 'alfresco_login');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12761, 23, 607, 2, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12762, 23, 607, 2, 'parameter_value', 0.00, '${alfresco_login}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12763, 23, 607, 3, 'parameter_name', 0.00, 'alfresco_password');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12764, 23, 607, 3, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12765, 23, 607, 3, 'parameter_value', 0.00, '${alfresco_password}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12766, 23, 607, 4, 'parameter_name', 0.00, 'is_aspect');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12767, 23, 607, 4, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12768, 23, 607, 4, 'parameter_value', 0.00, '${is_aspect}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12769, 23, 607, 5, 'parameter_name', 0.00, 'is_document_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12770, 23, 607, 5, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12771, 23, 607, 5, 'parameter_value', 0.00, '${is_document_type}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12772, 23, 607, 6, 'parameter_name', 0.00, 'is_folder_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12773, 23, 607, 6, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12774, 23, 607, 6, 'parameter_value', 0.00, '${is_folder_type}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12775, 23, 607, 7, 'parameter_name', 0.00, 'staging_partial_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12776, 23, 607, 7, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12777, 23, 607, 7, 'parameter_value', 0.00, '${staging_partial_table_name}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12778, 23, 607, 8, 'parameter_name', 0.00, 'staging_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12779, 23, 607, 8, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12780, 23, 607, 8, 'parameter_value', 0.00, '${staging_table_name}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12781, 23, 607, 9, 'parameter_name', 0.00, 'type_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12782, 23, 607, 9, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12783, 23, 607, 9, 'parameter_value', 0.00, '${type_name}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12784, 23, 607, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12785, 23, 608, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12786, 23, 608, 0, 'trans_object_id', 0.00, '27');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12787, 23, 608, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12788, 23, 608, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12789, 23, 608, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12790, 23, 608, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12791, 23, 608, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12792, 23, 608, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12793, 23, 608, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12794, 23, 608, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12795, 23, 608, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12796, 23, 608, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12797, 23, 608, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12798, 23, 608, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12799, 23, 608, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12800, 23, 608, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12801, 23, 608, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12802, 23, 608, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12803, 23, 608, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12804, 23, 608, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12805, 23, 608, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12806, 23, 608, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12807, 23, 608, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12808, 23, 608, 0, 'parameter_name', 0.00, 'query');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12809, 23, 608, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12810, 23, 608, 0, 'parameter_value', 0.00, 'delete from ${staging_table_name} where alfresco_id=${alfresco_id};');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12811, 23, 608, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12812, 23, 609, 0, 'tablename', 0.00, '${staging_table_name}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12813, 23, 609, 0, 'schemaname', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12814, 23, 609, 0, 'id_database', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12815, 23, 609, 0, 'connection', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12816, 23, 610, 0, 'logmessage', 0.00, 'Type/aspect ''${type_name}'' is not imported because table structures are not defined.
+Please, execute the structure creation one more time.');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12817, 23, 610, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12818, 23, 610, 0, 'logsubject', 0.00, 'Type name not imported.');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12819, 23, 611, 0, 'logmessage', 0.00, 'Type/aspect ''${type_name}'' is going to be imported.');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12820, 23, 611, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12821, 23, 611, 0, 'logsubject', 0.00, 'Type name is going to be imported.');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12822, 23, 612, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12823, 23, 612, 0, 'trans_object_id', 0.00, '27');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12824, 23, 612, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12825, 23, 612, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12826, 23, 612, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12827, 23, 612, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12828, 23, 612, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12829, 23, 612, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12830, 23, 612, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12831, 23, 612, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12832, 23, 612, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12833, 23, 612, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12834, 23, 612, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12835, 23, 612, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12836, 23, 612, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12837, 23, 612, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12838, 23, 612, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12839, 23, 612, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12840, 23, 612, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12841, 23, 612, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12842, 23, 612, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12843, 23, 612, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12844, 23, 612, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12845, 23, 612, 0, 'parameter_name', 0.00, 'query');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12846, 23, 612, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12847, 23, 612, 0, 'parameter_value', 0.00, 'SELECT setval(''public.seq_${staging_partial_table_name}_id'', 1, true);');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12848, 23, 612, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12849, 22, 613, 0, 'start', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12850, 22, 613, 0, 'dummy', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12851, 22, 613, 0, 'repeat', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12852, 22, 613, 0, 'schedulerType', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12853, 22, 613, 0, 'intervalSeconds', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12854, 22, 613, 0, 'intervalMinutes', 60.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12855, 22, 613, 0, 'hour', 12.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12856, 22, 613, 0, 'minutes', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12857, 22, 613, 0, 'weekDay', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12858, 22, 613, 0, 'dayOfMonth', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12859, 22, 614, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12860, 22, 614, 0, 'trans_object_id', 0.00, '29');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12861, 22, 614, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12862, 22, 614, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12863, 22, 614, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12864, 22, 614, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12865, 22, 614, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12866, 22, 614, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12867, 22, 614, 0, 'clear_rows', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12868, 22, 614, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12869, 22, 614, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12870, 22, 614, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12871, 22, 614, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12872, 22, 614, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12873, 22, 614, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12874, 22, 614, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12875, 22, 614, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12876, 22, 614, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12877, 22, 614, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12878, 22, 614, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12879, 22, 614, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12880, 22, 614, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12881, 22, 614, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12882, 22, 614, 0, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12883, 22, 614, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12884, 22, 614, 0, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12885, 22, 614, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12886, 22, 615, 0, 'id_database', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12887, 22, 615, 0, 'connection', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12888, 22, 615, 0, 'schemaname', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12889, 22, 615, 0, 'tablename', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12890, 22, 615, 0, 'success_condition', 0.00, 'rows_count_greater');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12891, 22, 615, 0, 'limit', 0.00, '0');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12892, 22, 615, 0, 'custom_sql', 0.00, 'SELECT *
+FROM dm_custom_metadata
+WHERE
+ dm_custom_metadata.is_active = ''Y''
+ AND dm_custom_metadata.alfresco_id = ${alfresco_id}
+');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12893, 22, 615, 0, 'is_custom_sql', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12894, 22, 615, 0, 'is_usevars', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12895, 22, 615, 0, 'add_rows_result', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12896, 22, 615, 0, 'clear_result_rows', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12897, 22, 617, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12898, 22, 617, 0, 'job_object_id', 0.00, '23');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12899, 22, 617, 0, 'name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12900, 22, 617, 0, 'dir_path', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12901, 22, 617, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12902, 22, 617, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12903, 22, 617, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12904, 22, 617, 0, 'exec_per_row', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12905, 22, 617, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12950, 9, 618, 0, 'start', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12951, 9, 618, 0, 'dummy', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12952, 9, 618, 0, 'repeat', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12953, 9, 618, 0, 'schedulerType', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12954, 9, 618, 0, 'intervalSeconds', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12955, 9, 618, 0, 'intervalMinutes', 60.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12956, 9, 618, 0, 'hour', 12.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12957, 9, 618, 0, 'minutes', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12958, 9, 618, 0, 'weekDay', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12959, 9, 618, 0, 'dayOfMonth', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12960, 9, 619, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12961, 9, 619, 0, 'trans_object_id', 0.00, '12');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12962, 9, 619, 0, 'name', 0.00, 'Get alfresco connection params');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12963, 9, 619, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12964, 9, 619, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12965, 9, 619, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12966, 9, 619, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12967, 9, 619, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12968, 9, 619, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12969, 9, 619, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12970, 9, 619, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12971, 9, 619, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12972, 9, 619, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12973, 9, 619, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12974, 9, 619, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12975, 9, 619, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12976, 9, 619, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12906, 22, 617, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12907, 22, 617, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12908, 22, 617, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12909, 22, 617, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12910, 22, 617, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12911, 22, 617, 0, 'loglevel', 0.00, 'Nothing');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12912, 22, 617, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12913, 22, 617, 0, 'pass_export', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12914, 22, 617, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12915, 22, 617, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12916, 22, 617, 0, 'expand_remote_job', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12917, 22, 617, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12918, 22, 617, 0, 'force_separate_logging', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12919, 22, 617, 0, 'parameter_name', 0.00, 'alfresco_cmis_url');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12920, 22, 617, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12921, 22, 617, 0, 'parameter_value', 0.00, '${alfresco_cmis_url}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12922, 22, 617, 1, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12923, 22, 617, 1, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12924, 22, 617, 1, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12925, 22, 617, 2, 'parameter_name', 0.00, 'alfresco_login');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12926, 22, 617, 2, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12927, 22, 617, 2, 'parameter_value', 0.00, '${alfresco_login}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12928, 22, 617, 3, 'parameter_name', 0.00, 'alfresco_password');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12929, 22, 617, 3, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12930, 22, 617, 3, 'parameter_value', 0.00, '${alfresco_password}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12931, 22, 617, 4, 'parameter_name', 0.00, 'is_aspect');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12932, 22, 617, 4, 'parameter_stream_name', 0.00, 'is_aspect');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12933, 22, 617, 4, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12934, 22, 617, 5, 'parameter_name', 0.00, 'is_document_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12935, 22, 617, 5, 'parameter_stream_name', 0.00, 'is_document_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12936, 22, 617, 5, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12937, 22, 617, 6, 'parameter_name', 0.00, 'is_folder_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12938, 22, 617, 6, 'parameter_stream_name', 0.00, 'is_folder_type');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12939, 22, 617, 6, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12940, 22, 617, 7, 'parameter_name', 0.00, 'staging_partial_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12941, 22, 617, 7, 'parameter_stream_name', 0.00, 'staging_partial_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12942, 22, 617, 7, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12943, 22, 617, 8, 'parameter_name', 0.00, 'staging_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12944, 22, 617, 8, 'parameter_stream_name', 0.00, 'staging_table_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12945, 22, 617, 8, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12946, 22, 617, 9, 'parameter_name', 0.00, 'type_name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12947, 22, 617, 9, 'parameter_stream_name', 0.00, 'name');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12948, 22, 617, 9, 'parameter_value', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12949, 22, 617, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12977, 9, 619, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12978, 9, 619, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12979, 9, 619, 0, 'wait_until_finished', 0.00, 'Y');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12980, 9, 619, 0, 'follow_abort_remote', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12981, 9, 619, 0, 'create_parent_folder', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12982, 9, 619, 0, 'logging_remote_work', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12983, 9, 619, 0, 'parameter_name', 0.00, 'alfresco_id');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12984, 9, 619, 0, 'parameter_stream_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12985, 9, 619, 0, 'parameter_value', 0.00, '${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12986, 9, 619, 0, 'pass_all_parameters', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12987, 9, 620, 0, 'id_database', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12988, 9, 620, 0, 'connection', 1.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12989, 9, 620, 0, 'sql', 0.00, 'delete from ope_cmis_document_parent where alfresco_id = ${alfresco_id}');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12990, 9, 620, 0, 'useVariableSubstitution', 0.00, 'T');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12991, 9, 620, 0, 'sqlfromfile', 0.00, 'F');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12992, 9, 620, 0, 'sqlfilename', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12993, 9, 620, 0, 'sendOneStatement', 0.00, 'F');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12994, 9, 621, 0, 'specification_method', 0.00, 'rep_ref');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12995, 9, 621, 0, 'trans_object_id', 0.00, '17');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12996, 9, 621, 0, 'name', 0.00, 'Get objectId for the folders');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12997, 9, 621, 0, 'dir_path', 0.00, '/Alfresco/Staging/Utility');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12998, 9, 621, 0, 'file_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (12999, 9, 621, 0, 'arg_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13000, 9, 621, 0, 'params_from_previous', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13001, 9, 621, 0, 'exec_per_row', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13002, 9, 621, 0, 'clear_rows', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13003, 9, 621, 0, 'clear_files', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13004, 9, 621, 0, 'set_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13005, 9, 621, 0, 'add_date', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13006, 9, 621, 0, 'add_time', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13007, 9, 621, 0, 'logfile', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13008, 9, 621, 0, 'logext', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13009, 9, 621, 0, 'loglevel', 0.00, 'Basic');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13010, 9, 621, 0, 'cluster', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13011, 9, 621, 0, 'slave_server_name', 0.00, NULL);
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13012, 9, 621, 0, 'set_append_logfile', 0.00, 'N');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (13013, 9, 621, 0, 'wait_until_finished', 0.00, 'Y');
 
 
 --
@@ -9862,7 +9862,7 @@ SELECT pg_catalog.setval('r_jobentry_attribute_id_jobentry_attribute_seq', 1, fa
 
 
 --
--- TOC entry 2266 (class 0 OID 17022)
+-- TOC entry 2266 (class 0 OID 19062)
 -- Dependencies: 197 2317
 -- Data for Name: r_jobentry_copy; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -9871,10 +9871,6 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (80, 80, 2, 46, 0, 120, 29, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (81, 81, 2, 46, 0, 238, 28, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (82, 82, 2, 46, 0, 359, 29, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (324, 324, 15, 66, 0, 30, 34, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (325, 325, 15, 46, 0, 629, 33, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (326, 326, 15, 76, 0, 344, 34, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (327, 327, 15, 73, 0, 144, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (87, 87, 4, 66, 0, 43, 45, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (88, 88, 4, 76, 0, 137, 45, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (89, 89, 4, 46, 0, 268, 44, true, false);
@@ -9898,9 +9894,6 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (471, 471, 18, 76, 0, 335, 38, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (472, 472, 18, 73, 0, 176, 38, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (473, 473, 18, 72, 0, 175, 131, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (328, 328, 15, 85, 0, 143, 129, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (329, 329, 15, 85, 0, 238, 34, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (330, 330, 15, 76, 0, 458, 33, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (397, 397, 16, 66, 0, 35, 44, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (398, 398, 16, 76, 0, 179, 44, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (399, 399, 16, 76, 0, 292, 224, true, false);
@@ -9956,14 +9949,6 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (156, 156, 13, 76, 0, 488, 197, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (157, 157, 13, 76, 0, 227, 32, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (517, 517, 6, 46, 0, 183, 255, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (448, 448, 9, 66, 0, 35, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (449, 449, 9, 76, 0, 342, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (450, 450, 9, 67, 0, 513, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (451, 451, 9, 76, 0, 815, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (452, 452, 9, 76, 0, 989, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (453, 453, 9, 76, 0, 164, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (454, 454, 9, 65, 0, 656, 35, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (455, 455, 9, 46, 0, 655, 142, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (533, 533, 19, 66, 0, 34, 32, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (534, 534, 19, 76, 0, 329, 32, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (535, 535, 19, 46, 0, 526, 32, true, false);
@@ -9987,6 +9972,7 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (396, 396, 11, 76, 0, 955, 45, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (539, 539, 20, 76, 0, 421, 32, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (540, 540, 20, 73, 0, 139, 32, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (606, 606, 23, 66, 0, 30, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (541, 541, 20, 65, 0, 245, 32, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (542, 542, 20, 65, 0, 245, 123, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (543, 543, 20, 76, 0, 423, 124, true, false);
@@ -10000,11 +9986,11 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (559, 559, 21, 66, 0, 33, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (560, 560, 21, 46, 0, 121, 33, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (561, 561, 21, 46, 0, 203, 33, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (562, 562, 22, 66, 0, 60, 38, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (563, 563, 22, 76, 0, 355, 38, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (564, 564, 22, 46, 0, 541, 38, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (565, 565, 22, 30, 0, 182, 38, true, false);
-INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (566, 566, 22, 72, 0, 183, 153, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (607, 607, 23, 46, 0, 629, 33, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (608, 608, 23, 76, 0, 344, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (609, 609, 23, 73, 0, 144, 34, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (610, 610, 23, 85, 0, 143, 129, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (611, 611, 23, 85, 0, 238, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (567, 567, 17, 66, 0, 60, 38, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (568, 568, 17, 76, 0, 355, 38, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (569, 569, 17, 46, 0, 567, 38, true, false);
@@ -10015,6 +10001,20 @@ INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (574, 574, 10, 67, 0, 348, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (575, 575, 10, 46, 0, 520, 34, true, false);
 INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (576, 576, 10, 46, 0, 740, 34, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (612, 612, 23, 76, 0, 458, 33, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (613, 613, 22, 66, 0, 60, 38, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (614, 614, 22, 76, 0, 355, 38, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (615, 615, 22, 30, 0, 182, 38, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (616, 616, 22, 72, 0, 183, 153, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (617, 617, 22, 46, 0, 558, 37, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (618, 618, 9, 66, 0, 35, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (619, 619, 9, 76, 0, 342, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (620, 620, 9, 67, 0, 513, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (621, 621, 9, 76, 0, 815, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (622, 622, 9, 76, 0, 989, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (623, 623, 9, 76, 0, 164, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (624, 624, 9, 65, 0, 656, 35, true, false);
+INSERT INTO r_jobentry_copy (id_jobentry_copy, id_jobentry, id_job, id_jobentry_type, nr, gui_location_x, gui_location_y, gui_draw, parallel) VALUES (625, 625, 9, 46, 0, 655, 142, true, false);
 
 
 --
@@ -10027,7 +10027,7 @@ SELECT pg_catalog.setval('r_jobentry_copy_id_jobentry_copy_seq', 1, false);
 
 
 --
--- TOC entry 2268 (class 0 OID 17027)
+-- TOC entry 2268 (class 0 OID 19067)
 -- Dependencies: 199 2317
 -- Data for Name: r_jobentry_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10039,9 +10039,7 @@ INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (8, 11
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (16, NULL, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (16, 402, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (16, 403, 1);
-INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (9, 450, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (18, 472, 1);
-INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (15, 327, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (6, 511, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (6, 514, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (6, 515, 1);
@@ -10052,9 +10050,11 @@ INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (11, 3
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (11, 388, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (11, 389, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (11, 391, 1);
-INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (22, 565, NULL);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (17, 570, 1);
 INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (10, 574, 1);
+INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (23, 609, 1);
+INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (22, 615, 1);
+INSERT INTO r_jobentry_database (id_job, id_jobentry, id_database) VALUES (9, 620, 1);
 
 
 --
@@ -10067,7 +10067,7 @@ SELECT pg_catalog.setval('r_jobentry_id_jobentry_seq', 1, false);
 
 
 --
--- TOC entry 2270 (class 0 OID 17032)
+-- TOC entry 2270 (class 0 OID 19072)
 -- Dependencies: 201 2317
 -- Data for Name: r_jobentry_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10172,7 +10172,7 @@ SELECT pg_catalog.setval('r_jobentry_type_id_jobentry_type_seq', 1, false);
 
 
 --
--- TOC entry 2272 (class 0 OID 17040)
+-- TOC entry 2272 (class 0 OID 19080)
 -- Dependencies: 203 2317
 -- Data for Name: r_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10189,7 +10189,7 @@ SELECT pg_catalog.setval('r_log_id_log_seq', 1, false);
 
 
 --
--- TOC entry 2274 (class 0 OID 17048)
+-- TOC entry 2274 (class 0 OID 19088)
 -- Dependencies: 205 2317
 -- Data for Name: r_loglevel; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10212,7 +10212,7 @@ SELECT pg_catalog.setval('r_loglevel_id_loglevel_seq', 1, false);
 
 
 --
--- TOC entry 2276 (class 0 OID 17056)
+-- TOC entry 2276 (class 0 OID 19096)
 -- Dependencies: 207 2317
 -- Data for Name: r_namespace; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10229,7 +10229,7 @@ SELECT pg_catalog.setval('r_namespace_id_namespace_seq', 1, false);
 
 
 --
--- TOC entry 2278 (class 0 OID 17064)
+-- TOC entry 2278 (class 0 OID 19104)
 -- Dependencies: 209 2317
 -- Data for Name: r_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10254,7 +10254,7 @@ SELECT pg_catalog.setval('r_note_id_note_seq', 1, false);
 
 
 --
--- TOC entry 2280 (class 0 OID 17072)
+-- TOC entry 2280 (class 0 OID 19112)
 -- Dependencies: 211 2317
 -- Data for Name: r_partition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10271,7 +10271,7 @@ SELECT pg_catalog.setval('r_partition_id_partition_seq', 1, false);
 
 
 --
--- TOC entry 2282 (class 0 OID 17077)
+-- TOC entry 2282 (class 0 OID 19117)
 -- Dependencies: 213 2317
 -- Data for Name: r_partition_schema; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10288,7 +10288,7 @@ SELECT pg_catalog.setval('r_partition_schema_id_partition_schema_seq', 1, false)
 
 
 --
--- TOC entry 2284 (class 0 OID 17085)
+-- TOC entry 2284 (class 0 OID 19125)
 -- Dependencies: 215 2317
 -- Data for Name: r_repository_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10305,7 +10305,7 @@ SELECT pg_catalog.setval('r_repository_log_id_repository_log_seq', 1, false);
 
 
 --
--- TOC entry 2286 (class 0 OID 17093)
+-- TOC entry 2286 (class 0 OID 19133)
 -- Dependencies: 217 2317
 -- Data for Name: r_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10322,7 +10322,7 @@ SELECT pg_catalog.setval('r_slave_id_slave_seq', 1, false);
 
 
 --
--- TOC entry 2288 (class 0 OID 17101)
+-- TOC entry 2288 (class 0 OID 19141)
 -- Dependencies: 219 2317
 -- Data for Name: r_step; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10511,7 +10511,7 @@ INSERT INTO r_step (id_step, id_transformation, name, description, id_step_type,
 
 
 --
--- TOC entry 2289 (class 0 OID 17107)
+-- TOC entry 2289 (class 0 OID 19147)
 -- Dependencies: 220 2317
 -- Data for Name: r_step_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -15418,7 +15418,7 @@ SELECT pg_catalog.setval('r_step_attribute_id_step_attribute_seq', 1, false);
 
 
 --
--- TOC entry 2291 (class 0 OID 17115)
+-- TOC entry 2291 (class 0 OID 19155)
 -- Dependencies: 222 2317
 -- Data for Name: r_step_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -15522,7 +15522,7 @@ SELECT pg_catalog.setval('r_step_id_step_seq', 1, false);
 
 
 --
--- TOC entry 2293 (class 0 OID 17120)
+-- TOC entry 2293 (class 0 OID 19160)
 -- Dependencies: 224 2317
 -- Data for Name: r_step_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -15790,7 +15790,7 @@ SELECT pg_catalog.setval('r_step_type_id_step_type_seq', 1, false);
 
 
 --
--- TOC entry 2295 (class 0 OID 17128)
+-- TOC entry 2295 (class 0 OID 19168)
 -- Dependencies: 226 2317
 -- Data for Name: r_trans_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23463,7 +23463,7 @@ SELECT pg_catalog.setval('r_trans_attribute_id_trans_attribute_seq', 1, false);
 
 
 --
--- TOC entry 2297 (class 0 OID 17136)
+-- TOC entry 2297 (class 0 OID 19176)
 -- Dependencies: 228 2317
 -- Data for Name: r_trans_cluster; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23480,7 +23480,7 @@ SELECT pg_catalog.setval('r_trans_cluster_id_trans_cluster_seq', 1, false);
 
 
 --
--- TOC entry 2299 (class 0 OID 17141)
+-- TOC entry 2299 (class 0 OID 19181)
 -- Dependencies: 230 2317
 -- Data for Name: r_trans_hop; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23632,7 +23632,7 @@ SELECT pg_catalog.setval('r_trans_hop_id_trans_hop_seq', 1, false);
 
 
 --
--- TOC entry 2301 (class 0 OID 17146)
+-- TOC entry 2301 (class 0 OID 19186)
 -- Dependencies: 232 2317
 -- Data for Name: r_trans_lock; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23649,7 +23649,7 @@ SELECT pg_catalog.setval('r_trans_lock_id_trans_lock_seq', 1, false);
 
 
 --
--- TOC entry 2303 (class 0 OID 17154)
+-- TOC entry 2303 (class 0 OID 19194)
 -- Dependencies: 234 2317
 -- Data for Name: r_trans_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23657,7 +23657,7 @@ SELECT pg_catalog.setval('r_trans_lock_id_trans_lock_seq', 1, false);
 
 
 --
--- TOC entry 2304 (class 0 OID 17157)
+-- TOC entry 2304 (class 0 OID 19197)
 -- Dependencies: 235 2317
 -- Data for Name: r_trans_partition_schema; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23674,7 +23674,7 @@ SELECT pg_catalog.setval('r_trans_partition_schema_id_trans_partition_schema_seq
 
 
 --
--- TOC entry 2306 (class 0 OID 17162)
+-- TOC entry 2306 (class 0 OID 19202)
 -- Dependencies: 237 2317
 -- Data for Name: r_trans_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23691,7 +23691,7 @@ SELECT pg_catalog.setval('r_trans_slave_id_trans_slave_seq', 1, false);
 
 
 --
--- TOC entry 2308 (class 0 OID 17167)
+-- TOC entry 2308 (class 0 OID 19207)
 -- Dependencies: 239 2317
 -- Data for Name: r_trans_step_condition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23702,7 +23702,7 @@ INSERT INTO r_trans_step_condition (id_transformation, id_step, id_condition) VA
 
 
 --
--- TOC entry 2309 (class 0 OID 17170)
+-- TOC entry 2309 (class 0 OID 19210)
 -- Dependencies: 240 2317
 -- Data for Name: r_transformation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23752,7 +23752,7 @@ SELECT pg_catalog.setval('r_transformation_id_transformation_seq', 1, false);
 
 
 --
--- TOC entry 2311 (class 0 OID 17178)
+-- TOC entry 2311 (class 0 OID 19218)
 -- Dependencies: 242 2317
 -- Data for Name: r_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23771,7 +23771,7 @@ SELECT pg_catalog.setval('r_user_id_user_seq', 1, false);
 
 
 --
--- TOC entry 2313 (class 0 OID 17186)
+-- TOC entry 2313 (class 0 OID 19226)
 -- Dependencies: 244 2317
 -- Data for Name: r_value; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23789,7 +23789,7 @@ SELECT pg_catalog.setval('r_value_id_value_seq', 1, false);
 
 
 --
--- TOC entry 2315 (class 0 OID 17194)
+-- TOC entry 2315 (class 0 OID 19234)
 -- Dependencies: 246 2317
 -- Data for Name: r_version; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23807,7 +23807,7 @@ SELECT pg_catalog.setval('r_version_id_version_seq', 1, false);
 
 
 --
--- TOC entry 2121 (class 1259 OID 17240)
+-- TOC entry 2121 (class 1259 OID 19280)
 -- Dependencies: 186 186 186 2318
 -- Name: idx_job_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23816,7 +23816,7 @@ CREATE UNIQUE INDEX idx_job_attribute_lookup ON r_job_attribute USING btree (id_
 
 
 --
--- TOC entry 2119 (class 1259 OID 17241)
+-- TOC entry 2119 (class 1259 OID 19281)
 -- Dependencies: 168 168 2318
 -- Name: idx_r_database_attribute_ak; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23825,7 +23825,7 @@ CREATE UNIQUE INDEX idx_r_database_attribute_ak ON r_database_attribute USING bt
 
 
 --
--- TOC entry 2120 (class 1259 OID 17242)
+-- TOC entry 2120 (class 1259 OID 19282)
 -- Dependencies: 177 177 2318
 -- Name: idx_r_directory_ak; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23834,7 +23834,7 @@ CREATE UNIQUE INDEX idx_r_directory_ak ON r_directory USING btree (id_directory_
 
 
 --
--- TOC entry 2122 (class 1259 OID 17243)
+-- TOC entry 2122 (class 1259 OID 19283)
 -- Dependencies: 195 195 195 2318
 -- Name: idx_r_jobentry_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23843,7 +23843,7 @@ CREATE UNIQUE INDEX idx_r_jobentry_attribute_lookup ON r_jobentry_attribute USIN
 
 
 --
--- TOC entry 2123 (class 1259 OID 17244)
+-- TOC entry 2123 (class 1259 OID 19284)
 -- Dependencies: 199 2318
 -- Name: idx_r_jobentry_database_lu1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23852,7 +23852,7 @@ CREATE INDEX idx_r_jobentry_database_lu1 ON r_jobentry_database USING btree (id_
 
 
 --
--- TOC entry 2124 (class 1259 OID 17245)
+-- TOC entry 2124 (class 1259 OID 19285)
 -- Dependencies: 199 2318
 -- Name: idx_r_jobentry_database_lu2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23861,7 +23861,7 @@ CREATE INDEX idx_r_jobentry_database_lu2 ON r_jobentry_database USING btree (id_
 
 
 --
--- TOC entry 2125 (class 1259 OID 17246)
+-- TOC entry 2125 (class 1259 OID 19286)
 -- Dependencies: 220 220 220 2318
 -- Name: idx_r_step_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23870,7 +23870,7 @@ CREATE UNIQUE INDEX idx_r_step_attribute_lookup ON r_step_attribute USING btree 
 
 
 --
--- TOC entry 2126 (class 1259 OID 17247)
+-- TOC entry 2126 (class 1259 OID 19287)
 -- Dependencies: 222 2318
 -- Name: idx_r_step_database_lu1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23879,7 +23879,7 @@ CREATE INDEX idx_r_step_database_lu1 ON r_step_database USING btree (id_transfor
 
 
 --
--- TOC entry 2127 (class 1259 OID 17248)
+-- TOC entry 2127 (class 1259 OID 19288)
 -- Dependencies: 222 2318
 -- Name: idx_r_step_database_lu2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23888,7 +23888,7 @@ CREATE INDEX idx_r_step_database_lu2 ON r_step_database USING btree (id_database
 
 
 --
--- TOC entry 2128 (class 1259 OID 17249)
+-- TOC entry 2128 (class 1259 OID 19289)
 -- Dependencies: 226 226 226 2318
 -- Name: idx_trans_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -23908,7 +23908,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2014-06-17 22:10:16 CEST
+-- Completed on 2014-06-18 01:15:24 CEST
 
 --
 -- PostgreSQL database dump complete
