@@ -32,8 +32,8 @@ echo.
 set /p FORCE_CREATION_ANSWER="Do you want to force the creation of existing custom data structures (yes/no): "
 if /i "%FORCE_CREATION_ANSWER%"=="yes" set FORCE_CREATION=true
 if /i "%FORCE_CREATION_ANSWER%"=="no" set FORCE_CREATION=false
-GOTO WHILE_JOB_NAME
-:END_WHILE_JOB_NAME
+GOTO WHILE_FORCE_CREATION
+:END_WHILE_FORCE_CREATION
 
 REM KETTLE_PATH
 if EXIST "%KETTLE_PATH%" GOTO END_WHILE_KETTLE_PATH
