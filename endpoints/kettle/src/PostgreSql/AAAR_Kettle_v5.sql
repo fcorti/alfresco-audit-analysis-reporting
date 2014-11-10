@@ -4622,7 +4622,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5831, 13, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5832, 13, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5833, 13, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5834, 13, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5834, 13, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5835, 13, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5836, 13, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (5837, 13, 1, 'PARAM_DEFAULT', 0, '1');
@@ -4817,7 +4817,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6026, 14, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6027, 14, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6028, 14, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6029, 14, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6029, 14, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6030, 14, 0, 'PARAM_DESC', 0, 'CMIS url of Alfresco.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6031, 14, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6032, 14, 1, 'PARAM_DEFAULT', 0, '1');
@@ -5012,7 +5012,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6221, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6222, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6223, 15, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6224, 15, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6224, 15, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6225, 15, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6226, 15, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6227, 15, 1, 'PARAM_DEFAULT', 0, '1');
@@ -5189,7 +5189,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6398, 16, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6399, 16, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6400, 16, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6401, 16, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6401, 16, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6402, 16, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6403, 16, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6404, 16, 1, 'PARAM_DEFAULT', 0, '1');
@@ -5534,7 +5534,7 @@ INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, valu
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6743, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6744, 18, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6745, 18, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6746, 18, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6746, 18, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6747, 18, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6748, 18, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_job_attribute (id_job_attribute, id_job, nr, code, value_num, value_str) VALUES (6749, 18, 1, 'PARAM_DEFAULT', 0, '1');
@@ -12549,7 +12549,30 @@ order by
  cmis:lastModificationDate asc,
  cmis:name asc');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (1589, 15, 81, 0, 'sql', 0, 'select
- *
+ cmis:isLatestMajorVersion,
+ cmis:contentStreamId,
+ cmis:contentStreamLength,
+ cmis:objectTypeId,
+ cmis:versionSeriesCheckedOutBy,
+ cmis:versionSeriesCheckedOutId,
+ cmis:name,
+ cmis:contentStreamMimeType,
+ cmis:versionSeriesId,
+ cmis:creationDate,
+ cmis:changeToken,
+ cmis:isLatestVersion,
+ cmis:versionLabel,
+ cmis:isVersionSeriesCheckedOut,
+ cmis:lastModifiedBy,
+ cmis:createdBy,
+ cmis:checkinComment,
+ cmis:objectId,
+ cmis:isMajorVersion,
+ cmis:isImmutable,
+ alfcmis:nodeRef,
+ cmis:baseTypeId,
+ cmis:lastModificationDate,
+ cmis:contentStreamFileName
 from
  cmis:document
 where
@@ -12571,7 +12594,19 @@ INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr,
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (1595, 15, 82, 0, 'login', 0, '${alfresco_login}');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (1596, 15, 82, 0, 'password', 0, '${alfresco_password}');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (1597, 15, 82, 0, 'sql', 0, 'select
- *
+ cmis:allowedChildObjectTypeIds,
+ cmis:path,
+ cmis:objectTypeId,
+ cmis:name,
+ cmis:creationDate,
+ cmis:changeToken,
+ cmis:lastModifiedBy,
+ cmis:createdBy,
+ cmis:objectId,
+ cmis:baseTypeId,
+ alfcmis:nodeRef,
+ cmis:parentId,
+ cmis:lastModificationDate
 from
  cmis:folder
 where
@@ -18591,7 +18626,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2948, 13, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2949, 13, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2950, 13, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2951, 13, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2951, 13, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2952, 13, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2953, 13, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (2954, 13, 1, 'PARAM_DEFAULT', 0, '1');
@@ -18846,7 +18881,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3452, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3453, 15, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3454, 15, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3455, 15, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3455, 15, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3456, 15, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3457, 15, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (3458, 15, 1, 'PARAM_DEFAULT', 0, '1');
@@ -21171,7 +21206,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5777, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5778, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5779, 25, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5780, 25, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5780, 25, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5781, 25, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5782, 25, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (5783, 25, 1, 'PARAM_DEFAULT', 0, '1');
@@ -22548,7 +22583,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7154, 31, 2, 'PARAM_DEFAULT', 0, 'admin');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7155, 31, 2, 'PARAM_DESC', 0, 'Alfresco password');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7156, 31, 3, 'PARAM_KEY', 0, 'alfresco_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7157, 31, 3, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7157, 31, 3, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7158, 31, 3, 'PARAM_DESC', 0, 'Alfresco url.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7159, 31, 4, 'PARAM_KEY', 0, 'is_aspect');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7160, 31, 4, 'PARAM_DEFAULT', 0, 'Y');
@@ -22797,7 +22832,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7403, 32, 2, 'PARAM_DEFAULT', 0, 'admin');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7404, 32, 2, 'PARAM_DESC', 0, 'Alfresco password');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7405, 32, 3, 'PARAM_KEY', 0, 'alfresco_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7406, 32, 3, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7406, 32, 3, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7407, 32, 3, 'PARAM_DESC', 0, 'Alfresco url.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7408, 32, 4, 'PARAM_KEY', 0, 'is_aspect');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7409, 32, 4, 'PARAM_DEFAULT', 0, 'N');
@@ -23271,7 +23306,7 @@ INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, 
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7877, 14, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7878, 14, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7879, 14, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7880, 14, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/cmisatom');
+INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7880, 14, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7881, 14, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7882, 14, 1, 'PARAM_KEY', 0, 'alfresco_id');
 INSERT INTO r_trans_attribute (id_trans_attribute, id_transformation, nr, code, value_num, value_str) VALUES (7883, 14, 1, 'PARAM_DEFAULT', 0, '1');
