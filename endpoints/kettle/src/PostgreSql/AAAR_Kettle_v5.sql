@@ -9415,7 +9415,7 @@ INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5922, 20, 289, 0, 'remove', 0.00, 'Y');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5923, 20, 289, 0, 'only_new', 0.00, 'N');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5924, 20, 289, 0, 'active', 0.00, 'N');
-INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5925, 20, 289, 0, 'control_encoding', 0.00, 'ISO-8859-1');
+INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5925, 20, 289, 0, 'control_encoding', 0.00, 'UTF-8');
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5926, 20, 289, 0, 'proxy_host', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5927, 20, 289, 0, 'proxy_port', 0.00, NULL);
 INSERT INTO r_jobentry_attribute (id_jobentry_attribute, id_job, id_jobentry, nr, code, value_num, value_str) VALUES (5928, 20, 289, 0, 'proxy_username', 0.00, NULL);
