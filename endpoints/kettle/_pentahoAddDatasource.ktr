@@ -254,12 +254,11 @@
     <bodyField>body</bodyField>
     <httpLogin>&#x24;&#x7b;pentahoLogin&#x7d;</httpLogin>
     <httpPassword>&#x24;&#x7b;pentahoPassword&#x7d;</httpPassword>
-    <httpPassword>&#x24;&#x7b;pentahoPassword&#x7d;</httpPassword>
     <proxyHost/>
     <proxyPort/>
     <preemptive>N</preemptive>
     <trustStoreFile/>
-    <trustStorePassword/>
+    <trustStorePassword>Encrypted </trustStorePassword>
     <headers>
       </headers>
     <parameters>
@@ -290,7 +289,7 @@
            </partitioning>
     <applicationType>TEXT PLAIN</applicationType>
     <method>DELETE</method>
-    <url>http&#x3a;&#x2f;&#x2f;localhost&#x3a;8080&#x2f;pentaho&#x2f;plugin&#x2f;data-access&#x2f;api&#x2f;connection&#x2f;deletebyname&#x3f;name&#x3d;&#x24;&#x7b;databaseSchemaAAAR&#x7d;</url>
+    <url>&#x24;&#x7b;pentahoUrl&#x7d;&#x2f;plugin&#x2f;data-access&#x2f;api&#x2f;connection&#x2f;deletebyname&#x3f;name&#x3d;&#x24;&#x7b;databaseSchemaAAAR&#x7d;</url>
     <urlInField>N</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
@@ -298,12 +297,11 @@
     <bodyField/>
     <httpLogin>&#x24;&#x7b;pentahoLogin&#x7d;</httpLogin>
     <httpPassword>&#x24;&#x7b;pentahoPassword&#x7d;</httpPassword>
-    <httpPassword>&#x24;&#x7b;pentahoPassword&#x7d;</httpPassword>
     <proxyHost/>
     <proxyPort/>
     <preemptive>N</preemptive>
     <trustStoreFile/>
-    <trustStorePassword/>
+    <trustStorePassword>Encrypted </trustStorePassword>
     <headers>
       </headers>
     <parameters>
