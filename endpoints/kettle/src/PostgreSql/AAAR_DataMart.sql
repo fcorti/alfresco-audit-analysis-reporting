@@ -1173,7 +1173,7 @@ SELECT pg_catalog.setval('seq_dm_dim_documents_id', 1, true);
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('seq_dm_dim_folders_id', 8837, true);
+SELECT pg_catalog.setval('seq_dm_dim_folders_id', 1, true);
 
 
 --
