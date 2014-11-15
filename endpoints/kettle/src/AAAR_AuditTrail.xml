@@ -1,0 +1,81 @@
+<Schema name="AAAR_AuditTrail" description="A.A.A.R. audit trail by Francesco Corti (fcorti@gmail.com)" measuresCaption="Measures">
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Alfresco instance" description="Alfresco instance">
+    <Hierarchy name="Alfresco instance" visible="true" hasAll="false" primaryKey="id" description="Alfresco instance">
+      <Table name="dm_dim_alfresco" schema="public">
+      </Table>
+      <Level name="Alfresco instance" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Date" description="Date">
+    <Hierarchy name="Date" visible="true" hasAll="true" primaryKey="id" description="Date">
+      <Table name="vw_dm_dim_dates" schema="public">
+      </Table>
+      <Level name="Year" visible="true" column="year_id" nameColumn="year" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Month" visible="true" column="month_id" nameColumn="month_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Day" visible="true" column="id" nameColumn="day_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Time" description="Time">
+    <Hierarchy name="Time" visible="true" hasAll="true" primaryKey="id" description="Time">
+      <Table name="vw_dm_dim_minutes" schema="public">
+      </Table>
+      <Level name="Hour" visible="true" column="hour_id" nameColumn="hour" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Minute" visible="true" column="id" nameColumn="minute" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="User" description="User">
+    <Hierarchy name="User" visible="true" hasAll="true" primaryKey="id" description="User">
+      <Table name="dm_dim_users" schema="public">
+      </Table>
+      <Level name="User" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Action" description="Action">
+    <Hierarchy name="Action" visible="true" hasAll="true" primaryKey="id" description="Action">
+      <Table name="dm_dim_actions" schema="public">
+      </Table>
+      <Level name="Action" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Content path" description="Content path">
+    <Hierarchy name="Content path" visible="true" hasAll="true" primaryKey="id">
+      <Table name="dm_dim_paths" schema="public">
+      </Table>
+      <Level name="Content path" visible="true" column="id" nameColumn="path" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Cube name="AAAR_AuditTrail" caption="A.A.A.R. audit trail" visible="true" description="A.A.A.R. audit trail by Francesco Corti (fcorti@gmail.com)" cache="true" enabled="true">
+    <Table name="dm_fact_actions" schema="public">
+    </Table>
+    <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="false" foreignKey="alfresco_id" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Date" visible="true" foreignKey="date_id" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Time" name="Time" visible="true" foreignKey="minute_id" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="User" name="User" visible="true" foreignKey="user_id" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Action" name="Action" visible="true" foreignKey="action_id" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Content path" name="Content path" visible="true" foreignKey="path_id">
+    </DimensionUsage>
+    <Measure name="Actions" column="num" datatype="Integer" aggregator="sum" caption="Actions" description="Actions" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

@@ -7438,7 +7438,7 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    var pentahoUrlValue = window.location.protocol + \"//\" + window.location.host;\n    if (!pentahoUrlValue.contains(window.location.port)) {\n        \":\" + window.location.port;\n    }\n    pentahoUrlValue += \"/pentaho\";\n\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','installFromConfiguration',{\n\n        params: {\n            configurationFile: Dashboards.getParameterValue('${p:configurationFile}'),\n            pentahoUrl: pentahoUrlValue,\n            pentahoLogin: Dashboards.getComponentByName('${p:pentahoLogin}'),\n            pentahoPassword: Dashboards.getComponentByName('${p:pentahoPassword}')\n        },\n\n        success: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed with success!<br><br>Now you can start using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"A.A.A.R. installed!<br><br>Please, check the tomcat log but ignore Errors with description '...Folder/File [...] exists, failing.' because they are not real errors.<br><br>Refresh CDA cache in Tools->Refresh->CDA cache before using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        }\n    });\n}",
+      "value": "function f() {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    var pentahoUrlValue = window.location.protocol + \"//\" + window.location.host;\n    if (!pentahoUrlValue.contains(window.location.port)) {\n        \":\" + window.location.port;\n    }\n    pentahoUrlValue += \"/pentaho\";\n\n    Dashboards.incrementRunningCalls();\n    \n    AAAR.runEndpoint('AAAR','installFromConfiguration',{\n\n        params: {\n            configurationFile: Dashboards.getParameterValue('${p:configurationFile}'),\n            pentahoUrl: pentahoUrlValue,\n            pentahoLogin: Dashboards.getComponentByName('${p:pentahoLogin}'),\n            pentahoPassword: Dashboards.getComponentByName('${p:pentahoPassword}')\n        },\n\n        success: function(json) {\n\n            installMondrianSchemas(\n                Dashboards.getComponentByName('${p:pentahoLogin}'),\n                Dashboards.getComponentByName('${p:pentahoPassword}'),\n                pentahoUrlValue);\n\n            dialog.open({\n                message:\"A.A.A.R. installed with success!<br><br>Now you can start using it.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        },\n\n        error: function(json) {\n\n            installMondrianSchemas(\n                Dashboards.getComponentByName('${p:pentahoLogin}'),\n                Dashboards.getComponentByName('${p:pentahoPassword}'),\n                pentahoUrlValue);\n\n            dialog.open({\n                message:\"A.A.A.R. installed!<br><br>Please, check the tomcat log but ignore Errors with description '...Folder/File [...] exists, failing.' because they are not real errors.<br><br>Enjoy!\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        }\n    });\n} ",
       "type": "JavaScript"
      },
      {
@@ -7680,6 +7680,38 @@
       "name": "tooltip",
       "value": "Login and password are not stored in the configuration file. ",
       "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "SCRIPT",
+    "name": "Scripts",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Scripts",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "f7ac2e24-e7c7-1dac-4f7d-64177f2c4adf",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "value": "installMondrianSchemas",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "/**\n * Francesco Corti - 2014-11-15\n * Unfortunately it has been impossible to upload the mondrian schema using PDI\n * with the current Pentaho version (v5.2). Waiting for a solution to this \n * problem this is the workaround.\n */\n\nfunction installMondrianSchemas(login, password, pentahoUrlValue) {\n\n    AJAXSubmitMultipartFormData.serviceLogin = login;\n    AJAXSubmitMultipartFormData.servicePassword = password;\n    AJAXSubmitMultipartFormData.serviceUrl = pentahoUrlValue + \"/plugin/data-access/api/mondrian/postAnalysis\";\n\n    getMondrianSchema(\"AAAR_DataMart\", \"AAAR_AuditTrail.xml\");\n}\n\nfunction getMondrianSchema(dataSource, mondrianSchema) {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    var mondrianSchemaContent = \"\";\n\n    AAAR.runEndpoint('AAAR','getMondrianSchema',{\n\n        params: {\n            fileName: mondrianSchema\n        },\n\n        success: function(json) {\n            var parameters = [];\n            var parameter = { \"name\":\"parameters\", \"value\":\"DataSource=\" + dataSource }\n            parameters.push(parameter);\n            parameter = { \"name\":\"overwrite\", \"value\":\"true\" }\n            parameters.push(parameter);\n            parameter = { \"name\":\"uploadAnalysis\", \"value\": json.resultset[0][0] }\n            parameters.push(parameter);\n            AJAXSubmitMultipartFormData.send(parameters);\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"Problem retrieving the Mondrian Schema '\" + mondrianSchema + \"'.\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();\n                        }\n                    }\n                ]\n            });\n        }\n    });\n}\n\nvar AJAXSubmitMultipartFormData = {\n\n    serviceLogin: \"\",\n    servicePassword: \"\",\n    serviceUrl: \"\",\n\n    send: function(parameters) {\n        var oAjaxReq = new XMLHttpRequest();\n        oAjaxReq.open(\"post\", this.serviceUrl, true, this.serviceLogin, this.servicePassword);\n        oAjaxReq.onload = AJAXSubmitMultipartFormData.AJAXSuccess;\n        var sBoundary = \"---------------------------\" + Date.now().toString(16);\n        oAjaxReq.setRequestHeader(\"Content-Type\", \"multipart\\/form-data; boundary=\" + sBoundary);\n        var segments = [];\n        for (var nItem = 0; nItem < parameters.length; nItem++) {\n            segments.push(\"Content-Disposition: form-data; name=\\\"\" + parameters[nItem].name + \"\\\"\\r\\n\\r\\n\" + parameters[nItem].value + \"\\r\\n\");\n        }\n        oAjaxReq.sendAsBinary(\"--\" + sBoundary + \"\\r\\n\" + segments.join(\"--\" + sBoundary + \"\\r\\n\") + \"--\" + sBoundary + \"--\\r\\n\");\n    },\n\n    AJAXSuccess: function() {\n        /**\n         * XMLHttpRequest object perform an asincronous call so it's tricky to\n         * develop a callback. This is the best I can do now.\n         **/\n        if (this.responseText != 3) {\n            alert(\"Failed to upload the Mondrian Schema into Pentaho BI Server.\");\n        }\n    }\n}\n\nif (!XMLHttpRequest.prototype.sendAsBinary) {\n    XMLHttpRequest.prototype.sendAsBinary = function(sData) {\n        var nBytes = sData.length, ui8Data = new Uint8Array(nBytes);\n        for (var nIdx = 0; nIdx < nBytes; nIdx++) {\n            ui8Data[nIdx] = sData.charCodeAt(nIdx) & 0xff;\n        }\n        this.send(ui8Data);\n    }\n} ",
+      "type": "JavaScript"
      }
     ]
    }
