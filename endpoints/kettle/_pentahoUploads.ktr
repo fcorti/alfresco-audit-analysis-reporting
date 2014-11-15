@@ -332,6 +332,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <line> <item>Reports</item><item>document_size.prpt</item> </line>
       <line> <item>Reports</item><item>document_types.prpt</item> </line>
       <line> <item>Reports</item><item>folder_types.prpt</item> </line>
+      <line> <item>Olap</item><item>Audit_SaikuFreeAnalysis.saiku</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
