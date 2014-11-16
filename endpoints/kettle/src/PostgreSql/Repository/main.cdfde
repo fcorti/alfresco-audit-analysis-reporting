@@ -726,7 +726,7 @@
      },
      {
       "name": "html",
-      "value": "<br/>\n<div class=\"AAAR menu menuItem\"><a id=\"menuItem_freeAnalysisOnAuditTrail\" href=\"\" onclick=\"comingSoon('freeAnalysisOnAuditTrail_comingSoon', 660); return false;\">Free analysis on<br/>audit trail</a> (<a id=\"menuItem_removeAdvertising2\" href=\"\" onclick=\"Dashboards.fireChange('hideAdvertising','true');\">*</a>)</div> ",
+      "value": "<br/>\n<div class=\"AAAR menu menuItem\"><a id=\"menuItem_freeAnalysisOnAuditTrail\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" target=\"_blank\">Free analysis on<br/>audit trail</a></div> ",
       "type": "Html"
      },
      {
@@ -1973,7 +1973,7 @@
      },
      {
       "name": "expression",
-      "value": "function() {\n    if (Dashboards.getParameterValue('${p:hideAdvertising}')==\"true\") {\n        $(\"#menuItem_dashboardGroup\").hide();\n        $(\"#freeAnalysis\").hide();\n    }\n}",
+      "value": "function() {\n    if (Dashboards.getParameterValue('${p:hideAdvertising}')==\"true\") {\n        $(\"#menuItem_dashboardGroup\").hide();\n    }\n}",
       "type": "JavaScript"
      },
      {
