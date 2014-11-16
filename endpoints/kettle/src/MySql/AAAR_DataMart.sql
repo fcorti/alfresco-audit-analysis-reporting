@@ -1065,7 +1065,8 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `vw_dm_fact_documents` (
   `id` tinyint NOT NULL,
-  `document_id` tinyint NOT NULL,
+  `document_id` smallint NOT NULL,
+  `alfresco_id` tinyint NOT NULL,
   `node_type_id` tinyint NOT NULL,
   `mime_type_id` tinyint NOT NULL,
   `user_creator_id` tinyint NOT NULL,
@@ -1081,6 +1082,31 @@ SET character_set_client = utf8;
   `parent_id` tinyint NOT NULL,
   `content_stream_length` tinyint NOT NULL,
   `number` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `vw_dm_fact_repository`
+--
+
+DROP TABLE IF EXISTS `vw_dm_fact_repository`;
+/*!50001 DROP VIEW IF EXISTS `vw_dm_fact_repository`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `vw_dm_fact_repository` (
+  `id` tinyint NOT NULL,
+  `name` varchar(1024) NOT NULL,
+  `path` varchar(4096) NOT NULL,
+  `alfresco_id` tinyint NOT NULL,
+  `node_type_id` tinyint NOT NULL,
+  `user_creator_id` tinyint NOT NULL,
+  `creation_date_id` tinyint NOT NULL,
+  `creation_minute_id` tinyint NOT NULL,
+  `user_last_modifier_id` tinyint NOT NULL,
+  `last_modification_date_id` tinyint NOT NULL,
+  `last_modification_minute_id` tinyint NOT NULL,
+  `parent_id` varchar(50) NOT NULL,
+  `num` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -1395,10 +1421,31 @@ CREATE TABLE `log_jobentry` (
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_dm_fact_documents` AS select `dm_dim_documents`.`id` AS `id`,`dm_dim_documents`.`id` AS `document_id`,`dm_dim_documents`.`node_type_id` AS `node_type_id`,`dm_dim_documents`.`mime_type_id` AS `mime_type_id`,`dm_dim_documents`.`user_creator_id` AS `user_creator_id`,`dm_dim_documents`.`creation_date_id` AS `creation_date_id`,`dm_dim_documents`.`creation_minute_id` AS `creation_minute_id`,`dm_dim_documents`.`user_last_modifier_id` AS `user_last_modifier_id`,`dm_dim_documents`.`last_modification_date_id` AS `last_modification_date_id`,`dm_dim_documents`.`last_modification_minute_id` AS `last_modification_minute_id`,`dm_dim_documents`.`is_latest_version` AS `is_latest_version`,`dm_dim_documents`.`is_major_version` AS `is_major_version`,`dm_dim_documents`.`is_latest_major_version` AS `is_latest_major_version`,`dm_dim_documents`.`is_immutable` AS `is_immutable`,`dm_dim_documents`.`parent_id` AS `parent_id`,`dm_dim_documents`.`content_stream_length` AS `content_stream_length`,1 AS `number` from `dm_dim_documents` */;
+/*!50001 VIEW `vw_dm_fact_documents` AS select `dm_dim_documents`.`id` AS `id`,`dm_dim_documents`.`id` AS `document_id`,`dm_dim_documents`.`alfresco_id` AS `alfresco_id`,`dm_dim_documents`.`node_type_id` AS `node_type_id`,`dm_dim_documents`.`mime_type_id` AS `mime_type_id`,`dm_dim_documents`.`user_creator_id` AS `user_creator_id`,`dm_dim_documents`.`creation_date_id` AS `creation_date_id`,`dm_dim_documents`.`creation_minute_id` AS `creation_minute_id`,`dm_dim_documents`.`user_last_modifier_id` AS `user_last_modifier_id`,`dm_dim_documents`.`last_modification_date_id` AS `last_modification_date_id`,`dm_dim_documents`.`last_modification_minute_id` AS `last_modification_minute_id`,`dm_dim_documents`.`is_latest_version` AS `is_latest_version`,`dm_dim_documents`.`is_major_version` AS `is_major_version`,`dm_dim_documents`.`is_latest_major_version` AS `is_latest_major_version`,`dm_dim_documents`.`is_immutable` AS `is_immutable`,`dm_dim_documents`.`parent_id` AS `parent_id`,`dm_dim_documents`.`content_stream_length` AS `content_stream_length`,1 AS `number` from `dm_dim_documents` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_dm_fact_repository`
+--
+
+/*!50001 DROP TABLE IF EXISTS `vw_dm_fact_repository`*/;
+/*!50001 DROP VIEW IF EXISTS `vw_dm_fact_repository`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_dm_fact_repository` AS SELECT concat("DOC_",`dm_dim_documents`.`id`) AS `id`, `dm_dim_documents`.`name` AS `name`, `dm_dim_documents`.`path` AS `path`, `dm_dim_documents`.`alfresco_id` AS `alfresco_id`, `dm_dim_documents`.`node_type_id` AS `node_type_id`, `dm_dim_documents`.`user_creator_id` AS `user_creator_id`, `dm_dim_documents`.`creation_date_id` AS `creation_date_id`, `dm_dim_documents`.`creation_minute_id` AS `creation_minute_id`, `dm_dim_documents`.`user_last_modifier_id` AS `user_last_modification_id`, `dm_dim_documents`.`last_modification_date_id` AS `last_modification_date_id`, `dm_dim_documents`.`last_modification_minute_id` AS `last_modification_minute_id`, concat("FOL_",`dm_dim_documents`.`parent_id`) AS `parent_id`, 1 AS `num` FROM `dm_dim_documents` UNION ALL SELECT concat("FOL_",`dm_dim_folders`.`id`) AS `id`, `dm_dim_folders`.`name` AS `name`, `dm_dim_folders`.`path` AS `path`, `dm_dim_folders`.`alfresco_id` AS `alfresco_id`, `dm_dim_folders`.`node_type_id` AS `node_type_id`, `dm_dim_folders`.`user_creator_id` AS `user_creator_id`, `dm_dim_folders`.`creation_date_id` AS `creation_date_id`, `dm_dim_folders`.`creation_minute_id` AS `creation_minute_id`, `dm_dim_folders`.`user_last_modifier_id` AS `user_last_modifier_id`, `dm_dim_folders`.`last_modification_date_id` AS `last_modification_date_id`, `dm_dim_folders`.`last_modification_minute_id` AS `last_modification_minute_id`, concat("FOL_",`dm_dim_folders`.`parent_id`) AS `parent_id`, 1 AS `num` FROM `dm_dim_folders` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

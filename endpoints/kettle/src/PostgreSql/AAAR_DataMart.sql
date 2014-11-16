@@ -919,10 +919,18 @@ ALTER TABLE public.vw_dm_dim_minutes OWNER TO postgres;
 --
 
 CREATE VIEW vw_dm_fact_documents AS
-    SELECT dm_dim_documents.id, dm_dim_documents.id AS document_id, dm_dim_documents.node_type_id, dm_dim_documents.mime_type_id, dm_dim_documents.user_creator_id, dm_dim_documents.creation_date_id, dm_dim_documents.creation_minute_id, dm_dim_documents.user_last_modifier_id, dm_dim_documents.last_modification_date_id, dm_dim_documents.last_modification_minute_id, dm_dim_documents.is_latest_version, dm_dim_documents.is_major_version, dm_dim_documents.is_latest_major_version, dm_dim_documents.is_immutable, dm_dim_documents.parent_id, dm_dim_documents.content_stream_length, 1 AS number FROM dm_dim_documents;
+    SELECT dm_dim_documents.id, dm_dim_documents.id AS document_id, dm_dim_documents.alfresco_id AS alfresco_id, dm_dim_documents.node_type_id, dm_dim_documents.mime_type_id, dm_dim_documents.user_creator_id, dm_dim_documents.creation_date_id, dm_dim_documents.creation_minute_id, dm_dim_documents.user_last_modifier_id, dm_dim_documents.last_modification_date_id, dm_dim_documents.last_modification_minute_id, dm_dim_documents.is_latest_version, dm_dim_documents.is_major_version, dm_dim_documents.is_latest_major_version, dm_dim_documents.is_immutable, dm_dim_documents.parent_id, dm_dim_documents.content_stream_length, 1 AS number FROM dm_dim_documents;
 
 
 ALTER TABLE public.vw_dm_fact_documents OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW vw_dm_fact_repository AS
+    SELECT 'DOC_' || dm_dim_documents.id AS id, dm_dim_documents.name, dm_dim_documents.path, dm_dim_documents.alfresco_id, dm_dim_documents.node_type_id, dm_dim_documents.user_creator_id, dm_dim_documents.creation_date_id, dm_dim_documents.creation_minute_id, dm_dim_documents.user_last_modifier_id, dm_dim_documents.last_modification_date_id, dm_dim_documents.last_modification_minute_id, 'FOL_' || dm_dim_documents.parent_id AS parent_id, 1 AS num FROM dm_dim_documents UNION ALL SELECT 'FOL_' || dm_dim_folders.id AS id, dm_dim_folders.name, dm_dim_folders.path, dm_dim_folders.alfresco_id, dm_dim_folders.node_type_id, dm_dim_folders.user_creator_id, dm_dim_folders.creation_date_id, dm_dim_folders.creation_minute_id, dm_dim_folders.user_last_modifier_id, dm_dim_folders.last_modification_date_id, dm_dim_folders.last_modification_minute_id, 'FOL_' || dm_dim_folders.parent_id AS parent_id, 1 AS num FROM dm_dim_folders;
+
+
+ALTER TABLE public.vw_dm_fact_repository OWNER TO postgres;
+
 
 --
 -- TOC entry 205 (class 1259 OID 16601)
