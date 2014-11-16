@@ -2,7 +2,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Alfresco instance" description="Alfresco instance">
     <Hierarchy name="Alfresco instance" visible="true" hasAll="false" primaryKey="id" description="Alfresco instance">
-      <Table name="dm_dim_alfresco" schema="public">
+      <Table name="dm_dim_alfresco">
       </Table>
       <Level name="Alfresco instance" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -11,7 +11,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Date" description="Date">
     <Hierarchy name="Date" visible="true" hasAll="true" primaryKey="id" description="Date">
-      <Table name="vw_dm_dim_dates" schema="public">
+      <Table name="vw_dm_dim_dates">
       </Table>
       <Level name="Year" visible="true" column="year_id" nameColumn="year" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -24,7 +24,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Time" description="Time">
     <Hierarchy name="Time" visible="true" hasAll="true" primaryKey="id" description="Time">
-      <Table name="vw_dm_dim_minutes" schema="public">
+      <Table name="vw_dm_dim_minutes">
       </Table>
       <Level name="Hour" visible="true" column="hour_id" nameColumn="hour" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -35,7 +35,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="User" description="User">
     <Hierarchy name="User" visible="true" hasAll="true" primaryKey="id" description="User">
-      <Table name="dm_dim_users" schema="public">
+      <Table name="dm_dim_users">
       </Table>
       <Level name="User" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -44,7 +44,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Action" description="Action">
     <Hierarchy name="Action" visible="true" hasAll="true" primaryKey="id" description="Action">
-      <Table name="dm_dim_actions" schema="public">
+      <Table name="dm_dim_actions">
       </Table>
       <Level name="Action" visible="true" column="id" nameColumn="desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -53,7 +53,7 @@
 
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Content path" description="Content path">
     <Hierarchy name="Content path" visible="true" hasAll="true" primaryKey="id">
-      <Table name="dm_dim_paths" schema="public">
+      <Table name="dm_dim_paths">
       </Table>
       <Level name="Content path" visible="true" column="id" nameColumn="path" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -61,7 +61,7 @@
   </Dimension>
 
   <Cube name="AAAR_AuditTrail" caption="A.A.A.R. audit trail" visible="true" description="A.A.A.R. audit trail by Francesco Corti (fcorti@gmail.com)" cache="true" enabled="true">
-    <Table name="dm_fact_actions" schema="public">
+    <Table name="dm_fact_actions">
     </Table>
     <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="false" foreignKey="alfresco_id" highCardinality="false">
     </DimensionUsage>
