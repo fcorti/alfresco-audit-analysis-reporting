@@ -2435,11 +2435,6 @@
       "type": "Boolean"
      },
      {
-      "name": "areasVisible",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
       "name": "baseAxisClickAction",
       "value": "",
       "type": "JavaScript"
