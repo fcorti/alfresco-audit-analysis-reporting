@@ -4758,7 +4758,7 @@
      },
      {
       "name": "query",
-      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
+      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n d.id\norder by\n d.id asc",
       "type": "SqlQuery"
      },
      {
@@ -4824,7 +4824,7 @@
      },
      {
       "name": "query",
-      "value": "select\n dat.id as date_id,\n (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Number,\n (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Mb\nfrom\n dm_dim_dates dat\nwhere\n dat.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n dat.id\norder by\n dat.id asc",
+      "value": "select\n dat.id as date_id,\n (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Number,\n (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Mb\nfrom\n dm_dim_dates dat\nwhere\n dat.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n dat.id\norder by\n dat.id asc",
       "type": "SqlQuery"
      },
      {
