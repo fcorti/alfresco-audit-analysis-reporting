@@ -321,6 +321,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <line> <item>Main</item><item>main.cda</item> </line>
       <line> <item>Main</item><item>main.cdfde</item> </line>
       <line> <item>Main</item><item>main.wcdf</item> </line>
+      <line> <item>Main</item><item>audit_actions.cda</item> </line>
+      <line> <item>Main</item><item>audit_actions.cdfde</item> </line>
+      <line> <item>Main</item><item>audit_actions.wcdf</item> </line>
+      <line> <item>Olap</item><item>Audit_SaikuFreeAnalysis.saiku</item> </line>
+      <line> <item>Olap</item><item>Audit_Pivot4jFreeAnalysis.pivot4j</item> </line>
+      <line> <item>Olap</item><item>Repository_Pivot4jFreeAnalysis.pivot4j</item> </line>
+      <line> <item>Olap</item><item>Repository_SaikuFreeAnalysis.saiku</item> </line>
       <line> <item>Reports</item><item>audit_creation.prpt</item> </line>
       <line> <item>Reports</item><item>audit_details.prpt</item> </line>
       <line> <item>Reports</item><item>audit_login.prpt</item> </line>
@@ -332,10 +339,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <line> <item>Reports</item><item>document_size.prpt</item> </line>
       <line> <item>Reports</item><item>document_types.prpt</item> </line>
       <line> <item>Reports</item><item>folder_types.prpt</item> </line>
-      <line> <item>Olap</item><item>Audit_SaikuFreeAnalysis.saiku</item> </line>
-      <line> <item>Olap</item><item>Audit_Pivot4jFreeAnalysis.pivot4j</item> </line>
-      <line> <item>Olap</item><item>Repository_Pivot4jFreeAnalysis.pivot4j</item> </line>
-      <line> <item>Olap</item><item>Repository_SaikuFreeAnalysis.saiku</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
