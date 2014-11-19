@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdf>
+        <title>A.A.A.R. - Audit per period</title>
+        <author>Francesco Corti (fcorti@gmail.com)</author>
+        <description>Alfresco Audit Analysis and Reporting</description>
+        <icon></icon>
+	<style>Clean</style>
+	<widget>false</widget>
+</cdf>
