@@ -101,6 +101,23 @@
   color:#e7e7e7;
 }
 
+.AAAR.table tbody tr.odd {
+  background: #DBDBFF;
+}
+
+.AAAR.table div.dataTables_paginate.paging_full_numbers a.paginate_button {
+  background: #e7e7e7;
+  color: #7f8286;
+  border-radius: 5px;
+  border: none;
+  padding: 2px 10px 2px 10px;
+}
+
+.AAAR.table div.dataTables_paginate.paging_full_numbers a.paginate_button:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
 .AAAR.credits {
   line-height:40px;
   color: #7f8286;

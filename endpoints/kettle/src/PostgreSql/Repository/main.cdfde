@@ -544,7 +544,7 @@
      },
      {
       "name": "html",
-      "value": "<div style=\"display:table;\">\n    <div style=\"display:table-row;\">\n        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n        <div style=\"display:table-cell; vertical-align:middle;\"/>A.A.A.R.</div>\n    </div>\n    <div id=\"menuItem_dashboardGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/>Dashboards (<a id=\"menuItem_removeAdvertising1\" href=\"\" onclick=\"Dashboards.fireChange('hideAdvertising','true');\">*</a>)</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div id=\"menuItem_dashboardAudit\" style=\"display:table-cell; vertical-align:middle;\"/><a href=\"\" onclick=\"comingSoon('menuItem_dashboardAudit_comingSoon', 660); return false;\">Audit trail</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div id=\"menuItem_dashboardRepository\" style=\"display:table-cell; vertical-align:middle;\"/><a href=\"\" onclick=\"comingSoon('menuItem_dashboardRepository_comingSoon', 400); return false;\">Repository</a></div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div id=\"menuItem_reportsGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/> Reports</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportRepositorySize\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" target=\"_blank\">Repository size</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportLoginPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" target=\"_blank\">Login analysis per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportCreationPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" target=\"_blank\">Content creation per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportTopTen\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" target=\"_blank\">Top ten users and content</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportActionTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" target=\"_blank\">Action types</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportMostActiveUsers\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" target=\"_blank\">Most active users</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportHoursOfActivity\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" target=\"_blank\">Hours of activity</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" target=\"_blank\">Documents per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentMimeTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" target=\"_blank\">Documents per mime type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportFolderTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" target=\"_blank\">Folders per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportAuditDetails\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" target=\"_blank\">Audit details (MS Excel)</a></div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> ",
+      "value": "<div style=\"display:table;\">\n    <div style=\"display:table-row;\">\n        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n        <div style=\"display:table-cell; vertical-align:middle;\"/>A.A.A.R.</div>\n    </div>\n    <div id=\"menuItem_dashboardGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/>Dashboards</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_dashboardAudit\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent\" target=\"_self\">Audit trail</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\" id=\"menuItem_dashboardRepository\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div id=\"menuItem_dashboardRepository\" style=\"display:table-cell; vertical-align:middle;\"/><a href=\"\" onclick=\"comingSoon('menuItem_dashboardRepository_comingSoon', 400); return false;\">Repository</a> (<a id=\"menuItem_removeAdvertisin1\" href=\"\" onclick=\"Dashboards.fireChange('hideAdvertising','true');\">*</a>)</div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div id=\"menuItem_reportsGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/> Reports</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportRepositorySize\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" target=\"_blank\">Repository size</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportLoginPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" target=\"_blank\">Login analysis per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportCreationPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" target=\"_blank\">Content creation per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportTopTen\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" target=\"_blank\">Top ten users and content</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportActionTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" target=\"_blank\">Action types</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportMostActiveUsers\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" target=\"_blank\">Most active users</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportHoursOfActivity\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" target=\"_blank\">Hours of activity</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" target=\"_blank\">Documents per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentMimeTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" target=\"_blank\">Documents per mime type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportFolderTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" target=\"_blank\">Folders per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportAuditDetails\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" target=\"_blank\">Audit details (MS Excel)</a></div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> ",
       "type": "Html"
      },
      {
@@ -833,7 +833,6 @@
      {
       "name": "html",
       "value": "<br/>\n<div class=\"AAAR menu menuItem\"><a id=\"menuItem_freeAnalysisOnRepository\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" target=\"_blank\">Free analysis on<br/>repository</a> (<a id=\"menuItem_SaikuFreeAnalysisOnRepository\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" target=\"_blank\">1</a>,<a id=\"menuItem_Pivot4jFreeAnalysisOnRepository\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" target=\"_blank\">2</a>)</div>",
-
       "type": "Html"
      },
      {
@@ -1609,7 +1608,7 @@
      },
      {
       "name": "resourceCode",
-      "value": "function setTooltip(objId, tooltipContent) {\n    $(\"#\" + objId).qtip({\n        content: {\n            text: tooltipContent\n        },\n        hide: {\n            effect: function() { $(this).slideUp(); }\n        },\n        show: {\n            effect: function() { $(this).slideDown(); }\n        },\n        style: {\n            classes: \"qtip-rounded qtip-shadow\"\n        }\n    });\n}\n\nsetTooltip(\"menuItem_dashboardAudit\", \"<b>Coming soon:</b> Dashboard that analyse actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_dashboardRepository\", \"<b>Coming soon:</b> Dashboard that analyse documents, folders, users, types, dates and hours of creation and modification.\");\nsetTooltip(\"menuItem_reportRepositorySize\", \"Report that shows the repository's growth during the last month and the last year.\");\nsetTooltip(\"menuItem_reportLoginPerDay\", \"Report that list accesses to the system.\");\nsetTooltip(\"menuItem_reportCreationPerDay\", \"Report that lists the last 10 days document and folder creation.\");\nsetTooltip(\"menuItem_reportTopTen\", \"Report that lists the top ten users and documents of the last 10 days.\");\nsetTooltip(\"menuItem_reportActionTypes\", \"Report that lists the actions in the system in the last month.\");\nsetTooltip(\"menuItem_reportMostActiveUsers\", \"Report that shows the 10 most active users on the repository.\");\nsetTooltip(\"menuItem_reportHoursOfActivity\", \"Report that shows the number of creations in the repository.\");\nsetTooltip(\"menuItem_reportDocumentTypes\", \"Report that lists the number and size of document types.\");\nsetTooltip(\"menuItem_reportDocumentMimeTypes\", \"Report that lists the number and size of document mime types.\");\nsetTooltip(\"menuItem_reportFolderTypes\", \"Report that lists the number and size of folder types.\");\nsetTooltip(\"menuItem_reportAuditDetails\", \"Report that lists all the actions in details.\");\nsetTooltip(\"menuItem_removeAdvertising1\", \"<b>Tip:</b> Click to see how to remove incomplete analysis.\");\nsetTooltip(\"menuItem_removeAdvertising2\", \"<b>Tip:</b> Click to see how to remove incomplete analysis.\");\nsetTooltip(\"menuItem_removeAdvertising3\", \"<b>Tip:</b> Click to see how to remove incomplete analysis.\");\nsetTooltip(\"menuItem_freeAnalysisOnAuditTrail\", \"Free analysis on actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Pivot4j.\");\nsetTooltip(\"menuItem_freeAnalysisOnRepository\", \"Free analysis on content in general from several points of view.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnRepository\", \"Free analysis on repository with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnRepository\", \"Free analysis on repository with Pivot4j.\");\n ",
+      "value": "function setTooltip(objId, tooltipContent) {\n    $(\"#\" + objId).qtip({\n        content: {\n            text: tooltipContent\n        },\n        hide: {\n            effect: function() { $(this).slideUp(); }\n        },\n        show: {\n            effect: function() { $(this).slideDown(); }\n        },\n        style: {\n            classes: \"qtip-rounded qtip-shadow\"\n        }\n    });\n}\n\nsetTooltip(\"menuItem_dashboardAudit\", \"Dashboard that analyse actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_dashboardRepository\", \"<b>Coming soon:</b> Dashboard that analyse documents, folders, users, types, dates and hours of creation and modification.\");\nsetTooltip(\"menuItem_reportRepositorySize\", \"Report that shows the repository's growth during the last month and the last year.\");\nsetTooltip(\"menuItem_reportLoginPerDay\", \"Report that list accesses to the system.\");\nsetTooltip(\"menuItem_reportCreationPerDay\", \"Report that lists the last 10 days document and folder creation.\");\nsetTooltip(\"menuItem_reportTopTen\", \"Report that lists the top ten users and documents of the last 10 days.\");\nsetTooltip(\"menuItem_reportActionTypes\", \"Report that lists the actions in the system in the last month.\");\nsetTooltip(\"menuItem_reportMostActiveUsers\", \"Report that shows the 10 most active users on the repository.\");\nsetTooltip(\"menuItem_reportHoursOfActivity\", \"Report that shows the number of creations in the repository.\");\nsetTooltip(\"menuItem_reportDocumentTypes\", \"Report that lists the number and size of document types.\");\nsetTooltip(\"menuItem_reportDocumentMimeTypes\", \"Report that lists the number and size of document mime types.\");\nsetTooltip(\"menuItem_reportFolderTypes\", \"Report that lists the number and size of folder types.\");\nsetTooltip(\"menuItem_reportAuditDetails\", \"Report that lists all the actions in details.\");\nsetTooltip(\"menuItem_removeAdvertising\", \"<b>Tip:</b> Click to see how to remove incomplete analysis.\");\nsetTooltip(\"menuItem_freeAnalysisOnAuditTrail\", \"Free analysis on actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Pivot4j.\");\nsetTooltip(\"menuItem_freeAnalysisOnRepository\", \"Free analysis on content in general from several points of view.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnRepository\", \"Free analysis on repository with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnRepository\", \"Free analysis on repository with Pivot4j.\");\n ",
       "type": "Resource"
      }
     ]
@@ -1764,7 +1763,7 @@
      },
      {
       "name": "html",
-      "value": "<div id=\"menuItem_dashboardAudit_comingSoon\" style=\"display:none;\">\n<center>\n<iframe width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/c40gQFW6aIg\" frameborder=\"0\" allowfullscreen></iframe><br/>\nTurn on captions for textual description.<br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner? Support the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n\n<div id=\"menuItem_dashboardRepository_comingSoon\" style=\"display:none;\">\n<center>\n<img src=\"/pentaho/api/repos/AAAR/static/custom/img/AAAR.png\"/><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner?<br/>\nSupport the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n\n<div id=\"freeAnalysisOnAuditTrail_comingSoon\" style=\"display:none;\">\n<center>\n<iframe width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/FQ33a8ycG20\" frameborder=\"0\" allowfullscreen></iframe><br/>\nTurn on captions for textual description.<br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner? Support the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n\n<div id=\"freeAnalysisOnRepository_comingSoon\" style=\"display:none;\">\n<center>\n<iframe width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/Aht2aHcm3bQ\" frameborder=\"0\" allowfullscreen></iframe><br/>\nTurn on captions for textual description.<br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner? Support the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n ",
+      "value": "<div id=\"menuItem_dashboardRepository_comingSoon\" style=\"display:none;\">\n<center>\n<img src=\"/pentaho/api/repos/AAAR/static/custom/img/AAAR.png\"/><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner?<br/>\nSupport the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n ",
       "type": "Html"
      },
      {
@@ -1858,7 +1857,7 @@
      },
      {
       "name": "expression",
-      "value": "function() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"center\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n}",
+      "value": "function creditsComponent() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"center\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n} ",
       "type": "JavaScript"
      },
      {
@@ -1916,7 +1915,7 @@
      },
      {
       "name": "expression",
-      "value": "function() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"top\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n}",
+      "value": "function comingSoon() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"top\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n} ",
       "type": "JavaScript"
      },
      {
@@ -1974,7 +1973,7 @@
      },
      {
       "name": "expression",
-      "value": "function() {\n    if (Dashboards.getParameterValue('${p:hideAdvertising}')==\"true\") {\n        $(\"#menuItem_dashboardGroup\").hide();\n    }\n}",
+      "value": "function hideAdvertising() {\n    if (Dashboards.getParameterValue('${p:hideAdvertising}')==\"true\") {\n        $(\"#menuItem_dashboardRepository\").hide();\n    }\n} ",
       "type": "JavaScript"
      },
      {
@@ -2037,8 +2036,28 @@
      },
      {
       "name": "expression",
-      "value": "function() {\n    if (chartType == \"actions\") {\n        Dashboards.fireChange(\"chartType\",\"repository\");\n    }\n    else {\n        Dashboards.fireChange(\"chartType\",\"actions\");\n    }    \n}\n",
+      "value": "function changeChart() {\n    if (chartType == \"actions\") {\n        Dashboards.fireChange(\"chartType\",\"repository\");\n    }\n    else {\n        Dashboards.fireChange(\"chartType\",\"actions\");\n    }    \n}\n ",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -2274,9 +2293,24 @@
       "type": "String"
      },
      {
+      "name": "canClickOutsidePopup",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
+     },
+     {
+      "name": "onOpenEvent",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "onCloseEvent",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "htmlObject",
@@ -2361,7 +2395,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "height",
       "value": "",
       "type": "Integer"
      },
@@ -2371,12 +2410,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "height",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -2701,6 +2735,11 @@
       "type": "String"
      },
      {
+      "name": "dataWhere",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
       "name": "dotsVisible",
       "value": false,
       "type": "Boolean"
@@ -2823,6 +2862,11 @@
      {
       "name": "legendVisible",
       "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "linesVisible",
+      "value": false,
       "type": "Boolean"
      },
      {
@@ -3236,6 +3280,11 @@
       "type": "Boolean"
      },
      {
+      "name": "pointingMode",
+      "value": "near",
+      "type": "cccPointingModeCustom"
+     },
+     {
       "name": "renderCallback",
       "value": "",
       "type": "JavaScript"
@@ -3379,6 +3428,11 @@
       "name": "tooltipArrowVisible",
       "value": "",
       "type": "Boolean"
+     },
+     {
+      "name": "tooltipClassName",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "tooltipEnabled",
@@ -3555,7 +3609,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "height",
       "value": "",
       "type": "Integer"
      },
@@ -3565,12 +3624,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "height",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -3873,6 +3927,11 @@
       "name": "dataSeparator",
       "value": "~",
       "type": "String"
+     },
+     {
+      "name": "dataWhere",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "doubleClickAction",
@@ -4415,18 +4474,23 @@
       "type": "Boolean"
      },
      {
+      "name": "pointingMode",
+      "value": "near",
+      "type": "cccPointingModeCustom"
+     },
+     {
       "name": "renderCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
       "name": "selectable",
-      "value": false,
+      "value": "true",
       "type": "Boolean"
      },
      {
       "name": "selectionChangedAction",
-      "value": "",
+      "value": "function filter(selections) {\n\n    var url = \"/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent\";\n\n    var bookmarkState = {\n        \"impl\":\"client\",\n        \"params\":{\n            \"dtFrom\":selections[0].atoms.category.value,\n            \"dtTo\":selections[selections.length-1].atoms.category.value}};\n\n    window.open(url + \"?bookmarkState=\" + encodeURI(JSON.stringify(bookmarkState)), \"_self\")\n} ",
       "type": "JavaScript"
      },
      {
@@ -4563,6 +4627,11 @@
       "name": "tooltipArrowVisible",
       "value": "",
       "type": "Boolean"
+     },
+     {
+      "name": "tooltipClassName",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "tooltipEnabled",
@@ -4703,6 +4772,11 @@
       "name": "valuesOptimizeLegibility",
       "value": "",
       "type": "Boolean"
+     },
+     {
+      "name": "valuesOverflow",
+      "value": "hide",
+      "type": "cccValuesOverflowCustom"
      },
      {
       "name": "valuesVisible",

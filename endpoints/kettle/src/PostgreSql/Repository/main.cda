@@ -38,7 +38,7 @@ order by
       </Parameters>
       <Query>select
  dat.id as date_id,
- (select coalesce(count(doc.*),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Number,
+ (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Number,
  (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Mb
 from
  dm_dim_dates dat
