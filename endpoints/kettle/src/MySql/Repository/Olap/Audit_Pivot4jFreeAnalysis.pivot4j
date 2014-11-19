@@ -5,7 +5,7 @@
       <cube>AAAR_AuditTrail</cube>
    </connection>
    <model>
-      <mdx>SELECT {[Measures].[Actions]} ON COLUMNS, {[Action].[All Actions]} ON ROWS FROM [AAAR_AuditTrail]</mdx>
+      <mdx>SELECT {[Measures].[Actions]} ON COLUMNS, {[Action].[UNKNOWN], [Action].[LOGIN], [Action].[CREATE], [Action].[UPDATE CONTENT], [Action].[DELETE], [Action].[READ], [Action].[LOGOUT]} ON ROWS FROM [AAAR_AuditTrail]</mdx>
    </model>
    <render visible="true">
       <drillDown enabled="true" mode="position"/>
@@ -20,7 +20,7 @@
       <showParentMembers>false</showParentMembers>
       <hideSpans>false</hideSpans>
    </render>
-   <chart>
+   <chart type="HorizontalBar">
       <drillDown enabled="true" mode="position"/>
       <sort enabled="true" mode="basic"/>
       <drillThrough enabled="false"/>
