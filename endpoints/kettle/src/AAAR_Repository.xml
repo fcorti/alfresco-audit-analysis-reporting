@@ -110,7 +110,11 @@
     </DimensionUsage>
     <Measure name="Contents" column="num" datatype="Integer" aggregator="sum" caption="Contents" description="Contents" visible="true">
     </Measure>
-    <Measure name="Bytes" column="bytes" datatype="Integer" aggregator="sum" caption="Bytes" description="Bytes" visible="true">
+    <Measure name="Bytes" column="bytes" datatype="Integer" aggregator="sum" caption="Bytes" description="Bytes" visible="false">
     </Measure>
+    <CalculatedMember name="MBytes" formatString="" formula="[Measures].[Bytes] / (1024*1024)" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="GBytes" formatString="" formula="[Measures].[Bytes] / (1024*1024*1024)" dimension="Measures" visible="true">
+    </CalculatedMember>
   </Cube>
 </Schema>
