@@ -11443,7 +11443,7 @@ INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr,
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (854, 7, 43, 16, 'value_update', 0, 'Y');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (855, 7, 43, 17, 'value_name', 0, 'parent_id');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (856, 7, 43, 17, 'value_rename', 0, 'parent_id');
-INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (857, 7, 43, 17, 'value_update', 0, 'N');
+INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (857, 7, 43, 17, 'value_update', 0, 'Y');
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (858, 7, 43, 0, 'cluster_schema', 0, NULL);
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (859, 7, 43, 0, 'row_distribution_code', 0, NULL);
 INSERT INTO r_step_attribute (id_step_attribute, id_transformation, id_step, nr, code, value_num, value_str) VALUES (860, 7, 44, 0, 'PARTITIONING_SCHEMA', 0, NULL);

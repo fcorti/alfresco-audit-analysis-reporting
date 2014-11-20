@@ -110,5 +110,7 @@
     </DimensionUsage>
     <Measure name="Contents" column="num" datatype="Integer" aggregator="sum" caption="Contents" description="Contents" visible="true">
     </Measure>
+    <Measure name="Bytes" column="bytes" datatype="Integer" aggregator="sum" caption="Bytes" description="Bytes" visible="true">
+    </Measure>
   </Cube>
 </Schema>

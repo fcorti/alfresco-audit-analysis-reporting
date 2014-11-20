@@ -5,7 +5,10 @@
       <cube>AAAR_Repository</cube>
    </connection>
    <model>
-      <mdx>SELECT {[Measures].[Contents]} ON COLUMNS, {[Content type].[cmis:document].[cmis:document], [Content type].[cmis:document].[D:fm:post], [Content type].[cmis:document].[D:lnk:link], [Content type].[cmis:folder].[cmis:folder], [Content type].[cmis:folder].[F:cm:systemfolder], [Content type].[cmis:folder].[F:fm:forum], [Content type].[cmis:folder].[F:fm:topic], [Content type].[cmis:folder].[F:dl:dataList], [Content type].[cmis:folder].[F:st:sites], [Content type].[cmis:folder].[F:st:site], [Content type].[cmis:folder].[F:trx:transferGroup], [Content type].[cmis:folder].[F:pub:Environment], [Content type].[Unknown].[Unknown]} ON ROWS FROM [AAAR_Repository]</mdx>
+      <mdx>SELECT {[Measures].[Contents]} ON COLUMNS, Order({[Content type].[cmis:document].[cmis:document], [Content type].[cmis:document].[D:fm:post], [Content type].[cmis:document].[D:lnk:link], [Content type].[cmis:folder].[cmis:folder], [Content type].[cmis:folder].[F:cm:systemfolder], [Content type].[cmis:folder].[F:fm:forum], [Content type].[cmis:folder].[F:fm:topic], [Content type].[cmis:folder].[F:dl:dataList], [Content type].[cmis:folder].[F:st:sites], [Content type].[cmis:folder].[F:st:site], [Content type].[cmis:folder].[F:trx:transferGroup], [Content type].[cmis:folder].[F:pub:Environment], [Content type].[Unknown].[Unknown]}, [Measures].[Contents], DESC) ON ROWS FROM [AAAR_Repository]</mdx>
+      <sort criteria="DESC" enabled="true" ordinal="1" topBottomCount="10">
+         <member>[Measures].[Contents]</member>
+      </sort>
    </model>
    <render visible="true">
       <drillDown enabled="true" mode="position"/>
@@ -20,7 +23,7 @@
       <showParentMembers>false</showParentMembers>
       <hideSpans>false</hideSpans>
    </render>
-   <chart type="HorizontalBar">
+   <chart type="Bar">
       <drillDown enabled="true" mode="position"/>
       <sort enabled="true" mode="basic"/>
       <drillThrough enabled="false"/>
