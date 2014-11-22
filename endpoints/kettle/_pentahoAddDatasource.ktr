@@ -117,6 +117,27 @@
   <modified_date>2013&#x2f;12&#x2f;15 00&#x3a;57&#x3a;54.742</modified_date>
   </info>
   <notepads>
+    <notepad>
+      <note>Unfortuantely Pentaho does not permit to define a custom data source  using PDI. &#xa;AAAR_AuditTrail and AAAR_Repository data source are created from the sparkl dashboard.&#xa;If you run this script manually, please remember to create them.&#xa;&#xa;AAAR_AuditTrail is a Analysis data source on AAAR_AuditTrail.xml mondrian schema and AAAR_DataMart JDBC data source.&#xa;AAAR_Repository is a Analysis data source on AAAR_Repository.xml mondrian schema and AAAR_DataMart JDBC data source.&#xa;</note>
+      <xloc>58</xloc>
+      <yloc>229</yloc>
+      <width>855</width>
+      <heigth>129</heigth>
+      <fontname>Ubuntu</fontname>
+      <fontsize>11</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>Modified Java Script Value</from><to>REST Client</to><enabled>Y</enabled> </hop>

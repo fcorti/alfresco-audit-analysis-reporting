@@ -14,7 +14,7 @@ fi
 CONFIGURATION_PATH="$CONFIGURATIONS_PATH/$CONFIGURATION_FILE"
 
 # Set by writeConfiguration.kjb.
-KETTLE_PATH="/opt/data-integration" 
+KETTLE_PATH="/home/aaar/Desktop/data-integration" 
 
 clear
 
@@ -71,6 +71,11 @@ echo $LOG_PATH
 echo
 echo "Check for ERRORS but exclude the ones with description '...Folder/File [...] exists, failing.' because they are not real errors."
 echo "If you can't find them, everything has gone alright."
+echo
+echo "Unfortuantely Pentaho does not permit to define a custom data source using PDI."
+echo "Please, remember to create them manually as described below:"
+echo "AAAR_AuditTrail is a Analysis data source on AAAR_AuditTrail.xml mondrian schema and AAAR_DataMart JDBC data source."
+echo "AAAR_Repository is a Analysis data source on AAAR_Repository.xml mondrian schema and AAAR_DataMart JDBC data source."
 echo
 echo "To import your data in the Database you can now execute the 'AAAR_Export' script."
 echo "And remember to execute it periodically. ;-)"

@@ -5446,7 +5446,7 @@
      },
      {
       "name": "html",
-      "value": "@2014 <a href=\"\" onclick=\"credits(); return false;\">Alfresco Audit Analysis and Reporting (A.A.A.R.)</a> ",
+      "value": "@2013-2015 <a href=\"\" onclick=\"credits(); return false;\">Alfresco Audit Analysis and Reporting (A.A.A.R.)</a> ",
       "type": "Html"
      },
      {
