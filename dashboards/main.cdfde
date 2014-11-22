@@ -1,32 +1,9 @@
 {
  "layout": {
-  "title": "A.A.A.R. - Dashboard by Francesco Corti.",
+  "title": "main",
   "rows": [
    {
-    "id": "18322fd8-8a44-3c62-bd8b-f7708b86a194",
-    "type": "LayoutResourceFile",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "qtipCss",
-      "type": "Id"
-     },
-     {
-      "name": "resourceFile",
-      "value": "/pentaho/api/repos/AAAR/static/custom/css/jquery.qtip.css",
-      "type": "ResourceFile"
-     },
-     {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "cee10abf-d11c-61b7-1d9b-427c39d274ec",
+    "id": "91bdeb24-3589-5c05-3bc0-8a39d69d7602",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
     "parent": "UnIqEiD",
@@ -49,19 +26,19 @@
     ]
    },
    {
-    "id": "0739d2d6-a265-623c-33ad-8472d8674cb7",
+    "id": "0a99120a-24fe-72ce-36f6-a989bc69a5af",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "qtipJs",
+      "value": "projectJs",
       "type": "Id"
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/AAAR/static/custom/js/jquery.qtip.js",
+      "value": "/pentaho/api/repos/AAAR/static/custom/js/AAAR.js",
       "type": "ResourceFile"
      },
      {
@@ -72,7 +49,7 @@
     ]
    },
    {
-    "id": "6ed1e12c-67f9-c3bd-e3eb-379bfc1606f4",
+    "id": "234af51f-01ce-4070-b9c8-01234f388ae8",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -110,10 +87,10 @@
     ]
    },
    {
-    "id": "5ac19df5-90de-2f5a-e0d8-8122196b8aa3",
+    "id": "ed826f28-ff94-c5d0-4d59-1d39e42f8a1d",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "6ed1e12c-67f9-c3bd-e3eb-379bfc1606f4",
+    "parent": "234af51f-01ce-4070-b9c8-01234f388ae8",
     "properties": [
      {
       "name": "name",
@@ -183,10 +160,10 @@
     ]
    },
    {
-    "id": "99c64ce3-e6bc-4939-f2ce-33d967696cdd",
+    "id": "0a5125d4-534e-dcb6-183a-26150b3e0f94",
     "type": "LayoutImage",
     "typeDesc": "Image",
-    "parent": "5ac19df5-90de-2f5a-e0d8-8122196b8aa3",
+    "parent": "ed826f28-ff94-c5d0-4d59-1d39e42f8a1d",
     "properties": [
      {
       "name": "url",
@@ -201,10 +178,10 @@
     ]
    },
    {
-    "id": "06db2307-b84e-446d-41ce-cec5e48b0863",
+    "id": "418d2815-e50d-1c32-ad9b-b159f0692a5e",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "6ed1e12c-67f9-c3bd-e3eb-379bfc1606f4",
+    "parent": "234af51f-01ce-4070-b9c8-01234f388ae8",
     "properties": [
      {
       "name": "name",
@@ -274,10 +251,10 @@
     ]
    },
    {
-    "id": "455f2234-b242-bef5-e4aa-9e29626f5ff7",
+    "id": "2345f426-08c3-79f4-8dd6-3bc62afa6bb6",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "06db2307-b84e-446d-41ce-cec5e48b0863",
+    "parent": "418d2815-e50d-1c32-ad9b-b159f0692a5e",
     "properties": [
      {
       "name": "name",
@@ -286,7 +263,7 @@
      },
      {
       "name": "html",
-      "value": "Main dashboard ",
+      "value": "Alfresco Audit Analysis and Reporting ",
       "type": "Html"
      },
      {
@@ -307,7 +284,7 @@
     ]
    },
    {
-    "id": "d53d8291-3ff7-072f-6018-96014a4ced7a",
+    "id": "94909ac2-1c06-7257-fc71-b88d65436bcf",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -345,7 +322,7 @@
     ]
    },
    {
-    "id": "f288fb47-d4a4-7a44-f038-ff35e858c3b2",
+    "id": "7d8ba490-3fed-3fe1-209c-755928a51fbe",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -383,14 +360,14 @@
     ]
    },
    {
-    "id": "9262705e-30c0-d3c8-6135-4a3de7e16b62",
+    "id": "2ee2120b-1113-0542-feb6-38a9b4188447",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "content",
+      "value": "steps",
       "type": "Id"
      },
      {
@@ -421,14 +398,309 @@
     ]
    },
    {
-    "id": "76098f78-ccab-3c85-8995-def8398eedd8",
+    "id": "9ccbce18-eb67-50d8-2df4-141caed88551",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "9262705e-30c0-d3c8-6135-4a3de7e16b62",
+    "parent": "2ee2120b-1113-0542-feb6-38a9b4188447",
     "properties": [
      {
       "name": "name",
-      "value": "menu",
+      "value": "configureStep",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "8",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "AAAR step",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "816ae0d4-1e91-e939-66c3-fa5942533278",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "2ee2120b-1113-0542-feb6-38a9b4188447",
+    "properties": [
+     {
+      "name": "name",
+      "value": "installStep",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "8",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "AAAR step",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0dca552b-ce10-c674-be19-a9d56360f4bb",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "2ee2120b-1113-0542-feb6-38a9b4188447",
+    "properties": [
+     {
+      "name": "name",
+      "value": "useStep",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "8",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "AAAR step",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "34d03a0a-1caf-cd70-f56d-703addf17086",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "separator",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "50",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0f103862-b8d5-f0d5-4bf1-e267e101d7df",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "icons",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ce0cf13b-7a01-2258-6389-de704d8c722f",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0f103862-b8d5-f0d5-4bf1-e267e101d7df",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
       "type": "Id"
      },
      {
@@ -494,35 +766,15 @@
     ]
    },
    {
-    "id": "626e2a86-ac60-7f10-7f4f-f253e5f95bca",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "76098f78-ccab-3c85-8995-def8398eedd8",
+    "id": "ef6e12b9-7ba2-225b-0819-a47229e488d0",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "ce0cf13b-7a01-2258-6389-de704d8c722f",
     "properties": [
      {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "name": "url",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/configure.png",
+      "type": "String"
      },
      {
       "name": "cssClass",
@@ -532,442 +784,10 @@
     ]
    },
    {
-    "id": "89ca741c-19e0-7bf0-f4ad-03b38641c278",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "626e2a86-ac60-7f10-7f4f-f253e5f95bca",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<div style=\"display:table;\">\n    <div style=\"display:table-row;\">\n        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n        <div style=\"display:table-cell; vertical-align:middle;\"/>A.A.A.R.</div>\n    </div>\n    <div id=\"menuItem_dashboardGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/>Dashboards</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_dashboardAudit\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent\" target=\"_self\">Audit trail</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\" id=\"menuItem_dashboardRepository\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div id=\"menuItem_dashboardRepository\" style=\"display:table-cell; vertical-align:middle;\"/><a href=\"\" onclick=\"comingSoon('menuItem_dashboardRepository_comingSoon', 400); return false;\">Repository</a> (<a id=\"menuItem_removeAdvertisin1\" href=\"\" onclick=\"Dashboards.fireChange('hideAdvertising','true');\">*</a>)</div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div id=\"menuItem_reportsGroup\" style=\"display:table-row;\">\n        <div style=\"display:table-cell;\">&nbsp;</div>\n        <div style=\"display:table-cell;\">\n            <div style=\"display:table;\">\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                    <div style=\"display:table-cell; vertical-align:middle;\"/> Reports</div>\n                </div>\n                <div style=\"display:table-row;\">\n                    <div style=\"display:table-cell;\">&nbsp;</div>\n                    <div style=\"display:table-cell;\">\n                        <div style=\"display:table-row;\">\n                            <div style=\"display:table-cell;\">&nbsp;</div>\n                            <div style=\"display:table-cell;\">\n                                <div style=\"display:table;\">\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportRepositorySize\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" target=\"_blank\">Repository size</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportLoginPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" target=\"_blank\">Login analysis per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportCreationPerDay\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" target=\"_blank\">Content creation per day</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportTopTen\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" target=\"_blank\">Top ten users and content</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportActionTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" target=\"_blank\">Action types</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportMostActiveUsers\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" target=\"_blank\">Most active users</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportHoursOfActivity\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" target=\"_blank\">Hours of activity</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportSiteDocuments\" href=\"/pentaho/api/repos/:public:AAAR:Reports:site_documents.prpt/viewer\" target=\"_blank\">Documents per site</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" target=\"_blank\">Documents per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportDocumentMimeTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" target=\"_blank\">Documents per mime type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportFolderTypes\" href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" target=\"_blank\">Folders per type</a></div>\n                                    </div>\n                                    <div class=\"AAAR menu menuItem\" style=\"display:table-row;\">\n                                        <div style=\"display:table-cell;\"><img src=\"/pentaho-style/active/folder.png\"/></div>\n                                        <div style=\"display:table-cell; vertical-align:middle;\"/><a id=\"menuItem_reportAuditDetails\" href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" target=\"_blank\">Audit details (MS Excel)</a></div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "92c71118-d0e6-654e-ba9f-3f53b313336c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "76098f78-ccab-3c85-8995-def8398eedd8",
-    "properties": [
-     {
-      "name": "name",
-      "value": "separator",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "100",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d1aa3500-f55a-ea55-7d2c-b5a3941deeb4",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "76098f78-ccab-3c85-8995-def8398eedd8",
-    "properties": [
-     {
-      "name": "name",
-      "value": "freeAnalysis",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "58625d7b-24b7-1d31-6ef3-a7753c784581",
+    "id": "3a78d607-a1c9-ba6b-b8aa-dababf4f7957",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "d1aa3500-f55a-ea55-7d2c-b5a3941deeb4",
-    "properties": [
-     {
-      "name": "name",
-      "value": "freeAnalysisOnAuditTrail",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "60",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "#e7e7e7",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "cdfdd-dog_tr",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "3ffe40b8-05b3-b545-9f5c-4370974912e3",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "58625d7b-24b7-1d31-6ef3-a7753c784581",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<br/>\n<div class=\"AAAR menu menuItem\"><a id=\"menuItem_freeAnalysisOnAuditTrail\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" target=\"_blank\">Free analysis on<br/>audit trail</a> (<a id=\"menuItem_SaikuFreeAnalysisOnAuditTrail\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" target=\"_blank\">1</a>,<a id=\"menuItem_Pivot4jFreeAnalysisOnAuditTrail\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent\" target=\"_blank\">2</a>)</div> ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "#345565",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "28e80698-1993-105c-ff59-0f01532d1c92",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "d1aa3500-f55a-ea55-7d2c-b5a3941deeb4",
-    "properties": [
-     {
-      "name": "name",
-      "value": "freeAnalysisOnRepository",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "60",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "#e7e7e7",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "cdfdd-dog_tr",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d5953116-b298-93fc-64ff-aa7345bf395f",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "28e80698-1993-105c-ff59-0f01532d1c92",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<br/>\n<div class=\"AAAR menu menuItem\"><a id=\"menuItem_freeAnalysisOnRepository\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" target=\"_blank\">Free analysis on<br/>repository</a> (<a id=\"menuItem_SaikuFreeAnalysisOnRepository\" href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" target=\"_blank\">1</a>,<a id=\"menuItem_Pivot4jFreeAnalysisOnRepository\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" target=\"_blank\">2</a>)</div>",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "bcc705c6-e076-5dcf-7cbf-f3242a24cfa1",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "9262705e-30c0-d3c8-6135-4a3de7e16b62",
-    "properties": [
-     {
-      "name": "name",
-      "value": "content",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "16",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c8938468-0913-2785-4a7f-c9546a68364a",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "bcc705c6-e076-5dcf-7cbf-f3242a24cfa1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "filters",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "AAAR filters",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "b51e7468-9d1f-9205-32d2-54af9a0f4ef4",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "c8938468-0913-2785-4a7f-c9546a68364a",
+    "parent": "0f103862-b8d5-f0d5-4bf1-e267e101d7df",
     "properties": [
      {
       "name": "name",
@@ -1026,7 +846,7 @@
      },
      {
       "name": "textAlign",
-      "value": "right",
+      "value": "",
       "type": "TextAlign"
      },
      {
@@ -1037,52 +857,37 @@
     ]
    },
    {
-    "id": "648427ce-9b53-95b5-fa6e-e521feae9839",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "b51e7468-9d1f-9205-32d2-54af9a0f4ef4",
+    "id": "def5243e-12fb-b9dd-ca37-a70d7c2e570f",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "3a78d607-a1c9-ba6b-b8aa-dababf4f7957",
     "properties": [
      {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Period: ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
+      "name": "url",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/install.png",
+      "type": "String"
      },
      {
       "name": "cssClass",
-      "value": "AAAR filters",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "74e3a4c7-4ae9-6273-d5ee-a8e0d2259bc0",
+    "id": "35f5f205-5da0-ca2f-d770-e0a5a24f5c3b",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "c8938468-0913-2785-4a7f-c9546a68364a",
+    "parent": "0f103862-b8d5-f0d5-4bf1-e267e101d7df",
     "properties": [
      {
       "name": "name",
-      "value": "filter1Obj",
+      "value": "",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": 5,
+      "value": "8",
       "type": "Integer"
      },
      {
@@ -1132,7 +937,7 @@
      },
      {
       "name": "textAlign",
-      "value": "right",
+      "value": "",
       "type": "TextAlign"
      },
      {
@@ -1143,70 +948,15 @@
     ]
    },
    {
-    "id": "5236485a-4148-da49-21f5-424d68a2696d",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "c8938468-0913-2785-4a7f-c9546a68364a",
+    "id": "525aa88c-0394-4d96-99b0-ab2d74d88544",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "35f5f205-5da0-ca2f-d770-e0a5a24f5c3b",
     "properties": [
      {
-      "name": "name",
-      "value": "changeChartButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "3",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "right",
-      "type": "TextAlign"
+      "name": "url",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/use.png",
+      "type": "String"
      },
      {
       "name": "cssClass",
@@ -1216,83 +966,7 @@
     ]
    },
    {
-    "id": "e63bc9bb-2c65-b776-d88e-1d49ba433318",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "bcc705c6-e076-5dcf-7cbf-f3242a24cfa1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "chart1Obj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "475",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "59e5d4dd-c7a6-1bc8-4a67-8f2375e2bebb",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "bcc705c6-e076-5dcf-7cbf-f3242a24cfa1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "chart2Obj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "475",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "0f8d81dd-f987-d740-f74c-89b19e120399",
+    "id": "9ac780a8-76e1-8c14-2b69-d8bc3b9aca2b",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -1330,7 +1004,189 @@
     ]
    },
    {
-    "id": "5b6affe3-c858-6c85-861b-d15c14ab64f7",
+    "id": "8f981fc2-131b-707f-6449-7b54598b772b",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "welcomePhrase",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cace4e2b-02b1-4dd6-498c-162423e9d8f3",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "8f981fc2-131b-707f-6449-7b54598b772b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "24",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b1c7a95b-295d-d9fc-fbc1-5705de9cddb9",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "cace4e2b-02b1-4dd6-498c-162423e9d8f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "&lt;Start choosing the action from the menu&gt; ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "AAAR title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9639cbd4-19a5-7290-a965-5475bd8bdfb4",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "separator",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cf0b04f2-1844-267f-256c-3c864e019c97",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -1368,7 +1224,7 @@
     ]
    },
    {
-    "id": "56f873d0-f636-6b68-a8f3-c3d48a843db3",
+    "id": "07f47044-0b3c-07dd-5c0c-bcfcd983a904",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -1406,14 +1262,14 @@
     ]
    },
    {
-    "id": "f30dfab4-7b6a-fff5-f65d-46b063f7db63",
+    "id": "b4a6e3f8-72ce-3bfe-6763-220a66f744b0",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "credits",
+      "value": "Credits",
       "type": "Id"
      },
      {
@@ -1444,10 +1300,10 @@
     ]
    },
    {
-    "id": "c7a9a24b-fb2c-a12e-a99a-a89222892277",
+    "id": "18eb3c44-712a-1a10-d235-18a8c29df07e",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "f30dfab4-7b6a-fff5-f65d-46b063f7db63",
+    "parent": "b4a6e3f8-72ce-3bfe-6763-220a66f744b0",
     "properties": [
      {
       "name": "name",
@@ -1517,10 +1373,10 @@
     ]
    },
    {
-    "id": "75e9b438-a816-5854-149b-bede896d08ad",
+    "id": "ce538446-c004-8fd8-916b-c87eced57fb9",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "c7a9a24b-fb2c-a12e-a99a-a89222892277",
+    "parent": "18eb3c44-712a-1a10-d235-18a8c29df07e",
     "properties": [
      {
       "name": "name",
@@ -1529,7 +1385,7 @@
      },
      {
       "name": "html",
-      "value": "@2014 <a href=\"\" onclick=\"credits(); return false;\">Alfresco Audit Analysis and Reporting (A.A.A.R.)</a> ",
+      "value": "@2013-2015 <a href=\"\" onclick=\"credits(); return false;\">Alfresco Audit Analysis and Reporting (A.A.A.R.)</a> ",
       "type": "Html"
      },
      {
@@ -1550,10 +1406,10 @@
     ]
    },
    {
-    "id": "80b0822f-bb6c-420f-f69e-bb5b74ece205",
+    "id": "af7742da-c961-67ff-d93d-c7cdf119754a",
     "type": "LayoutImage",
     "typeDesc": "Image",
-    "parent": "f30dfab4-7b6a-fff5-f65d-46b063f7db63",
+    "parent": "b4a6e3f8-72ce-3bfe-6763-220a66f744b0",
     "properties": [
      {
       "name": "url",
@@ -1568,14 +1424,52 @@
     ]
    },
    {
-    "id": "03c0c5d4-c998-abe1-cc47-a3bf1879bd9b",
+    "id": "a54cc12a-5b96-8cb3-3c99-0940ed098279",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dialogGrabComponentObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7ac2d93e-527c-1213-b1f4-bcb911591611",
     "type": "LayoutResourceCode",
     "typeDesc": "Resource",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "creditsJs",
+      "value": "credits",
       "type": "Id"
      },
      {
@@ -1585,239 +1479,8 @@
      },
      {
       "name": "resourceCode",
-      "value": "function credits() {\n\n    var dialog = Dashboards.getComponentByName('${c:creditsComponent}');\n    Dashboards.incrementRunningCalls();\n\n    var content =\"<center>\";\n    content += \"<br/>\";\n    content += \"<div style=\\\"display:table;\\\">\";\n    content += \"<div style=\\\"display:table-row;\\\">\";\n    content += \"<div style=\\\"display:table-cell; padding-right:20px;\\\"><a href=\\\"http://fcorti.com\\\" target=\\\"_blank\\\"><img src=\\\"http://www.gravatar.com/avatar/7d8758b63c7b2a873b3b925267ba912d?size=150\\\"/></a></div>\";\n    content += \"<div style=\\\"display:table-cell; vertical-align:top;\\\">\";\n    content += \"<h2><a href=\\\"http://fcorti.com\\\" target=\\\"_blank\\\">Francesco Corti</a></h2>\";\n    content += \"<h3>\";\n    content += \"<a href=\\\"mailto:fcorti@gmail.com\\\">Contacts and info</a><br/>\";\n    content += \"<br/>\";\n    content += \"<a href=\\\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\\\" target=\\\"_blank\\\">Click if you like this project!</a>\";\n    content += \"</h3>\";\n    content += \"License GPL v3\";\n    content += \"</div>\";\n    content += \"</div>\";\n    content += \"</center>\";\n\n    dialog.open({\n        width: 450,\n        title: \"Credits\",\n        message: content,\n        buttons: [\n            {\n                text: \"OK\",\n                click: function() {\n                    $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                    Dashboards.decrementRunningCalls();\n                    return false;\n               }                               \n            }\n        ]\n    });\n} ",
+      "value": "function credits() {\n\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    Dashboards.incrementRunningCalls();\n\n    var content =\"<center>\";\n    content += \"<br/>\";\n    content += \"<div style=\\\"display:table;\\\">\";\n    content += \"<div style=\\\"display:table-row;\\\">\";\n    content += \"<div style=\\\"display:table-cell; padding-right:20px;\\\"><a href=\\\"http://fcorti.com\\\" target=\\\"_blank\\\"><img src=\\\"http://www.gravatar.com/avatar/7d8758b63c7b2a873b3b925267ba912d?size=150\\\"/></a></div>\";\n    content += \"<div style=\\\"display:table-cell; vertical-align:top;\\\">\";\n    content += \"<h2><a href=\\\"http://fcorti.com\\\" target=\\\"_blank\\\">Francesco Corti</a></h2>\";\n    content += \"<h3>\";\n    content += \"<a href=\\\"mailto:fcorti@gmail.com\\\">Contacts and info</a><br/>\";\n    content += \"<br/>\";\n    content += \"<a href=\\\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\\\">Click if you like this project!</a>\";\n    content += \"</h3>\";\n    content += \"License GPL v3\";\n    content += \"</div>\";\n    content += \"</div>\";\n    content += \"</center>\";\n\n    dialog.open({\n        width:450,\n        title:\"Credits\",\n        message:content,\n        buttons:[\n            {\n                text: \"OK\",\n                click: function() {\n                    $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                    Dashboards.decrementRunningCalls();\n                    return false;\n               }                               \n            }\n        ]\n    });\n} ",
       "type": "Resource"
-     }
-    ]
-   },
-   {
-    "id": "6291282d-7082-9ccb-cad6-7ae12f5fcebd",
-    "type": "LayoutResourceCode",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "tooltipJs",
-      "type": "Id"
-     },
-     {
-      "name": "resourceType",
-      "value": "Javascript",
-      "type": "Label"
-     },
-     {
-      "name": "resourceCode",
-      "value": "function setTooltip(objId, tooltipContent) {\n    $(\"#\" + objId).qtip({\n        content: {\n            text: tooltipContent\n        },\n        hide: {\n            effect: function() { $(this).slideUp(); }\n        },\n        show: {\n            effect: function() { $(this).slideDown(); }\n        },\n        style: {\n            classes: \"qtip-rounded qtip-shadow\"\n        }\n    });\n}\n\nsetTooltip(\"menuItem_dashboardAudit\", \"Dashboard that analyse actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_dashboardRepository\", \"<b>Coming soon:</b> Dashboard that analyse documents, folders, users, types, dates and hours of creation and modification.\");\nsetTooltip(\"menuItem_reportRepositorySize\", \"Report that shows the repository's growth during the last month and the last year.\");\nsetTooltip(\"menuItem_reportLoginPerDay\", \"Report that list accesses to the system.\");\nsetTooltip(\"menuItem_reportCreationPerDay\", \"Report that lists the last 10 days document and folder creation.\");\nsetTooltip(\"menuItem_reportTopTen\", \"Report that lists the top ten users and documents of the last 10 days.\");\nsetTooltip(\"menuItem_reportActionTypes\", \"Report that lists the actions in the system in the last month.\");\nsetTooltip(\"menuItem_reportMostActiveUsers\", \"Report that shows the 10 most active users on the repository.\");\nsetTooltip(\"menuItem_reportHoursOfActivity\", \"Report that shows the number of creations in the repository.\");\nsetTooltip(\"menuItem_reportSiteDocuments\", \"Report that lists the documents in a site.\");\nsetTooltip(\"menuItem_reportDocumentTypes\", \"Report that lists the number and size of document types.\");\nsetTooltip(\"menuItem_reportDocumentMimeTypes\", \"Report that lists the number and size of document mime types.\");\nsetTooltip(\"menuItem_reportFolderTypes\", \"Report that lists the number and size of folder types.\");\nsetTooltip(\"menuItem_reportAuditDetails\", \"Report that lists all the actions in details.\");\nsetTooltip(\"menuItem_removeAdvertising\", \"<b>Tip:</b> Click to see how to remove incomplete analysis.\");\nsetTooltip(\"menuItem_freeAnalysisOnAuditTrail\", \"Free analysis on actions, users, documents and folders, types, dates and hours of execution.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnAuditTrail\", \"Free analysis on audit trail with Pivot4j.\");\nsetTooltip(\"menuItem_freeAnalysisOnRepository\", \"Free analysis on content in general from several points of view.\");\nsetTooltip(\"menuItem_SaikuFreeAnalysisOnRepository\", \"Free analysis on repository with Saiku.\");\nsetTooltip(\"menuItem_Pivot4jFreeAnalysisOnRepository\", \"Free analysis on repository with Pivot4j.\");\n ",
-      "type": "Resource"
-     }
-    ]
-   },
-   {
-    "id": "340518a1-df90-ecf2-5e3e-ac956e684ed7",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "creditsComponentObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ceea9663-2be1-ac45-380d-aad8ca1c886b",
-    "type": "LayoutResourceCode",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "cominSoonJs",
-      "type": "Id"
-     },
-     {
-      "name": "resourceType",
-      "value": "Javascript",
-      "type": "Label"
-     },
-     {
-      "name": "resourceCode",
-      "value": "function comingSoon(htmlObjectId, widthValue) {\n\n    var dialog = Dashboards.getComponentByName('${c:comingSoonComponent}');\n    Dashboards.incrementRunningCalls();\n\n    dialog.open({\n        width: widthValue,\n        message: $(\"#\"+htmlObjectId).html(),\n        position: ['middle',20],\n        buttons: [\n            {\n                text: \"OK\",\n                click: function() {\n                    $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                    Dashboards.decrementRunningCalls();\n                    return false;\n               }                               \n            }\n        ]\n    });\n} ",
-      "type": "Resource"
-     }
-    ]
-   },
-   {
-    "id": "70260585-45da-6c40-2a45-f5b6e732e329",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "comingSoonComponentObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "53854829-0792-cb58-58fd-8e74c418de95",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "comingSoonHtml",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "44b228c7-fdb5-b8d2-82d9-0b995d3bbca5",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "53854829-0792-cb58-58fd-8e74c418de95",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<div id=\"menuItem_dashboardRepository_comingSoon\" style=\"display:none;\">\n<center>\n<img src=\"/pentaho/api/repos/AAAR/static/custom/img/AAAR.png\"/><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate\" target=\"_blank\">Do you want to see this dashboard sooner?<br/>\nSupport the project!</a></font><br/>\n<br/>\n<font size=\"+1\"><a href=\"http://fcorti.com\" target=\"_blank\">Official website</a></font><br/>\n<br/>\nLicense GPL v3\n</center>\n</div>\n ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c7ef25de-3f71-d8dd-4235-f6eb3ebd5193",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "hideAdvertisingComponentObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
      }
     ]
    }
@@ -1825,292 +1488,6 @@
  },
  "components": {
   "rows": [
-   {
-    "id": "OTHERCOMPONENTS",
-    "name": "Others",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Others",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "e41844ff-4517-ecee-3be8-aa04f47b277a",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "creditsComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function creditsComponent() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"center\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "creditsComponentObj",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "dd83afa1-58df-18b5-befc-0e983303ae13",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "comingSoonComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function comingSoon() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            position: { my: \"center\", at: \"top\", of: window },\n            title: \"Coming soon\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend(dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:comingSoonComponentObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "ad3a303c-a186-e9fb-7147-567d132321dd",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "hideAdvertisingComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function hideAdvertising() {\n    if (Dashboards.getParameterValue('${p:hideAdvertising}')==\"true\") {\n        $(\"#menuItem_dashboardRepository\").hide();\n    }\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:hideAdvertisingComponentObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "7d57829f-ca5e-ab17-648b-2483f8edabf9",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "changeChartButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Switch chart",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function changeChart() {\n    if (chartType == \"actions\") {\n        Dashboards.fireChange(\"chartType\",\"repository\");\n    }\n    else {\n        Dashboards.fireChange(\"chartType\",\"actions\");\n    }    \n}\n ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:changeChartButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
    {
     "id": "GENERIC",
     "name": "Generic",
@@ -2126,65 +1503,271 @@
     ]
    },
    {
-    "id": "63961eeb-8d9d-ad13-01a6-5dc1dfa2f005",
-    "type": "ComponentsDateParameter",
-    "typeDesc": "Date Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dtFrom",
-      "type": "Id"
-     },
-     {
-      "name": "propertyDateValue",
-      "value": "lastWeek",
-      "type": "Date"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "0c18bfed-8910-b39b-1fed-c4232621c9b8",
-    "type": "ComponentsDateParameter",
-    "typeDesc": "Date Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dtTo",
-      "type": "Id"
-     },
-     {
-      "name": "propertyDateValue",
-      "value": "today",
-      "type": "Date"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "779f7f77-56da-0403-3941-36da3949477f",
+    "id": "957f677f-c645-e166-8abf-a89aa476b600",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "chartType",
+      "value": "alfrescoProtocol",
       "type": "Id"
      },
      {
       "name": "propertyValue",
-      "value": "actions",
+      "value": "http",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "b56a04af-8fa0-b140-1f48-7e1561294d1c",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoHost",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "localhost",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "a7e17931-b294-1f65-f215-9baee94de440",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoPort",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "8080",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "95c3f62d-763f-74c1-ebed-ed87b0f31b8c",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoLogin",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "admin",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "250cae32-e551-6aca-5602-5a6f5607ce41",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoPassword",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "admin",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "bec12b41-8110-abd4-212b-d5e8097c0470",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoFtpPort",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "121",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "cd73fb7a-1ff9-b0aa-724f-5884bc07c8e4",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoFtpPath",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "alfresco",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "702aecd3-492f-cfb6-d9cb-af8530efd268",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoAuditLimit",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "50000",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "b3f4489f-a486-6227-3d7f-6edbd50b6870",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "kettlePath",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "/opt/data-integration",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "49c3a050-3e5a-5b2e-e240-4ced454e587c",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "kettleVersion",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "5",
       "type": "String"
      },
      {
@@ -2200,19 +1783,159 @@
     ]
    },
    {
-    "id": "5495e554-09b8-e651-e7f2-6695eeae69a5",
+    "id": "5b83837e-9425-a81e-5a67-d6e89fbd849c",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "hideAdvertising",
+      "value": "databaseBin",
       "type": "Id"
      },
      {
       "name": "propertyValue",
+      "value": ".",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
       "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8a07a4f8-727c-512b-0a64-83b9723ca5fa",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseHost",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "localhost",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "f12dedf1-7180-2866-573b-ff48b9b88a2a",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseLogin",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "postgres",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "680ccb4f-f4e4-990b-133c-86a58b1e26bc",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databasePassword",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "postgres",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "1833879b-3b32-b2c4-6fd4-faa434e0d118",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databasePort",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "5432",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "ecae394d-6ee9-8b2b-416e-d95618eee0eb",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseSchemaAAAR",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "AAAR_DataMart",
       "type": "String"
      },
      {
@@ -2222,2721 +1945,464 @@
      },
      {
       "name": "bookmarkable",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "SELECTORS",
-    "name": "Selects",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Selects",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "fc8c0d55-f9fe-ada5-45d4-000e15fef366",
-    "type": "ComponentsDateRangeInput",
-    "typeDesc": "Date range input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "filter1",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "earliestDate",
-      "value": "-1years",
-      "type": "String"
-     },
-     {
-      "name": "latestDate",
-      "value": "+1years",
-      "type": "String"
-     },
-     {
-      "name": "leftOffset",
-      "value": 0,
-      "type": "Integer"
-     },
-     {
-      "name": "topOffset",
-      "value": 15,
-      "type": "Integer"
-     },
-     {
-      "name": "parameter",
-      "value": "['${p:dtFrom}','${p:dtTo}']",
-      "type": "ArrayParameter"
-     },
-     {
-      "name": "singleInput",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "inputSeparator",
-      "value": ">",
-      "type": "String"
-     },
-     {
-      "name": "canClickOutsidePopup",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "onOpenEvent",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "onCloseEvent",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:filter1Obj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "Select date range to update automatically the dashboard. ",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "CHARTS",
-    "name": "Charts",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Charts",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "bb781724-5c69-2b52-11fc-e20c07c0ddc4",
-    "type": "ComponentscccStackedAreaChart",
-    "typeDesc": "CCC Stacked Area Chart",
-    "parent": "CHARTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "RepositoryPerDay",
-      "type": "Id"
-     },
-     {
-      "name": "title",
-      "value": "Repository per day",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:chartType}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "dataSource",
-      "value": "DocumentsPerDay",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "width",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "colors",
-      "value": "[\"#ffde4f\",\"#f89f31\"]",
-      "type": "Array"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:chart1Obj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f()\n{\n    if (Dashboards.getParameterValue('${p:chartType}') != \"repository\")\n    {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else\n    {\n        $(\"#\" + this.htmlObject).show();\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "extensionPoints",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "animate",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccBaseAxisDomainRoundModeCustom"
-     },
-     {
-      "name": "baseAxisDomainScope",
-      "value": "global",
-      "type": "cccBaseAxisDomainScopeCustom"
-     },
-     {
-      "name": "baseAxisDoubleClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisFixedMin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccBaseAxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "baseAxisPosition",
-      "value": "",
-      "type": "cccBaseAxisPositionCustom"
-     },
-     {
-      "name": "baseAxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisTitle",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleAlign",
-      "value": "",
-      "type": "cccBaseAxisTitleAlignCustom"
-     },
-     {
-      "name": "baseAxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisZeroLine",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "categoryRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "clearSelectionMode",
-      "value": "emptySpaceClick",
-      "type": "cccClearSelectionModeCustom"
-     },
-     {
-      "name": "clickable",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "clickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "color2AxisColors",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "color2AxisLegendClickMode",
-      "value": "toggleVisible",
-      "type": "cccColor2AxisLegendClickModeCustom"
-     },
-     {
-      "name": "color2AxisLegendDrawLine",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisLegendDrawMarker",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisLegendShape",
-      "value": "",
-      "type": "cccColor2AxisLegendShapeCustom"
-     },
-     {
-      "name": "color2AxisLegendVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisTransform",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "color2AxisUnbound",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "colorRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "colorTransform",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "colorUnbound",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "compatVersion",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "contentMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "contentPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "crosstabMode",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ctrlSelectMode",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataCategoriesCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "dataIgnoreMetadataLabels",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataMeasuresInColumns",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataPartRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSeparator",
-      "value": "~",
-      "type": "String"
-     },
-     {
-      "name": "dataWhere",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "dotsVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "doubleClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "groupedLabelSep",
-      "value": " ~ ",
-      "type": "String"
-     },
-     {
-      "name": "hoverable",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "ignoreNulls",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "interactive",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "isMultiValued",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "leafContentOverflow",
-      "value": "auto",
-      "type": "cccLeafContentOverflowCustom"
-     },
-     {
-      "name": "legend",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "legendAlign",
-      "value": "",
-      "type": "cccLegendAlignCustom"
-     },
-     {
-      "name": "legendClickMode",
-      "value": "toggleVisible",
-      "type": "cccLegendClickModeCustom"
-     },
-     {
-      "name": "legendDrawLine",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "legendDrawMarker",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "legendFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "legendItemPadding",
-      "value": "2.5",
-      "type": "String"
-     },
-     {
-      "name": "legendItemSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "legendMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "legendMarkerSize",
-      "value": 15,
-      "type": "Float"
-     },
-     {
-      "name": "legendPaddings",
-      "value": "5",
-      "type": "String"
-     },
-     {
-      "name": "legendPosition",
-      "value": "bottom",
-      "type": "cccLegendPositionCustom"
-     },
-     {
-      "name": "legendShape",
-      "value": "",
-      "type": "cccLegendShapeCustom"
-     },
-     {
-      "name": "legendSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "legendSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "legendTextMargin",
-      "value": 6,
-      "type": "Float"
-     },
-     {
-      "name": "legendVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "linesVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "margins",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "measuresIndexes",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "multiChartColumnsMax",
-      "value": 3,
-      "type": "Float"
-     },
-     {
-      "name": "multiChartIndexes",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "multiChartMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "multiChartOverflow",
-      "value": "grow",
-      "type": "cccMultiChartOverflowCustom"
-     },
-     {
-      "name": "multiChartRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "multiChartSingleColFillsHeight",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "multiChartSingleRowFillsHeight",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "nullInterpolationMode",
-      "value": "none",
-      "type": "cccNullInterpolationModeCustom"
-     },
-     {
-      "name": "orientation",
-      "value": "vertical",
-      "type": "cccOrientationCustom"
-     },
-     {
-      "name": "ortho2AxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccOrtho2AxisDomainRoundModeCustom"
-     },
-     {
-      "name": "ortho2AxisDomainScope",
-      "value": "global",
-      "type": "cccOrtho2AxisDomainScopeCustom"
-     },
-     {
-      "name": "ortho2AxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisFixedMin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "ortho2AxisPosition",
-      "value": "",
-      "type": "cccOrtho2AxisPositionCustom"
-     },
-     {
-      "name": "ortho2AxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "ortho2AxisTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisTitle",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleAlign",
-      "value": "",
-      "type": "cccOrtho2AxisTitleAlignCustom"
-     },
-     {
-      "name": "ortho2AxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisZeroLine",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccOrthoAxisDomainRoundModeCustom"
-     },
-     {
-      "name": "orthoAxisDomainScope",
-      "value": "global",
-      "type": "cccOrthoAxisDomainScopeCustom"
-     },
-     {
-      "name": "orthoAxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisFixedMin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "orthoAxisPosition",
-      "value": "",
-      "type": "cccOrthoAxisPositionCustom"
-     },
-     {
-      "name": "orthoAxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "orthoAxisTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTitle",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleAlign",
-      "value": "",
-      "type": "cccOrthoAxisTitleAlignCustom"
-     },
-     {
-      "name": "orthoAxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisZeroLine",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "paddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "percentValueFormat",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "plot2",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2AreasVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2ColorAxis",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "plot2DotsVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2LinesVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2NullInterpolationMode",
-      "value": "none",
-      "type": "cccPlot2NullInterpolationModeCustom"
-     },
-     {
-      "name": "plot2OrthoAxis",
-      "value": 1,
-      "type": "Float"
-     },
-     {
-      "name": "plot2Series",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "plot2SeriesIndexes",
-      "value": -1,
-      "type": "Array"
-     },
-     {
-      "name": "plot2Stacked",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2TrendLabel",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "plot2TrendType",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesAnchor",
-      "value": "",
-      "type": "cccPlot2ValuesAnchorCustom"
-     },
-     {
-      "name": "plot2ValuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesMask",
-      "value": "{value}",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plotFrameVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "pointingMode",
-      "value": "near",
-      "type": "cccPointingModeCustom"
-     },
-     {
-      "name": "renderCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "selectable",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "selectionChangedAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "seriesInRows",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "seriesRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallAspectRatio",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "smallContentMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallContentPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallHeight",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallMargins",
-      "value": "2%",
-      "type": "String"
-     },
-     {
-      "name": "smallPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleAlign",
-      "value": "",
-      "type": "cccSmallTitleAlignCustom"
-     },
-     {
-      "name": "smallTitleFont",
-      "value": "14px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitlePaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitlePosition",
-      "value": "top",
-      "type": "cccSmallTitlePositionCustom"
-     },
-     {
-      "name": "smallTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallWidth",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "timeSeries",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "timeSeriesFormat",
-      "value": "%Y-%m-%d",
-      "type": "String"
-     },
-     {
-      "name": "titleAlign",
-      "value": "",
-      "type": "cccTitleAlignCustom"
-     },
-     {
-      "name": "titleFont",
-      "value": "14px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "titleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "titlePaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "titlePosition",
-      "value": "top",
-      "type": "cccTitlePositionCustom"
-     },
-     {
-      "name": "titleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "titleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "tooltipArrowVisible",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipClassName",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "tooltipEnabled",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFade",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFollowMouse",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFormat",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltipGravity",
-      "value": "",
-      "type": "cccTooltipGravityCustom"
-     },
-     {
-      "name": "tooltipHtml",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipOffset",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "tooltipOpacity",
-      "value": 0.9,
-      "type": "Float"
-     },
-     {
-      "name": "tooltipUseCorners",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "trendAreasVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendColorAxis",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "trendDotsVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendLabel",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendLinesVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendOrthoAxis",
-      "value": 1,
-      "type": "Float"
-     },
-     {
-      "name": "trendStacked",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendType",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesAnchor",
-      "value": "right",
-      "type": "cccTrendValuesAnchorCustom"
-     },
-     {
-      "name": "trendValuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesMask",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "userSelectionAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "valueFormat",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "valueRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "valuesAnchor",
-      "value": "",
-      "type": "cccValuesAnchorCustom"
-     },
-     {
-      "name": "valuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "valuesMask",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "valuesVisible",
-      "value": "",
-      "type": "Boolean"
-     }
-    ],
-    "meta_cdwSupport": "true"
-   },
-   {
-    "id": "d2ae21d7-5271-11e8-b17c-a35ac4d0e4ac",
-    "type": "ComponentscccBarChart",
-    "typeDesc": "CCC Bar Chart",
-    "parent": "CHARTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "ActionsPerDay",
-      "type": "Id"
-     },
-     {
-      "name": "title",
-      "value": "Actions per day",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:chartType}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "dataSource",
-      "value": "ActionsPerDay",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "width",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "colors",
-      "value": "[\"#47b41b\"]",
-      "type": "Array"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:chart2Obj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f()\n{\n    if (Dashboards.getParameterValue('${p:chartType}') != \"actions\")\n    {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else\n    {\n        $(\"#\" + this.htmlObject).show();\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "extensionPoints",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "animate",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "barOrthoSizeMin",
-      "value": 1.5,
-      "type": "Float"
-     },
-     {
-      "name": "barSizeMax",
-      "value": 2000,
-      "type": "Float"
-     },
-     {
-      "name": "barSizeRatio",
-      "value": 0.9,
-      "type": "Float"
-     },
-     {
-      "name": "barStackedMargin",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisDoubleClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccBaseAxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "baseAxisPosition",
-      "value": "",
-      "type": "cccBaseAxisPositionCustom"
-     },
-     {
-      "name": "baseAxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisTitle",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleAlign",
-      "value": "",
-      "type": "cccBaseAxisTitleAlignCustom"
-     },
-     {
-      "name": "baseAxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "baseAxisTooltipAutoContent",
-      "value": "value",
-      "type": "cccBaseAxisTooltipAutoContentCustom"
-     },
-     {
-      "name": "baseAxisTooltipEnabled",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "baseAxisTooltipFormat",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "baseAxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "categoryRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "clearSelectionMode",
-      "value": "emptySpaceClick",
-      "type": "cccClearSelectionModeCustom"
-     },
-     {
-      "name": "clickable",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "clickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "color2AxisColors",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "color2AxisLegendClickMode",
-      "value": "toggleVisible",
-      "type": "cccColor2AxisLegendClickModeCustom"
-     },
-     {
-      "name": "color2AxisLegendDrawLine",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisLegendDrawMarker",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisLegendShape",
-      "value": "",
-      "type": "cccColor2AxisLegendShapeCustom"
-     },
-     {
-      "name": "color2AxisLegendVisible",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "color2AxisTransform",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "color2AxisUnbound",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "colorRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "colorTransform",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "colorUnbound",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "compatVersion",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "contentMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "contentPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "crosstabMode",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ctrlSelectMode",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataCategoriesCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "dataIgnoreMetadataLabels",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataMeasuresInColumns",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "dataPartRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSeparator",
-      "value": "~",
-      "type": "String"
-     },
-     {
-      "name": "dataWhere",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "doubleClickAction",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "groupedLabelSep",
-      "value": " ~ ",
-      "type": "String"
-     },
-     {
-      "name": "hoverable",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "ignoreNulls",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "interactive",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "isMultiValued",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "leafContentOverflow",
-      "value": "auto",
-      "type": "cccLeafContentOverflowCustom"
-     },
-     {
-      "name": "legend",
       "value": "false",
       "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "2e5ecddb-ce01-fbee-8da5-86bd03f28f76",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseSchemaKettle",
+      "type": "Id"
      },
      {
-      "name": "legendAlign",
-      "value": "",
-      "type": "cccLegendAlignCustom"
+      "name": "propertyValue",
+      "value": "AAAR_Kettle",
+      "type": "String"
      },
      {
-      "name": "legendClickMode",
-      "value": "toggleVisible",
-      "type": "cccLegendClickModeCustom"
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
      },
      {
-      "name": "legendDrawLine",
-      "value": "",
+      "name": "bookmarkable",
+      "value": "false",
       "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "9cea3788-2a1a-9ca4-ef9d-2d927d936a50",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseSchemaMain",
+      "type": "Id"
      },
      {
-      "name": "legendDrawMarker",
-      "value": "",
+      "name": "propertyValue",
+      "value": "postgres",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
       "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "d068caed-2249-6341-001f-6584bcc53038",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseType",
+      "type": "Id"
      },
      {
-      "name": "legendFont",
-      "value": "10px sans-serif",
+      "name": "propertyValue",
+      "value": "PostgreSql",
       "type": "String"
      },
      {
-      "name": "legendItemPadding",
-      "value": "2.5",
-      "type": "String"
-     },
-     {
-      "name": "legendItemSize",
+      "name": "parameterViewRole",
       "value": "",
-      "type": "String"
+      "type": "parameterViewRoleCustom"
      },
      {
-      "name": "legendMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "legendMarkerSize",
-      "value": 15,
-      "type": "Float"
-     },
-     {
-      "name": "legendPaddings",
-      "value": "5",
-      "type": "String"
-     },
-     {
-      "name": "legendPosition",
-      "value": "bottom",
-      "type": "cccLegendPositionCustom"
-     },
-     {
-      "name": "legendShape",
-      "value": "",
-      "type": "cccLegendShapeCustom"
-     },
-     {
-      "name": "legendSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "legendSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "legendTextMargin",
-      "value": 6,
-      "type": "Float"
-     },
-     {
-      "name": "legendVisible",
-      "value": true,
+      "name": "bookmarkable",
+      "value": "false",
       "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "5674aec3-8c02-03b1-c786-83bfbbd38804",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "configurationFile",
+      "type": "Id"
      },
      {
-      "name": "margins",
-      "value": "3",
+      "name": "propertyValue",
+      "value": "AAARConfiguration.xml",
       "type": "String"
      },
      {
-      "name": "measuresIndexes",
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "OTHERCOMPONENTS",
+    "name": "Others",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Others",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "ea379604-bf93-815f-10f6-c6253f3b4c67",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dialogGrabComponent",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
       "value": "[]",
-      "type": "Array"
+      "type": "Listeners"
      },
      {
-      "name": "multiChartColumnsMax",
-      "value": 3,
-      "type": "Float"
-     },
-     {
-      "name": "multiChartIndexes",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "multiChartMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "multiChartOverflow",
-      "value": "grow",
-      "type": "cccMultiChartOverflowCustom"
-     },
-     {
-      "name": "multiChartRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "multiChartSingleColFillsHeight",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "multiChartSingleRowFillsHeight",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "nullInterpolationMode",
-      "value": "none",
-      "type": "cccNullInterpolationModeCustom"
-     },
-     {
-      "name": "orientation",
-      "value": "vertical",
-      "type": "cccOrientationCustom"
-     },
-     {
-      "name": "ortho2AxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccOrtho2AxisDomainRoundModeCustom"
-     },
-     {
-      "name": "ortho2AxisDomainScope",
-      "value": "global",
-      "type": "cccOrtho2AxisDomainScopeCustom"
-     },
-     {
-      "name": "ortho2AxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisFixedMin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "ortho2AxisPosition",
-      "value": "",
-      "type": "cccOrtho2AxisPositionCustom"
-     },
-     {
-      "name": "ortho2AxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "ortho2AxisTickFormatter",
-      "value": "",
+      "name": "expression",
+      "value": "function f() {\n\n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts) {\n\n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: true,\n            title: \"Confirmation Message\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $(this).dialog(\"close\");\n                    }\n                }\n            ]\n        };\n\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n\n        /*method's action*/\n        $(\"#\" + this.htmlObject).dialog(dialogOpts);\n        $(\"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts) {\n        $(\"#\" + this.htmlObject).dialog('close');\n    };\n}",
       "type": "JavaScript"
      },
      {
-      "name": "ortho2AxisTicks",
-      "value": true,
-      "type": "Boolean"
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
      },
      {
-      "name": "ortho2AxisTitle",
+      "name": "refreshPeriod",
       "value": "",
-      "type": "String"
+      "type": "Integer"
      },
      {
-      "name": "ortho2AxisTitleAlign",
-      "value": "",
-      "type": "cccOrtho2AxisTitleAlignCustom"
+      "name": "htmlObject",
+      "value": "${p:dialogGrabComponentObj}",
+      "type": "HtmlObject"
      },
      {
-      "name": "ortho2AxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "ortho2AxisZeroLine",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccOrthoAxisDomainRoundModeCustom"
-     },
-     {
-      "name": "orthoAxisDomainScope",
-      "value": "global",
-      "type": "cccOrthoAxisDomainScopeCustom"
-     },
-     {
-      "name": "orthoAxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisFixedMin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisGrid",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisLabelSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisOffset",
-      "value": 0,
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "value": "hide",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
-     },
-     {
-      "name": "orthoAxisPosition",
-      "value": "",
-      "type": "cccOrthoAxisPositionCustom"
-     },
-     {
-      "name": "orthoAxisSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "orthoAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "orthoAxisTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTitle",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleAlign",
-      "value": "",
-      "type": "cccOrthoAxisTitleAlignCustom"
-     },
-     {
-      "name": "orthoAxisTitleFont",
-      "value": "12px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisZeroLine",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "overflowMarkersVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "paddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "panelSizeRatio",
-      "value": 0.9,
-      "type": "Float"
-     },
-     {
-      "name": "percentValueFormat",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "plot2",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2AreasVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2ColorAxis",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "plot2DotsVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2LinesVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2NullInterpolationMode",
-      "value": "none",
-      "type": "cccPlot2NullInterpolationModeCustom"
-     },
-     {
-      "name": "plot2OrthoAxis",
-      "value": 1,
-      "type": "Float"
-     },
-     {
-      "name": "plot2Series",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "plot2SeriesIndexes",
-      "value": -1,
-      "type": "Array"
-     },
-     {
-      "name": "plot2Stacked",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plot2TrendLabel",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "plot2TrendType",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesAnchor",
-      "value": "",
-      "type": "cccPlot2ValuesAnchorCustom"
-     },
-     {
-      "name": "plot2ValuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesMask",
-      "value": "{value}",
-      "type": "String"
-     },
-     {
-      "name": "plot2ValuesVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "plotFrameVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "pointingMode",
-      "value": "near",
-      "type": "cccPointingModeCustom"
-     },
-     {
-      "name": "renderCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "selectable",
+      "name": "executeAtStart",
       "value": "true",
       "type": "Boolean"
      },
      {
-      "name": "selectionChangedAction",
-      "value": "function filter(selections) {\n\n    var url = \"/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent\";\n\n    var bookmarkState = {\n        \"impl\":\"client\",\n        \"params\":{\n            \"dtFrom\":selections[0].atoms.category.value,\n            \"dtTo\":selections[selections.length-1].atoms.category.value}};\n\n    window.open(url + \"?bookmarkState=\" + encodeURI(JSON.stringify(bookmarkState)), \"_self\")\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "seriesInRows",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "seriesRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallAspectRatio",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "smallContentMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallContentPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallHeight",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallMargins",
-      "value": "2%",
-      "type": "String"
-     },
-     {
-      "name": "smallPaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleAlign",
-      "value": "",
-      "type": "cccSmallTitleAlignCustom"
-     },
-     {
-      "name": "smallTitleFont",
-      "value": "14px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitlePaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "smallTitlePosition",
-      "value": "top",
-      "type": "cccSmallTitlePositionCustom"
-     },
-     {
-      "name": "smallTitleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallTitleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "smallWidth",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "stacked",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "timeSeries",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "timeSeriesFormat",
-      "value": "%Y-%m-%d",
-      "type": "String"
-     },
-     {
-      "name": "titleAlign",
-      "value": "",
-      "type": "cccTitleAlignCustom"
-     },
-     {
-      "name": "titleFont",
-      "value": "14px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "titleMargins",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "titlePaddings",
-      "value": "0",
-      "type": "String"
-     },
-     {
-      "name": "titlePosition",
-      "value": "top",
-      "type": "cccTitlePositionCustom"
-     },
-     {
-      "name": "titleSize",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "titleSizeMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "tooltipArrowVisible",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipClassName",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "tooltipEnabled",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFade",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFollowMouse",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipFormat",
+      "name": "preExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "tooltipGravity",
-      "value": "",
-      "type": "cccTooltipGravityCustom"
-     },
-     {
-      "name": "tooltipHtml",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "tooltipOffset",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "tooltipOpacity",
-      "value": 0.9,
-      "type": "Float"
-     },
-     {
-      "name": "tooltipUseCorners",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "trendAreasVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendColorAxis",
-      "value": 2,
-      "type": "Float"
-     },
-     {
-      "name": "trendDotsVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendLabel",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendLinesVisible",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendOrthoAxis",
-      "value": 1,
-      "type": "Float"
-     },
-     {
-      "name": "trendStacked",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "trendType",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesAnchor",
-      "value": "right",
-      "type": "cccTrendValuesAnchorCustom"
-     },
-     {
-      "name": "trendValuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesMask",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "trendValuesVisible",
-      "value": false,
-      "type": "Boolean"
-     },
-     {
-      "name": "userSelectionAction",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "valueFormat",
+      "name": "tooltip",
       "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "valueRole",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "valuesAnchor",
-      "value": "",
-      "type": "cccValuesAnchorCustom"
-     },
-     {
-      "name": "valuesFont",
-      "value": "10px sans-serif",
-      "type": "String"
-     },
-     {
-      "name": "valuesMask",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "valuesOptimizeLegibility",
-      "value": "",
-      "type": "Boolean"
-     },
-     {
-      "name": "valuesOverflow",
-      "value": "hide",
-      "type": "cccValuesOverflowCustom"
-     },
-     {
-      "name": "valuesVisible",
-      "value": "",
-      "type": "Boolean"
+      "type": "Html"
      }
-    ],
-    "meta_cdwSupport": "true"
+    ]
+   },
+   {
+    "id": "edd2de49-46af-f116-7f41-fe74c0903064",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "configureLinkButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "1. Configure",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f() {\n\n    var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','readConfiguration',{\n\n        params: {\n            configurationFile: configurationFile\n        },\n\n        success: function(json) {\n\n            // Iteration on results.\n            for (var i=0; i < json.resultset.length; ++i) {\n                Dashboards.setParameter('${p:' + json.resultset[i][0] + '}',json.resultset[i][1]);\n            }\n            Dashboards.decrementRunningCalls();  \n\n            // Dashboard refresh.\n            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/configure', {\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"Error loading the configuration.<br><br>Please, check the log, solve the problem and try again.\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();  \n \n                            // Dashboard refresh.\n                            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/configure', {\n                                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n                            });\n                        }                               \n                    }\n                ]\n            });\n        }\n    });\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "themeroller",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:configureStep}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "Configure A.A.A.R. to work with your environment. ",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "2e35abe9-6952-ff12-e3c0-86cb910986ed",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "installLinkButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "2. Install",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f() {\n\n    var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','readConfiguration',{\n\n        params: {\n            configurationFile: configurationFile\n        },\n\n        success: function(json) {\n\n            // Iteration on results.\n            for (var i=0; i < json.resultset.length; ++i) {\n                Dashboards.setParameter('${p:' + json.resultset[i][0] + '}',json.resultset[i][1]);\n            }\n            Dashboards.decrementRunningCalls();  \n\n            // Dashboard refresh.\n            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/install', {\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"Error loading the configuration.<br><br>Please, check the log, solve the problem and try again.\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();  \n \n                            // Dashboard refresh.\n                            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/install', {\n                                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n                            });\n                        }                               \n                    }\n                ]\n            });\n        }\n    });\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "themeroller",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:installStep}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "Install or re-install A.A.A.R. ",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "cbc5c3f8-8f48-917d-e613-c60acde5f8b0",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "useLinkButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "3. Use",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f() {\n\n    var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n    var dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n    AAAR.runEndpoint('AAAR','readConfiguration',{\n\n        params: {\n            configurationFile: configurationFile\n        },\n\n        success: function(json) {\n\n            // Iteration on results.\n            for (var i=0; i < json.resultset.length; ++i) {\n                Dashboards.setParameter('${p:' + json.resultset[i][0] + '}',json.resultset[i][1]);\n            }\n            Dashboards.decrementRunningCalls();  \n\n            // Dashboard refresh.\n            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/use', {\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            });\n        },\n\n        error: function(json) {\n            dialog.open({\n                message:\"Error loading the configuration.<br><br>Please, check the log, solve the problem and try again.\",\n                buttons:[\n                    {\n                        text: \"OK\",\n                        click: function() {\n                            $(\"#\"+dialog.htmlObject).dialog(\"close\");\n                            Dashboards.decrementRunningCalls();  \n \n                            // Dashboard refresh.\n                            AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/use', {\n                                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n                            });\n                        }                               \n                    }\n                ]\n            });\n        }\n    });\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "themeroller",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:useStep}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "Use A.A.A.R. with analytics or publish into Alfresco. ",
+      "type": "Html"
+     }
+    ]
    }
   ]
  },
  "datasources": {
   "rows": [
    {
-    "id": "SQL",
-    "name": "SQL Queries",
+    "id": "AAAR_CPKENDPOINTS",
+    "name": "AAAR Endpoints",
     "type": "Label",
     "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "SQL Queries",
+      "value": "AAAR Endpoints",
       "type": "Label"
      }
     ]
    },
    {
-    "id": "97ca843d-8278-17c4-e85e-bf258e16f878",
-    "type": "Componentssql_sqlJndi",
-    "typeDesc": "sql over sqlJndi",
-    "parent": "SQL",
+    "id": "d356b028-6f0f-8a76-b21d-579d8c413341",
+    "type": "ComponentsAAAR_readConfiguration_CPKENDPOINT",
+    "typeDesc": "readConfiguration Endpoint",
+    "parent": "AAAR_CPKENDPOINTS",
     "properties": [
      {
       "name": "name",
-      "value": "ActionsPerDay",
+      "value": "readConfigurationEndpoint",
       "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "AAAR_DataMart",
-      "type": "Jndi"
-     },
-     {
-      "name": "query",
-      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n d.id\norder by\n d.id asc",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
      }
     ],
-    "meta": "CDA",
-    "meta_conntype": "sql.jndi",
-    "meta_datype": "sql"
-   },
-   {
-    "id": "080587b6-c920-7c6a-ac3f-8301c5e734df",
-    "type": "Componentssql_sqlJndi",
-    "typeDesc": "sql over sqlJndi",
-    "parent": "SQL",
-    "properties": [
-     {
-      "name": "name",
-      "value": "DocumentsPerDay",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "AAAR_DataMart",
-      "type": "Jndi"
-     },
-     {
-      "name": "query",
-      "value": "select\n dat.id as date_id,\n (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Number,\n (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id <= dat.id) as Mb\nfrom\n dm_dim_dates dat\nwhere\n dat.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n dat.id\norder by\n dat.id asc",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ],
-    "meta": "CDA",
-    "meta_conntype": "sql.jndi",
-    "meta_datype": "sql"
+    "meta": "CPK",
+    "meta_pluginId": "AAAR",
+    "meta_endpoint": "readConfiguration"
    }
   ]
  },
- "filename": "/public/AAAR/main.cdfde"
+ "filename": "/system/AAAR/dashboards/main.cdfde"
 }
