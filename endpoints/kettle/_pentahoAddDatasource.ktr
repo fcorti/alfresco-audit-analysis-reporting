@@ -117,27 +117,6 @@
   <modified_date>2013&#x2f;12&#x2f;15 00&#x3a;57&#x3a;54.742</modified_date>
   </info>
   <notepads>
-    <notepad>
-      <note>Unfortuantely Pentaho does not permit to define a custom data source  using PDI. &#xa;AAAR_AuditTrail and AAAR_Repository data source are created from the sparkl dashboard.&#xa;If you run this script manually, please remember to create them.&#xa;&#xa;AAAR_AuditTrail is a Analysis data source on AAAR_AuditTrail.xml mondrian schema and AAAR_DataMart JDBC data source.&#xa;AAAR_Repository is a Analysis data source on AAAR_Repository.xml mondrian schema and AAAR_DataMart JDBC data source.&#xa;</note>
-      <xloc>58</xloc>
-      <yloc>229</yloc>
-      <width>855</width>
-      <heigth>129</heigth>
-      <fontname>Ubuntu</fontname>
-      <fontsize>11</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <order>
   <hop> <from>Modified Java Script Value</from><to>REST Client</to><enabled>Y</enabled> </hop>
@@ -147,7 +126,161 @@
   <hop> <from>Data Grid</from><to>REST DELETE</to><enabled>Y</enabled> </hop>
   <hop> <from>REST DELETE</from><to>Select values</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add root to file</from><to>Generate multipart entity</to><enabled>Y</enabled> </hop>
+  <hop> <from>Generate multipart entity</from><to>HTTP Post</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get trasformation root</from><to>Add root to file</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams</from><to>Get trasformation root</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAAR_AuditTrail</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAAR_Repository</from><to>Append streams</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>AAAR_AuditTrail</name>
+    <type>RowGenerator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>uploadAnalysis</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_AuditTrail.xml</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>catalogName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_AuditTrail</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>origCatalogName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_AuditTrail</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>parameters</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>DataSource&#x3d;AAAR_DataMart&#x3b;EnableXmla&#x3d;false&#x3b;overwrite&#x3d;true</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms/>
+    <row_time_field/>
+    <last_time_field/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>55</xloc>
+      <yloc>196</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AAAR_Repository</name>
+    <type>RowGenerator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>uploadAnalysis</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_Repository.xml</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>catalogName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_Repository</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>origCatalogName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>AAAR_Repository</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>parameters</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>DataSource&#x3d;AAAR_DataMart&#x3b;EnableXmla&#x3d;false&#x3b;overwrite&#x3d;true</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms/>
+    <row_time_field/>
+    <last_time_field/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>54</xloc>
+      <yloc>296</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Abort</name>
     <type>Abort</type>
@@ -166,6 +299,57 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>712</xloc>
       <yloc>139</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add root to file</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var UPLOADANALYSIS &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;if &#x28;os &#x3d;&#x3d; &#x22;Linux&#x22;&#x29; &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;else &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;UPLOADANALYSIS &#x2b;&#x3d; fileSeparator &#x2b; &#x22;src&#x22; &#x2b; fileSeparator &#x2b; uploadAnalysis&#x3b;&#xa;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPLOADANALYSIS</name>
+        <rename>UPLOADANALYSIS</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>462</xloc>
+      <yloc>242</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>AAAR_AuditTrail</head_name>
+<tail_name>AAAR_Repository</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>168</xloc>
+      <yloc>241</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -220,6 +404,230 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>849</xloc>
       <yloc>36</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Generate multipart entity</name>
+    <type>UserDefinedJavaClass</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+
+    <definitions>
+        <definition>
+        <class_type>TRANSFORM_CLASS</class_type>
+
+        <class_name>Processor</class_name>
+
+        <class_source><![CDATA[import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
+import org.apache.commons.httpclient.methods.multipart.FilePart;
+import org.apache.commons.httpclient.methods.multipart.StringPart;
+import org.apache.commons.httpclient.methods.multipart.Part;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+
+public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException {
+
+	Object[] r = getRow();
+	if (r == null) {
+		setOutputDone();
+		return false;
+	}
+
+	String uploadAnalysis = get(Fields.In, "uploadAnalysis").getString(r);
+	String catalogName = get(Fields.In, "catalogName").getString(r);
+	String origCatalogName = get(Fields.In, "origCatalogName").getString(r);
+	String parameters = get(Fields.In, "parameters").getString(r);
+
+	try {
+
+		File filePart = new File(uploadAnalysis);
+		Part[] parts = {
+			new FilePart("uploadAnalysis", filePart),			
+			new StringPart("catalogName", catalogName),
+			new StringPart("origCatalogName", origCatalogName),
+			new StringPart("parameters", parameters)
+		};
+
+		MultipartRequestEntity requestEntity = new MultipartRequestEntity(
+			parts, new HttpMethodParams()
+		);
+
+		ByteArrayOutputStream bOutput = new ByteArrayOutputStream();
+		requestEntity.writeRequest(bOutput);
+		String requestEntityValue = new String(bOutput.toByteArray());
+		String contentType = requestEntity.getContentType();
+		String contentLength = String.valueOf(requestEntity.getContentLength());
+
+		Object[] outputRow = createOutputRow(r, data.outputRowMeta.size());
+		get(Fields.Out, "requestEntityValue").setValue(outputRow, requestEntityValue);
+		get(Fields.Out, "contentType").setValue(outputRow, contentType);
+		get(Fields.Out, "contentLength").setValue(outputRow, contentLength);
+		putRow(data.outputRowMeta, outputRow);
+
+		return true;
+
+	} catch(FileNotFoundException ffNotFoundEx)	{
+		logError("File '" + uploadAnalysis + "' not found!!");
+		throw new KettleException(ffNotFoundEx);
+	} catch(IOException ioEx)	{
+		logError("Error generating the value of the multipart request!!");
+		throw new KettleException(ioEx);
+	}
+}]]></class_source>
+        </definition>
+    </definitions>
+    <fields>
+        <field>
+        <field_name>requestEntityValue</field_name>
+
+        <field_type>String</field_type>
+
+        <field_length>-1</field_length>
+
+        <field_precision>-1</field_precision>
+
+        </field>
+        <field>
+        <field_name>contentType</field_name>
+
+        <field_type>String</field_type>
+
+        <field_length>-1</field_length>
+
+        <field_precision>-1</field_precision>
+
+        </field>
+        <field>
+        <field_name>contentLength</field_name>
+
+        <field_type>String</field_type>
+
+        <field_length>-1</field_length>
+
+        <field_precision>-1</field_precision>
+
+        </field>
+    </fields><clear_result_fields>N</clear_result_fields>
+<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>612</xloc>
+      <yloc>242</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get trasformation root</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>transRoot</name>
+        <variable>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>os</name>
+        <variable>&#x24;&#x7b;os.name&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>fileSeparator</name>
+        <variable>&#x24;&#x7b;file.separator&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>315</xloc>
+      <yloc>241</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>HTTP Post</name>
+    <type>HTTPPOST</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <postafile>N</postafile>
+    <encoding/>
+    <url>&#x24;&#x7b;pentahoUrl&#x7d;&#x2f;plugin&#x2f;data-access&#x2f;api&#x2f;mondrian&#x2f;postAnalysis</url>
+    <urlInField>N</urlInField>
+    <urlField/>
+    <requestEntity>requestEntityValue</requestEntity>
+    <httpLogin>&#x24;&#x7b;pentahoLogin&#x7d;</httpLogin>
+    <httpPassword>&#x24;&#x7b;pentahoPassword&#x7d;</httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <socketTimeout/>
+    <connectionTimeout/>
+    <closeIdleConnectionsTime/>
+    <lookup>
+      <arg>
+        <name>contentLength</name>
+        <parameter>Content-Length</parameter>
+        <header>Y</header>        </arg>
+      <arg>
+        <name>contentType</name>
+        <parameter>Content-Type</parameter>
+        <header>Y</header>        </arg>
+      </lookup>
+    <result>
+      <name/>
+      <code/>
+      <response_time/>
+      </result>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>755</xloc>
+      <yloc>242</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
