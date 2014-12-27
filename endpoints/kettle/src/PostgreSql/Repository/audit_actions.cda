@@ -30,12 +30,14 @@
          <Parameter default="" name="pathParam" type="String"/>
          <Parameter default="" name="typeFromParam" type="String"/>
          <Parameter default="" name="typeToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  d.id as date_id,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
+ join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}
  join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
  join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
@@ -62,12 +64,14 @@ order by
          <Parameter default="" name="pathParam" type="String"/>
          <Parameter default="" name="typeFromParam" type="String"/>
          <Parameter default="" name="typeToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  h."desc" as hour_desc,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
+ join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
  join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})
@@ -92,12 +96,14 @@ order by
          <Parameter default="" name="pathParam" type="String"/>
          <Parameter default="" name="typeFromParam" type="String"/>
          <Parameter default="" name="typeToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  u."desc" as user,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
+ join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
  join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
  join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
@@ -122,12 +128,14 @@ order by
          <Parameter default="" name="pathParam" type="String"/>
          <Parameter default="" name="typeFromParam" type="String"/>
          <Parameter default="" name="typeToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  ac."desc" as user,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
+ join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
  join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
  join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
@@ -152,12 +160,14 @@ order by
          <Parameter default="" name="pathParam" type="String"/>
          <Parameter default="" name="typeFromParam" type="String"/>
          <Parameter default="" name="typeToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  p.path as path,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
+ join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
  join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
  join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}

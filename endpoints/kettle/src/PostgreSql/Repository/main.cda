@@ -15,12 +15,13 @@
       <Parameters>
          <Parameter default="2013-01-01" name="dtFromParam" type="String"/>
          <Parameter default="2013-01-01" name="dtToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  d.id as date_id,
  coalesce(sum(a.num),0) as actions
 from
- dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id
+ dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id and a.alfresco_id = ${alfrescoInstanceParam}
 where
  d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
 group by
@@ -35,11 +36,12 @@ order by
       <Parameters>
          <Parameter default="2013-01-01" name="dtFromParam" type="String"/>
          <Parameter default="2013-01-01" name="dtToParam" type="String"/>
+         <Parameter default="1" name="alfrescoInstanceParam" type="Integer"/>
       </Parameters>
       <Query>select
  dat.id as date_id,
- (select coalesce(count(*),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Number,
- (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.creation_date_id &lt;= dat.id) as Mb
+ (select coalesce(count(*),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id &lt;= dat.id) as Number,
+ (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id &lt;= dat.id) as Mb
 from
  dm_dim_dates dat
 where
