@@ -63,7 +63,7 @@
   <Cube name="AAAR_AuditTrail" caption="A.A.A.R. audit trail" visible="true" description="A.A.A.R. audit trail by Francesco Corti (fcorti@gmail.com)" cache="true" enabled="true">
     <Table name="dm_fact_actions">
     </Table>
-    <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="false" foreignKey="alfresco_id" highCardinality="false">
+    <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="true" foreignKey="alfresco_id" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Date" name="Date" visible="true" foreignKey="date_id" highCardinality="false">
     </DimensionUsage>

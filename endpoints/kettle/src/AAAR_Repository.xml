@@ -90,7 +90,7 @@
   <Cube name="AAAR_Repository" caption="A.A.A.R. repository" visible="true" description="A.A.A.R. repository by Francesco Corti (fcorti@gmail.com)" cache="true" enabled="true">
     <Table name="vw_dm_fact_repository">
     </Table>
-    <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="false" foreignKey="alfresco_id" highCardinality="false">
+    <DimensionUsage source="Alfresco instance" name="Alfresco instance" visible="true" foreignKey="alfresco_id" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Content" name="Content" visible="true" foreignKey="id" highCardinality="true">
     </DimensionUsage>
