@@ -11910,7 +11910,7 @@ for (var i = 0; i < jsonEntriesLst.entries.length; ++i)
 
   fieldNum = getInputRowMeta().size();
   newRow[0] = '''';
-  newRow[fieldNum++] = 1;
+  newRow[fieldNum++] = parseInt(getVariable("alfresco_id",""));
   newRow[fieldNum++] = jsonEntriesLst.entries[i].id;
   newRow[fieldNum++] = jsonEntriesLst.entries[i].application;
   newRow[fieldNum++] = jsonEntriesLst.entries[i].user;
