@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
+      <Connection id="alfrescoInstances" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
       <Connection id="actionsPerDay" type="sql.jndi">
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
@@ -17,6 +20,20 @@
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
    </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="alfrescoInstances"
+               id="alfrescoInstances"
+               type="sql">
+      <Columns/>
+      <Parameters/>
+      <Query>select
+ i.id as instance_id,
+ i.desc as instance_desc
+from
+ dm_dim_alfresco i
+order by
+ i.desc asc</Query>
+   </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerDay"
                id="actionsPerDay"
                type="sql">
