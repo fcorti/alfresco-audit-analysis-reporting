@@ -101,6 +101,20 @@
   color:#e7e7e7;
 }
 
+.AAAR.filters select {
+  color: #7f8286;
+  background: #e7e7e7;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  padding: 2px 10px 2px 10px;
+  margin: 0px 0px 0px 0px;
+}
+
+.AAAR.filters select:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
 .AAAR.table tbody tr.odd {
   background: #DBDBFF;
 }
