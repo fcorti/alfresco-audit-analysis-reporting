@@ -387,7 +387,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "12",
+      "value": "10",
       "type": "Integer"
      },
      {
@@ -460,7 +460,7 @@
      },
      {
       "name": "html",
-      "value": "<a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent\">A.A.A.R.</a> > Audit data ",
+      "value": "<a href=\"\" onclick=\"\n\n    var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent';\n    var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n    window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n    return false;\n\n\">A.A.A.R.</a> > Audit data ",
       "type": "Html"
      },
      {
@@ -493,7 +493,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "12",
+      "value": "14",
       "type": "Integer"
      },
      {
@@ -592,112 +592,6 @@
     ]
    },
    {
-    "id": "3cff0b58-c55a-c043-a569-01647103a786",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "855114c4-5f70-3f3a-2596-e97781919009",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "5",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "right",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "9199d579-9a71-1756-dca6-ab67c08cf8d6",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "3cff0b58-c55a-c043-a569-01647103a786",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Period: ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "AAAR filters",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "c9392eeb-2c26-517b-08ea-5d62929e79e7",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -710,7 +604,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "5",
+      "value": "6",
       "type": "Integer"
      },
      {
@@ -772,6 +666,79 @@
    },
    {
     "id": "ab0282eb-f7b9-5099-3e0b-a5a45070b89f",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "855114c4-5f70-3f3a-2596-e97781919009",
+    "properties": [
+     {
+      "name": "name",
+      "value": "changeInstanceButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "6",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2a2e29f2-23f2-6ec5-472c-79ecb8336d17",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "855114c4-5f70-3f3a-2596-e97781919009",
@@ -2121,6 +2088,34 @@
     ]
    },
    {
+    "id": "62a408e5-d5ca-89f4-b1c1-f5a3a02e231c",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoInstance",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "1",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "4d82a896-9072-8833-e899-b6f2b08cec0e",
     "type": "ComponentsDateParameter",
     "typeDesc": "Date Parameter",
@@ -2457,6 +2452,109 @@
     ]
    },
    {
+    "id": "dd9601c9-2ad5-ac64-2790-4ab3c19bd605",
+    "type": "ComponentsSelect",
+    "typeDesc": "Select Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "changeInstanceSelect",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:alfrescoInstance}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:alfrescoInstance}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "externalPlugin",
+      "value": "",
+      "type": "externalPluginCustom"
+     },
+     {
+      "name": "dataSource",
+      "value": "alfrescoInstances",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:changeInstanceButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "Change Alfresco instance ",
+      "type": "Html"
+     },
+     {
+      "name": "extraOptions",
+      "value": "[]",
+      "type": "OptionArray"
+     }
+    ]
+   },
+   {
     "id": "OTHERCOMPONENTS",
     "name": "Others",
     "type": "Label",
@@ -2634,7 +2732,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
+      "value": "['${p:alfrescoInstance}','${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
       "type": "Listeners"
      },
      {
@@ -2664,7 +2762,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"]]",
+      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"],[\"alfrescoInstanceParam\",\"alfrescoInstance\"]]",
       "type": "ValuesArray"
      },
      {
@@ -2837,7 +2935,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
+      "value": "['${p:alfrescoInstance}','${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
       "type": "Listeners"
      },
      {
@@ -2872,7 +2970,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"]]",
+      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"],[\"alfrescoInstanceParam\",\"alfrescoInstance\"]]",
       "type": "ValuesArray"
      },
      {
@@ -3054,12 +3152,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
+      "value": "['${p:alfrescoInstance}','${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"]]",
+      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"],[\"alfrescoInstanceParam\",\"alfrescoInstance\"]]",
       "type": "ValuesArray"
      },
      {
@@ -4263,12 +4361,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
+      "value": "['${p:alfrescoInstance}','${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"]]",
+      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"],[\"alfrescoInstanceParam\",\"alfrescoInstance\"]]",
       "type": "ValuesArray"
      },
      {
@@ -5472,12 +5570,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
+      "value": "['${p:alfrescoInstance}','${p:dtFrom}','${p:dtTo}','${p:hourFrom}','${p:hourTo}','${p:path}','${p:typeFrom}','${p:typeTo}','${p:user}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"]]",
+      "value": "[[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"],[\"hourFromParam\",\"hourFrom\"],[\"hourToParam\",\"hourTo\"],[\"userParam\",\"user\"],[\"pathParam\",\"path\"],[\"typeFromParam\",\"typeFrom\"],[\"typeToParam\",\"typeTo\"],[\"alfrescoInstanceParam\",\"alfrescoInstance\"]]",
       "type": "ValuesArray"
      },
      {
@@ -6132,6 +6230,72 @@
     ]
    },
    {
+    "id": "705897ae-7dda-4702-0808-d6570f365f6d",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoInstances",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "AAAR_DataMart",
+      "type": "Jndi"
+     },
+     {
+      "name": "query",
+      "value": "select\n i.id as instance_id,\n i.desc as instance_desc\nfrom\n dm_dim_alfresco i\norder by\n i.desc asc",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql"
+   },
+   {
     "id": "2464c9bc-9e61-2200-0e29-c6042776e4ec",
     "type": "Componentssql_sqlJndi",
     "typeDesc": "sql over sqlJndi",
@@ -6154,12 +6318,12 @@
      },
      {
       "name": "query",
-      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\n right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
+      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\n right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"],[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -6220,12 +6384,12 @@
      },
      {
       "name": "query",
-      "value": "select\n h.desc as hour_desc,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\n right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\ngroup by\n h.desc\norder by\n h.desc asc",
+      "value": "select\n h.desc as hour_desc,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\n right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\ngroup by\n h.desc\norder by\n h.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"],[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -6286,12 +6450,12 @@
      },
      {
       "name": "query",
-      "value": "select\n u.desc as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n u.desc\norder by\n coalesce(sum(a.num),0) desc",
+      "value": "select\n u.desc as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n u.desc\norder by\n coalesce(sum(a.num),0) desc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"],[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -6352,12 +6516,12 @@
      },
      {
       "name": "query",
-      "value": "select\n ac.desc as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ${userParam} in ('', u.desc)\n join dm_dim_paths p on a.path_id = p.id and ${pathParam} in ('', p.path)\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n ac.desc\norder by\n ac.desc asc",
+      "value": "select\n ac.desc as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ${userParam} in ('', u.desc)\n join dm_dim_paths p on a.path_id = p.id and ${pathParam} in ('', p.path)\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n ac.desc\norder by\n ac.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"],[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -6418,12 +6582,12 @@
      },
      {
       "name": "query",
-      "value": "select\n p.path as path,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n p.path\norder by\n coalesce(sum(a.num),0) desc",
+      "value": "select\n p.path as path,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstanceParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.desc=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.desc between ${typeFromParam} and ${typeToParam})\ngroup by\n p.path\norder by\n coalesce(sum(a.num),0) desc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"dtFromParam\",\"2013-01-01\",\"String\",\"\"],[\"dtToParam\",\"2013-01-01\",\"String\",\"\"],[\"hourFromParam\",\"0\",\"Integer\",\"\"],[\"hourToParam\",\"23\",\"Integer\",\"\"],[\"userParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"typeFromParam\",\"\",\"String\",\"\"],[\"typeToParam\",\"\",\"String\",\"\"],[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {

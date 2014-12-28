@@ -1,5 +1,7 @@
 CREATE DATABASE  IF NOT EXISTS `AAAR_DataMart` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
 USE `AAAR_DataMart`;
+
 -- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: AAAR_DataMart
@@ -673,7 +675,7 @@ DROP TABLE IF EXISTS `dm_dim_alfresco`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dm_dim_alfresco` (
   `id` smallint(16) NOT NULL,
-  `desc` char(255) NOT NULL,
+  `desc` char(25) NOT NULL,
   `login` char(100) NOT NULL,
   `password` char(100) NOT NULL,
   `url` varchar(1024) NOT NULL,
@@ -688,7 +690,7 @@ CREATE TABLE `dm_dim_alfresco` (
 -- Dumping data for table `dm_dim_alfresco`
 --
 
-INSERT INTO `dm_dim_alfresco` VALUES (1,'Default','admin','admin','http://localhost:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000','/alfresco/api/-default-/cmis/versions/1.1/atom','Y');
+INSERT INTO `dm_dim_alfresco` VALUES (1,'Default Alfresco instance','admin','admin','http://localhost:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000','/alfresco/api/-default-/cmis/versions/1.1/atom','Y');
 
 --
 -- Table structure for table `dm_dim_node_types`

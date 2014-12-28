@@ -121,7 +121,7 @@ ALTER TABLE public.dm_dim_actions OWNER TO postgres;
 
 CREATE TABLE dm_dim_alfresco (
     id smallint NOT NULL,
-    "desc" character varying(255) NOT NULL,
+    "desc" character varying(25) NOT NULL,
     login character varying(100) NOT NULL,
     password character varying(100) NOT NULL,
     url character varying(1024) NOT NULL,
