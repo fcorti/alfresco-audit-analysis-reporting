@@ -7161,9 +7161,9 @@ set
   where
    d.alfresco_id = stgD.alfresco_id
    and d.src_id = stgD.cmis_objectid
-   and dm_dim_paths.path = d.path)
-where dm_dim_paths.path in (
- select path
+   and replace(upper(dm_dim_paths.path),''GUEST_HOME'',''GUEST HOME'') = upper(d.path))
+where replace(upper(dm_dim_paths.path),''GUEST_HOME'',''GUEST HOME'') in (
+ select upper(path)
  from
   dm_dim_documents d,
   stg_cmis_documents stgD
@@ -7181,9 +7181,9 @@ set
   where
    f.alfresco_id = stgF.alfresco_id
    and f.src_id = stgF.cmis_objectid
-   and dm_dim_paths.path = f.path)
-where dm_dim_paths.path in (
- select path
+   and replace(upper(dm_dim_paths.path),''GUEST_HOME'',''GUEST HOME'') = upper(f.path))
+where replace(upper(dm_dim_paths.path),''GUEST_HOME'',''GUEST HOME'') in (
+ select upper(path)
  from
   dm_dim_folders f,
   stg_cmis_folders stgF
