@@ -1589,7 +1589,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"databaseType\",\"databaseType\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -1846,76 +1846,6 @@
       "type": "Html"
      }
     ]
-   },
-   {
-    "id": "GENERIC",
-    "name": "Generic",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Generic",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "3993ba34-5f4b-e7e1-f6fb-b40b0975e374",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "configurationFile",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "AAARConfiguration.xml",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "404b10f4-1062-a77e-8b8f-ba24f6308892",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "databaseType",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "PostgreSql",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
    }
   ]
  },
@@ -1963,7 +1893,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"databaseType\",\"databaseType\",\"String\",\"\"]]",
+      "value": "[]",
       "type": "CdaParameters"
      },
      {

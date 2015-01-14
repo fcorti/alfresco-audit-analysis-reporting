@@ -1589,7 +1589,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"databaseType\",\"databaseType\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -1846,48 +1846,6 @@
       "type": "Html"
      }
     ]
-   },
-   {
-    "id": "GENERIC",
-    "name": "Generic",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Generic",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "98016c14-2806-3bdd-50fe-0014dce633c1",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "databaseType",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "PostgreSql",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
    }
   ]
  },
@@ -1930,12 +1888,12 @@
      },
      {
       "name": "query",
-      "value": "select Id, ${databaseType}, is_active from dm_dim_alfresco",
+      "value": "select Id, 'desc', is_active from dm_dim_alfresco",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"databaseType\",\"databaseType\",\"String\",\"\"]]",
+      "value": "[]",
       "type": "CdaParameters"
      },
      {

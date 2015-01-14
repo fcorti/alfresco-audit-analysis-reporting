@@ -176,8 +176,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>150</xloc>
-      <yloc>422</yloc>
+      <xloc>148</xloc>
+      <yloc>510</yloc>
       </entry>
     <entry>
       <name>Delete file</name>
@@ -430,6 +430,56 @@
       <xloc>358</xloc>
       <yloc>323</yloc>
       </entry>
+    <entry>
+      <name>AAAR_Customize_Instances</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>N</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
+          <wildcard>AAAR_Customize_Instances.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>148</xloc>
+      <yloc>427</yloc>
+      </entry>
+    <entry>
+      <name>AAAR_Customize_Properties</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>N</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
+          <wildcard>AAAR_Customize_Properties.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>373</xloc>
+      <yloc>425</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -496,15 +546,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Write AAAR_Publish.bat</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Write AAAR_Install.sh</from>
       <to>Write AAAR_Create_custom_structures.sh</to>
       <from_nr>0</from_nr>
@@ -534,6 +575,33 @@
     <hop>
       <from>Write AAAR_Create_custom_structures.bat</from>
       <to>Write AAAR_Extract.bat</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Write AAAR_Publish.bat</from>
+      <to>AAAR_Customize_Instances</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AAAR_Customize_Instances</from>
+      <to>AAAR_Customize_Properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AAAR_Customize_Properties</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
