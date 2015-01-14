@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdf><title>A.A.A.R. - Main</title><description>A.A.A.R. - Main</description><author>Francesco Corti</author><style>Clean</style><rendererType>blueprint</rendererType><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>
+<cdf><title>A.A.A.R.</title><description>A.A.A.R.</description><author></author><style>Clean</style><rendererType>bootstrap</rendererType><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>

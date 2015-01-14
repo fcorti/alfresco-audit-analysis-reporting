@@ -1,6 +1,6 @@
 {
  "layout": {
-  "title": "A.A.A.R.",
+  "title": "A.A.A.R. - Install",
   "rows": [
    {
     "id": "23f8c196-3ab1-75d9-9a4d-096c2753f288",
@@ -595,7 +595,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills nav-stacked\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;\">\n <li class=\"active\"><a href=\"#\"><span style=\"font-size:1.1em; font-weight: bold;\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span></span> Home</a></li>\n <li><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco');\"><span style=\"font-size:1.1em; font-weight: bold;\">1.</span> Configure</a></li>\n <li><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Install');\"><span style=\"font-size:1.1em; font-weight: bold;\">2.</span> Install</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Use\"><span style=\"font-size:1.1em; font-weight: bold;\">3.</span> Use</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></span> Customize</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_About\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span></span> About</a></li>\n</ul> ",
+      "value": "<ul class=\"nav nav-pills nav-stacked\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;\">\n <li><a href=\"/pentaho/plugin/AAAR/api/main\"><span style=\"font-size:1.1em; font-weight: bold;\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span></span> Home</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco');\"><span style=\"font-size:1.1em; font-weight: bold;\">1.</span> Configure</a></li>\n <li class=\"active\"><a href=\"#\"><span style=\"font-size:1.1em; font-weight: bold;\">2.</span> Install</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Use\"><span style=\"font-size:1.1em; font-weight: bold;\">3.</span> Use</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></span> Customize</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_About\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span></span> About</a></li>\n</ul> ",
       "type": "Html"
      },
      {
@@ -717,9 +717,9 @@
     ]
    },
    {
-    "id": "5be684db-a3cb-f0b6-2bac-c595ad2ac8f9",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
+    "id": "1f908f34-fe6a-5515-3516-b6905aa8844b",
+    "type": "LayoutFreeForm",
+    "typeDesc": "FreeForm",
     "parent": "ea9bfa6b-bb18-aff8-7dc0-9020a94a5e95",
     "properties": [
      {
@@ -728,8 +728,274 @@
       "type": "Id"
      },
      {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "elementTag",
+      "value": "form",
+      "type": "String"
+     },
+     {
+      "name": "otherAttributes",
+      "value": "[[\"class\",\"form-horizontal\"]]",
+      "type": "OptionArray"
+     }
+    ]
+   },
+   {
+    "id": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
+    "type": "BootstrapPanel",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "1f908f34-fe6a-5515-3516-b6905aa8844b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapPanelStyle",
+      "value": "panel-default",
+      "type": "bootstrapPanelStyleCustom"
+     }
+    ]
+   },
+   {
+    "id": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
+    "type": "BootstrapPanelBody",
+    "typeDesc": "Panel Body",
+    "parent": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "04bf7b44-666c-ebc8-7f2b-edfd5fff141f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "04bf7b44-666c-ebc8-7f2b-edfd5fff141f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "9",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "9",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "9",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "124078f2-9da5-85d1-746a-4edb06bc0c39",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "spacer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "10",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f280477b-02a0-8ecf-1b6e-6f010a51f73a",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alertPanel",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bea4cb5c-8c19-5032-7b5c-1ce3084a0d00",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "f280477b-02a0-8ecf-1b6e-6f010a51f73a",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
       "name": "html",
-      "value": "<div class=\"jumbotron center\">\n\n    <span style=\"color: white; text-shadow: 2px 2px grey;\">\n    <h1>Alfresco<br/>Audit<br/>Analysis<br/>and Reporting</h1>\n    <h3>The Open Source solution<br/>to your Alfresco analytics</h3>\n    </span>\n    <p><a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Learn more</a></p>\n\n</div> ",
+      "value": "<div class=\"alert alert-info\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\">\n If you like it, remember to support the project. How? <a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" class=\"alert-link\">Read here</a>.\n</div>\n ",
       "type": "Html"
      },
      {
@@ -745,6 +1011,431 @@
      {
       "name": "cssClass",
       "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "de486eee-74cc-d962-3cca-6326bc19e372",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoLoginGroup",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "form-group",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1eab7d6a-9c08-d366-067c-c9853cad293b",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "de486eee-74cc-d962-3cca-6326bc19e372",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<label for=\"pentahoLogin\" class=\"col-sm-4 control-label\">Pentaho login</label> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5cfbf138-8d6e-8e9d-959e-b164b4c7a819",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "de486eee-74cc-d962-3cca-6326bc19e372",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoLoginField",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a99f3989-a848-9755-5ab7-b4ddb49cf75d",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoPasswordGroup",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "form-group",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d3235a90-e2e7-86ec-db7f-09f182f2b105",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "a99f3989-a848-9755-5ab7-b4ddb49cf75d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<label for=\"pentahoPassword\" class=\"col-sm-4 control-label\">Pentaho password</label> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6866115b-2545-9445-7845-9ba8dcfcadec",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "a99f3989-a848-9755-5ab7-b4ddb49cf75d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoPasswordField",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "8",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4712441f-fcd1-84ed-fe91-17b3ffc66b94",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "installButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2285a381-b5e8-95c7-4441-4e78fe09c2f0",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c0c65e28-92cd-bcc8-55dd-04387578ef88",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "10",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3ac1d627-f8a4-b137-16e0-5a599b2faaf0",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "04bf7b44-666c-ebc8-7f2b-edfd5fff141f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "20b25ecf-2c3c-3c1b-8223-d205f7edeeec",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "3ac1d627-f8a4-b137-16e0-5a599b2faaf0",
+    "properties": [
+     {
+      "name": "url",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/install.png",
+      "type": "String"
+     },
+     {
+      "name": "cssClass",
+      "value": "img-responsive",
       "type": "String"
      }
     ]
@@ -927,6 +1618,39 @@
      {
       "name": "html",
       "value": "@2013-2015 Francesco Corti ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ca11819f-f0cb-07cf-39b0-6aba83a55056",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "6b11d79d-f582-1548-2b88-c9604af2eef2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "initScript",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<script language=\"javascript\">\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','databaseExists',{\n\n        params: {\n        },\n\n        success: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Warning!</strong> Pressing the button you will erase and re-install A.A.A.R. </div>');\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n\n</script>\n ",
       "type": "Html"
      },
      {
@@ -1532,12 +2256,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "isChanged",
+      "value": "pentahoLogin",
       "type": "Id"
      },
      {
       "name": "propertyValue",
-      "value": "false",
+      "value": "admin",
       "type": "String"
      },
      {
@@ -1560,12 +2284,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "action",
+      "value": "pentahoPassword",
       "type": "Id"
      },
      {
       "name": "propertyValue",
-      "value": "",
+      "value": "password",
       "type": "String"
      },
      {
@@ -1607,7 +2331,7 @@
      },
      {
       "name": "label",
-      "value": "Install",
+      "value": "Install A.A.A.R.",
       "type": "String"
      },
      {
@@ -1622,7 +2346,7 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Already saved. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','writeConfiguration',{\n\n            params: {\n                configurationFile: configurationFile,\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            },\n\n            success: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Configuration saved with success into \"' + Dashboards.getParameterValue('${p:configurationFile}') + '\".</div>');\n                Dashboards.setParameter('${p:isChanged}','false');\n                Dashboards.decrementRunningCalls();  \n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n\n    }\n\n} ",
+      "value": "function f() {\n\n    var pentahoUrlValue = window.location.protocol + \"//\" + window.location.host;\n    if (pentahoUrlValue.indexOf(window.location.port) == -1) {\n        \":\" + window.location.port;\n    }\n    pentahoUrlValue += \"/pentaho\";\n\n    Dashboards.incrementRunningCalls();\n    \n    AAAR.runEndpoint('AAAR','installFromConfiguration',{\n\n        params: {\n            configurationFile: Dashboards.getParameterValue('${p:configurationFile}'),\n            pentahoUrl: pentahoUrlValue,\n            pentahoLogin: Dashboards.getComponentByName('${p:pentahoLogin}'),\n            pentahoPassword: Dashboards.getComponentByName('${p:pentahoPassword}')\n        },\n\n        success: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Congratulations!</strong> A.A.A.R. installed with success.</div>');\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Warning!</strong> Please, check logs ignoring errors with description \\'...Folder/File [...] exists, failing.\\'.</div>');\n            $('#alertPanel').append('<div class=\"alert alert-info alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Please, restart Pentaho!</strong> To activate the installation.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n} ",
       "type": "JavaScript"
      },
      {
@@ -1713,11 +2437,181 @@
       "type": "JavaScript"
      }
     ]
+   },
+   {
+    "id": "SELECTORS",
+    "name": "Selects",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Selects",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "d24994be-b48a-7f02-b361-ffd55b8f20bb",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoLoginComponent",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:pentahoLogin}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:pentahoLogin}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:pentahoLoginField}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n\n    $('#render_pentahoLoginComponent').attr('class','form-control');\n    $('#render_pentahoLoginComponent').attr('placeholder','Login (for example: admin)');\n\n    var pentahoLogin = $.trim(Dashboards.getParameterValue('${p:pentahoLogin}'));\n    Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n\n    if (pentahoLogin.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Pentaho login!</strong> Login cannot be empty.</div>');\n\n        pentahoLogin = 'admin';\n        Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n        $('#render_pentahoLoginComponent').val(pentahoLogin);\n    }\n\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "755bace4-ee36-008f-3d6a-baac7678b8c7",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pentahoPasswordComponent",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:pentahoPassword}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:pentahoPassword}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:pentahoPasswordField}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n\n    $('#render_pentahoPasswordComponent').attr('class','form-control');\n    $('#render_pentahoPasswordComponent').attr('placeholder','Password (for example: password)');\n    $('#render_pentahoPasswordComponent').attr('type','password');\n\n    var pentahoPassword = $.trim(Dashboards.getParameterValue('${p:pentahoPassword}'));\n    Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n\n    if (pentahoPassword.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Pentaho password!</strong> Password cannot be empty.</div>');\n\n        pentahoPassword = 'password';\n        Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n        $('#render_pentahoPasswordComponent').val(pentahoPassword);\n    }\n\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
    }
   ]
  },
  "datasources": {
   "rows": []
  },
- "filename": "/system/AAAR/dashboards/main.cdfde"
+ "filename": "/system/AAAR/dashboards/AAAR_Install.cdfde"
 }
