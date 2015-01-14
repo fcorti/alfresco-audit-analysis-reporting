@@ -456,7 +456,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize_Instances\">Alfresco installations</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize_Properties\">Custom types and aspects</a></li>\n</ul>\n ",
+      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Custom types and aspects</a></li>\n</ul>\n ",
       "type": "Html"
      },
      {
@@ -1589,7 +1589,7 @@
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"databaseType\",\"databaseType\"]]",
       "type": "ValuesArray"
      },
      {
@@ -1846,6 +1846,76 @@
       "type": "Html"
      }
     ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "3993ba34-5f4b-e7e1-f6fb-b40b0975e374",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "configurationFile",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "AAARConfiguration.xml",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "404b10f4-1062-a77e-8b8f-ba24f6308892",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseType",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "PostgreSql",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
@@ -1893,7 +1963,7 @@
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"databaseType\",\"databaseType\",\"String\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -1933,5 +2003,5 @@
    }
   ]
  },
- "filename": "/system/AAAR/dashboards/AAAR_Customize_Properties.cdfde"
+ "filename": "/public/AAAR_Customize_Properties.cdfde"
 }

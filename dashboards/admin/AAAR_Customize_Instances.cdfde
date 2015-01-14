@@ -456,7 +456,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize_Properties\">Custom types and aspects</a></li>\n</ul> \n ",
+      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties');\">Custom types and aspects</a></li>\n</ul> \n ",
       "type": "Html"
      },
      {
@@ -1589,7 +1589,7 @@
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"databaseType\",\"databaseType\"]]",
       "type": "ValuesArray"
      },
      {
@@ -1846,6 +1846,48 @@
       "type": "Html"
      }
     ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "98016c14-2806-3bdd-50fe-0014dce633c1",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "databaseType",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "PostgreSql",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
@@ -1888,12 +1930,12 @@
      },
      {
       "name": "query",
-      "value": "select Id, \"desc\", is_active from dm_dim_alfresco",
+      "value": "select Id, ${databaseType}, is_active from dm_dim_alfresco",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"databaseType\",\"databaseType\",\"String\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -1933,5 +1975,5 @@
    }
   ]
  },
- "filename": "/system/AAAR/dashboards/AAAR_Customize_Instances.cdfde"
+ "filename": "/public/AAAR_Customize_Instances.cdfde"
 }

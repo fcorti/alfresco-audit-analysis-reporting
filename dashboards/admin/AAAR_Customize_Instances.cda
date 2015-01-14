@@ -10,7 +10,9 @@
                id="alfrescoInstances"
                type="sql">
       <Columns/>
-      <Parameters/>
-      <Query>select Id, "desc", is_active from dm_dim_alfresco</Query>
+      <Parameters>
+         <Parameter default="databaseType" name="databaseType" type="String"/>
+      </Parameters>
+      <Query>select Id, ${databaseType}, is_active from dm_dim_alfresco</Query>
    </DataAccess>
 </CDADescriptor>
