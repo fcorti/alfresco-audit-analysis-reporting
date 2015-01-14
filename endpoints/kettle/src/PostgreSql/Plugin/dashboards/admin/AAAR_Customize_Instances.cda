@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="alfrescoInstances" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="alfrescoInstances"
+               id="alfrescoInstances"
+               type="sql">
+      <Columns/>
+      <Parameters/>
+      <Query>select Id, 'desc', is_active from dm_dim_alfresco</Query>
+   </DataAccess>
+</CDADescriptor>
