@@ -1,6 +1,6 @@
 {
  "layout": {
-  "title": "CDF - Sample structure",
+  "title": "A.A.A.R. - Main dashboard",
   "rows": [
    {
     "id": "17a3df44-8f60-5b19-3229-c15b900c0cbb",
@@ -203,19 +203,34 @@
     ]
    },
    {
-    "id": "fa9db235-7b4c-1608-3bf3-176bb7b2bc8e",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
+    "id": "fa4e000a-ea68-cf4e-bb67-3625935c1922",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
     "parent": "b65f8b68-8e67-97da-79be-3cdce27e5d9e",
     "properties": [
      {
-      "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/AAARBig.png",
-      "type": "String"
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<a href=\"#aaarCreditsModal\" data-toggle=\"modal\"><img src=\"/pentaho/api/repos/AAAR/static/custom/img/AAARBig.png\" class=\"aaar-logo-responsive\" /></a> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "cssClass",
-      "value": "aaar-logo-responsive",
+      "value": "",
       "type": "String"
      }
     ]
@@ -1130,7 +1145,40 @@
      },
      {
       "name": "html",
-      "value": "@2013-2015 Francesco Corti ",
+      "value": "@2013-2015 <a href=\"#aaarCreditsModal\" data-toggle=\"modal\">Francesco Corti</a> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "79056838-de89-8ced-b59a-209e49ddb23a",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "e402ca61-a4e0-352b-6738-aec85b855670",
+    "properties": [
+     {
+      "name": "name",
+      "value": "creditsObj",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"modal fade\" id=\"aaarCreditsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"aaarCreditsModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 class=\"modal-title\" id=\"aaarCreditsModalLabel\">About A.A.A.R.</h4>\n      </div>\n      <div class=\"modal-body\">\n        <h1>Francesco Corti<br/><small><i class=\"glyphicon glyphicon-envelope\"></i> fcorti@gmail.com</small></h1>\n        <h3>Copyright @2013-2015</h3><br/>\n        <a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/\" role=\"button\" target=\"_blank\">Blog</a>\n        <a class=\"btn btn-success btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Documentation</a>\n        <a class=\"btn btn-warning btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" role=\"button\" target=\"_blank\">Support the project</a>\n        <a class=\"btn btn-info btn-lg\" href=\"mailto:fcorti@gmail.com\" role=\"button\">Requests</a>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n      </div>\n    </div>\n  </div>\n</div> ",
       "type": "Html"
      },
      {
@@ -1680,7 +1728,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f() {\n} ",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -2954,7 +3002,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f() {\n\n} ",
+      "value": "",
       "type": "JavaScript"
      },
      {
