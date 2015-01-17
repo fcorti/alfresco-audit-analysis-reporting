@@ -483,7 +483,7 @@
      },
      {
       "name": "html",
-      "value": "<div id=\"mainMenu\">\n  <div class=\"list-group\">\n    <a href=\"#dashboards\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-briefcase\"></i> Dashboards <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"dashboards\">\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Audit trail</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"alert('Cooming soon');\">Repository</a>\n    </div>\n    <a href=\"#reports\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-list-alt\"></i> Reports <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"reports\">\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository size</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Login analysis per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Content creation per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Top ten users and content</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Action types</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Most active users</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Hours of activity</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:site_documents.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per site</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per mime type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Folders per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit details (MS Excel)</a>\n    </div>\n    <a href=\"#freeAnalysis\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-flash\"></i> Free analysis <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"freeAnalysis\">\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with JPivot</a>\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with JPivot</a>\n    </div>\n  </div>\n</div> ",
+      "value": "<div id=\"mainMenu\">\n  <div class=\"list-group\">\n    <a href=\"#dashboards\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-briefcase\"></i> Dashboards <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"dashboards\">\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Audit trail</a>\n      <a href=\"#comingSoonModal\" data-toggle=\"modal\" class=\"list-group-item\" data-parent=\"#dashboards\">Repository</a>\n    </div>\n    <a href=\"#reports\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-list-alt\"></i> Reports <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"reports\">\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository size</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Login analysis per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Content creation per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Top ten users and content</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Action types</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Most active users</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Hours of activity</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:site_documents.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per site</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per mime type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Folders per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit details (MS Excel)</a>\n    </div>\n    <a href=\"#freeAnalysis\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-flash\"></i> Free analysis <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"freeAnalysis\">\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with JPivot</a>\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with JPivot</a>\n    </div>\n  </div>\n</div> ",
       "type": "Html"
      },
      {
@@ -1179,6 +1179,39 @@
      {
       "name": "html",
       "value": "<div class=\"modal fade\" id=\"aaarCreditsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"aaarCreditsModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 class=\"modal-title\" id=\"aaarCreditsModalLabel\">About A.A.A.R.</h4>\n      </div>\n      <div class=\"modal-body\">\n        <h1>Francesco Corti<br/><small><i class=\"glyphicon glyphicon-envelope\"></i> fcorti@gmail.com</small></h1>\n        <h3>Copyright @2013-2015</h3><br/>\n        <a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/\" role=\"button\" target=\"_blank\">Blog</a>\n        <a class=\"btn btn-success btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Documentation</a>\n        <a class=\"btn btn-warning btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" role=\"button\" target=\"_blank\">Support the project</a>\n        <a class=\"btn btn-info btn-lg\" href=\"mailto:fcorti@gmail.com\" role=\"button\">Requests</a>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n      </div>\n    </div>\n  </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f6c0576b-c844-cabc-24dd-4123a431bf09",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "e402ca61-a4e0-352b-6738-aec85b855670",
+    "properties": [
+     {
+      "name": "name",
+      "value": "comingSoonObj",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"modal fade\" id=\"comingSoonModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"comingSoonModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 class=\"modal-title\" id=\"comingSoonModalLabel\">Coming soon</h4>\n      </div>\n      <div class=\"modal-body\">\n        <h1>Coming soon!<br/><small>Please, contact me for informations</small></h1><br/>\n        <h1>Francesco Corti<br/><small><i class=\"glyphicon glyphicon-envelope\"></i> fcorti@gmail.com</small></h1>\n        <h3>Copyright @2013-2015</h3><br/>\n        <a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/\" role=\"button\" target=\"_blank\">Blog</a>\n        <a class=\"btn btn-success btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Documentation</a>\n        <a class=\"btn btn-warning btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" role=\"button\" target=\"_blank\">Support the project</a>\n        <a class=\"btn btn-info btn-lg\" href=\"mailto:fcorti@gmail.com\" role=\"button\">Requests</a>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n      </div>\n    </div>\n  </div>\n</div> ",
       "type": "Html"
      },
      {
@@ -1918,7 +1951,7 @@
      },
      {
       "name": "baseAxisVisible",
-      "value": true,
+      "value": "true",
       "type": "Boolean"
      },
      {
@@ -2508,7 +2541,7 @@
      },
      {
       "name": "orthoAxisVisible",
-      "value": true,
+      "value": "true",
       "type": "Boolean"
      },
      {
@@ -2618,7 +2651,7 @@
      },
      {
       "name": "plotFrameVisible",
-      "value": true,
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -2848,7 +2881,7 @@
      },
      {
       "name": "trendLinesVisible",
-      "value": true,
+      "value": "true",
       "type": "Boolean"
      },
      {
@@ -3937,7 +3970,7 @@
      },
      {
       "name": "plotFrameVisible",
-      "value": true,
+      "value": "false",
       "type": "Boolean"
      },
      {
