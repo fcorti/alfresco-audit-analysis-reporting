@@ -1018,7 +1018,7 @@
      },
      {
       "name": "html",
-      "value": "<h1>Francesco Corti</h1>\n<h3>Copyright @2013-2015 </h3>\n<a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/\" role=\"button\" target=\"_blank\">Blog</a>\n<a class=\"btn btn-success btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Documentation</a>\n<a class=\"btn btn-warning btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" role=\"button\" target=\"_blank\">Support the project</a>\n<a class=\"btn btn-info btn-lg\" href=\"#\" role=\"button\" onclick=\"$('#alertPanel').append('<div class=\\'alert alert-info alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Ask me!</strong> Writing at <a href=\\'mailto:fcorti@gmail.com\\' class=\\'alert-link\\'>fcorti@gmail.com</a>.</div>');\">Requests</a>\n ",
+      "value": "<h1>Francesco Corti<br/><small><i class=\"glyphicon glyphicon-envelope\"></i> fcorti@gmail.com</small></h1>\n<h3>Copyright @2013-2015</h3><br/>\n<a class=\"btn btn-primary btn-lg\" href=\"http://fcorti.com/\" role=\"button\" target=\"_blank\">Blog</a>\n<a class=\"btn btn-success btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/\" role=\"button\" target=\"_blank\">Documentation</a>\n<a class=\"btn btn-warning btn-lg\" href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" role=\"button\" target=\"_blank\">Support the project</a>\n<a class=\"btn btn-info btn-lg\" href=\"#\" role=\"button\" onclick=\"$('#alertPanel').append('<div class=\\'alert alert-info alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Ask me!</strong> Writing at <a href=\\'mailto:fcorti@gmail.com\\' class=\\'alert-link\\'>fcorti@gmail.com</a>.</div>');\">Requests</a>\n ",
       "type": "Html"
      },
      {
@@ -1352,5 +1352,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/system/AAAR/dashboards/AAAR_About.cdfde"
+ "filename": "/public/AAAR_new/AAAR_About.cdfde"
 }
