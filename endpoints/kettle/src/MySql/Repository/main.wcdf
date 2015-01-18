@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdf><title>A.A.A.R. - Main dashboard</title><description>Alfresco Audit Analysis and Reporting</description><author></author><style>Clean</style><rendererType></rendererType><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>
+<cdf><title>A.A.A.R. - Main Dashboard</title><description>A.A.A.R. - Main Dashboard</description><author></author><style>Clean</style><rendererType>bootstrap</rendererType><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>
