@@ -43,7 +43,7 @@
      },
      {
       "name": "resourceCode",
-      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat center center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
+      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
       "type": "Resource"
      }
     ]
@@ -1051,7 +1051,7 @@
      },
      {
       "name": "html",
-      "value": "<h4>Last but not least, you can start to analyze your data.</h4>\n\n<h4>Alfresco analytics are:\n<ul>\n <li><u>Dynamic</u> and <u>interactive</u>.</li>\n <li>On <u>dashboards, interactive reports</u> and <u>free analysis</u>.</li>\n <li><u>Customizable</u> in dashboards, reports and analysis.</li>\n</ul>\n</h4>\n<br/>\n<center>\n<a id=\"buttonAnalytics\" class=\"btn btn-primary btn-lg\" href=\"/pentaho/api/repos/:public:AAAR:main\" role=\"button\">Alfresco analytics</a> \n</center>\n<br/>\n ",
+      "value": "<h4>Last but not least, you can start to analyze your data.</h4>\n\n<h4>Alfresco analytics are:\n<ul>\n <li><u>Dynamic</u> and <u>interactive</u>.</li>\n <li>On <u>dashboards, interactive reports</u> and <u>free analysis</u>.</li>\n <li><u>Customizable</u> in dashboards, reports and analysis.</li>\n</ul>\n</h4>\n<br/>\n<center>\n<a id=\"buttonAnalytics\" class=\"btn btn-primary btn-lg\" href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent\" role=\"button\">Alfresco analytics</a> \n</center>\n<br/>\n ",
       "type": "Html"
      },
      {
