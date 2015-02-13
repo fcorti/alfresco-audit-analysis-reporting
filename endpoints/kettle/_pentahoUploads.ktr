@@ -243,7 +243,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
 	logBasic("Ready to start importing '" + fileName + "' in '" + pentahoPath + "'");
 	RepositoryImportResource repositoryImporter = new RepositoryImportResource();
-	repositoryImporter.doPostImport(pentahoPath, input, "true", "true", "true", "true", "UTF-8", "DEBUG", fileInfo);
+	repositoryImporter.doPostImport(pentahoPath, input, "true", "true", "true", "true", "UTF-8", "DEBUG", fileInfo, null);
 	logBasic("Finished importing '" + fileName + "'");
 
 	return true;
