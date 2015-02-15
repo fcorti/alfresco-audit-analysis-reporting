@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings.
-VERSION='2.4'
+VERSION='2.4.1'
 CURRENT_PATH="$PWD"
 ENDPOINTS_PATH="$PWD/.."
 LOGS_PATH="$ENDPOINTS_PATH/logs"

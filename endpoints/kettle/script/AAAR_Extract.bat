@@ -1,7 +1,7 @@
 @echo off
 
 REM Settings
-set VERSION='2.4'
+set VERSION='2.4.1'
 set CURRENT_PATH=%cd%
 set ENDPOINTS_PATH=%CURRENT_PATH%\..
 set LOGS_PATH=%ENDPOINTS_PATH%\logs
