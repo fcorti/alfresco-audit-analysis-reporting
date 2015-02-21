@@ -1234,6 +1234,201 @@
     ]
    },
    {
+    "id": "26fe489a-58e6-2acd-8a8b-9580631dad97",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "639c37b3-0597-5c34-7037-67cef7a174d4",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fc26ec15-7464-9beb-60ff-927793d1d219",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "26fe489a-58e6-2acd-8a8b-9580631dad97",
+    "properties": [
+     {
+      "name": "name",
+      "value": "spacer_new",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "10",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "45687c7d-bece-72c3-d648-e2821acf5d43",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "26fe489a-58e6-2acd-8a8b-9580631dad97",
+    "properties": [
+     {
+      "name": "url",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/reports.png",
+      "type": "String"
+     },
+     {
+      "name": "cssClass",
+      "value": "img-responsive",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6c2a0fb4-151a-317e-bdf2-d799adffb8e2",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "26fe489a-58e6-2acd-8a8b-9580631dad97",
+    "properties": [
+     {
+      "name": "name",
+      "value": "spacer_new",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "10",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6cfa6249-4f59-8948-c2c4-6dfc5fddbd38",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "26fe489a-58e6-2acd-8a8b-9580631dad97",
+    "properties": [
+     {
+      "name": "name",
+      "value": "publishButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "center",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -1887,7 +2082,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n    $('#alfrescoInstallationsButtonObj').children(\":first\").attr('class','btn btn-primary');\n} ",
+      "value": "function f() {\n $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-primary\");\n} ",
       "type": "JavaScript"
      },
      {
@@ -1975,7 +2170,95 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n    $('#customPropertiesButtonObj').children(\":first\").attr('class','btn btn-primary');\n} ",
+      "value": "function f() {\n $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-primary\");\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "1451e1ee-2dda-8dd4-f5b5-38cae665ad05",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "publishButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Publishing customizations",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "expression",
+      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Publish', {});\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:publishButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-primary\");\n} ",
       "type": "JavaScript"
      },
      {
@@ -1990,5 +2273,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/public/AAAR_Customize.cdfde"
+ "filename": "/system/AAAR/dashboards/AAAR_Customize.cdfde"
 }
