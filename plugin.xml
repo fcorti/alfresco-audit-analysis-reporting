@@ -3,7 +3,8 @@
 <overlays>
 		<overlay id="startup.AAAR" resourcebundle="content/AAAR/resources/lang/messages">
 			<menubar id="toolsmenu">
-	        	<menuitem id="AAAR" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','plugin/AAAR/api/default')"/>
+	        	<!-- <menuitem id="A.A.A.R. v2.4.1" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','plugin/AAAR/api/default')"/> -->
+	        	<menuitem id="A.A.A.R. dashboard" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent')"/>
 	      	</menubar>
 	    </overlay>
 	</overlays>
@@ -26,6 +27,6 @@
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
 	<!-- Menu entry -->
 	<menu-items>
-		<!--<menu-item id="AAAR_main" anchor="tools-submenu" label="AAAR" command="content/AAAR/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+		<!-- <menu-item id="AAAR_main" anchor="tools-submenu" label="AAAR" command="content/AAAR/" type="MENU_ITEM" how="LAST_CHILD"/> -->
 	</menu-items>
 </plugin>

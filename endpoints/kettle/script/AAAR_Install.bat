@@ -20,7 +20,7 @@ echo.
 echo A.A.A.R. - Alfresco Audit Analysis and Reporting
 echo Installation procedure version %VERSION%.
 echo Author: Francesco Corti (all rights reserved)
-echo Date: 01 December, 2014
+echo Date: 13 February 2015
 echo.
 echo Disclaimer:
 echo We can't be responsible for any damage done to your system,

@@ -15,7 +15,7 @@ Which is the most accessed content of the last month?
 
 How many failed login?”
 
-These are only some of the questions that are often done about an Alfresco E.C.M. and is well known that Alfresco has not a powered reporting system (and honestly is not it’s job). Unfortunately the need is still there and most of the answers are tricky solutions, quite hard to manage and scale. By the way Alfresco E.C.M. has a detailed audit service that exposes a lot of (potentially) useful informations.
+These are only some of the questions that are often done about an Alfresco E.C.M. and is well known that Alfresco only recently is starting to define a reporting system and today they are following exactly the same path you can see here, with a solution for Enterprise Edition only and a high cost.
 
 With Alfresco Audit Analysis and Reporting (A.A.A.R.) is provided a solution to extract, store and query audit data together with the document/folder informations at a very detailed level, with the goal to be useful to the end-user in a very easy way. To reach that goal, to make the data more friendly for the end-user, the data are published in reports in well-known formats (pdf, Microsoft Excel, csv, etc.) and stored directly in Alfresco as static documents organized in folders, versioned, authorized and published.
 
