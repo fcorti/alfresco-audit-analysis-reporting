@@ -1,6 +1,6 @@
 {
  "layout": {
-  "title": "A.A.A.R. - Customize - Alfresco properties",
+  "title": "A.A.A.R. - Customize - Publish",
   "rows": [
    {
     "id": "23f8c196-3ab1-75d9-9a4d-096c2753f288",
@@ -43,7 +43,7 @@
      },
      {
       "name": "resourceCode",
-      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
+      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat center center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
       "type": "Resource"
      }
     ]
@@ -456,7 +456,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Custom types and aspects</a></li>\n</ul>\n ",
+      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties');\">Custom types and aspects</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Publishing customizations</a></li>\n</ul>\n ",
       "type": "Html"
      },
      {
@@ -1299,7 +1299,7 @@
     "properties": [
      {
       "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/customizeProperties.png",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/reports.png",
       "type": "String"
      },
      {
@@ -1588,16 +1588,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colHeaders",
-      "value": "[\"#\",\"Description\",\"Alfresco\",\"Active\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[]",
       "type": "colTypesCustom"
@@ -1609,12 +1599,22 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"10%\",\"50%\",\"30%\",\"10%\"]",
+      "value": "[\"10%\",\"80%\",\"10%\"]",
       "type": "Array"
      },
      {
       "name": "colSortable",
       "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[\"#\",\"Report\",\"Active\"]",
       "type": "Array"
      },
      {
@@ -1669,7 +1669,7 @@
      },
      {
       "name": "dataSource",
-      "value": "customMetadata",
+      "value": "reportsDataSource",
       "type": "Datasource"
      },
      {
@@ -1873,7 +1873,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "customMetadata",
+      "value": "reportsDataSource",
       "type": "Id"
      },
      {
@@ -1888,7 +1888,7 @@
      },
      {
       "name": "query",
-      "value": "select m.id, m.name, a.desc, m.is_active\nfrom dm_custom_metadata m join dm_dim_alfresco a on m.alfresco_id=a.id",
+      "value": "SELECT\n id,\n concat(pentaho_path,'/',prpt_name) as report,\n is_active\nFROM\n AAAR_DataMart.dm_reports",
       "type": "SqlQuery"
      },
      {
@@ -1933,5 +1933,5 @@
    }
   ]
  },
- "filename": "/public/AAAR_Customize_Properties.cdfde"
+ "filename": "/system/AAAR/dashboards/admin/AAAR_Customize_Publish.cdfde"
 }

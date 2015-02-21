@@ -456,7 +456,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Custom types and aspects</a></li>\n</ul>\n ",
+      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Custom types and aspects</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Publish');\">Publishing customizations</a></li>\n</ul>\n ",
       "type": "Html"
      },
      {
@@ -1588,11 +1588,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"#\",\"Description\",\"Alfresco\",\"Active\"]",
       "type": "Array"
@@ -1616,6 +1611,11 @@
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "expandParameters",
@@ -1673,14 +1673,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1933,5 +1933,5 @@
    }
   ]
  },
- "filename": "/public/AAAR_Customize_Properties.cdfde"
+ "filename": "/system/AAAR/dashboards/admin/AAAR_Customize_Properties.cdfde"
 }

@@ -456,7 +456,7 @@
      },
      {
       "name": "html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties');\">Custom types and aspects</a></li>\n</ul> \n ",
+      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties');\">Custom types and aspects</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Publish');\">Publishing customizations</a></li>\n</ul> \n ",
       "type": "Html"
      },
      {
@@ -1588,16 +1588,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colHeaders",
-      "value": "[\"#\",\"Description\",\"Active\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[]",
       "type": "colTypesCustom"
@@ -1615,6 +1605,16 @@
      {
       "name": "colSortable",
       "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[\"#\",\"Description\",\"Active\"]",
       "type": "Array"
      },
      {
@@ -1888,7 +1888,7 @@
      },
      {
       "name": "query",
-      "value": "select Id, 'desc', is_active from dm_dim_alfresco",
+      "value": "select Id, dm_dim_alfresco.desc, is_active from dm_dim_alfresco",
       "type": "SqlQuery"
      },
      {
@@ -1933,5 +1933,5 @@
    }
   ]
  },
- "filename": "/public/AAAR_Customize_Instances.cdfde"
+ "filename": "/system/AAAR/dashboards/admin/AAAR_Customize_Instances.cdfde"
 }
