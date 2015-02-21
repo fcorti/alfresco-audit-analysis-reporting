@@ -16,6 +16,6 @@
  concat(pentaho_path,'/',prpt_name) as report,
  is_active
 FROM
- AAAR_DataMart.dm_reports</Query>
+ dm_reports</Query>
    </DataAccess>
 </CDADescriptor>

@@ -1888,7 +1888,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT\n id,\n concat(pentaho_path,'/',prpt_name) as report,\n is_active\nFROM\n AAAR_DataMart.dm_reports",
+      "value": "SELECT\n id,\n concat(pentaho_path,'/',prpt_name) as report,\n is_active\nFROM\n dm_reports",
       "type": "SqlQuery"
      },
      {

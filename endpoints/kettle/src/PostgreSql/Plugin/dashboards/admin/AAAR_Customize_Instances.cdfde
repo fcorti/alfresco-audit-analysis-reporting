@@ -1888,7 +1888,7 @@
      },
      {
       "name": "query",
-      "value": "select Id, 'desc', is_active from dm_dim_alfresco",
+      "value": "select dm_dim_alfresco.id, dm_dim_alfresco.desc, dm_dim_alfresco.is_active from dm_dim_alfresco",
       "type": "SqlQuery"
      },
      {
