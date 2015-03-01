@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AAAR>
  <parameter name="AAARExportType" value="Get all"> </parameter>
- <parameter name="AAARExportGetParents" value="false"> </parameter>
+ <parameter name="AAARExportGetParents" value="true"> </parameter>
  <parameter name="alfrescoAuditLimit" value="50000"> </parameter>
  <parameter name="alfrescoFtpPath" value="alfresco"> </parameter>
  <parameter name="alfrescoFtpPort" value="121"> </parameter>

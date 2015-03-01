@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="alfrescoInstallationsDatasource" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerCreationDay" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerCreationHour" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerCreator" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerModificationDay" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerModificationHour" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerModifier" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerNodeType" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerMimeType" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerName" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="alfrescoInstallationsDatasource"
+               id="alfrescoInstallationsDatasource"
+               type="sql">
+      <Columns/>
+      <Parameters/>
+      <Query>select
+ i.id as installationId,
+ i.desc as installationDesc
+from
+ dm_dim_alfresco i
+order by
+ i.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerCreationDay"
+               id="documentsPerCreationDay"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ dt.id as date_id,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+ right join dm_dim_dates dt on d.creation_date_id = dt.id
+where
+ dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+group by
+ dt.id
+order by
+ dt.id asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerCreationHour"
+               id="documentsPerCreationHour"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ ch.desc as hour_desc,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+ right join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+group by
+ ch.desc
+order by
+ ch.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerCreator"
+               id="documentsPerCreator"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ cu.desc as User,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+group by
+ cu.desc
+order by
+ cu.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerModificationDay"
+               id="documentsPerModificationDay"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ mdt.id as date_id,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+ right join dm_dim_dates mdt on d.last_modification_date_id = mdt.id
+where
+ mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+group by
+ mdt.id
+order by
+ mdt.id asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerModificationHour"
+               id="documentsPerModificationHour"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ mh.desc as hour_desc,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+ right join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+group by
+ mh.desc
+order by
+ mh.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerModifier"
+               id="documentsPerModifier"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ mu.desc as user,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+group by
+ mu.desc
+order by
+ mu.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerNodeType"
+               id="documentsPerNodeType"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ nt.desc as nodeType,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+group by
+ nt.desc
+order by
+ nt.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="documentsPerMimeType"
+               id="documentsPerMimeType"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="Number" name="measureTypeParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ mt.desc as mimeType,
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})
+group by
+ mt.desc
+order by
+ mt.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="documentsPerName"
+               id="documentsPerName"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="mimeTypeParam" type="String"/>
+         <Parameter default="" name="documentNameParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+      </Parameters>
+      <Query>select
+ d.name,
+ nt.desc,
+ mt.desc,
+ round(d.content_stream_length/(1024),1) as mb
+from
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on d.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id and ('' = ${mimeTypeParam} or mt.desc=${mimeTypeParam})</Query>
+   </DataAccess>
+</CDADescriptor>

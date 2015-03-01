@@ -31,7 +31,7 @@
 
  <!-- A.A.A.R. parameters -->
  <parameter name="AAARExportType"       value="Get all"> </parameter>
- <parameter name="AAARExportGetParents" value="false"> </parameter>
+ <parameter name="AAARExportGetParents" value="true"> </parameter>
 
 </AAAR>
 
