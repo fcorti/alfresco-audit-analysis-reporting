@@ -15626,7 +15626,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"folderIdParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"folderIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
