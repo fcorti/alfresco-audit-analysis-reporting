@@ -3179,17 +3179,17 @@
      },
      {
       "name": "bootstrapSmall",
-      "value": "8",
+      "value": "4",
       "type": "String"
      },
      {
       "name": "bootstrapMedium",
-      "value": "8",
+      "value": "4",
       "type": "String"
      },
      {
       "name": "bootstrapLarge",
-      "value": "8",
+      "value": "4",
       "type": "String"
      },
      {
@@ -3291,6 +3291,178 @@
      {
       "name": "cssClass",
       "value": "aaar-panel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d6ff37a7-cee8-66ff-347e-1e7a82ddb158",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "ebab1b52-6a12-8740-baae-eff966599243",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "4",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "67d0ac2a-929b-8ff7-8e77-e8bdd6678a49",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "d6ff37a7-cee8-66ff-347e-1e7a82ddb158",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<label for=\"parentFilterObj\">Parent</label> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "aaar-panel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9c5af0b7-a3a5-b11f-c257-7c1c317f20b7",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d6ff37a7-cee8-66ff-347e-1e7a82ddb158",
+    "properties": [
+     {
+      "name": "name",
+      "value": "parentFilterObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "aaar-panel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "20ad607c-6645-ea31-2330-7f0e75b26170",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d6ff37a7-cee8-66ff-347e-1e7a82ddb158",
+    "properties": [
+     {
+      "name": "name",
+      "value": "parentFilterTableObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -6156,7 +6328,7 @@
      },
      {
       "name": "html",
-      "value": "<div class=\"modal-dialog\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n      <h4 class=\"modal-title\">Folders filter</h4>\n    </div>\n    <div class=\"modal-body\">\n      <p>Do you want to analyse the documents contained in the folder '<span id=\"foldersModal_item\"></span>' or filter it into the current dashboard?</p>\n      <span id=\"foldersModal_path\" style=\"display:none;\"></span>\n    </div>\n    <div class=\"modal-footer\">\n      <button id=\"foldersModal_buttonAnalyseDocuments\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Analyse documents</button>\n      <button id=\"foldersModal_buttonFilterName\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Filter here</button>\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">None of the above</button>\n    </div>\n  </div>\n</div>\n\n<script>\n\n    $('#foldersModal_buttonAnalyseDocuments').on('click', function () {\n\n        Date.prototype.yyyymmdd = function() {\n            var yyyy = this.getFullYear().toString();\n            var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n            var dd  = this.getDate().toString();\n            return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n        };\n\n        var url = \"/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_documents.wcdf/generatedContent\";\n\n        var lowerDate = new Date(2010, 0, 1, 0, 0, 0, 0);\n        var today = new Date();\n        var path = $(\"#foldersModal_path\").text() + \"/\" + $('#foldersModal_item').text();\n\n        var bookmarkState = {\n            \"impl\":\"client\",\n            \"params\":{\n                \"creationView\":\"true\",\n                \"modificationView\":\"true\",\n                \"pieView\":\"true\",\n                \"measureType\":\"KBytes\",\n                \"alfrescoInstance\":Dashboards.getParameterValue('${p:alfrescoInstance}'),\n                \"creationDtFrom\":lowerDate.yyyymmdd(),\n                \"creationDtTo\":today.yyyymmdd(),\n                \"modificationDtFrom\":lowerDate.yyyymmdd(),\n                \"modificationDtTo\":today.yyyymmdd(),\n                \"path\":path}};\n\n        window.open(url + \"?bookmarkState=\" + encodeURI(JSON.stringify(bookmarkState)), \"_self\")\n    });\n\n    $('#foldersModal_buttonFilterName').on('click', function () {\n        Dashboards.fireChange(\"${p:folderName}\", $('#foldersModal_item').text());\n    });\n\n</script> ",
+      "value": "<div class=\"modal-dialog\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n      <h4 class=\"modal-title\">Folders filter</h4>\n    </div>\n    <div class=\"modal-body\">\n      <p>Do you want to analyse the documents contained in the folder '<span id=\"foldersModal_item\"></span>' or filter it into the current dashboard?</p>\n      <span id=\"foldersModal_folderId\" style=\"display:none;\"></span>\n    </div>\n    <div class=\"modal-footer\">\n      <button id=\"foldersModal_buttonAnalyseDocuments\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Analyse documents</button>\n      <button id=\"foldersModal_buttonFilterName\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Filter here</button>\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">None of the above</button>\n    </div>\n  </div>\n</div>\n\n<script>\n\n    $('#foldersModal_buttonAnalyseDocuments').on('click', function () {\n\n        Date.prototype.yyyymmdd = function() {\n            var yyyy = this.getFullYear().toString();\n            var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n            var dd  = this.getDate().toString();\n            return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n        };\n\n        var url = \"/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_documents.wcdf/generatedContent\";\n\n        var lowerDate = new Date(2010, 0, 1, 0, 0, 0, 0);\n        var today = new Date();\n        var folderId = $(\"#foldersModal_folderId\").text();\n\n        var bookmarkState = {\n            \"impl\":\"client\",\n            \"params\":{\n                \"creationView\":\"true\",\n                \"modificationView\":\"true\",\n                \"pieView\":\"true\",\n                \"measureType\":\"KBytes\",\n                \"alfrescoInstance\":Dashboards.getParameterValue('${p:alfrescoInstance}'),\n                \"creationDtFrom\":lowerDate.yyyymmdd(),\n                \"creationDtTo\":today.yyyymmdd(),\n                \"modificationDtFrom\":lowerDate.yyyymmdd(),\n                \"modificationDtTo\":today.yyyymmdd(),\n                \"parentId\":folderId}};\n\n        window.open(url + \"?bookmarkState=\" + encodeURI(JSON.stringify(bookmarkState)), \"_self\")\n    });\n\n    $('#foldersModal_buttonFilterName').on('click', function () {\n        Dashboards.fireChange(\"${p:folderName}\", $('#foldersModal_item').text());\n    });\n\n</script> ",
       "type": "Html"
      },
      {
@@ -6748,6 +6920,34 @@
      {
       "name": "propertyValue",
       "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "2ed009d5-8467-10f6-b221-94d835d16ec1",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "parentId",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "-1",
       "type": "String"
      },
      {
@@ -7639,6 +7839,84 @@
     ]
    },
    {
+    "id": "8d093bd4-d3e5-badb-6665-d0ce28af8ea4",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "folderNameComponent",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:folderName}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:folderName}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:folderNameFilterObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "0657cfc8-29ab-fe9a-0bf6-c5becab99f57",
     "type": "ComponentsSelect",
     "typeDesc": "Select Component",
@@ -7785,84 +8063,6 @@
      {
       "name": "htmlObject",
       "value": "${p:pathObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "8d093bd4-d3e5-badb-6665-d0ce28af8ea4",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "folderNameComponent",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "${p:folderName}",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:folderName}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "maxLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:folderNameFilterObj}",
       "type": "HtmlObject"
      },
      {
@@ -8321,7 +8521,7 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    today = new Date();\n    lastWeek = new Date();\n    lastWeek.setDate(lastWeek.getDate() - 7);\n\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:mimeType}\", \"\");\n    Dashboards.fireChange(\"${p:folderName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"\");\n\n} ",
+      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lastWeek = new Date();\n    lastWeek.setDate(lastWeek.getDate() - 7);\n\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:mimeType}\", \"\");\n    Dashboards.fireChange(\"${p:folderName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"\");\n\n} ",
       "type": "JavaScript"
      },
      {
@@ -8470,94 +8670,6 @@
     ]
    },
    {
-    "id": "d316fb0c-613a-e7fd-f775-92189a64d729",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "filterPanelResetComponent",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Reset",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "expression",
-      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    today = new Date();\n    lastWeek = new Date();\n    lastWeek.setDate(lastWeek.getDate() - 7);\n\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:mimeType}\", \"\");\n    Dashboards.fireChange(\"${p:folderName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"\");\n\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "bootstrap",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:filtersPanelResetObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f() {\n    $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-info btn-block\");\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "4e96dbb5-fb64-9969-e647-86b6e58e9c13",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -8636,6 +8748,297 @@
      {
       "name": "postExecution",
       "value": "function f() {\n    $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-info\");\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "a2a10e84-8176-e8b2-cc19-c8c28782fd17",
+    "type": "ComponentsTable",
+    "typeDesc": "table Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "parentPathComponent",
+      "type": "Id"
+     },
+     {
+      "name": "expandContainerObject",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:parentId}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "oLanguage",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "language",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "colFormats",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"folderIdParam\",\"parentId\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "paginate",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "lengthChange",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "filter",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "info",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "sort",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "colSearchable",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "drawCallback",
+      "value": "function f() {\n\n    var parentPath = \"\";\n    \n    if (this.rawData.resultset.length > 0) {\n        parentPath = this.rawData.resultset[0][0];\n    }\n    else {\n        parentPath = \"-\";\n    }\n\n    $(\"#\" + this.htmlObject).hide();\n\n    $(\"#parentFilterObj\").html(\"<input class=\\\"form-control\\\" type=\\\"text\\\" placeholder=\\\"\" + parentPath + \"\\\" readonly>\");\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "dataSource",
+      "value": "folderPath",
+      "type": "Datasource"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "bootstrap",
+      "type": "TableStyle"
+     },
+     {
+      "name": "paginationType",
+      "value": "simple_numbers",
+      "type": "PaginationType"
+     },
+     {
+      "name": "htmlObject",
+      "value": "parentFilterTableObj",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "paginateServerside",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "extraOptions",
+      "value": "[]",
+      "type": "OptionArray"
+     },
+     {
+      "name": "clickAction",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "d316fb0c-613a-e7fd-f775-92189a64d729",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "filterPanelResetComponent",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Reset",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "expression",
+      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lastWeek = new Date();\n    lastWeek.setDate(lastWeek.getDate() - 7);\n\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lastWeek.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:mimeType}\", \"\");\n    Dashboards.fireChange(\"${p:folderName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"\");\n\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "bootstrap",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:filtersPanelResetObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n    $('#' + this.htmlObject + ' button:first-child').addClass(\"btn btn-info btn-block\");\n} ",
       "type": "JavaScript"
      },
      {
@@ -8751,7 +9154,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
@@ -8763,16 +9166,6 @@
       "name": "language",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
      },
      {
       "name": "colSortable",
@@ -8793,6 +9186,16 @@
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "colTypes",
@@ -8954,7 +9357,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
@@ -8966,16 +9369,6 @@
       "name": "language",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
      },
      {
       "name": "colFormats",
@@ -8994,8 +9387,18 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
+     },
+     {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "colTypes",
@@ -9157,7 +9560,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
@@ -9171,6 +9574,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "colWidths",
+      "value": "[\"80%\",\"10%\",\"5%\",\"5%\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Node type\",\"Subfolders\",\"Documents\"]",
+      "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
@@ -9181,28 +9604,8 @@
       "type": "Array"
      },
      {
-      "name": "colWidths",
-      "value": "[\"80%\",\"10%\",\"10%\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Node type\",\"Doc num\"]",
-      "type": "Array"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"numeric\"]",
+      "value": "[\"string\",\"string\",\"numeric\",\"numeric\"]",
       "type": "colTypesCustom"
      },
      {
@@ -9337,7 +9740,7 @@
      },
      {
       "name": "clickAction",
-      "value": "function f(selection) {\n\n    var rowIdx = selection.rowIdx;\n\n    $('#foldersModal').modal('show');\n\n    $('#foldersModal_item').text(selection.series.trim());\n    $('#foldersModal_path').text(selection.rawData.resultset[rowIdx][3]);\n\n} ",
+      "value": "function f(selection) {\n\n    var rowIdx = selection.rowIdx;\n\n    $('#foldersModal').modal('show');\n\n    $('#foldersModal_item').text(selection.series.trim());\n    $('#foldersModal_folderId').text(selection.rawData.resultset[rowIdx][4]);\n\n} ",
       "type": "JavaScript"
      }
     ]
@@ -9374,12 +9777,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
      },
      {
@@ -9388,8 +9791,8 @@
       "type": "Datasource"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -9398,13 +9801,13 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -10648,12 +11051,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
      },
      {
@@ -10662,8 +11065,8 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
@@ -10672,13 +11075,13 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -11922,12 +12325,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
      },
      {
@@ -11936,8 +12339,8 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
@@ -11946,13 +12349,13 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -13196,12 +13599,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
      },
      {
@@ -13210,8 +13613,8 @@
       "type": "Datasource"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -13220,13 +13623,13 @@
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
@@ -14470,12 +14873,12 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}']",
+      "value": "['${p:measureType}','${p:alfrescoInstallation}','${p:creationDtFrom}','${p:creationDtTo}','${p:creationHourFrom}','${p:creationHourTo}','${p:creator}','${p:modificationDtFrom}','${p:modificationDtTo}','${p:modificationHourFrom}','${p:modificationHourTo}','${p:modifier}','${p:nodeType}','${p:mimeType}','${p:folderName}','${p:path}','${p:parentId}']",
       "type": "Listeners"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"folderNameParam\",\"folderName\"],[\"pathParam\",\"path\"],[\"parentIdParam\",\"parentId\"]]",
       "type": "ValuesArray"
      },
      {
@@ -14484,23 +14887,23 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "width",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
       "name": "priority",
       "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
@@ -14885,7 +15288,7 @@
      },
      {
       "name": "seriesInRows",
-      "value": false,
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -15196,6 +15599,72 @@
     "meta_datype": "sql"
    },
    {
+    "id": "1d023a56-9cef-d8be-40d0-f5019e424fc3",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "value": "folderPath",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "AAAR_DataMart",
+      "type": "Jndi"
+     },
+     {
+      "name": "query",
+      "value": "select\n f.path\nfrom\n dm_dim_folders f\nwhere\n -1 != ${folderIdParam}\nand\n f.id = ${folderIdParam}",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"folderIdParam\",\"\",\"String\",\"\"]]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql"
+   },
+   {
     "id": "78ef0ddb-fc3d-6c66-34f1-d58b9a61a4a8",
     "type": "Componentssql_sqlJndi",
     "typeDesc": "sql over sqlJndi",
@@ -15218,12 +15687,12 @@
      },
      {
       "name": "query",
-      "value": "select\n cdt.id as date_id,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f \n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_dates cdt on f.creation_date_id = cdt.id\nwhere\n cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\ngroup by\n cdt.id\norder by\n cdt.id asc",
+      "value": "select\n cdt.id as date_id,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_dates cdt on f.creation_date_id = cdt.id\nwhere\n cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\ngroup by\n cdt.id\norder by\n cdt.id asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15284,12 +15753,12 @@
      },
      {
       "name": "query",
-      "value": "select\n ch.desc as hour_desc,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f \n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\ngroup by\n ch.desc\norder by\n ch.desc asc",
+      "value": "select\n ch.desc as hour_desc,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f \n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\ngroup by\n ch.desc\norder by\n ch.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15350,12 +15819,12 @@
      },
      {
       "name": "query",
-      "value": "select\n cu.desc as User,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n cu.desc\norder by\n cu.desc asc",
+      "value": "select\n cu.desc as User,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n cu.desc\norder by\n cu.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15416,12 +15885,12 @@
      },
      {
       "name": "query",
-      "value": "select\n mdt.id as date_id,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_dates mdt on f.last_modification_date_id = mdt.id\nwhere\n mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\ngroup by\n mdt.id\norder by\n mdt.id asc",
+      "value": "select\n mdt.id as date_id,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_dates mdt on f.last_modification_date_id = mdt.id\nwhere\n mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\ngroup by\n mdt.id\norder by\n mdt.id asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15482,12 +15951,12 @@
      },
      {
       "name": "query",
-      "value": "select\n mh.desc as hour_desc,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\ngroup by\n mh.desc\norder by\n mh.desc asc",
+      "value": "select\n mh.desc as hour_desc,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n right join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\ngroup by\n mh.desc\norder by\n mh.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15548,12 +16017,12 @@
      },
      {
       "name": "query",
-      "value": "select\n mu.desc as user,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n mu.desc\norder by\n mu.desc asc",
+      "value": "select\n mu.desc as user,\n coalesce(sum(f.num),0) as Number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n mu.desc\norder by\n mu.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15614,12 +16083,12 @@
      },
      {
       "name": "query",
-      "value": "select\n nt.desc as nodeType,\n coalesce(sum(f.num),0) as number\nfrom\n (select *, 1 as num from dm_dim_documents where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n nt.desc\norder by\n nt.desc asc",
+      "value": "select\n nt.desc as nodeType,\n coalesce(sum(f.num),0) as number\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\ngroup by\n nt.desc\norder by\n nt.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -15680,12 +16149,12 @@
      },
      {
       "name": "query",
-      "value": "select\n f.name,\n nt.desc,\n (select count(*) from dm_dim_documents d where d.parent_id = f.id) as contentNum,\n f.path\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\n",
+      "value": "select\n f.name,\n nt.desc,\n (select count(*) from dm_dim_folders f2 where f2.parent_id = f.id) as folderNum,\n (select count(*) from dm_dim_documents d where d.parent_id = f.id) as contentNum,\n f.id\nfrom\n (select *, 1 as num from dm_dim_folders where (''=${folderNameParam} or name=${folderNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) f\n join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on f.creation_date_id = cdt.id and cdt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id >= 0\n join dm_dim_hours ch on cm.hour_id = ch.id and ch.id >= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}\n join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})\n join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between str_to_date(${modificationDtFromParam},'%Y-%m-%d') and str_to_date(${modificationDtToParam},'%Y-%m-%d')\n join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id >= 0\n join dm_dim_hours mh on mm.hour_id = mh.id and mh.id >= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}\n join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})\n join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})\norder by\n f.name asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"]]",
+      "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"creationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"creationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"creationHourFromParam\",\"0\",\"Integer\",\"\"],[\"creationHourToParam\",\"23\",\"Integer\",\"\"],[\"creatorParam\",\"\",\"String\",\"\"],[\"modificationDtFromParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationDtToParam\",\"2015-01-01\",\"String\",\"\"],[\"modificationHourFromParam\",\"0\",\"Integer\",\"\"],[\"modificationHourToParam\",\"23\",\"Integer\",\"\"],[\"modifierParam\",\"\",\"String\",\"\"],[\"nodeTypeParam\",\"\",\"String\",\"\"],[\"folderNameParam\",\"\",\"String\",\"\"],[\"pathParam\",\"\",\"String\",\"\"],[\"parentIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
      },
      {

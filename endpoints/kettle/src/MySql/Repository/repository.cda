@@ -38,6 +38,7 @@ order by
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  f.id,
@@ -50,7 +51,7 @@ order by
  mu.desc,
  mdt.desc,
  mm.desc,
- f2.path as parentPath
+ f.parent_id as parentId
 from
  dm_dim_folders f
  join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -61,9 +62,9 @@ from
  join dm_dim_minutes mm on f.last_modification_minute_id = mm.id
  join dm_dim_users mu on f.user_last_modifier_id = mu.id
  join dm_dim_node_types nt on f.node_type_id = nt.id
- left join dm_dim_folders f2 on f2.alfresco_id = i.id and f2.id = f.parent_id and f2.id is not null
 where
- ''=${pathParam} or f.path=${pathParam}</Query>
+ (''=${pathParam} or f.path=${pathParam})
+ and (-1=${folderIdParam} or f.id=${folderIdParam})</Query>
    </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="documentsPerNodeType"
@@ -73,15 +74,14 @@ where
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
          <Parameter default="KBytes" name="measureTypeParam" type="String"/>
-         <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  nt.desc as nodeType,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents) d 
+ (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
- join dm_dim_folders f on f.alfresco_id = i.id and f.id = d.parent_id and f.path = ${pathParam}
  join dm_dim_dates cdt on d.creation_date_id = cdt.id
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
  join dm_dim_users cu on d.user_creator_id = cu.id
@@ -103,15 +103,14 @@ order by
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
          <Parameter default="KBytes" name="measureTypeParam" type="String"/>
-         <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  mt.desc as mimeType,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents) d 
+ (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
- join dm_dim_folders f on f.alfresco_id = i.id and f.id = d.parent_id and f.path = ${pathParam}
  join dm_dim_dates cdt on d.creation_date_id = cdt.id
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
  join dm_dim_users cu on d.user_creator_id = cu.id
@@ -144,22 +143,25 @@ order by
          <Parameter default="" name="nodeTypeParam" type="String"/>
          <Parameter default="" name="childrenNameParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  '..' as name,
  null as type,
  null as creationDt,
+ null as folderNum,
  null as contentNum,
- '..' as folderPath
+ -1 as folderId
 union all
 select
  f.name as name,
  nt.desc as type,
  dt.desc as creationDt,
+ (select count(*) from dm_dim_folders f2 where f2.parent_id = f.id) as folderNum,
  (select count(*) from dm_dim_documents d where d.parent_id = f.id) as contentNum,
- f.path as folderPath
+ f.id as folderId
 from
- (select f1.* from dm_dim_folders f1 where (''=${childrenNameParam} or name=${childrenNameParam}) and f1.parent_id in (select f2.id from dm_dim_folders f2 where ''=${pathParam} or f2.path=${pathParam})) f
+ (select f1.* from dm_dim_folders f1 where (''=${childrenNameParam} or name=${childrenNameParam}) and f1.parent_id in (select f2.id from dm_dim_folders f2 where (''=${pathParam} or f2.path=${pathParam}) and (-1=${folderIdParam} or f2.id=${folderIdParam}))) f
  join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on f.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id &gt;= 0

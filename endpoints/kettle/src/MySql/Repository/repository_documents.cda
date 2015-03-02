@@ -4,6 +4,9 @@
       <Connection id="alfrescoInstallationsDatasource" type="sql.jndi">
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
+      <Connection id="folderPath" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
       <Connection id="documentsPerCreationDay" type="sql.jndi">
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
@@ -46,6 +49,22 @@ from
 order by
  i.desc asc</Query>
    </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="folderPath"
+               id="folderPath"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="folderIdParam" type="String"/>
+      </Parameters>
+      <Query>select
+ f.path
+from
+ dm_dim_folders f
+where
+ -1 != ${folderIdParam}
+and
+ f.id = ${folderIdParam}</Query>
+   </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="documentsPerCreationDay"
                id="documentsPerCreationDay"
@@ -68,12 +87,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  dt.id as date_id,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
  join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
@@ -114,12 +134,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  ch.desc as hour_desc,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_users cu on d.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
@@ -158,12 +179,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  cu.desc as User,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
@@ -202,12 +224,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  mdt.id as date_id,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
  join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
@@ -248,12 +271,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  mh.desc as hour_desc,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
@@ -292,12 +316,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  mu.desc as user,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
@@ -336,12 +361,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  nt.desc as nodeType,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
@@ -380,12 +406,13 @@ order by
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="Number" name="measureTypeParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  mt.desc as mimeType,
  coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
@@ -422,6 +449,7 @@ order by
          <Parameter default="" name="mimeTypeParam" type="String"/>
          <Parameter default="" name="documentNameParam" type="String"/>
          <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="parentIdParam" type="Integer"/>
       </Parameters>
       <Query>select
  d.name,
@@ -429,7 +457,7 @@ order by
  mt.desc,
  round(d.content_stream_length/(1024),1) as mb
 from
- (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam})) d 
+ (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates dt on d.creation_date_id = dt.id and dt.id between str_to_date(${creationDtFromParam},'%Y-%m-%d') and str_to_date(${creationDtToParam},'%Y-%m-%d')
  join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
