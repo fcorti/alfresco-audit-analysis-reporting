@@ -60,6 +60,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>alfrescoType</name>
+            <default_value>alfrescoType</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>configurationPath</name>
             <default_value>&#x2f;home&#x2f;aaar&#x2f;Desktop&#x2f;biserver-ce&#x2f;pentaho-solutions&#x2f;system&#x2f;AAAR&#x2f;endpoints&#x2f;kettle&#x2f;conf&#x2f;AAARConfiguration.xml</default_value>
             <description/>
@@ -222,6 +227,7 @@
       <line> <item>alfrescoPassword</item> </line>
       <line> <item>alfrescoProtocol</item> </line>
       <line> <item>alfrescoPort</item> </line>
+      <line> <item>alfrescoType</item> </line>
       <line> <item>databaseBin</item> </line>
       <line> <item>databaseType</item> </line>
       <line> <item>databaseHost</item> </line>

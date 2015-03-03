@@ -10,6 +10,11 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
+            <name>alfrescoType</name>
+            <default_value>Alfresco_5_0</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>databaseHost</name>
             <default_value>localhost</default_value>
             <description/>
@@ -318,7 +323,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPLOADANALYSIS &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;if &#x28;os &#x3d;&#x3d; &#x22;Linux&#x22;&#x29; &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;else &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;UPLOADANALYSIS &#x2b;&#x3d; fileSeparator &#x2b; &#x22;src&#x22; &#x2b; fileSeparator &#x2b; uploadAnalysis&#x3b;&#xa;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var UPLOADANALYSIS &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;if &#x28;os &#x3d;&#x3d; &#x22;Linux&#x22;&#x29; &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;else &#x7b;&#xa;	UPLOADANALYSIS &#x3d; replace&#x28;transRoot, &#x22;file&#x3a;&#x2f;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;UPLOADANALYSIS &#x2b;&#x3d; fileSeparator &#x2b; &#x22;src&#x22; &#x2b; fileSeparator &#x2b; alfrescoType &#x2b; fileSeparator &#x2b; uploadAnalysis&#x3b;&#xa;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPLOADANALYSIS</name>
         <rename>UPLOADANALYSIS</rename>
         <type>String</type>
@@ -567,6 +572,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>fileSeparator</name>
         <variable>&#x24;&#x7b;file.separator&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>alfrescoType</name>
+        <variable>&#x24;&#x7b;alfrescoType&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>

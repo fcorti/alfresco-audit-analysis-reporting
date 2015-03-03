@@ -62,6 +62,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>alfrescoType</name>
+            <default_value>Alfresco_5_0</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>configurationFile</name>
             <default_value>AAARConfiguration.xml</default_value>
             <description/>
@@ -268,6 +273,9 @@
             </parameter>            <parameter>            <name>alfrescoProtocol</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoProtocol&#x7d;</value>
+            </parameter>            <parameter>            <name>alfrescoType</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoType&#x7d;</value>
             </parameter>            <parameter>            <name>configurationPath</name>
             <stream_name/>
             <value>&#x24;&#x7b;configurationPath&#x7d;</value>
@@ -444,7 +452,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
           <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
           <wildcard>AAAR_Customize_Instances.&#x2a;</wildcard>
         </field>
@@ -469,7 +477,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
           <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
           <wildcard>AAAR_Customize_Properties.&#x2a;</wildcard>
         </field>
@@ -494,7 +502,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
           <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
           <wildcard>AAAR_Customize_Publish.&#x2a;</wildcard>
         </field>

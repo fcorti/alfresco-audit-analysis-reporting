@@ -1717,6 +1717,34 @@
     ]
    },
    {
+    "id": "e192e6e6-58e2-3ca2-7210-738e9a651530",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoType",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "Alfresco_5_0",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "79b88a5f-9c96-ea35-708f-24ce76d31149",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
@@ -2613,5 +2641,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/system/AAAR/dashboards/AAAR_Install.cdfde"
+ "filename": "/system/AAAR/dashboards/admin/AAAR_Install.cdfde"
 }

@@ -10,6 +10,7 @@
  <parameter name="alfrescoPassword" value="admin"> </parameter>
  <parameter name="alfrescoProtocol" value="http"> </parameter>
  <parameter name="alfrescoPort" value="8080"> </parameter>
+ <parameter name="alfrescoType" value="Alfresco_5_0"> </parameter>
  <parameter name="databaseBin" value="/usr/bin"> </parameter>
  <parameter name="databaseType" value="PostgreSql"> </parameter>
  <parameter name="databaseHost" value="localhost"> </parameter>

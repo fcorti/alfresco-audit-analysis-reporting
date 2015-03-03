@@ -94,7 +94,6 @@
   <hop> <from>Stream lookup 6</from><to>Stream lookup 7</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Stream lookup 7</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 7</from><to>Stream lookup 8</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 8</from><to>Stream lookup 9</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 9</from><to>Stream lookup 10</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 10</from><to>Stream lookup 11</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 11</from><to>Stream lookup 12</to><enabled>Y</enabled> </hop>
@@ -121,9 +120,12 @@
   <hop> <from>Get data from XML</from><to>Stream lookup 20</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 20</from><to>Stream lookup 21</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Stream lookup 21</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 22</from><to>Set Variables</to><enabled>Y</enabled> </hop>
   <hop> <from>Stream lookup 21</from><to>Stream lookup 22</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Stream lookup 22</to><enabled>Y</enabled> </hop>
+  <hop> <from>Stream lookup 22</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Stream lookup 8</from><to>Stream lookup 23</to><enabled>Y</enabled> </hop>
+  <hop> <from>Stream lookup 23</from><to>Stream lookup 9</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>Stream lookup 23</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Data Grid</name>
@@ -238,6 +240,17 @@
       </field>
       <field>
         <name>alfrescoProtocol</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>alfrescoType</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -381,7 +394,7 @@
       </field>
     </fields>
     <data>
-      <line> <item>AAARExportType</item><item>AAARExportGetParents</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
+      <line> <item>AAARExportType</item><item>AAARExportGetParents</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>alfrescoType</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -470,8 +483,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>472</xloc>
-      <yloc>262</yloc>
+      <xloc>464</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -492,13 +505,13 @@
         <field_name>AAARExportGetParentsValue</field_name>
         <variable_name>AAARExportGetParents</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
+        <default_value>true</default_value>
         </field>
       <field>
         <field_name>AAARExportTypeValue</field_name>
         <variable_name>AAARExportType</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
+        <default_value>Get all</default_value>
         </field>
       <field>
         <field_name>alfrescoAuditLimitValue</field_name>
@@ -547,6 +560,12 @@
         <variable_name>alfrescoProtocol</variable_name>
         <variable_type>PARENT_JOB</variable_type>
         <default_value>http</default_value>
+        </field>
+      <field>
+        <field_name>alfrescoTypeValue</field_name>
+        <variable_name>alfrescoType</variable_name>
+        <variable_type>PARENT_JOB</variable_type>
+        <default_value>Alfresco_5_0</default_value>
         </field>
       <field>
         <field_name>databaseBinValue</field_name>
@@ -624,8 +643,8 @@
     <use_formatting>N</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1033</xloc>
-      <yloc>100</yloc>
+      <xloc>1034</xloc>
+      <yloc>109</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -696,8 +715,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>131</xloc>
-      <yloc>426</yloc>
+      <xloc>123</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -732,8 +751,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>241</xloc>
-      <yloc>426</yloc>
+      <xloc>233</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -768,8 +787,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>350</xloc>
-      <yloc>426</yloc>
+      <xloc>342</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -804,8 +823,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>472</xloc>
-      <yloc>426</yloc>
+      <xloc>464</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -840,8 +859,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>426</yloc>
+      <xloc>584</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -876,8 +895,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>711</xloc>
-      <yloc>426</yloc>
+      <xloc>703</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -912,8 +931,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>823</xloc>
-      <yloc>426</yloc>
+      <xloc>815</xloc>
+      <yloc>436</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -948,8 +967,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>935</xloc>
-      <yloc>427</yloc>
+      <xloc>927</xloc>
+      <yloc>437</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -984,8 +1003,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>935</xloc>
-      <yloc>361</yloc>
+      <xloc>927</xloc>
+      <yloc>371</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1020,8 +1039,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>935</xloc>
-      <yloc>302</yloc>
+      <xloc>927</xloc>
+      <yloc>312</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1092,8 +1111,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>931</xloc>
-      <yloc>229</yloc>
+      <xloc>923</xloc>
+      <yloc>239</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1128,8 +1147,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>930</xloc>
-      <yloc>164</yloc>
+      <xloc>922</xloc>
+      <yloc>174</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1164,8 +1183,44 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>927</xloc>
-      <yloc>99</yloc>
+      <xloc>919</xloc>
+      <yloc>109</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Stream lookup 23</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>Get data from XML</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>alfrescoType</name>
+        <field>name</field>
+      </key>
+      <value>
+        <name>value</name>
+        <rename>alfrescoTypeValue</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>919</xloc>
+      <yloc>30</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1416,8 +1471,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>942</xloc>
-      <yloc>27</yloc>
+      <xloc>20</xloc>
+      <yloc>438</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

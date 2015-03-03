@@ -52,6 +52,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>alfrescoType</name>
+            <default_value>Alfresco_5_0</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>databaseHost</name>
             <default_value>localhost</default_value>
             <description/>
@@ -573,7 +578,7 @@
       <name>Unzip CMIS Input plugin</name>
       <description/>
       <type>UNZIP</type>
-      <zipfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;CMIS_Input_plugin_v&#x24;&#x7b;kettleVersion&#x7d;.zip</zipfilename>
+      <zipfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;CMIS_Input_plugin_v&#x24;&#x7b;kettleVersion&#x7d;.zip</zipfilename>
       <wildcard/>
       <wildcardexclude/>
       <targetdirectory>&#x24;&#x7b;kettlePath&#x7d;</targetdirectory>
@@ -607,7 +612,7 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;AAAR_DataMart.sql</sqlfilename>
+      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;AAAR_DataMart.sql</sqlfilename>
       <sendOneStatement>T</sendOneStatement>
       <connection>PostgreSql - AAAR</connection>
       <parallel>N</parallel>
@@ -623,7 +628,7 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;AAAR_Kettle_v&#x24;&#x7b;kettleVersion&#x7d;.sql</sqlfilename>
+      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;AAAR_Kettle_v&#x24;&#x7b;kettleVersion&#x7d;.sql</sqlfilename>
       <sendOneStatement>T</sendOneStatement>
       <connection>PostgreSql - Kettle</connection>
       <parallel>N</parallel>
@@ -661,7 +666,7 @@
       <parameters>        <pass_all_parameters>N</pass_all_parameters>
             <parameter>            <name>fileSystemPath</name>
             <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository</value>
+            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository</value>
             </parameter>            <parameter>            <name>pentahoPath</name>
             <stream_name/>
             <value>&#x24;&#x7b;pentahoAAARPath&#x7d;</value>
@@ -703,7 +708,7 @@
       <parameters>        <pass_all_parameters>N</pass_all_parameters>
             <parameter>            <name>fileSystemPath</name>
             <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository&#x24;&#x7b;file.separator&#x7d;Reports</value>
+            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository&#x24;&#x7b;file.separator&#x7d;Reports</value>
             </parameter>            <parameter>            <name>pentahoPath</name>
             <stream_name/>
             <value>&#x24;&#x7b;pentahoAAARPath&#x7d;&#x2f;Reports</value>
@@ -745,7 +750,7 @@
       <parameters>        <pass_all_parameters>N</pass_all_parameters>
             <parameter>            <name>fileSystemPath</name>
             <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository&#x24;&#x7b;file.separator&#x7d;Olap</value>
+            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;PostgreSql&#x24;&#x7b;file.separator&#x7d;Repository&#x24;&#x7b;file.separator&#x7d;Olap</value>
             </parameter>            <parameter>            <name>pentahoPath</name>
             <stream_name/>
             <value>&#x24;&#x7b;pentahoAAARPath&#x7d;&#x2f;Olap</value>

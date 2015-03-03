@@ -145,6 +145,9 @@
             </parameter>            <parameter>            <name>alfrescoProtocol</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoProtocol&#x7d;</value>
+            </parameter>            <parameter>            <name>alfrescoType</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoType&#x7d;</value>
             </parameter>            <parameter>            <name>databaseHost</name>
             <stream_name/>
             <value>&#x24;&#x7b;databaseHost&#x7d;</value>
@@ -275,6 +278,9 @@
             </parameter>            <parameter>            <name>alfrescoHost</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoHost&#x7d;</value>
+            </parameter>            <parameter>            <name>alfrescoType</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoType&#x7d;</value>
             </parameter>            <parameter>            <name>databaseBin</name>
             <stream_name/>
             <value>&#x24;&#x7b;databaseBin&#x7d;</value>
@@ -417,7 +423,10 @@
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>databaseHost</name>
+            <parameter>            <name>alfrescoType</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoType&#x7d;</value>
+            </parameter>            <parameter>            <name>databaseHost</name>
             <stream_name/>
             <value>&#x24;&#x7b;databaseHost&#x7d;</value>
             </parameter>            <parameter>            <name>databaseLogin</name>
