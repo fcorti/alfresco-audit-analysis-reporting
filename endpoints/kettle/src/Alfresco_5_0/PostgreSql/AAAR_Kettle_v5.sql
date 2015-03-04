@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.6
 -- Dumped by pg_dump version 9.3.6
--- Started on 2015-02-22 01:07:39 CET
+-- Started on 2015-03-04 21:14:27 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -13,7 +13,7 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- TOC entry 170 (class 1259 OID 25665)
+-- TOC entry 170 (class 1259 OID 19740)
 -- Name: r_cluster; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -31,7 +31,7 @@ CREATE TABLE "r_cluster" (
 ALTER TABLE "public"."r_cluster" OWNER TO "postgres";
 
 --
--- TOC entry 171 (class 1259 OID 25671)
+-- TOC entry 171 (class 1259 OID 19746)
 -- Name: r_cluster_id_cluster_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -55,7 +55,7 @@ ALTER SEQUENCE "r_cluster_id_cluster_seq" OWNED BY "r_cluster"."id_cluster";
 
 
 --
--- TOC entry 172 (class 1259 OID 25673)
+-- TOC entry 172 (class 1259 OID 19748)
 -- Name: r_cluster_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -69,7 +69,7 @@ CREATE TABLE "r_cluster_slave" (
 ALTER TABLE "public"."r_cluster_slave" OWNER TO "postgres";
 
 --
--- TOC entry 173 (class 1259 OID 25676)
+-- TOC entry 173 (class 1259 OID 19751)
 -- Name: r_cluster_slave_id_cluster_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -93,7 +93,7 @@ ALTER SEQUENCE "r_cluster_slave_id_cluster_slave_seq" OWNED BY "r_cluster_slave"
 
 
 --
--- TOC entry 174 (class 1259 OID 25678)
+-- TOC entry 174 (class 1259 OID 19753)
 -- Name: r_condition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -112,7 +112,7 @@ CREATE TABLE "r_condition" (
 ALTER TABLE "public"."r_condition" OWNER TO "postgres";
 
 --
--- TOC entry 175 (class 1259 OID 25684)
+-- TOC entry 175 (class 1259 OID 19759)
 -- Name: r_condition_id_condition_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -136,7 +136,7 @@ ALTER SEQUENCE "r_condition_id_condition_seq" OWNED BY "r_condition"."id_conditi
 
 
 --
--- TOC entry 176 (class 1259 OID 25686)
+-- TOC entry 176 (class 1259 OID 19761)
 -- Name: r_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -159,7 +159,7 @@ CREATE TABLE "r_database" (
 ALTER TABLE "public"."r_database" OWNER TO "postgres";
 
 --
--- TOC entry 177 (class 1259 OID 25692)
+-- TOC entry 177 (class 1259 OID 19767)
 -- Name: r_database_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -174,7 +174,7 @@ CREATE TABLE "r_database_attribute" (
 ALTER TABLE "public"."r_database_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 178 (class 1259 OID 25698)
+-- TOC entry 178 (class 1259 OID 19773)
 -- Name: r_database_attribute_id_database_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -198,7 +198,7 @@ ALTER SEQUENCE "r_database_attribute_id_database_attribute_seq" OWNED BY "r_data
 
 
 --
--- TOC entry 179 (class 1259 OID 25700)
+-- TOC entry 179 (class 1259 OID 19775)
 -- Name: r_database_contype; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -212,7 +212,7 @@ CREATE TABLE "r_database_contype" (
 ALTER TABLE "public"."r_database_contype" OWNER TO "postgres";
 
 --
--- TOC entry 180 (class 1259 OID 25706)
+-- TOC entry 180 (class 1259 OID 19781)
 -- Name: r_database_contype_id_database_contype_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -236,7 +236,7 @@ ALTER SEQUENCE "r_database_contype_id_database_contype_seq" OWNED BY "r_database
 
 
 --
--- TOC entry 181 (class 1259 OID 25708)
+-- TOC entry 181 (class 1259 OID 19783)
 -- Name: r_database_id_database_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -260,7 +260,7 @@ ALTER SEQUENCE "r_database_id_database_seq" OWNED BY "r_database"."id_database";
 
 
 --
--- TOC entry 182 (class 1259 OID 25710)
+-- TOC entry 182 (class 1259 OID 19785)
 -- Name: r_database_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -274,7 +274,7 @@ CREATE TABLE "r_database_type" (
 ALTER TABLE "public"."r_database_type" OWNER TO "postgres";
 
 --
--- TOC entry 183 (class 1259 OID 25716)
+-- TOC entry 183 (class 1259 OID 19791)
 -- Name: r_database_type_id_database_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -298,7 +298,7 @@ ALTER SEQUENCE "r_database_type_id_database_type_seq" OWNED BY "r_database_type"
 
 
 --
--- TOC entry 184 (class 1259 OID 25718)
+-- TOC entry 184 (class 1259 OID 19793)
 -- Name: r_dependency; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -314,7 +314,7 @@ CREATE TABLE "r_dependency" (
 ALTER TABLE "public"."r_dependency" OWNER TO "postgres";
 
 --
--- TOC entry 185 (class 1259 OID 25724)
+-- TOC entry 185 (class 1259 OID 19799)
 -- Name: r_dependency_id_dependency_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -338,7 +338,7 @@ ALTER SEQUENCE "r_dependency_id_dependency_seq" OWNED BY "r_dependency"."id_depe
 
 
 --
--- TOC entry 186 (class 1259 OID 25726)
+-- TOC entry 186 (class 1259 OID 19801)
 -- Name: r_directory; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -352,7 +352,7 @@ CREATE TABLE "r_directory" (
 ALTER TABLE "public"."r_directory" OWNER TO "postgres";
 
 --
--- TOC entry 187 (class 1259 OID 25729)
+-- TOC entry 187 (class 1259 OID 19804)
 -- Name: r_directory_id_directory_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -376,7 +376,7 @@ ALTER SEQUENCE "r_directory_id_directory_seq" OWNED BY "r_directory"."id_directo
 
 
 --
--- TOC entry 188 (class 1259 OID 25731)
+-- TOC entry 188 (class 1259 OID 19806)
 -- Name: r_element; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -390,7 +390,7 @@ CREATE TABLE "r_element" (
 ALTER TABLE "public"."r_element" OWNER TO "postgres";
 
 --
--- TOC entry 189 (class 1259 OID 25737)
+-- TOC entry 189 (class 1259 OID 19812)
 -- Name: r_element_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -406,7 +406,7 @@ CREATE TABLE "r_element_attribute" (
 ALTER TABLE "public"."r_element_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 190 (class 1259 OID 25743)
+-- TOC entry 190 (class 1259 OID 19818)
 -- Name: r_element_attribute_id_element_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -430,7 +430,7 @@ ALTER SEQUENCE "r_element_attribute_id_element_attribute_seq" OWNED BY "r_elemen
 
 
 --
--- TOC entry 191 (class 1259 OID 25745)
+-- TOC entry 191 (class 1259 OID 19820)
 -- Name: r_element_id_element_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -454,7 +454,7 @@ ALTER SEQUENCE "r_element_id_element_seq" OWNED BY "r_element"."id_element";
 
 
 --
--- TOC entry 192 (class 1259 OID 25747)
+-- TOC entry 192 (class 1259 OID 19822)
 -- Name: r_element_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -469,7 +469,7 @@ CREATE TABLE "r_element_type" (
 ALTER TABLE "public"."r_element_type" OWNER TO "postgres";
 
 --
--- TOC entry 193 (class 1259 OID 25753)
+-- TOC entry 193 (class 1259 OID 19828)
 -- Name: r_element_type_id_element_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -493,7 +493,7 @@ ALTER SEQUENCE "r_element_type_id_element_type_seq" OWNED BY "r_element_type"."i
 
 
 --
--- TOC entry 194 (class 1259 OID 25755)
+-- TOC entry 194 (class 1259 OID 19830)
 -- Name: r_job; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -521,7 +521,7 @@ CREATE TABLE "r_job" (
 ALTER TABLE "public"."r_job" OWNER TO "postgres";
 
 --
--- TOC entry 195 (class 1259 OID 25761)
+-- TOC entry 195 (class 1259 OID 19836)
 -- Name: r_job_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -538,7 +538,7 @@ CREATE TABLE "r_job_attribute" (
 ALTER TABLE "public"."r_job_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 196 (class 1259 OID 25767)
+-- TOC entry 196 (class 1259 OID 19842)
 -- Name: r_job_attribute_id_job_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -562,7 +562,7 @@ ALTER SEQUENCE "r_job_attribute_id_job_attribute_seq" OWNED BY "r_job_attribute"
 
 
 --
--- TOC entry 197 (class 1259 OID 25769)
+-- TOC entry 197 (class 1259 OID 19844)
 -- Name: r_job_hop; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -580,7 +580,7 @@ CREATE TABLE "r_job_hop" (
 ALTER TABLE "public"."r_job_hop" OWNER TO "postgres";
 
 --
--- TOC entry 198 (class 1259 OID 25772)
+-- TOC entry 198 (class 1259 OID 19847)
 -- Name: r_job_hop_id_job_hop_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -604,7 +604,7 @@ ALTER SEQUENCE "r_job_hop_id_job_hop_seq" OWNED BY "r_job_hop"."id_job_hop";
 
 
 --
--- TOC entry 199 (class 1259 OID 25774)
+-- TOC entry 199 (class 1259 OID 19849)
 -- Name: r_job_id_job_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -628,7 +628,7 @@ ALTER SEQUENCE "r_job_id_job_seq" OWNED BY "r_job"."id_job";
 
 
 --
--- TOC entry 200 (class 1259 OID 25776)
+-- TOC entry 200 (class 1259 OID 19851)
 -- Name: r_job_lock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -644,7 +644,7 @@ CREATE TABLE "r_job_lock" (
 ALTER TABLE "public"."r_job_lock" OWNER TO "postgres";
 
 --
--- TOC entry 201 (class 1259 OID 25782)
+-- TOC entry 201 (class 1259 OID 19857)
 -- Name: r_job_lock_id_job_lock_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -668,7 +668,7 @@ ALTER SEQUENCE "r_job_lock_id_job_lock_seq" OWNED BY "r_job_lock"."id_job_lock";
 
 
 --
--- TOC entry 202 (class 1259 OID 25784)
+-- TOC entry 202 (class 1259 OID 19859)
 -- Name: r_job_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -681,7 +681,7 @@ CREATE TABLE "r_job_note" (
 ALTER TABLE "public"."r_job_note" OWNER TO "postgres";
 
 --
--- TOC entry 203 (class 1259 OID 25787)
+-- TOC entry 203 (class 1259 OID 19862)
 -- Name: r_jobentry; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -697,7 +697,7 @@ CREATE TABLE "r_jobentry" (
 ALTER TABLE "public"."r_jobentry" OWNER TO "postgres";
 
 --
--- TOC entry 204 (class 1259 OID 25793)
+-- TOC entry 204 (class 1259 OID 19868)
 -- Name: r_jobentry_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -715,7 +715,7 @@ CREATE TABLE "r_jobentry_attribute" (
 ALTER TABLE "public"."r_jobentry_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 205 (class 1259 OID 25799)
+-- TOC entry 205 (class 1259 OID 19874)
 -- Name: r_jobentry_attribute_id_jobentry_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -739,7 +739,7 @@ ALTER SEQUENCE "r_jobentry_attribute_id_jobentry_attribute_seq" OWNED BY "r_jobe
 
 
 --
--- TOC entry 206 (class 1259 OID 25801)
+-- TOC entry 206 (class 1259 OID 19876)
 -- Name: r_jobentry_copy; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -759,7 +759,7 @@ CREATE TABLE "r_jobentry_copy" (
 ALTER TABLE "public"."r_jobentry_copy" OWNER TO "postgres";
 
 --
--- TOC entry 207 (class 1259 OID 25804)
+-- TOC entry 207 (class 1259 OID 19879)
 -- Name: r_jobentry_copy_id_jobentry_copy_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -783,7 +783,7 @@ ALTER SEQUENCE "r_jobentry_copy_id_jobentry_copy_seq" OWNED BY "r_jobentry_copy"
 
 
 --
--- TOC entry 208 (class 1259 OID 25806)
+-- TOC entry 208 (class 1259 OID 19881)
 -- Name: r_jobentry_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -797,7 +797,7 @@ CREATE TABLE "r_jobentry_database" (
 ALTER TABLE "public"."r_jobentry_database" OWNER TO "postgres";
 
 --
--- TOC entry 209 (class 1259 OID 25809)
+-- TOC entry 209 (class 1259 OID 19884)
 -- Name: r_jobentry_id_jobentry_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -821,7 +821,7 @@ ALTER SEQUENCE "r_jobentry_id_jobentry_seq" OWNED BY "r_jobentry"."id_jobentry";
 
 
 --
--- TOC entry 210 (class 1259 OID 25811)
+-- TOC entry 210 (class 1259 OID 19886)
 -- Name: r_jobentry_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -835,7 +835,7 @@ CREATE TABLE "r_jobentry_type" (
 ALTER TABLE "public"."r_jobentry_type" OWNER TO "postgres";
 
 --
--- TOC entry 211 (class 1259 OID 25817)
+-- TOC entry 211 (class 1259 OID 19892)
 -- Name: r_jobentry_type_id_jobentry_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -859,7 +859,7 @@ ALTER SEQUENCE "r_jobentry_type_id_jobentry_type_seq" OWNED BY "r_jobentry_type"
 
 
 --
--- TOC entry 212 (class 1259 OID 25819)
+-- TOC entry 212 (class 1259 OID 19894)
 -- Name: r_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -880,7 +880,7 @@ CREATE TABLE "r_log" (
 ALTER TABLE "public"."r_log" OWNER TO "postgres";
 
 --
--- TOC entry 213 (class 1259 OID 25825)
+-- TOC entry 213 (class 1259 OID 19900)
 -- Name: r_log_id_log_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -904,7 +904,7 @@ ALTER SEQUENCE "r_log_id_log_seq" OWNED BY "r_log"."id_log";
 
 
 --
--- TOC entry 214 (class 1259 OID 25827)
+-- TOC entry 214 (class 1259 OID 19902)
 -- Name: r_loglevel; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -918,7 +918,7 @@ CREATE TABLE "r_loglevel" (
 ALTER TABLE "public"."r_loglevel" OWNER TO "postgres";
 
 --
--- TOC entry 215 (class 1259 OID 25833)
+-- TOC entry 215 (class 1259 OID 19908)
 -- Name: r_loglevel_id_loglevel_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -942,7 +942,7 @@ ALTER SEQUENCE "r_loglevel_id_loglevel_seq" OWNED BY "r_loglevel"."id_loglevel";
 
 
 --
--- TOC entry 216 (class 1259 OID 25835)
+-- TOC entry 216 (class 1259 OID 19910)
 -- Name: r_namespace; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -955,7 +955,7 @@ CREATE TABLE "r_namespace" (
 ALTER TABLE "public"."r_namespace" OWNER TO "postgres";
 
 --
--- TOC entry 217 (class 1259 OID 25841)
+-- TOC entry 217 (class 1259 OID 19916)
 -- Name: r_namespace_id_namespace_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -979,7 +979,7 @@ ALTER SEQUENCE "r_namespace_id_namespace_seq" OWNED BY "r_namespace"."id_namespa
 
 
 --
--- TOC entry 218 (class 1259 OID 25843)
+-- TOC entry 218 (class 1259 OID 19918)
 -- Name: r_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1010,7 +1010,7 @@ CREATE TABLE "r_note" (
 ALTER TABLE "public"."r_note" OWNER TO "postgres";
 
 --
--- TOC entry 219 (class 1259 OID 25849)
+-- TOC entry 219 (class 1259 OID 19924)
 -- Name: r_note_id_note_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1034,7 +1034,7 @@ ALTER SEQUENCE "r_note_id_note_seq" OWNED BY "r_note"."id_note";
 
 
 --
--- TOC entry 220 (class 1259 OID 25851)
+-- TOC entry 220 (class 1259 OID 19926)
 -- Name: r_partition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1048,7 +1048,7 @@ CREATE TABLE "r_partition" (
 ALTER TABLE "public"."r_partition" OWNER TO "postgres";
 
 --
--- TOC entry 221 (class 1259 OID 25854)
+-- TOC entry 221 (class 1259 OID 19929)
 -- Name: r_partition_id_partition_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1072,7 +1072,7 @@ ALTER SEQUENCE "r_partition_id_partition_seq" OWNED BY "r_partition"."id_partiti
 
 
 --
--- TOC entry 222 (class 1259 OID 25856)
+-- TOC entry 222 (class 1259 OID 19931)
 -- Name: r_partition_schema; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1087,7 +1087,7 @@ CREATE TABLE "r_partition_schema" (
 ALTER TABLE "public"."r_partition_schema" OWNER TO "postgres";
 
 --
--- TOC entry 223 (class 1259 OID 25862)
+-- TOC entry 223 (class 1259 OID 19937)
 -- Name: r_partition_schema_id_partition_schema_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1111,7 +1111,7 @@ ALTER SEQUENCE "r_partition_schema_id_partition_schema_seq" OWNED BY "r_partitio
 
 
 --
--- TOC entry 224 (class 1259 OID 25864)
+-- TOC entry 224 (class 1259 OID 19939)
 -- Name: r_repository_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1127,7 +1127,7 @@ CREATE TABLE "r_repository_log" (
 ALTER TABLE "public"."r_repository_log" OWNER TO "postgres";
 
 --
--- TOC entry 225 (class 1259 OID 25870)
+-- TOC entry 225 (class 1259 OID 19945)
 -- Name: r_repository_log_id_repository_log_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1151,7 +1151,7 @@ ALTER SEQUENCE "r_repository_log_id_repository_log_seq" OWNED BY "r_repository_l
 
 
 --
--- TOC entry 226 (class 1259 OID 25872)
+-- TOC entry 226 (class 1259 OID 19947)
 -- Name: r_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1173,7 +1173,7 @@ CREATE TABLE "r_slave" (
 ALTER TABLE "public"."r_slave" OWNER TO "postgres";
 
 --
--- TOC entry 227 (class 1259 OID 25878)
+-- TOC entry 227 (class 1259 OID 19953)
 -- Name: r_slave_id_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1197,7 +1197,7 @@ ALTER SEQUENCE "r_slave_id_slave_seq" OWNED BY "r_slave"."id_slave";
 
 
 --
--- TOC entry 228 (class 1259 OID 25880)
+-- TOC entry 228 (class 1259 OID 19955)
 -- Name: r_step; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1219,7 +1219,7 @@ CREATE TABLE "r_step" (
 ALTER TABLE "public"."r_step" OWNER TO "postgres";
 
 --
--- TOC entry 229 (class 1259 OID 25886)
+-- TOC entry 229 (class 1259 OID 19961)
 -- Name: r_step_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1237,7 +1237,7 @@ CREATE TABLE "r_step_attribute" (
 ALTER TABLE "public"."r_step_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 230 (class 1259 OID 25892)
+-- TOC entry 230 (class 1259 OID 19967)
 -- Name: r_step_attribute_id_step_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1261,7 +1261,7 @@ ALTER SEQUENCE "r_step_attribute_id_step_attribute_seq" OWNED BY "r_step_attribu
 
 
 --
--- TOC entry 231 (class 1259 OID 25894)
+-- TOC entry 231 (class 1259 OID 19969)
 -- Name: r_step_database; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1275,7 +1275,7 @@ CREATE TABLE "r_step_database" (
 ALTER TABLE "public"."r_step_database" OWNER TO "postgres";
 
 --
--- TOC entry 232 (class 1259 OID 25897)
+-- TOC entry 232 (class 1259 OID 19972)
 -- Name: r_step_id_step_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1299,7 +1299,7 @@ ALTER SEQUENCE "r_step_id_step_seq" OWNED BY "r_step"."id_step";
 
 
 --
--- TOC entry 233 (class 1259 OID 25899)
+-- TOC entry 233 (class 1259 OID 19974)
 -- Name: r_step_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1314,7 +1314,7 @@ CREATE TABLE "r_step_type" (
 ALTER TABLE "public"."r_step_type" OWNER TO "postgres";
 
 --
--- TOC entry 234 (class 1259 OID 25905)
+-- TOC entry 234 (class 1259 OID 19980)
 -- Name: r_step_type_id_step_type_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1338,7 +1338,7 @@ ALTER SEQUENCE "r_step_type_id_step_type_seq" OWNED BY "r_step_type"."id_step_ty
 
 
 --
--- TOC entry 235 (class 1259 OID 25907)
+-- TOC entry 235 (class 1259 OID 19982)
 -- Name: r_trans_attribute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1355,7 +1355,7 @@ CREATE TABLE "r_trans_attribute" (
 ALTER TABLE "public"."r_trans_attribute" OWNER TO "postgres";
 
 --
--- TOC entry 236 (class 1259 OID 25913)
+-- TOC entry 236 (class 1259 OID 19988)
 -- Name: r_trans_attribute_id_trans_attribute_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1379,7 +1379,7 @@ ALTER SEQUENCE "r_trans_attribute_id_trans_attribute_seq" OWNED BY "r_trans_attr
 
 
 --
--- TOC entry 237 (class 1259 OID 25915)
+-- TOC entry 237 (class 1259 OID 19990)
 -- Name: r_trans_cluster; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1393,7 +1393,7 @@ CREATE TABLE "r_trans_cluster" (
 ALTER TABLE "public"."r_trans_cluster" OWNER TO "postgres";
 
 --
--- TOC entry 238 (class 1259 OID 25918)
+-- TOC entry 238 (class 1259 OID 19993)
 -- Name: r_trans_cluster_id_trans_cluster_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1417,7 +1417,7 @@ ALTER SEQUENCE "r_trans_cluster_id_trans_cluster_seq" OWNED BY "r_trans_cluster"
 
 
 --
--- TOC entry 239 (class 1259 OID 25920)
+-- TOC entry 239 (class 1259 OID 19995)
 -- Name: r_trans_hop; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1433,7 +1433,7 @@ CREATE TABLE "r_trans_hop" (
 ALTER TABLE "public"."r_trans_hop" OWNER TO "postgres";
 
 --
--- TOC entry 240 (class 1259 OID 25923)
+-- TOC entry 240 (class 1259 OID 19998)
 -- Name: r_trans_hop_id_trans_hop_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1457,7 +1457,7 @@ ALTER SEQUENCE "r_trans_hop_id_trans_hop_seq" OWNED BY "r_trans_hop"."id_trans_h
 
 
 --
--- TOC entry 241 (class 1259 OID 25925)
+-- TOC entry 241 (class 1259 OID 20000)
 -- Name: r_trans_lock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1473,7 +1473,7 @@ CREATE TABLE "r_trans_lock" (
 ALTER TABLE "public"."r_trans_lock" OWNER TO "postgres";
 
 --
--- TOC entry 242 (class 1259 OID 25931)
+-- TOC entry 242 (class 1259 OID 20006)
 -- Name: r_trans_lock_id_trans_lock_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1497,7 +1497,7 @@ ALTER SEQUENCE "r_trans_lock_id_trans_lock_seq" OWNED BY "r_trans_lock"."id_tran
 
 
 --
--- TOC entry 243 (class 1259 OID 25933)
+-- TOC entry 243 (class 1259 OID 20008)
 -- Name: r_trans_note; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1510,7 +1510,7 @@ CREATE TABLE "r_trans_note" (
 ALTER TABLE "public"."r_trans_note" OWNER TO "postgres";
 
 --
--- TOC entry 244 (class 1259 OID 25936)
+-- TOC entry 244 (class 1259 OID 20011)
 -- Name: r_trans_partition_schema; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1524,7 +1524,7 @@ CREATE TABLE "r_trans_partition_schema" (
 ALTER TABLE "public"."r_trans_partition_schema" OWNER TO "postgres";
 
 --
--- TOC entry 245 (class 1259 OID 25939)
+-- TOC entry 245 (class 1259 OID 20014)
 -- Name: r_trans_partition_schema_id_trans_partition_schema_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1548,7 +1548,7 @@ ALTER SEQUENCE "r_trans_partition_schema_id_trans_partition_schema_seq" OWNED BY
 
 
 --
--- TOC entry 246 (class 1259 OID 25941)
+-- TOC entry 246 (class 1259 OID 20016)
 -- Name: r_trans_slave; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1562,7 +1562,7 @@ CREATE TABLE "r_trans_slave" (
 ALTER TABLE "public"."r_trans_slave" OWNER TO "postgres";
 
 --
--- TOC entry 247 (class 1259 OID 25944)
+-- TOC entry 247 (class 1259 OID 20019)
 -- Name: r_trans_slave_id_trans_slave_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1586,7 +1586,7 @@ ALTER SEQUENCE "r_trans_slave_id_trans_slave_seq" OWNED BY "r_trans_slave"."id_t
 
 
 --
--- TOC entry 248 (class 1259 OID 25946)
+-- TOC entry 248 (class 1259 OID 20021)
 -- Name: r_trans_step_condition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1600,7 +1600,7 @@ CREATE TABLE "r_trans_step_condition" (
 ALTER TABLE "public"."r_trans_step_condition" OWNER TO "postgres";
 
 --
--- TOC entry 249 (class 1259 OID 25949)
+-- TOC entry 249 (class 1259 OID 20024)
 -- Name: r_transformation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1637,7 +1637,7 @@ CREATE TABLE "r_transformation" (
 ALTER TABLE "public"."r_transformation" OWNER TO "postgres";
 
 --
--- TOC entry 250 (class 1259 OID 25955)
+-- TOC entry 250 (class 1259 OID 20030)
 -- Name: r_transformation_id_transformation_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1661,7 +1661,7 @@ ALTER SEQUENCE "r_transformation_id_transformation_seq" OWNED BY "r_transformati
 
 
 --
--- TOC entry 251 (class 1259 OID 25957)
+-- TOC entry 251 (class 1259 OID 20032)
 -- Name: r_user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1678,7 +1678,7 @@ CREATE TABLE "r_user" (
 ALTER TABLE "public"."r_user" OWNER TO "postgres";
 
 --
--- TOC entry 252 (class 1259 OID 25963)
+-- TOC entry 252 (class 1259 OID 20038)
 -- Name: r_user_id_user_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1702,7 +1702,7 @@ ALTER SEQUENCE "r_user_id_user_seq" OWNED BY "r_user"."id_user";
 
 
 --
--- TOC entry 253 (class 1259 OID 25965)
+-- TOC entry 253 (class 1259 OID 20040)
 -- Name: r_value; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1718,7 +1718,7 @@ CREATE TABLE "r_value" (
 ALTER TABLE "public"."r_value" OWNER TO "postgres";
 
 --
--- TOC entry 254 (class 1259 OID 25971)
+-- TOC entry 254 (class 1259 OID 20046)
 -- Name: r_value_id_value_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1742,7 +1742,7 @@ ALTER SEQUENCE "r_value_id_value_seq" OWNED BY "r_value"."id_value";
 
 
 --
--- TOC entry 255 (class 1259 OID 25973)
+-- TOC entry 255 (class 1259 OID 20048)
 -- Name: r_version; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -1758,7 +1758,7 @@ CREATE TABLE "r_version" (
 ALTER TABLE "public"."r_version" OWNER TO "postgres";
 
 --
--- TOC entry 256 (class 1259 OID 25976)
+-- TOC entry 256 (class 1259 OID 20051)
 -- Name: r_version_id_version_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1782,7 +1782,7 @@ ALTER SEQUENCE "r_version_id_version_seq" OWNED BY "r_version"."id_version";
 
 
 --
--- TOC entry 2152 (class 2604 OID 25978)
+-- TOC entry 2152 (class 2604 OID 20053)
 -- Name: id_cluster; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1790,7 +1790,7 @@ ALTER TABLE ONLY "r_cluster" ALTER COLUMN "id_cluster" SET DEFAULT "nextval"('"r
 
 
 --
--- TOC entry 2153 (class 2604 OID 25979)
+-- TOC entry 2153 (class 2604 OID 20054)
 -- Name: id_cluster_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1798,7 +1798,7 @@ ALTER TABLE ONLY "r_cluster_slave" ALTER COLUMN "id_cluster_slave" SET DEFAULT "
 
 
 --
--- TOC entry 2154 (class 2604 OID 25980)
+-- TOC entry 2154 (class 2604 OID 20055)
 -- Name: id_condition; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1806,7 +1806,7 @@ ALTER TABLE ONLY "r_condition" ALTER COLUMN "id_condition" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2155 (class 2604 OID 25981)
+-- TOC entry 2155 (class 2604 OID 20056)
 -- Name: id_database; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1814,7 +1814,7 @@ ALTER TABLE ONLY "r_database" ALTER COLUMN "id_database" SET DEFAULT "nextval"('
 
 
 --
--- TOC entry 2156 (class 2604 OID 25982)
+-- TOC entry 2156 (class 2604 OID 20057)
 -- Name: id_database_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1822,7 +1822,7 @@ ALTER TABLE ONLY "r_database_attribute" ALTER COLUMN "id_database_attribute" SET
 
 
 --
--- TOC entry 2157 (class 2604 OID 25983)
+-- TOC entry 2157 (class 2604 OID 20058)
 -- Name: id_database_contype; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1830,7 +1830,7 @@ ALTER TABLE ONLY "r_database_contype" ALTER COLUMN "id_database_contype" SET DEF
 
 
 --
--- TOC entry 2158 (class 2604 OID 25984)
+-- TOC entry 2158 (class 2604 OID 20059)
 -- Name: id_database_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1838,7 +1838,7 @@ ALTER TABLE ONLY "r_database_type" ALTER COLUMN "id_database_type" SET DEFAULT "
 
 
 --
--- TOC entry 2159 (class 2604 OID 25985)
+-- TOC entry 2159 (class 2604 OID 20060)
 -- Name: id_dependency; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1846,7 +1846,7 @@ ALTER TABLE ONLY "r_dependency" ALTER COLUMN "id_dependency" SET DEFAULT "nextva
 
 
 --
--- TOC entry 2160 (class 2604 OID 25986)
+-- TOC entry 2160 (class 2604 OID 20061)
 -- Name: id_directory; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1854,7 +1854,7 @@ ALTER TABLE ONLY "r_directory" ALTER COLUMN "id_directory" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2161 (class 2604 OID 25987)
+-- TOC entry 2161 (class 2604 OID 20062)
 -- Name: id_element; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1862,7 +1862,7 @@ ALTER TABLE ONLY "r_element" ALTER COLUMN "id_element" SET DEFAULT "nextval"('"r
 
 
 --
--- TOC entry 2162 (class 2604 OID 25988)
+-- TOC entry 2162 (class 2604 OID 20063)
 -- Name: id_element_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1870,7 +1870,7 @@ ALTER TABLE ONLY "r_element_attribute" ALTER COLUMN "id_element_attribute" SET D
 
 
 --
--- TOC entry 2163 (class 2604 OID 25989)
+-- TOC entry 2163 (class 2604 OID 20064)
 -- Name: id_element_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1878,7 +1878,7 @@ ALTER TABLE ONLY "r_element_type" ALTER COLUMN "id_element_type" SET DEFAULT "ne
 
 
 --
--- TOC entry 2164 (class 2604 OID 25990)
+-- TOC entry 2164 (class 2604 OID 20065)
 -- Name: id_job; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1886,7 +1886,7 @@ ALTER TABLE ONLY "r_job" ALTER COLUMN "id_job" SET DEFAULT "nextval"('"r_job_id_
 
 
 --
--- TOC entry 2165 (class 2604 OID 25991)
+-- TOC entry 2165 (class 2604 OID 20066)
 -- Name: id_job_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1894,7 +1894,7 @@ ALTER TABLE ONLY "r_job_attribute" ALTER COLUMN "id_job_attribute" SET DEFAULT "
 
 
 --
--- TOC entry 2166 (class 2604 OID 25992)
+-- TOC entry 2166 (class 2604 OID 20067)
 -- Name: id_job_hop; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1902,7 +1902,7 @@ ALTER TABLE ONLY "r_job_hop" ALTER COLUMN "id_job_hop" SET DEFAULT "nextval"('"r
 
 
 --
--- TOC entry 2167 (class 2604 OID 25993)
+-- TOC entry 2167 (class 2604 OID 20068)
 -- Name: id_job_lock; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1910,7 +1910,7 @@ ALTER TABLE ONLY "r_job_lock" ALTER COLUMN "id_job_lock" SET DEFAULT "nextval"('
 
 
 --
--- TOC entry 2168 (class 2604 OID 25994)
+-- TOC entry 2168 (class 2604 OID 20069)
 -- Name: id_jobentry; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1918,7 +1918,7 @@ ALTER TABLE ONLY "r_jobentry" ALTER COLUMN "id_jobentry" SET DEFAULT "nextval"('
 
 
 --
--- TOC entry 2169 (class 2604 OID 25995)
+-- TOC entry 2169 (class 2604 OID 20070)
 -- Name: id_jobentry_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1926,7 +1926,7 @@ ALTER TABLE ONLY "r_jobentry_attribute" ALTER COLUMN "id_jobentry_attribute" SET
 
 
 --
--- TOC entry 2170 (class 2604 OID 25996)
+-- TOC entry 2170 (class 2604 OID 20071)
 -- Name: id_jobentry_copy; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1934,7 +1934,7 @@ ALTER TABLE ONLY "r_jobentry_copy" ALTER COLUMN "id_jobentry_copy" SET DEFAULT "
 
 
 --
--- TOC entry 2171 (class 2604 OID 25997)
+-- TOC entry 2171 (class 2604 OID 20072)
 -- Name: id_jobentry_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1942,7 +1942,7 @@ ALTER TABLE ONLY "r_jobentry_type" ALTER COLUMN "id_jobentry_type" SET DEFAULT "
 
 
 --
--- TOC entry 2172 (class 2604 OID 25998)
+-- TOC entry 2172 (class 2604 OID 20073)
 -- Name: id_log; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1950,7 +1950,7 @@ ALTER TABLE ONLY "r_log" ALTER COLUMN "id_log" SET DEFAULT "nextval"('"r_log_id_
 
 
 --
--- TOC entry 2173 (class 2604 OID 25999)
+-- TOC entry 2173 (class 2604 OID 20074)
 -- Name: id_loglevel; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1958,7 +1958,7 @@ ALTER TABLE ONLY "r_loglevel" ALTER COLUMN "id_loglevel" SET DEFAULT "nextval"('
 
 
 --
--- TOC entry 2174 (class 2604 OID 26000)
+-- TOC entry 2174 (class 2604 OID 20075)
 -- Name: id_namespace; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1966,7 +1966,7 @@ ALTER TABLE ONLY "r_namespace" ALTER COLUMN "id_namespace" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2175 (class 2604 OID 26001)
+-- TOC entry 2175 (class 2604 OID 20076)
 -- Name: id_note; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1974,7 +1974,7 @@ ALTER TABLE ONLY "r_note" ALTER COLUMN "id_note" SET DEFAULT "nextval"('"r_note_
 
 
 --
--- TOC entry 2176 (class 2604 OID 26002)
+-- TOC entry 2176 (class 2604 OID 20077)
 -- Name: id_partition; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1982,7 +1982,7 @@ ALTER TABLE ONLY "r_partition" ALTER COLUMN "id_partition" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2177 (class 2604 OID 26003)
+-- TOC entry 2177 (class 2604 OID 20078)
 -- Name: id_partition_schema; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1990,7 +1990,7 @@ ALTER TABLE ONLY "r_partition_schema" ALTER COLUMN "id_partition_schema" SET DEF
 
 
 --
--- TOC entry 2178 (class 2604 OID 26004)
+-- TOC entry 2178 (class 2604 OID 20079)
 -- Name: id_repository_log; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1998,7 +1998,7 @@ ALTER TABLE ONLY "r_repository_log" ALTER COLUMN "id_repository_log" SET DEFAULT
 
 
 --
--- TOC entry 2179 (class 2604 OID 26005)
+-- TOC entry 2179 (class 2604 OID 20080)
 -- Name: id_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2006,7 +2006,7 @@ ALTER TABLE ONLY "r_slave" ALTER COLUMN "id_slave" SET DEFAULT "nextval"('"r_sla
 
 
 --
--- TOC entry 2180 (class 2604 OID 26006)
+-- TOC entry 2180 (class 2604 OID 20081)
 -- Name: id_step; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2014,7 +2014,7 @@ ALTER TABLE ONLY "r_step" ALTER COLUMN "id_step" SET DEFAULT "nextval"('"r_step_
 
 
 --
--- TOC entry 2181 (class 2604 OID 26007)
+-- TOC entry 2181 (class 2604 OID 20082)
 -- Name: id_step_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2022,7 +2022,7 @@ ALTER TABLE ONLY "r_step_attribute" ALTER COLUMN "id_step_attribute" SET DEFAULT
 
 
 --
--- TOC entry 2182 (class 2604 OID 26008)
+-- TOC entry 2182 (class 2604 OID 20083)
 -- Name: id_step_type; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2030,7 +2030,7 @@ ALTER TABLE ONLY "r_step_type" ALTER COLUMN "id_step_type" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2183 (class 2604 OID 26009)
+-- TOC entry 2183 (class 2604 OID 20084)
 -- Name: id_trans_attribute; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2038,7 +2038,7 @@ ALTER TABLE ONLY "r_trans_attribute" ALTER COLUMN "id_trans_attribute" SET DEFAU
 
 
 --
--- TOC entry 2184 (class 2604 OID 26010)
+-- TOC entry 2184 (class 2604 OID 20085)
 -- Name: id_trans_cluster; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2046,7 +2046,7 @@ ALTER TABLE ONLY "r_trans_cluster" ALTER COLUMN "id_trans_cluster" SET DEFAULT "
 
 
 --
--- TOC entry 2185 (class 2604 OID 26011)
+-- TOC entry 2185 (class 2604 OID 20086)
 -- Name: id_trans_hop; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2054,7 +2054,7 @@ ALTER TABLE ONLY "r_trans_hop" ALTER COLUMN "id_trans_hop" SET DEFAULT "nextval"
 
 
 --
--- TOC entry 2186 (class 2604 OID 26012)
+-- TOC entry 2186 (class 2604 OID 20087)
 -- Name: id_trans_lock; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2062,7 +2062,7 @@ ALTER TABLE ONLY "r_trans_lock" ALTER COLUMN "id_trans_lock" SET DEFAULT "nextva
 
 
 --
--- TOC entry 2187 (class 2604 OID 26013)
+-- TOC entry 2187 (class 2604 OID 20088)
 -- Name: id_trans_partition_schema; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2070,7 +2070,7 @@ ALTER TABLE ONLY "r_trans_partition_schema" ALTER COLUMN "id_trans_partition_sch
 
 
 --
--- TOC entry 2188 (class 2604 OID 26014)
+-- TOC entry 2188 (class 2604 OID 20089)
 -- Name: id_trans_slave; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2078,7 +2078,7 @@ ALTER TABLE ONLY "r_trans_slave" ALTER COLUMN "id_trans_slave" SET DEFAULT "next
 
 
 --
--- TOC entry 2189 (class 2604 OID 26015)
+-- TOC entry 2189 (class 2604 OID 20090)
 -- Name: id_transformation; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2086,7 +2086,7 @@ ALTER TABLE ONLY "r_transformation" ALTER COLUMN "id_transformation" SET DEFAULT
 
 
 --
--- TOC entry 2190 (class 2604 OID 26016)
+-- TOC entry 2190 (class 2604 OID 20091)
 -- Name: id_user; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2094,7 +2094,7 @@ ALTER TABLE ONLY "r_user" ALTER COLUMN "id_user" SET DEFAULT "nextval"('"r_user_
 
 
 --
--- TOC entry 2191 (class 2604 OID 26017)
+-- TOC entry 2191 (class 2604 OID 20092)
 -- Name: id_value; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2102,7 +2102,7 @@ ALTER TABLE ONLY "r_value" ALTER COLUMN "id_value" SET DEFAULT "nextval"('"r_val
 
 
 --
--- TOC entry 2192 (class 2604 OID 26018)
+-- TOC entry 2192 (class 2604 OID 20093)
 -- Name: id_version; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -2110,7 +2110,7 @@ ALTER TABLE ONLY "r_version" ALTER COLUMN "id_version" SET DEFAULT "nextval"('"r
 
 
 --
--- TOC entry 2310 (class 0 OID 25665)
+-- TOC entry 2310 (class 0 OID 19740)
 -- Dependencies: 170
 -- Data for Name: r_cluster; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2127,7 +2127,7 @@ SELECT pg_catalog.setval('"r_cluster_id_cluster_seq"', 1, false);
 
 
 --
--- TOC entry 2312 (class 0 OID 25673)
+-- TOC entry 2312 (class 0 OID 19748)
 -- Dependencies: 172
 -- Data for Name: r_cluster_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2144,7 +2144,7 @@ SELECT pg_catalog.setval('"r_cluster_slave_id_cluster_slave_seq"', 1, false);
 
 
 --
--- TOC entry 2314 (class 0 OID 25678)
+-- TOC entry 2314 (class 0 OID 19753)
 -- Dependencies: 174
 -- Data for Name: r_condition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2164,7 +2164,7 @@ SELECT pg_catalog.setval('"r_condition_id_condition_seq"', 1, false);
 
 
 --
--- TOC entry 2316 (class 0 OID 25686)
+-- TOC entry 2316 (class 0 OID 19761)
 -- Dependencies: 176
 -- Data for Name: r_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2173,7 +2173,7 @@ INSERT INTO "r_database" ("id_database", "name", "id_database_type", "id_databas
 
 
 --
--- TOC entry 2317 (class 0 OID 25692)
+-- TOC entry 2317 (class 0 OID 19767)
 -- Dependencies: 177
 -- Data for Name: r_database_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2201,7 +2201,7 @@ SELECT pg_catalog.setval('"r_database_attribute_id_database_attribute_seq"', 1, 
 
 
 --
--- TOC entry 2319 (class 0 OID 25700)
+-- TOC entry 2319 (class 0 OID 19775)
 -- Dependencies: 179
 -- Data for Name: r_database_contype; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2233,7 +2233,7 @@ SELECT pg_catalog.setval('"r_database_id_database_seq"', 1, false);
 
 
 --
--- TOC entry 2322 (class 0 OID 25710)
+-- TOC entry 2322 (class 0 OID 19785)
 -- Dependencies: 182
 -- Data for Name: r_database_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2299,7 +2299,7 @@ SELECT pg_catalog.setval('"r_database_type_id_database_type_seq"', 1, false);
 
 
 --
--- TOC entry 2324 (class 0 OID 25718)
+-- TOC entry 2324 (class 0 OID 19793)
 -- Dependencies: 184
 -- Data for Name: r_dependency; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2316,7 +2316,7 @@ SELECT pg_catalog.setval('"r_dependency_id_dependency_seq"', 1, false);
 
 
 --
--- TOC entry 2326 (class 0 OID 25726)
+-- TOC entry 2326 (class 0 OID 19801)
 -- Dependencies: 186
 -- Data for Name: r_directory; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2341,7 +2341,7 @@ SELECT pg_catalog.setval('"r_directory_id_directory_seq"', 1, false);
 
 
 --
--- TOC entry 2328 (class 0 OID 25731)
+-- TOC entry 2328 (class 0 OID 19806)
 -- Dependencies: 188
 -- Data for Name: r_element; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2349,7 +2349,7 @@ SELECT pg_catalog.setval('"r_directory_id_directory_seq"', 1, false);
 
 
 --
--- TOC entry 2329 (class 0 OID 25737)
+-- TOC entry 2329 (class 0 OID 19812)
 -- Dependencies: 189
 -- Data for Name: r_element_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2375,7 +2375,7 @@ SELECT pg_catalog.setval('"r_element_id_element_seq"', 1, false);
 
 
 --
--- TOC entry 2332 (class 0 OID 25747)
+-- TOC entry 2332 (class 0 OID 19822)
 -- Dependencies: 192
 -- Data for Name: r_element_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2392,7 +2392,7 @@ SELECT pg_catalog.setval('"r_element_type_id_element_type_seq"', 1, false);
 
 
 --
--- TOC entry 2334 (class 0 OID 25755)
+-- TOC entry 2334 (class 0 OID 19830)
 -- Dependencies: 194
 -- Data for Name: r_job; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2421,7 +2421,7 @@ INSERT INTO "r_job" ("id_job", "id_directory", "name", "description", "extended_
 
 
 --
--- TOC entry 2335 (class 0 OID 25761)
+-- TOC entry 2335 (class 0 OID 19836)
 -- Dependencies: 195
 -- Data for Name: r_job_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6071,7 +6071,7 @@ SELECT pg_catalog.setval('"r_job_attribute_id_job_attribute_seq"', 1, false);
 
 
 --
--- TOC entry 2337 (class 0 OID 25769)
+-- TOC entry 2337 (class 0 OID 19844)
 -- Dependencies: 197
 -- Data for Name: r_job_hop; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6232,7 +6232,7 @@ SELECT pg_catalog.setval('"r_job_id_job_seq"', 1, false);
 
 
 --
--- TOC entry 2340 (class 0 OID 25776)
+-- TOC entry 2340 (class 0 OID 19851)
 -- Dependencies: 200
 -- Data for Name: r_job_lock; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6249,7 +6249,7 @@ SELECT pg_catalog.setval('"r_job_lock_id_job_lock_seq"', 1, false);
 
 
 --
--- TOC entry 2342 (class 0 OID 25784)
+-- TOC entry 2342 (class 0 OID 19859)
 -- Dependencies: 202
 -- Data for Name: r_job_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6259,7 +6259,7 @@ INSERT INTO "r_job_note" ("id_job", "id_note") VALUES (16, 4);
 
 
 --
--- TOC entry 2343 (class 0 OID 25787)
+-- TOC entry 2343 (class 0 OID 19862)
 -- Dependencies: 203
 -- Data for Name: r_jobentry; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -6415,7 +6415,7 @@ INSERT INTO "r_jobentry" ("id_jobentry", "id_job", "id_jobentry_type", "name", "
 
 
 --
--- TOC entry 2344 (class 0 OID 25793)
+-- TOC entry 2344 (class 0 OID 19868)
 -- Dependencies: 204
 -- Data for Name: r_jobentry_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -9711,7 +9711,7 @@ SELECT pg_catalog.setval('"r_jobentry_attribute_id_jobentry_attribute_seq"', 1, 
 
 
 --
--- TOC entry 2346 (class 0 OID 25801)
+-- TOC entry 2346 (class 0 OID 19876)
 -- Dependencies: 206
 -- Data for Name: r_jobentry_copy; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -9876,7 +9876,7 @@ SELECT pg_catalog.setval('"r_jobentry_copy_id_jobentry_copy_seq"', 1, false);
 
 
 --
--- TOC entry 2348 (class 0 OID 25806)
+-- TOC entry 2348 (class 0 OID 19881)
 -- Dependencies: 208
 -- Data for Name: r_jobentry_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -9916,7 +9916,7 @@ SELECT pg_catalog.setval('"r_jobentry_id_jobentry_seq"', 1, false);
 
 
 --
--- TOC entry 2350 (class 0 OID 25811)
+-- TOC entry 2350 (class 0 OID 19886)
 -- Dependencies: 210
 -- Data for Name: r_jobentry_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10021,7 +10021,7 @@ SELECT pg_catalog.setval('"r_jobentry_type_id_jobentry_type_seq"', 1, false);
 
 
 --
--- TOC entry 2352 (class 0 OID 25819)
+-- TOC entry 2352 (class 0 OID 19894)
 -- Dependencies: 212
 -- Data for Name: r_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10038,7 +10038,7 @@ SELECT pg_catalog.setval('"r_log_id_log_seq"', 1, false);
 
 
 --
--- TOC entry 2354 (class 0 OID 25827)
+-- TOC entry 2354 (class 0 OID 19902)
 -- Dependencies: 214
 -- Data for Name: r_loglevel; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10061,7 +10061,7 @@ SELECT pg_catalog.setval('"r_loglevel_id_loglevel_seq"', 1, false);
 
 
 --
--- TOC entry 2356 (class 0 OID 25835)
+-- TOC entry 2356 (class 0 OID 19910)
 -- Dependencies: 216
 -- Data for Name: r_namespace; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10078,7 +10078,7 @@ SELECT pg_catalog.setval('"r_namespace_id_namespace_seq"', 1, false);
 
 
 --
--- TOC entry 2358 (class 0 OID 25843)
+-- TOC entry 2358 (class 0 OID 19918)
 -- Dependencies: 218
 -- Data for Name: r_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10103,7 +10103,7 @@ SELECT pg_catalog.setval('"r_note_id_note_seq"', 1, false);
 
 
 --
--- TOC entry 2360 (class 0 OID 25851)
+-- TOC entry 2360 (class 0 OID 19926)
 -- Dependencies: 220
 -- Data for Name: r_partition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10120,7 +10120,7 @@ SELECT pg_catalog.setval('"r_partition_id_partition_seq"', 1, false);
 
 
 --
--- TOC entry 2362 (class 0 OID 25856)
+-- TOC entry 2362 (class 0 OID 19931)
 -- Dependencies: 222
 -- Data for Name: r_partition_schema; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10137,12 +10137,11 @@ SELECT pg_catalog.setval('"r_partition_schema_id_partition_schema_seq"', 1, fals
 
 
 --
--- TOC entry 2364 (class 0 OID 25864)
+-- TOC entry 2364 (class 0 OID 19939)
 -- Dependencies: 224
 -- Data for Name: r_repository_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "r_repository_log" ("id_repository_log", "rep_version", "log_date", "log_user", "operation_desc") VALUES (1, '5.0', '2015-02-22 01:06:57.437', 'admin', 'save transformation ''Get CMIS documents and folders''');
 
 
 --
@@ -10155,7 +10154,7 @@ SELECT pg_catalog.setval('"r_repository_log_id_repository_log_seq"', 1, false);
 
 
 --
--- TOC entry 2366 (class 0 OID 25872)
+-- TOC entry 2366 (class 0 OID 19947)
 -- Dependencies: 226
 -- Data for Name: r_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10172,7 +10171,7 @@ SELECT pg_catalog.setval('"r_slave_id_slave_seq"', 1, false);
 
 
 --
--- TOC entry 2368 (class 0 OID 25880)
+-- TOC entry 2368 (class 0 OID 19955)
 -- Dependencies: 228
 -- Data for Name: r_step; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -10293,9 +10292,6 @@ INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (135, 24, 'Modified Java Script Value', NULL, 117, true, 1, 150, 30, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (136, 24, 'Set Variables', NULL, 175, true, 1, 274, 30, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (137, 24, 'names', NULL, 197, true, 1, 32, 29, true, '1');
-INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (138, 25, 'Cmis Input', NULL, 24, true, 1, 47, 42, true, '1');
-INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (139, 25, 'Modified Java Script Value', NULL, 117, true, 1, 174, 42, true, '1');
-INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (140, 25, 'ope_cmis_document_parent', NULL, 198, true, 1, 348, 42, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (141, 26, 'Modified Java Script Value', NULL, 117, true, 1, 188, 29, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (142, 26, 'Source table', NULL, 197, true, 1, 55, 30, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (143, 26, 'Update', NULL, 207, true, 1, 320, 30, true, '1');
@@ -10364,10 +10360,14 @@ INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (206, 15, 'Ignoring existing folder', NULL, 212, true, 1, 735, 174, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (207, 15, 'Ignoring new document', NULL, 212, true, 1, 739, 92, true, '1');
 INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (208, 15, 'Ignoring new folder', NULL, 212, true, 1, 733, 261, true, '1');
+INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (209, 25, 'Cmis Input', NULL, 24, true, 1, 47, 42, true, '1');
+INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (210, 25, 'Modified Java Script Value', NULL, 117, true, 1, 174, 42, true, '1');
+INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (211, 25, 'ope_cmis_document_parent', NULL, 198, true, 1, 348, 42, true, '1');
+INSERT INTO "r_step" ("id_step", "id_transformation", "name", "description", "id_step_type", "distribute", "copies", "gui_location_x", "gui_location_y", "gui_draw", "copies_string") VALUES (212, 25, 'Ignoring not existing document', NULL, 212, true, 1, 550, 42, true, '1');
 
 
 --
--- TOC entry 2369 (class 0 OID 25886)
+-- TOC entry 2369 (class 0 OID 19961)
 -- Dependencies: 229
 -- Data for Name: r_step_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -12514,6 +12514,12 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (1981, 19, 99, 0, 'id_connection', 1, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2054, 20, 102, 9, 'variable_type', 0, 'PARENT_JOB');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2055, 20, 102, 9, 'default_value', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2056, 20, 102, 10, 'field_name', 0, 'folders_lastmodificationdate');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2057, 20, 102, 10, 'variable_name', 0, 'unmodified_folders_lastmodificationdate');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2058, 20, 102, 10, 'variable_type', 0, 'PARENT_JOB');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2059, 20, 102, 10, 'default_value', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2060, 20, 102, 11, 'field_name', 0, 'folders_name');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2061, 20, 102, 11, 'variable_name', 0, 'unmodified_folders_name');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (1982, 19, 99, 0, 'sql', 0, 'select
  (select max(data) from (select max(last_modification_date_id) as "data" from dm_dim_documents where alfresco_id = ${alfresco_id} union all select max(last_modification_date_id) as "data" from dm_dim_folders where alfresco_id = ${alfresco_id} union all select ''2001-01-01''::date) t) || ''T00:00:00.000+00:00'' as cmis_last_update,
  (select max(data) from (select max(last_modification_date_id) as "data" from dm_dim_documents where alfresco_id = ${alfresco_id} union all select max(last_modification_date_id) as "data" from dm_dim_folders where alfresco_id = ${alfresco_id} union all select ''2001-01-01''::date) t)::date as last_update
@@ -12597,12 +12603,6 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2051, 20, 102, 8, 'default_value', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2052, 20, 102, 9, 'field_name', 0, 'folders_cmis_lastmodificationdate');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2053, 20, 102, 9, 'variable_name', 0, 'unmodified_folders_cmis_lastmodificationdate');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2056, 20, 102, 10, 'field_name', 0, 'folders_lastmodificationdate');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2057, 20, 102, 10, 'variable_name', 0, 'unmodified_folders_lastmodificationdate');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2058, 20, 102, 10, 'variable_type', 0, 'PARENT_JOB');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2059, 20, 102, 10, 'default_value', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2060, 20, 102, 11, 'field_name', 0, 'folders_name');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2061, 20, 102, 11, 'variable_name', 0, 'unmodified_folders_name');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2062, 20, 102, 11, 'variable_type', 0, 'PARENT_JOB');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2063, 20, 102, 11, 'default_value', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2064, 20, 102, 0, 'use_formatting', 0, 'Y');
@@ -13317,7 +13317,6 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2462, 24, 135, 0, 'compatible', 0, 'N');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2463, 24, 135, 0, 'optimizationLevel', 0, '9');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2464, 24, 135, 0, 'jsScript_name', 0, 'Script 1');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2552, 25, 139, 2, 'field_name', 0, 'cmis_path');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2465, 24, 135, 0, 'jsScript_script', 0, '//Script here
 
 modified_documents_name = getVariable("modified_documents_name",null).replace(/\''/g, ''\''\'''');
@@ -13387,84 +13386,6 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2522, 24, 137, 0, 'lazy_conversion_active', 0, 'N');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2523, 24, 137, 0, 'cluster_schema', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2524, 24, 137, 0, 'row_distribution_code', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2525, 25, 138, 0, 'PARTITIONING_SCHEMA', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2526, 25, 138, 0, 'PARTITIONING_METHOD', 0, 'none');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2527, 25, 138, 0, 'url', 0, '${alfresco_cmis_url}');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2528, 25, 138, 0, 'login', 0, '${alfresco_login}');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2529, 25, 138, 0, 'password', 0, '${alfresco_password}');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2530, 25, 138, 0, 'sql', 0, 'select
- cmis:objectId as cmis_objectid,
- cmis:name as cmis_name
-from
- cmis:document
-where 
- in_folder(''${cmis_parentid}'')
- and cmis:lastModificationDate >= TIMESTAMP ''${cmis_last_update}''
- and cmis:contentStreamLength >= 0');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2531, 25, 138, 0, 'cluster_schema', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2532, 25, 138, 0, 'row_distribution_code', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2533, 25, 139, 0, 'PARTITIONING_SCHEMA', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2534, 25, 139, 0, 'PARTITIONING_METHOD', 0, 'none');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2535, 25, 139, 0, 'compatible', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2536, 25, 139, 0, 'optimizationLevel', 0, '9');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2537, 25, 139, 0, 'jsScript_name', 0, 'Script 1');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2538, 25, 139, 0, 'jsScript_script', 0, '//Script here
-
-alfresco_id = getVariable("alfresco_id",null);
-cmis_parentid = getVariable("cmis_parentid",null);
-cmis_path = getVariable("cmis_parentpath",null);
-if (cmis_path != "/")
-  cmis_path += "/";
-cmis_path += cmis_name;');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2539, 25, 139, 0, 'jsScript_type', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2540, 25, 139, 0, 'field_name', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2541, 25, 139, 0, 'field_rename', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2542, 25, 139, 0, 'field_type', 0, 'Integer');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2543, 25, 139, 0, 'field_length', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2544, 25, 139, 0, 'field_precision', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2545, 25, 139, 0, 'field_replace', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2546, 25, 139, 1, 'field_name', 0, 'cmis_parentid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2547, 25, 139, 1, 'field_rename', 0, 'cmis_parentid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2548, 25, 139, 1, 'field_type', 0, 'String');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2549, 25, 139, 1, 'field_length', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2550, 25, 139, 1, 'field_precision', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2551, 25, 139, 1, 'field_replace', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2553, 25, 139, 2, 'field_rename', 0, 'cmis_path');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2554, 25, 139, 2, 'field_type', 0, 'String');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2555, 25, 139, 2, 'field_length', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2556, 25, 139, 2, 'field_precision', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2557, 25, 139, 2, 'field_replace', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2558, 25, 139, 0, 'cluster_schema', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2559, 25, 139, 0, 'row_distribution_code', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2560, 25, 140, 0, 'PARTITIONING_SCHEMA', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2561, 25, 140, 0, 'PARTITIONING_METHOD', 0, 'none');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2562, 25, 140, 0, 'id_connection', 1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2563, 25, 140, 0, 'schema', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2564, 25, 140, 0, 'table', 0, 'ope_cmis_document_parent');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2565, 25, 140, 0, 'commit', 0, '1000');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2566, 25, 140, 0, 'truncate', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2567, 25, 140, 0, 'ignore_errors', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2568, 25, 140, 0, 'use_batch', 0, 'Y');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2569, 25, 140, 0, 'specify_fields', 0, 'Y');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2570, 25, 140, 0, 'partitioning_enabled', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2571, 25, 140, 0, 'partitioning_field', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2572, 25, 140, 0, 'partitioning_daily', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2573, 25, 140, 0, 'partitioning_monthly', 0, 'Y');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2574, 25, 140, 0, 'tablename_in_field', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2575, 25, 140, 0, 'tablename_field', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2576, 25, 140, 0, 'tablename_in_table', 0, 'Y');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2577, 25, 140, 0, 'return_keys', 0, 'N');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2578, 25, 140, 0, 'return_field', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2579, 25, 140, 0, 'column_name', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2580, 25, 140, 0, 'stream_name', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2581, 25, 140, 1, 'column_name', 0, 'cmis_objectid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2582, 25, 140, 1, 'stream_name', 0, 'cmis_objectid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2583, 25, 140, 2, 'column_name', 0, 'cmis_parentid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2584, 25, 140, 2, 'stream_name', 0, 'cmis_parentid');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2585, 25, 140, 3, 'column_name', 0, 'cmis_path');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2586, 25, 140, 3, 'stream_name', 0, 'cmis_path');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2587, 25, 140, 0, 'cluster_schema', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2588, 25, 140, 0, 'row_distribution_code', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2589, 26, 141, 0, 'PARTITIONING_SCHEMA', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2590, 26, 141, 0, 'PARTITIONING_METHOD', 0, 'none');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (2591, 26, 141, 0, 'compatible', 0, 'N');
@@ -14222,6 +14143,8 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3015, 32, 175, 0, 'compatible', 0, 'N');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3016, 32, 175, 0, 'optimizationLevel', 0, '0');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3017, 32, 175, 0, 'jsScript_name', 0, 'Main');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3075, 33, 181, 0, 'PARTITIONING_SCHEMA', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3076, 33, 181, 0, 'PARTITIONING_METHOD', 0, 'none');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3018, 32, 175, 0, 'jsScript_script', 0, '// Base type check.
 var baseTypeIdPosition = getInputRowMeta().indexOfValue("cmis:baseTypeId");
 if (baseTypeIdPosition < 0) {
@@ -14582,8 +14505,6 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3072, 33, 180, 0, 'PARTITIONING_METHOD', 0, 'none');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3073, 33, 180, 0, 'cluster_schema', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3074, 33, 180, 0, 'row_distribution_code', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3075, 33, 181, 0, 'PARTITIONING_SCHEMA', 0, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3076, 33, 181, 0, 'PARTITIONING_METHOD', 0, 'none');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3077, 33, 181, 0, 'id_connection', 1, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3078, 33, 181, 0, 'sql', 0, 'SELECT
  dm_custom_metadata.name,
@@ -14965,6 +14886,11 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3210, 15, 194, 0, 'url', 0, '${alfresco_cmis_url}');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3211, 15, 194, 0, 'login', 0, '${alfresco_login}');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3212, 15, 194, 0, 'password', 0, '${alfresco_password}');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3285, 15, 200, 0, 'field_rename', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3286, 15, 200, 0, 'field_type', 0, 'Integer');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3287, 15, 200, 0, 'field_length', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3288, 15, 200, 0, 'field_precision', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3289, 15, 200, 0, 'field_replace', 0, 'N');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3213, 15, 194, 0, 'sql', 0, 'select
  cmis:objectId,
  cmis:name,
@@ -15124,11 +15050,6 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 alfresco_id = getVariable("alfresco_id",null);');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3283, 15, 200, 0, 'jsScript_type', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3284, 15, 200, 0, 'field_name', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3285, 15, 200, 0, 'field_rename', 0, 'alfresco_id');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3286, 15, 200, 0, 'field_type', 0, 'Integer');
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3287, 15, 200, 0, 'field_length', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3288, 15, 200, 0, 'field_precision', -1, NULL);
-INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3289, 15, 200, 0, 'field_replace', 0, 'N');
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3290, 15, 200, 0, 'cluster_schema', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3291, 15, 200, 0, 'row_distribution_code', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3292, 15, 201, 0, 'PARTITIONING_SCHEMA', 0, NULL);
@@ -15391,6 +15312,106 @@ INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_st
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3549, 15, 204, 0, 'step_error_handling_max_errors', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3550, 15, 204, 0, 'step_error_handling_max_pct_errors', 0, NULL);
 INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3551, 15, 204, 0, 'step_error_handling_min_pct_rows', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3552, 25, 209, 0, 'PARTITIONING_SCHEMA', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3553, 25, 209, 0, 'PARTITIONING_METHOD', 0, 'none');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3554, 25, 209, 0, 'url', 0, '${alfresco_cmis_url}');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3555, 25, 209, 0, 'login', 0, '${alfresco_login}');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3556, 25, 209, 0, 'password', 0, '${alfresco_password}');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3557, 25, 209, 0, 'sql', 0, 'select
+ cmis:objectId as cmis_objectid,
+ cmis:name as cmis_name
+from
+ cmis:document
+where 
+ in_folder(''${cmis_parentid}'')
+ and cmis:lastModificationDate >= TIMESTAMP ''${cmis_last_update}''
+ and cmis:contentStreamLength >= 0');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3558, 25, 209, 0, 'cluster_schema', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3559, 25, 209, 0, 'row_distribution_code', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3560, 25, 210, 0, 'PARTITIONING_SCHEMA', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3561, 25, 210, 0, 'PARTITIONING_METHOD', 0, 'none');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3562, 25, 210, 0, 'compatible', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3563, 25, 210, 0, 'optimizationLevel', 0, '9');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3564, 25, 210, 0, 'jsScript_name', 0, 'Script 1');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3565, 25, 210, 0, 'jsScript_script', 0, '//Script here
+
+alfresco_id = getVariable("alfresco_id",null);
+cmis_parentid = getVariable("cmis_parentid",null);
+cmis_path = getVariable("cmis_parentpath",null);
+if (cmis_path != "/")
+  cmis_path += "/";
+cmis_path += cmis_name;');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3566, 25, 210, 0, 'jsScript_type', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3567, 25, 210, 0, 'field_name', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3568, 25, 210, 0, 'field_rename', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3569, 25, 210, 0, 'field_type', 0, 'Integer');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3570, 25, 210, 0, 'field_length', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3571, 25, 210, 0, 'field_precision', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3572, 25, 210, 0, 'field_replace', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3573, 25, 210, 1, 'field_name', 0, 'cmis_parentid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3574, 25, 210, 1, 'field_rename', 0, 'cmis_parentid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3575, 25, 210, 1, 'field_type', 0, 'String');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3576, 25, 210, 1, 'field_length', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3577, 25, 210, 1, 'field_precision', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3578, 25, 210, 1, 'field_replace', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3579, 25, 210, 2, 'field_name', 0, 'cmis_path');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3580, 25, 210, 2, 'field_rename', 0, 'cmis_path');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3581, 25, 210, 2, 'field_type', 0, 'String');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3582, 25, 210, 2, 'field_length', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3583, 25, 210, 2, 'field_precision', -1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3584, 25, 210, 2, 'field_replace', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3585, 25, 210, 0, 'cluster_schema', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3586, 25, 210, 0, 'row_distribution_code', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3587, 25, 211, 0, 'PARTITIONING_SCHEMA', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3588, 25, 211, 0, 'PARTITIONING_METHOD', 0, 'none');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3589, 25, 211, 0, 'id_connection', 1, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3590, 25, 211, 0, 'schema', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3591, 25, 211, 0, 'table', 0, 'ope_cmis_document_parent');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3592, 25, 211, 0, 'commit', 0, '1000');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3593, 25, 211, 0, 'truncate', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3594, 25, 211, 0, 'ignore_errors', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3595, 25, 211, 0, 'use_batch', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3596, 25, 211, 0, 'specify_fields', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3597, 25, 211, 0, 'partitioning_enabled', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3598, 25, 211, 0, 'partitioning_field', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3599, 25, 211, 0, 'partitioning_daily', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3600, 25, 211, 0, 'partitioning_monthly', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3601, 25, 211, 0, 'tablename_in_field', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3602, 25, 211, 0, 'tablename_field', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3603, 25, 211, 0, 'tablename_in_table', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3604, 25, 211, 0, 'return_keys', 0, 'N');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3605, 25, 211, 0, 'return_field', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3606, 25, 211, 0, 'column_name', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3607, 25, 211, 0, 'stream_name', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3608, 25, 211, 1, 'column_name', 0, 'cmis_objectid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3609, 25, 211, 1, 'stream_name', 0, 'cmis_objectid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3610, 25, 211, 2, 'column_name', 0, 'cmis_parentid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3611, 25, 211, 2, 'stream_name', 0, 'cmis_parentid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3612, 25, 211, 3, 'column_name', 0, 'cmis_path');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3613, 25, 211, 3, 'stream_name', 0, 'cmis_path');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3614, 25, 211, 0, 'cluster_schema', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3615, 25, 211, 0, 'row_distribution_code', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3616, 25, 212, 0, 'PARTITIONING_SCHEMA', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3617, 25, 212, 0, 'PARTITIONING_METHOD', 0, 'none');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3618, 25, 212, 0, 'loglevel', 0, 'log_level_basic');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3619, 25, 212, 0, 'displayHeader', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3620, 25, 212, 0, 'logmessage', 0, 'The node below is ignored. Please contact your system administrator.');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3621, 25, 212, 0, 'field_name', 0, 'alfresco_id');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3622, 25, 212, 1, 'field_name', 0, 'cmis_objectid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3623, 25, 212, 2, 'field_name', 0, 'cmis_parentid');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3624, 25, 212, 3, 'field_name', 0, 'cmis_path');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3625, 25, 212, 0, 'cluster_schema', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3626, 25, 212, 0, 'row_distribution_code', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3627, 25, 211, 0, 'step_error_handling_source_step', 0, 'ope_cmis_document_parent');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3628, 25, 211, 0, 'step_error_handling_target_step', 0, 'Ignoring not existing document');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3629, 25, 211, 0, 'step_error_handling_is_enabled', 0, 'Y');
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3630, 25, 211, 0, 'step_error_handling_nr_valuename', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3631, 25, 211, 0, 'step_error_handling_descriptions_valuename', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3632, 25, 211, 0, 'step_error_handling_fields_valuename', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3633, 25, 211, 0, 'step_error_handling_codes_valuename', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3634, 25, 211, 0, 'step_error_handling_max_errors', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3635, 25, 211, 0, 'step_error_handling_max_pct_errors', 0, NULL);
+INSERT INTO "r_step_attribute" ("id_step_attribute", "id_transformation", "id_step", "nr", "code", "value_num", "value_str") VALUES (3636, 25, 211, 0, 'step_error_handling_min_pct_rows', 0, NULL);
 
 
 --
@@ -15403,7 +15424,7 @@ SELECT pg_catalog.setval('"r_step_attribute_id_step_attribute_seq"', 1, false);
 
 
 --
--- TOC entry 2371 (class 0 OID 25894)
+-- TOC entry 2371 (class 0 OID 19969)
 -- Dependencies: 231
 -- Data for Name: r_step_database; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -15476,7 +15497,6 @@ INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VA
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (22, 126, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (23, 134, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (24, 137, 1);
-INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (25, 140, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (26, 142, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (26, 143, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (28, 155, 1);
@@ -15495,6 +15515,7 @@ INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VA
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (15, 202, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (15, 203, 1);
 INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (15, 204, 1);
+INSERT INTO "r_step_database" ("id_transformation", "id_step", "id_database") VALUES (25, 211, 1);
 
 
 --
@@ -15507,7 +15528,7 @@ SELECT pg_catalog.setval('"r_step_id_step_seq"', 1, false);
 
 
 --
--- TOC entry 2373 (class 0 OID 25899)
+-- TOC entry 2373 (class 0 OID 19974)
 -- Dependencies: 233
 -- Data for Name: r_step_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -15776,7 +15797,7 @@ SELECT pg_catalog.setval('"r_step_type_id_step_type_seq"', 1, false);
 
 
 --
--- TOC entry 2375 (class 0 OID 25907)
+-- TOC entry 2375 (class 0 OID 19982)
 -- Dependencies: 235
 -- Data for Name: r_trans_attribute; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -19399,6 +19420,7 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4378, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4379, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4380, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4468, 20, 0, 'TRANS_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4381, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4382, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4383, 19, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
@@ -19486,7 +19508,6 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4465, 20, 0, 'TRANS_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4466, 20, 0, 'TRANS_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4467, 20, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4468, 20, 0, 'TRANS_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4469, 20, 0, 'TRANS_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4470, 20, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4471, 20, 0, 'TRANS_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
@@ -19821,6 +19842,7 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4800, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME12', 0, 'ERRORS');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4801, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4802, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID13', 0, 'INPUT_BUFFER_ROWS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6488, 29, 0, 'LOG_INTERVAL', 0, NULL);
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4803, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME13', 0, 'INPUT_BUFFER_ROWS');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4804, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (4805, 21, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID14', 0, 'OUTPUT_BUFFER_ROWS');
@@ -20573,249 +20595,6 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5554, 24, 3, 'PARAM_KEY', 0, 'unmodified_folders_name');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5555, 24, 3, 'PARAM_DEFAULT', 0, NULL);
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5556, 24, 3, 'PARAM_DESC', 0, 'Name of unmodified folders.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5557, 25, 0, 'UNIQUE_CONNECTIONS', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5558, 25, 0, 'FEEDBACK_SHOWN', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5559, 25, 0, 'FEEDBACK_SIZE', 50000, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5560, 25, 0, 'USING_THREAD_PRIORITIES', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5561, 25, 0, 'SHARED_FILE', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5562, 25, 0, 'CAPTURE_STEP_PERFORMANCE', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5563, 25, 0, 'STEP_PERFORMANCE_CAPTURING_DELAY', 1000, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5564, 25, 0, 'STEP_PERFORMANCE_CAPTURING_SIZE_LIMIT', 0, '100');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5565, 25, 0, 'STEP_PERFORMANCE_LOG_TABLE', 0, 'log_performance');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5566, 25, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5567, 25, 0, 'LOG_INTERVAL', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5568, 25, 0, 'TRANSFORMATION_TYPE', 0, 'Normal');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5569, 25, 0, 'SLEEP_TIME_EMPTY', 50, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5570, 25, 0, 'SLEEP_TIME_FULL', 50, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5571, 25, 0, 'TRANS_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5572, 25, 0, 'TRANS_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5573, 25, 0, 'TRANS_LOG_TABLE_TABLE_NAME', 0, 'log_transformations');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5574, 25, 0, 'TRANS_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5575, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5576, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5577, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5578, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5579, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5580, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5581, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID2', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5582, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME2', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5583, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5584, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5585, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5586, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5587, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5588, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5589, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5590, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT4', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5591, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5592, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5593, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5594, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT5', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5595, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5596, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5597, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5598, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT6', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5599, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5600, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5601, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5602, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT7', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5603, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5604, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5605, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5606, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT8', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5607, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5608, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5609, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5610, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT9', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5611, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5612, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5613, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5614, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5615, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5616, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5617, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5618, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5619, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5620, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5621, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5622, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5623, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5624, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5625, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5626, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5627, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5628, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5629, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5630, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5631, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5632, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5633, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5634, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5635, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5636, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5637, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5638, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID19', 0, 'CLIENT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5639, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME19', 0, 'CLIENT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5640, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5641, 25, 0, 'TRANSLOG_TABLE_INTERVAL', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5642, 25, 0, 'TRANSLOG_TABLE_SIZE_LIMIT', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5643, 25, 0, 'STEP_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5644, 25, 0, 'STEP_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5645, 25, 0, 'STEP_LOG_TABLE_TABLE_NAME', 0, 'log_step');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5646, 25, 0, 'STEP_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5647, 25, 0, 'STEP_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5648, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5649, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5650, 25, 0, 'STEP_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5651, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5652, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5653, 25, 0, 'STEP_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5654, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5655, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5656, 25, 0, 'STEP_LOG_TABLE_FIELD_ID3', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5657, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5658, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5659, 25, 0, 'STEP_LOG_TABLE_FIELD_ID4', 0, 'STEPNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5660, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5661, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5662, 25, 0, 'STEP_LOG_TABLE_FIELD_ID5', 0, 'STEP_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5663, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME5', 0, 'STEP_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5664, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5665, 25, 0, 'STEP_LOG_TABLE_FIELD_ID6', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5666, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME6', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5667, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5668, 25, 0, 'STEP_LOG_TABLE_FIELD_ID7', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5669, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME7', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5670, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5671, 25, 0, 'STEP_LOG_TABLE_FIELD_ID8', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5672, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME8', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5673, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5674, 25, 0, 'STEP_LOG_TABLE_FIELD_ID9', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5675, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME9', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5676, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5677, 25, 0, 'STEP_LOG_TABLE_FIELD_ID10', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5678, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME10', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5679, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5680, 25, 0, 'STEP_LOG_TABLE_FIELD_ID11', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5681, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME11', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5682, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5683, 25, 0, 'STEP_LOG_TABLE_FIELD_ID12', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5684, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME12', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5685, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5686, 25, 0, 'STEP_LOG_TABLE_FIELD_ID13', 0, 'LOG_FIELD');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5687, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME13', 0, 'LOG_FIELD');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5688, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED13', 0, 'N');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5689, 25, 0, 'PERFORMANCE_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5690, 25, 0, 'PERFORMANCE_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5691, 25, 0, 'PERFORMANCE_LOG_TABLE_TABLE_NAME', 0, 'log_performance');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5692, 25, 0, 'PERFORMANCE_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5693, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5694, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5695, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5696, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID1', 0, 'SEQ_NR');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5697, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME1', 0, 'SEQ_NR');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5698, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5699, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID2', 0, 'LOGDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5700, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME2', 0, 'LOGDATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5701, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5702, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID3', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5703, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5704, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5705, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID4', 0, 'STEPNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5706, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5707, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5708, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID5', 0, 'STEP_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5709, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME5', 0, 'STEP_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5710, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5711, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID6', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5712, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME6', 0, 'LINES_READ');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5713, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5714, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID7', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5715, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME7', 0, 'LINES_WRITTEN');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5716, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5717, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID8', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5718, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME8', 0, 'LINES_UPDATED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5719, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5720, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID9', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5721, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME9', 0, 'LINES_INPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5722, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5723, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID10', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5724, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME10', 0, 'LINES_OUTPUT');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5725, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5726, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID11', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5727, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME11', 0, 'LINES_REJECTED');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5728, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5729, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID12', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5730, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME12', 0, 'ERRORS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5731, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5732, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID13', 0, 'INPUT_BUFFER_ROWS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5733, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME13', 0, 'INPUT_BUFFER_ROWS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5734, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5735, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID14', 0, 'OUTPUT_BUFFER_ROWS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5736, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME14', 0, 'OUTPUT_BUFFER_ROWS');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5737, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5738, 25, 0, 'PERFORMANCELOG_TABLE_INTERVAL', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5739, 25, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5740, 25, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5741, 25, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5742, 25, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5743, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5744, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5745, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5746, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5747, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5748, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5749, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5750, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5751, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5752, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5753, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5754, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5755, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5756, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5757, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5758, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5759, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5760, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5761, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5762, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5763, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5764, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5765, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5766, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5767, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5768, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5769, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5770, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5771, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5772, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5773, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5774, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5775, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5776, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5777, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5778, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5779, 25, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5780, 25, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5781, 25, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5782, 25, 1, 'PARAM_KEY', 0, 'alfresco_id');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5783, 25, 1, 'PARAM_DEFAULT', 0, '1');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5784, 25, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5785, 25, 2, 'PARAM_KEY', 0, 'alfresco_login');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5786, 25, 2, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5787, 25, 2, 'PARAM_DESC', 0, 'Alfresco login to the CMIS service.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5788, 25, 3, 'PARAM_KEY', 0, 'alfresco_password');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5789, 25, 3, 'PARAM_DEFAULT', 0, 'admin');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5790, 25, 3, 'PARAM_DESC', 0, 'Alfresco password to the CMIS service.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5791, 25, 4, 'PARAM_KEY', 0, 'cmis_last_update');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5792, 25, 4, 'PARAM_DEFAULT', 0, '2013-03-18T00:00:00.000+00:00');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5793, 25, 4, 'PARAM_DESC', 0, 'Last update of the documents and folders.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5794, 25, 5, 'PARAM_KEY', 0, 'cmis_parentid');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5795, 25, 5, 'PARAM_DEFAULT', 0, 'workspace://SpacesStore/99aa9e0a-dddc-4dd9-a149-3a2ac0ecc59e');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5796, 25, 5, 'PARAM_DESC', 0, 'UUID of a folder of the Alfresco repository.');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5797, 25, 6, 'PARAM_KEY', 0, 'cmis_parentpath');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5798, 25, 6, 'PARAM_DEFAULT', 0, '/');
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5799, 25, 6, 'PARAM_DESC', 0, 'Path of the parent folder in the Alfresco repository.');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5800, 26, 0, 'UNIQUE_CONNECTIONS', 0, 'N');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5801, 26, 0, 'FEEDBACK_SHOWN', 0, 'Y');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (5803, 26, 0, 'USING_THREAD_PRIORITIES', 0, 'Y');
@@ -21503,7 +21282,6 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6485, 29, 0, 'STEP_PERFORMANCE_CAPTURING_SIZE_LIMIT', 0, '100');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6486, 29, 0, 'STEP_PERFORMANCE_LOG_TABLE', 0, 'log_performance');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6487, 29, 0, 'LOG_SIZE_LIMIT', 0, NULL);
-INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6488, 29, 0, 'LOG_INTERVAL', 0, NULL);
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6489, 29, 0, 'TRANSFORMATION_TYPE', 0, 'Normal');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6490, 29, 0, 'SLEEP_TIME_EMPTY', 50, NULL);
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (6491, 29, 0, 'SLEEP_TIME_FULL', 50, NULL);
@@ -23437,6 +23215,249 @@ INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr"
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8419, 15, 12, 'PARAM_KEY', 0, 'unmodified_folders_cmis_path');
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8420, 15, 12, 'PARAM_DEFAULT', 0, NULL);
 INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8421, 15, 12, 'PARAM_DESC', 0, 'Last imported path for unmodified folders.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8422, 25, 0, 'UNIQUE_CONNECTIONS', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8423, 25, 0, 'FEEDBACK_SHOWN', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8424, 25, 0, 'FEEDBACK_SIZE', 50000, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8425, 25, 0, 'USING_THREAD_PRIORITIES', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8426, 25, 0, 'SHARED_FILE', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8427, 25, 0, 'CAPTURE_STEP_PERFORMANCE', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8428, 25, 0, 'STEP_PERFORMANCE_CAPTURING_DELAY', 1000, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8429, 25, 0, 'STEP_PERFORMANCE_CAPTURING_SIZE_LIMIT', 0, '100');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8430, 25, 0, 'STEP_PERFORMANCE_LOG_TABLE', 0, 'log_performance');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8431, 25, 0, 'LOG_SIZE_LIMIT', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8432, 25, 0, 'LOG_INTERVAL', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8433, 25, 0, 'TRANSFORMATION_TYPE', 0, 'Normal');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8434, 25, 0, 'SLEEP_TIME_EMPTY', 50, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8435, 25, 0, 'SLEEP_TIME_FULL', 50, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8436, 25, 0, 'TRANS_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8437, 25, 0, 'TRANS_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8438, 25, 0, 'TRANS_LOG_TABLE_TABLE_NAME', 0, 'log_transformations');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8439, 25, 0, 'TRANS_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8440, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8441, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8442, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8443, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8444, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8445, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8446, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID2', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8447, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME2', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8448, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8449, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID3', 0, 'STATUS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8450, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME3', 0, 'STATUS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8451, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8452, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID4', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8453, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME4', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8454, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8455, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT4', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8456, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID5', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8457, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME5', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8458, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8459, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT5', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8460, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID6', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8461, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME6', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8462, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8463, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT6', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8464, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID7', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8465, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME7', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8466, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8467, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT7', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8468, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID8', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8469, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME8', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8470, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8471, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT8', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8472, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID9', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8473, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME9', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8474, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8475, 25, 0, 'TRANS_LOG_TABLE_FIELD_SUBJECT9', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8476, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID10', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8477, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME10', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8478, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8479, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID11', 0, 'STARTDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8480, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME11', 0, 'STARTDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8481, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8482, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID12', 0, 'ENDDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8483, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME12', 0, 'ENDDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8484, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8485, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID13', 0, 'LOGDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8486, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME13', 0, 'LOGDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8487, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8488, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID14', 0, 'DEPDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8489, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME14', 0, 'DEPDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8490, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8491, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID15', 0, 'REPLAYDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8492, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME15', 0, 'REPLAYDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8493, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED15', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8494, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID16', 0, 'LOG_FIELD');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8495, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME16', 0, 'LOG_FIELD');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8496, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED16', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8497, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID17', 0, 'EXECUTING_SERVER');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8498, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME17', 0, 'EXECUTING_SERVER');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8499, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED17', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8500, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID18', 0, 'EXECUTING_USER');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8501, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME18', 0, 'EXECUTING_USER');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8502, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED18', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8503, 25, 0, 'TRANS_LOG_TABLE_FIELD_ID19', 0, 'CLIENT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8504, 25, 0, 'TRANS_LOG_TABLE_FIELD_NAME19', 0, 'CLIENT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8505, 25, 0, 'TRANS_LOG_TABLE_FIELD_ENABLED19', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8506, 25, 0, 'TRANSLOG_TABLE_INTERVAL', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8507, 25, 0, 'TRANSLOG_TABLE_SIZE_LIMIT', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8508, 25, 0, 'STEP_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8509, 25, 0, 'STEP_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8510, 25, 0, 'STEP_LOG_TABLE_TABLE_NAME', 0, 'log_step');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8511, 25, 0, 'STEP_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8512, 25, 0, 'STEP_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8513, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8514, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8515, 25, 0, 'STEP_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8516, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8517, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8518, 25, 0, 'STEP_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8519, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8520, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8521, 25, 0, 'STEP_LOG_TABLE_FIELD_ID3', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8522, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8523, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8524, 25, 0, 'STEP_LOG_TABLE_FIELD_ID4', 0, 'STEPNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8525, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8526, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8527, 25, 0, 'STEP_LOG_TABLE_FIELD_ID5', 0, 'STEP_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8528, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME5', 0, 'STEP_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8529, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8530, 25, 0, 'STEP_LOG_TABLE_FIELD_ID6', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8531, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME6', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8532, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8533, 25, 0, 'STEP_LOG_TABLE_FIELD_ID7', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8534, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME7', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8535, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8536, 25, 0, 'STEP_LOG_TABLE_FIELD_ID8', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8537, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME8', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8538, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8539, 25, 0, 'STEP_LOG_TABLE_FIELD_ID9', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8540, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME9', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8541, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8542, 25, 0, 'STEP_LOG_TABLE_FIELD_ID10', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8543, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME10', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8544, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8545, 25, 0, 'STEP_LOG_TABLE_FIELD_ID11', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8546, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME11', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8547, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8548, 25, 0, 'STEP_LOG_TABLE_FIELD_ID12', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8549, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME12', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8550, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8551, 25, 0, 'STEP_LOG_TABLE_FIELD_ID13', 0, 'LOG_FIELD');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8552, 25, 0, 'STEP_LOG_TABLE_FIELD_NAME13', 0, 'LOG_FIELD');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8553, 25, 0, 'STEP_LOG_TABLE_FIELD_ENABLED13', 0, 'N');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8554, 25, 0, 'PERFORMANCE_LOG_TABLE_CONNECTION_NAME', 0, 'AlfrescoDataMart');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8555, 25, 0, 'PERFORMANCE_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8556, 25, 0, 'PERFORMANCE_LOG_TABLE_TABLE_NAME', 0, 'log_performance');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8557, 25, 0, 'PERFORMANCE_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8558, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8559, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8560, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8561, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID1', 0, 'SEQ_NR');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8562, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME1', 0, 'SEQ_NR');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8563, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8564, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID2', 0, 'LOGDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8565, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME2', 0, 'LOGDATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8566, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8567, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID3', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8568, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME3', 0, 'TRANSNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8569, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8570, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID4', 0, 'STEPNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8571, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME4', 0, 'STEPNAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8572, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8573, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID5', 0, 'STEP_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8574, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME5', 0, 'STEP_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8575, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8576, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID6', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8577, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME6', 0, 'LINES_READ');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8578, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8579, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID7', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8580, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME7', 0, 'LINES_WRITTEN');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8581, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8582, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID8', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8583, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME8', 0, 'LINES_UPDATED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8584, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8585, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID9', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8586, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME9', 0, 'LINES_INPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8587, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8588, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID10', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8589, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME10', 0, 'LINES_OUTPUT');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8590, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8591, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID11', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8592, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME11', 0, 'LINES_REJECTED');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8593, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8594, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID12', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8595, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME12', 0, 'ERRORS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8596, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED12', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8597, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID13', 0, 'INPUT_BUFFER_ROWS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8598, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME13', 0, 'INPUT_BUFFER_ROWS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8599, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED13', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8600, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ID14', 0, 'OUTPUT_BUFFER_ROWS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8601, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_NAME14', 0, 'OUTPUT_BUFFER_ROWS');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8602, 25, 0, 'PERFORMANCE_LOG_TABLE_FIELD_ENABLED14', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8603, 25, 0, 'PERFORMANCELOG_TABLE_INTERVAL', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8604, 25, 0, 'CHANNEL_LOG_TABLE_CONNECTION_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8605, 25, 0, 'CHANNEL_LOG_TABLE_SCHEMA_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8606, 25, 0, 'CHANNEL_LOG_TABLE_TABLE_NAME', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8607, 25, 0, 'CHANNEL_LOG_TABLE_TIMEOUT_IN_DAYS', 0, NULL);
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8608, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8609, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME0', 0, 'ID_BATCH');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8610, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED0', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8611, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8612, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME1', 0, 'CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8613, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED1', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8614, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID2', 0, 'LOG_DATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8615, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME2', 0, 'LOG_DATE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8616, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED2', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8617, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8618, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME3', 0, 'LOGGING_OBJECT_TYPE');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8619, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED3', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8620, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID4', 0, 'OBJECT_NAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8621, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME4', 0, 'OBJECT_NAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8622, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED4', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8623, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID5', 0, 'OBJECT_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8624, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME5', 0, 'OBJECT_COPY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8625, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED5', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8626, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8627, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME6', 0, 'REPOSITORY_DIRECTORY');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8628, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED6', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8629, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID7', 0, 'FILENAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8630, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME7', 0, 'FILENAME');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8631, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED7', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8632, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID8', 0, 'OBJECT_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8633, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME8', 0, 'OBJECT_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8634, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED8', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8635, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID9', 0, 'OBJECT_REVISION');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8636, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME9', 0, 'OBJECT_REVISION');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8637, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED9', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8638, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8639, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME10', 0, 'PARENT_CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8640, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED10', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8641, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ID11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8642, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_NAME11', 0, 'ROOT_CHANNEL_ID');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8643, 25, 0, 'CHANNEL_LOG_TABLE_FIELD_ENABLED11', 0, 'Y');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8644, 25, 0, 'PARAM_KEY', 0, 'alfresco_cmis_url');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8645, 25, 0, 'PARAM_DEFAULT', 0, 'http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8646, 25, 0, 'PARAM_DESC', 0, 'Url of the CMIS service in Alfresco.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8647, 25, 1, 'PARAM_KEY', 0, 'alfresco_id');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8648, 25, 1, 'PARAM_DEFAULT', 0, '1');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8649, 25, 1, 'PARAM_DESC', 0, 'Alfresco identifier.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8650, 25, 2, 'PARAM_KEY', 0, 'alfresco_login');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8651, 25, 2, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8652, 25, 2, 'PARAM_DESC', 0, 'Alfresco login to the CMIS service.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8653, 25, 3, 'PARAM_KEY', 0, 'alfresco_password');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8654, 25, 3, 'PARAM_DEFAULT', 0, 'admin');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8655, 25, 3, 'PARAM_DESC', 0, 'Alfresco password to the CMIS service.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8656, 25, 4, 'PARAM_KEY', 0, 'cmis_last_update');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8657, 25, 4, 'PARAM_DEFAULT', 0, '2013-03-18T00:00:00.000+00:00');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8658, 25, 4, 'PARAM_DESC', 0, 'Last update of the documents and folders.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8659, 25, 5, 'PARAM_KEY', 0, 'cmis_parentid');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8660, 25, 5, 'PARAM_DEFAULT', 0, 'workspace://SpacesStore/99aa9e0a-dddc-4dd9-a149-3a2ac0ecc59e');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8661, 25, 5, 'PARAM_DESC', 0, 'UUID of a folder of the Alfresco repository.');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8662, 25, 6, 'PARAM_KEY', 0, 'cmis_parentpath');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8663, 25, 6, 'PARAM_DEFAULT', 0, '/');
+INSERT INTO "r_trans_attribute" ("id_trans_attribute", "id_transformation", "nr", "code", "value_num", "value_str") VALUES (8664, 25, 6, 'PARAM_DESC', 0, 'Path of the parent folder in the Alfresco repository.');
 
 
 --
@@ -23449,7 +23470,7 @@ SELECT pg_catalog.setval('"r_trans_attribute_id_trans_attribute_seq"', 1, false)
 
 
 --
--- TOC entry 2377 (class 0 OID 25915)
+-- TOC entry 2377 (class 0 OID 19990)
 -- Dependencies: 237
 -- Data for Name: r_trans_cluster; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23466,7 +23487,7 @@ SELECT pg_catalog.setval('"r_trans_cluster_id_trans_cluster_seq"', 1, false);
 
 
 --
--- TOC entry 2379 (class 0 OID 25920)
+-- TOC entry 2379 (class 0 OID 19995)
 -- Dependencies: 239
 -- Data for Name: r_trans_hop; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23553,8 +23574,6 @@ INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", 
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (95, 23, 134, 133, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (96, 24, 137, 135, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (97, 24, 135, 136, true);
-INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (98, 25, 139, 140, true);
-INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (99, 25, 138, 139, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (100, 26, 142, 141, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (101, 26, 141, 143, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (102, 27, 153, 151, true);
@@ -23612,6 +23631,9 @@ INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", 
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (154, 15, 203, 206, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (155, 15, 202, 207, true);
 INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (156, 15, 204, 208, true);
+INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (157, 25, 210, 211, true);
+INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (158, 25, 209, 210, true);
+INSERT INTO "r_trans_hop" ("id_trans_hop", "id_transformation", "id_step_from", "id_step_to", "enabled") VALUES (159, 25, 211, 212, true);
 
 
 --
@@ -23624,7 +23646,7 @@ SELECT pg_catalog.setval('"r_trans_hop_id_trans_hop_seq"', 1, false);
 
 
 --
--- TOC entry 2381 (class 0 OID 25925)
+-- TOC entry 2381 (class 0 OID 20000)
 -- Dependencies: 241
 -- Data for Name: r_trans_lock; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23641,7 +23663,7 @@ SELECT pg_catalog.setval('"r_trans_lock_id_trans_lock_seq"', 1, false);
 
 
 --
--- TOC entry 2383 (class 0 OID 25933)
+-- TOC entry 2383 (class 0 OID 20008)
 -- Dependencies: 243
 -- Data for Name: r_trans_note; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23649,7 +23671,7 @@ SELECT pg_catalog.setval('"r_trans_lock_id_trans_lock_seq"', 1, false);
 
 
 --
--- TOC entry 2384 (class 0 OID 25936)
+-- TOC entry 2384 (class 0 OID 20011)
 -- Dependencies: 244
 -- Data for Name: r_trans_partition_schema; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23666,7 +23688,7 @@ SELECT pg_catalog.setval('"r_trans_partition_schema_id_trans_partition_schema_se
 
 
 --
--- TOC entry 2386 (class 0 OID 25941)
+-- TOC entry 2386 (class 0 OID 20016)
 -- Dependencies: 246
 -- Data for Name: r_trans_slave; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23683,7 +23705,7 @@ SELECT pg_catalog.setval('"r_trans_slave_id_trans_slave_seq"', 1, false);
 
 
 --
--- TOC entry 2388 (class 0 OID 25946)
+-- TOC entry 2388 (class 0 OID 20021)
 -- Dependencies: 248
 -- Data for Name: r_trans_step_condition; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23694,7 +23716,7 @@ INSERT INTO "r_trans_step_condition" ("id_transformation", "id_step", "id_condit
 
 
 --
--- TOC entry 2389 (class 0 OID 25949)
+-- TOC entry 2389 (class 0 OID 20024)
 -- Dependencies: 249
 -- Data for Name: r_transformation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23720,7 +23742,6 @@ INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "de
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (22, 5, 'Get new max update date, max name and loop variabile for aspects', NULL, 'Get maximum date and name from the aspects table and understand if it''s to loop again or not.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-05-11 16:09:21', 'admin', '2014-06-11 08:31:31.516', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (23, 5, 'Get objectId for the folders', NULL, 'Get all the folders objectId to retrieve the children.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:06.821', 'admin', '2013-03-19 07:24:01.458', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (24, 5, 'Get sql names', NULL, 'Get names useful to sql queries.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:07.346', 'admin', '2013-04-10 22:11:33.703', 10000);
-INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (25, 5, 'Set folder''s children', NULL, 'Set the folder''s children in the operational area.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:07.842', 'admin', '2014-06-15 11:07:24.164', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (26, 5, 'Set tuple_id for custom types and aspects', NULL, 'Set tuple_id for types and aspects.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-05-11 16:09:21', 'admin', '2014-06-15 11:22:08.394', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (27, 6, 'Create report', NULL, 'Report', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:08.366', 'admin', '2013-12-26 20:31:01.042', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (28, 6, 'Get all report id', NULL, 'Get all the id of the reports.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:08.882', 'admin', '2014-06-01 09:30:40.742', 10000);
@@ -23732,6 +23753,7 @@ INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "de
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (14, 5, 'Get CMIS custom metadata from document types', NULL, 'Get alfresco CMIS custom metadata from document types in the staging area.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-05-11 16:09:20', 'admin', '2015-01-06 22:13:23.189', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (13, 5, 'Get CMIS custom metadata from aspects', NULL, 'Get alfresco CMIS custom metadata from apects in the staging area.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-05-11 16:09:20', 'admin', '2015-01-06 22:13:46.591', 10000);
 INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (15, 5, 'Get CMIS documents and folders', NULL, 'Get alfresco CMIS documents and folders in the staging area.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:03.456', 'admin', '2015-02-22 01:06:57.367', 10000);
+INSERT INTO "r_transformation" ("id_transformation", "id_directory", "name", "description", "extended_description", "trans_version", "trans_status", "id_step_read", "id_step_write", "id_step_input", "id_step_output", "id_step_update", "id_database_log", "table_name_log", "use_batchid", "use_logfield", "id_database_maxdate", "table_name_maxdate", "field_name_maxdate", "offset_maxdate", "diff_maxdate", "created_user", "created_date", "modified_user", "modified_date", "size_rowset") VALUES (25, 5, 'Set folder''s children', NULL, 'Set the folder''s children in the operational area.', NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, NULL, true, true, -1, NULL, NULL, 0.00, 0.00, 'admin', '2013-11-20 20:13:07.842', 'admin', '2015-03-04 21:12:30.998', 10000);
 
 
 --
@@ -23744,7 +23766,7 @@ SELECT pg_catalog.setval('"r_transformation_id_transformation_seq"', 1, false);
 
 
 --
--- TOC entry 2391 (class 0 OID 25957)
+-- TOC entry 2391 (class 0 OID 20032)
 -- Dependencies: 251
 -- Data for Name: r_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23763,7 +23785,7 @@ SELECT pg_catalog.setval('"r_user_id_user_seq"', 1, false);
 
 
 --
--- TOC entry 2393 (class 0 OID 25965)
+-- TOC entry 2393 (class 0 OID 20040)
 -- Dependencies: 253
 -- Data for Name: r_value; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23781,7 +23803,7 @@ SELECT pg_catalog.setval('"r_value_id_value_seq"', 1, false);
 
 
 --
--- TOC entry 2395 (class 0 OID 25973)
+-- TOC entry 2395 (class 0 OID 20048)
 -- Dependencies: 255
 -- Data for Name: r_version; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -23799,7 +23821,7 @@ SELECT pg_catalog.setval('"r_version_id_version_seq"', 1, false);
 
 
 --
--- TOC entry 2195 (class 1259 OID 26019)
+-- TOC entry 2195 (class 1259 OID 20094)
 -- Name: idx_job_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23807,7 +23829,7 @@ CREATE UNIQUE INDEX "idx_job_attribute_lookup" ON "r_job_attribute" USING "btree
 
 
 --
--- TOC entry 2193 (class 1259 OID 26020)
+-- TOC entry 2193 (class 1259 OID 20095)
 -- Name: idx_r_database_attribute_ak; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23815,7 +23837,7 @@ CREATE UNIQUE INDEX "idx_r_database_attribute_ak" ON "r_database_attribute" USIN
 
 
 --
--- TOC entry 2194 (class 1259 OID 26021)
+-- TOC entry 2194 (class 1259 OID 20096)
 -- Name: idx_r_directory_ak; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23823,7 +23845,7 @@ CREATE UNIQUE INDEX "idx_r_directory_ak" ON "r_directory" USING "btree" ("id_dir
 
 
 --
--- TOC entry 2196 (class 1259 OID 26022)
+-- TOC entry 2196 (class 1259 OID 20097)
 -- Name: idx_r_jobentry_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23831,7 +23853,7 @@ CREATE UNIQUE INDEX "idx_r_jobentry_attribute_lookup" ON "r_jobentry_attribute" 
 
 
 --
--- TOC entry 2197 (class 1259 OID 26023)
+-- TOC entry 2197 (class 1259 OID 20098)
 -- Name: idx_r_jobentry_database_lu1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23839,7 +23861,7 @@ CREATE INDEX "idx_r_jobentry_database_lu1" ON "r_jobentry_database" USING "btree
 
 
 --
--- TOC entry 2198 (class 1259 OID 26024)
+-- TOC entry 2198 (class 1259 OID 20099)
 -- Name: idx_r_jobentry_database_lu2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23847,7 +23869,7 @@ CREATE INDEX "idx_r_jobentry_database_lu2" ON "r_jobentry_database" USING "btree
 
 
 --
--- TOC entry 2199 (class 1259 OID 26025)
+-- TOC entry 2199 (class 1259 OID 20100)
 -- Name: idx_r_step_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23855,7 +23877,7 @@ CREATE UNIQUE INDEX "idx_r_step_attribute_lookup" ON "r_step_attribute" USING "b
 
 
 --
--- TOC entry 2200 (class 1259 OID 26026)
+-- TOC entry 2200 (class 1259 OID 20101)
 -- Name: idx_r_step_database_lu1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23863,7 +23885,7 @@ CREATE INDEX "idx_r_step_database_lu1" ON "r_step_database" USING "btree" ("id_t
 
 
 --
--- TOC entry 2201 (class 1259 OID 26027)
+-- TOC entry 2201 (class 1259 OID 20102)
 -- Name: idx_r_step_database_lu2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23871,7 +23893,7 @@ CREATE INDEX "idx_r_step_database_lu2" ON "r_step_database" USING "btree" ("id_d
 
 
 --
--- TOC entry 2202 (class 1259 OID 26028)
+-- TOC entry 2202 (class 1259 OID 20103)
 -- Name: idx_trans_attribute_lookup; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -23890,7 +23912,7 @@ GRANT ALL ON SCHEMA "public" TO "postgres";
 GRANT ALL ON SCHEMA "public" TO PUBLIC;
 
 
--- Completed on 2015-02-22 01:07:40 CET
+-- Completed on 2015-03-04 21:14:27 CET
 
 --
 -- PostgreSQL database dump complete
