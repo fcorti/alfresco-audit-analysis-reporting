@@ -1,0 +1,43 @@
+<alfresco-config>
+
+  <!-- A.A.A.R. config section -->
+  <config evaluator="string-compare" condition="AAAR" replace="true">
+
+    <!-- Set to true or false to view the menu and/or credits. -->
+    <visible>true</visible>
+    <visible-credits>true</visible-credits>
+
+    <!-- Link set of the dashboards. -->
+    <dashboards>
+      <link label-id="AAAR_Menu.dashboard.main"       icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.dashboard.audit"      icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.dashboard.repository" icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.dashboard.documents"  icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.dashboard.folders"    icon-class="" target-url="http://www.google.it" />
+    </dashboards>
+
+    <!-- Link set of the reports. -->
+    <reports>
+      <link label-id="AAAR_Menu.report.one"       icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.report.two"       icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.report.three"     icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.report.four"      icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.report.main-list" icon-class="" target-url="http://www.google.it" />
+    </reports>
+
+    <!-- Link set of the free-analysis. -->
+    <free-analysis>
+      <link label-id="AAAR_Menu.free-analysis.one"   icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.free-analysis.two"   icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.free-analysis.three" icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.free-analysis.four"  icon-class="" target-url="http://www.google.it" />
+    </free-analysis>
+
+    <!-- Link set of the credits. -->
+    <credits>
+      <link label-id="AAAR_Menu.credits" icon-class="" target-url="http://fcorti.com" />
+    </credits>
+
+  </config>
+
+</alfresco-config>
