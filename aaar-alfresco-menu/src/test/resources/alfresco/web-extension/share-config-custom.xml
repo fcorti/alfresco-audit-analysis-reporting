@@ -35,7 +35,7 @@
 
     <!-- Link set of the credits. -->
     <credits>
-      <link label-id="AAAR_Menu.credits" icon-class="" target-url="http://fcorti.com" />
+      <link label-id="AAAR_Menu.credits" icon-class="" target-url="http://fcorti.com/alfresco-audit-analysis-reporting/" />
     </credits>
 
   </config>
