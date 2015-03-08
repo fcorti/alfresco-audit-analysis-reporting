@@ -9,28 +9,28 @@
 
     <!-- Link set of the dashboards. -->
     <dashboards>
-      <link label-id="AAAR_Menu.dashboard.main"       icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.dashboard.audit"      icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.dashboard.repository" icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.dashboard.documents"  icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.dashboard.folders"    icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.dashboard.main"       icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent" />
+      <link label-id="AAAR_Menu.dashboard.audit"      icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent" />
+      <link label-id="AAAR_Menu.dashboard.repository" icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository.wcdf/generatedContent" />
+      <link label-id="AAAR_Menu.dashboard.documents"  icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_documents.wcdf/generatedContent" />
+      <link label-id="AAAR_Menu.dashboard.folders"    icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_folders.wcdf/generatedContent" />
     </dashboards>
 
     <!-- Link set of the reports. -->
     <reports>
-      <link label-id="AAAR_Menu.report.one"       icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.report.two"       icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.report.three"     icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.report.four"      icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.report.main-list" icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.report.one"       icon-class="" target-url="http://localhost:8080/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer" />
+      <link label-id="AAAR_Menu.report.two"       icon-class="" target-url="http://localhost:8080/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer" />
+      <link label-id="AAAR_Menu.report.three"     icon-class="" target-url="http://localhost:8080/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer" />
+      <link label-id="AAAR_Menu.report.four"      icon-class="" target-url="http://localhost:8080/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer" />
+      <link label-id="AAAR_Menu.report.main-list" icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent" />
     </reports>
 
     <!-- Link set of the free-analysis. -->
     <free-analysis>
-      <link label-id="AAAR_Menu.free-analysis.one"   icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.free-analysis.two"   icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.free-analysis.three" icon-class="" target-url="http://www.google.it" />
-      <link label-id="AAAR_Menu.free-analysis.four"  icon-class="" target-url="http://www.google.it" />
+      <link label-id="AAAR_Menu.free-analysis.one"   icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku" />
+      <link label-id="AAAR_Menu.free-analysis.two"   icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent" />
+      <link label-id="AAAR_Menu.free-analysis.three" icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku" />
+      <link label-id="AAAR_Menu.free-analysis.four"  icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent" />
     </free-analysis>
 
     <!-- Link set of the credits. -->
