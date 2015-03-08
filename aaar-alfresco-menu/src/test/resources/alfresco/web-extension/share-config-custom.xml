@@ -27,9 +27,9 @@
 
     <!-- Link set of the free-analysis. -->
     <free-analysis>
-      <link label-id="AAAR_Menu.free-analysis.one"   icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku" />
+      <link label-id="AAAR_Menu.free-analysis.one"   icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&amp;dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku" />
       <link label-id="AAAR_Menu.free-analysis.two"   icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent" />
-      <link label-id="AAAR_Menu.free-analysis.three" icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku" />
+      <link label-id="AAAR_Menu.free-analysis.three" icon-class="" target-url="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&amp;dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku" />
       <link label-id="AAAR_Menu.free-analysis.four"  icon-class="" target-url="http://localhost:8080/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent" />
     </free-analysis>
 
