@@ -1,7 +1,4 @@
-Alfresco Audit Analysis and Reporting
-===
-
-Alfresco menu
+A.A.A.R. - Alfresco menu
 ===
 
 This project develop the AMP package to be released in Alfresco for the Alfresco menu to AAAR.
