@@ -3,7 +3,7 @@ var headerMenu = widgetUtils.findObject(model.jsonModel, "id", "HEADER_APP_MENU_
 
 if (headerMenu != null) {
 
-	var AAARMenu = {};
+    var AAARMenu = {};
 
     if (config.scoped["AAAR"]["visible"]) {
 
