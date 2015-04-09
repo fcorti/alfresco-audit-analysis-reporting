@@ -3,11 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>alfresco-audit-analysis-reporting</groupId>
-    <artifactId>aaar-alfresco-menu</artifactId>
+    <artifactId>aaar-alfresco-share</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>aaar-alfresco-menu AMP project</name>
+    <name>aaar-alfresco-share AMP project</name>
     <packaging>amp</packaging>
-    <description>Manages the lifecycle of the aaar-alfresco-menu AMP (Alfresco Module Package)</description>
+    <description>Manages the lifecycle of the aaar-alfresco-share AMP (Alfresco Module Package)</description>
 
     <parent>
         <groupId>org.alfresco.maven</groupId>

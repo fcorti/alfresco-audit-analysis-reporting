@@ -1,7 +1,7 @@
-A.A.A.R. - Alfresco menu
+A.A.A.R. - Alfresco Share
 ===
 
-This project develop the AMP package to be released in Alfresco for the Alfresco menu to AAAR.
+This project develop the AMP package to be released in Alfresco Share for the Alfresco menu to AAAR.
 
 To make it work, you need a Linux based operating system and can follow the instruction below.
 
