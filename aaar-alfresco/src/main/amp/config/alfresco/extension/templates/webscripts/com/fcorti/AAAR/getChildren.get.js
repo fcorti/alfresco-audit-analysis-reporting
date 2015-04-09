@@ -1,8 +1,19 @@
 
-var packageNodeRef = "workspace://SpacesStore/f588b504-fb26-462a-bee2-dde2586be72d";
+// Check that noderef has been provided.
+if (args.nodeRef == undefined || args.nodeRef.length == 0) {
+   status.code = 400;
+   status.message = "'nodeRef' parameter has not been provided.";
+   status.redirect = true;
+}
+else {
 
-model.packageNodeRef = packageNodeRef;
+   var node = search.findNode(args.nodeRef);
 
-var packageNode = search.findNode(packageNodeRef);
+   var nodeChildren = [];
+   if (node != undefined) {
+      nodeChildren = node.children;
+   }
 
-model.items = packageNode.children;
+   model.nodeRef = args.nodeRef;
+   model.children = nodeChildren;
+}

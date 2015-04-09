@@ -1,6 +1,6 @@
 <webscript>
   <shortname>Get children of a generic node</shortname>
-  <description>Get children of a generic node for A.A.A.R. analytics</description>
+  <description>Get children of a generic node for A.A.A.R. analytics.</description>
   <authentication>user</authentication>
   <url>/AAAR/getChildren</url>
   <format default="json">extension</format>
