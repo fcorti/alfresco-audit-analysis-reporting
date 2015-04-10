@@ -1,15 +1,19 @@
--- 
+﻿-- 
 -- A.A.A.R. - Alfresco Audit Analysis and Reporting
 -- 
 -- Script to clean the AAAR Data Mart.
 -- Author: Francesco Corti (all rights reserved)
--- Date: 07 January, 2014
+-- Date: 04 May, 2015
 -- 
 -- Disclaimer:
 -- We can't be responsible for any damage done to your system,
 -- which hopefully will not happen.
 -- 
 delete from dm_fact_actions;
+delete from dm_dim_workflow_items;
+delete from dm_dim_workflow_tasks;
+delete from dm_dim_workflow_instances;
+delete from dm_dim_workflow_definitions;
 delete from dm_dim_paths;
 delete from dm_dim_documents;
 delete from dm_dim_folders;
@@ -52,3 +56,6 @@ alter table dm_dim_minutes AUTO_INCREMENT=1;
 alter table dm_dim_actions AUTO_INCREMENT=1;
 alter table dm_dim_node_types AUTO_INCREMENT=1;
 alter table dm_dim_mime_types AUTO_INCREMENT=1;
+alter table dm_dim_workflow_tasks AUTO_INCREMENT=1;
+alter table dm_dim_workflow_instances AUTO_INCREMENT=1;
+alter table dm_dim_workflow_definitions AUTO_INCREMENT=1;
