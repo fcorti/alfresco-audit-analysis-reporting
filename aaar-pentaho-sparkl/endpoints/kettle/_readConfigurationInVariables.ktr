@@ -79,53 +79,57 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>Stream lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup</from><to>Stream lookup 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Data Grid</from><to>Stream lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 2</from><to>Stream lookup 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 3</from><to>Stream lookup 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 4</from><to>Stream lookup 5</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 5</from><to>Stream lookup 6</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 5</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 6</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 6</from><to>Stream lookup 7</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 7</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 7</from><to>Stream lookup 8</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 9</from><to>Stream lookup 10</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 10</from><to>Stream lookup 11</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 11</from><to>Stream lookup 12</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 9</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 10</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 11</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 12</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 12</from><to>Stream lookup 13</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 13</from><to>Stream lookup 14</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 13</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 14</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 14</from><to>Stream lookup 15</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 15</from><to>Stream lookup 16</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 16</from><to>Stream lookup 17</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 17</from><to>Stream lookup 18</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 15</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 16</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 17</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 18</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 18</from><to>Stream lookup 19</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 8</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 19</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 19</from><to>Stream lookup 20</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 20</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 20</from><to>Stream lookup 21</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 21</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 21</from><to>Stream lookup 22</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 22</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 22</from><to>Set Variables</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 8</from><to>Stream lookup 23</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stream lookup 23</from><to>Stream lookup 9</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>Stream lookup 23</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoAuditLimit</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoAuditLimit</from><to>alfrescoFtpPath</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoFtpPath</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Grid</from><to>alfrescoAuditLimit</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoFtpPath</from><to>alfrescoFtpPort</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoFtpPort</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoFtpPort</from><to>alfrescoHost</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoHost</from><to>alfrescoLogin</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoLogin</from><to>alfrescoPassword</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoHost</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoLogin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoPassword</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoPassword</from><to>alfrescoPort</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoPort</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoPort</from><to>alfrescoProtocol</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseHost</from><to>databaseLogin</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseLogin</from><to>databasePassword</to><enabled>Y</enabled> </hop>
+  <hop> <from>databasePassword</from><to>databasePort</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseHost</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseLogin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databasePassword</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databasePort</to><enabled>Y</enabled> </hop>
+  <hop> <from>databasePort</from><to>databaseSchemaAAAR</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseSchemaAAAR</from><to>databaseSchemaKettle</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseSchemaAAAR</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseSchemaKettle</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseSchemaKettle</from><to>databaseSchemaMain</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseSchemaMain</from><to>databaseType</to><enabled>Y</enabled> </hop>
+  <hop> <from>kettlePath</from><to>kettleVersion</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseSchemaMain</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseType</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>kettlePath</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>kettleVersion</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoProtocol</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>databaseBin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>AAARGetAudit</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>AAARGetParents</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>pentahoAAARPath</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoProtocol</from><to>alfrescoType</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoType</from><to>databaseHost</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoType</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseType</from><to>databaseBin</to><enabled>Y</enabled> </hop>
+  <hop> <from>databaseBin</from><to>kettlePath</to><enabled>Y</enabled> </hop>
+  <hop> <from>kettleVersion</from><to>pentahoAAARPath</to><enabled>Y</enabled> </hop>
+  <hop> <from>pentahoAAARPath</from><to>AAARGetAudit</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAARGetAudit</from><to>AAARGetNodes</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>AAARGetNodes</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAARGetNodes</from><to>AAARGetParents</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAARGetParents</from><to>AAARGetWorkflows</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAARGetWorkflows</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>AAARGetWorkflows</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Data Grid</name>
@@ -140,7 +144,7 @@
            </partitioning>
     <fields>
       <field>
-        <name>AAARExportType</name>
+        <name>AAARGetAudit</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -151,7 +155,29 @@
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>AAARExportGetParents</name>
+        <name>AAARGetNodes</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>AAARGetParents</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>AAARWorkflows</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -394,11 +420,11 @@
       </field>
     </fields>
     <data>
-      <line> <item>AAARExportType</item><item>AAARExportGetParents</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>alfrescoType</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
+      <line> <item>AAARGetAudit</item><item>AAARGetNodes</item><item>AAARGetParents</item><item>AAARWorkflows</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>alfrescoType</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>32</xloc>
+      <xloc>65</xloc>
       <yloc>27</yloc>
       <draw>Y</draw>
       </GUI>
@@ -483,8 +509,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>272</yloc>
+      <xloc>1061</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -643,14 +669,14 @@
     <use_formatting>N</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1034</xloc>
-      <yloc>109</yloc>
+      <xloc>70</xloc>
+      <yloc>597</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup</name>
+    <name>alfrescoAuditLimit</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -679,14 +705,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>27</yloc>
+      <xloc>65</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 10</name>
+    <name>databaseLogin</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -715,14 +741,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>123</xloc>
-      <yloc>436</yloc>
+      <xloc>206</xloc>
+      <yloc>213</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 11</name>
+    <name>databasePassword</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -751,14 +777,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>233</xloc>
-      <yloc>436</yloc>
+      <xloc>336</xloc>
+      <yloc>213</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 12</name>
+    <name>databasePort</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -787,14 +813,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>342</xloc>
-      <yloc>436</yloc>
+      <xloc>470</xloc>
+      <yloc>213</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 13</name>
+    <name>databaseSchemaAAAR</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -823,14 +849,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>436</yloc>
+      <xloc>595</xloc>
+      <yloc>212</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 14</name>
+    <name>databaseSchemaKettle</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -859,14 +885,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>584</xloc>
-      <yloc>436</yloc>
+      <xloc>759</xloc>
+      <yloc>212</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 15</name>
+    <name>databaseSchemaMain</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -895,14 +921,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>703</xloc>
-      <yloc>436</yloc>
+      <xloc>909</xloc>
+      <yloc>212</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 16</name>
+    <name>databaseType</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -931,14 +957,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>815</xloc>
-      <yloc>436</yloc>
+      <xloc>1034</xloc>
+      <yloc>211</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 17</name>
+    <name>kettlePath</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -967,14 +993,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>927</xloc>
-      <yloc>437</yloc>
+      <xloc>67</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 18</name>
+    <name>kettleVersion</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1003,14 +1029,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>927</xloc>
-      <yloc>371</yloc>
+      <xloc>219</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 19</name>
+    <name>databaseBin</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1039,14 +1065,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>927</xloc>
-      <yloc>312</yloc>
+      <xloc>1147</xloc>
+      <yloc>211</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 2</name>
+    <name>alfrescoFtpPath</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1075,14 +1101,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>203</xloc>
-      <yloc>27</yloc>
+      <xloc>195</xloc>
+      <yloc>113</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 20</name>
+    <name>AAARGetAudit</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1099,26 +1125,26 @@
     <integer_pair>N</integer_pair>
     <lookup>
       <key>
-        <name>AAARExportType</name>
+        <name>AAARGetAudit</name>
         <field>name</field>
       </key>
       <value>
         <name>value</name>
-        <rename>AAARExportTypeValue</rename>
+        <rename>AAARGetAuditValue</rename>
         <default/>
         <type>String</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>923</xloc>
-      <yloc>239</yloc>
+      <xloc>65</xloc>
+      <yloc>503</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 21</name>
+    <name>AAARGetParents</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1135,26 +1161,26 @@
     <integer_pair>N</integer_pair>
     <lookup>
       <key>
-        <name>AAARExportGetParents</name>
+        <name>AAARGetParents</name>
         <field>name</field>
       </key>
       <value>
         <name>value</name>
-        <rename>AAARExportGetParentsValue</rename>
+        <rename>AAARGetParentsValue</rename>
         <default/>
         <type>String</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>922</xloc>
-      <yloc>174</yloc>
+      <xloc>339</xloc>
+      <yloc>503</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 22</name>
+    <name>pentahoAAARPath</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1183,14 +1209,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>919</xloc>
-      <yloc>109</yloc>
+      <xloc>65</xloc>
+      <yloc>404</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 23</name>
+    <name>alfrescoType</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1219,14 +1245,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>919</xloc>
-      <yloc>30</yloc>
+      <xloc>1055</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 3</name>
+    <name>alfrescoFtpPort</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1255,14 +1281,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>304</xloc>
-      <yloc>27</yloc>
+      <xloc>312</xloc>
+      <yloc>113</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 4</name>
+    <name>alfrescoHost</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1291,14 +1317,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>403</xloc>
-      <yloc>27</yloc>
+      <xloc>438</xloc>
+      <yloc>113</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 5</name>
+    <name>alfrescoLogin</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1327,14 +1353,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>509</xloc>
-      <yloc>27</yloc>
+      <xloc>573</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 6</name>
+    <name>alfrescoPassword</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1363,14 +1389,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>615</xloc>
-      <yloc>27</yloc>
+      <xloc>697</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 7</name>
+    <name>alfrescoPort</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1399,14 +1425,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>722</xloc>
-      <yloc>27</yloc>
+      <xloc>826</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 8</name>
+    <name>alfrescoProtocol</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1435,14 +1461,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>831</xloc>
-      <yloc>27</yloc>
+      <xloc>944</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Stream lookup 9</name>
+    <name>databaseHost</name>
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1471,8 +1497,80 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>20</xloc>
-      <yloc>438</yloc>
+      <xloc>64</xloc>
+      <yloc>213</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AAARGetNodes</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>Get data from XML</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>AAARGetNodes</name>
+        <field>name</field>
+      </key>
+      <value>
+        <name>value</name>
+        <rename>AAARGetNodesValue</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>202</xloc>
+      <yloc>503</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AAARGetWorkflows</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>Get data from XML</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>AAARGetWorkflows</name>
+        <field>name</field>
+      </key>
+      <value>
+        <name>value</name>
+        <rename>AAARGetWorkflowsValue</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>487</xloc>
+      <yloc>503</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

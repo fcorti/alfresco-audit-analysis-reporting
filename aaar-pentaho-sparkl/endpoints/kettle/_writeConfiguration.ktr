@@ -10,13 +10,23 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
-            <name>AAARExportGetParents</name>
-            <default_value>AAARExportGetParents</default_value>
+            <name>AAARGetAudit</name>
+            <default_value>AAARGetAudit</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>AAARExportType</name>
-            <default_value>AAARExportType</default_value>
+            <name>AAARGetNodes</name>
+            <default_value>AAARGetNodes</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>AAARGetParents</name>
+            <default_value>AAARGetParents</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>AAARGetWorkflows</name>
+            <default_value>AAARGetWorkflows</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -217,8 +227,10 @@
       </field>
     </fields>
     <data>
-      <line> <item>AAARExportType</item> </line>
-      <line> <item>AAARExportGetParents</item> </line>
+      <line> <item>AAARGetAudit</item> </line>
+      <line> <item>AAARGetNodes</item> </line>
+      <line> <item>AAARGetParents</item> </line>
+      <line> <item>AAARGetWorkflows</item> </line>
       <line> <item>alfrescoAuditLimit</item> </line>
       <line> <item>alfrescoFtpPath</item> </line>
       <line> <item>alfrescoFtpPort</item> </line>

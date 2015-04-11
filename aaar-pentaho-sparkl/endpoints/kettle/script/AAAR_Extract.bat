@@ -8,7 +8,10 @@ set LOGS_PATH=%ENDPOINTS_PATH%\logs
 set LOG_PATH=%LOGS_PATH%\AAAR.log
 
 REM Set by writeConfiguration.kjb.
-set JOB_NAME=Get all
+set GET_AUDIT=true
+set GET_REPOSITORY=true
+set GET_PARENTS=true
+set GET_WORKFLOWS=true
 set GET_PARENTS=true
 set KETTLE_PATH=/opt/data-integration
 
@@ -19,57 +22,18 @@ if "%1"=="silent" GOTO SILENT_1
     echo Import procedure version %VERSION%
     echo Author: Francesco Corti (all rights reserved)
     echo Date: 04 May 2015
+    echo Documentation and tips: http://fcorti.com.
     echo.
     echo Disclaimer:
     echo We can't be responsible for any damage done to your system,
     echo which hopefully will not happen.
     echo.
-    echo Tip:
-    echo Want to reduce the time of execution?
-    echo Edit this script and change 'JOB_NAME' and 'GET_PARENTS' variables.
-    echo If you don't know how, look at the FAQ at http://fcorti.com.
 :SILENT_1
-
-REM JOB_NAME
-:WHILE_JOB_NAME
-if "%JOB_NAME%"=="Get audit" GOTO END_WHILE_JOB_NAME
-if "%JOB_NAME%"=="Get nodes" GOTO END_WHILE_JOB_NAME
-if "%JOB_NAME%"=="Get all" GOTO END_WHILE_JOB_NAME
-set JOB_NAME=
-echo.
-set /p JOB_NAME_ANSWER="Do you want to import audit trail, repository data or both? (audit/repository/both): "
-if /i "%JOB_NAME_ANSWER%"=="audit" set JOB_NAME=Get audit
-if /i "%JOB_NAME_ANSWER%"=="repository" set JOB_NAME=Get nodes
-if /i "%JOB_NAME_ANSWER%"=="both" set JOB_NAME=Get all
-GOTO WHILE_JOB_NAME
-:END_WHILE_JOB_NAME
-
-REM GET_PARENTS
-:WHILE_GET_PARENTS
-if "%JOB_NAME%"=="Get audit" GOTO END_WHILE_GET_PARENTS
-if "%GET_PARENTS%"=="true" GOTO END_WHILE_GET_PARENTS
-if "%GET_PARENTS%"=="false" GOTO END_WHILE_GET_PARENTS
-set GET_PARENTS=
-echo.
-set /p GET_PARENTS_ANSWER="Do you want to import repository structure? (y/n): "
-if /i "%GET_PARENTS_ANSWER%"=="y" set GET_PARENTS=true
-if /i "%GET_PARENTS_ANSWER%"=="n" set GET_PARENTS=false
-GOTO WHILE_GET_PARENTS
-:END_WHILE_GET_PARENTS
-
-REM KETTLE_PATH
-if EXIST "%KETTLE_PATH%" GOTO END_WHILE_KETTLE_PATH
-set KETTLE_PATH=
-:WHILE_KETTLE_PATH
-echo.
-set /p KETTLE_PATH="Please, enter the <data-integration> path (es.:C:\data-integration): "
-if "%KETTLE_PATH%"=="" GOTO WHILE_KETTLE_PATH
-:END_WHILE_KETTLE_PATH
 
 if "%1"=="silent" GOTO SILENT_2
     echo.
     echo You are going to execute this command:
-    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"%JOB_NAME%" /dir:/Alfresco /user:admin /pass:admin /param:get_parents="%GET_PARENTS%" /log="%LOG_PATH%" /level:Basic
+    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_parents="%GET_PARENTS%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
     echo.
     pause
     echo.
@@ -77,7 +41,7 @@ if "%1"=="silent" GOTO SILENT_2
 
 cd "%KETTLE_PATH%"
 
-Kitchen.bat /rep:"AAAR_Kettle" /job:"%JOB_NAME%" /dir:/Alfresco /user:admin /pass:admin /param:get_parents="%GET_PARENTS%" /log="%LOG_PATH%" /level:Basic
+Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_parents="%GET_PARENTS%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
 
 cd "%CURRENT_PATH%"
 
