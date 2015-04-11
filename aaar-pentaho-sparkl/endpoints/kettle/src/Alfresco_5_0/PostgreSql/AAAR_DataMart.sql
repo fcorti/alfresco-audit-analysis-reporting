@@ -109,12 +109,12 @@ CREATE TABLE "dm_dim_alfresco" (
     "login" character varying(100) NOT NULL,
     "password" character varying(100) NOT NULL,
     "url" character varying(1024) NOT NULL,
+    "url_service_suffix" character varying(128) NOT NULL,
     "url_audit_suffix" character varying(1024) NOT NULL,
     "url_cmis_suffix" character varying(1024) NOT NULL,
-    "is_active" character(1) DEFAULT 'Y'::"bpchar" NOT NULL,
     "url_workflow_definitions_suffix" character varying(1024) NOT NULL,
     "url_workflow_instances_suffix" character varying(1024) NOT NULL,
-    "url_service_suffix" character varying(128) NOT NULL
+    "is_active" character(1) DEFAULT 'Y'::"bpchar" NOT NULL
 );
 
 
@@ -440,6 +440,7 @@ ALTER TABLE "public"."seq_dm_dim_workflow_instances_id" OWNER TO "postgres";
 
 CREATE TABLE "dm_dim_workflow_instances" (
     "id" integer DEFAULT "nextval"('"seq_dm_dim_workflow_instances_id"'::"regclass") NOT NULL,
+    "definition_id" integer NOT NULL,
     "name" character varying(1024) NOT NULL,
     "title" character varying(1024) NOT NULL,
     "desc" character varying(1024) NOT NULL,
@@ -454,7 +455,6 @@ CREATE TABLE "dm_dim_workflow_instances" (
     "diagram_url" character varying(1024) NOT NULL,
     "duration" integer,
     "max_duration" integer,
-    "definition_id" integer NOT NULL,
     "alfresco_id" smallint NOT NULL,
     "src_id" character varying(1024) NOT NULL
 );
@@ -499,6 +499,7 @@ ALTER TABLE "public"."seq_dm_dim_workflow_tasks_id" OWNER TO "postgres";
 
 CREATE TABLE "dm_dim_workflow_tasks" (
     "id" integer DEFAULT "nextval"('"seq_dm_dim_workflow_tasks_id"'::"regclass") NOT NULL,
+    "instance_id" integer NOT NULL,
     "name" character varying(1024) NOT NULL,
     "title" character varying(1024) NOT NULL,
     "desc" character varying(1024) NOT NULL,
@@ -518,7 +519,6 @@ CREATE TABLE "dm_dim_workflow_tasks" (
     "completion_minute_id" smallint NOT NULL,
     "duration" integer NOT NULL,
     "max_duration" integer NOT NULL,
-    "instance_id" integer NOT NULL,
     "ordinal" smallint NOT NULL,
     "alfresco_id" smallint NOT NULL,
     "src_id" character varying(1024) NOT NULL
