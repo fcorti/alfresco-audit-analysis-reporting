@@ -27,7 +27,6 @@ if [ "$1" != "silent" ]; then
     echo "Disclaimer:"
     echo "We can't be responsible for any damage done to your system,"
     echo "which hopefully will not happen."
-    echo
 fi
 
 if [ "$1" != "silent" ]; then
