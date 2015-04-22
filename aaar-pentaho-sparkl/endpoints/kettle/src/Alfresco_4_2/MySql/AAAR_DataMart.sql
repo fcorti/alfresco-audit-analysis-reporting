@@ -1756,7 +1756,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_dm_min_max_date_sub1` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`date`) AS `max_date`,min(`ope_audit`.`date`) AS `min_date` from `ope_audits` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_cmis_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_folder`.`cmis_creationdate`) AS `max_date`,min(`stg_cmis_folder`.`cmis_creationdate`) AS `min_date` from `stg_cmis_folders` `stg_cmis_folder` group by `stg_cmis_folder`.`alfresco_id` */;
+/*!50001 VIEW `vw_dm_min_max_date_sub1` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`date`) AS `max_date`,min(`ope_audit`.`date`) AS `min_date` from `ope_audits` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_cmis_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_folder`.`cmis_creationdate`) AS `max_date`,min(`stg_cmis_folder`.`cmis_creationdate`) AS `min_date` from `stg_cmis_folders` `stg_cmis_folder` group by `stg_cmis_folder`.`alfresco_id` union all select `stg_cmis_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_folder`.`cmis_lastmodificationdate`) AS `max_date`,min(`stg_cmis_folder`.`cmis_lastmodificationdate`) AS `min_date` from `stg_cmis_folders` `stg_cmis_folder` group by `stg_cmis_folder`.`alfresco_id`*/;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1775,7 +1775,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_dm_min_max_date_sub2` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`max_date`) AS `max_date`,min(`ope_audit`.`min_date`) AS `min_date` from `vw_dm_min_max_date_sub1` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_cmis_document`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_document`.`cmis_creationdate`) AS `max_date`,min(`stg_cmis_document`.`cmis_creationdate`) AS `min_date` from `stg_cmis_documents` `stg_cmis_document` group by `stg_cmis_document`.`alfresco_id` */;
+/*!50001 VIEW `vw_dm_min_max_date_sub2` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`max_date`) AS `max_date`,min(`ope_audit`.`min_date`) AS `min_date` from `vw_dm_min_max_date_sub1` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_cmis_document`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_document`.`cmis_creationdate`) AS `max_date`,min(`stg_cmis_document`.`cmis_creationdate`) AS `min_date` from `stg_cmis_documents` `stg_cmis_document` group by `stg_cmis_document`.`alfresco_id` union all select `stg_cmis_document`.`alfresco_id` AS `alfresco_id`,max(`stg_cmis_document`.`cmis_lastmodificationdate`) AS `max_date`,min(`stg_cmis_document`.`cmis_lastmodificationdate`) AS `min_date` from `stg_cmis_documents` `stg_cmis_document` group by `stg_cmis_document`.`alfresco_id` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;

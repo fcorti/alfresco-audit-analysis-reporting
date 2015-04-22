@@ -1230,9 +1230,21 @@ CREATE VIEW "vw_dm_min_max_date" AS
            FROM "stg_cmis_folders" "stg_cmis_folder"
           GROUP BY "stg_cmis_folder"."alfresco_id"
         UNION ALL
+         SELECT "stg_cmis_folder"."alfresco_id",
+            "min"("stg_cmis_folder"."cmis_lastmodificationdate") AS "min_date",
+            "max"("stg_cmis_folder"."cmis_lastmodificationdate") AS "max_date"
+           FROM "stg_cmis_folders" "stg_cmis_folder"
+          GROUP BY "stg_cmis_folder"."alfresco_id"
+        UNION ALL
          SELECT "stg_cmis_document"."alfresco_id",
             "min"("stg_cmis_document"."cmis_creationdate") AS "min_date",
             "max"("stg_cmis_document"."cmis_creationdate") AS "max_date"
+           FROM "stg_cmis_documents" "stg_cmis_document"
+          GROUP BY "stg_cmis_document"."alfresco_id"
+        UNION ALL
+         SELECT "stg_cmis_document"."alfresco_id",
+            "min"("stg_cmis_document"."cmis_lastmodificationdate") AS "min_date",
+            "max"("stg_cmis_document"."cmis_lastmodificationdate") AS "max_date"
            FROM "stg_cmis_documents" "stg_cmis_document"
           GROUP BY "stg_cmis_document"."alfresco_id"
         UNION ALL
