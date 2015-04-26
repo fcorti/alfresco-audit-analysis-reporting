@@ -349,6 +349,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <line> <item>Reports</item><item>document_types.prpt</item> </line>
       <line> <item>Reports</item><item>folder_types.prpt</item> </line>
       <line> <item>Reports</item><item>site_documents.prpt</item> </line>
+      <line> <item>Reports</item><item>workflows_active_instances.prpt</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
