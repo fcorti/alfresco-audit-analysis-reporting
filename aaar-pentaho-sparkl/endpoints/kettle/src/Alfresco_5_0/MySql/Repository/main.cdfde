@@ -483,7 +483,7 @@
      },
      {
       "name": "html",
-      "value": "<div id=\"mainMenu\">\n  <div class=\"list-group\">\n    <a href=\"#dashboards\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-briefcase\"></i> Dashboards <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"dashboards\">\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Audit trail</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Repository</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_documents.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Documents</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_folders.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Folders</a>\n    </div>\n    <a href=\"#reports\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-list-alt\"></i> Reports <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"reports\">\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository size</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Login analysis per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Content creation per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Top ten users and content</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Action types</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Most active users</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Hours of activity</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:site_documents.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per site</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per mime type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Folders per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit details (MS Excel)</a>\n    </div>\n    <a href=\"#freeAnalysis\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-flash\"></i> Free analysis <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"freeAnalysis\">\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with JPivot</a>\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with JPivot</a>\n    </div>\n  </div>\n</div> ",
+      "value": "<div id=\"mainMenu\">\n  <div class=\"list-group\">\n    <a href=\"#dashboards\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-briefcase\"></i> Dashboards <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"dashboards\">\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Aaudit_actions.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Audit trail</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Repository</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_documents.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Documents</a>\n      <a href=\"#\" class=\"list-group-item\" data-parent=\"#dashboards\" onclick=\"\n                                            var url = '/pentaho/api/repos/%3Apublic%3AAAAR%3Arepository_folders.wcdf/generatedContent';\n                                            var bookmarkState = {'impl':'client','params':{'alfrescoInstance':Dashboards.getParameterValue('${p:alfrescoInstance}')}};\n                                            window.open(url + '?bookmarkState=' + encodeURI(JSON.stringify(bookmarkState)), '_self');\n                                            return false;\">Folders</a>\n    </div>\n    <a href=\"#reports\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-list-alt\"></i> Reports <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"reports\">\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_size.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository size</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_login.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Login analysis per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_creation.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Content creation per day</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_topTen.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Top ten users and content</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_use.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Action types</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_active_users.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Most active users</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_hours_of_activity.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Hours of activity</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:site_documents.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per site</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:document_mime_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Documents per mime type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:folder_types.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Folders per type</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:workflows_active_instances.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Active workflow instances</a>\n      <a href=\"/pentaho/api/repos/:public:AAAR:Reports:audit_details.prpt/viewer\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit details (MS Excel)</a>\n    </div>\n    <a href=\"#freeAnalysis\" class=\"list-group-item\" data-toggle=\"collapse\" data-parent=\"#mainMenu\"><i class=\"glyphicon glyphicon-flash\"></i> Free analysis <i class=\"fa fa-caret-down\"></i></a>\n    <div class=\"collapse list-group-submenu\" id=\"freeAnalysis\">\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3AAudit_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3AAudit_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Audit trail with JPivot</a>\n      <a href=\"/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAAAR%3AOlap%3ARepository_SaikuFreeAnalysis.saiku\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with Saiku</a>\n      <a href=\"/pentaho/api/repos/%3Apublic%3AAAAR%3AOlap%3ARepository_Pivot4jFreeAnalysis.pivot4j/generatedContent\" class=\"list-group-item\" data-parent=\"#reports\" target=\"_blank\">Repository with JPivot</a>\n    </div>\n  </div>\n</div> ",
       "type": "Html"
      },
      {
@@ -2033,7 +2033,7 @@
       "type": "Datasource"
      },
      {
-      "name": "height",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -2043,13 +2043,13 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "height",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -2073,13 +2073,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"actions\") {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else {\n        $(\"#\" + this.htmlObject).show();\n    }\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"actions\") {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else {\n        $(\"#\" + this.htmlObject).show();\n    }\n} ",
       "type": "JavaScript"
      },
      {
@@ -3307,7 +3307,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
@@ -3317,12 +3322,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -3347,13 +3347,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"repository\") {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else {\n        $(\"#\" + this.htmlObject).show();\n    }\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"repository\") {\n        $(\"#\" + this.htmlObject).hide();\n    }\n    else {\n        $(\"#\" + this.htmlObject).show();\n    }\n} ",
       "type": "JavaScript"
      },
      {
@@ -4611,8 +4611,8 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -4621,12 +4621,12 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "height",
+      "value": "",
       "type": "Integer"
      },
      {
-      "name": "height",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -4651,13 +4651,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"workflows\") {\n        $(\"#workflowFilters\").hide();\n        $(\"#workflowSpacer\").hide();\n        $(\"#workflowChartObj\").hide();\n    }\n    else {\n        $(\"#workflowFilters\").show();\n        $(\"#workflowSpacer\").show();\n        $(\"#workflowChartObj\").show();\n    }\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n\n    if (Dashboards.getParameterValue('${p:chartType}') != \"workflows\") {\n        $(\"#workflowFilters\").hide();\n        $(\"#workflowSpacer\").hide();\n        $(\"#workflowChartObj\").hide();\n    }\n    else {\n        $(\"#workflowFilters\").show();\n        $(\"#workflowSpacer\").show();\n        $(\"#workflowChartObj\").show();\n    }\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -6026,7 +6026,7 @@
      },
      {
       "name": "query",
-      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id and a.alfresco_id = ${alfrescoInstanceParam}\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
+      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a right join dm_dim_dates d on a.date_id = d.id and a.alfresco_id = ${alfrescoInstanceParam}\nwhere\n d.id between str_str_to_date(${dtFromParam},'%Y-%m-%d') and str_str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
       "type": "SqlQuery"
      },
      {
@@ -6158,7 +6158,7 @@
      },
      {
       "name": "query",
-      "value": "select\n d.id as date_id,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and wf_i.start_date_id = d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam}) as Started,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and wf_i.end_date_id = d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam}) as Completed\nfrom\n dm_dim_dates d\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
+      "value": "select\n d.id as date_id,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam} where wf_i.start_date_id = d.id) as Started,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam} where wf_i.end_date_id = d.id) as Completed\nfrom\n dm_dim_dates d\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
       "type": "SqlQuery"
      },
      {

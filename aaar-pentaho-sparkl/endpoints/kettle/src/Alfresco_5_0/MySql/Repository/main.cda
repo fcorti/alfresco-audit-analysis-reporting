@@ -112,8 +112,8 @@ order by
       </Parameters>
       <Query>select
  d.id as date_id,
- (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and wf_i.start_date_id = d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam}) as Started,
- (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and wf_i.end_date_id = d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam}) as Completed
+ (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam} where wf_i.start_date_id = d.id) as Started,
+ (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam} where wf_i.end_date_id = d.id) as Completed
 from
  dm_dim_dates d
 where
