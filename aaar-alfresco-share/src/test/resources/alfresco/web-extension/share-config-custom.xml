@@ -4,7 +4,7 @@
   <config evaluator="string-compare" condition="AAAR" replace="true">
 
     <!-- Set to true or false to view the menu and/or credits. -->
-    <visible>true</visible>
+    <visible>false</visible>
     <visible-credits>true</visible-credits>
 
     <!-- Link set of the dashboards. -->
