@@ -220,10 +220,7 @@
             if (this.filter == "all" || this.filter == this.options.analytics[i].type)
             {
                /* TODO: Develop the selection depending on the user/group of the connected user. */
-               /* TODO: Develop the Maven, AMP distribution (with no conflict with menu). */
                /* TODO: Integrate all the reports in the config and properties. */
-               /* TODO: Release it to OOTB to test. */
-               /* TODO: Develop the doucumentation and release it. */
                this.analytics[ii++] = this.options.analytics[i];
             }
          }
