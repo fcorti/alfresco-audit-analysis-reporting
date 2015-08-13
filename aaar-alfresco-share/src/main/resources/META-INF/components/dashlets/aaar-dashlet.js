@@ -220,7 +220,6 @@
             if (this.filter == "all" || this.filter == this.options.analytics[i].type)
             {
                /* TODO: Develop the selection depending on the user/group of the connected user. */
-               /* TODO: Integrate all the reports in the config and properties. */
                this.analytics[ii++] = this.options.analytics[i];
             }
          }
