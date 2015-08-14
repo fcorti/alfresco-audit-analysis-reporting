@@ -103,42 +103,6 @@ if (headerMenu != null) {
             }
         }
     }
-    else {
-
-        // Share-config-custom is not set.
-        AAARMenu = {
-            id: "HEADER_AAAR_DROPDOWN",
-            name: "alfresco/header/AlfMenuBarPopup",
-            config: {
-                label: msg.get("AAAR_Menu.desc"),
-                widgets: [{
-                    name: "alfresco/menus/AlfMenuBarItem",
-                    config: {
-                        label: msg.get("AAAR_Menu.help"),
-                        iconClass: "alf-user-help-icon",
-                        targetUrl: "http://fcorti.com/alfresco-audit-analysis-reporting/",
-                        targetUrlType: "FULL_PATH",
-                        targetUrlLocation: "NEW"
-                    }
-                },
-                {
-                    name: "alfresco/menus/AlfMenuGroup",
-                    config: {
-                        label: msg.get("AAAR_Menu.credits.group"),
-                        widgets: [{
-                            name: "alfresco/menus/AlfMenuBarItem",
-                            config: {
-                                label: msg.get("AAAR_Menu.credits"),
-                                targetUrl: "http://fcorti.com/alfresco-audit-analysis-reporting/",
-                                targetUrlType: "FULL_PATH",
-                                targetUrlLocation: "NEW"
-                            }
-                        }]
-                    }
-                }]
-            }
-        }
-    }
 
 	// Put the item immediately before the admin console or at the end.
     for (var i = 0; i < headerMenu.config.widgets.length && headerMenu.config.widgets[i].id != 'HEADER_ADMIN_CONSOLE'; ++i) {
