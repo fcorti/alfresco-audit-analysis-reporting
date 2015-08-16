@@ -12,7 +12,7 @@ function getAnalyticGroupSettings(dashletConfig, groupType) {
          icon   : link.@icon.toString(), 
          label  : link.@labelId.toString(), 
          url    : link.@url.toString(), 
-         groups : link.@groups.toString().split(",")
+         groups : link.@permits.toString().split(",")
       };
    }
 

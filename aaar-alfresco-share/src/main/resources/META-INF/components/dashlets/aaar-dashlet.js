@@ -37,10 +37,6 @@
    {
       Alfresco.dashlet.AAAR.superclass.constructor.call(this, "Alfresco.dashlet.AAAR", htmlId, ["datasource", "datatable", "animation"]);
 
-      // Initialise prototype properties
-      this.sites = [];
-
-      // Services
       this.services.preferences = new Alfresco.service.Preferences();
 
       return this;
@@ -53,6 +49,14 @@
        */
       PREFERENCES_AAAR_DASHLET: "",
       PREFERENCES_AAAR_DASHLET_FILTER: "",
+
+      /**
+       * Groups of the current user.
+       *
+       * @property groups
+       * @type array
+       */
+      groups: null,
 
       /**
        * Analytics data
@@ -145,9 +149,9 @@
          this.widgets.dataTable.subscribe("rowMouseoverEvent", this.widgets.dataTable.onEventHighlightRow);
          this.widgets.dataTable.subscribe("rowMouseoutEvent", this.widgets.dataTable.onEventUnhighlightRow);
 
-         // Load sites & preferences
+         // Load analytics & preferences
          this.initPreferences();
-         this.loadSites();
+         this.loadAnalytics();
       },
 
       /**
@@ -172,11 +176,11 @@
                {
                   fn: function() 
                   {
-                     // Update local cached copy of current filter
+                     // Update local cached copy of current filter.
                      this.filter = menuItem.value;
 
-                     // Reload the sites list
-                     this.loadSites();
+                     // Reload the analytic list.
+                     this.loadAnalytics();
                   },
                   scope: this
                }
@@ -201,9 +205,9 @@
       /**
        * Load analytic list
        *
-       * @method loadSites
+       * @method loadAnalytics
        */
-      loadSites: function AAAR_loadSites()
+      loadAnalytics: function AAAR_loadAnalytics()
       {
          // Select the preferred filter in the ui
          this.widgets.type.set("label", this.msg("AAAR.dashlet.analytics.filter." + this.filter) + " " + Alfresco.constants.MENU_ARROW_SYMBOL);
@@ -212,29 +216,60 @@
          // Display the toolbar now that we have selected the filter
          Dom.removeClass(Selector.query(".toolbar div", this.id, true), "hidden");
 
-         // Filter the analytics from the complete list.
-         this.analytics = [];
-         var ii = 0;
-         for (var i = 0; i < this.options.analytics.length; ++i)
+         // Retrieve the groups of the current user.
+         Alfresco.util.Ajax.request(
          {
-            if (this.filter == "all" || this.filter == this.options.analytics[i].type)
+            url: Alfresco.constants.PROXY_URI + "/api/people/" + encodeURIComponent(Alfresco.constants.USERNAME) + "?groups=true",
+            successCallback:
+            { fn: this.onGroupsLoaded, scope: this }
+         });
+
+      },
+
+      /**
+       * Groups loaded handler.
+       *
+       * @method onGroupsLoaded
+       * @param response {object} Response from events query
+       */
+      onGroupsLoaded: function AAAR_onGroupsLoaded(response)
+      {
+         // Definition of the groups of the current user.
+         this.groups = [];
+         if (response.json != null && response.json.groups != null) {
+            this.groups[this.groups.length] = Alfresco.constants.USERNAME.toUpperCase();
+            this.groups[this.groups.length] = "EVERYONE";
+            for (var i = 0; i < response.json.groups.length; ++i)
             {
-               /* TODO: Develop the selection depending on the user/group of the connected user. */
-               this.analytics[ii++] = this.options.analytics[i];
+               this.groups[this.groups.length] = response.json.groups[i].displayName;
             }
          }
 
          var successHandler = function AAAR_onAnalyticsUpdate_success(sRequest, oResponse, oPayload)
          {
-            var desc = '<p align="center">';
-            desc += '<br/>';
-            desc += '<img src="' + Alfresco.constants.URL_RESCONTEXT + 'components/images/help-tutorial-64.png" title="' + this.msg("AAAR.dashlet.analytics.filter.noResult") + '" />';
-            desc += '<br/>';
-            desc += '<h3 align="center">' + this.msg("AAAR.dashlet.analytics.filter.noResult") + '</h3>';
-            desc += '</p>';
+            // Selection of the analytics.
+            this.analytics = [];
+            for (var i = 0; i < this.options.analytics.length; ++i)
+            {
+               if (this.filter == "all" || this.filter == this.options.analytics[i].type)
+               {
+                  // Selection depending on the connected user.
+                  if (this.isUserGroupsContainedIn(this.options.analytics[i].groups)) {
+                     this.analytics[this.analytics.length] = this.options.analytics[i];
+                  }
+               }
+            }
+
+            // Default emty message.
+            var emptyMsg = '<p align="center">';
+            emptyMsg += '<br/>';
+            emptyMsg += '<img src="' + Alfresco.constants.URL_RESCONTEXT + 'components/images/help-tutorial-64.png" title="' + this.msg("AAAR.dashlet.analytics.filter.noResult") + '" />';
+            emptyMsg += '<br/>';
+            emptyMsg += '<h3 align="center">' + this.msg("AAAR.dashlet.analytics.filter.noResult") + '</h3>';
+            emptyMsg += '</p>';
 
             oResponse.results = this.analytics;
-            this.widgets.dataTable.set("MSG_EMPTY", desc);
+            this.widgets.dataTable.set("MSG_EMPTY", emptyMsg);
             this.widgets.dataTable.onDataReturnInitializeTable.call(this.widgets.dataTable, sRequest, oResponse, oPayload);
          };
 
@@ -242,6 +277,27 @@
          this.widgets.dataSource.sendRequest(
             this.analytics,
             { success: successHandler, scope: this });
+      },
+
+      /**
+       * Check if at least on group of the current user is contained in the groups list in the parameter.
+       *
+       * @method isUserGroupsContainedIn
+       * @param authorizedGroups {array}
+       */
+      isUserGroupsContainedIn: function AAAR_isUserGroupsContainedIn(authorizedGroups)
+      {
+         for (var i = 0; i < this.groups.length; i++)
+         {
+            for (var j = 0; j < authorizedGroups.length; j++)
+            {
+               if (this.groups[i].trim().toUpperCase() == authorizedGroups[j].trim().toUpperCase())
+               {
+                  return true;
+               }
+            }
+         }
+         return false;
       },
 
       /**
