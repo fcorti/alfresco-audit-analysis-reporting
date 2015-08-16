@@ -25,3 +25,7 @@ Remembering that Alfresco is leader as an Open Source E.C.M. platform, the provi
 
 For more informations:
 http://fcorti.com/alfresco-audit-analysis-reporting/
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcorti/alfresco-audit-analysis-reporting/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
