@@ -17,8 +17,11 @@
 	limitations under the License.
 -->
 <beans>
-	<bean id="webscript.helloworld.get"
-		  class="com.fcorti.aaar.demoamp.HelloWorldWebScript"
-		  parent="webscript">
+
+	<bean id="webscript.com.fcorti.AAAR.getProperties.get" class="com.fcorti.aaar.GetPropertiesWebScript" parent="webscript">
+		<property name="properties">
+			<ref bean="global-properties"/>
+		</property>
 	</bean>
+
 </beans>
