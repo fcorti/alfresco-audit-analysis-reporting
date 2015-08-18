@@ -112,8 +112,6 @@
        */
       onReady: function AAAR_onReady()
       {
-         var me = this;
-
          // Fetch preferences
          this.PREFERENCES_AAAR_DASHLET = this.services.preferences.getDashletId(this, "aaar");
          this.PREFERENCES_AAAR_DASHLET_FILTER = this.PREFERENCES_AAAR_DASHLET + ".filter";
