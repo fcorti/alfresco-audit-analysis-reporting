@@ -1,7 +1,7 @@
 A.A.A.R. - Alfresco repository addon
 ===
 
-This project create the AMP package to be released in the Alfresco Repository for the customizations requested for AAAR.
+This project creates the AMP package to be released in the Alfresco Repository for the customizations requested for AAAR.
 
 To make it work, you need a Linux based operating system and can follow the instructions below.
 
