@@ -97,6 +97,14 @@
          },
 
          /**
+          * Configuration properties
+          *
+          * @property validFilters
+          * @type object
+          */
+         properties: {},
+
+         /**
           * Array of analytics
           *
           * @property analytics
@@ -147,43 +155,31 @@
          this.widgets.dataTable.subscribe("rowMouseoverEvent", this.widgets.dataTable.onEventHighlightRow);
          this.widgets.dataTable.subscribe("rowMouseoutEvent", this.widgets.dataTable.onEventUnhighlightRow);
 
-         // Load analytics & preferences
-         this.initPreferences();
-         this.loadAnalytics();
+         // Retrieve AAAR properties
+         Alfresco.util.Ajax.request(
+         {
+            url: Alfresco.constants.PROXY_URI + "/AAAR/getProperties",
+            successCallback:
+            {
+               fn: this.onReady_callback,
+               scope: this
+            },
+            failureCallback:
+            {
+               fn: this.onReady_callback,
+               scope: this
+            }
+         });
       },
 
       /**
-       * Date drop-down changed event handler
-       *
-       * @method onTypeFilterChanged
-       * @param p_sType {string} The event
-       * @param p_aArgs {array}
+       * Callback in case of success for AAAR_onReady
+       * @method onReady
        */
-      onTypeFilterChanged: function AAAR_onTypeFilterChanged(p_sType, p_aArgs)
+      onReady_callback: function AAAR_onReady_Callback(p_response)
       {
-         var menuItem = p_aArgs[1];
-         if (menuItem)
-         {
-            this.widgets.type.set("label", menuItem.cfg.getProperty("text") + " " + Alfresco.constants.MENU_ARROW_SYMBOL);
-            this.widgets.type.value = menuItem.value;
-
-            // Save preferences
-            this.services.preferences.set(this.PREFERENCES_AAAR_DASHLET_FILTER, menuItem.value,
-            {
-               successCallback:
-               {
-                  fn: function() 
-                  {
-                     // Update local cached copy of current filter.
-                     this.filter = menuItem.value;
-
-                     // Reload the analytic list.
-                     this.loadAnalytics();
-                  },
-                  scope: this
-               }
-            });
-         }
+         this.initPreferences( (p_response == null ? {} : p_response.json) );
+         this.loadAnalytics();
       },
 
       /**
@@ -191,13 +187,21 @@
        *
        * @method initPreferences
        */
-      initPreferences: function AAAR_initPreferences()
+      initPreferences: function AAAR_initPreferences(properties)
       {
          var prefs = this.services.preferences.get();
 
          // Retrieve the preferred filter for the UI
          var filter = Alfresco.util.findValueByDotNotation(prefs, this.PREFERENCES_AAAR_DASHLET_FILTER, "all");
          this.filter = this.options.validFilters.hasOwnProperty(filter) ? filter : "all";
+
+         this.options.properties = properties;
+
+         // Adjust urls.
+         for (var i = 0; i < this.options.analytics.length; ++i)
+         {
+            this.options.analytics[i].url = this.composeUrl(this.options.analytics[i].url);
+         }
       },
 
       /**
@@ -218,8 +222,11 @@
          Alfresco.util.Ajax.request(
          {
             url: Alfresco.constants.PROXY_URI + "/api/people/" + encodeURIComponent(Alfresco.constants.USERNAME) + "?groups=true",
-            successCallback:
-            { fn: this.onGroupsLoaded, scope: this }
+            successCallback: 
+            {
+               fn: this.onGroupsLoaded, 
+               scope: this
+            }
          });
 
       },
@@ -278,24 +285,37 @@
       },
 
       /**
-       * Check if at least on group of the current user is contained in the groups list in the parameter.
+       * Date drop-down changed event handler
        *
-       * @method isUserGroupsContainedIn
-       * @param authorizedGroups {array}
+       * @method onTypeFilterChanged
+       * @param p_sType {string} The event
+       * @param p_aArgs {array}
        */
-      isUserGroupsContainedIn: function AAAR_isUserGroupsContainedIn(authorizedGroups)
+      onTypeFilterChanged: function AAAR_onTypeFilterChanged(p_sType, p_aArgs)
       {
-         for (var i = 0; i < this.groups.length; i++)
+         var menuItem = p_aArgs[1];
+         if (menuItem)
          {
-            for (var j = 0; j < authorizedGroups.length; j++)
+            this.widgets.type.set("label", menuItem.cfg.getProperty("text") + " " + Alfresco.constants.MENU_ARROW_SYMBOL);
+            this.widgets.type.value = menuItem.value;
+
+            // Save preferences
+            this.services.preferences.set(this.PREFERENCES_AAAR_DASHLET_FILTER, menuItem.value,
             {
-               if (this.groups[i].trim().toUpperCase() == authorizedGroups[j].trim().toUpperCase())
+               successCallback:
                {
-                  return true;
+                  fn: function() 
+                  {
+                     // Update local cached copy of current filter.
+                     this.filter = menuItem.value;
+
+                     // Reload the analytic list.
+                     this.loadAnalytics();
+                  },
+                  scope: this
                }
-            }
+            });
          }
-         return false;
       },
 
       /**
@@ -363,7 +383,60 @@
          elCell.innerHTML = desc;
       },
 
+      /**
+       * Check if at least on group of the current user is contained in the groups list in the parameter.
+       *
+       * @method isUserGroupsContainedIn
+       * @param authorizedGroups {array}
+       */
+      isUserGroupsContainedIn: function AAAR_isUserGroupsContainedIn(authorizedGroups)
+      {
+         for (var i = 0; i < this.groups.length; i++)
+         {
+            for (var j = 0; j < authorizedGroups.length; j++)
+            {
+               if (this.groups[i].trim().toUpperCase() == authorizedGroups[j].trim().toUpperCase())
+               {
+                  return true;
+               }
+            }
+         }
+         return false;
+      },
+
+      /**
+       * Compose the complete url of the analytics.
+       *
+       * @method isUserGroupsContainedIn
+       * @param url {string}
+       */
+      composeUrl: function AAAR_composeUrl(url)
+      {
+         if (url == null || 
+             url == "") {
+            return "";
+         }
+
+         if (url.indexOf("http") === 0) {
+            return url;
+         }
+
+         if (this.options.properties == null ||
+             this.options.properties.pentaho == null ||
+             this.options.properties.pentaho.protocol == null) {
+            return url;
+         }
+
+         return this.options.properties.pentaho.protocol + 
+            "://" + 
+            this.options.properties.pentaho.host + 
+            ":" + 
+            this.options.properties.pentaho.port + 
+            "/" + 
+            this.options.properties.pentaho.context + 
+            url;
+      },
+
    });
 
 })();
-
