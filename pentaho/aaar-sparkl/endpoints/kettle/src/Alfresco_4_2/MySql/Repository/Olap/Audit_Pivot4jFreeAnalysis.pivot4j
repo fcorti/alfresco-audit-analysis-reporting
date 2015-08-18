@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+   <connection>
+      <catalog>AAAR_AuditTrail</catalog>
+      <cube>AAAR_AuditTrail</cube>
+   </connection>
+   <model>
+      <mdx>SELECT NON EMPTY {[Measures].[Actions]} ON COLUMNS, NON EMPTY {[Action].[UNKNOWN], [Action].[LOGIN], [Action].[CREATE], [Action].[UPDATE CONTENT], [Action].[DELETE], [Action].[READ], [Action].[LOGOUT]} ON ROWS FROM [AAAR_AuditTrail]</mdx>
+   </model>
+   <render visible="true">
+      <drillDown enabled="true" mode="position"/>
+      <sort enabled="true" mode="basic"/>
+      <drillThrough enabled="false"/>
+      <properties>
+         <cell></cell>
+         <header></header>
+      </properties>
+      <filter inline="true" visible="false"/>
+      <showDimensionTitle>true</showDimensionTitle>
+      <showParentMembers>false</showParentMembers>
+      <hideSpans>false</hideSpans>
+   </render>
+   <chart type="StackedBar">
+      <drillDown enabled="true" mode="position"/>
+      <sort enabled="true" mode="basic"/>
+      <drillThrough enabled="false"/>
+      <filter visible="false"/>
+      <mappings>
+         <page axis="COLUMNS"/>
+         <chart axis="COLUMNS"/>
+         <series axis="ROWS"/>
+         <plot axis="ROWS"/>
+      </mappings>
+      <dimension height="300" width="0"/>
+      <axes>
+         <axis name="x">
+            <label angle="30"/>
+         </axis>
+         <axis name="y">
+            <label angle="0"/>
+         </axis>
+      </axes>
+      <legend>
+         <position>w</position>
+      </legend>
+   </chart>
+   <views></views>
+</report>
