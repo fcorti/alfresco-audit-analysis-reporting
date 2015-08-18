@@ -1,7 +1,7 @@
-A.A.A.R. - Alfresco - Repository
+A.A.A.R. - Alfresco repository addon
 ===
 
-Those projects develop the AMP package to be released in Alfresco Repository for the webscript and customizations for AAAR.
+The projects listed in subfolder create the AMP packages to be released in the Alfresco repository for the customizations requested for AAAR.
 
 For more informations on the solution:
 http://fcorti.com/alfresco-audit-analysis-reporting/
