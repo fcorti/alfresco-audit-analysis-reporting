@@ -7,8 +7,7 @@
     <!-- The bootstrap-context.xml file is used for patch definitions, importers, 
 		 workflow, and loading custom content models.  -->
 
-
-    <!-- Registration of new models -->
+    <!-- Registration of new models
     <bean id="com.fcorti.aaar.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
             <list>
@@ -17,7 +16,6 @@
             </list>
         </property>
     </bean>
-	
-
+	-->
 
 </beans>
