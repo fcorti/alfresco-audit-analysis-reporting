@@ -110,7 +110,7 @@ To clone the project using the command line, open a terminal and execute the com
     cd ~
     git clone https://github.com/fcorti/alfresco-audit-analysis-reporting.git
 
-Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the while project.
+Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the whole project.
 
 ## ...and now?
 
