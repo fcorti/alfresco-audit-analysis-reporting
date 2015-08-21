@@ -27,7 +27,7 @@ In this case, we copy the file into `~/springloaded-1.2.3.RELEASE.jar`.
 
 ## Installing and configuring Java 7 or 8
 
-Starting from a vanilla installation of **Ubuntu 14.04.02 LTS** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html)
+Starting from a vanilla installation of **Ubuntu 14.04.02 LTS** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html).
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
@@ -62,10 +62,10 @@ Save it and exit (`CTRL+X` and `Y`).
 
     source .bashrc
 
-## Installing Maven 3.0.3
+## Installing Maven 3.2.5
 
 Installing **Apache Maven** is an easy task you can find documented [here](http://maven.apache.org/install.html).
-In any case, pay attention to use a version most recent than the v3.0.3, as requested from Alfresco SDK.
+In any case, pay attention to use a version most recent than the v3.2.5, as requested from Alfresco SDK.
 Before leaving this task, let's check the MAVEN_OPTS variable is exported.
 In a terminal, execute the command below.
 
@@ -73,7 +73,8 @@ In a terminal, execute the command below.
 
 If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
 
-    export MAVEN_OPTS="-Xms1024m -Xmx4096m -XX:PermSize=1024m"
+    export M2_HOME=/opt/maven
+    export MAVEN_OPTS="-Xms1024m -Xmx1G -javaagent:/home/<user>/springloaded-1.2.3.RELEASE.jar -noverify"
 
 Save it and exit (`CTRL+X` and `Y`).
 
@@ -112,6 +113,27 @@ To clone the project using the command line, open a terminal and execute the com
 Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the while project.
 
 ## Appendix 
+
+### Installing Maven
+
+To install **Maven** follow the steps below.
+
+- Download Maven from the [here](http://maven.apache.org/download.cgi).
+- Unzip it in `/opt/<maven folder>`.
+- Execute `sudo ln -s <maven folder> maven`.
+- Execute `nano ~/.profile`.
+- Append `PATH="/opt/maven/bin:$PATH"`.
+- Save and exit from terminal and from the user session.
+
+Check your configuration by running the command `mvn --version`.
+This will display information similar to the following:
+
+    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T13:57:37+02:00)
+    Maven home: /opt/maven
+    Java version: 1.7.0_80, vendor: Oracle Corporation
+    Java home: /usr/lib/jvm/java-7-oracle/jre
+    Default locale: en_US, platform encoding: UTF-8
+    OS name: "linux", version: "3.16.0-46-generic", arch: "amd64", family: "unix"
 
 ### Configuring proxy on Maven
 
