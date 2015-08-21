@@ -91,3 +91,40 @@ If **Git** is not installed, proceed to get it using the commands below.
 A result similar to this will shown.
 
     git version 1.9.1
+
+## Cloning the project
+
+Before starting to talk about cloning, we have to decide the development tool.
+In this tutorial is described the command line approach but a relevant alternative is the IDE approach (in my case, using Eclipse).
+To clone the project using the command line, open a terminal and execute the command below.
+
+    cd ~
+    git clone https://github.com/fcorti/alfresco-audit-analysis-reporting.git
+
+Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the while project.
+
+## Appendix 
+
+### Configuring proxy on Maven
+
+If you work with a proxy into your environment, you can follow the tutorial in [this page](https://maven.apache.org/guides/mini/guide-proxies.html).
+To setup the proxy, run `nano ~/.m2/settings.xml` and then add the xml below.
+
+    <settings>
+    .
+    .
+    <proxies>
+     <proxy>
+      <id>example-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.example.com</host>
+      <port>8080</port>
+      <username>proxyuser</username>
+      <password>somepassword</password>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+     </proxy>
+    </proxies>
+    .
+    .
+    </settings>
