@@ -101,7 +101,11 @@ To clone the project using the command line, open a terminal and execute the com
     cd ~
     git clone https://github.com/fcorti/alfresco-audit-analysis-reporting.git
 
-Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the while project.
+Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the whole project.
+
+## ...and now?
+
+Now that everything is ready... go to one of the projects of the repository and follow the instructions to build the AMPs and start the services.
 
 ## Appendix 
 
