@@ -1,22 +1,20 @@
 A.A.A.R. - Alfresco share addon
 ===
 
-This project creates the AMP package to be released in the Alfresco Share for the customizations requested for AAAR.
+This project creates the AMP package to be released in the Alfresco Share for the customizations requested for A.A.A.R.
+To make it work, a Linux based operating system is required, with some customizations detailed in the tutorial about [Alfresco SDK 2.x for A.A.A.R.](../../Alfresco SDK 2.x development environment setup.md).
+After the development environment has been prepared, please follow the instructions below.
 
-To make it work, you need a Linux based operating system and can follow the instruction below.
+1) Clone the project from GitHub, as described [here](../../Alfresco SDK 2.x development environment setup.md).
 
-1) Clone the project from GitHub.
+2) Access to the project folder, executing `cd alfresco-audit-analysis-reporting/alfresco/share/<name of the current project>`. 
 
-2) Make sure you have an Alfresco instance running on port 8080.
+3) Run the command `./run.sh` to build the package and start the Tomcat instance.
 
-3) Open a terminal and access to the project folder. Run the './run.sh' command.
+4) Access to `http://localhost:8081/share`.
 
-4) Access to 'http://localhost:8081/share'.
-
-ATTENTION: during the very first run you probably have to execute the run.sh script multiple times because the archetype needs to be downloaded and it's a huge work. ;-)
-
-This execution will build an AMP file into the target folder.
-To create the AMP file into the target folder, execute 'mvn install'.
+This execution will build also the AMP file into the target folder.
+To create the AMP file into the target folder, without the execution of any other task, in the step 4 execute `mvn install`.
 
 For more informations on the solution:
 http://fcorti.com/alfresco-audit-analysis-reporting/
