@@ -7,7 +7,7 @@ After the development environment has been prepared, please follow the instructi
 
 1) Clone the project from GitHub, as described [here](../../Alfresco SDK 1.x development environment setup.md).
 
-2) Access to the project folder, executing `cd <name of the current project>`. 
+2) Access to the project folder, executing `cd alfresco-audit-analysis-reporting/<name of the current project>`. 
 
 3) Run the command `mvn integration-test -Pamp-to-war` to build the package and start the Tomcat instance.
 
