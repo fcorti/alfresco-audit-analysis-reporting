@@ -3,7 +3,7 @@ A.A.A.R. - Alfresco repository addon
 
 This project creates the AMP package to be released in the Alfresco Repository for the customizations requested for A.A.A.R.
 
-To make it work, you need a Linux based operating system and you can setup the development environment following the tutorial about [Alfresco SDK 1.x](../../Alfresco SDK 1.x development environment setup.md).
+To make it work, a Linux based operating system is required, with some customizations detailed in the tutorial about [Alfresco SDK 1.x for A.A.A.R.](../../Alfresco SDK 1.x development environment setup.md).
 After the development environment has been prepared, follw the instructions below.
 
 1) Clone the project from GitHub, as described [here](../../Alfresco SDK 1.x development environment setup.md).
