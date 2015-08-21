@@ -8,7 +8,7 @@ For the official and complete documentation, please refer to the [Alfresco SDK v
 
 ## Target
 
-As described in the [Compatibility matrix](http://docs.alfresco.com/4.2/concepts/dev-extensions-maven-sdk-compatibility.html), **Maven SDK 1.1.x** is compatible and supports **Alfresco CE/EE v4.2x**.
+As described in the [Compatibility matrix](http://docs.alfresco.com/4.2/concepts/dev-extensions-maven-sdk-compatibility.html), **Maven SDK 1.1.x** is compatible and supports **Alfresco CE/EE v4.2.x**.
 As we know, Alfresco CE/EE v4.2.x uses Java 7.
 In this tutorial we are going to work on a **Ubuntu 14.04.02 LTS** distribution of Linux, supposing you are working with the bash shell.
 
