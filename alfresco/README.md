@@ -7,5 +7,7 @@ For further details on how to setup the development environment, please refer to
 
 [Alfresco SDK v2.x](Alfresco%20SDK%202.x%20development%20environment%20setup.md)
 
+[Alfresco SDK v1.x](Alfresco%20SDK%201.x%20development%20environment%20setup.md)
+
 For more informations on the solution:
 http://fcorti.com/alfresco-audit-analysis-reporting/
