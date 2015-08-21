@@ -14,7 +14,7 @@ After the development environment has been prepared, please follow the instructi
 4) Access to `http://localhost:8081/share`.
 
 This execution will build also the AMP file into the target folder.
-To create the AMP file into the target folder, without the execution of any other task, in the step 4 execute `mvn install`.
+To create the AMP file into the target folder, without the execution of any other task, in the step 3 execute `mvn install`.
 
 For more informations on the solution:
 http://fcorti.com/alfresco-audit-analysis-reporting/
