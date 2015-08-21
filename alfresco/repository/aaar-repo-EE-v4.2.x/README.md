@@ -11,8 +11,6 @@ To make it work, you need a Linux based operating system and can follow the inst
 
 4) Access to 'http://localhost:8080/alfresco' (no Alfresco Share client is available).
 
-ATTENTION: during the very first run you probably have to execute the run.sh script multiple times because the archetype needs to be downloaded and it's a huge work. ;-)
-
 This execution will build an AMP file into the target folder.
 To create the AMP file into the target folder, execute 'mvn install'.
 
