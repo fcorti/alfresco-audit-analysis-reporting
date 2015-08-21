@@ -105,6 +105,27 @@ Once the download is completed, in the `alfresco-audit-analysis-reporting` folde
 
 ## Appendix 
 
+### Installing Maven
+
+To install **Maven** follow the steps below.
+
+- Download Maven from the [here](http://maven.apache.org/download.cgi).
+- Unzip it in `/opt/<maven folder>`.
+- Execute `sudo ln -s <maven folder> maven`.
+- Execute `nano ~/.profile`.
+- Append `PATH="/opt/maven/bin:$PATH"`.
+- Save and exit from terminal.
+
+Check your configuration by running the command `mvn --version`.
+This will display information similar to the following:
+
+    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T13:57:37+02:00)
+    Maven home: /opt/maven
+    Java version: 1.7.0_80, vendor: Oracle Corporation
+    Java home: /usr/lib/jvm/java-7-oracle/jre
+    Default locale: en_US, platform encoding: UTF-8
+    OS name: "linux", version: "3.16.0-46-generic", arch: "amd64", family: "unix"
+
 ### Configuring proxy on Maven
 
 If you work with a proxy into your environment, you can follow the tutorial in [this page](https://maven.apache.org/guides/mini/guide-proxies.html).
