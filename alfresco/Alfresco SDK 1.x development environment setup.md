@@ -114,7 +114,7 @@ To install **Maven** follow the steps below.
 - Execute `sudo ln -s <maven folder> maven`.
 - Execute `nano ~/.profile`.
 - Append `PATH="/opt/maven/bin:$PATH"`.
-- Save and exit from terminal.
+- Save and exit from terminal and from the user session.
 
 Check your configuration by running the command `mvn --version`.
 This will display information similar to the following:
