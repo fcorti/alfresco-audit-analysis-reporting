@@ -112,6 +112,10 @@ To clone the project using the command line, open a terminal and execute the com
 
 Once the download is completed, in the `alfresco-audit-analysis-reporting` folder you can find the while project.
 
+## ...and now?
+
+Now that everything is ready... go to one of the projects of the repository and follow the instructions to build the AMPs and start the services.
+
 ## Appendix 
 
 ### Installing Maven
