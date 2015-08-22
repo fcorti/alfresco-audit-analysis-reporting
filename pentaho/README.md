@@ -1,7 +1,7 @@
 A.A.A.R. - Pentaho application
 ===
 
-The projects listed in subfolders implement the Sparkl Application to be released in the Pentaho BA Server for the customizations requested for AAAR.
+The projects listed in subfolders implement the Sparkl Application to be released in the Pentaho BA Server for the customizations requested for A.A.A.R.
 
 For further details on how to setup the development environment, please refer to the documentation below:
 
