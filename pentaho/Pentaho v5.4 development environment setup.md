@@ -78,18 +78,29 @@ After this, your Pentaho BA Server is available at `http://localhost:8080/pentah
 
 ## Installing PostgreSql
 
-TODO
-sudo apt-get install postgresql postgresql-contrib pgadmin3
-sudo -u postgres psql postgres
-\password postgres
-# postgres (2 volte)
-\q
-sudo nano /etc/postgresql/9.3/main/pg_hba.conf
-# Cambia il set to md5
-sudo /etc/init.d/postgresql reload
-pgadmin3
-# Lock to laucher
-# Add connection
+If **PostgreSql** is not installed you can proceed with the tasks below, according with the official documentation described [here](https://help.ubuntu.com/community/PostgreSQL).
+If you already have PostgreSql installed, for example because an Alfresco instance is up and running, you can use it for your development purpose.
+
+To install PostgreSql open a terminal and execute the commands below.
+Together with PostgreSql we are going to install also PgAdmin3 to administer it.
+
+    sudo apt-get install postgresql postgresql-contrib pgadmin3
+    sudo -u postgres psql postgres
+    \password postgres
+    // Digit 'postgres' (two times) to setup the postgres's password.
+    \q
+    sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+
+Change the line described below, setting `peer` to `md5`.
+
+    # Database administrative login by Unix domain socket
+    local   all             postgres                                md5
+
+To complete the installation, reload the database service eceting the command below.
+
+    sudo /etc/init.d/postgresql reload
+
+Last, but not least, execute `pgadmin3` and add the `localhost` connection to administer the database instances.
 
 ## Installing Git
 
