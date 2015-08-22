@@ -2,7 +2,7 @@ A.A.A.R. - Alfresco addon - Alfresco SDK v2.x
 ===
 
 In this documentation is shared the setup of the development environment with Alfresco SDK v2.x. 
-The setup is useful to the projects contained in the AAAR repository and it is not written with the generic intent to discuss how to develop into Alfresco.
+The setup is useful to the projects contained in the A.A.A.R. repository and it is not written with the generic intent to discuss how to develop into Alfresco.
 
 For the official and complete documentation, please refer to the [Alfresco SDK v2 web page](http://docs.alfresco.com/5.0/concepts/alfresco-sdk-intro.html).
 
