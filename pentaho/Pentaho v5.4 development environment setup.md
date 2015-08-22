@@ -137,9 +137,11 @@ Also if you setup a development environment, with an Alfresco Share instance up 
 
 First of all locate `server.xml` file in `<Tomcat installation folder>\conf` folder.
 Edit the `server.xml` file and replace all the instances of strings described below.
-- of `8080` with 
+- Find and replace all the instances of `8080` with `8082`(or the port you prefer).
+- Find and replace all the instances of `8009` with `8011`(or the port you prefer).
+- Find and replace all the instances of `8443` with `8445`(or the port you prefer).
 
-http://www.mkyong.com/tomcat/how-to-change-tomcat-default-port/
+Please, always remember that to make the changes available you have to restart the Pentaho BA Server.
 
 ### Running Pentaho BA Server with a proxy
 
