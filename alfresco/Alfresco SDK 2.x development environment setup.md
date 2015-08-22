@@ -52,7 +52,7 @@ If you request to install **Java 7** (useful for Alfresco CE v5.0.a-b-c), please
 Before leaving this task, let's check the JAVA_HOME variable is exported.
 In a terminal, execute the command below.
 
-    env | grep JAVA_VOME
+    env | grep JAVA_HOME
 
 If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
 
