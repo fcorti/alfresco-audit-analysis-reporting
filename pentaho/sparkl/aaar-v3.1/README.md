@@ -7,7 +7,7 @@ After the development environment has been prepared, please follow the instructi
 
 1) Clone the project from GitHub, as described [here](../../Pentaho v5.4 development environment setup.md).
 
-2) Access to the project folder, executing `cd alfresco-audit-analysis-reporting/pentaho/sparkl/<name of the current project>`.
+2) Access to the project folder, executing `cd alfresco-audit-analysis-reporting/pentaho/sparkl/aaar-vX.X`.
 
 3) Copy the `aaar-vX.X` folder into the `<bi-server>/pentaho-solutions/system` and rename it as `AAAR`.
 
