@@ -2,14 +2,13 @@ A.A.A.R. - Pentaho Sparkl Application - Pentaho v5.4
 ===
 
 In this documentation is shared the setup of the development environment with Pentaho v5.4.
-The setup is useful to the projects contained in the A.A.A.R. repository and it is not written with the generic intent to discuss how to develop into Alfresco.
+The setup is useful to the projects contained in the A.A.A.R. repository and it is not written with the generic intent to discuss how to develop into Pentaho.
 
 For the official and complete documentation, please refer to the [Pentaho web page](http://www.pentaho.com).
 
 ## Target
 
-As described in the [Compatibility matrix](http://docs.alfresco.com/4.2/concepts/dev-extensions-maven-sdk-compatibility.html), **Maven SDK 1.1.x** is compatible and supports **Alfresco CE/EE v4.2.x**.
-As we know, Alfresco CE/EE v4.2.x uses Java 7.
+As detailed by the Company, **Pentaho v5.4** uses Java 7.
 In this tutorial we are going to work on a **Ubuntu 14.04.02 LTS** distribution of Linux, supposing you are working with the bash shell.
 
 Before starting to work, please remember to execute the commands below.
@@ -54,32 +53,28 @@ Save it and exit (`CTRL+X` and `Y`).
 
     source .bashrc
 
-## Installing Maven 3.0.3
+## Installing Pentaho Data Integration
 
-Installing **Apache Maven** is an easy task you can find documented [here](http://maven.apache.org/install.html).
-In any case, pay attention to use a version most recent than the v3.0.3, as requested from Alfresco SDK.
-Before leaving this task, let's check the MAVEN_OPTS variable is exported.
-In a terminal, execute the command below.
+Installing **Pentaho Data Integration** is an easy task you can find documented [here](http://fcorti.com/2014/01/03/how-to-install-pentaho-data-integration-5-kettle/).
+In any case, pay attention to use the right version (in our case v5.4).
 
-    env | grep MAVEN_OPTS
+Please always remember to execute a first start, executing `spoon.sh` and closing after its first launch.
 
-If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
+## Installing Pentaho BA Server
 
-    export MAVEN_OPTS="-Xms1024m -Xmx4096m -XX:PermSize=1024m"
+Installing **Pentaho BA Server** is an easy task you can find documented [here](http://fcorti.com/2014/01/07/how-to-install-pentaho-business-analytics-platform-5/).
+In any case, pay attention to use the right version (in our case v5.4).
 
-Save it and exit (`CTRL+X` and `Y`).
+Before considering completed this task, you have to follow the instructions detailed [here](http://fcorti.com/alfresco-audit-analysis-reporting/aaar-how-to-install/aaar-get/).
 
-    source .bashrc
+In this tutorial I would like not to repeat the tasks described but at the end you should have:
+- Installed Saiku Analytics plugin from the marketplace.
+- Installed Pivot4J plugin from the marketplace.
+- Configured the file `<bi-server>/pentaho-solutions/system/importExport.xml`.
+- Configured the file `<bi-server>/pentaho-solutions/system/ImportHandlerMimeTypeDefinitions.xml`.
+- Restarted the Pentaho BA server.
 
-Check your configuration by running the command `mvn --version`.
-This will display information similar to the following:
-
-    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T13:57:37+02:00)
-    Maven home: /opt/maven
-    Java version: 1.7.0_80, vendor: Oracle Corporation
-    Java home: /usr/lib/jvm/java-7-oracle/jre
-    Default locale: en_US, platform encoding: UTF-8
-    OS name: "linux", version: "3.16.0-46-generic", arch: "amd64", family: "unix"
+After this, your Pentaho BA Server is available at `http://localhost:8080/pentaho` address.
 
 ## Installing Git
 
@@ -105,51 +100,16 @@ Once the download is completed, in the `alfresco-audit-analysis-reporting` folde
 
 ## ...and now?
 
-Now that everything is ready... go to one of the projects of the repository and follow the instructions to build the AMPs and start the services.
+Now that everything is ready... go to one of the projects of the repository and follow the instructions to install A.A.A.R. Sparkl Application.
 
 ## Appendix 
 
-### Installing Maven
+### Running Pentaho BA Server on port 8082
 
-To install **Maven** follow the steps below.
+TODO
 
-- Download Maven from the [here](http://maven.apache.org/download.cgi).
-- Unzip it in `/opt/<maven folder>`.
-- Execute `sudo ln -s <maven folder> maven`.
-- Execute `nano ~/.profile`.
-- Append `PATH="/opt/maven/bin:$PATH"`.
-- Save and exit from terminal and from the user session.
+### Running Pentaho BA Server with a proxy
 
-Check your configuration by running the command `mvn --version`.
-This will display information similar to the following:
+TODO
 
-    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T13:57:37+02:00)
-    Maven home: /opt/maven
-    Java version: 1.7.0_80, vendor: Oracle Corporation
-    Java home: /usr/lib/jvm/java-7-oracle/jre
-    Default locale: en_US, platform encoding: UTF-8
-    OS name: "linux", version: "3.16.0-46-generic", arch: "amd64", family: "unix"
-
-### Configuring proxy on Maven
-
-If you work with a proxy into your environment, you can follow the tutorial in [this page](https://maven.apache.org/guides/mini/guide-proxies.html).
-To setup the proxy, run `nano ~/.m2/settings.xml` and then add the xml below.
-
-    <settings>
-    .
-    .
-    <proxies>
-     <proxy>
-      <id>example-proxy</id>
-      <active>true</active>
-      <protocol>http</protocol>
-      <host>proxy.example.com</host>
-      <port>8080</port>
-      <username>proxyuser</username>
-      <password>somepassword</password>
-      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
-     </proxy>
-    </proxies>
-    .
-    .
-    </settings>
+http://pedroalves-bi.blogspot.it/2014/07/using-pentaho-marketplace-over-proxy-or.html
