@@ -76,6 +76,21 @@ In this tutorial I would like not to repeat the tasks described but at the end y
 
 After this, your Pentaho BA Server is available at `http://localhost:8080/pentaho` address.
 
+## Installing PostgreSql
+
+TODO
+sudo apt-get install postgresql postgresql-contrib pgadmin3
+sudo -u postgres psql postgres
+\password postgres
+# postgres (2 volte)
+\q
+sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+# Cambia il set to md5
+sudo /etc/init.d/postgresql reload
+pgadmin3
+# Lock to laucher
+# Add connection
+
 ## Installing Git
 
 If **Git** is not installed, proceed to get it using the commands below.
