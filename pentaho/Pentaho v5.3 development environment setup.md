@@ -1,14 +1,14 @@
-A.A.A.R. - Pentaho Sparkl Application - Pentaho v5.4
+A.A.A.R. - Pentaho Sparkl Application - Pentaho v5.3
 ===
 
-In this documentation is shared the setup of the development environment with Pentaho v5.4.
+In this documentation is shared the setup of the development environment with Pentaho v5.3.
 The setup is useful to the projects contained in the A.A.A.R. repository and it is not written with the generic intent to discuss how to develop into Pentaho.
 
 For the official and complete documentation, please refer to the [Pentaho web page](http://www.pentaho.com).
 
 ## Target
 
-As detailed by the Company, **Pentaho v5.4** uses Java 7.
+As detailed by the Company, **Pentaho v5.3** uses Java 7.
 In this tutorial we are going to work on a **Ubuntu 14.04.02 LTS** distribution of Linux, supposing you are working with the bash shell.
 
 Before starting to work, please remember to execute the commands below.
@@ -56,14 +56,14 @@ Save it and exit (`CTRL+X` and `Y`).
 ## Installing Pentaho Data Integration
 
 Installing **Pentaho Data Integration** is an easy task you can find documented [here](http://fcorti.com/2014/01/03/how-to-install-pentaho-data-integration-5-kettle/).
-In any case, pay attention to use the right version (in our case v5.4).
+In any case, pay attention to use the right version (in our case v5.3).
 
 Please always remember to execute a first start, executing `spoon.sh` and closing after its first launch.
 
 ## Installing Pentaho BA Server
 
 Installing **Pentaho BA Server** is an easy task you can find documented [here](http://fcorti.com/2014/01/07/how-to-install-pentaho-business-analytics-platform-5/).
-In any case, pay attention to use the right version (in our case v5.4).
+In any case, pay attention to use the right version (in our case v5.3).
 
 Before considering completed this task, you have to follow the instructions detailed [here](http://fcorti.com/alfresco-audit-analysis-reporting/aaar-how-to-install/aaar-get/).
 
