@@ -132,10 +132,22 @@ Now that everything is ready... go to one of the projects of the repository and 
 
 ### Running Pentaho BA Server on port 8082
 
-TODO
+This customization could be required of you have an Alfresco instance up and running on the default port (8080).
+Also if you setup a development environment, with an Alfresco Share instance up and running on the port 8081, you should consider to have you Pentaho BA Server instance running on the port 8082.
+
+First of all locate `server.xml` file in `<Tomcat installation folder>\conf` folder.
+Edit the `server.xml` file and replace all the instances of strings described below.
+- of `8080` with 
+
+http://www.mkyong.com/tomcat/how-to-change-tomcat-default-port/
 
 ### Running Pentaho BA Server with a proxy
 
-TODO
+According to [Pedro Alves's article](http://pedroalves-bi.blogspot.it/2014/07/using-pentaho-marketplace-over-proxy-or.html), to make the Pentaho Marketplace working through a proxy, we have to change the `start-pentaho.sh` script.
+The mentioned script is stored in the Pentaho BA Server's installation folder.
 
-http://pedroalves-bi.blogspot.it/2014/07/using-pentaho-marketplace-over-proxy-or.html
+To correctly setup the configuration, open the `start-pentaho.sh` script and add the settings in the way described below.
+
+    ... -Dhttp.proxyHost=<IP of the proxy> -Dhttp.proxyPort=<port of the proxy> -Dhttp.nonProxyHosts="localhost|127.0.0.1|10.*.*.*" 
+
+Restart Pentaho BA Server to make the changes available in the running instance.
