@@ -1,7 +1,11 @@
 A.A.A.R. - Pentaho application
 ===
 
-The project listed in subfolder implements the Sparkl application to be released in Pentaho for the customizations requested for AAAR.
+The projects listed in subfolders implement the Sparkl Application to be released in the Pentaho BA Server for the customizations requested for AAAR.
+
+For further details on how to setup the development environment, please refer to the documentation below:
+
+[Pentaho v5.4](Pentaho v5.4 development environment setup.md)
 
 For more informations on the solution:
 http://fcorti.com/alfresco-audit-analysis-reporting/
