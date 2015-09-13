@@ -204,8 +204,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>970</xloc>
-      <yloc>81</yloc>
+      <xloc>888</xloc>
+      <yloc>368</yloc>
       </entry>
     <entry>
       <name>Check databaseType &#x3d; &#x27;MySql&#x27;</name>
@@ -402,7 +402,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_pentahoAddDatasource.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;_pentahoAddDatasource.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -456,8 +456,74 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>836</xloc>
-      <yloc>81</yloc>
+      <xloc>887</xloc>
+      <yloc>273</yloc>
+      </entry>
+    <entry>
+      <name>_pentahoInstallAuthenticationExt</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;_pentahoInstallAuthenticationExt.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <force_separate_logging>N</force_separate_logging>
+      <parameters>        <pass_all_parameters>N</pass_all_parameters>
+            <parameter>            <name>pentahoServerPath</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..</value>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>888</xloc>
+      <yloc>172</yloc>
+      </entry>
+    <entry>
+      <name>Unzip CMIS Input plugin</name>
+      <description/>
+      <type>UNZIP</type>
+      <zipfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;CMIS_Input_plugin_v&#x24;&#x7b;kettleVersion&#x7d;.zip</zipfilename>
+      <wildcard/>
+      <wildcardexclude/>
+      <targetdirectory>&#x24;&#x7b;kettlePath&#x7d;</targetdirectory>
+      <movetodirectory/>
+      <afterunzip>0</afterunzip>
+      <addfiletoresult>N</addfiletoresult>
+      <isfromprevious>N</isfromprevious>
+      <adddate>N</adddate>
+      <addtime>N</addtime>
+      <addOriginalTimestamp>N</addOriginalTimestamp>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <rootzip>N</rootzip>
+      <createfolder>N</createfolder>
+      <nr_limit>10</nr_limit>
+      <wildcardSource/>
+      <success_condition>success_if_no_errors</success_condition>
+      <iffileexists>SKIP</iffileexists>
+      <create_move_to_directory>N</create_move_to_directory>
+      <setOriginalModificationDate>N</setOriginalModificationDate>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>889</xloc>
+      <yloc>63</yloc>
       </entry>
   </entries>
   <hops>
@@ -534,8 +600,26 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>_installPostgreSql</from>
+      <from>_pentahoAddDatasource</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>_pentahoInstallAuthenticationExt</from>
       <to>_pentahoAddDatasource</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>_installPostgreSql</from>
+      <to>Unzip CMIS Input plugin</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -544,7 +628,7 @@
     </hop>
     <hop>
       <from>_installMySql</from>
-      <to>_pentahoAddDatasource</to>
+      <to>Unzip CMIS Input plugin</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -552,8 +636,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>_pentahoAddDatasource</from>
-      <to>Success</to>
+      <from>Unzip CMIS Input plugin</from>
+      <to>_pentahoInstallAuthenticationExt</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

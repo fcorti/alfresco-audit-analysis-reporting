@@ -359,8 +359,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>390</xloc>
-      <yloc>249</yloc>
+      <xloc>185</xloc>
+      <yloc>246</yloc>
       </entry>
     <entry>
       <name>Set JNDI for AAAR_Kettle</name>
@@ -415,8 +415,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>595</xloc>
-      <yloc>249</yloc>
+      <xloc>390</xloc>
+      <yloc>246</yloc>
       </entry>
     <entry>
       <name>Set JNDI for AAAR_Kettle 2</name>
@@ -573,37 +573,6 @@
       <nr>0</nr>
       <xloc>182</xloc>
       <yloc>415</yloc>
-      </entry>
-    <entry>
-      <name>Unzip CMIS Input plugin</name>
-      <description/>
-      <type>UNZIP</type>
-      <zipfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;CMIS_Input_plugin_v&#x24;&#x7b;kettleVersion&#x7d;.zip</zipfilename>
-      <wildcard/>
-      <wildcardexclude/>
-      <targetdirectory>&#x24;&#x7b;kettlePath&#x7d;</targetdirectory>
-      <movetodirectory/>
-      <afterunzip>0</afterunzip>
-      <addfiletoresult>N</addfiletoresult>
-      <isfromprevious>N</isfromprevious>
-      <adddate>N</adddate>
-      <addtime>N</addtime>
-      <addOriginalTimestamp>N</addOriginalTimestamp>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <rootzip>N</rootzip>
-      <createfolder>N</createfolder>
-      <nr_limit>10</nr_limit>
-      <wildcardSource/>
-      <success_condition>success_if_no_errors</success_condition>
-      <iffileexists>SKIP</iffileexists>
-      <create_move_to_directory>N</create_move_to_directory>
-      <setOriginalModificationDate>N</setOriginalModificationDate>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>178</xloc>
-      <yloc>249</yloc>
       </entry>
     <entry>
       <name>Restore AAAR_DataMart</name>
@@ -829,15 +798,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Alfresco FTP</from>
-      <to>Unzip CMIS Input plugin</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Recreate databases</from>
       <to>Restore AAAR_DataMart</to>
       <from_nr>0</from_nr>
@@ -874,15 +834,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Unzip CMIS Input plugin</from>
-      <to>Set JNDI for AAAR_DataMart</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Upload main</from>
       <to>Upload reports</to>
       <from_nr>0</from_nr>
@@ -894,6 +845,15 @@
     <hop>
       <from>Upload reports</from>
       <to>Upload olap</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Alfresco FTP</from>
+      <to>Set JNDI for AAAR_DataMart</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
