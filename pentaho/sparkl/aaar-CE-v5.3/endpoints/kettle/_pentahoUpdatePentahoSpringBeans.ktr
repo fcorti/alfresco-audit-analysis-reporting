@@ -163,7 +163,7 @@
         <in_stream_name>content</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
-        <replace_string>&#x3c;import resource&#x3d;&#x22;applicationContext-spring-security.xml&#x22; &#x2f;&#x3e;   &#xa;  &#x3c;import resource&#x3d;&#x22;applicationContext-spring-security-superuser.xml&#x22; &#x2f;&#x3e;</replace_string>
+        <replace_string>&#x3c;import resource&#x3d;&#x22;applicationContext-spring-security.xml&#x22; &#x2f;&#x3e;&#xa;  &#x3c;import resource&#x3d;&#x22;applicationContext-spring-security-superuser.xml&#x22; &#x2f;&#x3e;</replace_string>
         <replace_by_string>&#x3c;import resource&#x3d;&#x22;applicationContext-spring-security.xml&#x22; &#x2f;&#x3e;&#xa;  &#x3c;import resource&#x3d;&#x22;pentaho-authentication-ext.xml&#x22; &#x2f;&#x3e;&#xa;  &#x3c;import resource&#x3d;&#x22;applicationContext-spring-security-superuser.xml&#x22; &#x2f;&#x3e;</replace_by_string>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
