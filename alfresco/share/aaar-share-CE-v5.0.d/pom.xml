@@ -109,11 +109,4 @@
         </profile>
     </profiles>
 
-    <repositories>
-        <repository>
-            <id>alfresco-private-repository</id>
-            <url>https://tai_softwarte_solution_srl:Alfresco123@artifacts.alfresco.com/nexus/content/groups/private</url>
-        </repository>
-    </repositories>
-
 </project>
