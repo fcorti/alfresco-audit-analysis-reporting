@@ -1,7 +1,7 @@
 <aaar>
 
    <pentaho>
-      <service>/pentaho/Login</service>
+      <service>/Login</service>
       <parameters>
         <action name="generate-ticket">1</action>
         <application>app</application>

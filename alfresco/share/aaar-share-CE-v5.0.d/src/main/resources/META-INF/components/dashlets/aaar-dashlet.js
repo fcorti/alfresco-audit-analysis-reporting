@@ -398,14 +398,21 @@
 
          var targetUrl = e.currentTarget.attributes.http.nodeValue;
 
+         var getPentahoTicketUrl = Alfresco.constants.URL_PAGECONTEXT + "AAAR/getPentahoTicket";
+         getPentahoTicketUrl + "?protocol=" + encodeURIComponent(this.options.properties.pentaho.protocol);
+         getPentahoTicketUrl + "&host=" + encodeURIComponent(this.options.properties.pentaho.host);
+         getPentahoTicketUrl + "&port=" + encodeURIComponent(this.options.properties.pentaho.port);
+         getPentahoTicketUrl + "&context=" + encodeURIComponent(this.options.properties.pentaho.context);
+         getPentahoTicketUrl + "&app=" + encodeURIComponent(this.options.properties.pentaho.application);
+
          Alfresco.util.Ajax.request(
          {
-            url: "http://localhost:8081/pentaho/Login?generate-ticket=1&app=test&username=" + encodeURIComponent(Alfresco.constants.USERNAME),
+            url: getPentahoTicketUrl,
             successCallback:
             {
                fn: function(response)
                {
-                  window.open(this.getUrlWithPentahoTicket(targetUrl,"1111"),"_blank");
+                  window.open(this.getUrlWithPentahoTicket(targetUrl,response.pentahoTicket),"_blank");
                },
                scope: this
             },

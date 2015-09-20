@@ -14,9 +14,14 @@ else if (args.port == undefined || args.port.length == 0) {
    status.message = "Parameter 'port' has not been provided.";
    status.redirect = true;
 }
-else if (args.app == undefined || args.app.length == 0) {
+else if (args.context == undefined || args.context.length == 0) {
    status.code = 400;
-   status.message = "Parameter 'app' has not been provided.";
+   status.message = "Parameter 'context' has not been provided.";
+   status.redirect = true;
+}
+else if (args.application == undefined || args.application.length == 0) {
+   status.code = 400;
+   status.message = "Parameter 'application' has not been provided.";
    status.redirect = true;
 }
 else {
@@ -25,9 +30,9 @@ else {
    var config = new XML(config.script);
 
    // Definition of the pentaho url.
-   var pentahoUrl = args.protocol + "://" + args.host + ":" + args.port + config.pentaho.service;
+   var pentahoUrl = args.protocol + "://" + args.host + ":" + args.port + "/" + args.context + config.pentaho.service;
    pentahoUrl += "?" + config.pentaho.parameters.action.@name + "=" + config.pentaho.parameters.action;
-   pentahoUrl += "&" + config.pentaho.parameters.application + "=" + args.app;
+   pentahoUrl += "&" + config.pentaho.parameters.application + "=" + args.application;
    pentahoUrl += "&" + config.pentaho.parameters.user + "=" + user.name;
 
    try {
