@@ -9,14 +9,16 @@ package com.fcorti.aaar;
 public class AAARProperties {
 
 	// Properties.
-	public static String pentaho_protocol = "aaar.pentaho.protocol";
-	public static String pentaho_host     = "aaar.pentaho.host";
-	public static String pentaho_port     = "aaar.pentaho.port";
-	public static String pentaho_context  = "aaar.pentaho.context";
+	public static String pentaho_protocol    = "aaar.pentaho.protocol";
+	public static String pentaho_host        = "aaar.pentaho.host";
+	public static String pentaho_port        = "aaar.pentaho.port";
+	public static String pentaho_context     = "aaar.pentaho.context";
+	public static String pentaho_application = "aaar.pentaho.application";
 
 	// Defaults.
 	public static String pentaho_protocol_default = "http";
 	public static String pentaho_host_default     = "localhost";
 	public static String pentaho_port_default     = "8080";
 	public static String pentaho_context_default  = "pentaho";
+	public static String pentaho_application_default  = "aaar";
 }
