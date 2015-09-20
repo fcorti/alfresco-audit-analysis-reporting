@@ -1,0 +1,13 @@
+<aaar>
+
+   <pentaho>
+      <service>/Login</service>
+      <parameters>
+        <action name="generate-ticket">1</action>
+        <application>app</application>
+        <user>username</user>
+      </parameters>
+      <field>ticketId</field>
+   </pentaho>
+
+</aaar>

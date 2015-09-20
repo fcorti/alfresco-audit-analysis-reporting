@@ -30,7 +30,7 @@ function getDocumentationSettings(dashletConfig) {
    return {
       view : (dashletConfig.documentation.length() > 0),
       icon : (dashletConfig.documentation.@icon.length()) ? dashletConfig.documentation.@icon.toString() : "site-16.png",
-      url : (dashletConfig.documentation.@url.length()) ? dashletConfig.documentation.@url.toString() : "http://fcorti.com/alfresco-audit-analysis-reporting/"
+      url  : (dashletConfig.documentation.@url.length())  ? dashletConfig.documentation.@url.toString()  : "http://fcorti.com/alfresco-audit-analysis-reporting/"
    };
 }
 

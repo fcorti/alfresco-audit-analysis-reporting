@@ -1,0 +1,3 @@
+{
+   "pentahoTicket": "${pentahoTicket}"
+}

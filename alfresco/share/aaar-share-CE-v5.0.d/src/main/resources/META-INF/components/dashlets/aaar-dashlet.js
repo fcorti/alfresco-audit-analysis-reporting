@@ -399,11 +399,11 @@
          var targetUrl = e.currentTarget.attributes.http.nodeValue;
 
          var getPentahoTicketUrl = Alfresco.constants.URL_PAGECONTEXT + "AAAR/getPentahoTicket";
-         getPentahoTicketUrl + "?protocol=" + encodeURIComponent(this.options.properties.pentaho.protocol);
-         getPentahoTicketUrl + "&host=" + encodeURIComponent(this.options.properties.pentaho.host);
-         getPentahoTicketUrl + "&port=" + encodeURIComponent(this.options.properties.pentaho.port);
-         getPentahoTicketUrl + "&context=" + encodeURIComponent(this.options.properties.pentaho.context);
-         getPentahoTicketUrl + "&app=" + encodeURIComponent(this.options.properties.pentaho.application);
+         getPentahoTicketUrl += "?protocol=" + encodeURIComponent(this.options.properties.pentaho.protocol);
+         getPentahoTicketUrl += "&host=" + encodeURIComponent(this.options.properties.pentaho.host);
+         getPentahoTicketUrl += "&port=" + encodeURIComponent(this.options.properties.pentaho.port);
+         getPentahoTicketUrl += "&context=" + encodeURIComponent(this.options.properties.pentaho.context);
+         getPentahoTicketUrl += "&application=" + encodeURIComponent(this.options.properties.pentaho.application);
 
          Alfresco.util.Ajax.request(
          {
@@ -412,7 +412,7 @@
             {
                fn: function(response)
                {
-                  window.open(this.getUrlWithPentahoTicket(targetUrl,response.pentahoTicket),"_blank");
+                  window.open(this.getUrlWithPentahoTicket(targetUrl, response.json.pentahoTicket),"_blank");
                },
                scope: this
             },
@@ -447,6 +447,7 @@
 
          // Add ticket param.
          newUrl += "ticket=" + ticket;
+         newUrl += "&autologin=true";
 
          return newUrl;
       },
