@@ -14,14 +14,14 @@
 (function()
 {
    /**
-    * YUI Library aliases
+    * YUI Library aliases.
     */
    var Dom = YAHOO.util.Dom,
        Event = YAHOO.util.Event,
        Selector = YAHOO.util.Selector;
 
    /**
-    * Alfresco Slingshot aliases
+    * Alfresco Slingshot aliases.
     */
    var $html = Alfresco.util.encodeHTML,
        $links = Alfresco.util.activateLinks;
@@ -45,7 +45,7 @@
    YAHOO.extend(Alfresco.dashlet.AAAR, Alfresco.component.Base,
    {
       /**
-       * Preferences
+       * Preferences.
        */
       PREFERENCES_AAAR_DASHLET: "",
       PREFERENCES_AAAR_DASHLET_FILTER: "",
@@ -59,7 +59,7 @@
       groups: null,
 
       /**
-       * Analytics data
+       * Analytics data.
        *
        * @property analytics
        * @type array
@@ -67,15 +67,15 @@
       analytics: [],
 
       /**
-       * Selected filter value
+       * Selected filter value.
        * 
        * @property filter
-       * @type String
+       * @type string
        */
       filter: null,
 
       /**
-       * Object container for initialization options
+       * Object container for initialization options.
        *
        * @property options
        * @type object
@@ -83,7 +83,7 @@
       options:
       {
          /**
-          * List of valid filters
+          * List of valid filters.
           *
           * @property validFilters
           * @type object
@@ -97,15 +97,15 @@
          },
 
          /**
-          * Configuration properties
+          * Configuration properties.
           *
-          * @property validFilters
+          * @property properties
           * @type object
           */
          properties: {},
 
          /**
-          * Array of analytics
+          * Array of analytics.
           *
           * @property analytics
           * @type array of objects
@@ -115,28 +115,28 @@
       },
 
       /**
-       * Fired by YUI when parent element is available for scripting
+       * Fired by YUI when parent element is available for scripting.
        * @method onReady
        */
       onReady: function AAAR_onReady()
       {
-         // Fetch preferences
+         // Fetch preferences.
          this.PREFERENCES_AAAR_DASHLET = this.services.preferences.getDashletId(this, "aaar");
          this.PREFERENCES_AAAR_DASHLET_FILTER = this.PREFERENCES_AAAR_DASHLET + ".filter";
 
-         // Create Dropdown filter
+         // Create Dropdown filter.
          this.widgets.type = Alfresco.util.createYUIButton(
             this, 
             "type", 
             this.onTypeFilterChanged, 
             { type: "menu", menu: "type-menu", lazyloadmenu: false });
 
-         // DataSource definition
+         // DataSource definition.
          this.widgets.dataSource = new YAHOO.util.DataSource(
             this.analytics,
             { responseType: YAHOO.util.DataSource.TYPE_JSARRAY });
 
-         // DataTable column defintions
+         // DataTable column defintions.
          var columnDefinitions =
             [
                { key: "icon", label: "Icon", sortable: false, formatter: this.bind(this.renderCellIcon), width: 26 },
@@ -144,18 +144,18 @@
                { key: "actions", label: "Actions", sortable: false, formatter: this.bind(this.renderCellActions), width: 24 }
             ];
 
-         // DataTable definition
+         // DataTable definition.
          this.widgets.dataTable = new YAHOO.widget.DataTable( 
             this.id + "-aaar", 
             columnDefinitions, 
             this.widgets.dataSource,
             { MSG_EMPTY: this.msg("message.datatable.loading") });
 
-         // Enable row highlighting
+         // Enable row highlighting.
          this.widgets.dataTable.subscribe("rowMouseoverEvent", this.widgets.dataTable.onEventHighlightRow);
          this.widgets.dataTable.subscribe("rowMouseoutEvent", this.widgets.dataTable.onEventUnhighlightRow);
 
-         // Retrieve AAAR properties
+         // Retrieve AAAR properties.
          Alfresco.util.Ajax.request(
          {
             url: Alfresco.constants.PROXY_URI + "/AAAR/getProperties",
@@ -173,7 +173,7 @@
       },
 
       /**
-       * Callback in case of success for AAAR_onReady
+       * Callback in case of success for AAAR_onReady.
        * @method onReady
        */
       onReady_callback: function AAAR_onReady_Callback(p_response)
@@ -183,7 +183,7 @@
       },
 
       /**
-       * Init cached state from User Preferences
+       * Init cached state from User Preferences.
        *
        * @method initPreferences
        */
@@ -201,11 +201,12 @@
          for (var i = 0; i < this.options.analytics.length; ++i)
          {
             this.options.analytics[i].url = this.composeUrl(this.options.analytics[i].url);
+            this.options.analytics[i].id = "aaar-analytics-" + i;
          }
       },
 
       /**
-       * Load analytic list
+       * Load analytic list.
        *
        * @method loadAnalytics
        */
@@ -352,8 +353,10 @@
          var analytics = oRecord.getData(),
              desc = "";
 
+         Event.addListener(analytics.id, "click", this.onClickLink, this, true);
+
          desc += '<h3 class="faded">';
-         desc += (analytics.url && analytics.url != "") ? '<a href="' + analytics.url + '" title="' + this.msg("AAAR.dashlet.analytics.link") + '" class="theme-color-1" target="_blank">' : "";
+         desc += (analytics.url && analytics.url != "") ? '<a http="' + analytics.url + '" id="' + analytics.id + '" title="' + this.msg("AAAR.dashlet.analytics.link") + '" class="theme-color-1" target="_blank">' : "";
          desc += (analytics.label && analytics.label != "") ? $html(this.msg(analytics.label)) : $html(this.msg("details.description.none"));
          desc += (analytics.url && analytics.url != "") ? '</a>' : "";
          desc += '</h3>';
@@ -378,9 +381,67 @@
          var analytics = oRecord.getData(),
              desc = "";
 
-         desc += (analytics.url && analytics.url != "") ? '<a href="' + analytics.url + '" class="link-analytics" title="' + this.msg("AAAR.dashlet.analytics.link") + '" target="_blank">&nbsp;</a>' : "";
+         desc += (analytics.url && analytics.url != "") ? '<a href="' + analytics.url + '" id="' + analytics.id + '" class="link-analytics" title="' + this.msg("AAAR.dashlet.analytics.link") + '" target="_blank">&nbsp;</a>' : "";
 
          elCell.innerHTML = desc;
+      },
+
+      /**
+       * On click event manager.
+       *
+       * @method onClickLink
+       * @param e {object}
+       */
+      onClickLink: function AAAR_onClickLink(e)
+      {
+         Event.stopEvent(e);
+
+         var targetUrl = e.currentTarget.attributes.http.nodeValue;
+
+         Alfresco.util.Ajax.request(
+         {
+            url: "http://localhost:8081/pentaho/Login?generate-ticket=1&app=test&username=" + encodeURIComponent(Alfresco.constants.USERNAME),
+            successCallback:
+            {
+               fn: function(response)
+               {
+                  window.open(this.getUrlWithPentahoTicket(targetUrl,"1111"),"_blank");
+               },
+               scope: this
+            },
+            failureCallback:
+            {
+               fn: function(response)
+               {
+                  window.open(targetUrl,"_blank");
+               },
+               scope: this
+            }
+         });
+      },
+
+      /**
+       * Compose the complete url with the Pentaho ticket of the session.
+       *
+       * @method getUrlWithPentahoTicket
+       * @param url {string}
+       */
+      getUrlWithPentahoTicket: function AAAR_getUrlWithPentahoTicket(url, ticket)
+      {
+         var newUrl = url;
+
+         // Add url separator.
+         if (url.indexOf("?") === -1) {
+            newUrl += "?";
+         }
+         else {
+            newUrl += "&";
+         }
+
+         // Add ticket param.
+         newUrl += "ticket=" + ticket;
+
+         return newUrl;
       },
 
       /**
@@ -407,7 +468,7 @@
       /**
        * Compose the complete url of the analytics.
        *
-       * @method isUserGroupsContainedIn
+       * @method composeUrl
        * @param url {string}
        */
       composeUrl: function AAAR_composeUrl(url)
