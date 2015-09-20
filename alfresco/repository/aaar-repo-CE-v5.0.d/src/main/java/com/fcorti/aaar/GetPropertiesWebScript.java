@@ -39,11 +39,11 @@ public class GetPropertiesWebScript extends DeclarativeWebScript {
 
         Map<String, Object> model = new HashMap<String, Object>();
 
-        model.put("pentaho_protocol", (properties.containsKey(AAARProperties.pentaho_protocol) ? properties.getProperty(AAARProperties.pentaho_protocol) : AAARProperties.pentaho_protocol_default));
-        model.put("pentaho_host",     (properties.containsKey(AAARProperties.pentaho_host) ? properties.getProperty(AAARProperties.pentaho_host) : AAARProperties.pentaho_host_default));
-        model.put("pentaho_port",     (properties.containsKey(AAARProperties.pentaho_port) ? properties.getProperty(AAARProperties.pentaho_port) : AAARProperties.pentaho_port_default));
-        model.put("pentaho_context",  (properties.containsKey(AAARProperties.pentaho_context)? properties.getProperty(AAARProperties.pentaho_context) : AAARProperties.pentaho_context_default));
-        model.put("pentaho_context",  (properties.containsKey(AAARProperties.pentaho_context)? properties.getProperty(AAARProperties.pentaho_application) : AAARProperties.pentaho_application_default));
+        model.put("pentaho_protocol",    (properties.containsKey(AAARProperties.pentaho_protocol)    ? properties.getProperty(AAARProperties.pentaho_protocol)    : AAARProperties.pentaho_protocol_default));
+        model.put("pentaho_host",        (properties.containsKey(AAARProperties.pentaho_host)        ? properties.getProperty(AAARProperties.pentaho_host)        : AAARProperties.pentaho_host_default));
+        model.put("pentaho_port",        (properties.containsKey(AAARProperties.pentaho_port)        ? properties.getProperty(AAARProperties.pentaho_port)        : AAARProperties.pentaho_port_default));
+        model.put("pentaho_context",     (properties.containsKey(AAARProperties.pentaho_context)     ? properties.getProperty(AAARProperties.pentaho_context)     : AAARProperties.pentaho_context_default));
+        model.put("pentaho_application", (properties.containsKey(AAARProperties.pentaho_application) ? properties.getProperty(AAARProperties.pentaho_application) : AAARProperties.pentaho_application_default));
 
         return model;
     }
