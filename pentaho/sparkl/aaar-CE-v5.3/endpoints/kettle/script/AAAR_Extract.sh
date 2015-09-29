@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings
-VERSION='3.1'
+VERSION='4.0'
 CURRENT_PATH="$PWD"
 ENDPOINTS_PATH="$PWD/.."
 LOGS_PATH="$ENDPOINTS_PATH/logs"
@@ -21,7 +21,7 @@ if [ "$1" != "silent" ]; then
     echo A.A.A.R. - Alfresco Audit Analysis and Reporting
     echo Import procedure version $VERSION.
     echo "Author: Francesco Corti (all rights reserved)"
-    echo "Date: 04 May 2015"
+    echo "Date: 07 November 2015"
     echo "Documentation and tips: http://fcorti.com."
     echo
     echo "Disclaimer:"
