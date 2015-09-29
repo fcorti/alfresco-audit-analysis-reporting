@@ -7,7 +7,7 @@
     <version>1.1-SNAPSHOT</version>
     <name>aaar-repo-CE-v5.0.d Repository AMP project</name>
     <packaging>amp</packaging>
-    <description>Manages the lifecycle of the AAAR Addon Repository AMP (Alfresco Module Package) for Alfresco CE v5.0.d+.</description>
+    <description>Manages the lifecycle of the AAAR addon repository AMP (Alfresco Module Package) for Alfresco CE v5.0.d+.</description>
 
     <parent>
         <groupId>org.alfresco.maven</groupId>
@@ -23,8 +23,9 @@
     <properties>
         <!-- The following are default values for data location and Alfresco Community version.
              Uncomment if you need to change (Note. current default version for Enterprise edition is 5.0.1)
+        -->
           <alfresco.version>5.0.d</alfresco.version>
-          <alfresco.data.location>alf_data_dev</alfresco.data.location> -->
+          <alfresco.data.location>alf_data_dev</alfresco.data.location>
 
         <!-- This control the root logging level for all apps uncomment and change, defaults to WARN
             <app.log.root.level>WARN</app.log.root.level>
@@ -32,8 +33,8 @@
 
         <!-- Set the enviroment to use, this controls which properties will be picked in src/test/properties
              for embedded run, defaults to the 'local' environment. See SDK Parent POM for more info.
-        <env>local</env>
         -->
+        <env>local</env>
     </properties>
 
     <!-- Here we realize the connection with the Alfresco selected platform 

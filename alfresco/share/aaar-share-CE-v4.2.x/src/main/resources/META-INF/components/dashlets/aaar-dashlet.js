@@ -446,8 +446,8 @@
          }
 
          // Add ticket param.
-         newUrl += "ticket=" + ticket;
-         newUrl += "&autologin=true";
+         newUrl += "autologin=true";
+         newUrl += "&ticket=" + ticket;
 
          return newUrl;
       },
