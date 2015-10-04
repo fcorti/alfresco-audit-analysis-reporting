@@ -52,22 +52,24 @@ import freemarker.template.utility.NullArgumentException;
  */
 public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
-	private static final String PARAMETER_BASETYPE		= "baseType";
-	private static final String PARAMETER_DATE			= "dt";
-	private static final String PARAMETER_LIMIT			= "limit";
-	private static final int    PARAMETER_LIMIT_DEFAULT = 10000;
-	private static final String PARAMETER_SKIP			= "skip";
-	private static final int    PARAMETER_SKIP_DEFAULT	= 0;
-	private static final String DATE_FORMAT             = "yyyy-MM-dd";
-	private static final String DATETIME_FORMAT         = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+	private static final String PARAMETER_BASETYPE		    = "baseType";
+	private static final String PARAMETER_DATE			    = "dt";
+	private static final String PARAMETER_LIMIT			    = "limit";
+	private static final int    PARAMETER_LIMIT_DEFAULT     = 10000;
+	private static final String PARAMETER_SKIP			    = "skip";
+	private static final int    PARAMETER_SKIP_DEFAULT	    = 0;
+	private static final String DATE_FORMAT                 = "yyyy-MM-dd";
+	private static final String DATETIME_FORMAT             = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 
 	private NodeService nodeService;
 	private SearchService searchService;
 
+	// private static Logger logger = Logger.getLogger(GetNodesModifiedAfterWebScript.class);
+
 	protected Map<String, Object> executeImpl(WebScriptRequest req, Status status, Cache cache) {
 
 		// Parameters.
-		Map<String, String> parameters = null;
+		Map<String, Object> parameters = null;
 		try {
 			parameters = getParameters(req);
 		}
@@ -77,13 +79,13 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 		// Query execution.
 		ResultSet resultSet = searchService.query(getSearchParameters(parameters));
+		Iterator<ResultSetRow> resultIterator = resultSet.iterator();
 
 		// New parameter values.
-		String newParameterDt = parameters.get(PARAMETER_DATE);
-		int newParameterSkip = Integer.parseInt(parameters.get(PARAMETER_SKIP));
+		Date newParameterDt = (Date) parameters.get(PARAMETER_DATE);
+		int newParameterSkip = (int) parameters.get(PARAMETER_SKIP);
 
 		// Result composition.
-		Iterator<ResultSetRow> resultIterator = resultSet.iterator();
 		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
 		while (resultIterator.hasNext()) {
 
@@ -120,22 +122,27 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 			results.add(result);
 
 			// New parameter values.
-			++newParameterSkip;
-			if (!newParameterDt.equals(getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED), DATE_FORMAT))) {
-				newParameterDt = getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED), DATE_FORMAT);
+			if (!getDateAsString(newParameterDt, DATE_FORMAT).equals(getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED), DATE_FORMAT))) {
+				newParameterDt = (Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED);
 				newParameterSkip = 0;
 			}
+
+			// Skip counter.
+			++newParameterSkip;
 		}
 
 		resultSet.close();
 
-		// New parameters values.
-		Map<String, String> newParameters = new HashMap<String, String>();
-		newParameters.put(PARAMETER_BASETYPE, parameters.get(PARAMETER_BASETYPE));
-		newParameters.put(PARAMETER_DATE,     newParameterDt);
-		newParameters.put(PARAMETER_LIMIT,    parameters.get(PARAMETER_LIMIT));
-		newParameters.put(PARAMETER_SKIP,     Integer.toString(newParameterSkip));
+		// Parameter values.
+		parameters.replace(PARAMETER_DATE, getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
 
+		// New parameters values.
+		Map<String, Object> newParameters = new HashMap<String, Object>();
+		newParameters.put(PARAMETER_BASETYPE,  parameters.get(PARAMETER_BASETYPE));
+		newParameters.put(PARAMETER_DATE,      getDateAsString(newParameterDt, DATE_FORMAT));
+		newParameters.put(PARAMETER_LIMIT,     parameters.get(PARAMETER_LIMIT));
+		newParameters.put(PARAMETER_SKIP,      newParameterSkip);
+		
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("count",	       results.size());
@@ -152,19 +159,19 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * @param parameters
 	 * @return
 	 */
-	private static final SearchParameters getSearchParameters(Map<String, String> parameters) {
+	private static final SearchParameters getSearchParameters(Map<String, Object> parameters) {
 
 		SearchParameters searchParameters = new SearchParameters();
 
 		searchParameters.addStore(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
 		searchParameters.setLanguage(SearchService.LANGUAGE_FTS_ALFRESCO);
 		searchParameters.setQuery(getQuery(parameters));
-		searchParameters.setSkipCount(Integer.parseInt(parameters.get(PARAMETER_SKIP)));
+		searchParameters.setSkipCount((int) parameters.get(PARAMETER_SKIP));
 		searchParameters.addSort("@" + ContentModel.PROP_MODIFIED, true);
 		searchParameters.addSort("@" + ContentModel.PROP_NODE_DBID, true);
 		searchParameters.setUseInMemorySort(false);
 		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
-		searchParameters.setLimit(Integer.parseInt(parameters.get(PARAMETER_LIMIT)));
+		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT) + (int) parameters.get(PARAMETER_SKIP));
 
 		return searchParameters;
 	}
@@ -175,7 +182,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * @param parameters
 	 * @return
 	 */
-	private static final String getQuery(Map<String, String> parameters) {
+	private static final String getQuery(Map<String, Object> parameters) {
 
 		String query = "";
 
@@ -184,7 +191,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 		// Date filter.
 		query += "AND ";
-		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"" + parameters.get(PARAMETER_DATE) + "T00:00:00.000Z\" TO MAX]) ";
+		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"" + getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT) + "T00:00:00.000Z\" TO MAX]) ";
 
 		return query;
 	}
@@ -196,9 +203,9 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * @return
 	 * @throws WrongFormatException 
 	 */
-	private static final Map<String, String> getParameters(WebScriptRequest req) throws WrongFormatException {
+	private static final Map<String, Object> getParameters(WebScriptRequest req) throws WrongFormatException {
 
-		Map<String, String> parameters = new HashMap<String, String>();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 
 		// BaseType parameter.
 		String baseTypeParameter = req.getParameter(PARAMETER_BASETYPE);
@@ -219,26 +226,13 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		if (dateParameter.isEmpty()) {
 			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
 		}
+		Date dateParameterValue = null;
 	    try {
-		    (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
+	    	dateParameterValue = (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
 	    }
 	    catch (Exception e) {
 	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
 	    }
-
-		// Skip parameter.
-		String skipParameter = req.getParameter(PARAMETER_SKIP);
-		if (skipParameter == null) {
-			skipParameter = "" + PARAMETER_SKIP_DEFAULT;
-		}
-		skipParameter = skipParameter.trim();
-		if (skipParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
-		}
-		Long skipParameterValue = Long.parseLong(skipParameter);
-		if (skipParameterValue < 0) {
-			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
-		}
 
 		// Limit parameter.
 		String limitParameter = req.getParameter(PARAMETER_LIMIT);
@@ -249,15 +243,29 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		if (limitParameter.isEmpty()) {
 			throw new NullArgumentException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
 		}
-		Integer limitParameterValue = Integer.parseInt(limitParameter);
+		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
 			throw new OutOfRangeException(limitParameterValue, 0, Integer.MAX_VALUE);			
 		}
 
-		parameters.put(PARAMETER_BASETYPE,   baseTypeParameter);
-		parameters.put(PARAMETER_DATE,       dateParameter);
-		parameters.put(PARAMETER_SKIP,       skipParameter);
-		parameters.put(PARAMETER_LIMIT,      limitParameter);
+		// Skip parameter.
+		String skipParameter = req.getParameter(PARAMETER_SKIP);
+		if (skipParameter == null) {
+			skipParameter = "" + PARAMETER_SKIP_DEFAULT;
+		}
+		skipParameter = skipParameter.trim();
+		if (skipParameter.isEmpty()) {
+			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
+		}
+		int skipParameterValue = Integer.parseInt(skipParameter);
+		if (skipParameterValue < 0) {
+			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
+		}
+
+		parameters.put(PARAMETER_BASETYPE, baseTypeParameter);
+		parameters.put(PARAMETER_DATE,     dateParameterValue);
+		parameters.put(PARAMETER_LIMIT,    limitParameterValue);
+		parameters.put(PARAMETER_SKIP,     skipParameterValue);
 
 		return parameters;
 	}

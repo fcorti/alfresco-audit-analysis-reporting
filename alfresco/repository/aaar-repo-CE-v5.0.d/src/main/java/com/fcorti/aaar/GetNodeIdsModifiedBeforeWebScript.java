@@ -188,20 +188,6 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
 	    }
 
-		// Skip parameter.
-		String skipParameter = req.getParameter(PARAMETER_SKIP);
-		if (skipParameter == null) {
-			skipParameter = "" + PARAMETER_SKIP_DEFAULT;
-		}
-		skipParameter = skipParameter.trim();
-		if (skipParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
-		}
-		Long skipParameterValue = Long.parseLong(skipParameter);
-		if (skipParameterValue < 0) {
-			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
-		}
-
 		// Limit parameter.
 		String limitParameter = req.getParameter(PARAMETER_LIMIT);
 		if (limitParameter == null) {
@@ -216,10 +202,24 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 			throw new OutOfRangeException(limitParameterValue, 0, Integer.MAX_VALUE);			
 		}
 
+		// Skip parameter.
+		String skipParameter = req.getParameter(PARAMETER_SKIP);
+		if (skipParameter == null) {
+			skipParameter = "" + PARAMETER_SKIP_DEFAULT;
+		}
+		skipParameter = skipParameter.trim();
+		if (skipParameter.isEmpty()) {
+			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
+		}
+		Long skipParameterValue = Long.parseLong(skipParameter);
+		if (skipParameterValue < 0) {
+			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
+		}
+
 		parameters.put(PARAMETER_BASETYPE,   baseTypeParameter);
 		parameters.put(PARAMETER_DATE,       dateParameter);
-		parameters.put(PARAMETER_SKIP,       skipParameter);
 		parameters.put(PARAMETER_LIMIT,      limitParameter);
+		parameters.put(PARAMETER_SKIP,       skipParameter);
 
 		return parameters;
 	}
