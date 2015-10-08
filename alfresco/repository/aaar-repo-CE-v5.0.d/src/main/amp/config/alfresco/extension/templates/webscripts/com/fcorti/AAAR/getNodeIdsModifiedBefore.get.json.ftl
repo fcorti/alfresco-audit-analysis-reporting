@@ -2,15 +2,15 @@
   "count": ${count!0},
   "list": [<#list results as result>${result}<#if result_has_next>,</#if></#list>],
   "parameters": {
-    "baseType": "<#if parameters["baseType"]??>${parameters["baseType"]}<#else></#if>",
-    "dt": "<#if parameters["dt"]??>${parameters["dt"]}<#else></#if>",
-    "limit": <#if parameters["limit"]??>${parameters["limit"]}<#else>0</#if>,
-    "skip": <#if parameters["skip"]??>${parameters["skip"]}<#else>0</#if>
+    "baseType":"${parameters["baseType"]}",
+    "dt":"${parameters["dt"]}",
+    "limit":${parameters["limit"]},
+    "skip":${parameters["skip"]}
   },
   "newParameters": {
-    "baseType": "<#if newParameters["baseType"]??>${newParameters["baseType"]}<#else></#if>",
-    "dt": "<#if newParameters["dt"]??>${newParameters["dt"]}<#else></#if>",
-    "limit": <#if newParameters["limit"]??>${newParameters["limit"]}<#else>0</#if>,
-    "skip": <#if newParameters["skip"]??>${newParameters["skip"]}<#else>0</#if>
+    "baseType":"${newParameters["baseType"]}",
+    "dt":"${newParameters["dt"]}",
+    "limit":${newParameters["limit"]},
+    "skip":${newParameters["skip"]}
   }
 }

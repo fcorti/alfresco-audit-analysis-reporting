@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.alfresco.model.ContentModel;
+import org.alfresco.service.ServiceRegistry;
 import org.alfresco.service.cmr.repository.ContentData;
 import org.alfresco.service.cmr.repository.NodeService;
 import org.alfresco.service.cmr.repository.StoreRef;
@@ -33,6 +34,7 @@ import org.alfresco.service.cmr.search.ResultSet;
 import org.alfresco.service.cmr.search.ResultSetRow;
 import org.alfresco.service.cmr.search.SearchParameters;
 import org.alfresco.service.cmr.search.SearchService;
+import org.alfresco.service.namespace.NamespaceService;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
@@ -61,8 +63,11 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	private static final String DATE_FORMAT                 = "yyyy-MM-dd";
 	private static final String DATETIME_FORMAT             = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 
+	private NamespaceService namespaceService;
 	private NodeService nodeService;
 	private SearchService searchService;
+	@SuppressWarnings("unused")
+	private ServiceRegistry serviceRegistry;
 
 	// private static Logger logger = Logger.getLogger(GetNodesModifiedAfterWebScript.class);
 
@@ -100,20 +105,20 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 			result.put(ContentModel.PROP_STORE_IDENTIFIER.getLocalName(), resultSetRow.getNodeRef().getStoreRef().getIdentifier());
 			result.put(ContentModel.PROP_NODE_UUID.getLocalName(),        resultSetRow.getNodeRef().getId());
 			result.put(ContentModel.PROP_NAME.getLocalName(),             resultSetRow.getQName().getLocalName());
-			result.put("type",                                            nodeService.getType(resultSetRow.getNodeRef()));
+			result.put("type",                                            nodeService.getType(resultSetRow.getNodeRef()).toPrefixString(namespaceService));
 			result.put(ContentModel.PROP_CREATOR.getLocalName(),          resultSetRow.getValue(ContentModel.PROP_CREATOR));
 			result.put(ContentModel.PROP_CREATED.getLocalName(),          getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_CREATED), DATETIME_FORMAT));
 			result.put(ContentModel.PROP_MODIFIER.getLocalName(),         resultSetRow.getValue(ContentModel.PROP_MODIFIER));
 			result.put(ContentModel.PROP_MODIFIED.getLocalName(),         getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED), DATETIME_FORMAT));
 			result.put(ContentModel.PROP_LOCALE.getLocalName(),           resultSetRow.getValue(ContentModel.PROP_LOCALE));
-			result.put("path",                                            nodeService.getPath(resultSetRow.getNodeRef()));
+			result.put("path",                                            nodeService.getPath(resultSetRow.getNodeRef()).toPrefixString(namespaceService));
 
 			if (resultSetRow.getValues().containsKey(ContentModel.PROP_CONTENT.toString())) {
 
 				ContentData contentData = (ContentData) resultSetRow.getValue(ContentModel.PROP_CONTENT);
 
 				result.put("mimetype",       contentData.getMimetype());
-				result.put("size",           Long.toString(contentData.getSize()));
+				result.put("size",           String.valueOf(contentData.getSize()));
 				result.put("encoding",       contentData.getEncoding());
 				result.put("content-locale", contentData.getLocale());
 			}
@@ -134,15 +139,17 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		resultSet.close();
 
 		// Parameter values.
-		parameters.replace(PARAMETER_DATE, getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
+		parameters.replace(PARAMETER_DATE,  getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
+		parameters.replace(PARAMETER_LIMIT, String.valueOf(parameters.get(PARAMETER_LIMIT)));
+		parameters.replace(PARAMETER_SKIP,  String.valueOf(parameters.get(PARAMETER_SKIP)));
 
 		// New parameters values.
 		Map<String, Object> newParameters = new HashMap<String, Object>();
 		newParameters.put(PARAMETER_BASETYPE,  parameters.get(PARAMETER_BASETYPE));
 		newParameters.put(PARAMETER_DATE,      getDateAsString(newParameterDt, DATE_FORMAT));
 		newParameters.put(PARAMETER_LIMIT,     parameters.get(PARAMETER_LIMIT));
-		newParameters.put(PARAMETER_SKIP,      newParameterSkip);
-		
+		newParameters.put(PARAMETER_SKIP,      String.valueOf(newParameterSkip));
+
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("count",	       results.size());
@@ -171,7 +178,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		searchParameters.addSort("@" + ContentModel.PROP_NODE_DBID, true);
 		searchParameters.setUseInMemorySort(false);
 		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
-		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT) + (int) parameters.get(PARAMETER_SKIP));
+		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT));
 
 		return searchParameters;
 	}
@@ -283,6 +290,11 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 	public void setNodeService(NodeService nodeService) {
 		this.nodeService = nodeService;
+	}
+
+	public void setServiceRegistry(ServiceRegistry serviceRegistry) {
+		this.serviceRegistry = serviceRegistry;
+		this.namespaceService = serviceRegistry.getNamespaceService();
 	}
 
 	public void setSearchService(SearchService searchService) {

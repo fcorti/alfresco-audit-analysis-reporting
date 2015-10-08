@@ -18,6 +18,7 @@ package com.fcorti.aaar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -62,7 +63,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	protected Map<String, Object> executeImpl(WebScriptRequest req, Status status, Cache cache) {
 
 		// Parameters.
-		Map<String, String> parameters = null;
+		Map<String, Object> parameters = null;
 		try {
 			parameters = getParameters(req);
 		}
@@ -72,32 +73,37 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 
 		// Query execution.
 		ResultSet resultSet = searchService.query(getSearchParameters(parameters));
+		Iterator<ResultSetRow> resultIterator = resultSet.iterator();
 
 		// New parameter values.
-		String newParameterDt = parameters.get(PARAMETER_DATE);
-		int newParameterSkip = Integer.parseInt(parameters.get(PARAMETER_SKIP));
+		Date newParameterDt = (Date) parameters.get(PARAMETER_DATE);
+		int newParameterSkip = (int) parameters.get(PARAMETER_SKIP);
 
 		// Result composition.
-		Iterator<ResultSetRow> resultIterator = resultSet.iterator();
-		List<Long> results = new ArrayList<Long>();
+		List<String> results = new ArrayList<String>();
 		while (resultIterator.hasNext()) {
 
 			ResultSetRow resultSetRow = resultIterator.next();
 			resultSetRow.getValues();
 
-			results.add((Long) resultSetRow.getValue(ContentModel.PROP_NODE_DBID));
+			results.add(String.valueOf(resultSetRow.getValue(ContentModel.PROP_NODE_DBID)));
 
 			++newParameterSkip;
 		}
 
 		resultSet.close();
 
+		// Parameter values.
+		parameters.replace(PARAMETER_DATE,  getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
+		parameters.replace(PARAMETER_LIMIT, String.valueOf(parameters.get(PARAMETER_LIMIT)));
+		parameters.replace(PARAMETER_SKIP,  String.valueOf(parameters.get(PARAMETER_SKIP)));
+
 		// New parameters values.
-		Map<String, String> newParameters = new HashMap<String, String>();
-		newParameters.put(PARAMETER_BASETYPE, parameters.get(PARAMETER_BASETYPE));
-		newParameters.put(PARAMETER_DATE,     newParameterDt);
-		newParameters.put(PARAMETER_LIMIT,    parameters.get(PARAMETER_LIMIT));
-		newParameters.put(PARAMETER_SKIP,     Integer.toString(newParameterSkip));
+		Map<String, Object> newParameters = new HashMap<String, Object>();
+		newParameters.put(PARAMETER_BASETYPE,  parameters.get(PARAMETER_BASETYPE));
+		newParameters.put(PARAMETER_DATE,      getDateAsString(newParameterDt, DATE_FORMAT));
+		newParameters.put(PARAMETER_LIMIT,     parameters.get(PARAMETER_LIMIT));
+		newParameters.put(PARAMETER_SKIP,      String.valueOf(newParameterSkip));
 
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -115,18 +121,19 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	 * @param parameters
 	 * @return
 	 */
-	private static final SearchParameters getSearchParameters(Map<String, String> parameters) {
+	private static final SearchParameters getSearchParameters(Map<String, Object> parameters) {
 
 		SearchParameters searchParameters = new SearchParameters();
 
 		searchParameters.addStore(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
 		searchParameters.setLanguage(SearchService.LANGUAGE_FTS_ALFRESCO);
 		searchParameters.setQuery(getQuery(parameters));
-		searchParameters.setSkipCount(Integer.parseInt(parameters.get(PARAMETER_SKIP)));
+		searchParameters.setSkipCount((int) parameters.get(PARAMETER_SKIP));
+		searchParameters.addSort("@" + ContentModel.PROP_MODIFIED, true);
 		searchParameters.addSort("@" + ContentModel.PROP_NODE_DBID, true);
 		searchParameters.setUseInMemorySort(false);
 		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
-		searchParameters.setLimit(Integer.parseInt(parameters.get(PARAMETER_LIMIT)));
+		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT));
 
 		return searchParameters;
 	}
@@ -137,7 +144,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	 * @param parameters
 	 * @return
 	 */
-	private static final String getQuery(Map<String, String> parameters) {
+	private static final String getQuery(Map<String, Object> parameters) {
 
 		String query = "";
 
@@ -146,7 +153,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 
 		// Date filter.
 		query += "AND ";
-		query += "(@" + ContentModel.PROP_MODIFIED + ":[MIN TO \"" + parameters.get(PARAMETER_DATE) + "T00:00:00.000Z\">) ";
+		query += "(@" + ContentModel.PROP_MODIFIED + ":[MIN TO \"" + getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT) + "T00:00:00.000Z\">) ";
 
 		return query;
 	}
@@ -158,9 +165,9 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	 * @return
 	 * @throws WrongFormatException 
 	 */
-	private static final Map<String, String> getParameters(WebScriptRequest req) throws WrongFormatException {
+	private static final Map<String, Object> getParameters(WebScriptRequest req) throws WrongFormatException {
 
-		Map<String, String> parameters = new HashMap<String, String>();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 
 		// BaseType parameter.
 		String baseTypeParameter = req.getParameter(PARAMETER_BASETYPE);
@@ -181,8 +188,9 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		if (dateParameter.isEmpty()) {
 			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
 		}
+		Date dateParameterValue = null;
 	    try {
-		    (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
+	    	dateParameterValue = (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
 	    }
 	    catch (Exception e) {
 	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
@@ -197,7 +205,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		if (limitParameter.isEmpty()) {
 			throw new NullArgumentException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
 		}
-		Integer limitParameterValue = Integer.parseInt(limitParameter);
+		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
 			throw new OutOfRangeException(limitParameterValue, 0, Integer.MAX_VALUE);			
 		}
@@ -211,17 +219,28 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		if (skipParameter.isEmpty()) {
 			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
 		}
-		Long skipParameterValue = Long.parseLong(skipParameter);
+		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
 			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
 		}
 
-		parameters.put(PARAMETER_BASETYPE,   baseTypeParameter);
-		parameters.put(PARAMETER_DATE,       dateParameter);
-		parameters.put(PARAMETER_LIMIT,      limitParameter);
-		parameters.put(PARAMETER_SKIP,       skipParameter);
+		parameters.put(PARAMETER_BASETYPE, baseTypeParameter);
+		parameters.put(PARAMETER_DATE,     dateParameterValue);
+		parameters.put(PARAMETER_LIMIT,    limitParameterValue);
+		parameters.put(PARAMETER_SKIP,     skipParameterValue);
 
 		return parameters;
+	}
+
+	/**
+	 * Get the string representation of the date.
+	 * 
+	 * @param date
+	 * @param format
+	 * @return
+	 */
+	private static final String getDateAsString(Date date, String format) {
+		return (new SimpleDateFormat(format)).format(date);
 	}
 
 	public void setSearchService(SearchService searchService) {
