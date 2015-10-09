@@ -129,7 +129,6 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		searchParameters.setLanguage(SearchService.LANGUAGE_FTS_ALFRESCO);
 		searchParameters.setQuery(getQuery(parameters));
 		searchParameters.setSkipCount((int) parameters.get(PARAMETER_SKIP));
-		searchParameters.addSort("@" + ContentModel.PROP_MODIFIED, true);
 		searchParameters.addSort("@" + ContentModel.PROP_NODE_DBID, true);
 		searchParameters.setUseInMemorySort(false);
 		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
