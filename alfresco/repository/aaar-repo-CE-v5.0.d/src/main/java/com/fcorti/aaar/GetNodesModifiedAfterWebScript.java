@@ -100,7 +100,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 			resultSetRow.getValues();
 
 			Map<String, Object> result = new HashMap<String, Object>();
-			result.put(ContentModel.PROP_NODE_DBID.getLocalName(),        resultSetRow.getValue(ContentModel.PROP_NODE_DBID));
+			result.put(ContentModel.PROP_NODE_DBID.getLocalName(),        String.valueOf(resultSetRow.getValue(ContentModel.PROP_NODE_DBID)));
 			result.put(ContentModel.PROP_STORE_PROTOCOL.getLocalName(),   resultSetRow.getNodeRef().getStoreRef().getProtocol());
 			result.put(ContentModel.PROP_STORE_IDENTIFIER.getLocalName(), resultSetRow.getNodeRef().getStoreRef().getIdentifier());
 			result.put(ContentModel.PROP_NODE_UUID.getLocalName(),        resultSetRow.getNodeRef().getId());
@@ -152,7 +152,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("count",	       results.size());
+		model.put("count",	       String.valueOf(results.size()));
 		model.put("results",	   results);
 		model.put("parameters",    parameters);
 		model.put("newParameters", newParameters);

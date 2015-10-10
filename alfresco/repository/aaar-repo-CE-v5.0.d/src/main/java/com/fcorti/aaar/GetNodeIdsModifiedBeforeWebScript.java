@@ -107,7 +107,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("count",	       results.size());
+		model.put("count",	       String.valueOf(results.size()));
 		model.put("results",	   results);
 		model.put("parameters",    parameters);
 		model.put("newParameters", newParameters);
