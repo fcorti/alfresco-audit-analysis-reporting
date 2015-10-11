@@ -35,6 +35,7 @@ import org.alfresco.service.cmr.search.ResultSetRow;
 import org.alfresco.service.cmr.search.SearchParameters;
 import org.alfresco.service.cmr.search.SearchService;
 import org.alfresco.service.namespace.NamespaceService;
+import org.alfresco.util.ISO9075;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
@@ -111,7 +112,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 			result.put(ContentModel.PROP_MODIFIER.getLocalName(),         resultSetRow.getValue(ContentModel.PROP_MODIFIER));
 			result.put(ContentModel.PROP_MODIFIED.getLocalName(),         getDateAsString((Date) resultSetRow.getValue(ContentModel.PROP_MODIFIED), DATETIME_FORMAT));
 			result.put(ContentModel.PROP_LOCALE.getLocalName(),           resultSetRow.getValue(ContentModel.PROP_LOCALE));
-			result.put("path",                                            nodeService.getPath(resultSetRow.getNodeRef()).toPrefixString(namespaceService));
+			result.put("path",                                            ISO9075.decode(nodeService.getPath(resultSetRow.getNodeRef()).toPrefixString(namespaceService)));
 
 			if (resultSetRow.getValues().containsKey(ContentModel.PROP_CONTENT.toString())) {
 
