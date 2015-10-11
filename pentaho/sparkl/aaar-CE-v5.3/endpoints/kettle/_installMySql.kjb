@@ -13,7 +13,7 @@
     <parameters>
         <parameter>
             <name>alfrescoAuditLimit</name>
-            <default_value>100000</default_value>
+            <default_value>50000</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -34,6 +34,11 @@
         <parameter>
             <name>alfrescoLogin</name>
             <default_value>admin</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>alfrescoNodeLimit</name>
+            <default_value>50000</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -280,7 +285,7 @@
       <name>Alfresco connection</name>
       <description/>
       <type>SQL</type>
-      <sql>update &#xa; dm_dim_alfresco&#xa;set&#xa; login &#x3d; &#x27;&#x24;&#x7b;alfrescoLogin&#x7d;&#x27;,&#xa; password &#x3d; &#x27;&#x24;&#x7b;alfrescoPassword&#x7d;&#x27;,&#xa; url &#x3d; &#x27;&#x24;&#x7b;alfrescoProtocol&#x7d;&#x3a;&#x2f;&#x2f;&#x24;&#x7b;alfrescoHost&#x7d;&#x3a;&#x24;&#x7b;alfrescoPort&#x7d;&#x27;,&#xa; url_audit_suffix &#x3d; &#x27;&#x2f;alfresco&#x2f;service&#x2f;api&#x2f;audit&#x2f;query&#x2f;alfresco-access&#x3f;verbose&#x3d;true&#x26;limit&#x3d;&#x24;&#x7b;alfrescoAuditLimit&#x7d;&#x27;&#x3b;</sql>
+      <sql>update &#xa; dm_dim_alfresco&#xa;set&#xa; login &#x3d; &#x27;&#x24;&#x7b;alfrescoLogin&#x7d;&#x27;,&#xa; password &#x3d; &#x27;&#x24;&#x7b;alfrescoPassword&#x7d;&#x27;,&#xa; url &#x3d; &#x27;&#x24;&#x7b;alfrescoProtocol&#x7d;&#x3a;&#x2f;&#x2f;&#x24;&#x7b;alfrescoHost&#x7d;&#x3a;&#x24;&#x7b;alfrescoPort&#x7d;&#x27;,&#xa; audit_limit &#x3d; &#x24;&#x7b;alfrescoAuditLimit&#x7d;,&#xa; node_limit &#x3d; &#x24;&#x7b;alfrescoNodeLimit&#x7d;&#x3b;</sql>
       <useVariableSubstitution>T</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

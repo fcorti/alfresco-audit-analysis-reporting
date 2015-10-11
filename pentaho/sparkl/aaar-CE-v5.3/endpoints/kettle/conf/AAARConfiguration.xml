@@ -2,13 +2,13 @@
 <AAAR>
  <parameter name="AAARGetAudit" value="true"> </parameter>
  <parameter name="AAARGetNodes" value="true"> </parameter>
- <parameter name="AAARGetParents" value="true"> </parameter>
  <parameter name="AAARGetWorkflows" value="true"> </parameter>
  <parameter name="alfrescoAuditLimit" value="50000"> </parameter>
  <parameter name="alfrescoFtpPath" value="alfresco"> </parameter>
  <parameter name="alfrescoFtpPort" value="121"> </parameter>
  <parameter name="alfrescoHost" value="localhost"> </parameter>
  <parameter name="alfrescoLogin" value="admin"> </parameter>
+ <parameter name="alfrescoNodeLimit" value="50000"> </parameter>
  <parameter name="alfrescoPassword" value="admin"> </parameter>
  <parameter name="alfrescoProtocol" value="http"> </parameter>
  <parameter name="alfrescoPort" value="8080"> </parameter>

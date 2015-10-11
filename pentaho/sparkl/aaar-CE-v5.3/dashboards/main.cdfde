@@ -37,14 +37,14 @@
       "type": "Id"
      },
      {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
       "name": "resourceCode",
       "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
       "type": "Resource"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
      }
     ]
    },
@@ -1217,6 +1217,34 @@
     ]
    },
    {
+    "id": "cd3320cc-181c-0d0e-76a6-62ebe39e1d1a",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimit",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "50000",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "8dedee71-9fe1-8d7b-7ccd-96fb567715fd",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
@@ -1622,16 +1650,16 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Already saved. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','writeConfiguration',{\n\n            params: {\n                configurationFile: configurationFile,\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            },\n\n            success: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Configuration saved with success into \"' + Dashboards.getParameterValue('${p:configurationFile}') + '\".</div>');\n                Dashboards.setParameter('${p:isChanged}','false');\n                Dashboards.decrementRunningCalls();  \n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n\n    }\n\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
+      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Already saved. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','writeConfiguration',{\n\n            params: {\n                configurationFile: configurationFile,\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoNodeLimit: Dashboards.getParameterValue('${p:alfrescoNodeLimit}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            },\n\n            success: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Configuration saved with success into \"' + Dashboards.getParameterValue('${p:configurationFile}') + '\".</div>');\n                Dashboards.setParameter('${p:isChanged}','false');\n                Dashboards.decrementRunningCalls();  \n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n\n    }\n\n} ",
       "type": "JavaScript"
      },
      {
       "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },

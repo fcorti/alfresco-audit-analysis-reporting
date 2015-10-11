@@ -10,7 +10,6 @@ LOG_PATH="$LOGS_PATH/AAAR.log"
 # Set by writeConfiguration.kjb.
 GET_AUDIT="true"
 GET_REPOSITORY="true"
-GET_PARENTS="true"
 GET_WORKFLOWS="true"
 KETTLE_PATH="/opt/data-integration"
 
@@ -32,7 +31,7 @@ fi
 if [ "$1" != "silent" ]; then
     echo
     echo "You are going to execute this command:"
-    echo './kitchen.sh /rep:"AAAR_Kettle" /job:"'Get all'" /dir:/Alfresco /user:admin /pass:admin /param:get_audit='$GET_AUDIT' /param:get_nodes='$GET_REPOSITORY' /param:get_parents='$GET_PARENTS' /param:get_workflows='$GET_WORKFLOWS' /log="'$LOG_PATH'" /level:Basic'
+    echo './kitchen.sh /rep:"AAAR_Kettle" /job:"'Get all'" /dir:/Alfresco /user:admin /pass:admin /param:get_audit='$GET_AUDIT' /param:get_nodes='$GET_REPOSITORY' /param:get_workflows='$GET_WORKFLOWS' /log="'$LOG_PATH'" /level:Basic'
     echo
     read -e -p "Press <enter> to start import."
     echo
@@ -40,7 +39,7 @@ fi
 
 cd $KETTLE_PATH
 
-./kitchen.sh /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit=$GET_AUDIT /param:get_nodes=$GET_REPOSITORY /param:get_parents=$GET_PARENTS /param:get_workflows=$GET_WORKFLOWS /log="$LOG_PATH" /level:Basic
+./kitchen.sh /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit=$GET_AUDIT /param:get_nodes=$GET_REPOSITORY /param:get_workflows=$GET_WORKFLOWS /log="$LOG_PATH" /level:Basic
 
 if [ "$1" != "silent" ]; then
     echo

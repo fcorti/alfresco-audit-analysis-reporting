@@ -20,11 +20,6 @@
             <description/>
         </parameter>
         <parameter>
-            <name>AAARGetParents</name>
-            <default_value>AAARGetParents</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>AAARGetWorkflows</name>
             <default_value>AAARGetWorkflows</default_value>
             <description/>
@@ -52,6 +47,11 @@
         <parameter>
             <name>alfrescoLogin</name>
             <default_value>alfrescoLoginValue</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>alfrescoNodeLimit</name>
+            <default_value>alfrescoNodeLimit</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -195,6 +195,8 @@
   <created_date>2013&#x2f;12&#x2f;07 21&#x3a;23&#x3a;17.834</created_date>
   <modified_user>-</modified_user>
   <modified_date>2013&#x2f;12&#x2f;07 21&#x3a;23&#x3a;17.834</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
@@ -229,9 +231,9 @@
     <data>
       <line> <item>AAARGetAudit</item> </line>
       <line> <item>AAARGetNodes</item> </line>
-      <line> <item>AAARGetParents</item> </line>
       <line> <item>AAARGetWorkflows</item> </line>
       <line> <item>alfrescoAuditLimit</item> </line>
+      <line> <item>alfrescoNodeLimit</item> </line>
       <line> <item>alfrescoFtpPath</item> </line>
       <line> <item>alfrescoFtpPort</item> </line>
       <line> <item>alfrescoHost</item> </line>

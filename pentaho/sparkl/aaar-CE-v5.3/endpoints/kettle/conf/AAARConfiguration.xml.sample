@@ -2,15 +2,16 @@
 <AAAR>
 
  <!-- Alfresco parameters -->
- <parameter name="alfrescoAuditLimit"   value="50000"> </parameter>
- <parameter name="alfrescoFtpPath"      value="alfresco"> </parameter>
- <parameter name="alfrescoFtpPort"      value="121"> </parameter>
- <parameter name="alfrescoHost"         value="localhost"> </parameter>
- <parameter name="alfrescoLogin"        value="admin"> </parameter>
- <parameter name="alfrescoPassword"     value="admin"> </parameter>
- <parameter name="alfrescoPort"         value="8080"> </parameter>
- <parameter name="alfrescoProtocol"     value="http"> </parameter>
- <parameter name="alfrescoType"     value="Alfresco_5_0"> </parameter>
+ <parameter name="alfrescoAuditLimit" value="50000"> </parameter>
+ <parameter name="alfrescoFtpPath"    value="alfresco"> </parameter>
+ <parameter name="alfrescoFtpPort"    value="121"> </parameter>
+ <parameter name="alfrescoHost"       value="localhost"> </parameter>
+ <parameter name="alfrescoLogin"      value="admin"> </parameter>
+ <parameter name="alfrescoNodeLimit"  value="50000"> </parameter>
+ <parameter name="alfrescoPassword"   value="admin"> </parameter>
+ <parameter name="alfrescoPort"       value="8080"> </parameter>
+ <parameter name="alfrescoProtocol"   value="http"> </parameter>
+ <parameter name="alfrescoType"       value="Alfresco_5_0"> </parameter>
 
  <!-- Database parameters -->
  <parameter name="databaseBin"          value="/usr/bin"> </parameter>
@@ -24,16 +25,15 @@
  <parameter name="databaseType"         value="PostgreSql"> </parameter>
 
  <!-- Kettle parameters -->
- <parameter name="kettlePath"           value="/opt/data-integration"> </parameter>
- <parameter name="kettleVersion"        value="5"> </parameter>
+ <parameter name="kettlePath"    value="/opt/data-integration"> </parameter>
+ <parameter name="kettleVersion" value="5"> </parameter>
 
  <!-- Pentaho parameters -->
- <parameter name="pentahoAAARPath"      value="/public/AAAR"> </parameter>
+ <parameter name="pentahoAAARPath" value="/public/AAAR"> </parameter>
 
  <!-- A.A.A.R. parameters -->
- <parameter name="AAARGetAudit" value="true"> </parameter>
- <parameter name="AAARGetNodes" value="true"> </parameter>
- <parameter name="AAARGetParents" value="true"> </parameter>
+ <parameter name="AAARGetAudit"     value="true"> </parameter>
+ <parameter name="AAARGetNodes"     value="true"> </parameter>
  <parameter name="AAARGetWorkflows" value="true"> </parameter>
 
 </AAAR>

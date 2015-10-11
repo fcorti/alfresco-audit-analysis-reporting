@@ -93,8 +93,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>508</xloc>
-      <yloc>20</yloc>
+      <xloc>554</xloc>
+      <yloc>19</yloc>
       </entry>
     <entry>
       <name>_installPostgreSql</name>
@@ -136,6 +136,9 @@
             </parameter>            <parameter>            <name>alfrescoLogin</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoLogin&#x7d;</value>
+            </parameter>            <parameter>            <name>alfrescoNodeLimit</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoNodeLimit&#x7d;</value>
             </parameter>            <parameter>            <name>alfrescoPassword</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoPassword&#x7d;</value>
@@ -194,8 +197,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>678</xloc>
-      <yloc>20</yloc>
+      <xloc>739</xloc>
+      <yloc>19</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -204,8 +207,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>888</xloc>
-      <yloc>368</yloc>
+      <xloc>949</xloc>
+      <yloc>367</yloc>
       </entry>
     <entry>
       <name>Check databaseType &#x3d; &#x27;MySql&#x27;</name>
@@ -226,8 +229,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>508</xloc>
-      <yloc>143</yloc>
+      <xloc>554</xloc>
+      <yloc>142</yloc>
       </entry>
     <entry>
       <name>_installMySql</name>
@@ -266,6 +269,9 @@
             </parameter>            <parameter>            <name>alfrescoLogin</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoLogin&#x7d;</value>
+            </parameter>            <parameter>            <name>alfrescoNodeLimit</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;alfrescoNodeLimit&#x7d;</value>
             </parameter>            <parameter>            <name>alfrescoPassword</name>
             <stream_name/>
             <value>&#x24;&#x7b;alfrescoPassword&#x7d;</value>
@@ -330,8 +336,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>675</xloc>
-      <yloc>142</yloc>
+      <xloc>736</xloc>
+      <yloc>141</yloc>
       </entry>
     <entry>
       <name>_readConfigurationInVariables</name>
@@ -366,8 +372,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>303</xloc>
-      <yloc>20</yloc>
+      <xloc>324</xloc>
+      <yloc>19</yloc>
       </entry>
     <entry>
       <name>Checks if files exist</name>
@@ -393,8 +399,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>509</xloc>
-      <yloc>241</yloc>
+      <xloc>555</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>_pentahoAddDatasource</name>
@@ -456,8 +462,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>887</xloc>
-      <yloc>273</yloc>
+      <xloc>948</xloc>
+      <yloc>272</yloc>
       </entry>
     <entry>
       <name>_pentahoInstallAuthenticationExt</name>
@@ -491,8 +497,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>888</xloc>
-      <yloc>172</yloc>
+      <xloc>949</xloc>
+      <yloc>171</yloc>
       </entry>
     <entry>
       <name>Unzip CMIS Input plugin</name>
@@ -522,8 +528,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>889</xloc>
-      <yloc>63</yloc>
+      <xloc>950</xloc>
+      <yloc>62</yloc>
       </entry>
   </entries>
   <hops>

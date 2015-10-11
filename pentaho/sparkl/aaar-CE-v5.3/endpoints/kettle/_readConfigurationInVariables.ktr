@@ -75,6 +75,8 @@
   <created_date>2013&#x2f;12&#x2f;08 13&#x3a;30&#x3a;34.190</created_date>
   <modified_user>-</modified_user>
   <modified_date>2013&#x2f;12&#x2f;08 13&#x3a;30&#x3a;34.190</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
@@ -87,7 +89,6 @@
   <hop> <from>Get data from XML</from><to>alfrescoFtpPort</to><enabled>Y</enabled> </hop>
   <hop> <from>alfrescoFtpPort</from><to>alfrescoHost</to><enabled>Y</enabled> </hop>
   <hop> <from>alfrescoHost</from><to>alfrescoLogin</to><enabled>Y</enabled> </hop>
-  <hop> <from>alfrescoLogin</from><to>alfrescoPassword</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>alfrescoHost</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>alfrescoLogin</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>alfrescoPassword</to><enabled>Y</enabled> </hop>
@@ -115,7 +116,6 @@
   <hop> <from>Get data from XML</from><to>alfrescoProtocol</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>databaseBin</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>AAARGetAudit</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get data from XML</from><to>AAARGetParents</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>pentahoAAARPath</to><enabled>Y</enabled> </hop>
   <hop> <from>alfrescoProtocol</from><to>alfrescoType</to><enabled>Y</enabled> </hop>
   <hop> <from>alfrescoType</from><to>databaseHost</to><enabled>Y</enabled> </hop>
@@ -126,10 +126,12 @@
   <hop> <from>pentahoAAARPath</from><to>AAARGetAudit</to><enabled>Y</enabled> </hop>
   <hop> <from>AAARGetAudit</from><to>AAARGetNodes</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>AAARGetNodes</to><enabled>Y</enabled> </hop>
-  <hop> <from>AAARGetNodes</from><to>AAARGetParents</to><enabled>Y</enabled> </hop>
-  <hop> <from>AAARGetParents</from><to>AAARGetWorkflows</to><enabled>Y</enabled> </hop>
   <hop> <from>AAARGetWorkflows</from><to>Set Variables</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>AAARGetWorkflows</to><enabled>Y</enabled> </hop>
+  <hop> <from>AAARGetNodes</from><to>AAARGetWorkflows</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoLogin</from><to>alfrescoNodeLimit</to><enabled>Y</enabled> </hop>
+  <hop> <from>alfrescoNodeLimit</from><to>alfrescoPassword</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>alfrescoNodeLimit</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>AAARGetAudit</name>
@@ -204,42 +206,6 @@
     </step>
 
   <step>
-    <name>AAARGetParents</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>Get data from XML</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>AAARGetParents</name>
-        <field>name</field>
-      </key>
-      <value>
-        <name>value</name>
-        <rename>AAARGetParentsValue</rename>
-        <default/>
-        <type>String</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>339</xloc>
-      <yloc>503</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>AAARGetWorkflows</name>
     <type>StreamLookup</type>
     <description/>
@@ -269,8 +235,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>487</xloc>
-      <yloc>503</yloc>
+      <xloc>334</xloc>
+      <yloc>504</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -300,17 +266,6 @@
       </field>
       <field>
         <name>AAARGetNodes</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>AAARGetParents</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -377,6 +332,17 @@
       </field>
       <field>
         <name>alfrescoLogin</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>alfrescoNodeLimit</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -564,7 +530,7 @@
       </field>
     </fields>
     <data>
-      <line> <item>AAARGetAudit</item><item>AAARGetNodes</item><item>AAARGetParents</item><item>AAARGetWorkflows</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>alfrescoType</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
+      <line> <item>AAARGetAudit</item><item>AAARGetNodes</item><item>AAARGetWorkflows</item><item>alfrescoAuditLimit</item><item>alfrescoFtpPath</item><item>alfrescoFtpPort</item><item>alfrescoHost</item><item>alfrescoLogin</item><item>alfrescoNodeLimit</item><item>alfrescoPassword</item><item>alfrescoPort</item><item>alfrescoProtocol</item><item>alfrescoType</item><item>databaseBin</item><item>databaseLogin</item><item>databasePassword</item><item>databasePort</item><item>databaseSchemaAAAR</item><item>databaseSchemaKettle</item><item>databaseSchemaMain</item><item>databaseType</item><item>databaseHost</item><item>kettlePath</item><item>kettleVersion</item><item>pentahoAAARPath</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -675,17 +641,11 @@
         <field_name>AAARGetAuditValue</field_name>
         <variable_name>AAARGetAudit</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
+        <default_value>true</default_value>
         </field>
       <field>
         <field_name>AAARGetNodesValue</field_name>
         <variable_name>AAARGetNodes</variable_name>
-        <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>AAARGetParentsValue</field_name>
-        <variable_name>AAARGetParents</variable_name>
         <variable_type>PARENT_JOB</variable_type>
         <default_value>true</default_value>
         </field>
@@ -693,7 +653,7 @@
         <field_name>AAARGetWorkflowsValue</field_name>
         <variable_name>AAARGetWorkflows</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value>Get all</default_value>
+        <default_value>true</default_value>
         </field>
       <field>
         <field_name>alfrescoAuditLimitValue</field_name>
@@ -724,6 +684,12 @@
         <variable_name>alfrescoLogin</variable_name>
         <variable_type>PARENT_JOB</variable_type>
         <default_value>admin</default_value>
+        </field>
+      <field>
+        <field_name>alfrescoNodeLimitValue</field_name>
+        <variable_name>alfrescoNodeLimit</variable_name>
+        <variable_type>PARENT_JOB</variable_type>
+        <default_value>50000</default_value>
         </field>
       <field>
         <field_name>alfrescoPasswordValue</field_name>
@@ -1012,6 +978,42 @@
     </step>
 
   <step>
+    <name>alfrescoNodeLimit</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>Get data from XML</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>alfrescoNodeLimit</name>
+        <field>name</field>
+      </key>
+      <value>
+        <name>value</name>
+        <rename>alfrescoNodeLimitValue</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>699</xloc>
+      <yloc>115</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>alfrescoPassword</name>
     <type>StreamLookup</type>
     <description/>
@@ -1041,8 +1043,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>697</xloc>
-      <yloc>114</yloc>
+      <xloc>827</xloc>
+      <yloc>116</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1077,8 +1079,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>826</xloc>
-      <yloc>114</yloc>
+      <xloc>956</xloc>
+      <yloc>116</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1113,8 +1115,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>944</xloc>
-      <yloc>114</yloc>
+      <xloc>1074</xloc>
+      <yloc>116</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1149,8 +1151,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1055</xloc>
-      <yloc>114</yloc>
+      <xloc>1185</xloc>
+      <yloc>116</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

@@ -37,14 +37,14 @@
       "type": "Id"
      },
      {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
       "name": "resourceCode",
       "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
       "type": "Resource"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
      }
     ]
    },
@@ -1969,6 +1969,34 @@
     ]
    },
    {
+    "id": "6a157390-250f-263d-2668-fb357956ec10",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimit",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "50000",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "8dedee71-9fe1-8d7b-7ccd-96fb567715fd",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
@@ -2378,12 +2406,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -2512,12 +2540,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -2590,12 +2618,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },

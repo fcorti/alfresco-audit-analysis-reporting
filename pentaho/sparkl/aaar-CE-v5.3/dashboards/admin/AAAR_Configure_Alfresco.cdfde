@@ -37,14 +37,14 @@
       "type": "Id"
      },
      {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
       "name": "resourceCode",
       "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
       "type": "Resource"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
      }
     ]
    },
@@ -2321,6 +2321,140 @@
     ]
    },
    {
+    "id": "65babf48-fcec-6a07-be97-4c0d70059512",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "66b3b631-5d9b-39d8-3185-cfe53b995dbe",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimitGroup",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "form-group",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "188d4399-e87f-b32a-b802-ce262af31f21",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "65babf48-fcec-6a07-be97-4c0d70059512",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<label for=\"alfrescoNodeLimit\" class=\"col-sm-2 control-label\">Max node</label> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "71ffbe22-1df8-e4df-5a10-51d70d29f422",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "65babf48-fcec-6a07-be97-4c0d70059512",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimitField",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "10",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "10",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "10",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "4712441f-fcd1-84ed-fe91-17b3ffc66b94",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -3225,6 +3359,34 @@
     ]
    },
    {
+    "id": "4b531bd4-01d1-f576-bd33-8171b89bd836",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimit",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "50000",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "8dedee71-9fe1-8d7b-7ccd-96fb567715fd",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
@@ -3629,14 +3791,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -3674,13 +3836,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f() {\n\n    $('#alfrescoTypeField').children(\":first\").attr('class','form-control');\n\n    var alfrescoType = $.trim(Dashboards.getParameterValue('${p:alfrescoType}'));\n    Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n\n    if (alfrescoType != 'Alfresco_5_0' && alfrescoType != 'Alfresco_4_2') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'Alfresco_5_0\\' or \\'Alfresco_4_2\\'.</div>');\n\n        alfrescoType = 'http';\n        Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n        $('#render_alfrescoTypeComponent').val(alfrescoType);\n    }\n\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f() {\n\n    $('#alfrescoTypeField').children(\":first\").attr('class','form-control');\n\n    var alfrescoType = $.trim(Dashboards.getParameterValue('${p:alfrescoType}'));\n    Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n\n    if (alfrescoType != 'Alfresco_5_0' && alfrescoType != 'Alfresco_4_2') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'Alfresco_5_0\\' or \\'Alfresco_4_2\\'.</div>');\n\n        alfrescoType = 'http';\n        Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n        $('#render_alfrescoTypeComponent').val(alfrescoType);\n    }\n\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -3694,14 +3856,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -3732,14 +3894,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -3777,13 +3939,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f() {\n\n    $('#alfrescoProtocolField').children(\":first\").attr('class','form-control');\n\n    var alfrescoProtocol = $.trim(Dashboards.getParameterValue('${p:alfrescoProtocol}')).toLowerCase();\n    Dashboards.setParameter('${p:alfrescoProtocol}',alfrescoProtocol);\n\n    if (alfrescoProtocol != 'http' && alfrescoProtocol != 'https') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'http\\' or \\'https\\'.</div>');\n\n        alfrescoProtocol = 'http';\n        Dashboards.setParameter('${p:alfrescoProtocol}',alfrescoProtocol);\n        $('#render_alfrescoProtocolComponent').val(alfrescoProtocol);\n    }\n\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f() {\n\n    $('#alfrescoProtocolField').children(\":first\").attr('class','form-control');\n\n    var alfrescoProtocol = $.trim(Dashboards.getParameterValue('${p:alfrescoProtocol}')).toLowerCase();\n    Dashboards.setParameter('${p:alfrescoProtocol}',alfrescoProtocol);\n\n    if (alfrescoProtocol != 'http' && alfrescoProtocol != 'https') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'http\\' or \\'https\\'.</div>');\n\n        alfrescoProtocol = 'http';\n        Dashboards.setParameter('${p:alfrescoProtocol}',alfrescoProtocol);\n        $('#render_alfrescoProtocolComponent').val(alfrescoProtocol);\n    }\n\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -3797,14 +3959,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -3840,12 +4002,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -3918,12 +4080,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -3996,12 +4158,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4074,12 +4236,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4152,12 +4314,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4230,12 +4392,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4308,12 +4470,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4335,6 +4497,84 @@
      {
       "name": "postExecution",
       "value": "function f() {\n\n    $('#render_alfrescoAuditLimitComponent').attr('class','form-control');\n    $('#render_alfrescoAuditLimitComponent').attr('placeholder','Max audit (for example: 50000)');\n\n    var alfrescoAuditLimit = $.trim(Dashboards.getParameterValue('${p:alfrescoAuditLimit}'));\n    Dashboards.setParameter('${p:alfrescoAuditLimit}',alfrescoAuditLimit);\n\n    if (alfrescoAuditLimit.length <= 0 || isNaN(alfrescoAuditLimit)) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco max audit!</strong> Value must be numeric and cannot be empty.</div>');\n\n        alfrescoAuditLimit = '50000';\n        Dashboards.setParameter('${p:alfrescoAuditLimit}',alfrescoAuditLimit);\n        $('#render_alfrescoAuditLimitComponent').val(alfrescoAuditLimit);\n    }\n\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "function f() {\n    Dashboards.setParameter('${p:isChanged}','true');\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "b3ba2042-19ce-7364-f411-a50c764d107e",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "alfrescoNodeLimitComponent",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:alfrescoNodeLimit}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:alfrescoNodeLimit}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:alfrescoNodeLimitField}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f() {\n\n    $('#render_alfrescoNodeLimitComponent').attr('class','form-control');\n    $('#render_alfrescoNodeLimitComponent').attr('placeholder','Max node (for example: 50000)');\n\n    var alfrescoNodeLimit = $.trim(Dashboards.getParameterValue('${p:alfrescoNodeLimit}'));\n    Dashboards.setParameter('${p:alfrescoNodeLimit}',alfrescoNodeLimit);\n\n    if (alfrescoNodeLimit.length <= 0 || isNaN(alfrescoNodeLimit)) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco max node!</strong> Value must be numeric and cannot be empty.</div>');\n\n        alfrescoNodeLimit = '50000';\n        Dashboards.setParameter('${p:alfrescoNodeLimit}',alfrescoNodeLimit);\n        $('#render_alfrescoNodeLimitComponent').val(alfrescoNodeLimit);\n    }\n\n} ",
       "type": "JavaScript"
      },
      {
@@ -4386,12 +4626,12 @@
       "type": "Integer"
      },
      {
-      "name": "size",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -4474,16 +4714,16 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Already reset. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','readConfiguration',{\n\n            params: {\n                configurationFile: configurationFile\n            },\n\n            success: function(json) {\n\n                // Iteration on results.\n                for (var i=0; i < json.resultset.length; ++i) {\n                    Dashboards.setParameter('${p:' + json.resultset[i][0] + '}',json.resultset[i][1]);\n                }\n\n                Dashboards.setParameter('${p:isChanged}','false');\n\n                Dashboards.decrementRunningCalls();  \n\n                // Dashboard refresh.\n                AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco', {\n                    alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                    alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                    alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                    alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                    alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                    alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                    alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                    alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                    alfrescoType: Dashboards.getParameterValue('${p:alfrescoType}'),\n                    databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                    databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                    databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                    databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                    databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                    databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                    databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                    databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                    databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                    kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                    kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}'),\n                    action: 'load'\n                });\n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n    }\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
+      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Already reset. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','readConfiguration',{\n\n            params: {\n                configurationFile: configurationFile\n            },\n\n            success: function(json) {\n\n                // Iteration on results.\n                for (var i=0; i < json.resultset.length; ++i) {\n                    Dashboards.setParameter('${p:' + json.resultset[i][0] + '}',json.resultset[i][1]);\n                }\n\n                Dashboards.setParameter('${p:isChanged}','false');\n\n                Dashboards.decrementRunningCalls();  \n\n                // Dashboard refresh.\n                AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco', {\n                    alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                    alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                    alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                    alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                    alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                    alfrescoNodeLimit: Dashboards.getParameterValue('${p:alfrescoNodeLimit}'),\n                    alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                    alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                    alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                    alfrescoType: Dashboards.getParameterValue('${p:alfrescoType}'),\n                    databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                    databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                    databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                    databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                    databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                    databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                    databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                    databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                    databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                    kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                    kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}'),\n                    action: 'load'\n                });\n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n    }\n} ",
       "type": "JavaScript"
      },
      {
       "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -4562,16 +4802,16 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Already saved. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','writeConfiguration',{\n\n            params: {\n                configurationFile: configurationFile,\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                alfrescoType: Dashboards.getParameterValue('${p:alfrescoType}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            },\n\n            success: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Configuration saved with success into \"' + Dashboards.getParameterValue('${p:configurationFile}') + '\".</div>');\n                Dashboards.setParameter('${p:isChanged}','false');\n                Dashboards.decrementRunningCalls();  \n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n\n    }\n\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
+      "value": "function f() {\n\n    var isChanged = Dashboards.getParameterValue('${p:isChanged}');\n\n    if (isChanged == 'false') {\n        $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Already saved. Nothing changed.</div>');\n    }\n    else {\n        \n        var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n        // Read configuration.\n        Dashboards.incrementRunningCalls();\n\n        AAAR.runEndpoint('AAAR','writeConfiguration',{\n\n            params: {\n                configurationFile: configurationFile,\n                alfrescoAuditLimit: Dashboards.getParameterValue('${p:alfrescoAuditLimit}'),\n                alfrescoFtpPath: Dashboards.getParameterValue('${p:alfrescoFtpPath}'),\n                alfrescoFtpPort: Dashboards.getParameterValue('${p:alfrescoFtpPort}'),\n                alfrescoHost: Dashboards.getParameterValue('${p:alfrescoHost}'),\n                alfrescoLogin: Dashboards.getParameterValue('${p:alfrescoLogin}'),\n                alfrescoNodeLimit: Dashboards.getParameterValue('${p:alfrescoNodeLimit}'),\n                alfrescoPassword: Dashboards.getParameterValue('${p:alfrescoPassword}'),\n                alfrescoProtocol: Dashboards.getParameterValue('${p:alfrescoProtocol}'),\n                alfrescoPort: Dashboards.getParameterValue('${p:alfrescoPort}'),\n                alfrescoType: Dashboards.getParameterValue('${p:alfrescoType}'),\n                databaseBin: Dashboards.getParameterValue('${p:databaseBin}'),\n                databaseType: Dashboards.getParameterValue('${p:databaseType}'),\n                databaseHost: Dashboards.getParameterValue('${p:databaseHost}'),\n                databaseLogin: Dashboards.getParameterValue('${p:databaseLogin}'),\n                databasePassword: Dashboards.getParameterValue('${p:databasePassword}'),\n                databasePort: Dashboards.getParameterValue('${p:databasePort}'),\n                databaseSchemaAAAR: Dashboards.getParameterValue('${p:databaseSchemaAAAR}'),\n                databaseSchemaKettle: Dashboards.getParameterValue('${p:databaseSchemaKettle}'),\n                databaseSchemaMain: Dashboards.getParameterValue('${p:databaseSchemaMain}'),\n                kettlePath: Dashboards.getParameterValue('${p:kettlePath}'),\n                kettleVersion: Dashboards.getParameterValue('${p:kettleVersion}')\n            },\n\n            success: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-success alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Configuration saved with success into \"' + Dashboards.getParameterValue('${p:configurationFile}') + '\".</div>');\n                Dashboards.setParameter('${p:isChanged}','false');\n                Dashboards.decrementRunningCalls();  \n            },\n\n            error: function(json) {\n                $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration save!</strong> Please, check the log, solve the problem and try again.</div>');\n                Dashboards.decrementRunningCalls();  \n            }\n        });\n\n    }\n\n} ",
       "type": "JavaScript"
      },
      {
       "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },

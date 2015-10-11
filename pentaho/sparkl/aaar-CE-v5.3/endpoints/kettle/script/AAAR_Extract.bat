@@ -10,7 +10,6 @@ set LOG_PATH=%LOGS_PATH%\AAAR.log
 REM Set by writeConfiguration.kjb.
 set GET_AUDIT=true
 set GET_REPOSITORY=true
-set GET_PARENTS=true
 set GET_WORKFLOWS=true
 set GET_PARENTS=true
 set KETTLE_PATH=/opt/data-integration
@@ -33,7 +32,7 @@ if "%1"=="silent" GOTO SILENT_1
 if "%1"=="silent" GOTO SILENT_2
     echo.
     echo You are going to execute this command:
-    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_parents="%GET_PARENTS%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
+    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
     echo.
     pause
     echo.
@@ -41,7 +40,7 @@ if "%1"=="silent" GOTO SILENT_2
 
 cd "%KETTLE_PATH%"
 
-Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_parents="%GET_PARENTS%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
+Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
 
 cd "%CURRENT_PATH%"
 
