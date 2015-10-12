@@ -33,7 +33,7 @@
         </parameter>
         <parameter>
             <name>databaseType</name>
-            <default_value>MySql</default_value>
+            <default_value>PostgreSql</default_value>
             <description/>
         </parameter>
     </parameters>

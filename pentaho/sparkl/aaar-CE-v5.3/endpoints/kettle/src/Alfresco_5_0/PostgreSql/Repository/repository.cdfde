@@ -14,14 +14,14 @@
       "type": "Id"
      },
      {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
       "name": "resourceCode",
       "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.aaar-panel {\n    margin-right: 5px;\n    margin-left: 5px;\n}\n\n.aaar-full-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n} \n\nul\n{\n    list-style-type: none;\n} ",
       "type": "Resource"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
      }
     ]
    },
@@ -6527,7 +6527,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "/",
+      "value": "/app:company_home",
       "type": "String"
      },
      {
@@ -6623,12 +6623,12 @@
       "type": "HtmlObject"
      },
      {
-      "name": "onOpenEvent",
+      "name": "onCloseEvent",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "onCloseEvent",
+      "name": "onOpenEvent",
       "value": "",
       "type": "JavaScript"
      },
@@ -6691,14 +6691,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -6756,14 +6756,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -6794,14 +6794,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -6859,14 +6859,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -6897,17 +6897,17 @@
       "type": "Integer"
      },
      {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
       "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -7015,12 +7015,12 @@
       "type": "HtmlObject"
      },
      {
-      "name": "onOpenEvent",
+      "name": "onCloseEvent",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "onCloseEvent",
+      "name": "onOpenEvent",
       "value": "",
       "type": "JavaScript"
      },
@@ -7083,14 +7083,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -7148,14 +7148,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -7186,14 +7186,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -7251,14 +7251,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -7289,17 +7289,17 @@
       "type": "Integer"
      },
      {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
       "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -7367,17 +7367,17 @@
       "type": "Integer"
      },
      {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
       "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -7445,14 +7445,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "valueAsId",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
       "name": "externalPlugin",
       "value": "",
       "type": "externalPluginCustom"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "dataSource",
@@ -7490,13 +7490,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -7510,14 +7510,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -7548,17 +7548,17 @@
       "type": "Integer"
      },
      {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
       "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -7626,17 +7626,17 @@
       "type": "Integer"
      },
      {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
       "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
       "value": "",
       "type": "Integer"
      },
@@ -8008,6 +8008,11 @@
       "type": "Boolean"
      },
      {
+      "name": "defaultIfEmpty",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "dataSource",
       "value": "",
       "type": "Datasource"
@@ -8115,12 +8120,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8199,16 +8204,16 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lowerDate = new Date(2000, 0, 1, 0, 0, 0, 0);\n\n    Dashboards.fireChange(\"${p:folderId}\", -1);\n    Dashboards.fireChange(\"${p:parentId}\", -1);\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:childrenName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"/\");\n\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
+      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lowerDate = new Date(2000, 0, 1, 0, 0, 0, 0);\n\n    Dashboards.fireChange(\"${p:folderId}\", -1);\n    Dashboards.fireChange(\"${p:parentId}\", -1);\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:childrenName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"/app:company_home\");\n\n} ",
       "type": "JavaScript"
      },
      {
       "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8291,12 +8296,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8379,12 +8384,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8463,16 +8468,16 @@
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lowerDate = new Date(2000, 0, 1, 0, 0, 0, 0);\n\n    Dashboards.fireChange(\"${p:folderId}\", -1);\n    Dashboards.fireChange(\"${p:parentId}\", -1);\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:childrenName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"/\");\n\n} ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
+      "value": "function f() {\n\n    Date.prototype.yyyymmdd = function() {\n       var yyyy = this.getFullYear().toString();\n       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based\n       var dd  = this.getDate().toString();\n       return yyyy + \"-\" + (mm[1]?mm:\"0\"+mm[0]) + \"-\" + (dd[1]?dd:\"0\"+dd[0]); // padding\n      };\n\n    var today = new Date();\n    var lowerDate = new Date(2000, 0, 1, 0, 0, 0, 0);\n\n    Dashboards.fireChange(\"${p:folderId}\", -1);\n    Dashboards.fireChange(\"${p:parentId}\", -1);\n    Dashboards.fireChange(\"${p:creationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:creationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:creationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:creator}\", \"\");\n    Dashboards.fireChange(\"${p:modificationDtFrom}\", lowerDate.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationDtTo}\", today.yyyymmdd());\n    Dashboards.fireChange(\"${p:modificationHourFrom}\", \"00\");\n    Dashboards.fireChange(\"${p:modificationHourTo}\", \"23\");\n    Dashboards.fireChange(\"${p:modifier}\", \"\");\n    Dashboards.fireChange(\"${p:nodeType}\", \"\");\n    Dashboards.fireChange(\"${p:childrenName}\", \"\");\n    Dashboards.fireChange(\"${p:path}\", \"/app:company_home\");\n\n} ",
       "type": "JavaScript"
      },
      {
       "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8555,12 +8560,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8643,12 +8648,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8731,12 +8736,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
+      "name": "failureCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "failureCallback",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -8819,32 +8824,17 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"pathParam\",\"path\"],[\"folderIdParam\",\"folderId\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
      },
      {
-      "name": "colWidths",
+      "name": "colHeaders",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
       "value": "[]",
       "type": "Array"
      },
@@ -8854,12 +8844,27 @@
       "type": "colTypesCustom"
      },
      {
-      "name": "paginate",
-      "value": "true",
-      "type": "Boolean"
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
      },
      {
-      "name": "lengthChange",
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"pathParam\",\"path\"],[\"folderIdParam\",\"folderId\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "displayLength",
+      "value": "30",
+      "type": "Integer"
+     },
+     {
+      "name": "expandOnClick",
       "value": "false",
       "type": "Boolean"
      },
@@ -8874,19 +8879,19 @@
       "type": "Boolean"
      },
      {
-      "name": "sort",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
+      "name": "lengthChange",
       "value": "false",
       "type": "Boolean"
      },
      {
-      "name": "displayLength",
-      "value": "30",
-      "type": "Integer"
+      "name": "paginate",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "sort",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "colSearchable",
@@ -8914,24 +8919,24 @@
       "type": "SortByArray"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
-      "value": "bootstrap",
-      "type": "TableStyle"
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "paginationType",
       "value": "simple_numbers",
       "type": "PaginationType"
+     },
+     {
+      "name": "tableStyle",
+      "value": "bootstrap",
+      "type": "TableStyle"
      },
      {
       "name": "htmlObject",
@@ -8954,12 +8959,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -8974,14 +8979,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      },
      {
       "name": "clickAction",
@@ -9022,8 +9027,8 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[\"50%\",\"20%\",\"20%\",\"5%\",\"5%\"]",
+      "name": "colFormats",
+      "value": "[]",
       "type": "Array"
      },
      {
@@ -9032,22 +9037,7 @@
       "type": "Array"
      },
      {
-      "name": "parameters",
-      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"childrenNameParam\",\"childrenName\"],[\"pathParam\",\"path\"],[\"folderIdParam\",\"folderId\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colFormats",
       "value": "[]",
       "type": "Array"
      },
@@ -9057,12 +9047,27 @@
       "type": "colTypesCustom"
      },
      {
-      "name": "paginate",
-      "value": "true",
-      "type": "Boolean"
+      "name": "colWidths",
+      "value": "[\"50%\",\"20%\",\"20%\",\"5%\",\"5%\"]",
+      "type": "Array"
      },
      {
-      "name": "lengthChange",
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"alfrescoInstallationParam\",\"alfrescoInstallation\"],[\"creationDtFromParam\",\"creationDtFrom\"],[\"creationDtToParam\",\"creationDtTo\"],[\"creationHourFromParam\",\"creationHourFrom\"],[\"creationHourToParam\",\"creationHourTo\"],[\"creatorParam\",\"creator\"],[\"modificationDtFromParam\",\"modificationDtFrom\"],[\"modificationDtToParam\",\"modificationDtTo\"],[\"modificationHourFromParam\",\"modificationHourFrom\"],[\"modificationHourToParam\",\"modificationHourTo\"],[\"modifierParam\",\"modifier\"],[\"nodeTypeParam\",\"nodeType\"],[\"childrenNameParam\",\"childrenName\"],[\"pathParam\",\"path\"],[\"folderIdParam\",\"folderId\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "displayLength",
+      "value": "30",
+      "type": "Integer"
+     },
+     {
+      "name": "expandOnClick",
       "value": "false",
       "type": "Boolean"
      },
@@ -9077,19 +9082,19 @@
       "type": "Boolean"
      },
      {
-      "name": "sort",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
+      "name": "lengthChange",
       "value": "false",
       "type": "Boolean"
      },
      {
-      "name": "displayLength",
-      "value": "30",
-      "type": "Integer"
+      "name": "paginate",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "sort",
+      "value": "true",
+      "type": "Boolean"
      },
      {
       "name": "colSearchable",
@@ -9107,19 +9112,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -9127,14 +9127,19 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
-      "value": "bootstrap",
-      "type": "TableStyle"
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "paginationType",
       "value": "simple_numbers",
       "type": "PaginationType"
+     },
+     {
+      "name": "tableStyle",
+      "value": "bootstrap",
+      "type": "TableStyle"
      },
      {
       "name": "htmlObject",
@@ -9157,13 +9162,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").children(\":first\").attr('class','table table-striped table-condensed form-inline table-responsive dataTable');\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f() {\n    $('#' + this.htmlObject).children(\":first\").children(\":first\").attr('class','table table-striped table-condensed form-inline table-responsive dataTable');\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -9177,14 +9182,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      },
      {
       "name": "clickAction",
@@ -9239,13 +9244,8 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
@@ -9254,8 +9254,13 @@
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "width",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -9279,13 +9284,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -9299,14 +9304,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extensionPoints",
       "value": "[]",
       "type": "EditorValuesArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      },
      {
       "name": "activeSliceRadius",
@@ -9624,7 +9629,17 @@
       "type": "cccPointingModeCustom"
      },
      {
+      "name": "readers",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
       "name": "renderCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "renderedCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -9898,13 +9913,13 @@
       "type": "Datasource"
      },
      {
-      "name": "priority",
-      "value": 5,
+      "name": "height",
+      "value": "250",
       "type": "Integer"
      },
      {
-      "name": "height",
-      "value": "250",
+      "name": "priority",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -9938,13 +9953,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "",
+      "name": "postExecution",
+      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n} ",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "function f()\n{\n    var myself = this;\n\n    // Set initial width to match the placeholder\n    myself.chartDefinition.width = myself.placeholder().width();\n    \n    // Attach the resize handler only on the first execution of the chart component.\n    if (!this.resizeHandlerAttached) {\n    \n        // Ensure render is only triggered after resize events have stopped.\n        var debouncedResize = _.debounce(function() {\n\n            // Show chart again.\n            myself.placeholder().children().css('visibility','visible');\n\n            // Change chart width.\n            myself.chartDefinition.width = myself.placeholder().width();\n            myself.render( myself.query.lastResults() );\n        }, 200);\n    \n        // Attach resize handler.\n        $(window).resize(function(){\n    \n            // Only trigger resize if the container has changed width.\n            if ( myself.chartDefinition.width != myself.placeholder().width()) {\n    \n                // Temporarily hide chart so that overflow does not happen.\n                myself.placeholder().children().css('visibility','hidden');\n    \n                // Trigger the resize with debounce.\n                debouncedResize();\n            }\n        });\n    \n        this.resizeHandlerAttached = true;\n    }\n} ",
+      "name": "postFetch",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -9958,14 +9973,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
       "name": "extensionPoints",
       "value": "[]",
       "type": "EditorValuesArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      },
      {
       "name": "activeSliceRadius",
@@ -10283,7 +10298,17 @@
       "type": "cccPointingModeCustom"
      },
      {
+      "name": "readers",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
       "name": "renderCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "renderedCallback",
       "value": "",
       "type": "JavaScript"
      },
@@ -10575,6 +10600,16 @@
       "type": "CdaParameters"
      },
      {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
       "name": "output",
       "value": "[]",
       "type": "IndexArray"
@@ -10585,14 +10620,9 @@
       "type": "OutputMode"
      },
      {
-      "name": "cdacolumns",
+      "name": "cacheKeys",
       "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CacheKeysValues"
      },
      {
       "name": "cacheDuration",
@@ -10641,6 +10671,16 @@
       "type": "CdaParameters"
      },
      {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
       "name": "output",
       "value": "[]",
       "type": "IndexArray"
@@ -10651,14 +10691,9 @@
       "type": "OutputMode"
      },
      {
-      "name": "cdacolumns",
+      "name": "cacheKeys",
       "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CacheKeysValues"
      },
      {
       "name": "cacheDuration",
@@ -10698,13 +10733,23 @@
      },
      {
       "name": "query",
-      "value": "select\n nt.desc as nodeType,\n coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.content_stream_length)/(1024),1) end ,0) as Value\nfrom\n (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d \n join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on d.creation_date_id = cdt.id\n join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id >= 0\n join dm_dim_users cu on d.user_creator_id = cu.id\n join dm_dim_dates mdt on d.last_modification_date_id = mdt.id\n join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id >= 0\n join dm_dim_users mu on d.user_last_modifier_id = mu.id\n join dm_dim_node_types nt on d.node_type_id = nt.id\n join dm_dim_mime_types mt on d.mime_type_id = mt.id\ngroup by\n nt.desc\norder by\n nt.desc asc",
+      "value": "select\n nt.desc as nodeType,\n coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end ,0) as Value\nfrom\n (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d \n join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on d.creation_date_id = cdt.id\n join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id >= 0\n join dm_dim_users cu on d.user_creator_id = cu.id\n join dm_dim_dates mdt on d.last_modification_date_id = mdt.id\n join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id >= 0\n join dm_dim_users mu on d.user_last_modifier_id = mu.id\n join dm_dim_node_types nt on d.node_type_id = nt.id\n join dm_dim_mime_types mt on d.mime_type_id = mt.id\ngroup by\n nt.desc\norder by\n nt.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
       "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"measureTypeParam\",\"KBytes\",\"String\",\"\"],[\"folderIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
      },
      {
       "name": "output",
@@ -10717,14 +10762,9 @@
       "type": "OutputMode"
      },
      {
-      "name": "cdacolumns",
+      "name": "cacheKeys",
       "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CacheKeysValues"
      },
      {
       "name": "cacheDuration",
@@ -10764,13 +10804,23 @@
      },
      {
       "name": "query",
-      "value": "select\n mt.desc as mimeType,\n coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.content_stream_length)/(1024),1) end,0) as Value\nfrom\n (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d \n join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on d.creation_date_id = cdt.id\n join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id >= 0\n join dm_dim_users cu on d.user_creator_id = cu.id\n join dm_dim_dates mdt on d.last_modification_date_id = mdt.id\n join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id >= 0\n join dm_dim_users mu on d.user_last_modifier_id = mu.id\n join dm_dim_node_types nt on d.node_type_id = nt.id\n join dm_dim_mime_types mt on d.mime_type_id = mt.id\ngroup by\n mt.desc\norder by\n mt.desc asc",
+      "value": "select\n mt.desc as mimeType,\n coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end,0) as Value\nfrom\n (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d \n join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates cdt on d.creation_date_id = cdt.id\n join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id >= 0\n join dm_dim_users cu on d.user_creator_id = cu.id\n join dm_dim_dates mdt on d.last_modification_date_id = mdt.id\n join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id >= 0\n join dm_dim_users mu on d.user_last_modifier_id = mu.id\n join dm_dim_node_types nt on d.node_type_id = nt.id\n join dm_dim_mime_types mt on d.mime_type_id = mt.id\ngroup by\n mt.desc\norder by\n mt.desc asc",
       "type": "SqlQuery"
      },
      {
       "name": "parameters",
       "value": "[[\"alfrescoInstallationParam\",\"1\",\"Integer\",\"\"],[\"measureTypeParam\",\"KBytes\",\"String\",\"\"],[\"folderIdParam\",\"-1\",\"Integer\",\"\"]]",
       "type": "CdaParameters"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
      },
      {
       "name": "output",
@@ -10783,14 +10833,9 @@
       "type": "OutputMode"
      },
      {
-      "name": "cdacolumns",
+      "name": "cacheKeys",
       "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CacheKeysValues"
      },
      {
       "name": "cacheDuration",
@@ -10839,6 +10884,16 @@
       "type": "CdaParameters"
      },
      {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
       "name": "output",
       "value": "[]",
       "type": "IndexArray"
@@ -10849,14 +10904,9 @@
       "type": "OutputMode"
      },
      {
-      "name": "cdacolumns",
+      "name": "cacheKeys",
       "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CacheKeysValues"
      },
      {
       "name": "cacheDuration",

@@ -207,137 +207,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>949</xloc>
-      <yloc>367</yloc>
-      </entry>
-    <entry>
-      <name>Check databaseType &#x3d; &#x27;MySql&#x27;</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>&#x24;&#x7b;databaseType&#x7d;</fieldname>
-      <variablename>databaseType</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>MySql</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>554</xloc>
-      <yloc>142</yloc>
-      </entry>
-    <entry>
-      <name>_installMySql</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;_installMySql.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <force_separate_logging>N</force_separate_logging>
-      <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>alfrescoAuditLimit</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoAuditLimit&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoFtpPath</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoFtpPath&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoFtpPort</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoFtpPort&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoLogin</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoLogin&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoNodeLimit</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoNodeLimit&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoPassword</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoPassword&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoPort</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoPort&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoProtocol</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoProtocol&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoHost</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoHost&#x7d;</value>
-            </parameter>            <parameter>            <name>alfrescoType</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;alfrescoType&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseBin</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseBin&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseLogin</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseLogin&#x7d;</value>
-            </parameter>            <parameter>            <name>databasePassword</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databasePassword&#x7d;</value>
-            </parameter>            <parameter>            <name>databasePort</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databasePort&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseSchema_AAAR</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseSchema_AAAR&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseSchema_kettle</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseSchema_kettle&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseSchema_main</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseSchema_main&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseType</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseType&#x7d;</value>
-            </parameter>            <parameter>            <name>databaseHost</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;databaseHost&#x7d;</value>
-            </parameter>            <parameter>            <name>kettlePath</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;kettlePath&#x7d;</value>
-            </parameter>            <parameter>            <name>kettleVersion</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;kettleVersion&#x7d;</value>
-            </parameter>            <parameter>            <name>pentahoAAARPath</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;pentahoAAARPath&#x7d;</value>
-            </parameter>            <parameter>            <name>pentahoLogin</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;pentahoLogin&#x7d;</value>
-            </parameter>            <parameter>            <name>pentahoPassword</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;pentahoPassword&#x7d;</value>
-            </parameter>            <parameter>            <name>pentahoUrl</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;pentahoUrl&#x7d;</value>
-            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>736</xloc>
-      <yloc>141</yloc>
+      <xloc>894</xloc>
+      <yloc>325</yloc>
       </entry>
     <entry>
       <name>_readConfigurationInVariables</name>
@@ -399,8 +270,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>555</xloc>
-      <yloc>240</yloc>
+      <xloc>554</xloc>
+      <yloc>139</yloc>
       </entry>
     <entry>
       <name>_pentahoAddDatasource</name>
@@ -462,8 +333,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>948</xloc>
-      <yloc>272</yloc>
+      <xloc>893</xloc>
+      <yloc>230</yloc>
       </entry>
     <entry>
       <name>_pentahoInstallAuthenticationExt</name>
@@ -497,8 +368,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>949</xloc>
-      <yloc>171</yloc>
+      <xloc>894</xloc>
+      <yloc>129</yloc>
       </entry>
     <entry>
       <name>Unzip CMIS Input plugin</name>
@@ -528,32 +399,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>950</xloc>
-      <yloc>62</yloc>
+      <xloc>895</xloc>
+      <yloc>20</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>Check databaseType &#x3d; &#x27;PostgreSql&#x27;</from>
       <to>_installPostgreSql</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Check databaseType &#x3d; &#x27;PostgreSql&#x27;</from>
-      <to>Check databaseType &#x3d; &#x27;MySql&#x27;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Check databaseType &#x3d; &#x27;MySql&#x27;</from>
-      <to>_installMySql</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -597,15 +450,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check databaseType &#x3d; &#x27;MySql&#x27;</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>_pentahoAddDatasource</from>
       <to>Success</to>
       <from_nr>0</from_nr>
@@ -633,8 +477,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>_installMySql</from>
-      <to>Unzip CMIS Input plugin</to>
+      <from>Unzip CMIS Input plugin</from>
+      <to>_pentahoInstallAuthenticationExt</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -642,12 +486,12 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Unzip CMIS Input plugin</from>
-      <to>_pentahoInstallAuthenticationExt</to>
+      <from>Check databaseType &#x3d; &#x27;PostgreSql&#x27;</from>
+      <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

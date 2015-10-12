@@ -6092,7 +6092,7 @@
      },
      {
       "name": "query",
-      "value": "select\n dat.id as date_id,\n (select coalesce(count(*),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id <= dat.id) as Number,\n (select coalesce(sum(doc.content_stream_length)/(1024*1024),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id <= dat.id) as Mb\nfrom\n dm_dim_dates dat\nwhere\n dat.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n dat.id\norder by\n dat.id asc",
+      "value": "select\n dat.id as date_id,\n (select coalesce(count(*),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id <= dat.id) as Number,\n (select coalesce(sum(doc.size)/(1024*1024),0) from dm_dim_documents doc where doc.alfresco_id = ${alfrescoInstanceParam} and doc.creation_date_id <= dat.id) as Mb\nfrom\n dm_dim_dates dat\nwhere\n dat.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n dat.id\norder by\n dat.id asc",
       "type": "SqlQuery"
      },
      {

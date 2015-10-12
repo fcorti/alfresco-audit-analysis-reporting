@@ -17,10 +17,10 @@
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="alfrescoInstallationsDatasource"
+   <DataAccess access="public" connection="alfrescoInstallationsDatasource"
                id="alfrescoInstallationsDatasource"
                type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
       <Query>select
@@ -31,9 +31,8 @@ from
 order by
  i.desc asc</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="folderInfo"
-               id="folderInfo"
-               type="sql">
+   <DataAccess access="public" connection="folderInfo" id="folderInfo" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -66,10 +65,9 @@ where
  (''=${pathParam} or f.path=${pathParam})
  and (-1=${folderIdParam} or f.id=${folderIdParam})</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="documentsPerNodeType"
-               id="documentsPerNodeType"
+   <DataAccess access="public" connection="documentsPerNodeType" id="documentsPerNodeType"
                type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -78,7 +76,7 @@ where
       </Parameters>
       <Query>select
  nt.desc as nodeType,
- coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.content_stream_length)/(1024),1) end ,0) as Value
+ coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end ,0) as Value
 from
  (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -95,10 +93,9 @@ group by
 order by
  nt.desc asc</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="documentsPerMimeType"
-               id="documentsPerMimeType"
+   <DataAccess access="public" connection="documentsPerMimeType" id="documentsPerMimeType"
                type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -107,7 +104,7 @@ order by
       </Parameters>
       <Query>select
  mt.desc as mimeType,
- coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.content_stream_length)/(1024),1) end,0) as Value
+ coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end,0) as Value
 from
  (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -124,9 +121,8 @@ group by
 order by
  mt.desc asc</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="childrenFolders"
-               id="childrenFolders"
-               type="sql">
+   <DataAccess access="public" connection="childrenFolders" id="childrenFolders" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
