@@ -24,4 +24,22 @@
 		</property>
 	</bean>
 
+	<bean id="webscript.com.fcorti.AAAR.getNodesModifiedAfter.get" class="com.fcorti.aaar.GetNodesModifiedAfterWebScript" parent="webscript">
+		<property name="nodeService">
+			<ref bean="nodeService"/>
+		</property>
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getNodeIdsModifiedBefore.get" class="com.fcorti.aaar.GetNodeIdsModifiedBeforeWebScript" parent="webscript">
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
+	</bean>
+
 </beans>
