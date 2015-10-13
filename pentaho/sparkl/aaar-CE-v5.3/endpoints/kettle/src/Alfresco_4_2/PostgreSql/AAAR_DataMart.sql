@@ -109,8 +109,11 @@ CREATE TABLE "dm_dim_alfresco" (
     "login" character varying(100) NOT NULL,
     "password" character varying(100) NOT NULL,
     "url" character varying(1024) NOT NULL,
-    "url_service_suffix" character varying(128) NOT NULL,
     "url_audit_suffix" character varying(1024) NOT NULL,
+    "audit_limit" integer NOT NULL,
+    "url_nodes_modified_after_suffix" character varying(128) NOT NULL,
+    "url_nodes_modified_before_suffix" character varying(128) NOT NULL,
+    "node_limit" integer NOT NULL,
     "url_cmis_suffix" character varying(1024) NOT NULL,
     "url_workflow_definitions_suffix" character varying(1024) NOT NULL,
     "url_workflow_instances_suffix" character varying(1024) NOT NULL,
@@ -157,6 +160,9 @@ ALTER TABLE "public"."seq_dm_dim_documents_id" OWNER TO "postgres";
 
 CREATE TABLE "dm_dim_documents" (
     "id" integer DEFAULT "nextval"('"seq_dm_dim_documents_id"'::"regclass") NOT NULL,
+    "store-protocol" character varying(128) NOT NULL,
+    "store-identifier" character varying(128) NOT NULL,
+    "node-uuid" character varying(128) NOT NULL,
     "name" character varying(1024) NOT NULL,
     "path" character varying(4096) NOT NULL,
     "node_type_id" smallint NOT NULL,
@@ -167,14 +173,10 @@ CREATE TABLE "dm_dim_documents" (
     "user_last_modifier_id" integer NOT NULL,
     "last_modification_date_id" "date" NOT NULL,
     "last_modification_minute_id" smallint NOT NULL,
-    "content_stream_length" integer NOT NULL,
-    "is_latest_version" character(1) NOT NULL,
-    "is_major_version" character(1) NOT NULL,
-    "is_latest_major_version" character(1) NOT NULL,
-    "is_immutable" character(1) NOT NULL,
+    "size" integer NOT NULL,
     "parent_id" integer NOT NULL,
     "alfresco_id" smallint NOT NULL,
-    "src_id" character varying(1024) NOT NULL
+    "src_id" integer NOT NULL
 );
 
 
@@ -202,6 +204,9 @@ ALTER TABLE "public"."seq_dm_dim_folders_id" OWNER TO "postgres";
 
 CREATE TABLE "dm_dim_folders" (
     "id" integer DEFAULT "nextval"('"seq_dm_dim_folders_id"'::"regclass") NOT NULL,
+    "store-protocol" character varying(128) NOT NULL,
+    "store-identifier" character varying(128) NOT NULL,
+    "node-uuid" character varying(128) NOT NULL,
     "name" character varying(1024) NOT NULL,
     "path" character varying(4096) NOT NULL,
     "node_type_id" smallint NOT NULL,
@@ -213,7 +218,7 @@ CREATE TABLE "dm_dim_folders" (
     "last_modification_minute_id" smallint NOT NULL,
     "parent_id" integer,
     "alfresco_id" smallint NOT NULL,
-    "src_id" character varying(1024) NOT NULL
+    "src_id" integer NOT NULL
 );
 
 
@@ -753,27 +758,12 @@ CREATE TABLE "ope_audits" (
     "hour" smallint NOT NULL,
     "minute" smallint NOT NULL,
     "path" character varying(4096) NOT NULL,
-    "cmis_objectid" character varying(1024),
-    "cmis_objecttypeid" character varying(1024)
+    "node-dbid" integer,
+    "type" character varying(1024)
 );
 
 
 ALTER TABLE "public"."ope_audits" OWNER TO "postgres";
-
---
--- TOC entry 201 (class 1259 OID 19429)
--- Name: ope_cmis_document_parent; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE "ope_cmis_document_parent" (
-    "alfresco_id" smallint NOT NULL,
-    "cmis_objectid" character varying(1024) NOT NULL,
-    "cmis_parentid" character varying(1024) NOT NULL,
-    "cmis_path" character varying(4096) NOT NULL
-);
-
-
-ALTER TABLE "public"."ope_cmis_document_parent" OWNER TO "postgres";
 
 --
 -- TOC entry 202 (class 1259 OID 19435)
@@ -797,122 +787,54 @@ ALTER TABLE "public"."stg_audits" OWNER TO "postgres";
 -- Name: stg_cmis_documents; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
-CREATE TABLE "stg_cmis_documents" (
+CREATE TABLE "stg_rest_documents" (
     "alfresco_id" smallint NOT NULL,
-    "cmis_islatestmajorversion" character(1),
-    "cmis_contentstreamid" character varying(1024),
-    "cmis_contentstreamlength" integer,
-    "cmis_objecttypeid" character varying(512),
-    "cmis_versionseriescheckedoutby" character varying(512),
-    "cmis_versionseriescheckedoutid" character varying(512),
-    "cmis_name" character varying(1024),
-    "cmis_contentstreammimetype" character varying(512),
-    "cmis_versionseriesid" character varying(1024),
-    "cmis_creationdate" timestamp without time zone,
-    "cmis_changetoken" character varying(1024),
-    "cmis_islatestversion" character(1),
-    "cmis_versionlabel" character varying(256),
-    "cmis_isversionseriescheckedout" character(1),
-    "cmis_lastmodifiedby" character varying(512),
-    "cmis_createdby" character varying(512),
-    "cmis_checkincomment" "text",
-    "cmis_objectid" character varying(1024) NOT NULL,
-    "cmis_ismajorversion" character(1),
-    "cmis_isimmutable" character(1),
-    "alfcmis_noderef" "text",
-    "cmis_basetypeid" character varying(512),
-    "cmis_lastmodificationdate" timestamp without time zone,
-    "cmis_contentstreamfilename" character varying(1024)
+    "node-dbid" integer,
+    "store-protocol" character varying(128),
+    "store-identifier" character varying(128),
+    "node-uuid" character varying(128),
+    "name" character varying(1024),
+    "type" character varying(1024),
+    "creator" character varying(1024),
+    "created" character varying(32),
+    "locale" character varying(128),
+    "modifier" character varying(1024),
+    "modified" character varying(32),
+    "path" character varying(3072),
+    "mimetype" character varying(128),
+    "size" integer,
+    "encoding" character varying(128),
+    "content-locale" character varying(128),
+    "parent-node-uuid" character varying(128)
 );
 
 
-ALTER TABLE "public"."stg_cmis_documents" OWNER TO "postgres";
-
---
--- TOC entry 204 (class 1259 OID 19447)
--- Name: stg_cmis_documents_partial; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE "stg_cmis_documents_partial" (
-    "alfresco_id" smallint NOT NULL,
-    "cmis_islatestmajorversion" character(1),
-    "cmis_contentstreamid" character varying(1024),
-    "cmis_contentstreamlength" integer,
-    "cmis_objecttypeid" character varying(512),
-    "cmis_versionseriescheckedoutby" character varying(512),
-    "cmis_versionseriescheckedoutid" character varying(512),
-    "cmis_name" character varying(1024),
-    "cmis_contentstreammimetype" character varying(512),
-    "cmis_versionseriesid" character varying(1024),
-    "cmis_creationdate" timestamp without time zone,
-    "cmis_changetoken" character varying(1024),
-    "cmis_islatestversion" character(1),
-    "cmis_versionlabel" character varying(256),
-    "cmis_isversionseriescheckedout" character(1),
-    "cmis_lastmodifiedby" character varying(512),
-    "cmis_createdby" character varying(512),
-    "cmis_checkincomment" "text",
-    "cmis_objectid" character varying(1024) NOT NULL,
-    "cmis_ismajorversion" character(1),
-    "cmis_isimmutable" character(1),
-    "alfcmis_noderef" "text",
-    "cmis_basetypeid" character varying(512),
-    "cmis_lastmodificationdate" timestamp without time zone,
-    "cmis_contentstreamfilename" character varying(1024)
-);
-
-
-ALTER TABLE "public"."stg_cmis_documents_partial" OWNER TO "postgres";
+ALTER TABLE "public"."stg_rest_documents" OWNER TO "postgres";
 
 --
 -- TOC entry 205 (class 1259 OID 19453)
 -- Name: stg_cmis_folders; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
-CREATE TABLE "stg_cmis_folders" (
+CREATE TABLE "stg_rest_folders" (
     "alfresco_id" smallint NOT NULL,
-    "cmis_allowedchildobjecttypeids" character varying(1024),
-    "cmis_path" character varying(4096),
-    "cmis_objecttypeid" character varying(512),
-    "cmis_name" character varying(1024),
-    "cmis_creationdate" timestamp without time zone,
-    "cmis_changetoken" character varying(1024),
-    "cmis_lastmodifiedby" character varying(512),
-    "cmis_createdby" character varying(512),
-    "cmis_objectid" character varying(1024) NOT NULL,
-    "cmis_basetypeid" character varying(512),
-    "alfcmis_noderef" "text",
-    "cmis_parentid" character varying(1024),
-    "cmis_lastmodificationdate" timestamp without time zone
+    "node-dbid" integer,
+    "store-protocol" character varying(128),
+    "store-identifier" character varying(128),
+    "node-uuid" character varying(128),
+    "name" character varying(1024),
+    "type" character varying(1024),
+    "creator" character varying(1024),
+    "created" character varying(32),
+    "locale" character varying(128),
+    "modifier" character varying(1024),
+    "modified" character varying(32),
+    "path" character varying(3072),
+    "parent-node-uuid" character varying(128)
 );
 
 
-ALTER TABLE "public"."stg_cmis_folders" OWNER TO "postgres";
-
---
--- TOC entry 206 (class 1259 OID 19459)
--- Name: stg_cmis_folders_partial; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE "stg_cmis_folders_partial" (
-    "alfresco_id" smallint NOT NULL,
-    "cmis_allowedchildobjecttypeids" character varying(1024),
-    "cmis_path" character varying(4096),
-    "cmis_objecttypeid" character varying(512),
-    "cmis_name" character varying(1024),
-    "cmis_creationdate" timestamp without time zone,
-    "cmis_changetoken" character varying(1024),
-    "cmis_lastmodifiedby" character varying(512),
-    "cmis_createdby" character varying(512),
-    "cmis_objectid" character varying(1024) NOT NULL,
-    "cmis_basetypeid" character varying(512),
-    "alfcmis_noderef" "text",
-    "cmis_parentid" character varying(1024),
-    "cmis_lastmodificationdate" timestamp without time zone
-);
-
-
-ALTER TABLE "public"."stg_cmis_folders_partial" OWNER TO "postgres";
+ALTER TABLE "public"."stg_rest_folders" OWNER TO "postgres";
 
 --
 -- TOC entry 223 (class 1259 OID 28596)
@@ -1004,32 +926,25 @@ CREATE TABLE "stg_workflow_tasks" (
 
 ALTER TABLE "public"."stg_workflow_tasks" OWNER TO "postgres";
 
+
 --
 -- TOC entry 207 (class 1259 OID 19465)
 -- Name: vw_cmis_documents_and_folders_path; Type: VIEW; Schema: public; Owner: postgres
 --
 
-CREATE VIEW "vw_cmis_documents_and_folders_path" AS
- SELECT "stg_cmis_document"."cmis_objectid",
-    "stg_cmis_document"."cmis_objecttypeid",
-    (("upper"(("stg_cmis_folder"."cmis_path")::"text") ||
-        CASE
-            WHEN (("stg_cmis_folder"."cmis_path")::"text" <> '/'::"text") THEN '/'::"text"
-            ELSE ''::"text"
-        END) || "upper"(("stg_cmis_document"."cmis_name")::"text")) AS "cmis_path"
-   FROM "stg_cmis_documents" "stg_cmis_document",
-    "ope_cmis_document_parent",
-    "stg_cmis_folders" "stg_cmis_folder"
-  WHERE (((("stg_cmis_document"."alfresco_id" = "ope_cmis_document_parent"."alfresco_id") AND (("ope_cmis_document_parent"."cmis_objectid")::"text" = ("stg_cmis_document"."cmis_objectid")::"text")) AND ("ope_cmis_document_parent"."alfresco_id" = "stg_cmis_folder"."alfresco_id")) AND (("ope_cmis_document_parent"."cmis_parentid")::"text" = ("stg_cmis_folder"."cmis_objectid")::"text"))
+CREATE VIEW "vw_rest_documents_and_folders_path" AS
+ SELECT "stg_rest_documents"."alfresco_id",
+    "stg_rest_documents"."node-dbid",
+    "stg_rest_documents"."type",
+    "stg_rest_documents"."path"
+   FROM "stg_rest_documents"
 UNION ALL
- SELECT "stg_cmis_folder"."cmis_objectid",
-    "stg_cmis_folder"."cmis_objecttypeid",
-    "upper"(("stg_cmis_folder"."cmis_path")::"text") AS "cmis_path"
-   FROM "stg_cmis_folders" "stg_cmis_folder"
-  WHERE ("stg_cmis_folder"."cmis_path" IS NOT NULL);
+ SELECT "stg_rest_folders"."alfresco_id",
+    "stg_rest_folders"."node-dbid",
+    "stg_rest_folders"."type",
+    "stg_rest_folders"."path"
+   FROM "stg_rest_folders";
 
-
-ALTER TABLE "public"."vw_cmis_documents_and_folders_path" OWNER TO "postgres";
 
 --
 -- TOC entry 208 (class 1259 OID 19470)
@@ -1060,6 +975,7 @@ ALTER TABLE "public"."vw_dm_dim_dates" OWNER TO "postgres";
 
 CREATE VIEW "vw_dm_dim_documents" AS
  SELECT "dm_dim_documents"."id",
+    "dm_dim_documents"."store-protocol" || '://' || "dm_dim_documents"."store-identifier" || '/' || "dm_dim_documents"."node-uuid" as "noderef",
     "dm_dim_documents"."name",
     "dm_dim_documents"."path",
     "dm_dim_documents"."alfresco_id",
@@ -1068,54 +984,6 @@ CREATE VIEW "vw_dm_dim_documents" AS
 
 
 ALTER TABLE "public"."vw_dm_dim_documents" OWNER TO "postgres";
-
---
--- TOC entry 210 (class 1259 OID 19478)
--- Name: vw_dm_dim_flag_immutable; Type: VIEW; Schema: public; Owner: postgres
---
-
-CREATE VIEW "vw_dm_dim_flag_immutable" AS
- SELECT DISTINCT "dm_dim_documents"."is_immutable"
-   FROM "dm_dim_documents";
-
-
-ALTER TABLE "public"."vw_dm_dim_flag_immutable" OWNER TO "postgres";
-
---
--- TOC entry 211 (class 1259 OID 19482)
--- Name: vw_dm_dim_flag_latest_major_version; Type: VIEW; Schema: public; Owner: postgres
---
-
-CREATE VIEW "vw_dm_dim_flag_latest_major_version" AS
- SELECT DISTINCT "dm_dim_documents"."is_latest_major_version"
-   FROM "dm_dim_documents";
-
-
-ALTER TABLE "public"."vw_dm_dim_flag_latest_major_version" OWNER TO "postgres";
-
---
--- TOC entry 212 (class 1259 OID 19486)
--- Name: vw_dm_dim_flag_latest_version; Type: VIEW; Schema: public; Owner: postgres
---
-
-CREATE VIEW "vw_dm_dim_flag_latest_version" AS
- SELECT DISTINCT "dm_dim_documents"."is_latest_version"
-   FROM "dm_dim_documents";
-
-
-ALTER TABLE "public"."vw_dm_dim_flag_latest_version" OWNER TO "postgres";
-
---
--- TOC entry 213 (class 1259 OID 19490)
--- Name: vw_dm_dim_flag_major_version; Type: VIEW; Schema: public; Owner: postgres
---
-
-CREATE VIEW "vw_dm_dim_flag_major_version" AS
- SELECT DISTINCT "dm_dim_documents"."is_major_version"
-   FROM "dm_dim_documents";
-
-
-ALTER TABLE "public"."vw_dm_dim_flag_major_version" OWNER TO "postgres";
 
 --
 -- TOC entry 214 (class 1259 OID 19494)
@@ -1151,12 +1019,8 @@ CREATE VIEW "vw_dm_fact_documents" AS
     "dm_dim_documents"."user_last_modifier_id",
     "dm_dim_documents"."last_modification_date_id",
     "dm_dim_documents"."last_modification_minute_id",
-    "dm_dim_documents"."is_latest_version",
-    "dm_dim_documents"."is_major_version",
-    "dm_dim_documents"."is_latest_major_version",
-    "dm_dim_documents"."is_immutable",
     "dm_dim_documents"."parent_id",
-    "dm_dim_documents"."content_stream_length",
+    "dm_dim_documents"."size",
     1 AS "number"
    FROM "dm_dim_documents";
 
@@ -1170,6 +1034,7 @@ ALTER TABLE "public"."vw_dm_fact_documents" OWNER TO "postgres";
 
 CREATE VIEW "vw_dm_fact_repository" AS
  SELECT ('DOC_'::"text" || "dm_dim_documents"."id") AS "id",
+    "dm_dim_documents"."store-protocol" || '://' || "dm_dim_documents"."store-identifier" || '/' || "dm_dim_documents"."node-uuid" as "noderef",
     "dm_dim_documents"."name",
     "dm_dim_documents"."path",
     "dm_dim_documents"."alfresco_id",
@@ -1182,10 +1047,11 @@ CREATE VIEW "vw_dm_fact_repository" AS
     "dm_dim_documents"."last_modification_minute_id",
     ('FOL_'::"text" || "dm_dim_documents"."parent_id") AS "parent_id",
     1 AS "num",
-    "dm_dim_documents"."content_stream_length" AS "bytes"
+    "dm_dim_documents"."size" AS "bytes"
    FROM "dm_dim_documents"
 UNION ALL
  SELECT ('FOL_'::"text" || "dm_dim_folders"."id") AS "id",
+    "dm_dim_folders"."store-protocol" || '://' || "dm_dim_folders"."store-identifier" || '/' || "dm_dim_folders"."node-uuid" as "noderef",
     "dm_dim_folders"."name",
     "dm_dim_folders"."path",
     "dm_dim_folders"."alfresco_id",
@@ -1224,29 +1090,29 @@ CREATE VIEW "vw_dm_min_max_date" AS
            FROM "ope_audits" "ope_audit"
           GROUP BY "ope_audit"."alfresco_id"
         UNION ALL
-         SELECT "stg_cmis_folder"."alfresco_id",
-            "min"("stg_cmis_folder"."cmis_creationdate") AS "min_date",
-            "max"("stg_cmis_folder"."cmis_creationdate") AS "max_date"
-           FROM "stg_cmis_folders" "stg_cmis_folder"
-          GROUP BY "stg_cmis_folder"."alfresco_id"
+         SELECT "stg_rest_folder"."alfresco_id",
+            "min"(("stg_rest_folder"."created")::"date") AS "min_date",
+            "max"(("stg_rest_folder"."created")::"date") AS "max_date"
+           FROM "stg_rest_folders" "stg_rest_folder"
+          GROUP BY "stg_rest_folder"."alfresco_id"
         UNION ALL
-         SELECT "stg_cmis_folder"."alfresco_id",
-            "min"("stg_cmis_folder"."cmis_lastmodificationdate") AS "min_date",
-            "max"("stg_cmis_folder"."cmis_lastmodificationdate") AS "max_date"
-           FROM "stg_cmis_folders" "stg_cmis_folder"
-          GROUP BY "stg_cmis_folder"."alfresco_id"
+         SELECT "stg_rest_folder"."alfresco_id",
+            "min"(("stg_rest_folder"."modified")::"date") AS "min_date",
+            "max"(("stg_rest_folder"."modified")::"date") AS "max_date"
+           FROM "stg_rest_folders" "stg_rest_folder"
+          GROUP BY "stg_rest_folder"."alfresco_id"
         UNION ALL
-         SELECT "stg_cmis_document"."alfresco_id",
-            "min"("stg_cmis_document"."cmis_creationdate") AS "min_date",
-            "max"("stg_cmis_document"."cmis_creationdate") AS "max_date"
-           FROM "stg_cmis_documents" "stg_cmis_document"
-          GROUP BY "stg_cmis_document"."alfresco_id"
+         SELECT "stg_rest_document"."alfresco_id",
+            "min"(("stg_rest_document"."created")::"date") AS "min_date",
+            "max"(("stg_rest_document"."created")::"date") AS "max_date"
+           FROM "stg_rest_documents" "stg_rest_document"
+          GROUP BY "stg_rest_document"."alfresco_id"
         UNION ALL
-         SELECT "stg_cmis_document"."alfresco_id",
-            "min"("stg_cmis_document"."cmis_lastmodificationdate") AS "min_date",
-            "max"("stg_cmis_document"."cmis_lastmodificationdate") AS "max_date"
-           FROM "stg_cmis_documents" "stg_cmis_document"
-          GROUP BY "stg_cmis_document"."alfresco_id"
+         SELECT "stg_rest_document"."alfresco_id",
+            "min"(("stg_rest_document"."modified")::"date") AS "min_date",
+            "max"(("stg_rest_document"."modified")::"date") AS "max_date"
+           FROM "stg_rest_documents" "stg_rest_document"
+          GROUP BY "stg_rest_document"."alfresco_id"
         UNION ALL
          SELECT "stg_workflow_instances"."alfresco_id",
             "min"(("stg_workflow_instances"."startdate")::"date") AS "min_date",
@@ -1285,7 +1151,6 @@ CREATE VIEW "vw_dm_min_max_date" AS
           GROUP BY "stg_workflow_tasks"."alfresco_id") "t"
   GROUP BY "t"."alfresco_id";
 
-
 ALTER TABLE "public"."vw_dm_min_max_date" OWNER TO "postgres";
 
 --
@@ -1293,8 +1158,6 @@ ALTER TABLE "public"."vw_dm_min_max_date" OWNER TO "postgres";
 -- Dependencies: 171
 -- Data for Name: dm_custom_metadata; Type: TABLE DATA; Schema: public; Owner: postgres
 --
-
-
 
 --
 -- TOC entry 2395 (class 0 OID 19289)
@@ -1310,135 +1173,7 @@ ALTER TABLE "public"."vw_dm_min_max_date" OWNER TO "postgres";
 -- Data for Name: dm_dim_alfresco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "url_cmis_suffix", "is_active", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "url_service_suffix") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true&limit=50000', '/alfresco/api/-default-/cmis/versions/1.1/atom', 'Y', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', '/alfresco/service');
-
-
---
--- TOC entry 2397 (class 0 OID 19300)
--- Dependencies: 175
--- Data for Name: dm_dim_dates; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2399 (class 0 OID 19305)
--- Dependencies: 177
--- Data for Name: dm_dim_documents; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2401 (class 0 OID 19314)
--- Dependencies: 179
--- Data for Name: dm_dim_folders; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2402 (class 0 OID 19321)
--- Dependencies: 180
--- Data for Name: dm_dim_hours; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2404 (class 0 OID 19326)
--- Dependencies: 182
--- Data for Name: dm_dim_mime_types; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2405 (class 0 OID 19333)
--- Dependencies: 183
--- Data for Name: dm_dim_minutes; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2406 (class 0 OID 19336)
--- Dependencies: 184
--- Data for Name: dm_dim_months; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2408 (class 0 OID 19341)
--- Dependencies: 186
--- Data for Name: dm_dim_node_types; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2410 (class 0 OID 19350)
--- Dependencies: 188
--- Data for Name: dm_dim_paths; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2412 (class 0 OID 19359)
--- Dependencies: 190
--- Data for Name: dm_dim_users; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2435 (class 0 OID 28688)
--- Dependencies: 224
--- Data for Name: dm_dim_workflow_definitions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2436 (class 0 OID 28703)
--- Dependencies: 225
--- Data for Name: dm_dim_workflow_instances; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2439 (class 0 OID 29100)
--- Dependencies: 228
--- Data for Name: dm_dim_workflow_items; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2437 (class 0 OID 28848)
--- Dependencies: 226
--- Data for Name: dm_dim_workflow_tasks; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2413 (class 0 OID 19366)
--- Dependencies: 191
--- Data for Name: dm_dim_years; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2414 (class 0 OID 19372)
--- Dependencies: 192
--- Data for Name: dm_fact_actions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
+INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "audit_limit", "url_nodes_modified_after_suffix", "url_nodes_modified_before_suffix", "node_limit",  "url_cmis_suffix", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "is_active") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', 'Y');
 
 
 --
@@ -1458,70 +1193,6 @@ INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_passwor
 INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (2, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_details.prpt', 'audit_details.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
 INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (3, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_login.prpt', 'audit_login.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
 INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (4, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_topTen.prpt', 'audit_topTen.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-
-
---
--- TOC entry 2416 (class 0 OID 19387)
--- Dependencies: 194
--- Data for Name: log_channels; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2417 (class 0 OID 19393)
--- Dependencies: 195
--- Data for Name: log_job; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2418 (class 0 OID 19399)
--- Dependencies: 196
--- Data for Name: log_jobentry; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2419 (class 0 OID 19405)
--- Dependencies: 197
--- Data for Name: log_performance; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2420 (class 0 OID 19411)
--- Dependencies: 198
--- Data for Name: log_step; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2421 (class 0 OID 19417)
--- Dependencies: 199
--- Data for Name: log_transformations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2422 (class 0 OID 19423)
--- Dependencies: 200
--- Data for Name: ope_audits; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2423 (class 0 OID 19429)
--- Dependencies: 201
--- Data for Name: ope_cmis_document_parent; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 
 
 --
@@ -1557,7 +1228,7 @@ SELECT pg_catalog.setval('"seq_dm_dim_documents_id"', 1, true);
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"seq_dm_dim_folders_id"', 241, true);
+SELECT pg_catalog.setval('"seq_dm_dim_folders_id"', 1, true);
 
 
 --
@@ -1621,110 +1292,6 @@ SELECT pg_catalog.setval('"seq_dm_dim_workflow_instances_id"', 1, true);
 --
 
 SELECT pg_catalog.setval('"seq_dm_dim_workflow_tasks_id"', 1, true);
-
-
---
--- TOC entry 2424 (class 0 OID 19435)
--- Dependencies: 202
--- Data for Name: stg_audits; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2425 (class 0 OID 19441)
--- Dependencies: 203
--- Data for Name: stg_cmis_documents; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2426 (class 0 OID 19447)
--- Dependencies: 204
--- Data for Name: stg_cmis_documents_partial; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2427 (class 0 OID 19453)
--- Dependencies: 205
--- Data for Name: stg_cmis_folders; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2428 (class 0 OID 19459)
--- Dependencies: 206
--- Data for Name: stg_cmis_folders_partial; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 2434 (class 0 OID 28596)
--- Dependencies: 223
--- Data for Name: stg_workflow_definitions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiAdhoc:1:4', 'activiti$activitiAdhoc', 'New Task', 'Assign a new task to yourself or a colleague', '1', 'api/workflow-definitions/activiti$activitiAdhoc:1:4');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiInvitationModerated:1:23', 'activiti$activitiInvitationModerated', 'Invitation - Moderated', 'Moderated invitation to a resource such as a web site.', '1', 'api/workflow-definitions/activiti$activitiInvitationModerated:1:23');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiInvitationNominated:1:26', 'activiti$activitiInvitationNominated', 'Site Invitation - Nominated', 'Invitation to a Share Site, nominated by a site manager', '1', 'api/workflow-definitions/activiti$activitiInvitationNominated:1:26');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiParallelGroupReview:1:20', 'activiti$activitiParallelGroupReview', 'Group Review And Approve', 'Group review and approval of content using Activiti workflow engine', '1', 'api/workflow-definitions/activiti$activitiParallelGroupReview:1:20');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiParallelReview:1:16', 'activiti$activitiParallelReview', 'Send Document(s) For Review', 'Request document approval from one or more colleagues', '1', 'api/workflow-definitions/activiti$activitiParallelReview:1:16');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiReview:1:8', 'activiti$activitiReview', 'Review And Approve', 'Review and approval of content using Activiti workflow engine', '1', 'api/workflow-definitions/activiti$activitiReview:1:8');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$activitiReviewPooled:1:12', 'activiti$activitiReviewPooled', 'Pooled Review And Approve', 'Pooled review and approval of content using Activiti workflow engine', '1', 'api/workflow-definitions/activiti$activitiReviewPooled:1:12');
-INSERT INTO "stg_workflow_definitions" ("alfresco_id", "id", "name", "title", "description", "version", "url") VALUES (1, 'activiti$publishWebContent:1:29', 'activiti$publishWebContent', 'Publish Web Content Activiti Process', 'Publishing of web content using Activiti workflow engine', '1', 'api/workflow-definitions/activiti$publishWebContent:1:29');
-
-
---
--- TOC entry 2429 (class 0 OID 27568)
--- Dependencies: 217
--- Data for Name: stg_workflow_instances; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO "stg_workflow_instances" ("alfresco_id", "id", "url", "name", "title", "description", "isactive", "startdate", "message", "enddate", "duedate", "package", "initiator", "definitionurl") VALUES (1, 'activiti$101', 'api/workflow-instances/activiti$101', 'activiti$activitiReview', 'Review And Approve', 'Review and approval of content using Activiti workflow engine', 'false', '2015-03-15T20:21:31.905+01:00', 'please check.', '2015-03-15T20:51:54.571+01:00', '2015-03-18T00:00:00.000+01:00', 'workspace://SpacesStore/8f22cabe-1402-4c01-83f7-6432b52fa3a8', 'admin', 'api/workflow-definitions/activiti$activitiReview:1:8');
-INSERT INTO "stg_workflow_instances" ("alfresco_id", "id", "url", "name", "title", "description", "isactive", "startdate", "message", "enddate", "duedate", "package", "initiator", "definitionurl") VALUES (1, 'activiti$168', 'api/workflow-instances/activiti$168', 'activiti$activitiAdhoc', 'New Task', 'Assign a new task to yourself or a colleague', 'true', '2015-03-15T20:50:44.574+01:00', 'another task', NULL, '2015-03-25T00:00:00.000+01:00', 'workspace://SpacesStore/fb3b4152-af52-42fd-8dfa-e4d8d12be385', 'admin', 'api/workflow-definitions/activiti$activitiAdhoc:1:4');
-INSERT INTO "stg_workflow_instances" ("alfresco_id", "id", "url", "name", "title", "description", "isactive", "startdate", "message", "enddate", "duedate", "package", "initiator", "definitionurl") VALUES (1, 'activiti$274', 'api/workflow-instances/activiti$274', 'activiti$activitiReview', 'Review And Approve', 'Review and approval of content using Activiti workflow engine', 'true', '2015-03-15T20:53:33.181+01:00', 'aaaa', NULL, NULL, 'workspace://SpacesStore/691bf91a-99a3-4765-9fd5-a90b8e631552', 'admin', 'api/workflow-definitions/activiti$activitiReview:1:8');
-INSERT INTO "stg_workflow_instances" ("alfresco_id", "id", "url", "name", "title", "description", "isactive", "startdate", "message", "enddate", "duedate", "package", "initiator", "definitionurl") VALUES (1, 'activiti$401', 'api/workflow-instances/activiti$401', 'activiti$activitiReview', 'Review And Approve', 'Review and approval of content using Activiti workflow engine', 'true', '2015-03-19T07:19:20.278+01:00', 'astavasta', NULL, NULL, 'workspace://SpacesStore/b81bf922-876a-4d42-b41a-e25571af4a05', 'admin', 'api/workflow-definitions/activiti$activitiReview:1:8');
-INSERT INTO "stg_workflow_instances" ("alfresco_id", "id", "url", "name", "title", "description", "isactive", "startdate", "message", "enddate", "duedate", "package", "initiator", "definitionurl") VALUES (1, 'activiti$501', 'api/workflow-instances/activiti$501', 'activiti$activitiAdhoc', 'New Task', 'Assign a new task to yourself or a colleague', 'true', '2015-04-02T16:05:56.604+02:00', 'pissi pissi', NULL, '2015-04-16T00:00:00.000+02:00', 'workspace://SpacesStore/f588b504-fb26-462a-bee2-dde2586be72d', 'admin', 'api/workflow-definitions/activiti$activitiAdhoc:1:4');
-
-
---
--- TOC entry 2438 (class 0 OID 28975)
--- Dependencies: 227
--- Data for Name: stg_workflow_items; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/8f22cabe-1402-4c01-83f7-6432b52fa3a8', 0, 'workspace://SpacesStore/9d8b7d34-724a-477f-bd79-156a79922402');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/fb3b4152-af52-42fd-8dfa-e4d8d12be385', 0, 'workspace://SpacesStore/cb39e082-0dbc-4966-8b93-15f6173c4637');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/691bf91a-99a3-4765-9fd5-a90b8e631552', 0, 'workspace://SpacesStore/c4ddba98-4d20-4343-8261-915c5d5af79c');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/b81bf922-876a-4d42-b41a-e25571af4a05', 0, 'workspace://SpacesStore/76b5af15-fe4f-49db-b60e-880e19715bc7');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/f588b504-fb26-462a-bee2-dde2586be72d', 0, 'workspace://SpacesStore/407dd989-8e47-41f7-b1b0-4e0c48bd735c');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/f588b504-fb26-462a-bee2-dde2586be72d', 1, 'workspace://SpacesStore/3125757d-368d-4df5-b5a4-68b9addd3517');
-INSERT INTO "stg_workflow_items" ("alfresco_id", "package", "ordinal", "item") VALUES (1, 'workspace://SpacesStore/f588b504-fb26-462a-bee2-dde2586be72d', 2, 'workspace://SpacesStore/4d6dbfd1-9242-4269-b8be-782a55263a48');
-
-
---
--- TOC entry 2430 (class 0 OID 27589)
--- Dependencies: 218
--- Data for Name: stg_workflow_tasks; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$101', 0, 'activiti$143', 'wf:activitiReviewTask', 'Review', 'please check.', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Approved', 'admin', '2015-03-15T20:21:31.917+01:00', '2015-03-18T00:00:00.000+01:00', '2015-03-15T20:51:21.851+01:00', 'Approve', 'Completed', 'please check.');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$101', 1, 'activiti$246', 'wf:approvedTask', 'Approved', 'The document was reviewed and approved.', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-03-15T20:51:21.853+01:00', '2015-03-18T00:00:00.000+01:00', '2015-03-15T20:51:54.569+01:00', 'Next', 'Completed', 'The document was reviewed and approved.');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$101', 2, 'activiti$start101', 'wf:submitReviewTask', 'Start Review', 'Submit documents for review and approval', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-03-15T20:21:31.905+01:00', '2015-03-18T00:00:00.000+01:00', '2015-03-15T20:21:31.905+01:00', 'Next', 'Completed', 'please check.');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$401', 0, 'activiti$443', 'wf:activitiReviewTask', 'Review', 'astavasta', 'IN_PROGRESS', 'false', 'true', 'true', 'false', 'false', NULL, 'admin', '2015-03-19T07:19:20.284+01:00', NULL, NULL, NULL, 'Not Yet Started', 'astavasta');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$401', 1, 'activiti$start401', 'wf:submitReviewTask', 'Start Review', 'Submit documents for review and approval', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-03-19T07:19:20.278+01:00', NULL, '2015-03-19T07:19:20.278+01:00', 'Next', 'Completed', 'astavasta');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$168', 0, 'activiti$212', 'wf:adhocTask', 'Task', 'Task allocated by colleague', 'IN_PROGRESS', 'false', 'true', 'true', 'false', 'false', NULL, 'admin', '2015-03-15T20:50:44.591+01:00', '2015-03-25T00:00:00.000+01:00', NULL, NULL, 'Not Yet Started', 'another task');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$168', 1, 'activiti$start168', 'wf:submitAdhocTask', 'Task', 'Allocate task to colleague', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-03-15T20:50:44.574+01:00', '2015-03-25T00:00:00.000+01:00', '2015-03-15T20:50:44.574+01:00', 'Next', 'Completed', 'another task');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$501', 0, 'activiti$545', 'wf:adhocTask', 'Task', 'Task allocated by colleague', 'IN_PROGRESS', 'false', 'true', 'true', 'false', 'false', NULL, 'admin', '2015-04-02T16:05:56.611+02:00', '2015-04-16T00:00:00.000+02:00', NULL, NULL, 'On Hold', 'pissi pissi');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$501', 1, 'activiti$start501', 'wf:submitAdhocTask', 'Task', 'Allocate task to colleague', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-04-02T16:05:56.604+02:00', '2015-04-16T00:00:00.000+02:00', '2015-04-02T16:05:56.604+02:00', 'Next', 'Completed', 'pissi pissi');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$274', 0, 'activiti$357', 'wf:rejectedTask', 'Rejected', 'The document was reviewed and rejected.', 'IN_PROGRESS', 'false', 'true', 'true', 'false', 'false', NULL, 'admin', '2015-03-15T20:54:35.010+01:00', NULL, NULL, NULL, 'On Hold', 'The document was reviewed and rejected.');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$274', 1, 'activiti$316', 'wf:activitiReviewTask', 'Review', 'aaaa', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Rejected', 'admin', '2015-03-15T20:53:33.183+01:00', NULL, '2015-03-15T20:54:35.010+01:00', 'Reject', 'Completed', 'aaaa');
-INSERT INTO "stg_workflow_tasks" ("alfresco_id", "instance_id", "ordinal", "id", "name", "title", "description", "state", "ispooled", "iseditable", "isreassignable", "isclaimable", "isreleasable", "outcome", "owner", "bpm_startdate", "bpm_duedate", "bpm_completiondate", "bpm_outcome", "bpm_status", "bpm_description") VALUES (1, 'activiti$274', 2, 'activiti$start274', 'wf:submitReviewTask', 'Start Review', 'Submit documents for review and approval', 'COMPLETED', 'false', 'false', 'false', 'false', 'false', 'Task Done', 'admin', '2015-03-15T20:53:33.181+01:00', NULL, '2015-03-15T20:53:33.181+01:00', 'Next', 'Completed', 'aaaa');
 
 
 --
@@ -1881,15 +1448,6 @@ ALTER TABLE ONLY "dm_dim_years"
 
 
 --
--- TOC entry 2175 (class 2606 OID 19538)
--- Name: pk_ope_cmis_document_parent; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY "ope_cmis_document_parent"
-    ADD CONSTRAINT "pk_ope_cmis_document_parent" PRIMARY KEY ("alfresco_id", "cmis_objectid", "cmis_parentid");
-
-
---
 -- TOC entry 2169 (class 2606 OID 19540)
 -- Name: pk_reports; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -1957,35 +1515,16 @@ ALTER TABLE ONLY "stg_workflow_tasks"
 -- Name: uni_cmis_document; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
-ALTER TABLE ONLY "stg_cmis_documents"
-    ADD CONSTRAINT "uni_cmis_document" UNIQUE ("alfresco_id", "cmis_objectid");
-
-
---
--- TOC entry 2183 (class 2606 OID 19550)
--- Name: uni_cmis_document_partial; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY "stg_cmis_documents_partial"
-    ADD CONSTRAINT "uni_cmis_document_partial" UNIQUE ("alfresco_id", "cmis_objectid");
-
+ALTER TABLE ONLY "stg_rest_documents"
+    ADD CONSTRAINT "uni_document_id" UNIQUE ("alfresco_id", "node-dbid");
 
 --
 -- TOC entry 2186 (class 2606 OID 19552)
 -- Name: uni_cmis_folder_id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
-ALTER TABLE ONLY "stg_cmis_folders"
-    ADD CONSTRAINT "uni_cmis_folder_id" UNIQUE ("alfresco_id", "cmis_objectid");
-
-
---
--- TOC entry 2189 (class 2606 OID 19554)
--- Name: uni_cmis_folder_partial__id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY "stg_cmis_folders_partial"
-    ADD CONSTRAINT "uni_cmis_folder_partial__id" UNIQUE ("alfresco_id", "cmis_objectid");
+ALTER TABLE ONLY "stg_rest_folders"
+    ADD CONSTRAINT "uni_folder_id" UNIQUE ("alfresco_id", "node-dbid");
 
 
 --
@@ -2180,56 +1719,6 @@ CREATE INDEX "idx_log_transformations_1" ON "log_transformations" USING "btree" 
 --
 
 CREATE INDEX "idx_log_transformations_2" ON "log_transformations" USING "btree" ("errors", "status", "transname");
-
-
---
--- TOC entry 2178 (class 1259 OID 19577)
--- Name: idx_stg_cmis_documents_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_cmis_documents_key" ON "stg_cmis_documents" USING "btree" ("alfresco_id", "cmis_lastmodificationdate", "cmis_name");
-
-
---
--- TOC entry 2181 (class 1259 OID 19578)
--- Name: idx_stg_cmis_documents_partial_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_cmis_documents_partial_key" ON "stg_cmis_documents_partial" USING "btree" ("alfresco_id", "cmis_contentstreamlength", "cmis_name");
-
-
---
--- TOC entry 2184 (class 1259 OID 19579)
--- Name: idx_stg_cmis_folders_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_cmis_folders_key" ON "stg_cmis_folders" USING "btree" ("alfresco_id", "cmis_lastmodificationdate", "cmis_name");
-
-
---
--- TOC entry 2187 (class 1259 OID 19580)
--- Name: idx_stg_cmis_folders_partial_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_cmis_folders_partial_key" ON "stg_cmis_folders_partial" USING "btree" ("alfresco_id", "cmis_lastmodificationdate", "cmis_name");
-
-
---
--- TOC entry 2245 (class 2606 OID 19581)
--- Name: fk_cmis_document_parent_document; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY "ope_cmis_document_parent"
-    ADD CONSTRAINT "fk_cmis_document_parent_document" FOREIGN KEY ("alfresco_id", "cmis_objectid") REFERENCES "stg_cmis_documents"("alfresco_id", "cmis_objectid");
-
-
---
--- TOC entry 2246 (class 2606 OID 19586)
--- Name: fk_cmis_document_parent_parent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY "ope_cmis_document_parent"
-    ADD CONSTRAINT "fk_cmis_document_parent_parent" FOREIGN KEY ("alfresco_id", "cmis_parentid") REFERENCES "stg_cmis_folders"("alfresco_id", "cmis_objectid");
 
 
 --
@@ -2455,7 +1944,6 @@ ALTER TABLE ONLY "dm_dim_minutes"
 
 ALTER TABLE ONLY "dm_dim_months"
     ADD CONSTRAINT "fk_dm_dim_months_dm_dim_years" FOREIGN KEY ("year_id") REFERENCES "dm_dim_years"("id");
-
 
 --
 -- TOC entry 2233 (class 2606 OID 19716)
@@ -2806,6 +2294,22 @@ ALTER TABLE ONLY "stg_workflow_items"
 
 ALTER TABLE ONLY "stg_workflow_tasks"
     ADD CONSTRAINT "fk_stg_workflow_tasks_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2133 (class 1259 OID 19564)
+-- Name: idx_stg_rest_folders_node_uuid; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX "idx_stg_rest_folders_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "node-uuid");
+
+
+--
+-- TOC entry 2133 (class 1259 OID 19564)
+-- Name: idx_stg_rest_folders_parent_node_uuid; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX "idx_stg_rest_folders_parent_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "parent-node-uuid");
 
 
 --
