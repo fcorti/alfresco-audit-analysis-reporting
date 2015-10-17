@@ -31,7 +31,7 @@ import org.alfresco.service.cmr.search.ResultSet;
 import org.alfresco.service.cmr.search.ResultSetRow;
 import org.alfresco.service.cmr.search.SearchParameters;
 import org.alfresco.service.cmr.search.SearchService;
-import org.apache.commons.math3.exception.OutOfRangeException;
+import org.apache.commons.lang.NullArgumentException;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
@@ -39,8 +39,6 @@ import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
 import com.sun.star.io.WrongFormatException;
-
-import freemarker.template.utility.NullArgumentException;
 
 /**
  * Get nodes modified after a date time for A.A.A.R. analytics.
@@ -94,9 +92,15 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		resultSet.close();
 
 		// Parameter values.
-		parameters.replace(PARAMETER_DATE,  getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
-		parameters.replace(PARAMETER_LIMIT, String.valueOf(parameters.get(PARAMETER_LIMIT)));
-		parameters.replace(PARAMETER_SKIP,  String.valueOf(parameters.get(PARAMETER_SKIP)));
+		String parameterAsString = getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT);
+		parameters.remove(PARAMETER_DATE);
+		parameters.put(PARAMETER_DATE, parameterAsString);
+		parameterAsString = String.valueOf(parameters.get(PARAMETER_LIMIT));
+		parameters.remove(PARAMETER_LIMIT);
+		parameters.put(PARAMETER_LIMIT, parameterAsString);
+		parameterAsString = String.valueOf(parameters.get(PARAMETER_SKIP));
+		parameters.remove(PARAMETER_SKIP);
+		parameters.put(PARAMETER_SKIP, parameterAsString);
 
 		// New parameters values.
 		Map<String, Object> newParameters = new HashMap<String, Object>();
@@ -162,9 +166,9 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws WrongFormatException 
+	 * @throws Exception 
 	 */
-	private static final Map<String, Object> getParameters(WebScriptRequest req) throws WrongFormatException {
+	private static final Map<String, Object> getParameters(WebScriptRequest req) throws Exception {
 
 		Map<String, Object> parameters = new HashMap<String, Object>();
 
@@ -206,7 +210,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		}
 		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
-			throw new OutOfRangeException(limitParameterValue, 0, Integer.MAX_VALUE);			
+			throw new Exception("Out of range value '" + limitParameterValue + "' (admitted " + 0 + " to " + Integer.MAX_VALUE + ").");
 		}
 
 		// Skip parameter.
@@ -220,7 +224,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		}
 		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
-			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
+			throw new Exception("Out of range value '" + skipParameterValue + "' (admitted " + 0 + " to " + Long.MAX_VALUE + ").");
 		}
 
 		parameters.put(PARAMETER_BASETYPE, baseTypeParameter);
