@@ -78,7 +78,7 @@ After this, your Pentaho BA Server is available at `http://localhost:8080/pentah
 
 ## Installing PostgreSql
 
-If **PostgreSql** is not installed you can proceed with the tasks below, according with the official documentation described [here](https://help.ubuntu.com/community/PostgreSQL).
+If **PostgreSql** is not installed you can proceed with the tasks below, according with the official documentation described [here](https://help.ubuntu.com/community/PostgreSQL). This is requested if you want to test the A.A.A.R. development with PostgreSql but alternatively you can use MySql (described later in the documentation).
 If you already have PostgreSql installed, for example because an Alfresco instance is up and running, you can use it for your development purpose.
 
 To install PostgreSql open a terminal and execute the commands below.
@@ -101,6 +101,17 @@ To complete the installation, reload the database service eceting the command be
     sudo /etc/init.d/postgresql reload
 
 Last, but not least, execute `pgadmin3` and add the `localhost` connection to administer the database instances.
+
+## Installing MySql
+
+This is requested if you want to test the A.A.A.R. development with MySql but alternatively you can use PostgreSql (described above in the documentation). To install MySql proceed to get it using the commands below.
+
+    sudo apt-get install mysql-server mysql-workbench
+
+This commend will install also MySql Workbench for administration.
+During the installation process, the definition of the root password will be requested. Sei it (in my case, root will be used also as password).
+
+Last, but not least, execute `mysql-workbench` and add the `localhost` connection to administer the database instances.
 
 ## Installing Git
 
