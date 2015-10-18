@@ -2823,7 +2823,7 @@
     ]
    },
    {
-    "id": "16776f81-359c-cfb5-cc85-784a2410fff8",
+    "id": "2b86922a-5605-7c5c-af32-15b22eafef2a",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
@@ -3271,7 +3271,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"PostgreSql\",\"PostgreSql\"]]",
+      "value": "[[\"PostgreSql\",\"PostgreSql\"],[\"MySql\",\"MySql\"]]",
       "type": "ValuesArray"
      },
      {
@@ -3301,7 +3301,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#databaseTypeField').children(\":first\").attr('class','form-control');\n\n    var databaseType = $.trim(Dashboards.getParameterValue('${p:databaseType}'));\n    Dashboards.setParameter('${p:databaseType}',databaseType);\n\n    if (databaseType != 'PostgreSql') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Database type!</strong> Admitted values are \\'PostgreSql\\'.</div>');\n\n        databaseType = 'PostgreSql';\n        Dashboards.setParameter('${p:databaseType}',databaseType);\n        $('#render_databaseTypeComponent').val(databaseType);\n    }\n} ",
+      "value": "function f() {\n\n    $('#databaseTypeField').children(\":first\").attr('class','form-control');\n\n    var databaseType = $.trim(Dashboards.getParameterValue('${p:databaseType}'));\n    Dashboards.setParameter('${p:databaseType}',databaseType);\n\n    if (databaseType != 'PostgreSql' && databaseType != 'MySql') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Database type!</strong> Admitted values are \\'PostgreSql\\' or \\'MySql\\'.</div>');\n\n        databaseType = 'PostgreSql';\n        Dashboards.setParameter('${p:databaseType}',databaseType);\n        $('#render_databaseTypeComponent').val(databaseType);\n    }\n} ",
       "type": "JavaScript"
      },
      {
@@ -3316,7 +3316,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f() {\n\n    if (Dashboards.getParameterValue('${p:databaseType}') == 'PostgreSql') {\n        Dashboards.fireChange('${p:databasePort}','5432');\n        Dashboards.fireChange('${p:databaseLogin}','postgres');\n        Dashboards.fireChange('${p:databasePassword}','postgres');\n        $('#databaseBinGroup').hide();\n    }\n\n    Dashboards.setParameter('${p:isChanged}','true');\n} ",
+      "value": "function f() {\n\n    if (Dashboards.getParameterValue('${p:databaseType}') == 'PostgreSql') {\n        Dashboards.fireChange('${p:databasePort}','5432');\n        Dashboards.fireChange('${p:databaseLogin}','postgres');\n        Dashboards.fireChange('${p:databasePassword}','postgres');\n        Dashboards.fireChange('${p:databaseSchemaMain}','postgres');\n        $('#databaseBinGroup').hide();\n    }\n    else if (Dashboards.getParameterValue('${p:databaseType}') == 'MySql') {\n        Dashboards.fireChange('${p:databasePort}','3306');\n        Dashboards.fireChange('${p:databaseLogin}','root');\n        Dashboards.fireChange('${p:databasePassword}','root');\n        Dashboards.fireChange('${p:databaseSchemaMain}','mysql');\n        $('#databaseBinGroup').show();\n    }\n\n    Dashboards.setParameter('${p:isChanged}','true');\n} ",
       "type": "JavaScript"
      },
      {
@@ -3701,7 +3701,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#render_databaseBinComponent').attr('class','form-control');\n    $('#render_databaseBinComponent').attr('placeholder','Path (example: /usr/bin)');\n\n    var databaseType = $.trim(Dashboards.getParameterValue('${p:databaseType}'));\n\n    if (databaseType == 'PostgreSql') {\n        $('#databaseBinGroup').hide();\n    }\n    /*\n    else if (databaseType == 'MySql') {\n\n        $('#databaseBinGroup').show();\n\n        var databaseBin = $.trim(Dashboards.getParameterValue('${p:databaseBin}'));\n\n        if (databaseBin.length <= 0) {\n    \n            $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Database bin path!</strong> Path cannot be empty.</div>');\n    \n            databaseBin = '/usr/bin';\n            Dashboards.setParameter('${p:databaseBin}',databaseBin);\n            $('#render_databaseBinComponent').val(databaseBin);\n        }\n    }\n    */\n} ",
+      "value": "function f() {\n\n    $('#render_databaseBinComponent').attr('class','form-control');\n    $('#render_databaseBinComponent').attr('placeholder','Path (example: /usr/bin)');\n\n    var databaseType = $.trim(Dashboards.getParameterValue('${p:databaseType}'));\n\n    if (databaseType == 'PostgreSql') {\n        $('#databaseBinGroup').hide();\n    }\n    else if (databaseType == 'MySql') {\n\n        $('#databaseBinGroup').show();\n\n        var databaseBin = $.trim(Dashboards.getParameterValue('${p:databaseBin}'));\n\n        if (databaseBin.length <= 0) {\n    \n            $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Database bin path!</strong> Path cannot be empty.</div>');\n    \n            databaseBin = '/usr/bin';\n            Dashboards.setParameter('${p:databaseBin}',databaseBin);\n            $('#render_databaseBinComponent').val(databaseBin);\n        }\n    }\n} ",
       "type": "JavaScript"
      },
      {
