@@ -34,10 +34,11 @@ else {
    pentahoUrl += "?" + config.pentaho.parameters.action.@name + "=" + config.pentaho.parameters.action;
    pentahoUrl += "&" + config.pentaho.parameters.application + "=" + args.application;
    pentahoUrl += "&" + config.pentaho.parameters.user + "=" + user.name;
+   pentahoUrl += "&userid=suzy&password=password";
 
    try {
 
-      // Get Pentaho ticket in JSON structure.
+	  // Get Pentaho ticket in JSON structure.
       var connector = remote.connect(args.protocol);
       var JSONString = connector.get(pentahoUrl);
 
