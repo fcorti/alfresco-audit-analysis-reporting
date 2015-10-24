@@ -91,7 +91,7 @@ and
       </Parameters>
       <Query>select
  dt.id as date_id,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -138,7 +138,7 @@ order by
       </Parameters>
       <Query>select
  ch.desc as hour_desc,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -183,7 +183,7 @@ order by
       </Parameters>
       <Query>select
  cu.desc as User,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -228,7 +228,7 @@ order by
       </Parameters>
       <Query>select
  mdt.id as date_id,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -275,7 +275,7 @@ order by
       </Parameters>
       <Query>select
  mh.desc as hour_desc,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -320,7 +320,7 @@ order by
       </Parameters>
       <Query>select
  mu.desc as user,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -365,7 +365,7 @@ order by
       </Parameters>
       <Query>select
  nt.desc as nodeType,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -410,7 +410,7 @@ order by
       </Parameters>
       <Query>select
  mt.desc as mimeType,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -455,7 +455,7 @@ order by
  d.name,
  nt.desc,
  mt.desc,
- round(d.content_stream_length/(1024),1) as mb
+ round(d.size/(1024),1) as mb
 from
  (select *, 1 as num from dm_dim_documents where (''=${documentNameParam} or name=${documentNameParam}) and (''=${pathParam} or path=${pathParam}) and (-1=${parentIdParam} or parent_id=${parentIdParam})) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}

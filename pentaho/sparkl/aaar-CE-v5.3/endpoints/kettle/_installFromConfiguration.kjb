@@ -337,12 +337,12 @@
       <yloc>229</yloc>
       </entry>
     <entry>
-      <name>_pentahoInstallAuthenticationExt</name>
+      <name>_pentahoTransparentAuthentication</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;_pentahoInstallAuthenticationExt.kjb</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;_pentahoTransparentAuthentication.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -361,7 +361,7 @@
       <pass_export>N</pass_export>
       <force_separate_logging>N</force_separate_logging>
       <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>pentahoServerPath</name>
+            <parameter>            <name>pentaho_path</name>
             <stream_name/>
             <value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
@@ -588,7 +588,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>_pentahoInstallAuthenticationExt</from>
+      <from>_pentahoTransparentAuthentication</from>
       <to>_pentahoAddDatasource</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -607,7 +607,7 @@
     </hop>
     <hop>
       <from>Unzip CMIS Input plugin</from>
-      <to>_pentahoInstallAuthenticationExt</to>
+      <to>_pentahoTransparentAuthentication</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

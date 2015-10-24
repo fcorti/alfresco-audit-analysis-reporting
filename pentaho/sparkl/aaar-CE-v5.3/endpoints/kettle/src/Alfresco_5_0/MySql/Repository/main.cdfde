@@ -6158,7 +6158,7 @@
      },
      {
       "name": "query",
-      "value": "select\n d.id as date_id,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam} where wf_i.start_date_id = d.id) as Started,\n (select coalesce(count(*),0) from dm_dim_workflow_instances wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam} where wf_i.end_date_id = d.id) as Completed\nfrom\n dm_dim_dates d\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
+      "value": "select\n d.id as date_id,\n (select coalesce(count(*),0) from dm_dim_workflow_definitions wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id  =${alfrescoInstanceParam} where wf_i.start_date_id = d.id) as Started,\n (select coalesce(count(*),0) from dm_dim_workflow_definitions wf_d join dm_dim_workflow_instances wf_i on wf_i.definition_id = wf_d.id and (${workflowDefinitionIdParam} = -1 or ${workflowDefinitionIdParam} = wf_d.id) and wf_d.alfresco_id = ${alfrescoInstanceParam} where wf_i.end_date_id = d.id) as Completed\nfrom\n dm_dim_dates d\nwhere\n d.id between str_to_date(${dtFromParam},'%Y-%m-%d') and str_to_date(${dtToParam},'%Y-%m-%d')\ngroup by\n d.id\norder by\n d.id asc",
       "type": "SqlQuery"
      },
      {

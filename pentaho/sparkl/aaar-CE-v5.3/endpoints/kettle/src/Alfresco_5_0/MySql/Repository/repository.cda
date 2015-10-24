@@ -78,7 +78,7 @@ where
       </Parameters>
       <Query>select
  nt.desc as nodeType,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
@@ -107,7 +107,7 @@ order by
       </Parameters>
       <Query>select
  mt.desc as mimeType,
- coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.content_stream_length)/(1024),1)),0) as ${measureTypeParam}
+ coalesce(if(strcmp(${measureTypeParam},'Number')=0, sum(d.num), round(sum(d.size)/(1024),1)),0) as ${measureTypeParam}
 from
  (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
  join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
