@@ -1,8 +1,0 @@
-<webscript>
-    <shortname>Get Pentaho ticket</shortname>
-    <description>Provides a Pentaho ticket for a valid session.</description>
-    <family>share</family>
-    <url>/AAAR/getPentahoTicket</url>
-    <url>/AAAR/Pentaho/getTicket</url>
-    <format default="json">argument</format>
-</webscript>

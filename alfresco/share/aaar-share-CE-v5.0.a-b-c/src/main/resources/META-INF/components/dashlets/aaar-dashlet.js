@@ -398,12 +398,7 @@
 
          var targetUrl = e.currentTarget.attributes.http.nodeValue;
 
-         var getPentahoTicketUrl = Alfresco.constants.URL_PAGECONTEXT + "AAAR/getPentahoTicket";
-         getPentahoTicketUrl += "?protocol=" + encodeURIComponent(this.options.properties.pentaho.protocol);
-         getPentahoTicketUrl += "&host=" + encodeURIComponent(this.options.properties.pentaho.host);
-         getPentahoTicketUrl += "&port=" + encodeURIComponent(this.options.properties.pentaho.port);
-         getPentahoTicketUrl += "&context=" + encodeURIComponent(this.options.properties.pentaho.context);
-         getPentahoTicketUrl += "&application=" + encodeURIComponent(this.options.properties.pentaho.application);
+         var getPentahoTicketUrl = Alfresco.constants.PROXY_URI + "AAAR/Pentaho/getTicket";
 
          Alfresco.util.Ajax.request(
          {

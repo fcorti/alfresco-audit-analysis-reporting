@@ -17,6 +17,7 @@ limitations under the License.
 package com.fcorti.aaar;
 
 import org.alfresco.service.cmr.security.MutableAuthenticationService;
+import org.apache.commons.net.util.Base64;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,7 +27,6 @@ import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -109,7 +109,7 @@ public class GetPentahoTicketWebScript extends DeclarativeWebScript {
 		}
 
 		// Authorization.
-		String authorization = "Basic " + (new String(Base64.getEncoder().encode((user + ":" + password).getBytes())));
+		String authorization = "Basic " + (new String(new Base64().encode((user + ":" + password).getBytes())));
 
 		// REST properties.
 		try {
