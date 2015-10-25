@@ -1,0 +1,232 @@
+/*
+ * AAAR Style
+ */
+
+/***** Dashboard *****/
+
+.AAAR {
+  font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+  color: #7f8286;
+}
+
+.AAAR.title {
+  line-height:70px;
+  font-size: 200%;
+  font-weight:bold;
+}
+
+.AAAR.content {
+  line-height:35px;
+  font-size: 150%;
+}
+
+.AAAR.content pre {
+  margin: 0px 0px 0px 0px;
+}
+
+.AAAR.step button {
+  background: #e7e7e7;
+  border-style: none;
+  width: 310px;
+  font-size: 250%;
+  font-weight: normal;
+}
+
+.AAAR.step button:hover {
+  background: #7f8286;
+  color: #e7e7e7;
+}
+
+.AAAR.step.selected button {
+  font-weight: bold;
+}
+
+.AAAR.form.title {
+  line-height: 25px;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.AAAR.form.label {
+  font-size: 100%;
+  line-height: 30px;
+}
+
+.AAAR.form.field input[type="text"],
+.AAAR.form.field select {
+  color: #7f8286;
+  border: 1px solid #e7e7e7;
+  font-size: 100%;
+  width: 225px;
+  margin: 5px 0px 0px 0px;
+}
+
+.AAAR.form.field input[type="text"]:hover,
+.AAAR.form.field select:hover {
+  font-weight: bold;
+}
+
+.AAAR.form.fieldSmall input[type="text"] {
+  color: #7f8286;
+  border: 1px solid #e7e7e7;
+  font-size: 100%;
+  width: 110px;
+  margin: 5px 0px 0px 0px;
+}
+
+.AAAR.form.fieldSmall input[type="text"]:hover {
+  font-weight: bold;
+}
+
+.AAAR.filters {
+  color: #000000;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.AAAR button {
+  background: #e7e7e7;
+  color: #7f8286;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 10px 10px 10px;
+}
+
+.AAAR.filters button {
+  padding: 2px 10px 2px 10px;
+}
+
+.AAAR button:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
+.AAAR.filters select {
+  color: #7f8286;
+  background: #e7e7e7;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  padding: 2px 10px 2px 10px;
+  margin: 0px 0px 0px 0px;
+}
+
+.AAAR.filters select:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
+.AAAR.table tbody tr.odd {
+  background: #DBDBFF;
+}
+
+.AAAR.table div.dataTables_paginate.paging_full_numbers a.paginate_button {
+  background: #e7e7e7;
+  color: #7f8286;
+  border-radius: 5px;
+  border: none;
+  padding: 2px 10px 2px 10px;
+}
+
+.AAAR.table div.dataTables_paginate.paging_full_numbers a.paginate_button:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
+.AAAR.credits {
+  line-height:40px;
+  color: #7f8286;
+}
+
+.AAAR.credits img {
+  height: 40px;
+}
+
+.AAAR.comingSoon {
+  background: #ffffff;
+}
+
+/***** Menu *****/
+
+.AAAR.menu {
+  line-height:17px;
+  color: #000000;
+}
+
+.AAAR.menu.menuItem:hover {
+  font-weight: bold;
+}
+
+/***** Confirmation Message Dialog *****/
+
+.ui-dialog {
+}
+
+.ui-dialog.ui-widget.ui-corner-all {
+  border-radius: 5px;
+  padding: 0px 0px 0px 0px;
+}
+
+.ui-dialog.ui-widget.ui-widget-content {
+  background: #FFFFFF;
+  color: #7f8286;
+  border: 2px solid #7f8286;
+}
+
+.ui-dialog .ui-dialog-titlebar.ui-widget-header {
+  border-radius: 0px;
+  background: #e7e7e7;
+  border: none;
+}
+
+.ui-dialog .ui-dialog-titlebar.ui-widget-header a {
+  display: none;
+}
+
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a {
+  display: inline;
+}
+
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover {
+  background: #25B9ED;
+  border: none;
+}
+
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span {
+  background: url('../img/x.png') -45px -10px no-repeat #7f8286;
+}
+
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span {
+  background: url('../img/x.png') -11px -9px no-repeat #7f8286;
+}
+
+.ui-dialog .ui-dialog-content {
+  color: #7f8286;
+  min-height: 0px;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  background: #FFFFFF;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  background: #e7e7e7;
+  color: #7f8286;
+  border-radius: 5px;
+  border: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+  background: #7f8286;
+  color:#e7e7e7;
+}
+
+.ui-widget-overlay {
+  background: #FFFFFF;
+  opacity: 0.8;
+}
+

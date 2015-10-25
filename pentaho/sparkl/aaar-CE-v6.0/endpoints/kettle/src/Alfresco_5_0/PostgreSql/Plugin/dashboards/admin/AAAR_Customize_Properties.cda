@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="customMetadata" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="customMetadata" id="customMetadata" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query>select m.id, m.name, a.desc, m.is_active
+from dm_custom_metadata m join dm_dim_alfresco a on m.alfresco_id=a.id</Query>
+   </DataAccess>
+</CDADescriptor>
