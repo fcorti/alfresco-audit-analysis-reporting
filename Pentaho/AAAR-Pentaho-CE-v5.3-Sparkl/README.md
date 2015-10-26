@@ -1,4 +1,4 @@
-A.A.A.R. - Pentaho sparkl application
+A.A.A.R. - Pentaho v5.3 and v5.4 Sparkl Application
 ===
 
 This project develops a Pentaho sparkl application to be released into an installation of the Pentaho BA Server.
