@@ -3,11 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fcorti</groupId>
-    <artifactId>aaar-share-CE-v4.2.x</artifactId>
+    <artifactId>AAAR-Alfresco-CE-v4.2-Share</artifactId>
     <version>1.2-SNAPSHOT</version>
-    <name>aaar-share-CE-v4.2.x AMP project</name>
+    <name>AAAR-Alfresco-CE-v4.2-Share AMP project</name>
     <packaging>amp</packaging>
-    <description>Manages the lifecycle of the AAAR Addon Share AMP (Alfresco Module Package) for Alfresco CE v4.2.x.</description>
+    <description>Manages the lifecycle of the A.A.A.R. Addon Share AMP (Alfresco Module Package) for Alfresco CE v4.2.</description>
 
     <parent>
         <groupId>org.alfresco.maven</groupId>

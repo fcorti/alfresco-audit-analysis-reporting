@@ -1,7 +1,7 @@
 #!/bin/bash
 # Downloads the spring-loaded lib if not existing and runs the Share AMP applied to Share WAR
 # Note. requires Alfresco.war to be running in another Tomcat on port 8080
-springloadedfile=~/springloaded-1.2.4.RELEASE.jar
+springloadedfile=~/.m2/repository/org/springframework/springloaded/1.2.3.RELEASE/springloaded-1.2.3.RELEASE.jar
 
 if [ ! -f $springloadedfile ]; then
 mvn validate -Psetup
