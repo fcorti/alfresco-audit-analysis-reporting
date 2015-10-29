@@ -1592,6 +1592,7 @@ CREATE INDEX "idx_dm_dim_documents" ON "dm_dim_documents" USING "btree" ("id");
 
 CREATE INDEX "idx_dm_dim_documents_src_id" ON "dm_dim_documents" USING "btree" ("alfresco_id", "src_id");
 
+CREATE INDEX "idx_dm_dim_documents_path" ON "dm_dim_documents" ("path");
 
 --
 -- TOC entry 2138 (class 1259 OID 19565)
@@ -1608,6 +1609,7 @@ CREATE INDEX "idx_dm_dim_folders" ON "dm_dim_folders" USING "btree" ("id");
 
 CREATE INDEX "idx_dm_dim_folders_src_id" ON "dm_dim_folders" USING "btree" ("alfresco_id", "src_id");
 
+CREATE INDEX "idx_dm_dim_folders_path" ON "dm_dim_folders" ("path");
 
 --
 -- TOC entry 2144 (class 1259 OID 19567)
@@ -1656,6 +1658,7 @@ CREATE INDEX "idx_dm_dim_node_types" ON "dm_dim_node_types" USING "btree" ("id")
 
 CREATE INDEX "idx_dm_dim_paths" ON "dm_dim_paths" USING "btree" ("id");
 
+CREATE INDEX "idx_dm_dim_paths_src_path" ON "dm_dim_paths" ("src_path");
 
 --
 -- TOC entry 2162 (class 1259 OID 19573)
