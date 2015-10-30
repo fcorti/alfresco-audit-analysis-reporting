@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `AAAR_DataMart` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `AAAR_DataMart`;
--- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.46, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: AAAR_DataMart
 -- ------------------------------------------------------
--- Server version	5.5.41-0ubuntu0.14.04.1
+-- Server version	5.5.46-0ubuntu0.14.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -99,7 +99,7 @@ CREATE TABLE `dm_dim_alfresco` (
 --
 -- ORDER BY:  `id`
 
-INSERT INTO `dm_dim_alfresco` (`id`, `desc`, `login`, `password`, `url`, `url_audit_suffix`, `audit_limit`, `url_nodes_modified_after_suffix`, `url_nodes_modified_before_suffix`, `node_limit`, `url_cmis_suffix`, `url_workflow_definitions_suffix`, `url_workflow_instances_suffix`, `is_active`) VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', 'Y');
+INSERT INTO `dm_dim_alfresco` (`id`, `desc`, `login`, `password`, `url`, `url_audit_suffix`, `audit_limit`, `url_nodes_modified_after_suffix`, `url_nodes_modified_before_suffix`, `node_limit`, `url_cmis_suffix`, `url_workflow_definitions_suffix`, `url_workflow_instances_suffix`, `is_active`) VALUES (1,'Default Alfresco instance','admin','admin','http://192.168.1.6:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true',50000,'/alfresco/service/AAAR/getNodesModifiedAfter','/alfresco/service/AAAR/getNodeIdsModifiedBefore',50000,'/alfresco/api/-default-/cmis/versions/1.1/atom','/alfresco/service/api/workflow-definitions','/alfresco/service/api/workflow-instances','Y');
 
 --
 -- Table structure for table `dm_dim_dates`
@@ -162,6 +162,7 @@ CREATE TABLE `dm_dim_documents` (
   KEY `fk_dm_dim_documents_dm_dim_node_types` (`node_type_id`),
   KEY `fk_dm_dim_documents_dm_dim_users_creator` (`user_creator_id`),
   KEY `fk_dm_dim_documents_dm_dim_users_last_modifier` (`user_last_modifier_id`),
+  KEY `idx_dm_dim_documents_path` (`path`(255)),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_dates_creation` FOREIGN KEY (`creation_date_id`) REFERENCES `dm_dim_dates` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_dates_last_modification` FOREIGN KEY (`last_modification_date_id`) REFERENCES `dm_dim_dates` (`id`),
@@ -215,6 +216,7 @@ CREATE TABLE `dm_dim_folders` (
   KEY `fk_dm_dim_folders_dm_dim_users_creator` (`user_creator_id`),
   KEY `fk_dm_dim_folders_dm_dim_users_last_modifier` (`user_last_modifier_id`),
   KEY `fk_dm_dim_folders_dm_dim_folders_parent` (`parent_id`),
+  KEY `idx_dm_dim_folders` (`path`(255)),
   CONSTRAINT `fk_dm_dim_folders_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`),
   CONSTRAINT `fk_dm_dim_folders_dm_dim_dates_creation` FOREIGN KEY (`creation_date_id`) REFERENCES `dm_dim_dates` (`id`),
   CONSTRAINT `fk_dm_dim_folders_dm_dim_dates_last_modification` FOREIGN KEY (`last_modification_date_id`) REFERENCES `dm_dim_dates` (`id`),
@@ -369,6 +371,7 @@ CREATE TABLE `dm_dim_paths` (
   KEY `fk_dm_dim_path_dm_dim_alfresco` (`alfresco_id`),
   KEY `fk_dm_dim_path_dm_dim_folders` (`folder_id`),
   KEY `fk_dm_dim_paths_dm_dim_documents` (`document_id`),
+  KEY `idx_dm_dim_paths_src_path` (`src_path`(255)),
   CONSTRAINT `fk_dm_dim_paths_dm_dim_documents` FOREIGN KEY (`document_id`) REFERENCES `dm_dim_documents` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_dm_dim_path_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_dm_dim_path_dm_dim_folders` FOREIGN KEY (`folder_id`) REFERENCES `dm_dim_folders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -660,7 +663,7 @@ CREATE TABLE `dm_reports` (
 --
 -- ORDER BY:  `id`
 
-INSERT INTO `dm_reports` (`id`, `pentaho_url`, `pentaho_login`, `pentaho_password`, `pentaho_path`, `prpt_name`, `name`, `alfresco_ftp`, `alfresco_port`, `alfresco_login`, `alfresco_password`, `alfresco_path`, `is_active`) VALUES (1,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','audit_login.prpt','audit_login.pdf','localhost',121,'admin','admin','alfresco','Y'),(2,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','audit_creation.prpt','audit_creation.pdf','localhost',121,'admin','admin','alfresco','Y'),(3,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','audit_use.prpt','audit_use.pdf','localhost',121,'admin','admin','alfresco','Y'),(4,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','audit_topTen.prpt','audit_topTen.pdf','localhost',121,'admin','admin','alfresco','Y'),(5,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','audit_details.prpt','audit_details.pdf','localhost',121,'admin','admin','alfresco','Y'),(6,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','document_active_users.prpt','document_active_users.pdf','localhost',121,'admin','admin','alfresco','Y'),(7,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','document_hours_of_activity.prpt','document_hours_of_activity.pdf','localhost',121,'admin','admin','alfresco','Y'),(8,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','document_mime_types.prpt','document_mime_types.pdf','localhost',121,'admin','admin','alfresco','Y'),(9,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','document_size.prpt','document_size.pdf','localhost',121,'admin','admin','alfresco','Y'),(10,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','document_types.prpt','document_types.pdf','localhost',121,'admin','admin','alfresco','Y'),(11,'http://localhost:8180/pentaho','admin','password','/public/AAAR/Reports','folder_types.prpt','folder_types.pdf','localhost',121,'admin','admin','alfresco','Y');
+INSERT INTO `dm_reports` (`id`, `pentaho_url`, `pentaho_login`, `pentaho_password`, `pentaho_path`, `prpt_name`, `name`, `alfresco_ftp`, `alfresco_port`, `alfresco_login`, `alfresco_password`, `alfresco_path`, `is_active`) VALUES (1,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','audit_login.prpt','audit_login.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(2,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','audit_creation.prpt','audit_creation.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(3,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','audit_use.prpt','audit_use.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(4,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','audit_topTen.prpt','audit_topTen.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(5,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','audit_details.prpt','audit_details.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(6,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','document_active_users.prpt','document_active_users.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(7,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','document_hours_of_activity.prpt','document_hours_of_activity.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(8,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','document_mime_types.prpt','document_mime_types.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(9,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','document_size.prpt','document_size.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(10,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','document_types.prpt','document_types.pdf','192.168.1.6',121,'admin','admin','alfresco','Y'),(11,'http://localhost:8082/pentaho','admin','password','/public/AAAR/Reports','folder_types.prpt','folder_types.pdf','192.168.1.6',121,'admin','admin','alfresco','Y');
 
 --
 -- Temporary table structure for view `generator_16`
@@ -978,6 +981,7 @@ CREATE TABLE `stg_rest_documents` (
 --
 -- ORDER BY:  `alfresco_id`,`node-dbid`
 
+
 --
 -- Table structure for table `stg_rest_folders`
 --
@@ -1008,6 +1012,7 @@ CREATE TABLE `stg_rest_folders` (
 -- Dumping data for table `stg_rest_folders`
 --
 -- ORDER BY:  `alfresco_id`,`node-dbid`
+
 
 --
 -- Table structure for table `stg_workflow_definitions`
@@ -1140,9 +1145,10 @@ DROP TABLE IF EXISTS `vw_cmis_documents_and_folders_path`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `vw_cmis_documents_and_folders_path` (
-  `cmis_objectid` tinyint NOT NULL,
-  `cmis_objecttypeid` tinyint NOT NULL,
-  `cmis_path` tinyint NOT NULL
+  `alfresco_id` tinyint NOT NULL,
+  `node-dbid` tinyint NOT NULL,
+  `type` tinyint NOT NULL,
+  `path` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -1382,8 +1388,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_cmis_documents_and_folders_path` AS select `stg_rest_documents`.`alfresco_id`,`stg_rest_documents`.`node-dbid`,`stg_rest_documents`.`type`,`stg_rest_documents`.`path` from `stg_rest_documents` union all select `stg_rest_folders`.`alfresco_id`,
-`stg_rest_folders`.`node-dbid`, `stg_rest_folders`.`type`, `stg_rest_folders`.`path` from `stg_rest_folders` */;
+/*!50001 VIEW `vw_cmis_documents_and_folders_path` AS select `stg_rest_documents`.`alfresco_id` AS `alfresco_id`,`stg_rest_documents`.`node-dbid` AS `node-dbid`,`stg_rest_documents`.`type` AS `type`,`stg_rest_documents`.`path` AS `path` from `stg_rest_documents` union all select `stg_rest_folders`.`alfresco_id` AS `alfresco_id`,`stg_rest_folders`.`node-dbid` AS `node-dbid`,`stg_rest_folders`.`type` AS `type`,`stg_rest_folders`.`path` AS `path` from `stg_rest_folders` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1425,7 +1430,6 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
-
 
 --
 -- Final view structure for view `vw_dm_dim_minutes`
@@ -1517,7 +1521,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_dm_min_max_date_sub1` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`date`) AS `max_date`,min(`ope_audit`.`date`) AS `min_date` from `ope_audits` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_rest_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_rest_folder`.`created`) AS `max_date`,min(`stg_rest_folder`.`created`) AS `min_date` from `stg_rest_folders` `stg_rest_folder` group by `stg_rest_folder`.`alfresco_id` union all select `stg_rest_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_rest_folder`.`modified`) AS `max_date`,min(`stg_rest_folder`.`modified`) AS `min_date` from `stg_rest_folders` `stg_rest_folder` group by `stg_rest_folder`.`alfresco_id`*/;
+/*!50001 VIEW `vw_dm_min_max_date_sub1` AS select `ope_audit`.`alfresco_id` AS `alfresco_id`,max(`ope_audit`.`date`) AS `max_date`,min(`ope_audit`.`date`) AS `min_date` from `ope_audits` `ope_audit` group by `ope_audit`.`alfresco_id` union all select `stg_rest_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_rest_folder`.`created`) AS `max_date`,min(`stg_rest_folder`.`created`) AS `min_date` from `stg_rest_folders` `stg_rest_folder` group by `stg_rest_folder`.`alfresco_id` union all select `stg_rest_folder`.`alfresco_id` AS `alfresco_id`,max(`stg_rest_folder`.`modified`) AS `max_date`,min(`stg_rest_folder`.`modified`) AS `min_date` from `stg_rest_folders` `stg_rest_folder` group by `stg_rest_folder`.`alfresco_id` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1569,4 +1573,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-12 14:42:44
+-- Dump completed on 2015-10-30 21:03:40
