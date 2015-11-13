@@ -2,6 +2,7 @@ A.A.A.R. - Pentaho v5.3 and v5.4 Sparkl Application
 ===
 
 This version of the A.A.A.R. Sparkl Application is no longer maintained.
+
 Please refer to the most recent one you can find [here](..).
 
 This project develops a Pentaho sparkl application to be released into an installation of the Pentaho BA Server.
