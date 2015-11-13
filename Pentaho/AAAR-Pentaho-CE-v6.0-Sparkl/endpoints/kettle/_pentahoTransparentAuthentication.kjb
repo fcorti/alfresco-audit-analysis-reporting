@@ -69,7 +69,7 @@
           <name>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-spring-beans-transform.xsl</name>
         </field>
         <field>
-          <name>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-transparent-authentication-lib-0.1.jar</name>
+          <name>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-transparent-authentication-lib-1.1.jar</name>
         </field>
         <field>
           <name>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-transparent-authentication-mappings.json</name>
@@ -101,7 +101,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-transparent-authentication-lib-0.1.jar</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;src_path&#x7d;&#x24;&#x7b;file.separator&#x7d;pentaho-transparent-authentication-lib-1.1.jar</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-0</source_configuration_name>
           <destination_filefolder>&#x24;&#x7b;pentaho_path&#x7d;&#x24;&#x7b;file.separator&#x7d;tomcat&#x24;&#x7b;file.separator&#x7d;webapps&#x24;&#x7b;file.separator&#x7d;pentaho&#x24;&#x7b;file.separator&#x7d;WEB-INF&#x24;&#x7b;file.separator&#x7d;lib</destination_filefolder>
           <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
