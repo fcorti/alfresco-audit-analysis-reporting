@@ -1,6 +1,9 @@
 A.A.A.R. - Pentaho v5.3 and v5.4 Sparkl Application
 ===
 
+This version of the A.A.A.R. Sparkl Application is no longer maintained.
+Please refer to the most recent one you can find [here](..).
+
 This project develops a Pentaho sparkl application to be released into an installation of the Pentaho BA Server.
 To make it work, a Linux based operating system is required, with some customizations detailed in the tutorial about [Pentaho v5.3, v5.4 for A.A.A.R.](../Pentaho v5.3, v5.4 development environment setup.md)
 After the development environment has been prepared, please follow the instructions below.
