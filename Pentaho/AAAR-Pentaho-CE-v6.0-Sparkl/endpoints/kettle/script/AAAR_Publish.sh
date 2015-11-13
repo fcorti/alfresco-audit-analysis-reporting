@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings.
-VERSION='4.0'
+VERSION='4.1'
 CURRENT_PATH="$PWD"
 ENDPOINTS_PATH="$PWD/.."
 LOGS_PATH="$ENDPOINTS_PATH/logs"
@@ -17,7 +17,7 @@ if [ "$1" != "silent" ]; then
     echo A.A.A.R. - Alfresco Audit Analysis and Reporting
     echo Export procedure version $VERSION.
     echo "Author: Francesco Corti (all rights reserved)"
-    echo "Date: 07 November 2015"
+    echo "Date: 21 November 2015"
     echo
     echo "Disclaimer:"
     echo "We can't be responsible for any damage done to your system,"

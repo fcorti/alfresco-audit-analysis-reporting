@@ -995,7 +995,7 @@
      },
      {
       "name": "html",
-      "value": "<div class=\"alert alert-info\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\">\n If you like it, remember to support the project. How? <a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" class=\"alert-link\">Read here</a>.\n</div>\n<div class=\"alert alert-info\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\">\n Remember to install Alfresco and Share AMPs before the first extraction.\n</div>\n ",
+      "value": "<div class=\"alert alert-info\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\">\n If you like it, remember to support the project. How? <a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/donate/\" class=\"alert-link\">Read here</a>.\n</div>\n<div class=\"alert alert-info\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\">\n Remember to install Alfresco and Share AMPs before the first extraction. <a href=\"http://fcorti.com/alfresco-audit-analysis-reporting/aaar-how-to-install/aaar-alfresco-amp/\" class=\"alert-link\">Read here</a>.\n</div>\n ",
       "type": "Html"
      },
      {
@@ -1617,7 +1617,7 @@
      },
      {
       "name": "html",
-      "value": "@2013-2015 Francesco Corti ",
+      "value": "@2013-2016 Francesco Corti ",
       "type": "Html"
      },
      {
