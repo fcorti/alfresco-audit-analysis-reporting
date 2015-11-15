@@ -3,7 +3,8 @@
 <overlays>
 		<overlay id="startup.AAAR" resourcebundle="content/AAAR/resources/lang/messages">
 			<menubar id="toolsmenu">
-	        	<menuitem id="AAAR" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','plugin/AAAR/api/default')"/>
+	        	<!-- <menuitem id="AAAR" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','plugin/AAAR/api/default')"/> -->
+	        	<menuitem id="AAAR" label="${Launcher.AAAR}" command="mantleXulHandler.openUrl('${Launcher.AAAR}','${Launcher.AAAR_TOOLTIP}','api/repos/%3Apublic%3AAAAR%3Amain.wcdf/generatedContent')"/>
 	      	</menubar>
 	    </overlay>
 	</overlays>
