@@ -3119,7 +3119,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "Alfresco_5_0",
+      "value": "Alfresco_5_1",
       "type": "String"
      },
      {
@@ -3807,7 +3807,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"Alfresco_5_0\",\"Alfresco Community or Enterprise Edition v5.0.x\"],[\"Alfresco_4_2\",\"Alfresco Community or Enterprise Edition v4.2.x\"]]",
+      "value": "[[\"Alfresco_5_1\",\"Alfresco Community or Enterprise Edition v5.1.x\"],[\"Alfresco_5_0\",\"Alfresco Community or Enterprise Edition v5.0.x\"],[\"Alfresco_4_2\",\"Alfresco Community or Enterprise Edition v4.2.x\"]]",
       "type": "ValuesArray"
      },
      {
@@ -3837,7 +3837,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#alfrescoTypeField').children(\":first\").attr('class','form-control');\n\n    var alfrescoType = $.trim(Dashboards.getParameterValue('${p:alfrescoType}'));\n    Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n\n    if (alfrescoType != 'Alfresco_5_0' && alfrescoType != 'Alfresco_4_2') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'Alfresco_5_0\\' or \\'Alfresco_4_2\\'.</div>');\n\n        alfrescoType = 'http';\n        Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n        $('#render_alfrescoTypeComponent').val(alfrescoType);\n    }\n\n} ",
+      "value": "function f() {\n\n    $('#alfrescoTypeField').children(\":first\").attr('class','form-control');\n\n    var alfrescoType = $.trim(Dashboards.getParameterValue('${p:alfrescoType}'));\n    Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n\n    if (alfrescoType != 'Alfresco_5_1' && alfrescoType != 'Alfresco_5_0' && alfrescoType != 'Alfresco_4_2') {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco protocol!</strong> Admitted values are \\'Alfresco_5_0\\' or \\'Alfresco_4_2\\'.</div>');\n\n        alfrescoType = 'http';\n        Dashboards.setParameter('${p:alfrescoType}',alfrescoType);\n        $('#render_alfrescoTypeComponent').val(alfrescoType);\n    }\n\n} ",
       "type": "JavaScript"
      },
      {

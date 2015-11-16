@@ -11,7 +11,7 @@
  <parameter name="alfrescoPassword"   value="admin"> </parameter>
  <parameter name="alfrescoPort"       value="8080"> </parameter>
  <parameter name="alfrescoProtocol"   value="http"> </parameter>
- <parameter name="alfrescoType"       value="Alfresco_5_0"> </parameter>
+ <parameter name="alfrescoType"       value="Alfresco_5_1"> </parameter>
 
  <!-- Database parameters -->
  <parameter name="databaseBin"          value="/usr/bin"> </parameter>
@@ -26,7 +26,7 @@
 
  <!-- Kettle parameters -->
  <parameter name="kettlePath"    value="/opt/data-integration"> </parameter>
- <parameter name="kettleVersion" value="5"> </parameter>
+ <parameter name="kettleVersion" value="6"> </parameter>
 
  <!-- Pentaho parameters -->
  <parameter name="pentahoAAARPath" value="/public/AAAR"> </parameter>
