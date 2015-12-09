@@ -89,7 +89,7 @@ Together with PostgreSql we are going to install also PgAdmin3 to administer it.
     \password postgres
     // Digit 'postgres' (two times) to setup the postgres's password.
     \q
-    sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+    sudo nano /etc/postgresql/9.4/main/pg_hba.conf
 
 Change the line described below, setting `peer` to `md5`.
 
