@@ -481,31 +481,6 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		return (new SimpleDateFormat(format)).format(date);
 	}
 
-	/**
-	 * Set the result set mapper from a result set.
-	 * 
-	 * @param resultSetRow
-	private final void setResultSetRowMapper(ResultSetRow resultSetRow) {
-
-		if (resultSetRowMapper == null) {
-
-			resultSetRowMapper = new HashMap<String, PropertyDefinition>();
-
-			Iterator<String> columnNames = resultSetRow.getValues().keySet().iterator();
-			while (columnNames.hasNext()) {
-
-				String columnName = columnNames.next();
-				QName columnQName = QName.createQName(columnName);
-
-				PropertyDefinition propertyDefinition = dictionaryService.getProperty(columnQName);
-
-				resultSetRowMapper.put(columnQName.toString(), propertyDefinition);
-				resultSetRowMapper.put(namespaceService.getPrefixes(columnQName.getNamespaceURI()).iterator().next() + QName.NAMESPACE_PREFIX + columnQName.getLocalName(), propertyDefinition);
-			}
-		}
-	}
-	 */
-
 	public void setDictionaryService(DictionaryService dictionaryService) {
 		this.dictionaryService = dictionaryService;
 	}
