@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.alfresco.service.ServiceRegistry;
-import org.alfresco.service.cmr.dictionary.ClassDefinition;
 import org.alfresco.service.cmr.dictionary.DictionaryService;
 import org.alfresco.service.namespace.NamespaceService;
 import org.alfresco.service.namespace.QName;
@@ -43,9 +42,12 @@ import freemarker.template.utility.NullArgumentException;
  * @author fcorti@gmail.com
  * @since 4.2
  */
-public class GetSubClassesWebScript extends DeclarativeWebScript {
+public class GetClassesWebScript extends DeclarativeWebScript {
 
-	private static final String PARAMETER_CLASS    = "class";
+	private static final String PARAMETER_CLASS_TYPE           = "classType";
+	private static final String PARAMETER_CLASS_TYPE_ASPECTS   = "aspects";
+	private static final String PARAMETER_CLASS_TYPE_DOCUMENTS = "documents";
+	private static final String PARAMETER_CLASS_TYPE_FOLDERS   = "folders";
 
 	private DictionaryService dictionaryService;
 	private NamespaceService namespaceService;
@@ -66,17 +68,18 @@ public class GetSubClassesWebScript extends DeclarativeWebScript {
 			throw new WebScriptException(Status.STATUS_BAD_REQUEST, e.getMessage());
 		}
 
-		// Class definition.
-		QName typeOrAspect = QName.resolveToQName(namespaceService, (String) parameters.get(PARAMETER_CLASS));
-		ClassDefinition classDefinition = dictionaryService.getClass(typeOrAspect);
-
 		// Class list.
 		Collection<QName> classes = new ArrayList<QName>();
-		if (classDefinition.isAspect()) {
-			classes = dictionaryService.getSubAspects(typeOrAspect, true);
+		if (((String) parameters.get(PARAMETER_CLASS_TYPE)).equals(PARAMETER_CLASS_TYPE_ASPECTS)) {
+			classes = dictionaryService.getAllAspects();
 		}
-		else {
-			classes = dictionaryService.getSubTypes(typeOrAspect, true);
+		else if (((String) parameters.get(PARAMETER_CLASS_TYPE)).equals(PARAMETER_CLASS_TYPE_DOCUMENTS)) {
+			QName contentBaseType = QName.resolveToQName(namespaceService, "cm:content");
+			classes = dictionaryService.getSubTypes(contentBaseType, true);
+		}
+		else if (((String) parameters.get(PARAMETER_CLASS_TYPE)).equals(PARAMETER_CLASS_TYPE_FOLDERS)) {
+			QName folderBaseType = QName.resolveToQName(namespaceService, "cm:folder");
+			classes = dictionaryService.getSubTypes(folderBaseType, true);
 		}
 
 		// Results.
@@ -114,16 +117,18 @@ public class GetSubClassesWebScript extends DeclarativeWebScript {
 		parameters = new HashMap<String, Object>();
 
 		// Class name parameter.
-		String classParameter = req.getParameter(PARAMETER_CLASS);
-		if (classParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_CLASS + "' must be specified.");
+		String classTypeParameter = req.getParameter(PARAMETER_CLASS_TYPE);
+		if (classTypeParameter == null) {
+			throw new NullArgumentException("Parameter '" + PARAMETER_CLASS_TYPE + "' must be specified.");
 		}
-		classParameter = classParameter.trim();
-		if (classParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_CLASS + "' cannot be empty if specified.");
+		classTypeParameter = classTypeParameter.trim().toLowerCase();
+		if (classTypeParameter.compareTo(PARAMETER_CLASS_TYPE_ASPECTS) != 0 &&
+			classTypeParameter.compareTo(PARAMETER_CLASS_TYPE_DOCUMENTS) != 0 &&
+			classTypeParameter.compareTo(PARAMETER_CLASS_TYPE_FOLDERS) != 0) {
+			throw new IllegalArgumentException("Parameter '" + PARAMETER_CLASS_TYPE + "' can be '" + PARAMETER_CLASS_TYPE_ASPECTS + "', '" + PARAMETER_CLASS_TYPE_DOCUMENTS + "' or '" + PARAMETER_CLASS_TYPE_FOLDERS + "'.");
 		}
 
-		parameters.put(PARAMETER_CLASS, classParameter);
+		parameters.put(PARAMETER_CLASS_TYPE, classTypeParameter);
 	}
 
 	public void setDictionaryService(DictionaryService dictionaryService) {

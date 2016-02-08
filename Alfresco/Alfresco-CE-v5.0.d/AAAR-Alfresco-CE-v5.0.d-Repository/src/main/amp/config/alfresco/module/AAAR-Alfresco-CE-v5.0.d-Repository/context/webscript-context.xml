@@ -18,6 +18,15 @@
 -->
 <beans>
 
+	<bean id="webscript.com.fcorti.AAAR.getClasses.get" class="com.fcorti.aaar.GetClassesWebScript" parent="webscript">
+		<property name="dictionaryService">
+			<ref bean="dictionaryService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
 	<bean id="webscript.com.fcorti.AAAR.getNodesModifiedAfter.get" class="com.fcorti.aaar.GetNodesModifiedAfterWebScript" parent="webscript">
 		<property name="dictionaryService">
 			<ref bean="dictionaryService"/>
@@ -55,15 +64,6 @@
 	</bean>
 
 	<bean id="webscript.com.fcorti.AAAR.getPropertyDefinition.get" class="com.fcorti.aaar.GetPropertyDefinitionWebScript" parent="webscript">
-		<property name="dictionaryService">
-			<ref bean="dictionaryService"/>
-		</property>
-		<property name="serviceRegistry">
-			<ref bean="ServiceRegistry"/>
-		</property>
-	</bean>
-
-	<bean id="webscript.com.fcorti.AAAR.getSubClasses.get" class="com.fcorti.aaar.GetSubClassesWebScript" parent="webscript">
 		<property name="dictionaryService">
 			<ref bean="dictionaryService"/>
 		</property>
