@@ -5,7 +5,7 @@ var AAAR = {};
 
   myself.changeLocation = function (newLocation, bookmarks, isNew) {
     if (!newLocation) { return; }
-    var hash = (bookmarks && !_.isEmpty(bookmarks) ) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: bookmarks } ) : "";
+    var hash = (bookmarks && !_.isEmpty(bookmarks) ) ? '?bookmarkState=' + encodeURI( generateHashValue( { impl: "client" , params: bookmarks } ) ) : "";
     if (isNew) {
       window.open(newLocation + hash);
     } else {
