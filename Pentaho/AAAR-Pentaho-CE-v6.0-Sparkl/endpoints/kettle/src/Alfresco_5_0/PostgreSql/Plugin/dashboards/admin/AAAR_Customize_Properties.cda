@@ -1,15 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CDADescriptor>
-   <DataSources>
-      <Connection id="customMetadata" type="sql.jndi">
-         <Jndi>AAAR_DataMart</Jndi>
-      </Connection>
-   </DataSources>
-   <DataAccess access="public" connection="customMetadata" id="customMetadata" type="sql">
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query>select m.id, m.name, a.desc, m.is_active
-from dm_custom_metadata m join dm_dim_alfresco a on m.alfresco_id=a.id</Query>
-   </DataAccess>
+<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
+  <DataSources>
+    <Connection id="customMetadata" type="sql.jndi">
+      <Jndi>AAAR_DataMart</Jndi>
+    </Connection>
+  </DataSources>
+  <DataAccess access="public" connection="customMetadata" id="customMetadata" type="sql">
+    <Cache duration="3600" enabled="false"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[SELECT
+ m.id,
+ a.desc,
+ m.class,
+ concat(m.name,' (',m.type,')') AS name,
+ m.is_document_subtype,
+ m.is_folder_subtype,
+ m.is_aspect
+FROM
+ dm_custom_metadata m 
+ JOIN dm_dim_alfresco a ON m.alfresco_id=a.id
+ORDER BY
+ a.desc ASC,
+ m.class ASC,
+ concat(m.name,' (',m.type,')') ASC]]></Query>
+  </DataAccess>
 </CDADescriptor>

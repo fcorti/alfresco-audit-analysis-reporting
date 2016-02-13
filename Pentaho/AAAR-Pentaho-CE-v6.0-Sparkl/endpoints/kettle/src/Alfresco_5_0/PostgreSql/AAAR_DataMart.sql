@@ -57,9 +57,11 @@ SET default_with_oids = false;
 
 CREATE TABLE "dm_custom_metadata" (
     "id" smallint DEFAULT "nextval"('"seq_dm_custom_metadata_id"'::"regclass") NOT NULL,
+    "class" character varying(255) NOT NULL,
     "name" character varying(255) NOT NULL,
-    "is_document_type" character(1) DEFAULT 'N'::"bpchar" NOT NULL,
-    "is_folder_type" character(1) DEFAULT 'N'::"bpchar" NOT NULL,
+    "type" character varying(255) NOT NULL,
+    "is_document_subtype" character(1) DEFAULT 'N'::"bpchar" NOT NULL,
+    "is_folder_subtype" character(1) DEFAULT 'N'::"bpchar" NOT NULL,
     "is_aspect" character(1) DEFAULT 'N'::"bpchar" NOT NULL,
     "is_active" character(1) DEFAULT 'Y'::"bpchar" NOT NULL,
     "alfresco_id" smallint NOT NULL
@@ -1302,6 +1304,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_workflow_tasks_id"', 1, true);
 ALTER TABLE ONLY "dm_custom_metadata"
     ADD CONSTRAINT "pk_dm_custom_metadata" PRIMARY KEY ("id");
 
+ALTER TABLE ONLY "dm_custom_metadata"
+  ADD CONSTRAINT "unq_dm_custom_metadata" UNIQUE ("class", "name");
 
 --
 -- TOC entry 2125 (class 2606 OID 19514)

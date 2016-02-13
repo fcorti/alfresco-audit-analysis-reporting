@@ -133,7 +133,7 @@
         </parameter>
         <parameter>
             <name>kettleVersion</name>
-            <default_value>5</default_value>
+            <default_value>6</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -181,8 +181,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>47</xloc>
-      <yloc>39</yloc>
+      <xloc>64</xloc>
+      <yloc>48</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -191,8 +191,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>148</xloc>
-      <yloc>510</yloc>
+      <xloc>192</xloc>
+      <yloc>688</yloc>
       </entry>
     <entry>
       <name>Delete file</name>
@@ -203,8 +203,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>145</xloc>
-      <yloc>130</yloc>
+      <xloc>192</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>Set variables</name>
@@ -223,8 +223,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>145</xloc>
-      <yloc>40</yloc>
+      <xloc>192</xloc>
+      <yloc>48</yloc>
       </entry>
     <entry>
       <name>_writeConfiguration</name>
@@ -331,8 +331,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>130</yloc>
+      <xloc>416</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Install.sh</name>
@@ -346,8 +346,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>229</yloc>
+      <xloc>192</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Extract.sh</name>
@@ -361,8 +361,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>601</xloc>
-      <yloc>229</yloc>
+      <xloc>768</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Publish.sh</name>
@@ -376,8 +376,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>773</xloc>
-      <yloc>229</yloc>
+      <xloc>1056</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Install.bat</name>
@@ -391,8 +391,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>148</xloc>
-      <yloc>323</yloc>
+      <xloc>192</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Extract.bat</name>
@@ -406,8 +406,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>638</xloc>
-      <yloc>323</yloc>
+      <xloc>768</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Publish.bat</name>
@@ -421,8 +421,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>810</xloc>
-      <yloc>323</yloc>
+      <xloc>1056</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Create_custom_structures.sh</name>
@@ -436,8 +436,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>371</xloc>
-      <yloc>229</yloc>
+      <xloc>480</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Write AAAR_Create_custom_structures.bat</name>
@@ -451,8 +451,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>389</xloc>
-      <yloc>323</yloc>
+      <xloc>480</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>AAAR_Customize_Instances</name>
@@ -478,8 +478,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>148</xloc>
-      <yloc>427</yloc>
+      <xloc>192</xloc>
+      <yloc>448</yloc>
       </entry>
     <entry>
       <name>AAAR_Customize_Properties</name>
@@ -505,8 +505,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>373</xloc>
-      <yloc>425</yloc>
+      <xloc>480</xloc>
+      <yloc>448</yloc>
       </entry>
     <entry>
       <name>AAAR_Customize_Publish</name>
@@ -532,8 +532,89 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>597</xloc>
-      <yloc>427</yloc>
+      <xloc>1056</xloc>
+      <yloc>448</yloc>
+      </entry>
+    <entry>
+      <name>AAAR_Customize_Properties_Create</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
+          <wildcard>AAAR_Customize_Properties_Create.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>768</xloc>
+      <yloc>448</yloc>
+      </entry>
+    <entry>
+      <name>alfrescoProperties_&#x2a;.&#x2a;</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
+          <wildcard>alfrescoProperties_&#x2a;.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>192</xloc>
+      <yloc>560</yloc>
+      </entry>
+    <entry>
+      <name>_alfrescoProperties_&#x2a;.&#x2a;</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
+          <wildcard>_alfrescoProperties_&#x2a;.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>560</yloc>
       </entry>
   </entries>
   <hops>
@@ -656,6 +737,15 @@
     </hop>
     <hop>
       <from>AAAR_Customize_Properties</from>
+      <to>AAAR_Customize_Properties_Create</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AAAR_Customize_Properties_Create</from>
       <to>AAAR_Customize_Publish</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -665,6 +755,24 @@
     </hop>
     <hop>
       <from>AAAR_Customize_Publish</from>
+      <to>alfrescoProperties_&#x2a;.&#x2a;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>alfrescoProperties_&#x2a;.&#x2a;</from>
+      <to>_alfrescoProperties_&#x2a;.&#x2a;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>_alfrescoProperties_&#x2a;.&#x2a;</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
