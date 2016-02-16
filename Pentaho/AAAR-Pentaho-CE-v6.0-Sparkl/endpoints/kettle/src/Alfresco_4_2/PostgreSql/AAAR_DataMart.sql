@@ -807,11 +807,20 @@ CREATE TABLE "stg_rest_documents" (
     "size" integer,
     "encoding" character varying(128),
     "content-locale" character varying(128),
-    "parent-node-uuid" character varying(128)
+    "parent-node-uuid" character varying(128),
+    "custom_aspects" character varying(8192)
 );
 
 
 ALTER TABLE "public"."stg_rest_documents" OWNER TO "postgres";
+
+CREATE TABLE "stg_rest_documents_custom_types" (
+    "alfresco_id" smallint NOT NULL,
+    "node-dbid" integer,
+    "custom_types" character varying(8192)
+);
+
+ALTER TABLE "public"."stg_rest_documents_custom_types" OWNER TO "postgres";
 
 --
 -- TOC entry 205 (class 1259 OID 19453)
@@ -832,11 +841,21 @@ CREATE TABLE "stg_rest_folders" (
     "modifier" character varying(1024),
     "modified" character varying(32),
     "path" character varying(3072),
-    "parent-node-uuid" character varying(128)
+    "parent-node-uuid" character varying(128),
+    "custom_aspects" character varying(8192)
 );
 
 
 ALTER TABLE "public"."stg_rest_folders" OWNER TO "postgres";
+
+CREATE TABLE "stg_rest_folders_custom_types" (
+    "alfresco_id" smallint NOT NULL,
+    "node-dbid" integer,
+    "custom_types" character varying(8192)
+);
+
+ALTER TABLE "public"."stg_rest_folders_custom_types" OWNER TO "postgres";
+
 
 --
 -- TOC entry 223 (class 1259 OID 28596)
@@ -1342,7 +1361,6 @@ ALTER TABLE ONLY "dm_dim_documents"
 ALTER TABLE ONLY "dm_dim_folders"
     ADD CONSTRAINT "pk_dm_dim_folders" PRIMARY KEY ("id");
 
-
 --
 -- TOC entry 2146 (class 2606 OID 19522)
 -- Name: pk_dm_dim_hours; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
@@ -1522,6 +1540,20 @@ ALTER TABLE ONLY "stg_workflow_tasks"
 ALTER TABLE ONLY "stg_rest_documents"
     ADD CONSTRAINT "uni_document_id" UNIQUE ("alfresco_id", "node-dbid");
 
+ALTER TABLE "stg_rest_documents"
+  ADD CONSTRAINT "fk_stg_rest_documents_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
+
+
+ALTER TABLE ONLY "stg_rest_documents_custom_types"
+    ADD CONSTRAINT "uni_document_id_custom_types" UNIQUE ("alfresco_id", "node-dbid");
+
+ALTER TABLE "stg_rest_documents_custom_types"
+  ADD CONSTRAINT "fk_stg_rest_documents_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
+
+ALTER TABLE "stg_rest_documents_custom_types"
+  ADD CONSTRAINT "fk_stg_rest_documents_custom_types_stg_rest_documents" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_documents" ("alfresco_id", "node-dbid");
+
+
 --
 -- TOC entry 2186 (class 2606 OID 19552)
 -- Name: uni_cmis_folder_id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
@@ -1529,6 +1561,20 @@ ALTER TABLE ONLY "stg_rest_documents"
 
 ALTER TABLE ONLY "stg_rest_folders"
     ADD CONSTRAINT "uni_folder_id" UNIQUE ("alfresco_id", "node-dbid");
+
+ALTER TABLE "stg_rest_folders"
+  ADD CONSTRAINT "fk_stg_rest_folders_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
+
+
+
+ALTER TABLE ONLY "stg_rest_folders_custom_types"
+    ADD CONSTRAINT "uni_folders_id_custom_types" UNIQUE ("alfresco_id", "node-dbid");
+
+ALTER TABLE "stg_rest_folders_custom_types"
+  ADD CONSTRAINT "fk_stg_rest_folders_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
+
+ALTER TABLE "stg_rest_folders_custom_types"
+  ADD CONSTRAINT "fk_stg_rest_folders_custom_types_stg_rest_folders" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_folders" ("alfresco_id", "node-dbid");
 
 
 --

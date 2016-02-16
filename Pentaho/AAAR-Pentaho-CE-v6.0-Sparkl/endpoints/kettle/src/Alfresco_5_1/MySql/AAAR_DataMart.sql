@@ -972,7 +972,9 @@ CREATE TABLE `stg_rest_documents` (
   `encoding` varchar(128) DEFAULT NULL,
   `content-locale` varchar(128) DEFAULT NULL,
   `parent-node-uuid` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`alfresco_id`,`node-dbid`)
+  `custom_aspects` varchar(8192) DEFAULT NULL,
+  PRIMARY KEY (`alfresco_id`,`node-dbid`),
+  CONSTRAINT `fk_stg_rest_documents_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -980,6 +982,19 @@ CREATE TABLE `stg_rest_documents` (
 -- Dumping data for table `stg_rest_documents`
 --
 -- ORDER BY:  `alfresco_id`,`node-dbid`
+
+DROP TABLE IF EXISTS `stg_rest_documents_custom_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stg_rest_documents_custom_types` (
+  `alfresco_id` smallint(6) NOT NULL,
+  `node-dbid` int(11) NOT NULL,
+  `custom_types` varchar(8192) DEFAULT NULL,
+  PRIMARY KEY (`alfresco_id`,`node-dbid`),
+  CONSTRAINT `fk_stg_rest_documents_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`),
+  CONSTRAINT `fk_stg_rest_documents_custom_types_stg_rest_documents` FOREIGN KEY (`alfresco_id`,`node-dbid`) REFERENCES `stg_rest_documents` (`alfresco_id`,`node-dbid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 
 --
@@ -1004,7 +1019,9 @@ CREATE TABLE `stg_rest_folders` (
   `modified` varchar(32) DEFAULT NULL,
   `path` varchar(3072) DEFAULT NULL,
   `parent-node-uuid` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`alfresco_id`,`node-dbid`)
+  `custom_aspects` varchar(8192) DEFAULT NULL,
+  PRIMARY KEY (`alfresco_id`,`node-dbid`),
+  CONSTRAINT `fk_stg_rest_folders_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1013,6 +1030,18 @@ CREATE TABLE `stg_rest_folders` (
 --
 -- ORDER BY:  `alfresco_id`,`node-dbid`
 
+DROP TABLE IF EXISTS `stg_rest_folders_custom_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stg_rest_folders_custom_types` (
+  `alfresco_id` smallint(6) NOT NULL,
+  `node-dbid` int(11) NOT NULL,
+  `custom_types` varchar(8192) DEFAULT NULL,
+  PRIMARY KEY (`alfresco_id`,`node-dbid`),
+  CONSTRAINT `fk_stg_rest_folders_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`),
+  CONSTRAINT `fk_stg_rest_folders_custom_types_stg_rest_folders` FOREIGN KEY (`alfresco_id`,`node-dbid`) REFERENCES `stg_rest_folders` (`alfresco_id`,`node-dbid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `stg_workflow_definitions`
