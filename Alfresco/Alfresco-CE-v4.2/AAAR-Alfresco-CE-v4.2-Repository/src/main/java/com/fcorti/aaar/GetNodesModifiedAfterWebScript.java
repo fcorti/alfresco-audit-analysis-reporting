@@ -169,10 +169,18 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		resultSet.close();
 
 		// Parameter values.
-		parameters.replace(PARAMETER_DATE,                   getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
-		parameters.replace(PARAMETER_LIMIT,                  String.valueOf(parameters.get(PARAMETER_LIMIT)));
-		parameters.replace(PARAMETER_SKIP,                   String.valueOf(parameters.get(PARAMETER_SKIP)));
-		parameters.replace(PARAMETER_NAMESPACEURI_COMPACTED, String.valueOf(parameters.get(PARAMETER_NAMESPACEURI_COMPACTED)));
+		String parameterDate                  = getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT);
+		String parameterLimit                 = String.valueOf(parameters.get(PARAMETER_LIMIT));
+		String parameterSkip                  = String.valueOf(parameters.get(PARAMETER_SKIP));
+		String parameterNamespaceUriCompacted = String.valueOf(parameters.get(PARAMETER_NAMESPACEURI_COMPACTED));
+		parameters.remove(PARAMETER_DATE);
+		parameters.remove(PARAMETER_LIMIT);
+		parameters.remove(PARAMETER_SKIP);
+		parameters.remove(PARAMETER_NAMESPACEURI_COMPACTED);
+		parameters.put(PARAMETER_DATE,                   parameterDate);
+		parameters.put(PARAMETER_LIMIT,                  parameterLimit);
+		parameters.put(PARAMETER_SKIP,                   parameterSkip);
+		parameters.put(PARAMETER_NAMESPACEURI_COMPACTED, parameterNamespaceUriCompacted);
 
 		// New parameters values.
 		Map<String, Object> newParameters = new HashMap<String, Object>();
