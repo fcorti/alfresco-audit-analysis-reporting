@@ -16,6 +16,9 @@ limitations under the License.
 */
 package com.fcorti.aaar;
 
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,6 +29,9 @@ import java.util.Map;
 
 import org.alfresco.model.ContentModel;
 import org.alfresco.service.ServiceRegistry;
+import org.alfresco.service.cmr.dictionary.DataTypeDefinition;
+import org.alfresco.service.cmr.dictionary.DictionaryService;
+import org.alfresco.service.cmr.dictionary.PropertyDefinition;
 import org.alfresco.service.cmr.repository.ContentData;
 import org.alfresco.service.cmr.repository.NodeService;
 import org.alfresco.service.cmr.repository.StoreRef;
@@ -35,13 +41,17 @@ import org.alfresco.service.cmr.search.ResultSetRow;
 import org.alfresco.service.cmr.search.SearchParameters;
 import org.alfresco.service.cmr.search.SearchService;
 import org.alfresco.service.namespace.NamespaceService;
+import org.alfresco.service.namespace.QName;
 import org.alfresco.util.ISO9075;
-import org.apache.commons.lang.NullArgumentException;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
+
 import com.sun.star.io.WrongFormatException;
 
 /**
@@ -52,29 +62,37 @@ import com.sun.star.io.WrongFormatException;
  */
 public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
-	private static final String PARAMETER_BASETYPE		    = "baseType";
-	private static final String PARAMETER_DATE			    = "dt";
-	private static final String PARAMETER_LIMIT			    = "limit";
-	private static final int    PARAMETER_LIMIT_DEFAULT     = 10000;
-	private static final String PARAMETER_SKIP			    = "skip";
-	private static final int    PARAMETER_SKIP_DEFAULT	    = 0;
-	private static final String DATE_FORMAT                 = "yyyy-MM-dd";
-	private static final String DATETIME_FORMAT             = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+	private static final String  PARAMETER_BASETYPE		                  = "baseType";
+	private static final String  PARAMETER_CUSTOM_PROPERTIES              = "customProperties";
+	private static final String  PARAMETER_CUSTOM_PROPERTIES_TYPES        = "types";
+	private static final String  PARAMETER_CUSTOM_PROPERTIES_ASPECTS      = "aspects";
+	private static final String  PARAMETER_CUSTOM_PROPERTIES_DEFAULT      = "{ \"" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "\":[], \"" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "\":[] }";
+	private static final String  PARAMETER_DATE			                  = "dt";
+	private static final String  PARAMETER_LIMIT			              = "limit";
+	private static final int     PARAMETER_LIMIT_DEFAULT                  = 10000;
+	private static final String  PARAMETER_SKIP			                  = "skip";
+	private static final int     PARAMETER_SKIP_DEFAULT	                  = 0;
+	private static final String  PARAMETER_NAMESPACEURI_COMPACTED         = "namespaceuriCompacted";
+	private static final Boolean PARAMETER_NAMESPACEURI_COMPACTED_DEFAULT = true;
+	private static final String  DATE_FORMAT                              = "yyyy-MM-dd";
+	private static final String  DATETIME_FORMAT                          = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 
+	private DictionaryService dictionaryService;
 	private NamespaceService namespaceService;
 	private NodeService nodeService;
 	private SearchService searchService;
 	@SuppressWarnings("unused")
 	private ServiceRegistry serviceRegistry;
 
+	private Map<String, Object> parameters = null;
+
 	// private static Logger logger = Logger.getLogger(GetNodesModifiedAfterWebScript.class);
 
 	protected Map<String, Object> executeImpl(WebScriptRequest req, Status status, Cache cache) {
 
 		// Parameters.
-		Map<String, Object> parameters = null;
 		try {
-			parameters = getParameters(req);
+			getParameters(req);
 		}
 		catch (Exception e) {
 			throw new WebScriptException(Status.STATUS_BAD_REQUEST, e.getMessage());
@@ -88,14 +106,21 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		Date newParameterDt = (Date) parameters.get(PARAMETER_DATE);
 		int newParameterSkip = (int) parameters.get(PARAMETER_SKIP);
 
+		// Custom properties.
+		JSONArray jsonCustomTypes = null;
+		JSONArray jsonCustomAspects = null;
+		try {
+			jsonCustomTypes = ((JSONObject) parameters.get(PARAMETER_CUSTOM_PROPERTIES)).getJSONArray(PARAMETER_CUSTOM_PROPERTIES_TYPES);
+			jsonCustomAspects = ((JSONObject) parameters.get(PARAMETER_CUSTOM_PROPERTIES)).getJSONArray(PARAMETER_CUSTOM_PROPERTIES_ASPECTS);
+		} catch (JSONException e) {
+			throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+		}
+
 		// Result composition.
 		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
 		while (resultIterator.hasNext()) {
 
 			ResultSetRow resultSetRow = resultIterator.next();
-
-			// Retrieve values.
-			resultSetRow.getValues();
 
 			Map<String, Object> result = new HashMap<String, Object>();
 			result.put(ContentModel.PROP_NODE_DBID.getLocalName(),        String.valueOf(resultSetRow.getValue(ContentModel.PROP_NODE_DBID)));
@@ -111,6 +136,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 			result.put(ContentModel.PROP_LOCALE.getLocalName(),           resultSetRow.getValue(ContentModel.PROP_LOCALE));
 			result.put("path",                                            ISO9075.decode(nodeService.getPath(resultSetRow.getNodeRef()).toPrefixString(namespaceService)));
 
+			// Content optional properties.
 			if (resultSetRow.getValues().containsKey(ContentModel.PROP_CONTENT.toString())) {
 
 				ContentData contentData = (ContentData) resultSetRow.getValue(ContentModel.PROP_CONTENT);
@@ -121,7 +147,13 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 				result.put("content-locale", contentData.getLocale());
 			}
 
+			// Custom properties for types and aspects.
+			result.put("customTypes",   getCustomProperties(resultSetRow, jsonCustomTypes));
+			result.put("customAspects", getCustomProperties(resultSetRow, jsonCustomAspects));
+
+			// Parent reference.
 			result.put("parent-" + ContentModel.PROP_NODE_UUID.getLocalName(), resultSetRow.getChildAssocRef().getParentRef().getId());
+
 			results.add(result);
 
 			// New parameter values.
@@ -137,22 +169,26 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		resultSet.close();
 
 		// Parameter values.
-		String parameterAsString = getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT);
+		String parameterDate                  = getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT);
+		String parameterLimit                 = String.valueOf(parameters.get(PARAMETER_LIMIT));
+		String parameterSkip                  = String.valueOf(parameters.get(PARAMETER_SKIP));
+		String parameterNamespaceUriCompacted = String.valueOf(parameters.get(PARAMETER_NAMESPACEURI_COMPACTED));
 		parameters.remove(PARAMETER_DATE);
-		parameters.put(PARAMETER_DATE, parameterAsString);
-		parameterAsString = String.valueOf(parameters.get(PARAMETER_LIMIT));
 		parameters.remove(PARAMETER_LIMIT);
-		parameters.put(PARAMETER_LIMIT, parameterAsString);
-		parameterAsString = String.valueOf(parameters.get(PARAMETER_SKIP));
 		parameters.remove(PARAMETER_SKIP);
-		parameters.put(PARAMETER_SKIP, parameterAsString);
+		parameters.remove(PARAMETER_NAMESPACEURI_COMPACTED);
+		parameters.put(PARAMETER_DATE,                   parameterDate);
+		parameters.put(PARAMETER_LIMIT,                  parameterLimit);
+		parameters.put(PARAMETER_SKIP,                   parameterSkip);
+		parameters.put(PARAMETER_NAMESPACEURI_COMPACTED, parameterNamespaceUriCompacted);
 
 		// New parameters values.
 		Map<String, Object> newParameters = new HashMap<String, Object>();
-		newParameters.put(PARAMETER_BASETYPE,  parameters.get(PARAMETER_BASETYPE));
-		newParameters.put(PARAMETER_DATE,      getDateAsString(newParameterDt, DATE_FORMAT));
-		newParameters.put(PARAMETER_LIMIT,     parameters.get(PARAMETER_LIMIT));
-		newParameters.put(PARAMETER_SKIP,      String.valueOf(newParameterSkip));
+		newParameters.put(PARAMETER_BASETYPE,               parameters.get(PARAMETER_BASETYPE));
+		newParameters.put(PARAMETER_DATE,                   getDateAsString(newParameterDt, DATE_FORMAT));
+		newParameters.put(PARAMETER_LIMIT,                  parameters.get(PARAMETER_LIMIT));
+		newParameters.put(PARAMETER_SKIP,                   String.valueOf(newParameterSkip));
+		newParameters.put(PARAMETER_NAMESPACEURI_COMPACTED, parameters.get(PARAMETER_NAMESPACEURI_COMPACTED));
 
 		// Model definition.
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -162,6 +198,116 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		model.put("newParameters", newParameters);
 
 		return model;
+	}
+
+	/**
+	 * Get the custom properties from the resultSetRow.
+	 * 
+	 * @param resultSetRow
+	 * @param jsonCustomTypesOrAspects
+	 * @return
+	 */
+	private List<Map<String, Object>> getCustomProperties(ResultSetRow resultSetRow, JSONArray jsonCustomTypesOrAspects) {
+
+		// Note:
+		// If the property comes with the extended format (i.e. {http://...}property)) or prefixed (i.e. cm:property),
+		// the command below get the extended format of the property name:
+		// customProperty.toString();
+		// the command below get the prefixed format of the property name:
+		// customProperty.toPrefixString(namespaceService);
+
+		Map<String, Serializable> resultSetValues = resultSetRow.getValues();
+		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
+
+		for (int i = 0; i < jsonCustomTypesOrAspects.length(); i++) {
+
+			// Type or aspect retrieve.
+			JSONObject jsonCustomTypeOrAspect = null;
+			try {
+				jsonCustomTypeOrAspect = ((JSONObject) jsonCustomTypesOrAspects.getJSONObject(i));
+			} catch (JSONException e) {
+				throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+			}
+			QName customTypeOrAspect = QName.resolveToQName(namespaceService, (String) jsonCustomTypeOrAspect.keys().next());
+
+			// Type or aspect name.
+			String customTypeOrAspectName = customTypeOrAspect.toString();
+			if ((boolean) parameters.get(PARAMETER_NAMESPACEURI_COMPACTED)) {
+				customTypeOrAspectName = customTypeOrAspect.toPrefixString(namespaceService);
+			}
+
+			// Custom properties scanning.
+			JSONArray jsonCustomProperties = null;
+			try {
+				jsonCustomProperties = (JSONArray) jsonCustomTypeOrAspect.getJSONArray((String) jsonCustomTypeOrAspect.keys().next());
+			} catch (JSONException e) {
+				throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+			}
+			List<Map<String, String>> resultsForCustomProperties = new ArrayList<Map<String, String>>();
+			for (int j = 0; j < jsonCustomProperties.length(); j++) {
+
+				// Property retrieve.
+				QName customProperty = null;
+				try {
+					customProperty = QName.resolveToQName(namespaceService, jsonCustomProperties.getString(j));
+				} catch (JSONException e) {
+					throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+				}
+
+				// Property extraction of value.
+				if (resultSetValues.containsKey(customProperty.toString())) {
+
+					// Property definition.
+					PropertyDefinition customPropertyDefinition = dictionaryService.getProperty(customProperty);
+
+					// Property name.
+					String customPropertyName = customProperty.toString();
+					if ((boolean) parameters.get(PARAMETER_NAMESPACEURI_COMPACTED)) {
+						customPropertyName = customProperty.toPrefixString(namespaceService);
+					}
+
+					// Property value.
+					String customPropertyValue = null;
+					if (customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.BOOLEAN)) {
+						customPropertyValue = ((Boolean) resultSetRow.getValue(customPropertyDefinition.getName())) ? "true" : "false";
+					}
+					else if (customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.DATE)) {
+						customPropertyValue = getDateAsString((Date) resultSetRow.getValue(customPropertyDefinition.getName()), DATE_FORMAT);
+						}
+					else if (customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.DATETIME)) {
+						customPropertyValue = getDateAsString((Date) resultSetRow.getValue(customPropertyDefinition.getName()), DATETIME_FORMAT);
+					}
+					else if (customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.INT) ||
+						customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.FLOAT) ||
+						customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.LONG) ||
+						customPropertyDefinition.getDataType().getName().isMatch(DataTypeDefinition.DOUBLE)) {
+						customPropertyValue = String.valueOf(resultSetRow.getValue(customPropertyDefinition.getName()));
+					}
+					else {
+						customPropertyValue = (String) resultSetRow.getValue(customPropertyDefinition.getName());
+					}
+					
+					Map<String, String> resultForCustomProperty = new HashMap<String, String>();
+					resultForCustomProperty.put("name",  customPropertyName);
+					resultForCustomProperty.put("value", customPropertyValue);
+
+					resultsForCustomProperties.add(resultForCustomProperty);
+				}
+			}
+
+			// Adding result.
+			if (!resultsForCustomProperties.isEmpty()) {
+
+				Map<String, Object> resultForCustomTypeOrAspect = new HashMap<String, Object>();
+				resultForCustomTypeOrAspect.put("name",       customTypeOrAspectName);
+				resultForCustomTypeOrAspect.put("properties", resultsForCustomProperties);
+
+				results.add(resultForCustomTypeOrAspect);
+			}
+
+		}
+
+		return results;
 	}
 
 	/**
@@ -212,30 +358,67 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws Exception 
+	 * @throws WrongFormatException 
 	 */
-	private static final Map<String, Object> getParameters(WebScriptRequest req) throws Exception {
+	private final void getParameters(WebScriptRequest req) throws WrongFormatException {
 
-		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters = new HashMap<String, Object>();
 
 		// BaseType parameter.
 		String baseTypeParameter = req.getParameter(PARAMETER_BASETYPE);
 		if (baseTypeParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
 		}
 		baseTypeParameter = baseTypeParameter.trim();
 		if (baseTypeParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
+		}
+
+		// Custom properties parameter.
+		String customPropertiesParameter = req.getParameter(PARAMETER_CUSTOM_PROPERTIES);
+		if (customPropertiesParameter == null) {
+			customPropertiesParameter = PARAMETER_CUSTOM_PROPERTIES_DEFAULT;
+		}
+		try {
+			customPropertiesParameter = URLDecoder.decode(customPropertiesParameter.trim(), "UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' impossible to decode.");
+		}
+		if (customPropertiesParameter.isEmpty()) {
+			customPropertiesParameter = PARAMETER_CUSTOM_PROPERTIES_DEFAULT;
+		}
+		JSONObject customPropertiesParameterValue = null;
+	    try {
+	    	customPropertiesParameterValue = new JSONObject(customPropertiesParameter);
+	    }
+	    catch (Exception e) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' with a wrong JSON format. " + e.getMessage());
+	    }
+		if (!customPropertiesParameterValue.has(PARAMETER_CUSTOM_PROPERTIES_TYPES)) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "'. ");
+		}
+		if (!customPropertiesParameterValue.has(PARAMETER_CUSTOM_PROPERTIES_ASPECTS)) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "'. ");
+		}
+		try {
+			customPropertiesParameterValue.getJSONArray(PARAMETER_CUSTOM_PROPERTIES_TYPES);
+		} catch (JSONException e) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "' is not an arrray. ");
+		}
+		try {
+			customPropertiesParameterValue.getJSONArray(PARAMETER_CUSTOM_PROPERTIES_ASPECTS);
+		} catch (JSONException e) {
+	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "' is not an arrray. ");
 		}
 
 		// Date parameter.
 		String dateParameter = req.getParameter(PARAMETER_DATE);
 		if (dateParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' not specified.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' not specified.");
 		}
 		dateParameter = dateParameter.trim();
 		if (dateParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
 		}
 		Date dateParameterValue = null;
 	    try {
@@ -252,11 +435,11 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		limitParameter = limitParameter.trim();
 		if (limitParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
 		}
 		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
-			throw new Exception("Out of range value '" + limitParameterValue + "' (admitted " + 0 + " to " + Integer.MAX_VALUE + ").");
+			throw new WrongFormatException("Parameter 'limitParameter' with value '" + limitParameterValue + "' when it should be bteween 0 and " + Integer.MAX_VALUE);			
 		}
 
 		// Skip parameter.
@@ -266,19 +449,30 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		skipParameter = skipParameter.trim();
 		if (skipParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
+			throw new WrongFormatException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
 		}
 		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
-			throw new Exception("Out of range value '" + skipParameterValue + "' (admitted " + 0 + " to " + Long.MAX_VALUE + ").");
+			throw new WrongFormatException("Parameter 'skipParameter' with value '" + skipParameterValue + "' when it should be bteween 0 and " + Long.MAX_VALUE);			
 		}
 
-		parameters.put(PARAMETER_BASETYPE, baseTypeParameter);
-		parameters.put(PARAMETER_DATE,     dateParameterValue);
-		parameters.put(PARAMETER_LIMIT,    limitParameterValue);
-		parameters.put(PARAMETER_SKIP,     skipParameterValue);
+		// Namespace URI compacted parameter.
+		String namespaceuriCompactedParameter = req.getParameter(PARAMETER_NAMESPACEURI_COMPACTED);
+		if (namespaceuriCompactedParameter == null) {
+			namespaceuriCompactedParameter = "" + PARAMETER_NAMESPACEURI_COMPACTED_DEFAULT;
+		}
+		namespaceuriCompactedParameter = namespaceuriCompactedParameter.trim();
+		if (namespaceuriCompactedParameter.isEmpty()) {
+			throw new WrongFormatException("Parameter '" + PARAMETER_NAMESPACEURI_COMPACTED + "' cannot be empty.");
+		}
+		Boolean namespaceuriCompactedParameterValue = Boolean.parseBoolean(namespaceuriCompactedParameter);
 
-		return parameters;
+		parameters.put(PARAMETER_BASETYPE,               baseTypeParameter);
+		parameters.put(PARAMETER_CUSTOM_PROPERTIES,      customPropertiesParameterValue);
+		parameters.put(PARAMETER_DATE,                   dateParameterValue);
+		parameters.put(PARAMETER_LIMIT,                  limitParameterValue);
+		parameters.put(PARAMETER_SKIP,                   skipParameterValue);
+		parameters.put(PARAMETER_NAMESPACEURI_COMPACTED, namespaceuriCompactedParameterValue);
 	}
 
 	/**
@@ -290,6 +484,10 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 */
 	private static final String getDateAsString(Date date, String format) {
 		return (new SimpleDateFormat(format)).format(date);
+	}
+
+	public void setDictionaryService(DictionaryService dictionaryService) {
+		this.dictionaryService = dictionaryService;
 	}
 
 	public void setNodeService(NodeService nodeService) {
