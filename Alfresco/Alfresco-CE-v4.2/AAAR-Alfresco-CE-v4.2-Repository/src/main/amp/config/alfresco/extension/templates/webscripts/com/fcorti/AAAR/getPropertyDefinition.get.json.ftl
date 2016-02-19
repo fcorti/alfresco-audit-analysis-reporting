@@ -13,4 +13,5 @@
   "classIsAspect":"${result["classIsAspect"]}",
   "classIsContentSubtype":"${result["classIsContentSubtype"]}",
   "classIsFolderSubtype":"${result["classIsFolderSubtype"]}"
- }<#if result_has_next>,</#if></#list>],
+ }<#if result_has_next>,</#if></#list>]
+}

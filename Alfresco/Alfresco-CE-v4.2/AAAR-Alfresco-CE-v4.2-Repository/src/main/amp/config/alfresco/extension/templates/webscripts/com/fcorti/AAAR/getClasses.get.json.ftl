@@ -6,4 +6,5 @@
   "namespaceuri":"${result["namespaceuri"]}",
   "prefix":"${result["prefix"]}",
   "name":"${result["name"]}"
- }<#if result_has_next>,</#if></#list>],
+ }<#if result_has_next>,</#if></#list>]
+}
