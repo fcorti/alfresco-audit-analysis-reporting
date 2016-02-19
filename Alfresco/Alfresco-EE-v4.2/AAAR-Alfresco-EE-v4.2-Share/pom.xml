@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fcorti</groupId>
     <artifactId>AAAR-Alfresco-EE-v4.2-Share</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <name>AAAR-Alfresco-EE-v4.2-Share AMP project</name>
     <packaging>amp</packaging>
     <description>Manages the lifecycle of the A.A.A.R. Addon Share AMP (Alfresco Module Package) for Alfresco EE v4.2.</description>
