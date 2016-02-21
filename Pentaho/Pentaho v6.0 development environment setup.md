@@ -47,7 +47,7 @@ In a terminal, execute the command below.
 
 If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
 
-    export JAVA_HOME=export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+    xport JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 Save it and exit (`CTRL+X` and `Y`).
 
