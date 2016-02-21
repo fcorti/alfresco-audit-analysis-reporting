@@ -84,7 +84,7 @@
     <repositories>
         <repository>
             <id>alfresco-private-repository</id>
-            <url>https://login:password@artifacts.alfresco.com/nexus/content/groups/private</url>
+            <url>https://login:password:Alfresco123@artifacts.alfresco.com/nexus/content/groups/private</url>
         </repository>
     </repositories>
 </project>
