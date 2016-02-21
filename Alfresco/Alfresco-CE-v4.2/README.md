@@ -26,6 +26,8 @@ With result:
 
     /opt/java/jdk1.7.0_25
 
+And:
+
     java -version
 
 With result:
