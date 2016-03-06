@@ -99,7 +99,7 @@ If **Git** is not installed, proceed to get it using the commands below.
 
 A result similar to this will shown.
 
-    git version 1.9.1
+    git version 2.5.0
 
 ## Cloning the project
 
