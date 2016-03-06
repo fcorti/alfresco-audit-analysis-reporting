@@ -23,7 +23,7 @@ In the paragraphs below is described how to define our environment based on this
 
 Spring Loaded is a Java agent (represented by a JAR file) that enables class reloading in a running JVM.
 Download the Spring Loaded JAR from [here](https://github.com/spring-projects/spring-loaded) and copy the JAR to the `~` folder (home).
-In this case, we copy the file into `~/springloaded-1.2.4.RELEASE.jar`.
+In this case, we copy the file into `~/springloaded-1.2.5.RELEASE.jar`.
 
 ## Installing and configuring Java 7 or 8
 
@@ -74,7 +74,7 @@ In a terminal, execute the command below.
 If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
 
     export M2_HOME=/opt/maven
-    export MAVEN_OPTS="-Xms1024m -Xmx1G -javaagent:/home/<user>/springloaded-1.2.3.RELEASE.jar -noverify"
+    export MAVEN_OPTS="-Xms1024m -Xmx1G -javaagent:/home/<user>/springloaded-1.2.5.RELEASE.jar -noverify"
 
 Save it and exit (`CTRL+X` and `Y`).
 
