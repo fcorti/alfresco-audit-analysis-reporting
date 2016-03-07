@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Get nodes modified after a date time</shortname>
+  <description>Get nodes modified after a date time.</description>
+  <authentication>user</authentication>
+  <url>/AAAR/getNodesModifiedAfter</url>
+  <format default="json">extension</format>
+  <family>AAAR</family>
+</webscript>
