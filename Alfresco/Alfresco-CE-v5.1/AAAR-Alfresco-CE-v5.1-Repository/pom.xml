@@ -86,6 +86,7 @@
         <!--
             Brings in the extra Enterprise specific repository classes,
             if the 'enterprise' profile has been activated, needs to be activated manually.
+        -->
         <profile>
             <id>enterprise</id>
             <dependencies>
@@ -97,6 +98,5 @@
                 </dependency>
             </dependencies>
         </profile>
-            -->
     </profiles>
 </project>
