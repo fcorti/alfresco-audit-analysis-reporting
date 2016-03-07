@@ -1,7 +1,7 @@
 A.A.A.R. - Alfresco CE v5.0.d
 ===
 
-The latest Alfresco 5.0.d version is released with the JDK Version 1.7.0 u67.
+The latest Alfresco 5.0.d version is released with the JDK Version 1.8.0 u31.
 The [official release note](https://wiki.alfresco.com/wiki/Alfresco_Community_5.0.d_Release_Notes) contains a full description of the requested environment.
 
 Below the commands to setup an Ubuntu platform to compile the projects.
