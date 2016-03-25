@@ -46,6 +46,7 @@ import org.alfresco.util.ISO9075;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.extensions.surf.util.URLEncoder;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
@@ -284,9 +285,9 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 						customPropertyValue = String.valueOf(resultSetRow.getValue(customPropertyDefinition.getName()));
 					}
 					else {
-						customPropertyValue = (String) resultSetRow.getValue(customPropertyDefinition.getName());
+						customPropertyValue = ((String) resultSetRow.getValue(customPropertyDefinition.getName())).replace("\\", "\\\\");
 					}
-					
+
 					Map<String, String> resultForCustomProperty = new HashMap<String, String>();
 					resultForCustomProperty.put("name",  customPropertyName);
 					resultForCustomProperty.put("value", customPropertyValue);
@@ -483,7 +484,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * @return
 	 */
 	private static final String getDateAsString(Date date, String format) {
-		return (new SimpleDateFormat(format)).format(date);
+		return (date == null) ? "" : (new SimpleDateFormat(format)).format(date);
 	}
 
 	public void setDictionaryService(DictionaryService dictionaryService) {

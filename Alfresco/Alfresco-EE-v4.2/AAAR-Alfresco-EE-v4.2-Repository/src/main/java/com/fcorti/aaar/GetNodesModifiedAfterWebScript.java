@@ -284,7 +284,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 						customPropertyValue = String.valueOf(resultSetRow.getValue(customPropertyDefinition.getName()));
 					}
 					else {
-						customPropertyValue = (String) resultSetRow.getValue(customPropertyDefinition.getName());
+						customPropertyValue = ((String) resultSetRow.getValue(customPropertyDefinition.getName())).replace("\\", "\\\\");
 					}
 					
 					Map<String, String> resultForCustomProperty = new HashMap<String, String>();
@@ -483,7 +483,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * @return
 	 */
 	private static final String getDateAsString(Date date, String format) {
-		return (new SimpleDateFormat(format)).format(date);
+		return (date == null) ? "" : (new SimpleDateFormat(format)).format(date);
 	}
 
 	public void setDictionaryService(DictionaryService dictionaryService) {
