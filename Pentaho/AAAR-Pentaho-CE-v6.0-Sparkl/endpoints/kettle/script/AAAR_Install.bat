@@ -1,7 +1,7 @@
 @echo off
 
 REM Settings
-set VERSION='4.2'
+set VERSION='4.3'
 set CURRENT_PATH=%cd%
 set ENDPOINTS_PATH=%CURRENT_PATH%\..
 set LOGS_PATH=%ENDPOINTS_PATH%\logs
@@ -20,7 +20,7 @@ echo.
 echo A.A.A.R. - Alfresco Audit Analysis and Reporting
 echo Installation procedure version %VERSION%.
 echo Author: Francesco Corti (all rights reserved)
-echo Date: 21 February 2016
+echo Date: 01 May 2016
 echo.
 echo Disclaimer:
 echo We can't be responsible for any damage done to your system,

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings
-VERSION='4.2'
+VERSION='4.3'
 CURRENT_PATH="$PWD"
 ENDPOINTS_PATH="$PWD/.."
 LOGS_PATH="$ENDPOINTS_PATH/logs"
@@ -18,7 +18,7 @@ echo
 echo A.A.A.R. - Alfresco Audit Analysis and Reporting
 echo Creation procedure version $VERSION.
 echo "Author: Francesco Corti (all rights reserved)"
-echo "Date: 21 February 2016"
+echo "Date: 01 May 2016"
 echo
 echo "Disclaimer:"
 echo "We can't be responsible for any damage done to your system,"

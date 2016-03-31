@@ -1,7 +1,7 @@
 @echo off
 
 REM Settings
-set VERSION='4.2'
+set VERSION='4.3'
 set CURRENT_PATH=%cd%
 set ENDPOINTS_PATH=%CURRENT_PATH%\..
 set LOGS_PATH=%ENDPOINTS_PATH%\logs
@@ -12,6 +12,7 @@ set GET_AUDIT=true
 set GET_REPOSITORY=true
 set GET_WORKFLOWS=true
 set GET_PARENTS=true
+set CLEAN_NODES_DELETED=false
 set KETTLE_PATH=/opt/data-integration
 
 if "%1"=="silent" GOTO SILENT_1
@@ -20,7 +21,7 @@ if "%1"=="silent" GOTO SILENT_1
     echo A.A.A.R. - Alfresco Audit Analysis and Reporting
     echo Import procedure version %VERSION%
     echo Author: Francesco Corti (all rights reserved)
-    echo Date: 21 February 2016
+    echo Date: 01 May 2016
     echo Documentation and tips: http://fcorti.com.
     echo.
     echo Disclaimer:
@@ -32,7 +33,7 @@ if "%1"=="silent" GOTO SILENT_1
 if "%1"=="silent" GOTO SILENT_2
     echo.
     echo You are going to execute this command:
-    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
+    echo Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /param:clean_nodes_deleted="%CLEAN_NODES_DELETED%" /log="%LOG_PATH%" /level:Basic
     echo.
     pause
     echo.
@@ -40,7 +41,7 @@ if "%1"=="silent" GOTO SILENT_2
 
 cd "%KETTLE_PATH%"
 
-Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /log="%LOG_PATH%" /level:Basic
+Kitchen.bat /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit="%GET_AUDIT%" /param:get_nodes="%GET_REPOSITORY%" /param:get_workflows="%GET_WORKFLOWS%" /param:clean_nodes_deleted="%CLEAN_NODES_DELETED%" /log="%LOG_PATH%" /level:Basic
 
 cd "%CURRENT_PATH%"
 

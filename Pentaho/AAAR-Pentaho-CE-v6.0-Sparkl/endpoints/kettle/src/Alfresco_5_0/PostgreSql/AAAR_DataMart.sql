@@ -1543,10 +1543,6 @@ ALTER TABLE ONLY "stg_rest_documents"
 ALTER TABLE "stg_rest_documents"
   ADD CONSTRAINT "fk_stg_rest_documents_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
 
-
-ALTER TABLE ONLY "stg_rest_documents_custom_types"
-    ADD CONSTRAINT "uni_document_id_custom_types" UNIQUE ("alfresco_id", "node-dbid");
-
 ALTER TABLE "stg_rest_documents_custom_types"
   ADD CONSTRAINT "fk_stg_rest_documents_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
 
@@ -1564,11 +1560,6 @@ ALTER TABLE ONLY "stg_rest_folders"
 
 ALTER TABLE "stg_rest_folders"
   ADD CONSTRAINT "fk_stg_rest_folders_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
-
-
-
-ALTER TABLE ONLY "stg_rest_folders_custom_types"
-    ADD CONSTRAINT "uni_folders_id_custom_types" UNIQUE ("alfresco_id", "node-dbid");
 
 ALTER TABLE "stg_rest_folders_custom_types"
   ADD CONSTRAINT "fk_stg_rest_folders_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");

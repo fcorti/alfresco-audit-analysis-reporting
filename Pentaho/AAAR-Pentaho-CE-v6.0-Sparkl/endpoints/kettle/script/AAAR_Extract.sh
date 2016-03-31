@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings
-VERSION='4.2'
+VERSION='4.3'
 CURRENT_PATH="$PWD"
 ENDPOINTS_PATH="$PWD/.."
 LOGS_PATH="$ENDPOINTS_PATH/logs"
@@ -11,6 +11,7 @@ LOG_PATH="$LOGS_PATH/AAAR.log"
 GET_AUDIT="true"
 GET_REPOSITORY="true"
 GET_WORKFLOWS="true"
+CLEAN_NODES_DELETED="false"
 KETTLE_PATH="/opt/data-integration"
 
 if [ "$1" != "silent" ]; then
@@ -20,7 +21,7 @@ if [ "$1" != "silent" ]; then
     echo A.A.A.R. - Alfresco Audit Analysis and Reporting
     echo Import procedure version $VERSION.
     echo "Author: Francesco Corti (all rights reserved)"
-    echo "Date: 21 February 2016"
+    echo "Date: 01 May 2016"
     echo "Documentation and tips: http://fcorti.com."
     echo
     echo "Disclaimer:"
@@ -31,7 +32,7 @@ fi
 if [ "$1" != "silent" ]; then
     echo
     echo "You are going to execute this command:"
-    echo './kitchen.sh /rep:"AAAR_Kettle" /job:"'Get all'" /dir:/Alfresco /user:admin /pass:admin /param:get_audit='$GET_AUDIT' /param:get_nodes='$GET_REPOSITORY' /param:get_workflows='$GET_WORKFLOWS' /log="'$LOG_PATH'" /level:Basic'
+    echo './kitchen.sh /rep:"AAAR_Kettle" /job:"'Get all'" /dir:/Alfresco /user:admin /pass:admin /param:get_audit='$GET_AUDIT' /param:get_nodes='$GET_REPOSITORY' /param:get_workflows='$GET_WORKFLOWS' /param:clean_nodes_deleted='$CLEAN_NODES_DELETED' /log="'$LOG_PATH'" /level:Basic'
     echo
     read -e -p "Press <enter> to start import."
     echo
@@ -39,7 +40,7 @@ fi
 
 cd $KETTLE_PATH
 
-./kitchen.sh /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit=$GET_AUDIT /param:get_nodes=$GET_REPOSITORY /param:get_workflows=$GET_WORKFLOWS /log="$LOG_PATH" /level:Basic
+./kitchen.sh /rep:"AAAR_Kettle" /job:"Get all" /dir:/Alfresco /user:admin /pass:admin /param:get_audit=$GET_AUDIT /param:get_nodes=$GET_REPOSITORY /param:get_workflows=$GET_WORKFLOWS /param:clean_nodes_deleted=$CLEAN_NODES_DELETED /log="$LOG_PATH" /level:Basic
 
 if [ "$1" != "silent" ]; then
     echo
