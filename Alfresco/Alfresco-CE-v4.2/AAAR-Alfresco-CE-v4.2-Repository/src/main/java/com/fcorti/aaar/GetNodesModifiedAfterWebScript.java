@@ -36,6 +36,7 @@ import org.alfresco.service.cmr.repository.ContentData;
 import org.alfresco.service.cmr.repository.NodeService;
 import org.alfresco.service.cmr.repository.StoreRef;
 import org.alfresco.service.cmr.search.LimitBy;
+import org.alfresco.service.cmr.search.PermissionEvaluationMode;
 import org.alfresco.service.cmr.search.ResultSet;
 import org.alfresco.service.cmr.search.ResultSetRow;
 import org.alfresco.service.cmr.search.SearchParameters;
@@ -46,7 +47,6 @@ import org.alfresco.util.ISO9075;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.extensions.surf.util.URLEncoder;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
@@ -323,13 +323,14 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 		searchParameters.addStore(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
 		searchParameters.setLanguage(SearchService.LANGUAGE_FTS_ALFRESCO);
+		searchParameters.setPermissionEvaluation(PermissionEvaluationMode.NONE);
+		searchParameters.setUseInMemorySort(false);
+		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
+		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT));
 		searchParameters.setQuery(getQuery(parameters));
 		searchParameters.setSkipCount((int) parameters.get(PARAMETER_SKIP));
 		searchParameters.addSort("@" + ContentModel.PROP_MODIFIED, true);
 		searchParameters.addSort("@" + ContentModel.PROP_NODE_DBID, true);
-		searchParameters.setUseInMemorySort(false);
-		searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
-		searchParameters.setLimit((int) parameters.get(PARAMETER_LIMIT));
 
 		return searchParameters;
 	}
@@ -349,7 +350,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 
 		// Date filter.
 		query += "AND ";
-		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"" + getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT) + "T00:00:00.000Z\" TO MAX]) ";
+		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"" + getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT) + "\" TO MAX]) ";
 
 		return query;
 	}
