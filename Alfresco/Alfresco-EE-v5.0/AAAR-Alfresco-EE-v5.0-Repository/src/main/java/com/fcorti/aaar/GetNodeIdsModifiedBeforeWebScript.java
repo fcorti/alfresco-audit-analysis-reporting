@@ -95,9 +95,15 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		resultSet.close();
 
 		// Parameter values.
-		parameters.replace(PARAMETER_DATE,  getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT));
-		parameters.replace(PARAMETER_LIMIT, String.valueOf(parameters.get(PARAMETER_LIMIT)));
-		parameters.replace(PARAMETER_SKIP,  String.valueOf(parameters.get(PARAMETER_SKIP)));
+		String parameterAsString = getDateAsString((Date) parameters.get(PARAMETER_DATE), DATE_FORMAT);
+		parameters.remove(PARAMETER_DATE);
+		parameters.put(PARAMETER_DATE, parameterAsString);
+		parameterAsString = String.valueOf(parameters.get(PARAMETER_LIMIT));
+		parameters.remove(PARAMETER_LIMIT);
+		parameters.put(PARAMETER_LIMIT, parameterAsString);
+		parameterAsString = String.valueOf(parameters.get(PARAMETER_SKIP));
+		parameters.remove(PARAMETER_SKIP);
+		parameters.put(PARAMETER_SKIP, parameterAsString);
 
 		// New parameters values.
 		Map<String, Object> newParameters = new HashMap<String, Object>();
