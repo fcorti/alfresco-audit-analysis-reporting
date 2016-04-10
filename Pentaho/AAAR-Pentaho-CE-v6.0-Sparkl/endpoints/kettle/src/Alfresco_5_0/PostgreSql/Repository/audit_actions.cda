@@ -20,23 +20,22 @@
          <Jndi>AAAR_DataMart</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="alfrescoInstallationsDatasource"
+   <DataAccess access="public" connection="alfrescoInstallationsDatasource"
                id="alfrescoInstallationsDatasource"
                type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query>select
+      <Query><![CDATA[select
  i.id as installationId,
  i.desc as installationDesc
 from
  dm_dim_alfresco i
 order by
- i.desc asc</Query>
+ i.desc asc]]></Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerDay"
-               id="actionsPerDay"
-               type="sql">
+   <DataAccess access="public" connection="actionsPerDay" id="actionsPerDay" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -49,14 +48,14 @@ order by
          <Parameter default="" name="typeToParam" type="String"/>
          <Parameter default="" name="userParam" type="String"/>
       </Parameters>
-      <Query>select
+      <Query><![CDATA[select
  d.id as date_id,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
  join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}
- join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
- join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
+ join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0
+ join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
  join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})
  join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac."desc" between ${typeFromParam} and ${typeToParam})
@@ -66,11 +65,10 @@ where
 group by
  d.id
 order by
- d.id asc</Query>
+ d.id asc]]></Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerHour"
-               id="actionsPerHour"
-               type="sql">
+   <DataAccess access="public" connection="actionsPerHour" id="actionsPerHour" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -83,7 +81,7 @@ order by
          <Parameter default="" name="typeToParam" type="String"/>
          <Parameter default="" name="userParam" type="String"/>
       </Parameters>
-      <Query>select
+      <Query><![CDATA[select
  h."desc" as hour_desc,
  coalesce(sum(a.num),0) as actions
 from
@@ -93,16 +91,15 @@ from
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
  join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})
  join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac."desc" between ${typeFromParam} and ${typeToParam})
- right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
- join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
+ right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0
+ join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}
 group by
  h."desc"
 order by
- h."desc" asc</Query>
+ h."desc" asc]]></Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerUser"
-               id="actionsPerUser"
-               type="sql">
+   <DataAccess access="public" connection="actionsPerUser" id="actionsPerUser" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -115,26 +112,25 @@ order by
          <Parameter default="" name="typeToParam" type="String"/>
          <Parameter default="" name="userParam" type="String"/>
       </Parameters>
-      <Query>select
+      <Query><![CDATA[select
  u."desc" as user,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
  join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
- join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
- join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
+ join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0
+ join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
  join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})
  join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac."desc" between ${typeFromParam} and ${typeToParam})
 group by
  u."desc"
 order by
- coalesce(sum(a.num),0) desc</Query>
+ coalesce(sum(a.num),0) desc]]></Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerType"
-               id="actionsPerType"
-               type="sql">
+   <DataAccess access="public" connection="actionsPerType" id="actionsPerType" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -147,26 +143,25 @@ order by
          <Parameter default="" name="typeToParam" type="String"/>
          <Parameter default="" name="userParam" type="String"/>
       </Parameters>
-      <Query>select
+      <Query><![CDATA[select
  ac."desc" as user,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
  join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
- join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
- join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
+ join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0
+ join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}
  join dm_dim_users u on a.user_id = u.id and ${userParam} in ('', u."desc")
  join dm_dim_paths p on a.path_id = p.id and ${pathParam} in ('', p.path)
  join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac."desc" between ${typeFromParam} and ${typeToParam})
 group by
  ac."desc"
 order by
- ac."desc" asc</Query>
+ ac."desc" asc]]></Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="actionsPerPath"
-               id="actionsPerPath"
-               type="sql">
+   <DataAccess access="public" connection="actionsPerPath" id="actionsPerPath" type="sql">
+      <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
@@ -179,21 +174,21 @@ order by
          <Parameter default="" name="typeToParam" type="String"/>
          <Parameter default="" name="userParam" type="String"/>
       </Parameters>
-      <Query>select
+      <Query><![CDATA[select
  p.path as path,
  coalesce(sum(a.num),0) as actions
 from
  dm_fact_actions a 
  join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}
  join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')
- join dm_dim_minutes m on a.minute_id = m.id and a.minute_id &gt;= 0
- join dm_dim_hours h on m.hour_id = h.id and h.id &gt;= 0 and h.id between ${hourFromParam} and ${hourToParam}
+ join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0
+ join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}
  join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u."desc"=${userParam})
  join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})
  join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac."desc" between ${typeFromParam} and ${typeToParam})
 group by
  p.path
 order by
- coalesce(sum(a.num),0) desc</Query>
+ coalesce(sum(a.num),0) desc]]></Query>
    </DataAccess>
 </CDADescriptor>
