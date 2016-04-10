@@ -41,8 +41,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -69,8 +69,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsDateParameter",
@@ -97,8 +97,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsDateParameter",
@@ -130,8 +130,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -163,8 +163,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -196,8 +196,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -229,8 +229,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -262,8 +262,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -295,8 +295,8 @@
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
     "type": "ComponentsParameter",
@@ -1216,8 +1216,8 @@
      },
      {
       "name": "baseAxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "baseAxisGrid",
@@ -1646,8 +1646,8 @@
      },
      {
       "name": "ortho2AxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "ortho2AxisGrid",
@@ -1796,8 +1796,8 @@
      },
      {
       "name": "orthoAxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "orthoAxisGrid",
@@ -2031,8 +2031,8 @@
      },
      {
       "name": "readers",
-      "value": "[]",
-      "type": "Array"
+      "type": "Array",
+      "value": "[]"
      },
      {
       "name": "renderCallback",
@@ -2041,8 +2041,8 @@
      },
      {
       "name": "renderedCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "selectable",
@@ -2331,8 +2331,8 @@
      },
      {
       "name": "valuesNormalized",
-      "value": false,
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "valuesOptimizeLegibility",
@@ -2520,8 +2520,8 @@
      },
      {
       "name": "baseAxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "baseAxisGrid",
@@ -2950,8 +2950,8 @@
      },
      {
       "name": "ortho2AxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "ortho2AxisGrid",
@@ -3100,8 +3100,8 @@
      },
      {
       "name": "orthoAxisFont",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "orthoAxisGrid",
@@ -3335,8 +3335,8 @@
      },
      {
       "name": "readers",
-      "value": "[]",
-      "type": "Array"
+      "type": "Array",
+      "value": "[]"
      },
      {
       "name": "renderCallback",
@@ -3345,8 +3345,8 @@
      },
      {
       "name": "renderedCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "selectable",
@@ -3635,8 +3635,8 @@
      },
      {
       "name": "valuesNormalized",
-      "value": false,
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "valuesOptimizeLegibility",
@@ -4074,8 +4074,8 @@
      },
      {
       "name": "readers",
-      "value": "[]",
-      "type": "Array"
+      "type": "Array",
+      "value": "[]"
      },
      {
       "name": "renderCallback",
@@ -4084,8 +4084,8 @@
      },
      {
       "name": "renderedCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "selectable",
@@ -4398,8 +4398,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
@@ -4440,7 +4440,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.\"desc\"=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.\"desc\" between ${typeFromParam} and ${typeToParam})\n right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n d.id\norder by\n d.id asc"
+      "value": "select\n d.id as date_id,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.`desc`=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.`desc` between ${typeFromParam} and ${typeToParam})\n right join dm_dim_dates d on a.date_id = d.id\nwhere\n d.id between str_to_date(${dtFromParam},'YYYY-MM-DD') and str_to_date(${dtToParam},'YYYY-MM-DD')\ngroup by\n d.id\norder by\n d.id asc"
      },
      {
       "name": "parameters",
@@ -4469,8 +4469,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
@@ -4511,7 +4511,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select\n h.\"desc\" as hour_desc,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.\"desc\"=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.\"desc\" between ${typeFromParam} and ${typeToParam})\n right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\ngroup by\n h.\"desc\"\norder by\n h.\"desc\" asc"
+      "value": "select\n h.`desc` as hour_desc,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'YYYY-MM-DD') and str_to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.`desc`=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.`desc` between ${typeFromParam} and ${typeToParam})\n right join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\ngroup by\n h.`desc`\norder by\n h.`desc` asc"
      },
      {
       "name": "parameters",
@@ -4540,8 +4540,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
@@ -4582,7 +4582,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select\n u.\"desc\" as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.\"desc\"=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.\"desc\" between ${typeFromParam} and ${typeToParam})\ngroup by\n u.\"desc\"\norder by\n coalesce(sum(a.num),0) desc"
+      "value": "select\n u.`desc` as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'YYYY-MM-DD') and str_to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.`desc`=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.`desc` between ${typeFromParam} and ${typeToParam})\ngroup by\n u.`desc`\norder by\n coalesce(sum(a.num),0) desc"
      },
      {
       "name": "parameters",
@@ -4611,8 +4611,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
@@ -4653,7 +4653,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select\n ac.\"desc\" as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ${userParam} in ('', u.\"desc\")\n join dm_dim_paths p on a.path_id = p.id and ${pathParam} in ('', p.path)\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.\"desc\" between ${typeFromParam} and ${typeToParam})\ngroup by\n ac.\"desc\"\norder by\n ac.\"desc\" asc"
+      "value": "select\n ac.`desc` as user,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'YYYY-MM-DD') and str_to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ${userParam} in ('', u.`desc`)\n join dm_dim_paths p on a.path_id = p.id and ${pathParam} in ('', p.path)\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.`desc` between ${typeFromParam} and ${typeToParam})\ngroup by\n ac.`desc`\norder by\n ac.`desc` asc"
      },
      {
       "name": "parameters",
@@ -4682,8 +4682,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
@@ -4724,7 +4724,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select\n p.path as path,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between to_date(${dtFromParam},'YYYY-MM-DD') and to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.\"desc\"=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.\"desc\" between ${typeFromParam} and ${typeToParam})\ngroup by\n p.path\norder by\n coalesce(sum(a.num),0) desc"
+      "value": "select\n p.path as path,\n coalesce(sum(a.num),0) as actions\nfrom\n dm_fact_actions a \n join dm_dim_alfresco i on i.id = a.alfresco_id and i.id = ${alfrescoInstallationParam}\n join dm_dim_dates d on a.date_id = d.id and d.id between str_to_date(${dtFromParam},'YYYY-MM-DD') and str_to_date(${dtToParam},'YYYY-MM-DD')\n join dm_dim_minutes m on a.minute_id = m.id and a.minute_id >= 0\n join dm_dim_hours h on m.hour_id = h.id and h.id >= 0 and h.id between ${hourFromParam} and ${hourToParam}\n join dm_dim_users u on a.user_id = u.id and ('' = ${userParam} or u.`desc`=${userParam})\n join dm_dim_paths p on a.path_id = p.id and ('' = ${pathParam} or p.path=${pathParam})\n join dm_dim_actions ac on a.action_id = ac.id and ('' = ${typeFromParam} or ac.`desc` between ${typeFromParam} and ${typeToParam})\ngroup by\n p.path\norder by\n coalesce(sum(a.num),0) desc"
      },
      {
       "name": "parameters",
@@ -4753,8 +4753,8 @@
      },
      {
       "name": "cacheKeys",
-      "value": "[]",
-      "type": "CacheKeysValues"
+      "type": "CacheKeysValues",
+      "value": "[]"
      },
      {
       "name": "cacheDuration",
