@@ -1,4 +1,4 @@
-A.A.A.R. - Pentaho v6.0, v6.1 Sparkl Application
+A.A.A.R. - Pentaho v6.0, v6.1 App builder Application
 ===
 
 This project develops a Pentaho sparkl application to be released into an installation of the Pentaho BA Server.
