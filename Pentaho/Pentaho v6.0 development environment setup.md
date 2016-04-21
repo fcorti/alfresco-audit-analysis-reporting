@@ -1,15 +1,15 @@
-A.A.A.R. - Pentaho Sparkl Application - Pentaho v6.0
+A.A.A.R. - Pentaho Sparkl Application - Pentaho v6.0, v6.1
 ===
 
-In this documentation is shared the setup of the development environment with Pentaho v6.0.
+In this documentation is shared the setup of the development environment with Pentaho v6.0, v6.1.
 The setup is useful to the projects contained in the A.A.A.R. repository and it is not written with the generic intent to discuss how to develop into Pentaho.
 
 For the official and complete documentation, please refer to the [Pentaho web page](http://www.pentaho.com).
 
 ## Target
 
-As detailed by the Company, **Pentaho v6.0** uses Java 8.
-In this tutorial we are going to work on a **Ubuntu 14.04.02 LTS** distribution of Linux, supposing you are working with the bash shell.
+As detailed by the Company, **Pentaho v6.0+** uses Java 8.
+In this tutorial we are going to work on a **Ubuntu 15.04** distribution of Linux, supposing you are working with the bash shell.
 
 Before starting to work, please remember to execute the commands below.
 
@@ -20,7 +20,7 @@ In the paragraphs below is described how to define our environment based on this
 
 ## Installing and configuring Java 8
 
-Starting from a vanilla installation of **Ubuntu 14.04.02 LTS** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html).
+Starting from a vanilla installation of **Ubuntu 15.04** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html).
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
