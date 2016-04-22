@@ -7,6 +7,8 @@ For further details on how to setup the development environment, please refer to
 
 [Pentaho v6.0, v6.1](Pentaho v6 development environment setup.md)
 
+Below, for historical reference, the old versions and documentation.
+
 [Pentaho v5.3, v5.4](Pentaho v5.3, v5.4 development environment setup.md)
 
 For more informations on the solution:
