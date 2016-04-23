@@ -20,7 +20,7 @@ In the paragraphs below is described how to define our environment based on this
 
 ## Installing and configuring Java 8
 
-Starting from a vanilla installation of **Ubuntu 15.04** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html).
+Starting from a vanilla installation of **Ubuntu 16.04** let's install **Java 8**, following [this tutorial](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html).
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
@@ -89,7 +89,7 @@ Together with PostgreSql we are going to install also PgAdmin3 to administer it.
     \password postgres
     // Digit 'postgres' (two times) to setup the postgres's password.
     \q
-    sudo nano /etc/postgresql/9.4/main/pg_hba.conf
+    sudo nano /etc/postgresql/9.5/main/pg_hba.conf
 
 Change the line described below, setting `peer` to `md5`.
 
