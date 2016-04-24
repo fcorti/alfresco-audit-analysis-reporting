@@ -1,3 +1,6 @@
+CREATE DATABASE  IF NOT EXISTS `AAAR_Kettle` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `AAAR_Kettle`;
+
 -- MySQL dump 10.13  Distrib 5.6.30, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: AAAR_Kettle
