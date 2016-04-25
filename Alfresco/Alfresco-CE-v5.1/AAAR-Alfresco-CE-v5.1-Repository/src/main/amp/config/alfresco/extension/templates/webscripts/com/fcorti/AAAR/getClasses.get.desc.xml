@@ -1,8 +1,0 @@
-<webscript>
-  <shortname>Get the types/aspects in the model.</shortname>
-  <description>Get the types/aspects in the model.</description>
-  <authentication>user</authentication>
-  <url>/AAAR/getClasses</url>
-  <format default="json">extension</format>
-  <family>AAAR</family>
-</webscript>

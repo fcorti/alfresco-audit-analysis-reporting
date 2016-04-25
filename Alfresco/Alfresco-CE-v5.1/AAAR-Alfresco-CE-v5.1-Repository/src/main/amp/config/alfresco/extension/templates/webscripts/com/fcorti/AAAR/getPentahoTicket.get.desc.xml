@@ -1,9 +1,0 @@
-<webscript>
-  <shortname>Get Pentaho ticket</shortname>
-  <description>Provides a Pentaho ticket for a valid session.</description>
-  <authentication>user</authentication>
-  <url>/AAAR/getPentahoTicket</url>
-  <url>/AAAR/Pentaho/getTicket</url>
-  <format default="json">extension</format>
-  <family>AAAR</family>
-</webscript>

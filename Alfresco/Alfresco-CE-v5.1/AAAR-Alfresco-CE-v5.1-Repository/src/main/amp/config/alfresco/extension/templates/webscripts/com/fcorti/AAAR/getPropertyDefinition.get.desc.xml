@@ -1,8 +1,0 @@
-<webscript>
-  <shortname>Get the definition of a property of a type/aspect</shortname>
-  <description>Get the definition of a property of a type/aspect.</description>
-  <authentication>user</authentication>
-  <url>/AAAR/getPropertyDefinition</url>
-  <format default="json">extension</format>
-  <family>AAAR</family>
-</webscript>
