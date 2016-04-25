@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fcorti</groupId>
     <artifactId>AAAR-Alfresco-CE-v4.2-Repository</artifactId>
-    <version>1.3.2-SNAPSHOT</version>
+    <version>4.3</version>
     <name>AAAR-Alfresco-CE-v4.2-Repository AMP project</name>
     <packaging>amp</packaging>
     <description>Manages the lifecycle of the A.A.A.R. Addon Repository AMP (Alfresco Module Package) for Alfresco CE v4.2.</description>
