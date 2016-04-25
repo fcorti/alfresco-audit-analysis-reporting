@@ -1,0 +1,26 @@
+#
+# Alfresco version information
+#
+
+# Version label
+
+version.major=5
+version.minor=1
+version.revision=0
+version.label=
+
+# Edition label
+
+version.edition=Community
+
+# SCM Revision number
+
+version.scmrevision=https://svn.alfresco.com/repos/alfresco-enterprise/alfresco/TAGS/COMMUNITY/5.1.e-r122274
+
+# Build number
+
+version.build=r122274-b3
+
+# Schema number
+
+version.schema=9016

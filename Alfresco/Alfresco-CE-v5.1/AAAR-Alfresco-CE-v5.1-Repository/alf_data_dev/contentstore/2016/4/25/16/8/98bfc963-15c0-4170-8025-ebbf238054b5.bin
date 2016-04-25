@@ -1,0 +1,244 @@
+{
+	"name" : "Virtual Folders Example",
+	"nodes" : [{
+			"id" : "1",
+			"name" : "My content",
+			"description" : "My files in this repository",
+			"nodes" : [{
+					"id" : "11",
+					"name" : "All site content",
+					"description" : "My files in all sites by file & media-type - no upload",
+					"nodes" : [{
+							"id" : "111",
+							"name" : "Documents",
+							"description" : "My documents by mimetype",
+							"nodes" : [{
+									"id" : "1111",
+									"name" : "Office Documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND (=cm:content.mimetype:application/ms* OR =cm:content.mimetype:application/vnd.ms* OR =cm:content.mimetype:application/vnd.openxmlformats*) AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1112",
+									"name" : "PDF Documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND =cm:content.mimetype:application/pdf AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1113",
+									"name" : "Other documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND =cm:content.mimetype:application/* AND NOT (=cm:content.mimetype:application/ms* OR =cm:content.mimetype:application/vnd.ms* OR =cm:content.mimetype:application/vnd.openxmlformats* OR =cm:content.mimetype:application/pdf) AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}
+							]
+						}, {
+							"id" : "112",
+							"name" : "Multimedia Files",
+							"description" : "My media files by mediatype",
+							"nodes" : [{
+									"id" : "1121",
+									"name" : "Images",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND =cm:content.mimetype:image/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1122",
+									"name" : "Audio content",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND =cm:content.mimetype:audio/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1123",
+									"name" : "Video content",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'/app:company_home/st:sites//*') AND =cm:content.mimetype:video/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}
+							]
+						}
+					]
+				}, {
+					"id" : "12",
+					"name" : "This folder's content",
+					"description" : "My files in this site or folder tree  by file & media-type - no upload",
+					"nodes" : [{
+							"id" : "121",
+							"name" : "Documents",
+							"description" : "My documents by mimetype",
+							"nodes" : [{
+									"id" : "1211",
+									"name" : "Office Documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND (=cm:content.mimetype:application/ms* OR =cm:content.mimetype:application/vnd.ms* OR =cm:content.mimetype:application/vnd.openxmlformats*) AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1212",
+									"name" : "PDF Documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND =cm:content.mimetype:application/pdf AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1213",
+									"name" : "Other documents",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND =cm:content.mimetype:application/* AND NOT (=cm:content.mimetype:application/ms* OR =cm:content.mimetype:application/vnd.ms* OR =cm:content.mimetype:application/vnd.openxmlformats* OR =cm:content.mimetype:application/pdf) AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}
+							]
+						}, {
+							"id" : "122",
+							"name" : "Multimedia Files",
+							"description" : "My media files by mediatype",
+							"nodes" : [{
+									"id" : "1221",
+									"name" : "Images",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND =cm:content.mimetype:image/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1222",
+									"name" : "Audio content",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND =cm:content.mimetype:audio/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}, {
+									"id" : "1223",
+									"name" : "Video content",
+									"search" : {
+										"language" : "fts-alfresco",
+										"query" : "(PATH:'%ACTUAL_PATH%//*') AND =cm:content.mimetype:video/* AND (=cm:modifier:%CURRENT_USER% OR =cm:creator:%CURRENT_USER%)"
+									}
+								}
+							]
+						}
+					]
+				}, {
+					"id" : "13",
+					"name" : "Contributions",
+					"description" : "My 'dublin core' contributions - add new files here to contribute",
+					"search" : {
+						"language" : "fts-alfresco",
+						"query" : "+ASPECT:'cm:dublincore' AND (=cm:creator:%CURRENT_USER% OR =cm:modifier:%CURRENT_USER%)"
+					},
+					"filing" : {
+						"path" : "%ACTUAL_PATH%",
+						"classification" : {
+							"type" : "cm:content",
+							"aspects" : [
+								"cm:dublincore"
+							]
+						},
+						"properties" : {
+							"cm:contributor" : "%CURRENT_USER%",
+							"cm:rights" : "Alfresco",
+							"cm:publisher" : "Alfresco"
+						}
+					}
+				}, {
+					"id" : "14",
+					"name" : "My content modified by other users",
+					"description" : "Content created by me and modified by other users - no upload",
+					"search" : {
+						"language" : "fts-alfresco",
+						"query" : "+TYPE:'cm:content' AND =cm:content.mimetype:application/* AND =cm:creator:%CURRENT_USER% AND NOT =cm:modifier:%CURRENT_USER%"
+					}
+				}, {
+					"id" : "15",
+					"name" : "User home",
+					"description" : "Files in my user home directory - no upload",
+					"search" : {
+						"language" : "fts-alfresco",
+						"query" : "+TYPE:'cm:content' AND PATH:'/app:company_home/app:user_homes/cm:%CURRENT_USER%//*'"
+					}
+				}, {
+					"id" : "16",
+					"name" : "Tagged 'Confidential'",
+					"description" : "My confidential files - no upload",
+					"search" : {
+						"language" : "fts-alfresco",
+						"query" : "+TYPE:'cm:content' AND (=cm:creator:%CURRENT_USER% OR =cm:modifier:%CURRENT_USER%) AND TAG:'confidential'"
+					}
+				}, {
+					"id" : "17",
+					"name" : "My Categorized Files",
+					"description" : "My files in category or a sub category - no upload",
+
+					"nodes" : [{
+							"id" : "171",
+							"name" : "Languages",
+							"description" : "My files categorized in 'Languages'",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND (=cm:creator:%CURRENT_USER% OR =cm:modifier:%CURRENT_USER%) AND PATH:'/cm:generalclassifiable//cm:Languages//member'"
+							}
+
+						},{
+							"id" : "172",
+							"name" : "Regions",
+							"description" : "My files categorized in 'Regions'",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND (=cm:creator:%CURRENT_USER% OR =cm:modifier:%CURRENT_USER%) AND PATH:'/cm:generalclassifiable//cm:Regions//member'"
+							}
+
+						},{
+							"id" : "173",
+							"name" : "Software Documents",
+							"description" : "My files categorized in 'Software Document Classification'",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND (=cm:creator:%CURRENT_USER% OR =cm:modifier:%CURRENT_USER%) AND PATH:'/cm:generalclassifiable//cm:Software_x0020_Document_x0020_Classification//member'"
+							}
+						}
+					]
+				}, {
+					"id" : "18",
+					"name" : "Recent updates",
+					"description" : "Files added or updated in the past 7 days",
+
+					"nodes" : [{
+							"id" : "181",
+							"name" : "Recently created",
+							"description" : "Files I recently created",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND =cm:creator:%CURRENT_USER% AND +cm:created:[NOW/DAY-7DAYS TO NOW/DAY+1DAY]"
+							}
+
+						},{
+							"id" : "182",
+							"name" : "Recently modified",
+							"description" : "Files I recently modified",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND =cm:modifier:%CURRENT_USER% AND +cm:modified:[NOW/DAY-7DAYS TO NOW/DAY+1DAY]"
+							}
+
+						},{
+							"id" : "183",
+							"name" : "Modifications to my files",
+							"description" : "Files I created that were recently modified",
+							"search" : {
+								"language" : "fts-alfresco",
+								"query" : "+TYPE:'cm:content' AND =cm:creator:%CURRENT_USER% AND +cm:modified:[NOW/DAY-7DAYS TO NOW/DAY+1DAY]"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
