@@ -17,8 +17,66 @@
 	limitations under the License.
 -->
 <beans>
+
+	<bean id="webscript.com.fcorti.AAAR.getClasses.get" class="com.fcorti.aaar.GetClassesWebScript" parent="webscript">
+		<property name="dictionaryService">
+			<ref bean="dictionaryService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getNodesModifiedAfter.get" class="com.fcorti.aaar.GetNodesModifiedAfterWebScript" parent="webscript">
+		<property name="dictionaryService">
+			<ref bean="dictionaryService"/>
+		</property>
+		<property name="nodeService">
+			<ref bean="nodeService"/>
+		</property>
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getNodeIdsModifiedBefore.get" class="com.fcorti.aaar.GetNodeIdsModifiedBeforeWebScript" parent="webscript">
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getPentahoTicket.get" class="com.fcorti.aaar.GetPentahoTicketWebScript" parent="webscript">
+		<property name="authenticationService">
+			<ref bean="authenticationService"/>
+		</property>
+		<property name="properties">
+			<ref bean="global-properties"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getProperties.get" class="com.fcorti.aaar.GetPropertiesWebScript" parent="webscript">
+		<property name="properties">
+			<ref bean="global-properties"/>
+		</property>
+	</bean>
+
+	<bean id="webscript.com.fcorti.AAAR.getPropertyDefinition.get" class="com.fcorti.aaar.GetPropertyDefinitionWebScript" parent="webscript">
+		<property name="dictionaryService">
+			<ref bean="dictionaryService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
+	<!--
 	<bean id="webscript.helloworld.get"
-		  class="amp.demoamp.HelloWorldWebScript"
+		  class="com.fcorti.demoamp.HelloWorldWebScript"
 		  parent="webscript">
 	</bean>
+	-->
+
 </beans>

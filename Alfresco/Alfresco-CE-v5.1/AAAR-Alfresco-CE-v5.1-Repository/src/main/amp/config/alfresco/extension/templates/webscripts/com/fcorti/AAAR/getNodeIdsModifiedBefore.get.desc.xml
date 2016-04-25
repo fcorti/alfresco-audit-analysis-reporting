@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Get node ids modified before a date time</shortname>
+  <description>Get node ids modified before a date time.</description>
+  <authentication>user</authentication>
+  <url>/AAAR/getNodeIdsModifiedBefore</url>
+  <format default="json">extension</format>
+  <family>AAAR</family>
+</webscript>
