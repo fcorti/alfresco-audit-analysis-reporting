@@ -2,9 +2,10 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.3.6
--- Dumped by pg_dump version 9.3.6
--- Started on 2015-04-10 15:50:16 CEST
+-- Dumped from database version 9.5.2
+-- Dumped by pg_dump version 9.5.2
+
+-- Started on 2016-05-07 22:57:18 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -13,7 +14,7 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- TOC entry 229 (class 3079 OID 11789)
+-- TOC entry 1 (class 3079 OID 12395)
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -21,8 +22,8 @@ CREATE EXTENSION IF NOT EXISTS "plpgsql" WITH SCHEMA "pg_catalog";
 
 
 --
--- TOC entry 2447 (class 0 OID 0)
--- Dependencies: 229
+-- TOC entry 2601 (class 0 OID 0)
+-- Dependencies: 1
 -- Name: EXTENSION "plpgsql"; Type: COMMENT; Schema: -; Owner: 
 --
 
@@ -32,7 +33,7 @@ COMMENT ON EXTENSION "plpgsql" IS 'PL/pgSQL procedural language';
 SET search_path = "public", pg_catalog;
 
 --
--- TOC entry 170 (class 1259 OID 19277)
+-- TOC entry 181 (class 1259 OID 16386)
 -- Name: seq_dm_custom_metadata_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -44,15 +45,15 @@ CREATE SEQUENCE "seq_dm_custom_metadata_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_custom_metadata_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_custom_metadata_id" OWNER TO "postgres";
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- TOC entry 171 (class 1259 OID 19279)
--- Name: dm_custom_metadata; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 182 (class 1259 OID 16388)
+-- Name: dm_custom_metadata; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_custom_metadata" (
@@ -68,10 +69,27 @@ CREATE TABLE "dm_custom_metadata" (
 );
 
 
-ALTER TABLE "public"."dm_custom_metadata" OWNER TO "postgres";
+ALTER TABLE "dm_custom_metadata" OWNER TO "postgres";
 
 --
--- TOC entry 172 (class 1259 OID 19287)
+-- TOC entry 236 (class 1259 OID 17467)
+-- Name: dm_data_quality; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE "dm_data_quality" (
+    "alfresco_id" smallint NOT NULL,
+    "batch_id" character varying(128) NOT NULL,
+    "entities" character varying(128) NOT NULL,
+    "layer" character varying(128) NOT NULL,
+    "value" integer NOT NULL,
+    "creation" timestamp without time zone DEFAULT "now"() NOT NULL
+);
+
+
+ALTER TABLE "dm_data_quality" OWNER TO "postgres";
+
+--
+-- TOC entry 183 (class 1259 OID 16399)
 -- Name: seq_dm_dim_actions_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -83,11 +101,11 @@ CREATE SEQUENCE "seq_dm_dim_actions_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_actions_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_actions_id" OWNER TO "postgres";
 
 --
--- TOC entry 173 (class 1259 OID 19289)
--- Name: dm_dim_actions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 184 (class 1259 OID 16401)
+-- Name: dm_dim_actions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_actions" (
@@ -98,11 +116,11 @@ CREATE TABLE "dm_dim_actions" (
 );
 
 
-ALTER TABLE "public"."dm_dim_actions" OWNER TO "postgres";
+ALTER TABLE "dm_dim_actions" OWNER TO "postgres";
 
 --
--- TOC entry 174 (class 1259 OID 19293)
--- Name: dm_dim_alfresco; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 185 (class 1259 OID 16405)
+-- Name: dm_dim_alfresco; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_alfresco" (
@@ -123,11 +141,11 @@ CREATE TABLE "dm_dim_alfresco" (
 );
 
 
-ALTER TABLE "public"."dm_dim_alfresco" OWNER TO "postgres";
+ALTER TABLE "dm_dim_alfresco" OWNER TO "postgres";
 
 --
--- TOC entry 175 (class 1259 OID 19300)
--- Name: dm_dim_dates; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 186 (class 1259 OID 16412)
+-- Name: dm_dim_dates; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_dates" (
@@ -138,10 +156,10 @@ CREATE TABLE "dm_dim_dates" (
 );
 
 
-ALTER TABLE "public"."dm_dim_dates" OWNER TO "postgres";
+ALTER TABLE "dm_dim_dates" OWNER TO "postgres";
 
 --
--- TOC entry 176 (class 1259 OID 19303)
+-- TOC entry 187 (class 1259 OID 16415)
 -- Name: seq_dm_dim_documents_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -153,11 +171,11 @@ CREATE SEQUENCE "seq_dm_dim_documents_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_documents_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_documents_id" OWNER TO "postgres";
 
 --
--- TOC entry 177 (class 1259 OID 19305)
--- Name: dm_dim_documents; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 188 (class 1259 OID 16417)
+-- Name: dm_dim_documents; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_documents" (
@@ -182,10 +200,10 @@ CREATE TABLE "dm_dim_documents" (
 );
 
 
-ALTER TABLE "public"."dm_dim_documents" OWNER TO "postgres";
+ALTER TABLE "dm_dim_documents" OWNER TO "postgres";
 
 --
--- TOC entry 178 (class 1259 OID 19312)
+-- TOC entry 189 (class 1259 OID 16424)
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -197,11 +215,11 @@ CREATE SEQUENCE "seq_dm_dim_folders_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_folders_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_folders_id" OWNER TO "postgres";
 
 --
--- TOC entry 179 (class 1259 OID 19314)
--- Name: dm_dim_folders; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 190 (class 1259 OID 16426)
+-- Name: dm_dim_folders; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_folders" (
@@ -224,11 +242,11 @@ CREATE TABLE "dm_dim_folders" (
 );
 
 
-ALTER TABLE "public"."dm_dim_folders" OWNER TO "postgres";
+ALTER TABLE "dm_dim_folders" OWNER TO "postgres";
 
 --
--- TOC entry 180 (class 1259 OID 19321)
--- Name: dm_dim_hours; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 191 (class 1259 OID 16433)
+-- Name: dm_dim_hours; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_hours" (
@@ -237,10 +255,10 @@ CREATE TABLE "dm_dim_hours" (
 );
 
 
-ALTER TABLE "public"."dm_dim_hours" OWNER TO "postgres";
+ALTER TABLE "dm_dim_hours" OWNER TO "postgres";
 
 --
--- TOC entry 181 (class 1259 OID 19324)
+-- TOC entry 192 (class 1259 OID 16436)
 -- Name: seq_dm_dim_mime_types_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -252,11 +270,11 @@ CREATE SEQUENCE "seq_dm_dim_mime_types_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_mime_types_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_mime_types_id" OWNER TO "postgres";
 
 --
--- TOC entry 182 (class 1259 OID 19326)
--- Name: dm_dim_mime_types; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 193 (class 1259 OID 16438)
+-- Name: dm_dim_mime_types; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_mime_types" (
@@ -267,11 +285,11 @@ CREATE TABLE "dm_dim_mime_types" (
 );
 
 
-ALTER TABLE "public"."dm_dim_mime_types" OWNER TO "postgres";
+ALTER TABLE "dm_dim_mime_types" OWNER TO "postgres";
 
 --
--- TOC entry 183 (class 1259 OID 19333)
--- Name: dm_dim_minutes; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 194 (class 1259 OID 16445)
+-- Name: dm_dim_minutes; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_minutes" (
@@ -281,11 +299,11 @@ CREATE TABLE "dm_dim_minutes" (
 );
 
 
-ALTER TABLE "public"."dm_dim_minutes" OWNER TO "postgres";
+ALTER TABLE "dm_dim_minutes" OWNER TO "postgres";
 
 --
--- TOC entry 184 (class 1259 OID 19336)
--- Name: dm_dim_months; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 195 (class 1259 OID 16448)
+-- Name: dm_dim_months; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_months" (
@@ -296,10 +314,10 @@ CREATE TABLE "dm_dim_months" (
 );
 
 
-ALTER TABLE "public"."dm_dim_months" OWNER TO "postgres";
+ALTER TABLE "dm_dim_months" OWNER TO "postgres";
 
 --
--- TOC entry 185 (class 1259 OID 19339)
+-- TOC entry 196 (class 1259 OID 16451)
 -- Name: seq_dm_dim_node_types_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -311,11 +329,11 @@ CREATE SEQUENCE "seq_dm_dim_node_types_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_node_types_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_node_types_id" OWNER TO "postgres";
 
 --
--- TOC entry 186 (class 1259 OID 19341)
--- Name: dm_dim_node_types; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 197 (class 1259 OID 16453)
+-- Name: dm_dim_node_types; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_node_types" (
@@ -327,10 +345,10 @@ CREATE TABLE "dm_dim_node_types" (
 );
 
 
-ALTER TABLE "public"."dm_dim_node_types" OWNER TO "postgres";
+ALTER TABLE "dm_dim_node_types" OWNER TO "postgres";
 
 --
--- TOC entry 187 (class 1259 OID 19348)
+-- TOC entry 198 (class 1259 OID 16460)
 -- Name: seq_dm_dim_paths_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -342,11 +360,11 @@ CREATE SEQUENCE "seq_dm_dim_paths_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_paths_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_paths_id" OWNER TO "postgres";
 
 --
--- TOC entry 188 (class 1259 OID 19350)
--- Name: dm_dim_paths; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 199 (class 1259 OID 16462)
+-- Name: dm_dim_paths; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_paths" (
@@ -359,10 +377,10 @@ CREATE TABLE "dm_dim_paths" (
 );
 
 
-ALTER TABLE "public"."dm_dim_paths" OWNER TO "postgres";
+ALTER TABLE "dm_dim_paths" OWNER TO "postgres";
 
 --
--- TOC entry 189 (class 1259 OID 19357)
+-- TOC entry 200 (class 1259 OID 16469)
 -- Name: seq_dm_dim_users_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -374,11 +392,11 @@ CREATE SEQUENCE "seq_dm_dim_users_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_users_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_users_id" OWNER TO "postgres";
 
 --
--- TOC entry 190 (class 1259 OID 19359)
--- Name: dm_dim_users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 201 (class 1259 OID 16471)
+-- Name: dm_dim_users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_users" (
@@ -389,10 +407,10 @@ CREATE TABLE "dm_dim_users" (
 );
 
 
-ALTER TABLE "public"."dm_dim_users" OWNER TO "postgres";
+ALTER TABLE "dm_dim_users" OWNER TO "postgres";
 
 --
--- TOC entry 220 (class 1259 OID 27662)
+-- TOC entry 202 (class 1259 OID 16478)
 -- Name: seq_dm_dim_workflow_definitions_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -404,11 +422,11 @@ CREATE SEQUENCE "seq_dm_dim_workflow_definitions_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_workflow_definitions_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_workflow_definitions_id" OWNER TO "postgres";
 
 --
--- TOC entry 224 (class 1259 OID 28688)
--- Name: dm_dim_workflow_definitions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 203 (class 1259 OID 16480)
+-- Name: dm_dim_workflow_definitions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_workflow_definitions" (
@@ -423,10 +441,10 @@ CREATE TABLE "dm_dim_workflow_definitions" (
 );
 
 
-ALTER TABLE "public"."dm_dim_workflow_definitions" OWNER TO "postgres";
+ALTER TABLE "dm_dim_workflow_definitions" OWNER TO "postgres";
 
 --
--- TOC entry 221 (class 1259 OID 27725)
+-- TOC entry 204 (class 1259 OID 16487)
 -- Name: seq_dm_dim_workflow_instances_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -438,11 +456,11 @@ CREATE SEQUENCE "seq_dm_dim_workflow_instances_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_workflow_instances_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_workflow_instances_id" OWNER TO "postgres";
 
 --
--- TOC entry 225 (class 1259 OID 28703)
--- Name: dm_dim_workflow_instances; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 205 (class 1259 OID 16489)
+-- Name: dm_dim_workflow_instances; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_workflow_instances" (
@@ -467,11 +485,11 @@ CREATE TABLE "dm_dim_workflow_instances" (
 );
 
 
-ALTER TABLE "public"."dm_dim_workflow_instances" OWNER TO "postgres";
+ALTER TABLE "dm_dim_workflow_instances" OWNER TO "postgres";
 
 --
--- TOC entry 228 (class 1259 OID 29100)
--- Name: dm_dim_workflow_items; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 206 (class 1259 OID 16496)
+-- Name: dm_dim_workflow_items; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_workflow_items" (
@@ -482,10 +500,10 @@ CREATE TABLE "dm_dim_workflow_items" (
 );
 
 
-ALTER TABLE "public"."dm_dim_workflow_items" OWNER TO "postgres";
+ALTER TABLE "dm_dim_workflow_items" OWNER TO "postgres";
 
 --
--- TOC entry 222 (class 1259 OID 27727)
+-- TOC entry 207 (class 1259 OID 16499)
 -- Name: seq_dm_dim_workflow_tasks_id; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -497,11 +515,11 @@ CREATE SEQUENCE "seq_dm_dim_workflow_tasks_id"
     CACHE 1;
 
 
-ALTER TABLE "public"."seq_dm_dim_workflow_tasks_id" OWNER TO "postgres";
+ALTER TABLE "seq_dm_dim_workflow_tasks_id" OWNER TO "postgres";
 
 --
--- TOC entry 226 (class 1259 OID 28848)
--- Name: dm_dim_workflow_tasks; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 208 (class 1259 OID 16501)
+-- Name: dm_dim_workflow_tasks; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_workflow_tasks" (
@@ -532,11 +550,11 @@ CREATE TABLE "dm_dim_workflow_tasks" (
 );
 
 
-ALTER TABLE "public"."dm_dim_workflow_tasks" OWNER TO "postgres";
+ALTER TABLE "dm_dim_workflow_tasks" OWNER TO "postgres";
 
 --
--- TOC entry 191 (class 1259 OID 19366)
--- Name: dm_dim_years; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 209 (class 1259 OID 16508)
+-- Name: dm_dim_years; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_dim_years" (
@@ -545,11 +563,11 @@ CREATE TABLE "dm_dim_years" (
 );
 
 
-ALTER TABLE "public"."dm_dim_years" OWNER TO "postgres";
+ALTER TABLE "dm_dim_years" OWNER TO "postgres";
 
 --
--- TOC entry 192 (class 1259 OID 19372)
--- Name: dm_fact_actions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 210 (class 1259 OID 16514)
+-- Name: dm_fact_actions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_fact_actions" (
@@ -564,11 +582,28 @@ CREATE TABLE "dm_fact_actions" (
 );
 
 
-ALTER TABLE "public"."dm_fact_actions" OWNER TO "postgres";
+ALTER TABLE "dm_fact_actions" OWNER TO "postgres";
 
 --
--- TOC entry 193 (class 1259 OID 19375)
--- Name: dm_reports; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 235 (class 1259 OID 17459)
+-- Name: dm_logs; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE "dm_logs" (
+    "alfresco_id" smallint NOT NULL,
+    "batch_id" character varying(128) NOT NULL,
+    "description" character varying(256) NOT NULL,
+    "batch_start" timestamp without time zone NOT NULL,
+    "batch_end" timestamp without time zone NOT NULL,
+    "success" character(1) NOT NULL
+);
+
+
+ALTER TABLE "dm_logs" OWNER TO "postgres";
+
+--
+-- TOC entry 211 (class 1259 OID 16517)
+-- Name: dm_reports; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "dm_reports" (
@@ -588,11 +623,11 @@ CREATE TABLE "dm_reports" (
 );
 
 
-ALTER TABLE "public"."dm_reports" OWNER TO "postgres";
+ALTER TABLE "dm_reports" OWNER TO "postgres";
 
 --
--- TOC entry 194 (class 1259 OID 19387)
--- Name: log_channels; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 212 (class 1259 OID 16529)
+-- Name: log_channels; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_channels" (
@@ -611,11 +646,11 @@ CREATE TABLE "log_channels" (
 );
 
 
-ALTER TABLE "public"."log_channels" OWNER TO "postgres";
+ALTER TABLE "log_channels" OWNER TO "postgres";
 
 --
--- TOC entry 195 (class 1259 OID 19393)
--- Name: log_job; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 213 (class 1259 OID 16535)
+-- Name: log_job; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_job" (
@@ -639,11 +674,11 @@ CREATE TABLE "log_job" (
 );
 
 
-ALTER TABLE "public"."log_job" OWNER TO "postgres";
+ALTER TABLE "log_job" OWNER TO "postgres";
 
 --
--- TOC entry 196 (class 1259 OID 19399)
--- Name: log_jobentry; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 214 (class 1259 OID 16541)
+-- Name: log_jobentry; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_jobentry" (
@@ -665,11 +700,11 @@ CREATE TABLE "log_jobentry" (
 );
 
 
-ALTER TABLE "public"."log_jobentry" OWNER TO "postgres";
+ALTER TABLE "log_jobentry" OWNER TO "postgres";
 
 --
--- TOC entry 197 (class 1259 OID 19405)
--- Name: log_performance; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 215 (class 1259 OID 16547)
+-- Name: log_performance; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_performance" (
@@ -691,11 +726,11 @@ CREATE TABLE "log_performance" (
 );
 
 
-ALTER TABLE "public"."log_performance" OWNER TO "postgres";
+ALTER TABLE "log_performance" OWNER TO "postgres";
 
 --
--- TOC entry 198 (class 1259 OID 19411)
--- Name: log_step; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 216 (class 1259 OID 16553)
+-- Name: log_step; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_step" (
@@ -715,11 +750,11 @@ CREATE TABLE "log_step" (
 );
 
 
-ALTER TABLE "public"."log_step" OWNER TO "postgres";
+ALTER TABLE "log_step" OWNER TO "postgres";
 
 --
--- TOC entry 199 (class 1259 OID 19417)
--- Name: log_transformations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 217 (class 1259 OID 16559)
+-- Name: log_transformations; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "log_transformations" (
@@ -743,11 +778,11 @@ CREATE TABLE "log_transformations" (
 );
 
 
-ALTER TABLE "public"."log_transformations" OWNER TO "postgres";
+ALTER TABLE "log_transformations" OWNER TO "postgres";
 
 --
--- TOC entry 200 (class 1259 OID 19423)
--- Name: ope_audits; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 218 (class 1259 OID 16565)
+-- Name: ope_audits; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "ope_audits" (
@@ -765,11 +800,11 @@ CREATE TABLE "ope_audits" (
 );
 
 
-ALTER TABLE "public"."ope_audits" OWNER TO "postgres";
+ALTER TABLE "ope_audits" OWNER TO "postgres";
 
 --
--- TOC entry 202 (class 1259 OID 19435)
--- Name: stg_audits; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 219 (class 1259 OID 16571)
+-- Name: stg_audits; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_audits" (
@@ -782,11 +817,11 @@ CREATE TABLE "stg_audits" (
 );
 
 
-ALTER TABLE "public"."stg_audits" OWNER TO "postgres";
+ALTER TABLE "stg_audits" OWNER TO "postgres";
 
 --
--- TOC entry 203 (class 1259 OID 19441)
--- Name: stg_cmis_documents; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 220 (class 1259 OID 16577)
+-- Name: stg_rest_documents; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_rest_documents" (
@@ -812,7 +847,12 @@ CREATE TABLE "stg_rest_documents" (
 );
 
 
-ALTER TABLE "public"."stg_rest_documents" OWNER TO "postgres";
+ALTER TABLE "stg_rest_documents" OWNER TO "postgres";
+
+--
+-- TOC entry 221 (class 1259 OID 16583)
+-- Name: stg_rest_documents_custom_types; Type: TABLE; Schema: public; Owner: postgres
+--
 
 CREATE TABLE "stg_rest_documents_custom_types" (
     "alfresco_id" smallint NOT NULL,
@@ -820,11 +860,12 @@ CREATE TABLE "stg_rest_documents_custom_types" (
     "custom_types" character varying(8192)
 );
 
-ALTER TABLE "public"."stg_rest_documents_custom_types" OWNER TO "postgres";
+
+ALTER TABLE "stg_rest_documents_custom_types" OWNER TO "postgres";
 
 --
--- TOC entry 205 (class 1259 OID 19453)
--- Name: stg_cmis_folders; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 222 (class 1259 OID 16589)
+-- Name: stg_rest_folders; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_rest_folders" (
@@ -846,7 +887,12 @@ CREATE TABLE "stg_rest_folders" (
 );
 
 
-ALTER TABLE "public"."stg_rest_folders" OWNER TO "postgres";
+ALTER TABLE "stg_rest_folders" OWNER TO "postgres";
+
+--
+-- TOC entry 223 (class 1259 OID 16595)
+-- Name: stg_rest_folders_custom_types; Type: TABLE; Schema: public; Owner: postgres
+--
 
 CREATE TABLE "stg_rest_folders_custom_types" (
     "alfresco_id" smallint NOT NULL,
@@ -854,12 +900,12 @@ CREATE TABLE "stg_rest_folders_custom_types" (
     "custom_types" character varying(8192)
 );
 
-ALTER TABLE "public"."stg_rest_folders_custom_types" OWNER TO "postgres";
 
+ALTER TABLE "stg_rest_folders_custom_types" OWNER TO "postgres";
 
 --
--- TOC entry 223 (class 1259 OID 28596)
--- Name: stg_workflow_definitions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 224 (class 1259 OID 16601)
+-- Name: stg_workflow_definitions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_workflow_definitions" (
@@ -873,11 +919,11 @@ CREATE TABLE "stg_workflow_definitions" (
 );
 
 
-ALTER TABLE "public"."stg_workflow_definitions" OWNER TO "postgres";
+ALTER TABLE "stg_workflow_definitions" OWNER TO "postgres";
 
 --
--- TOC entry 217 (class 1259 OID 27568)
--- Name: stg_workflow_instances; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 225 (class 1259 OID 16607)
+-- Name: stg_workflow_instances; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_workflow_instances" (
@@ -898,11 +944,11 @@ CREATE TABLE "stg_workflow_instances" (
 );
 
 
-ALTER TABLE "public"."stg_workflow_instances" OWNER TO "postgres";
+ALTER TABLE "stg_workflow_instances" OWNER TO "postgres";
 
 --
--- TOC entry 227 (class 1259 OID 28975)
--- Name: stg_workflow_items; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 226 (class 1259 OID 16613)
+-- Name: stg_workflow_items; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_workflow_items" (
@@ -913,11 +959,11 @@ CREATE TABLE "stg_workflow_items" (
 );
 
 
-ALTER TABLE "public"."stg_workflow_items" OWNER TO "postgres";
+ALTER TABLE "stg_workflow_items" OWNER TO "postgres";
 
 --
--- TOC entry 218 (class 1259 OID 27589)
--- Name: stg_workflow_tasks; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 227 (class 1259 OID 16619)
+-- Name: stg_workflow_tasks; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE "stg_workflow_tasks" (
@@ -945,30 +991,10 @@ CREATE TABLE "stg_workflow_tasks" (
 );
 
 
-ALTER TABLE "public"."stg_workflow_tasks" OWNER TO "postgres";
-
-
---
--- TOC entry 207 (class 1259 OID 19465)
--- Name: vw_cmis_documents_and_folders_path; Type: VIEW; Schema: public; Owner: postgres
---
-
-CREATE VIEW "vw_rest_documents_and_folders_path" AS
- SELECT "stg_rest_documents"."alfresco_id",
-    "stg_rest_documents"."node-dbid",
-    "stg_rest_documents"."type",
-    "stg_rest_documents"."path"
-   FROM "stg_rest_documents"
-UNION ALL
- SELECT "stg_rest_folders"."alfresco_id",
-    "stg_rest_folders"."node-dbid",
-    "stg_rest_folders"."type",
-    "stg_rest_folders"."path"
-   FROM "stg_rest_folders";
-
+ALTER TABLE "stg_workflow_tasks" OWNER TO "postgres";
 
 --
--- TOC entry 208 (class 1259 OID 19470)
+-- TOC entry 229 (class 1259 OID 16629)
 -- Name: vw_dm_dim_dates; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -987,16 +1013,16 @@ CREATE VIEW "vw_dm_dim_dates" AS
   WHERE (("dm_dim_dates"."month_id" = "dm_dim_months"."id") AND ("dm_dim_months"."year_id" = "dm_dim_years"."id"));
 
 
-ALTER TABLE "public"."vw_dm_dim_dates" OWNER TO "postgres";
+ALTER TABLE "vw_dm_dim_dates" OWNER TO "postgres";
 
 --
--- TOC entry 209 (class 1259 OID 19474)
+-- TOC entry 230 (class 1259 OID 16633)
 -- Name: vw_dm_dim_documents; Type: VIEW; Schema: public; Owner: postgres
 --
 
 CREATE VIEW "vw_dm_dim_documents" AS
  SELECT "dm_dim_documents"."id",
-    "dm_dim_documents"."store-protocol" || '://' || "dm_dim_documents"."store-identifier" || '/' || "dm_dim_documents"."node-uuid" as "noderef",
+    ((((("dm_dim_documents"."store-protocol")::"text" || '://'::"text") || ("dm_dim_documents"."store-identifier")::"text") || '/'::"text") || ("dm_dim_documents"."node-uuid")::"text") AS "noderef",
     "dm_dim_documents"."name",
     "dm_dim_documents"."path",
     "dm_dim_documents"."alfresco_id",
@@ -1004,10 +1030,10 @@ CREATE VIEW "vw_dm_dim_documents" AS
    FROM "dm_dim_documents";
 
 
-ALTER TABLE "public"."vw_dm_dim_documents" OWNER TO "postgres";
+ALTER TABLE "vw_dm_dim_documents" OWNER TO "postgres";
 
 --
--- TOC entry 214 (class 1259 OID 19494)
+-- TOC entry 231 (class 1259 OID 16637)
 -- Name: vw_dm_dim_minutes; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -1021,10 +1047,10 @@ CREATE VIEW "vw_dm_dim_minutes" AS
   WHERE ("dm_dim_minutes"."hour_id" = "dm_dim_hours"."id");
 
 
-ALTER TABLE "public"."vw_dm_dim_minutes" OWNER TO "postgres";
+ALTER TABLE "vw_dm_dim_minutes" OWNER TO "postgres";
 
 --
--- TOC entry 215 (class 1259 OID 19498)
+-- TOC entry 232 (class 1259 OID 16641)
 -- Name: vw_dm_fact_documents; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -1046,16 +1072,16 @@ CREATE VIEW "vw_dm_fact_documents" AS
    FROM "dm_dim_documents";
 
 
-ALTER TABLE "public"."vw_dm_fact_documents" OWNER TO "postgres";
+ALTER TABLE "vw_dm_fact_documents" OWNER TO "postgres";
 
 --
--- TOC entry 216 (class 1259 OID 19502)
+-- TOC entry 233 (class 1259 OID 16645)
 -- Name: vw_dm_fact_repository; Type: VIEW; Schema: public; Owner: postgres
 --
 
 CREATE VIEW "vw_dm_fact_repository" AS
  SELECT ('DOC_'::"text" || "dm_dim_documents"."id") AS "id",
-    "dm_dim_documents"."store-protocol" || '://' || "dm_dim_documents"."store-identifier" || '/' || "dm_dim_documents"."node-uuid" as "noderef",
+    ((((("dm_dim_documents"."store-protocol")::"text" || '://'::"text") || ("dm_dim_documents"."store-identifier")::"text") || '/'::"text") || ("dm_dim_documents"."node-uuid")::"text") AS "noderef",
     "dm_dim_documents"."name",
     "dm_dim_documents"."path",
     "dm_dim_documents"."alfresco_id",
@@ -1072,7 +1098,7 @@ CREATE VIEW "vw_dm_fact_repository" AS
    FROM "dm_dim_documents"
 UNION ALL
  SELECT ('FOL_'::"text" || "dm_dim_folders"."id") AS "id",
-    "dm_dim_folders"."store-protocol" || '://' || "dm_dim_folders"."store-identifier" || '/' || "dm_dim_folders"."node-uuid" as "noderef",
+    ((((("dm_dim_folders"."store-protocol")::"text" || '://'::"text") || ("dm_dim_folders"."store-identifier")::"text") || '/'::"text") || ("dm_dim_folders"."node-uuid")::"text") AS "noderef",
     "dm_dim_folders"."name",
     "dm_dim_folders"."path",
     "dm_dim_folders"."alfresco_id",
@@ -1089,10 +1115,10 @@ UNION ALL
    FROM "dm_dim_folders";
 
 
-ALTER TABLE "public"."vw_dm_fact_repository" OWNER TO "postgres";
+ALTER TABLE "vw_dm_fact_repository" OWNER TO "postgres";
 
 --
--- TOC entry 219 (class 1259 OID 27657)
+-- TOC entry 234 (class 1259 OID 16650)
 -- Name: vw_dm_min_max_date; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -1172,53 +1198,277 @@ CREATE VIEW "vw_dm_min_max_date" AS
           GROUP BY "stg_workflow_tasks"."alfresco_id") "t"
   GROUP BY "t"."alfresco_id";
 
-ALTER TABLE "public"."vw_dm_min_max_date" OWNER TO "postgres";
+
+ALTER TABLE "vw_dm_min_max_date" OWNER TO "postgres";
 
 --
--- TOC entry 2393 (class 0 OID 19279)
--- Dependencies: 171
+-- TOC entry 228 (class 1259 OID 16625)
+-- Name: vw_rest_documents_and_folders_path; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW "vw_rest_documents_and_folders_path" AS
+ SELECT "stg_rest_documents"."alfresco_id",
+    "stg_rest_documents"."node-dbid",
+    "stg_rest_documents"."type",
+    "stg_rest_documents"."path"
+   FROM "stg_rest_documents"
+UNION ALL
+ SELECT "stg_rest_folders"."alfresco_id",
+    "stg_rest_folders"."node-dbid",
+    "stg_rest_folders"."type",
+    "stg_rest_folders"."path"
+   FROM "stg_rest_folders";
+
+
+ALTER TABLE "vw_rest_documents_and_folders_path" OWNER TO "postgres";
+
+--
+-- TOC entry 2546 (class 0 OID 16388)
+-- Dependencies: 182
 -- Data for Name: dm_custom_metadata; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+
+
 --
--- TOC entry 2395 (class 0 OID 19289)
--- Dependencies: 173
+-- TOC entry 2593 (class 0 OID 17467)
+-- Dependencies: 236
+-- Data for Name: dm_data_quality; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2548 (class 0 OID 16401)
+-- Dependencies: 184
 -- Data for Name: dm_dim_actions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 2396 (class 0 OID 19293)
--- Dependencies: 174
+-- TOC entry 2549 (class 0 OID 16405)
+-- Dependencies: 185
 -- Data for Name: dm_dim_alfresco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "audit_limit", "url_nodes_modified_after_suffix", "url_nodes_modified_before_suffix", "node_limit",  "url_cmis_suffix", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "is_active") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', 'Y');
+INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "audit_limit", "url_nodes_modified_after_suffix", "url_nodes_modified_before_suffix", "node_limit", "url_cmis_suffix", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "is_active") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', 'Y');
 
 
 --
--- TOC entry 2415 (class 0 OID 19375)
+-- TOC entry 2550 (class 0 OID 16412)
+-- Dependencies: 186
+-- Data for Name: dm_dim_dates; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2552 (class 0 OID 16417)
+-- Dependencies: 188
+-- Data for Name: dm_dim_documents; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2554 (class 0 OID 16426)
+-- Dependencies: 190
+-- Data for Name: dm_dim_folders; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2555 (class 0 OID 16433)
+-- Dependencies: 191
+-- Data for Name: dm_dim_hours; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2557 (class 0 OID 16438)
 -- Dependencies: 193
+-- Data for Name: dm_dim_mime_types; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2558 (class 0 OID 16445)
+-- Dependencies: 194
+-- Data for Name: dm_dim_minutes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2559 (class 0 OID 16448)
+-- Dependencies: 195
+-- Data for Name: dm_dim_months; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2561 (class 0 OID 16453)
+-- Dependencies: 197
+-- Data for Name: dm_dim_node_types; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2563 (class 0 OID 16462)
+-- Dependencies: 199
+-- Data for Name: dm_dim_paths; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2565 (class 0 OID 16471)
+-- Dependencies: 201
+-- Data for Name: dm_dim_users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2567 (class 0 OID 16480)
+-- Dependencies: 203
+-- Data for Name: dm_dim_workflow_definitions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2569 (class 0 OID 16489)
+-- Dependencies: 205
+-- Data for Name: dm_dim_workflow_instances; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2570 (class 0 OID 16496)
+-- Dependencies: 206
+-- Data for Name: dm_dim_workflow_items; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2572 (class 0 OID 16501)
+-- Dependencies: 208
+-- Data for Name: dm_dim_workflow_tasks; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2573 (class 0 OID 16508)
+-- Dependencies: 209
+-- Data for Name: dm_dim_years; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2574 (class 0 OID 16514)
+-- Dependencies: 210
+-- Data for Name: dm_fact_actions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2592 (class 0 OID 17459)
+-- Dependencies: 235
+-- Data for Name: dm_logs; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2575 (class 0 OID 16517)
+-- Dependencies: 211
 -- Data for Name: dm_reports; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (5, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_use.prpt', 'audit_use.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (6, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_active_users.prpt', 'document_active_users.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (7, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_hours_of_activity.prpt', 'document_hours_of_activity.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (8, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_mime_types.prpt', 'document_mime_types.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (9, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_size.prpt', 'document_size.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (10, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_types.prpt', 'document_types.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (11, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'folder_types.prpt', 'folder_types.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (1, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_creation.prpt', 'audit_creation.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (2, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_details.prpt', 'audit_details.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (3, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_login.prpt', 'audit_login.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
-INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (4, 'http://localhost:8181/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_topTen.prpt', 'audit_topTen.pdf', 'localhost', 2121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (5, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_use.prpt', 'audit_use.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (6, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_active_users.prpt', 'document_active_users.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (7, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_hours_of_activity.prpt', 'document_hours_of_activity.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (8, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_mime_types.prpt', 'document_mime_types.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (9, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_size.prpt', 'document_size.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (10, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'document_types.prpt', 'document_types.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (11, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'folder_types.prpt', 'folder_types.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (1, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_creation.prpt', 'audit_creation.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (2, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_details.prpt', 'audit_details.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (3, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_login.prpt', 'audit_login.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
+INSERT INTO "dm_reports" ("id", "pentaho_url", "pentaho_login", "pentaho_password", "pentaho_path", "prpt_name", "name", "alfresco_ftp", "alfresco_port", "alfresco_login", "alfresco_password", "alfresco_path", "is_active") VALUES (4, 'http://localhost:8080/pentaho', 'admin', 'password', '/public/AAAR/Reports', 'audit_topTen.prpt', 'audit_topTen.pdf', 'localhost', 121, 'admin', 'admin', 'alfresco', 'Y');
 
 
 --
--- TOC entry 2448 (class 0 OID 0)
--- Dependencies: 170
+-- TOC entry 2576 (class 0 OID 16529)
+-- Dependencies: 212
+-- Data for Name: log_channels; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2577 (class 0 OID 16535)
+-- Dependencies: 213
+-- Data for Name: log_job; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2578 (class 0 OID 16541)
+-- Dependencies: 214
+-- Data for Name: log_jobentry; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2579 (class 0 OID 16547)
+-- Dependencies: 215
+-- Data for Name: log_performance; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2580 (class 0 OID 16553)
+-- Dependencies: 216
+-- Data for Name: log_step; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2581 (class 0 OID 16559)
+-- Dependencies: 217
+-- Data for Name: log_transformations; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2582 (class 0 OID 16565)
+-- Dependencies: 218
+-- Data for Name: ope_audits; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2602 (class 0 OID 0)
+-- Dependencies: 181
 -- Name: seq_dm_custom_metadata_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1226,8 +1476,8 @@ SELECT pg_catalog.setval('"seq_dm_custom_metadata_id"', 1, false);
 
 
 --
--- TOC entry 2449 (class 0 OID 0)
--- Dependencies: 172
+-- TOC entry 2603 (class 0 OID 0)
+-- Dependencies: 183
 -- Name: seq_dm_dim_actions_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1235,8 +1485,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_actions_id"', 1, true);
 
 
 --
--- TOC entry 2450 (class 0 OID 0)
--- Dependencies: 176
+-- TOC entry 2604 (class 0 OID 0)
+-- Dependencies: 187
 -- Name: seq_dm_dim_documents_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1244,8 +1494,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_documents_id"', 1, true);
 
 
 --
--- TOC entry 2451 (class 0 OID 0)
--- Dependencies: 178
+-- TOC entry 2605 (class 0 OID 0)
+-- Dependencies: 189
 -- Name: seq_dm_dim_folders_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1253,8 +1503,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_folders_id"', 1, true);
 
 
 --
--- TOC entry 2452 (class 0 OID 0)
--- Dependencies: 181
+-- TOC entry 2606 (class 0 OID 0)
+-- Dependencies: 192
 -- Name: seq_dm_dim_mime_types_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1262,8 +1512,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_mime_types_id"', 1, true);
 
 
 --
--- TOC entry 2453 (class 0 OID 0)
--- Dependencies: 185
+-- TOC entry 2607 (class 0 OID 0)
+-- Dependencies: 196
 -- Name: seq_dm_dim_node_types_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1271,8 +1521,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_node_types_id"', 1, true);
 
 
 --
--- TOC entry 2454 (class 0 OID 0)
--- Dependencies: 187
+-- TOC entry 2608 (class 0 OID 0)
+-- Dependencies: 198
 -- Name: seq_dm_dim_paths_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1280,8 +1530,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_paths_id"', 1, true);
 
 
 --
--- TOC entry 2455 (class 0 OID 0)
--- Dependencies: 189
+-- TOC entry 2609 (class 0 OID 0)
+-- Dependencies: 200
 -- Name: seq_dm_dim_users_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1289,8 +1539,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_users_id"', 1, true);
 
 
 --
--- TOC entry 2456 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 2610 (class 0 OID 0)
+-- Dependencies: 202
 -- Name: seq_dm_dim_workflow_definitions_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1298,8 +1548,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_workflow_definitions_id"', 1, true);
 
 
 --
--- TOC entry 2457 (class 0 OID 0)
--- Dependencies: 221
+-- TOC entry 2611 (class 0 OID 0)
+-- Dependencies: 204
 -- Name: seq_dm_dim_workflow_instances_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1307,8 +1557,8 @@ SELECT pg_catalog.setval('"seq_dm_dim_workflow_instances_id"', 1, true);
 
 
 --
--- TOC entry 2458 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 2612 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: seq_dm_dim_workflow_tasks_id; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1316,19 +1566,89 @@ SELECT pg_catalog.setval('"seq_dm_dim_workflow_tasks_id"', 1, true);
 
 
 --
--- TOC entry 2122 (class 2606 OID 19512)
--- Name: pk_dm_custom_metadata; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2583 (class 0 OID 16571)
+-- Dependencies: 219
+-- Data for Name: stg_audits; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2584 (class 0 OID 16577)
+-- Dependencies: 220
+-- Data for Name: stg_rest_documents; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2585 (class 0 OID 16583)
+-- Dependencies: 221
+-- Data for Name: stg_rest_documents_custom_types; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2586 (class 0 OID 16589)
+-- Dependencies: 222
+-- Data for Name: stg_rest_folders; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2587 (class 0 OID 16595)
+-- Dependencies: 223
+-- Data for Name: stg_rest_folders_custom_types; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2588 (class 0 OID 16601)
+-- Dependencies: 224
+-- Data for Name: stg_workflow_definitions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2589 (class 0 OID 16607)
+-- Dependencies: 225
+-- Data for Name: stg_workflow_instances; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2590 (class 0 OID 16613)
+-- Dependencies: 226
+-- Data for Name: stg_workflow_items; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2591 (class 0 OID 16619)
+-- Dependencies: 227
+-- Data for Name: stg_workflow_tasks; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2269 (class 2606 OID 16656)
+-- Name: pk_dm_custom_metadata; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_custom_metadata"
     ADD CONSTRAINT "pk_dm_custom_metadata" PRIMARY KEY ("id");
 
-ALTER TABLE ONLY "dm_custom_metadata"
-  ADD CONSTRAINT "unq_dm_custom_metadata" UNIQUE ("class", "name");
 
 --
--- TOC entry 2125 (class 2606 OID 19514)
--- Name: pk_dm_dim_action; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2274 (class 2606 OID 16660)
+-- Name: pk_dm_dim_action; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_actions"
@@ -1336,8 +1656,8 @@ ALTER TABLE ONLY "dm_dim_actions"
 
 
 --
--- TOC entry 2131 (class 2606 OID 19516)
--- Name: pk_dm_dim_dates; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2280 (class 2606 OID 16662)
+-- Name: pk_dm_dim_dates; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_dates"
@@ -1345,8 +1665,8 @@ ALTER TABLE ONLY "dm_dim_dates"
 
 
 --
--- TOC entry 2135 (class 2606 OID 19518)
--- Name: pk_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2285 (class 2606 OID 16664)
+-- Name: pk_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_documents"
@@ -1354,16 +1674,17 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2141 (class 2606 OID 19520)
--- Name: pk_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2292 (class 2606 OID 16666)
+-- Name: pk_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_folders"
     ADD CONSTRAINT "pk_dm_dim_folders" PRIMARY KEY ("id");
 
+
 --
--- TOC entry 2146 (class 2606 OID 19522)
--- Name: pk_dm_dim_hours; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2297 (class 2606 OID 16668)
+-- Name: pk_dm_dim_hours; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_hours"
@@ -1371,8 +1692,8 @@ ALTER TABLE ONLY "dm_dim_hours"
 
 
 --
--- TOC entry 2149 (class 2606 OID 19524)
--- Name: pk_dm_dim_mime_types; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2300 (class 2606 OID 16670)
+-- Name: pk_dm_dim_mime_types; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_mime_types"
@@ -1380,8 +1701,8 @@ ALTER TABLE ONLY "dm_dim_mime_types"
 
 
 --
--- TOC entry 2152 (class 2606 OID 19526)
--- Name: pk_dm_dim_minutes; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2303 (class 2606 OID 16672)
+-- Name: pk_dm_dim_minutes; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_minutes"
@@ -1389,8 +1710,8 @@ ALTER TABLE ONLY "dm_dim_minutes"
 
 
 --
--- TOC entry 2155 (class 2606 OID 19528)
--- Name: pk_dm_dim_months; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2306 (class 2606 OID 16674)
+-- Name: pk_dm_dim_months; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_months"
@@ -1398,8 +1719,8 @@ ALTER TABLE ONLY "dm_dim_months"
 
 
 --
--- TOC entry 2158 (class 2606 OID 19530)
--- Name: pk_dm_dim_node_types; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2309 (class 2606 OID 16676)
+-- Name: pk_dm_dim_node_types; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_node_types"
@@ -1407,8 +1728,8 @@ ALTER TABLE ONLY "dm_dim_node_types"
 
 
 --
--- TOC entry 2161 (class 2606 OID 19532)
--- Name: pk_dm_dim_path; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2313 (class 2606 OID 16678)
+-- Name: pk_dm_dim_path; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_paths"
@@ -1416,8 +1737,8 @@ ALTER TABLE ONLY "dm_dim_paths"
 
 
 --
--- TOC entry 2164 (class 2606 OID 19534)
--- Name: pk_dm_dim_users; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2316 (class 2606 OID 16680)
+-- Name: pk_dm_dim_users; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_users"
@@ -1425,8 +1746,8 @@ ALTER TABLE ONLY "dm_dim_users"
 
 
 --
--- TOC entry 2196 (class 2606 OID 28696)
--- Name: pk_dm_dim_workflow_definitions; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2319 (class 2606 OID 16682)
+-- Name: pk_dm_dim_workflow_definitions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_workflow_definitions"
@@ -1434,8 +1755,8 @@ ALTER TABLE ONLY "dm_dim_workflow_definitions"
 
 
 --
--- TOC entry 2199 (class 2606 OID 28711)
--- Name: pk_dm_dim_workflow_instances; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2322 (class 2606 OID 16684)
+-- Name: pk_dm_dim_workflow_instances; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_workflow_instances"
@@ -1443,8 +1764,8 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2207 (class 2606 OID 29104)
--- Name: pk_dm_dim_workflow_items; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2325 (class 2606 OID 16686)
+-- Name: pk_dm_dim_workflow_items; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_workflow_items"
@@ -1452,8 +1773,8 @@ ALTER TABLE ONLY "dm_dim_workflow_items"
 
 
 --
--- TOC entry 2202 (class 2606 OID 28856)
--- Name: pk_dm_dim_workflow_tasks; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2328 (class 2606 OID 16688)
+-- Name: pk_dm_dim_workflow_tasks; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_workflow_tasks"
@@ -1461,8 +1782,8 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2167 (class 2606 OID 19536)
--- Name: pk_dm_dim_years; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2331 (class 2606 OID 16690)
+-- Name: pk_dm_dim_years; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_years"
@@ -1470,8 +1791,8 @@ ALTER TABLE ONLY "dm_dim_years"
 
 
 --
--- TOC entry 2169 (class 2606 OID 19540)
--- Name: pk_reports; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2333 (class 2606 OID 16692)
+-- Name: pk_reports; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_reports"
@@ -1479,8 +1800,8 @@ ALTER TABLE ONLY "dm_reports"
 
 
 --
--- TOC entry 2128 (class 2606 OID 19542)
--- Name: pk_stg_alfresco; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2277 (class 2606 OID 16694)
+-- Name: pk_stg_alfresco; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_alfresco"
@@ -1488,8 +1809,8 @@ ALTER TABLE ONLY "dm_dim_alfresco"
 
 
 --
--- TOC entry 2177 (class 2606 OID 19544)
--- Name: pk_stg_audit; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2339 (class 2606 OID 16696)
+-- Name: pk_stg_audit; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_audits"
@@ -1497,8 +1818,8 @@ ALTER TABLE ONLY "stg_audits"
 
 
 --
--- TOC entry 2173 (class 2606 OID 19546)
--- Name: pk_stg_audit_extended; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2337 (class 2606 OID 16698)
+-- Name: pk_stg_audit_extended; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "ope_audits"
@@ -1506,8 +1827,8 @@ ALTER TABLE ONLY "ope_audits"
 
 
 --
--- TOC entry 2191 (class 2606 OID 27575)
--- Name: pk_stg_workflow_instances; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2347 (class 2606 OID 16700)
+-- Name: pk_stg_workflow_instances; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_workflow_instances"
@@ -1515,8 +1836,8 @@ ALTER TABLE ONLY "stg_workflow_instances"
 
 
 --
--- TOC entry 2204 (class 2606 OID 28982)
--- Name: pk_stg_workflow_packages; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2349 (class 2606 OID 16702)
+-- Name: pk_stg_workflow_packages; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_workflow_items"
@@ -1524,8 +1845,8 @@ ALTER TABLE ONLY "stg_workflow_items"
 
 
 --
--- TOC entry 2193 (class 2606 OID 27596)
--- Name: pk_stg_workflow_tasks; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2351 (class 2606 OID 16704)
+-- Name: pk_stg_workflow_tasks; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_workflow_tasks"
@@ -1533,44 +1854,35 @@ ALTER TABLE ONLY "stg_workflow_tasks"
 
 
 --
--- TOC entry 2180 (class 2606 OID 19548)
--- Name: uni_cmis_document; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2341 (class 2606 OID 16706)
+-- Name: uni_document_id; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_rest_documents"
     ADD CONSTRAINT "uni_document_id" UNIQUE ("alfresco_id", "node-dbid");
 
-ALTER TABLE "stg_rest_documents"
-  ADD CONSTRAINT "fk_stg_rest_documents_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
-
-ALTER TABLE "stg_rest_documents_custom_types"
-  ADD CONSTRAINT "fk_stg_rest_documents_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
-
-ALTER TABLE "stg_rest_documents_custom_types"
-  ADD CONSTRAINT "fk_stg_rest_documents_custom_types_stg_rest_documents" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_documents" ("alfresco_id", "node-dbid");
-
 
 --
--- TOC entry 2186 (class 2606 OID 19552)
--- Name: uni_cmis_folder_id; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2345 (class 2606 OID 16723)
+-- Name: uni_folder_id; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "stg_rest_folders"
     ADD CONSTRAINT "uni_folder_id" UNIQUE ("alfresco_id", "node-dbid");
 
-ALTER TABLE "stg_rest_folders"
-  ADD CONSTRAINT "fk_stg_rest_folders_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
 
-ALTER TABLE "stg_rest_folders_custom_types"
-  ADD CONSTRAINT "fk_stg_rest_folders_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco" ("id");
+--
+-- TOC entry 2271 (class 2606 OID 16658)
+-- Name: unq_dm_custom_metadata; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
 
-ALTER TABLE "stg_rest_folders_custom_types"
-  ADD CONSTRAINT "fk_stg_rest_folders_custom_types_stg_rest_folders" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_folders" ("alfresco_id", "node-dbid");
+ALTER TABLE ONLY "dm_custom_metadata"
+    ADD CONSTRAINT "unq_dm_custom_metadata" UNIQUE ("class", "name");
 
 
 --
--- TOC entry 2137 (class 2606 OID 19556)
--- Name: unq_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2287 (class 2606 OID 16740)
+-- Name: unq_dm_dim_documents; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_documents"
@@ -1578,8 +1890,8 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2143 (class 2606 OID 19558)
--- Name: unq_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2294 (class 2606 OID 16742)
+-- Name: unq_dm_dim_folders; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_folders"
@@ -1587,186 +1899,223 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2120 (class 1259 OID 19559)
--- Name: idx_dm_custom_metadata; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2267 (class 1259 OID 16743)
+-- Name: idx_dm_custom_metadata; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_custom_metadata" ON "dm_custom_metadata" USING "btree" ("id");
 
 
 --
--- TOC entry 2123 (class 1259 OID 19560)
--- Name: idx_dm_dim_actions; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2272 (class 1259 OID 16744)
+-- Name: idx_dm_dim_actions; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_actions" ON "dm_dim_actions" USING "btree" ("id");
 
 
 --
--- TOC entry 2126 (class 1259 OID 19561)
--- Name: idx_dm_dim_alfresco; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2275 (class 1259 OID 16745)
+-- Name: idx_dm_dim_alfresco; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_alfresco" ON "dm_dim_alfresco" USING "btree" ("id");
 
 
 --
--- TOC entry 2129 (class 1259 OID 19562)
--- Name: idx_dm_dim_dates; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2278 (class 1259 OID 16746)
+-- Name: idx_dm_dim_dates; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_dates" ON "dm_dim_dates" USING "btree" ("id");
 
 
 --
--- TOC entry 2132 (class 1259 OID 19563)
--- Name: idx_dm_dim_documents; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2281 (class 1259 OID 16747)
+-- Name: idx_dm_dim_documents; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_documents" ON "dm_dim_documents" USING "btree" ("id");
 
 
 --
--- TOC entry 2133 (class 1259 OID 19564)
--- Name: idx_dm_dim_documents_src_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2282 (class 1259 OID 16749)
+-- Name: idx_dm_dim_documents_path; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX "idx_dm_dim_documents_path" ON "dm_dim_documents" USING "btree" ("path");
+
+
+--
+-- TOC entry 2283 (class 1259 OID 16748)
+-- Name: idx_dm_dim_documents_src_id; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_documents_src_id" ON "dm_dim_documents" USING "btree" ("alfresco_id", "src_id");
 
-CREATE INDEX "idx_dm_dim_documents_path" ON "dm_dim_documents" ("path");
 
 --
--- TOC entry 2138 (class 1259 OID 19565)
--- Name: idx_dm_dim_folders; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2288 (class 1259 OID 16750)
+-- Name: idx_dm_dim_folders; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_folders" ON "dm_dim_folders" USING "btree" ("id");
 
 
 --
--- TOC entry 2139 (class 1259 OID 19566)
--- Name: idx_dm_dim_folders_src_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2289 (class 1259 OID 16752)
+-- Name: idx_dm_dim_folders_path; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX "idx_dm_dim_folders_path" ON "dm_dim_folders" USING "btree" ("path");
+
+
+--
+-- TOC entry 2290 (class 1259 OID 16751)
+-- Name: idx_dm_dim_folders_src_id; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_folders_src_id" ON "dm_dim_folders" USING "btree" ("alfresco_id", "src_id");
 
-CREATE INDEX "idx_dm_dim_folders_path" ON "dm_dim_folders" ("path");
 
 --
--- TOC entry 2144 (class 1259 OID 19567)
--- Name: idx_dm_dim_hours; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2295 (class 1259 OID 16753)
+-- Name: idx_dm_dim_hours; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_hours" ON "dm_dim_hours" USING "btree" ("id");
 
 
 --
--- TOC entry 2147 (class 1259 OID 19568)
--- Name: idx_dm_dim_mime_types; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2298 (class 1259 OID 16754)
+-- Name: idx_dm_dim_mime_types; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_mime_types" ON "dm_dim_mime_types" USING "btree" ("id");
 
 
 --
--- TOC entry 2150 (class 1259 OID 19569)
--- Name: idx_dm_dim_minutes; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2301 (class 1259 OID 16755)
+-- Name: idx_dm_dim_minutes; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_minutes" ON "dm_dim_minutes" USING "btree" ("id");
 
 
 --
--- TOC entry 2153 (class 1259 OID 19570)
--- Name: idx_dm_dim_months; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2304 (class 1259 OID 16756)
+-- Name: idx_dm_dim_months; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_months" ON "dm_dim_months" USING "btree" ("id");
 
 
 --
--- TOC entry 2156 (class 1259 OID 19571)
--- Name: idx_dm_dim_node_types; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2307 (class 1259 OID 16757)
+-- Name: idx_dm_dim_node_types; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_node_types" ON "dm_dim_node_types" USING "btree" ("id");
 
 
 --
--- TOC entry 2159 (class 1259 OID 19572)
--- Name: idx_dm_dim_paths; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2310 (class 1259 OID 16758)
+-- Name: idx_dm_dim_paths; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_paths" ON "dm_dim_paths" USING "btree" ("id");
 
-CREATE INDEX "idx_dm_dim_paths_src_path" ON "dm_dim_paths" ("src_path");
 
 --
--- TOC entry 2162 (class 1259 OID 19573)
--- Name: idx_dm_dim_users; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2311 (class 1259 OID 16759)
+-- Name: idx_dm_dim_paths_src_path; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX "idx_dm_dim_paths_src_path" ON "dm_dim_paths" USING "btree" ("src_path");
+
+
+--
+-- TOC entry 2314 (class 1259 OID 16760)
+-- Name: idx_dm_dim_users; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_users" ON "dm_dim_users" USING "btree" ("id");
 
 
 --
--- TOC entry 2194 (class 1259 OID 28702)
--- Name: idx_dm_dim_workflow_definitions; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2317 (class 1259 OID 16761)
+-- Name: idx_dm_dim_workflow_definitions; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_workflow_definitions" ON "dm_dim_workflow_definitions" USING "btree" ("id");
 
 
 --
--- TOC entry 2197 (class 1259 OID 28757)
--- Name: idx_dm_dim_workflow_instances; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2320 (class 1259 OID 16762)
+-- Name: idx_dm_dim_workflow_instances; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_workflow_instances" ON "dm_dim_workflow_instances" USING "btree" ("id");
 
 
 --
--- TOC entry 2205 (class 1259 OID 29120)
--- Name: idx_dm_dim_workflow_items; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2323 (class 1259 OID 16763)
+-- Name: idx_dm_dim_workflow_items; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_workflow_items" ON "dm_dim_workflow_items" USING "btree" ("alfresco_id", "workflow_instance_id", "ordinal");
 
 
 --
--- TOC entry 2200 (class 1259 OID 28902)
--- Name: idx_dm_dim_workflow_tasks; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2326 (class 1259 OID 16764)
+-- Name: idx_dm_dim_workflow_tasks; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_workflow_tasks" ON "dm_dim_workflow_tasks" USING "btree" ("id");
 
 
 --
--- TOC entry 2165 (class 1259 OID 19574)
--- Name: idx_dm_dim_years; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2329 (class 1259 OID 16765)
+-- Name: idx_dm_dim_years; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_dm_dim_years" ON "dm_dim_years" USING "btree" ("id");
 
 
 --
--- TOC entry 2170 (class 1259 OID 19575)
--- Name: idx_log_transformations_1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2334 (class 1259 OID 16766)
+-- Name: idx_log_transformations_1; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_log_transformations_1" ON "log_transformations" USING "btree" ("id_batch");
 
 
 --
--- TOC entry 2171 (class 1259 OID 19576)
--- Name: idx_log_transformations_2; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2335 (class 1259 OID 16767)
+-- Name: idx_log_transformations_2; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX "idx_log_transformations_2" ON "log_transformations" USING "btree" ("errors", "status", "transname");
 
 
 --
--- TOC entry 2208 (class 2606 OID 19591)
+-- TOC entry 2342 (class 1259 OID 17088)
+-- Name: idx_stg_rest_folders_node_uuid; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX "idx_stg_rest_folders_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "node-uuid");
+
+
+--
+-- TOC entry 2343 (class 1259 OID 17089)
+-- Name: idx_stg_rest_folders_parent_node_uuid; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX "idx_stg_rest_folders_parent_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "parent-node-uuid");
+
+
+--
+-- TOC entry 2352 (class 2606 OID 16768)
 -- Name: fk_dm_custom_metadata_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1775,7 +2124,16 @@ ALTER TABLE ONLY "dm_custom_metadata"
 
 
 --
--- TOC entry 2209 (class 2606 OID 19596)
+-- TOC entry 2423 (class 2606 OID 17471)
+-- Name: fk_dm_data_quality_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "dm_data_quality"
+    ADD CONSTRAINT "fk_dm_data_quality_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2353 (class 2606 OID 16773)
 -- Name: fk_dm_dim_action_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1784,7 +2142,7 @@ ALTER TABLE ONLY "dm_dim_actions"
 
 
 --
--- TOC entry 2210 (class 2606 OID 19601)
+-- TOC entry 2354 (class 2606 OID 16778)
 -- Name: fk_dm_dim_dates_dm_dim_months; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1793,7 +2151,7 @@ ALTER TABLE ONLY "dm_dim_dates"
 
 
 --
--- TOC entry 2211 (class 2606 OID 19606)
+-- TOC entry 2355 (class 2606 OID 16783)
 -- Name: fk_dm_dim_documents_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1802,7 +2160,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2212 (class 2606 OID 19611)
+-- TOC entry 2356 (class 2606 OID 16788)
 -- Name: fk_dm_dim_documents_dm_dim_dates_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1811,7 +2169,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2213 (class 2606 OID 19616)
+-- TOC entry 2357 (class 2606 OID 16793)
 -- Name: fk_dm_dim_documents_dm_dim_dates_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1820,7 +2178,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2214 (class 2606 OID 19621)
+-- TOC entry 2358 (class 2606 OID 16798)
 -- Name: fk_dm_dim_documents_dm_dim_folders_parent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1829,7 +2187,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2215 (class 2606 OID 19626)
+-- TOC entry 2359 (class 2606 OID 16803)
 -- Name: fk_dm_dim_documents_dm_dim_mime_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1838,7 +2196,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2216 (class 2606 OID 19631)
+-- TOC entry 2360 (class 2606 OID 16808)
 -- Name: fk_dm_dim_documents_dm_dim_minutes_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1847,7 +2205,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2217 (class 2606 OID 19636)
+-- TOC entry 2361 (class 2606 OID 16813)
 -- Name: fk_dm_dim_documents_dm_dim_minutes_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1856,7 +2214,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2218 (class 2606 OID 19641)
+-- TOC entry 2362 (class 2606 OID 16818)
 -- Name: fk_dm_dim_documents_dm_dim_node_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1865,7 +2223,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2219 (class 2606 OID 19646)
+-- TOC entry 2363 (class 2606 OID 16823)
 -- Name: fk_dm_dim_documents_dm_dim_users_creator; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1874,7 +2232,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2220 (class 2606 OID 19651)
+-- TOC entry 2364 (class 2606 OID 16828)
 -- Name: fk_dm_dim_documents_dm_dim_users_last_modifier; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1883,7 +2241,7 @@ ALTER TABLE ONLY "dm_dim_documents"
 
 
 --
--- TOC entry 2221 (class 2606 OID 19656)
+-- TOC entry 2365 (class 2606 OID 16833)
 -- Name: fk_dm_dim_folders_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1892,7 +2250,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2222 (class 2606 OID 19661)
+-- TOC entry 2366 (class 2606 OID 16838)
 -- Name: fk_dm_dim_folders_dm_dim_dates_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1901,7 +2259,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2223 (class 2606 OID 19666)
+-- TOC entry 2367 (class 2606 OID 16843)
 -- Name: fk_dm_dim_folders_dm_dim_dates_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1910,7 +2268,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2224 (class 2606 OID 19671)
+-- TOC entry 2368 (class 2606 OID 16848)
 -- Name: fk_dm_dim_folders_dm_dim_folders_aprent; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1919,7 +2277,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2225 (class 2606 OID 19676)
+-- TOC entry 2369 (class 2606 OID 16853)
 -- Name: fk_dm_dim_folders_dm_dim_minutes_creation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1928,7 +2286,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2226 (class 2606 OID 19681)
+-- TOC entry 2370 (class 2606 OID 16858)
 -- Name: fk_dm_dim_folders_dm_dim_minutes_last_modification; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1937,7 +2295,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2227 (class 2606 OID 19686)
+-- TOC entry 2371 (class 2606 OID 16863)
 -- Name: fk_dm_dim_folders_dm_dim_node_types; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1946,7 +2304,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2228 (class 2606 OID 19691)
+-- TOC entry 2372 (class 2606 OID 16868)
 -- Name: fk_dm_dim_folders_dm_dim_users_creator; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1955,7 +2313,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2229 (class 2606 OID 19696)
+-- TOC entry 2373 (class 2606 OID 16873)
 -- Name: fk_dm_dim_folders_dm_dim_users_last_modifier; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1964,7 +2322,7 @@ ALTER TABLE ONLY "dm_dim_folders"
 
 
 --
--- TOC entry 2230 (class 2606 OID 19701)
+-- TOC entry 2374 (class 2606 OID 16878)
 -- Name: fk_dm_dim_mime_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1973,7 +2331,7 @@ ALTER TABLE ONLY "dm_dim_mime_types"
 
 
 --
--- TOC entry 2231 (class 2606 OID 19706)
+-- TOC entry 2375 (class 2606 OID 16883)
 -- Name: fk_dm_dim_minutes_dm_dim_hours; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1982,15 +2340,16 @@ ALTER TABLE ONLY "dm_dim_minutes"
 
 
 --
--- TOC entry 2232 (class 2606 OID 19711)
+-- TOC entry 2376 (class 2606 OID 16888)
 -- Name: fk_dm_dim_months_dm_dim_years; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_months"
     ADD CONSTRAINT "fk_dm_dim_months_dm_dim_years" FOREIGN KEY ("year_id") REFERENCES "dm_dim_years"("id");
 
+
 --
--- TOC entry 2233 (class 2606 OID 19716)
+-- TOC entry 2377 (class 2606 OID 16893)
 -- Name: fk_dm_dim_node_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1999,7 +2358,7 @@ ALTER TABLE ONLY "dm_dim_node_types"
 
 
 --
--- TOC entry 2234 (class 2606 OID 19721)
+-- TOC entry 2378 (class 2606 OID 16898)
 -- Name: fk_dm_dim_path_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2008,25 +2367,25 @@ ALTER TABLE ONLY "dm_dim_paths"
 
 
 --
--- TOC entry 2235 (class 2606 OID 19726)
--- Name: fk_dm_dim_path_dm_dim_folders; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY "dm_dim_paths"
-    ADD CONSTRAINT "fk_dm_dim_path_dm_dim_folders" FOREIGN KEY ("folder_id") REFERENCES "dm_dim_folders"("id");
-
-
---
--- TOC entry 2236 (class 2606 OID 19731)
+-- TOC entry 2379 (class 2606 OID 17476)
 -- Name: fk_dm_dim_paths_dm_dim_documents; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "dm_dim_paths"
-    ADD CONSTRAINT "fk_dm_dim_paths_dm_dim_documents" FOREIGN KEY ("document_id") REFERENCES "dm_dim_documents"("id");
+    ADD CONSTRAINT "fk_dm_dim_paths_dm_dim_documents" FOREIGN KEY ("document_id") REFERENCES "dm_dim_documents"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
--- TOC entry 2237 (class 2606 OID 19736)
+-- TOC entry 2380 (class 2606 OID 17481)
+-- Name: fk_dm_dim_paths_dm_dim_folders; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "dm_dim_paths"
+    ADD CONSTRAINT "fk_dm_dim_paths_dm_dim_folders" FOREIGN KEY ("folder_id") REFERENCES "dm_dim_folders"("id") ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- TOC entry 2381 (class 2606 OID 16913)
 -- Name: fk_dm_dim_users_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2035,7 +2394,7 @@ ALTER TABLE ONLY "dm_dim_users"
 
 
 --
--- TOC entry 2251 (class 2606 OID 28697)
+-- TOC entry 2382 (class 2606 OID 16918)
 -- Name: fk_dm_dim_workflow_definitions_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2044,7 +2403,7 @@ ALTER TABLE ONLY "dm_dim_workflow_definitions"
 
 
 --
--- TOC entry 2252 (class 2606 OID 28712)
+-- TOC entry 2383 (class 2606 OID 16923)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2053,7 +2412,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2253 (class 2606 OID 28717)
+-- TOC entry 2384 (class 2606 OID 16928)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_dates_due; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2062,7 +2421,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2254 (class 2606 OID 28722)
+-- TOC entry 2385 (class 2606 OID 16933)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_dates_end; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2071,7 +2430,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2255 (class 2606 OID 28727)
+-- TOC entry 2386 (class 2606 OID 16938)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_dates_start; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2080,7 +2439,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2256 (class 2606 OID 28732)
+-- TOC entry 2387 (class 2606 OID 16943)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_minutes_due; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2089,7 +2448,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2257 (class 2606 OID 28737)
+-- TOC entry 2388 (class 2606 OID 16948)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_minutes_end; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2098,7 +2457,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2258 (class 2606 OID 28742)
+-- TOC entry 2389 (class 2606 OID 16953)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_minutes_start; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2107,7 +2466,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2259 (class 2606 OID 28747)
+-- TOC entry 2390 (class 2606 OID 16958)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2116,7 +2475,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2260 (class 2606 OID 28752)
+-- TOC entry 2391 (class 2606 OID 16963)
 -- Name: fk_dm_dim_workflow_instances_dm_dim_workflow_definitions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2125,7 +2484,7 @@ ALTER TABLE ONLY "dm_dim_workflow_instances"
 
 
 --
--- TOC entry 2271 (class 2606 OID 29105)
+-- TOC entry 2392 (class 2606 OID 16968)
 -- Name: fk_dm_dim_workflow_items_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2134,7 +2493,7 @@ ALTER TABLE ONLY "dm_dim_workflow_items"
 
 
 --
--- TOC entry 2272 (class 2606 OID 29110)
+-- TOC entry 2393 (class 2606 OID 16973)
 -- Name: fk_dm_dim_workflow_items_dm_dim_documents; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2143,7 +2502,7 @@ ALTER TABLE ONLY "dm_dim_workflow_items"
 
 
 --
--- TOC entry 2273 (class 2606 OID 29115)
+-- TOC entry 2394 (class 2606 OID 16978)
 -- Name: fk_dm_dim_workflow_items_dm_dim_workflow_instances; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2152,7 +2511,7 @@ ALTER TABLE ONLY "dm_dim_workflow_items"
 
 
 --
--- TOC entry 2261 (class 2606 OID 28857)
+-- TOC entry 2395 (class 2606 OID 16983)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2161,7 +2520,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2262 (class 2606 OID 28862)
+-- TOC entry 2396 (class 2606 OID 16988)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_dates_completion; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2170,7 +2529,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2263 (class 2606 OID 28867)
+-- TOC entry 2397 (class 2606 OID 16993)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_dates_due; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2179,7 +2538,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2264 (class 2606 OID 28872)
+-- TOC entry 2398 (class 2606 OID 16998)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_dates_start; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2188,7 +2547,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2265 (class 2606 OID 28877)
+-- TOC entry 2399 (class 2606 OID 17003)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_minutes_completion; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2197,7 +2556,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2266 (class 2606 OID 28882)
+-- TOC entry 2400 (class 2606 OID 17008)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_minutes_due; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2206,7 +2565,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2267 (class 2606 OID 28887)
+-- TOC entry 2401 (class 2606 OID 17013)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_minutes_start; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2215,7 +2574,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2268 (class 2606 OID 28892)
+-- TOC entry 2402 (class 2606 OID 17018)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2224,7 +2583,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2269 (class 2606 OID 28897)
+-- TOC entry 2403 (class 2606 OID 17023)
 -- Name: fk_dm_dim_workflow_tasks_dm_dim_workflow_instances; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2233,7 +2592,7 @@ ALTER TABLE ONLY "dm_dim_workflow_tasks"
 
 
 --
--- TOC entry 2238 (class 2606 OID 19741)
+-- TOC entry 2404 (class 2606 OID 17028)
 -- Name: fk_dm_fact_actions_dm_dim_actions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2242,7 +2601,7 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2239 (class 2606 OID 19746)
+-- TOC entry 2405 (class 2606 OID 17033)
 -- Name: fk_dm_fact_actions_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2251,7 +2610,7 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2240 (class 2606 OID 19751)
+-- TOC entry 2406 (class 2606 OID 17038)
 -- Name: fk_dm_fact_actions_dm_dim_dates; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2260,7 +2619,7 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2241 (class 2606 OID 19756)
+-- TOC entry 2407 (class 2606 OID 17043)
 -- Name: fk_dm_fact_actions_dm_dim_minutes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2269,7 +2628,7 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2242 (class 2606 OID 19761)
+-- TOC entry 2408 (class 2606 OID 17048)
 -- Name: fk_dm_fact_actions_dm_dim_paths; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2278,7 +2637,7 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2243 (class 2606 OID 19766)
+-- TOC entry 2409 (class 2606 OID 17053)
 -- Name: fk_dm_fact_actions_dm_dim_users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2287,7 +2646,16 @@ ALTER TABLE ONLY "dm_fact_actions"
 
 
 --
--- TOC entry 2247 (class 2606 OID 19771)
+-- TOC entry 2422 (class 2606 OID 17462)
+-- Name: fk_dm_logs_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "dm_logs"
+    ADD CONSTRAINT "fk_dm_logs_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2411 (class 2606 OID 17058)
 -- Name: fk_stg_audit_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2296,7 +2664,7 @@ ALTER TABLE ONLY "stg_audits"
 
 
 --
--- TOC entry 2244 (class 2606 OID 19776)
+-- TOC entry 2410 (class 2606 OID 17063)
 -- Name: fk_stg_audit_extended_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2305,7 +2673,61 @@ ALTER TABLE ONLY "ope_audits"
 
 
 --
--- TOC entry 2250 (class 2606 OID 28602)
+-- TOC entry 2413 (class 2606 OID 16712)
+-- Name: fk_stg_rest_documents_custom_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_documents_custom_types"
+    ADD CONSTRAINT "fk_stg_rest_documents_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2414 (class 2606 OID 16717)
+-- Name: fk_stg_rest_documents_custom_types_stg_rest_documents; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_documents_custom_types"
+    ADD CONSTRAINT "fk_stg_rest_documents_custom_types_stg_rest_documents" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_documents"("alfresco_id", "node-dbid");
+
+
+--
+-- TOC entry 2412 (class 2606 OID 16707)
+-- Name: fk_stg_rest_documents_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_documents"
+    ADD CONSTRAINT "fk_stg_rest_documents_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2416 (class 2606 OID 16729)
+-- Name: fk_stg_rest_folders_custom_types_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_folders_custom_types"
+    ADD CONSTRAINT "fk_stg_rest_folders_custom_types_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2417 (class 2606 OID 16734)
+-- Name: fk_stg_rest_folders_custom_types_stg_rest_folders; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_folders_custom_types"
+    ADD CONSTRAINT "fk_stg_rest_folders_custom_types_stg_rest_folders" FOREIGN KEY ("alfresco_id", "node-dbid") REFERENCES "stg_rest_folders"("alfresco_id", "node-dbid");
+
+
+--
+-- TOC entry 2415 (class 2606 OID 16724)
+-- Name: fk_stg_rest_folders_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "stg_rest_folders"
+    ADD CONSTRAINT "fk_stg_rest_folders_dm_dim_alfresco" FOREIGN KEY ("alfresco_id") REFERENCES "dm_dim_alfresco"("id");
+
+
+--
+-- TOC entry 2418 (class 2606 OID 17068)
 -- Name: fk_stg_workflow_definitions_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2314,7 +2736,7 @@ ALTER TABLE ONLY "stg_workflow_definitions"
 
 
 --
--- TOC entry 2248 (class 2606 OID 27576)
+-- TOC entry 2419 (class 2606 OID 17073)
 -- Name: fk_stg_workflow_instances_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2323,7 +2745,7 @@ ALTER TABLE ONLY "stg_workflow_instances"
 
 
 --
--- TOC entry 2270 (class 2606 OID 28983)
+-- TOC entry 2420 (class 2606 OID 17078)
 -- Name: fk_stg_workflow_packages_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2332,7 +2754,7 @@ ALTER TABLE ONLY "stg_workflow_items"
 
 
 --
--- TOC entry 2249 (class 2606 OID 27597)
+-- TOC entry 2421 (class 2606 OID 17083)
 -- Name: fk_stg_workflow_tasks_dm_dim_alfresco; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2341,24 +2763,8 @@ ALTER TABLE ONLY "stg_workflow_tasks"
 
 
 --
--- TOC entry 2133 (class 1259 OID 19564)
--- Name: idx_stg_rest_folders_node_uuid; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_rest_folders_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "node-uuid");
-
-
---
--- TOC entry 2133 (class 1259 OID 19564)
--- Name: idx_stg_rest_folders_parent_node_uuid; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX "idx_stg_rest_folders_parent_node_uuid" ON "stg_rest_folders" USING "btree" ("alfresco_id", "store-protocol", "store-identifier", "parent-node-uuid");
-
-
---
--- TOC entry 2446 (class 0 OID 0)
--- Dependencies: 6
+-- TOC entry 2600 (class 0 OID 0)
+-- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
@@ -2368,7 +2774,7 @@ GRANT ALL ON SCHEMA "public" TO "postgres";
 GRANT ALL ON SCHEMA "public" TO PUBLIC;
 
 
--- Completed on 2015-04-10 15:50:17 CEST
+-- Completed on 2016-05-07 22:57:18 CEST
 
 --
 -- PostgreSQL database dump complete

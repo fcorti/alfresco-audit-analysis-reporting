@@ -3,7 +3,7 @@
 -- 
 -- Script to clean the AAAR Data Mart.
 -- Author: Francesco Corti (all rights reserved)
--- Date: 04 May, 2015
+-- Date: 10 May, 2016
 -- 
 -- Disclaimer:
 -- We can't be responsible for any damage done to your system,
@@ -28,6 +28,8 @@ delete from dm_dim_minutes;
 delete from dm_dim_actions;
 delete from dm_dim_node_types;
 delete from dm_dim_mime_types;
+delete from dm_logs;
+delete from dm_data_quality;
 delete from log_channels;
 delete from log_job;
 delete from log_jobentry;
@@ -40,6 +42,10 @@ delete from stg_rest_documents_custom_types;
 delete from stg_rest_documents;
 delete from stg_rest_folders_custom_types;
 delete from stg_rest_folders;
+delete from stg_workflow_items;
+delete from stg_workflow_tasks;
+delete from stg_workflow_instances;
+delete from stg_workflow_definitions;
 SELECT setval('public.seq_dm_dim_actions_id', 1, true);
 SELECT setval('public.seq_dm_dim_paths_id', 1, true);
 SELECT setval('public.seq_dm_dim_users_id', 1, true);
