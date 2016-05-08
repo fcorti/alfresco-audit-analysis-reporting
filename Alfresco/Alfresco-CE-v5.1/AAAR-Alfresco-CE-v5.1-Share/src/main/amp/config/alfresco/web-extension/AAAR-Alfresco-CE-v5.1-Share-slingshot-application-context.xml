@@ -18,7 +18,7 @@
           class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
         <property name="resourceBundles">
             <list>
-                <value>alfresco.web-extension.messages.AAAR-Alfresco-CE-v5.1-Share</value>
+                <value>alfresco.web-extension.messages.AAAR-Alfresco-Share</value>
             </list>
         </property>
     </bean>
