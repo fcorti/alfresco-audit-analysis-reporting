@@ -3,7 +3,7 @@
 -- 
 -- Script to clean the AAAR Data Mart.
 -- Author: Francesco Corti (all rights reserved)
--- Date: 04 May, 2015
+-- Date: 10 May, 2016
 -- 
 -- Disclaimer:
 -- We can't be responsible for any damage done to your system,
@@ -28,6 +28,8 @@ DELETE FROM `AAAR_DataMart`.`dm_dim_minutes`;
 DELETE FROM `AAAR_DataMart`.`dm_dim_actions`;
 DELETE FROM `AAAR_DataMart`.`dm_dim_node_types`;
 DELETE FROM `AAAR_DataMart`.`dm_dim_mime_types`;
+DELETE FROM `AAAR_DataMart`.`dm_logs`;
+DELETE FROM `AAAR_DataMart`.`dm_data_quality`;
 DELETE FROM `AAAR_DataMart`.`log_channels`;
 DELETE FROM `AAAR_DataMart`.`log_job`;
 DELETE FROM `AAAR_DataMart`.`log_jobentry`;
@@ -40,6 +42,10 @@ DELETE FROM `AAAR_DataMart`.`stg_rest_documents_custom_types`;
 DELETE FROM `AAAR_DataMart`.`stg_rest_documents`;
 DELETE FROM `AAAR_DataMart`.`stg_rest_folders_custom_types`;
 DELETE FROM `AAAR_DataMart`.`stg_rest_folders`;
+DELETE FROM `AAAR_DataMart`.`stg_workflow_items`;
+DELETE FROM `AAAR_DataMart`.`stg_workflow_tasks`;
+DELETE FROM `AAAR_DataMart`.`stg_workflow_instances`;
+DELETE FROM `AAAR_DataMart`.`stg_workflow_definitions`;
 ALTER TABLE dm_fact_actions AUTO_INCREMENT=1;
 ALTER TABLE dm_dim_paths AUTO_INCREMENT=1;
 ALTER TABLE dm_dim_documents AUTO_INCREMENT=1;
