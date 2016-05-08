@@ -24,6 +24,7 @@
         <!-- The following are default values for data location and Alfresco version.
              Uncomment if you need to change
         <alfresco.version>${alfresco.community.default.version}</alfresco.version> -->
+        <alfresco.version>5.0.d</alfresco.version>
 
         <!-- This control the root logging level for all apps uncomment and change, defaults to WARN
             <app.log.root.level>WARN</app.log.root.level>

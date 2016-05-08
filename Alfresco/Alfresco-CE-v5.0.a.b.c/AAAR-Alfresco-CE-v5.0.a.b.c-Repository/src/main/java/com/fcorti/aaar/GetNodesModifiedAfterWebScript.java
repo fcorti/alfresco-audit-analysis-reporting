@@ -44,7 +44,6 @@ import org.alfresco.service.cmr.search.SearchService;
 import org.alfresco.service.namespace.NamespaceService;
 import org.alfresco.service.namespace.QName;
 import org.alfresco.util.ISO9075;
-import org.apache.commons.math3.exception.OutOfRangeException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -444,7 +443,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
-			throw new OutOfRangeException(limitParameterValue, 0, Integer.MAX_VALUE);			
+			throw new WrongFormatException("Parameter 'limitParameter' with value '" + limitParameterValue + "' when it should be bteween 0 and " + Integer.MAX_VALUE);			
 		}
 
 		// Skip parameter.
@@ -458,7 +457,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
-			throw new OutOfRangeException(skipParameterValue, 0, Long.MAX_VALUE);			
+			throw new WrongFormatException("Parameter 'skipParameterValue' with value '" + skipParameterValue + "' when it should be bteween 0 and " + Long.MAX_VALUE);	
 		}
 
 		// Namespace URI compacted parameter.

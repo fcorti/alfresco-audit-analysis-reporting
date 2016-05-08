@@ -21,7 +21,7 @@
         For more available properties see the alfresco-sdk-parent POM.
        -->
     <properties>
-        <alfresco.version>5.0.1</alfresco.version>
+        <alfresco.version>5.0.2</alfresco.version>
         <!-- The following are default values for data location and Alfresco version.
              Uncomment if you need to change
         <alfresco.version>${alfresco.community.default.version}</alfresco.version> -->

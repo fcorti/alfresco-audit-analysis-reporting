@@ -24,6 +24,7 @@
         <!-- The following are default values for data location and Alfresco version.
              Uncomment if you need to change
         <alfresco.version>${alfresco.community.default.version}</alfresco.version> -->
+        <alfresco.version>5.1.e</alfresco.version>
 
         <!-- This control the root logging level for all apps uncomment and change, defaults to WARN
             <app.log.root.level>WARN</app.log.root.level>
@@ -42,7 +43,7 @@
         <maven.tomcat.port>8081</maven.tomcat.port>
 
         <!-- Used in share-config-custom.xml. By default points to local installation of Alfresco Repo -->
-        <alfresco.repo.url>http://localhost:8080/alfresco</alfresco.repo.url>
+        <alfresco.repo.url>http://10.0.0.147:8080/alfresco</alfresco.repo.url>
 
     </properties>
 
