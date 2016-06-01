@@ -100,7 +100,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             ResultSet dbResultSet = dbStatement.executeQuery(dbQuery);
 
             if (dbResultSet.next()) {
-                model.put(VALUE_FIELD, dbResultSet.getDouble(VALUE_FIELD));
+                model.put(VALUE_FIELD, String.valueOf(dbResultSet.getDouble(VALUE_FIELD)));
             }
 
             if (dbResultSet.next()) {
