@@ -134,9 +134,10 @@ CREATE TABLE "dm_dim_alfresco" (
     "url_nodes_modified_after_suffix" character varying(128) NOT NULL,
     "url_nodes_modified_before_suffix" character varying(128) NOT NULL,
     "node_limit" integer NOT NULL,
-    "url_cmis_suffix" character varying(1024) NOT NULL,
     "url_workflow_definitions_suffix" character varying(1024) NOT NULL,
     "url_workflow_instances_suffix" character varying(1024) NOT NULL,
+    "url_cmis_suffix" character varying(1024) NOT NULL,
+    "url_get_counters" character varying(1024) NOT NULL,
     "is_active" character(1) DEFAULT 'Y'::"bpchar" NOT NULL
 );
 
@@ -1252,7 +1253,7 @@ ALTER TABLE "vw_rest_documents_and_folders_path" OWNER TO "postgres";
 -- Data for Name: dm_dim_alfresco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "audit_limit", "url_nodes_modified_after_suffix", "url_nodes_modified_before_suffix", "node_limit", "url_cmis_suffix", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "is_active") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', 'Y');
+INSERT INTO "dm_dim_alfresco" ("id", "desc", "login", "password", "url", "url_audit_suffix", "audit_limit", "url_nodes_modified_after_suffix", "url_nodes_modified_before_suffix", "node_limit", "url_workflow_definitions_suffix", "url_workflow_instances_suffix", "url_cmis_suffix", "url_get_counters", "is_active") VALUES (1, 'Default Alfresco instance', 'admin', 'admin', 'http://localhost:8080', '/alfresco/service/api/audit/query/alfresco-access?verbose=true', 50000, '/alfresco/service/AAAR/getNodesModifiedAfter', '/alfresco/service/AAAR/getNodeIdsModifiedBefore', 50000, '/alfresco/service/api/workflow-definitions', '/alfresco/service/api/workflow-instances', '/alfresco/api/-default-/cmis/versions/1.1/atom', '/alfresco/service/AAAR/getCounters', 'Y');
 
 
 --

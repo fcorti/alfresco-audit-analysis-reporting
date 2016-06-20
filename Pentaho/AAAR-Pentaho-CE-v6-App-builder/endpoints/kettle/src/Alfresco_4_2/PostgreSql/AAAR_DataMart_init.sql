@@ -52,7 +52,7 @@ SELECT setval('public.seq_dm_dim_users_id', 1, true);
 SELECT setval('public.seq_dm_dim_node_types_id', 1, true);
 SELECT setval('public.seq_dm_dim_mime_types_id', 1, true);
 SELECT setval('public.seq_dm_dim_documents_id', 1, true);
-SELECT setval('public.seq_dm_dim_folders_id_id', 1, true);
+SELECT setval('public.seq_dm_dim_folders_id', 1, true);
 SELECT setval('public.seq_dm_dim_workflow_tasks_id', 1, true);
 SELECT setval('public.seq_dm_dim_workflow_instances_id', 1, true);
 SELECT setval('public.seq_dm_dim_workflow_definitions_id', 1, true);
