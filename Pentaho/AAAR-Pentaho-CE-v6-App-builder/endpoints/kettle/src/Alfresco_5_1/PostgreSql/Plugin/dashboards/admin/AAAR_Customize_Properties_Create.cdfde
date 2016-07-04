@@ -49,181 +49,181 @@
    },
    {
     "id": "bedb4b08-daf7-f797-69c0-fe20778b0b2c",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "cancelButton",
-      "type": "Id"
+      "type": "Id",
+      "value": "cancelButton"
      },
      {
       "name": "label",
-      "value": "Cancel",
-      "type": "String"
+      "type": "String",
+      "value": "Cancel"
      },
      {
       "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[]"
      },
      {
       "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "type": "ValuesArray",
+      "value": "[]"
      },
      {
       "name": "expression",
-      "value": "function f() {\n    loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n}\n ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n    loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n}\n "
      },
      {
       "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "dataSource",
-      "value": "",
-      "type": "Datasource"
+      "type": "Datasource",
+      "value": ""
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
+      "type": "TableStyle",
+      "value": "themeroller"
      },
      {
       "name": "htmlObject",
-      "value": "${h:cancelButtonObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${h:cancelButtonObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} "
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
     ],
-    "rowName": "Button Component"
+    "rowName": "Button Component",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component"
    },
    {
     "id": "d3a7c26d-61fb-350d-841d-0254521b95f4",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "createButton",
-      "type": "Id"
+      "type": "Id",
+      "value": "createButton"
      },
      {
       "name": "label",
-      "value": "Create",
-      "type": "String"
+      "type": "String",
+      "value": "Create"
      },
      {
       "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[]"
      },
      {
       "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "type": "ValuesArray",
+      "value": "[]"
      },
      {
       "name": "expression",
-      "value": "function f() {\n\n    var alfrescoInstance  = $.trim(Dashboards.getParameterValue('${p:alfrescoInstance}'));\n    var alfrescoClassType = $.trim(Dashboards.getParameterValue('${p:alfrescoClassType}'));\n    var alfrescoClass     = $.trim(Dashboards.getParameterValue('${p:alfrescoClass}'));\n    var alfrescoProperty  = $.trim(Dashboards.getParameterValue('${p:alfrescoProperty}'));\n\n    if (alfrescoProperty == '') {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Empty property!</strong> Please specify a valid property.</div>');\n        return ;\n    }\n\n    var alfrescoPropertyList = $.trim(Dashboards.getParameterValue('${p:alfrescoPropertyList}'));\n\n    var json = {};\n    try {\n        json = JSON.parse(alfrescoPropertyList);\n    }\n    catch (e) {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> JSON not well formatted. Please inform administrator.</div>');\n    }\n\n    var alfrescoPropertyJson = {};\n    for(var i in json.list) {\n        if (alfrescoProperty == json.list[i].prefixedProperty) {\n            alfrescoPropertyJson = json.list[i];\n        }\n    }\n\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','alfrescoproperties_insert',{\n\n        params: {\n            alfrescoInstance: alfrescoInstance,\n            class: alfrescoPropertyJson.prefixedClass,\n            name: alfrescoPropertyJson.prefixedProperty,\n            type: alfrescoPropertyJson.prefixedDataType,\n            isDocumentSubtype: (alfrescoPropertyJson.classIsContentSubtype == 'true' ? 'Y' : 'N'),\n            isFolderSubtype: (alfrescoPropertyJson.classIsFolderSubtype == 'true' ? 'Y' : 'N'),\n            isAspect: (alfrescoPropertyJson.classIsAspect == 'true' ? 'Y' : 'N'),\n            isActive: 'Y'\n        },\n\n        success: function(json) {\n            Dashboards.decrementRunningCalls();\n            loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> Check the log and try again.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n\n}\n ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    var alfrescoInstance  = $.trim(Dashboards.getParameterValue('${p:alfrescoInstance}'));\n    var alfrescoClassType = $.trim(Dashboards.getParameterValue('${p:alfrescoClassType}'));\n    var alfrescoClass     = $.trim(Dashboards.getParameterValue('${p:alfrescoClass}'));\n    var alfrescoProperty  = $.trim(Dashboards.getParameterValue('${p:alfrescoProperty}'));\n\n    if (alfrescoProperty == '') {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Empty property!</strong> Please specify a valid property.</div>');\n        return ;\n    }\n\n    var alfrescoPropertyList = $.trim(Dashboards.getParameterValue('${p:alfrescoPropertyList}'));\n\n    var json = {};\n    try {\n        json = JSON.parse(alfrescoPropertyList);\n    }\n    catch (e) {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> JSON not well formatted. Please inform administrator.</div>');\n    }\n\n    var alfrescoPropertyJson = {};\n    for(var i in json.list) {\n        if (alfrescoProperty == json.list[i].prefixedProperty) {\n            alfrescoPropertyJson = json.list[i];\n        }\n    }\n\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','alfrescoproperties_insert',{\n\n        params: {\n            alfrescoInstance: alfrescoInstance,\n            class: alfrescoPropertyJson.prefixedClass,\n            name: alfrescoPropertyJson.prefixedProperty,\n            type: alfrescoPropertyJson.prefixedDataType,\n            isDocumentSubtype: (alfrescoPropertyJson.classIsContentSubtype == 'true' ? 'Y' : 'N'),\n            isFolderSubtype: (alfrescoPropertyJson.classIsFolderSubtype == 'true' ? 'Y' : 'N'),\n            isAspect: (alfrescoPropertyJson.classIsAspect == 'true' ? 'Y' : 'N'),\n            isActive: 'Y'\n        },\n\n        success: function(json) {\n            Dashboards.decrementRunningCalls();\n            loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> Check the log and try again.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n\n}\n "
      },
      {
       "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "dataSource",
-      "value": "",
-      "type": "Datasource"
+      "type": "Datasource",
+      "value": ""
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
+      "type": "TableStyle",
+      "value": "themeroller"
      },
      {
       "name": "htmlObject",
-      "value": "${h:createButtonObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${h:createButtonObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} "
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
     ],
-    "rowName": "Button Component"
+    "rowName": "Button Component",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component"
    },
    {
     "id": "SELECTORS",
@@ -981,6 +981,29 @@
     "typeDesc": "Resource"
    },
    {
+    "id": "c7790801-cf0f-4877-32dc-1184256e77d1",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "renderMenu"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "/pentaho/api/repos/AAAR/static/custom/js/renderMenu.js"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
     "id": "20ae264f-0853-bc87-d395-524e167394be",
     "parent": "UnIqEiD",
     "properties": [
@@ -1632,46 +1655,8 @@
     "typeDesc": "Panel Body"
    },
    {
-    "id": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
-    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
     "id": "aaf20558-0ae6-d204-974c-4d609070e200",
-    "parent": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
+    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
     "properties": [
      {
       "name": "name",
@@ -1681,7 +1666,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<ul class=\"nav nav-pills nav-stacked\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;\">\n <li><a href=\"/pentaho/plugin/AAAR/api/main\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; };\"><span style=\"font-size:1.1em; font-weight: bold;\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span></span> Home</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco');\"><span style=\"font-size:1.1em; font-weight: bold;\">1.</span> Configure</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Install');\"><span style=\"font-size:1.1em; font-weight: bold;\">2.</span> Install</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Use\"><span style=\"font-size:1.1em; font-weight: bold;\">3.</span> Use</a></li>\n <li class=\"active\"><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></span> Customize</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_About\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span></span> About</a></li>\n</ul> "
+      "value": "<script type=\"text/javascript\">renderMenu();</script> "
      },
      {
       "name": "fontSize",

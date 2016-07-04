@@ -290,9 +290,9 @@
       "value": ""
      },
      {
-      "name": "Datasource",
-      "type": "Datasource",
-      "value": ""
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -341,49 +341,49 @@
    {
     "id": "GENERIC",
     "name": "Generic",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Generic",
-      "type": "Label"
+      "type": "Label",
+      "value": "Generic"
      }
-    ]
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
    },
    {
     "id": "9cb1d223-254f-baf0-a1df-ac0b70511e06",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "dummy",
-      "type": "Id"
+      "type": "Id",
+      "value": "dummy"
      },
      {
       "name": "propertyValue",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
      },
      {
       "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
-    ]
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    }
   ]
  },
@@ -492,6 +492,29 @@
       "name": "resourceFile",
       "type": "ResourceFile",
       "value": "/pentaho/api/repos/AAAR/static/custom/js/AAAR.js"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "06863a85-10ad-634e-f123-5225ec1ac2ff",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "renderMenu"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "/pentaho/api/repos/AAAR/static/custom/js/renderMenu.js"
      },
      {
       "name": "resourceType",
@@ -1154,46 +1177,8 @@
     "typeDesc": "Panel Body"
    },
    {
-    "id": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
-    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
     "id": "aaf20558-0ae6-d204-974c-4d609070e200",
-    "parent": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
+    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
     "properties": [
      {
       "name": "name",
@@ -1203,7 +1188,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<ul class=\"nav nav-pills nav-stacked\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;\">\n <li><a href=\"/pentaho/plugin/AAAR/api/main\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; };\"><span style=\"font-size:1.1em; font-weight: bold;\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span></span> Home</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco');\"><span style=\"font-size:1.1em; font-weight: bold;\">1.</span> Configure</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Install');\"><span style=\"font-size:1.1em; font-weight: bold;\">2.</span> Install</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Use\"><span style=\"font-size:1.1em; font-weight: bold;\">3.</span> Use</a></li>\n <li class=\"active\"><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></span> Customize</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_About\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span></span> About</a></li>\n</ul> "
+      "value": "<script type=\"text/javascript\">renderMenu();</script> "
      },
      {
       "name": "fontSize",

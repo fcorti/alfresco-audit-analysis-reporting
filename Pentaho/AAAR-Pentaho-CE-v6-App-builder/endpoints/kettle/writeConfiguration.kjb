@@ -586,8 +586,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>560</yloc>
+      <xloc>480</xloc>
+      <yloc>544</yloc>
       </entry>
     <entry>
       <name>_alfrescoProperties_&#x2a;.&#x2a;</name>
@@ -613,8 +613,35 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
-      <yloc>560</yloc>
+      <xloc>768</xloc>
+      <yloc>544</yloc>
+      </entry>
+    <entry>
+      <name>AAAR_Extractions</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoType&#x7d;&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;databaseType&#x7d;&#x24;&#x7b;file.separator&#x7d;Plugin&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;dashboards&#x24;&#x7b;file.separator&#x7d;admin</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
+          <wildcard>AAAR_Extractions.&#x2a;</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>192</xloc>
+      <yloc>544</yloc>
       </entry>
   </entries>
   <hops>
@@ -754,15 +781,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>AAAR_Customize_Publish</from>
-      <to>alfrescoProperties_&#x2a;.&#x2a;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>alfrescoProperties_&#x2a;.&#x2a;</from>
       <to>_alfrescoProperties_&#x2a;.&#x2a;</to>
       <from_nr>0</from_nr>
@@ -774,6 +792,24 @@
     <hop>
       <from>_alfrescoProperties_&#x2a;.&#x2a;</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AAAR_Extractions</from>
+      <to>alfrescoProperties_&#x2a;.&#x2a;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AAAR_Customize_Publish</from>
+      <to>AAAR_Extractions</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

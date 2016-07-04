@@ -34,196 +34,144 @@
     "typeDesc": "JavaScript function"
    },
    {
-    "id": "OTHERCOMPONENTS",
-    "name": "Others",
+    "id": "GENERIC",
+    "name": "Generic",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
       "type": "Label",
-      "value": "Others"
+      "value": "Generic"
      }
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "bedb4b08-daf7-f797-69c0-fe20778b0b2c",
-    "parent": "OTHERCOMPONENTS",
+    "id": "415557c4-2291-2544-e630-aeab13fe3d43",
+    "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "cancelButton"
+      "value": "alfrescoInstance"
      },
      {
-      "name": "label",
+      "name": "propertyValue",
       "type": "String",
-      "value": "Cancel"
+      "value": "1"
      },
      {
-      "name": "listeners",
-      "type": "Listeners",
-      "value": "[]"
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
      },
      {
-      "name": "actionParameters",
-      "type": "ValuesArray",
-      "value": "[]"
-     },
-     {
-      "name": "expression",
-      "type": "JavaScript",
-      "value": "function f() {\n    loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n}\n "
-     },
-     {
-      "name": "failureCallback",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "successCallback",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "priority",
-      "type": "Integer",
-      "value": 5
-     },
-     {
-      "name": "refreshPeriod",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "buttonStyle",
-      "type": "TableStyle",
-      "value": "themeroller"
-     },
-     {
-      "name": "htmlObject",
-      "type": "HtmlObject",
-      "value": "${h:cancelButtonObj}"
-     },
-     {
-      "name": "executeAtStart",
+      "name": "bookmarkable",
       "type": "Boolean",
-      "value": "true"
+      "value": "false"
      },
      {
-      "name": "preExecution",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "postExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} "
-     },
-     {
-      "name": "tooltip",
-      "type": "Html",
-      "value": ""
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
      }
     ],
-    "rowName": "Button Component",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component"
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
-    "id": "d3a7c26d-61fb-350d-841d-0254521b95f4",
-    "parent": "OTHERCOMPONENTS",
+    "id": "0e4d2ea9-c9a5-5223-99c1-ace93d9182dd",
+    "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "createButton"
+      "value": "dtFrom"
      },
      {
-      "name": "label",
-      "type": "String",
-      "value": "Create"
+      "name": "propertyDateValue",
+      "type": "Date",
+      "value": "lastWeek"
      },
      {
-      "name": "listeners",
-      "type": "Listeners",
-      "value": "[]"
-     },
-     {
-      "name": "actionParameters",
-      "type": "ValuesArray",
-      "value": "[]"
-     },
-     {
-      "name": "expression",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    var alfrescoInstance  = $.trim(Dashboards.getParameterValue('${p:alfrescoInstance}'));\n    var alfrescoClassType = $.trim(Dashboards.getParameterValue('${p:alfrescoClassType}'));\n    var alfrescoClass     = $.trim(Dashboards.getParameterValue('${p:alfrescoClass}'));\n    var alfrescoProperty  = $.trim(Dashboards.getParameterValue('${p:alfrescoProperty}'));\n\n    if (alfrescoProperty == '') {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Empty property!</strong> Please specify a valid property.</div>');\n        return ;\n    }\n\n    var alfrescoPropertyList = $.trim(Dashboards.getParameterValue('${p:alfrescoPropertyList}'));\n\n    var json = {};\n    try {\n        json = JSON.parse(alfrescoPropertyList);\n    }\n    catch (e) {\n        $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> JSON not well formatted. Please inform administrator.</div>');\n    }\n\n    var alfrescoPropertyJson = {};\n    for(var i in json.list) {\n        if (alfrescoProperty == json.list[i].prefixedProperty) {\n            alfrescoPropertyJson = json.list[i];\n        }\n    }\n\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','alfrescoproperties_insert',{\n\n        params: {\n            alfrescoInstance: alfrescoInstance,\n            class: alfrescoPropertyJson.prefixedClass,\n            name: alfrescoPropertyJson.prefixedProperty,\n            type: alfrescoPropertyJson.prefixedDataType,\n            isDocumentSubtype: (alfrescoPropertyJson.classIsContentSubtype == 'true' ? 'Y' : 'N'),\n            isFolderSubtype: (alfrescoPropertyJson.classIsFolderSubtype == 'true' ? 'Y' : 'N'),\n            isAspect: (alfrescoPropertyJson.classIsAspect == 'true' ? 'Y' : 'N'),\n            isActive: 'Y'\n        },\n\n        success: function(json) {\n            Dashboards.decrementRunningCalls();\n            loadAndRedirect( Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties' );\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 0px; margin-right: 0px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Error!</strong> Check the log and try again.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n\n}\n "
-     },
-     {
-      "name": "failureCallback",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "successCallback",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "priority",
-      "type": "Integer",
-      "value": 5
-     },
-     {
-      "name": "refreshPeriod",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "buttonStyle",
-      "type": "TableStyle",
-      "value": "themeroller"
-     },
-     {
-      "name": "htmlObject",
-      "type": "HtmlObject",
-      "value": "${h:createButtonObj}"
-     },
-     {
-      "name": "executeAtStart",
+      "name": "bookmarkable",
       "type": "Boolean",
-      "value": "true"
+      "value": "false"
      },
      {
-      "name": "preExecution",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "postExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    $('#' + this.htmlObject ).children(\":first\").attr('class','btn btn-primary');\n\n} "
-     },
-     {
-      "name": "tooltip",
-      "type": "Html",
-      "value": ""
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
      }
     ],
-    "rowName": "Button Component",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component"
+    "rowName": "Date Parameter",
+    "type": "ComponentsDateParameter",
+    "typeDesc": "Date Parameter"
+   },
+   {
+    "id": "13f3143b-5d85-416a-3c44-e49d9ab695cf",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dtTo"
+     },
+     {
+      "name": "propertyDateValue",
+      "type": "Date",
+      "value": "today"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Date Parameter",
+    "type": "ComponentsDateParameter",
+    "typeDesc": "Date Parameter"
+   },
+   {
+    "id": "f1ea5a0f-e9ac-bc61-b174-8adc77d2ada0",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "extraction"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "SELECTORS",
@@ -240,13 +188,13 @@
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "44a82033-2fdb-fa74-62d9-ad0e8a6bb69b",
+    "id": "fac3fe8e-9976-88db-e60a-8a87b220090a",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "alfrescoInstanceComponent"
+      "value": "alfrescoInstanceFilter"
      },
      {
       "name": "parameter",
@@ -256,7 +204,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "['${p:alfrescoInstance}']"
+      "value": "[\"${p:alfrescoInstance}\"]"
      },
      {
       "name": "parameters",
@@ -276,7 +224,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "alfrescoInstances"
+      "value": "alfrescoInstanceDatasource"
      },
      {
       "name": "valuesArray",
@@ -326,11 +274,11 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function f() {\n\n    AAAR.runEndpoint('AAAR','getalfrescoclassesorproperties',{\n\n        params: {\n            resultType: 'classes',\n            alfrescoInstance: Dashboards.getParameterValue('${p:alfrescoInstance}'),\n            classType: Dashboards.getParameterValue('${p:alfrescoClassType}')\n        },\n\n        success: function(json) {\n\n            Dashboards.fireChange('alfrescoClassList', JSON.stringify(json));\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco services not available!</strong> Check the log and try again.</div>');\n        }\n    });\n} "
+      "value": ""
      },
      {
       "name": "extraOptions",
-      "type": "OptionArray",
+      "type": "ExtraOptionsArray",
       "value": "[]"
      },
      {
@@ -339,32 +287,142 @@
       "value": ""
      }
     ],
+    "rowName": "Select Component",
     "type": "ComponentsSelect",
     "typeDesc": "Select Component"
    },
    {
-    "id": "9565d00f-7317-1c7e-0c4d-f421c0e5eb02",
+    "id": "1a2e0505-6802-2805-ad95-8499442f43b8",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "alfrescoClassTypeComponent"
-     },
-     {
-      "name": "parameter",
-      "type": "Parameter",
-      "value": "${p:alfrescoClassType}"
+      "value": "periodFilter"
      },
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "['${p:alfrescoInstance}','${p:alfrescoClassType}']"
+      "value": "[\"${p:dtFrom}\",\"${p:dtTo}\"]"
+     },
+     {
+      "name": "earliestDate",
+      "type": "String",
+      "value": "-1years"
+     },
+     {
+      "name": "latestDate",
+      "type": "String",
+      "value": "+1years"
+     },
+     {
+      "name": "leftOffset",
+      "type": "Integer",
+      "value": 0
+     },
+     {
+      "name": "topOffset",
+      "type": "Integer",
+      "value": 15
+     },
+     {
+      "name": "parameter",
+      "type": "ArrayParameter",
+      "value": "[\"${p:dtFrom}\",\"${p:dtTo}\"]"
+     },
+     {
+      "name": "singleInput",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "inputSeparator",
+      "type": "String",
+      "value": ">"
+     },
+     {
+      "name": "canClickOutsidePopup",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:periodObj}"
+     },
+     {
+      "name": "onCloseEvent",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "onOpenEvent",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n\n} "
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Date range input Component",
+    "type": "ComponentsDateRangeInput",
+    "typeDesc": "Date range input Component"
+   },
+   {
+    "id": "95bb21cf-bb50-1028-cbef-ee87959d781e",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "extractionFilter"
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "${p:extraction}"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:alfrescoInstance}\",\"${p:dtFrom}\",\"${p:dtTo}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"alfrescoInstanceParam\",\"alfrescoInstance\"],[\"dtFromParam\",\"dtFrom\"],[\"dtToParam\",\"dtTo\"]]"
      },
      {
       "name": "externalPlugin",
@@ -379,12 +437,12 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": ""
+      "value": "extractionDatasource"
      },
      {
       "name": "valuesArray",
       "type": "ValuesArray",
-      "value": "[[\"documents\",\"Document types\"],[\"folders\",\"Folder types\"],[\"aspects\",\"Aspects\"]]"
+      "value": "[]"
      },
      {
       "name": "priority",
@@ -399,7 +457,7 @@
      {
       "name": "htmlObject",
       "type": "HtmlObject",
-      "value": "${h:alfrescoClassTypeObj}"
+      "value": "${h:extractionObj}"
      },
      {
       "name": "executeAtStart",
@@ -429,439 +487,444 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function f (val) {\n\n    AAAR.runEndpoint('AAAR','alfrescoPropertiesGetClassesOrProperties',{\n\n        params: {\n            resultType: 'classes',\n            alfrescoInstance: Dashboards.getParameterValue('${p:alfrescoInstance}'),\n            classType: val\n        },\n\n        success: function(json) {\n\n            Dashboards.fireChange('alfrescoClassList', JSON.stringify(json));\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco services not available!</strong> Check the log and try again.</div>');\n        }\n    });\n} "
+      "value": ""
      },
      {
       "name": "extraOptions",
-      "type": "OptionArray",
+      "type": "ExtraOptionsArray",
       "value": "[]"
      },
      {
       "name": "tooltip",
       "type": "Html",
-      "value": ""
+      "value": "Please select a period. "
      }
     ],
+    "rowName": "Select Component",
     "type": "ComponentsSelect",
     "typeDesc": "Select Component"
    },
    {
-    "id": "845d57c2-84b3-68cb-e436-ace76b21757d",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassComponent"
-     },
-     {
-      "name": "parameter",
-      "type": "Parameter",
-      "value": "${p:alfrescoClass}"
-     },
-     {
-      "name": "listeners",
-      "type": "Listeners",
-      "value": "['${p:alfrescoClassList}']"
-     },
-     {
-      "name": "parameters",
-      "type": "ValuesArray",
-      "value": "[]"
-     },
-     {
-      "name": "externalPlugin",
-      "type": "externalPluginCustom",
-      "value": ""
-     },
-     {
-      "name": "valueAsId",
-      "type": "Boolean",
-      "value": "false"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "valuesArray",
-      "type": "ValuesArray",
-      "value": "[[\"\",\"Empty list...\"]]"
-     },
-     {
-      "name": "priority",
-      "type": "Integer",
-      "value": 5
-     },
-     {
-      "name": "refreshPeriod",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "htmlObject",
-      "type": "HtmlObject",
-      "value": "${h:alfrescoClassObj}"
-     },
-     {
-      "name": "executeAtStart",
-      "type": "Boolean",
-      "value": "true"
-     },
-     {
-      "name": "preExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    var alfrescoClassList = $.trim(Dashboards.getParameterValue('${p:alfrescoClassList}'));\n\n    var json = {};\n    try {\n        json = JSON.parse(alfrescoClassList);\n    }\n    catch (e) {\n    }\n\n    this.valuesArray = [];\n    for(var i in json.list) {\n    this.valuesArray.push([\n            json.list[i].prefixedClass, \n            json.list[i].prefixedClass\n        ]);\n    }\n    this.valuesArray.sort(function(a, b) {return a[1].localeCompare(b[1]);} );\n\n    if (this.valuesArray.length == 0) {\n        this.valuesArray.push([\n            \"\", \n            \"Empty list...\"\n        ]);\n    }\n\n} "
-     },
-     {
-      "name": "postExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n\n} "
-     },
-     {
-      "name": "postFetch",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "preChange",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "postChange",
-      "type": "JavaScript",
-      "value": "function f(val) {\n\n    AAAR.runEndpoint('AAAR','alfrescoPropertiesGetClassesOrProperties',{\n\n        params: {\n            resultType: 'properties',\n            alfrescoInstance: Dashboards.getParameterValue('${p:alfrescoInstance}'),\n            class: Dashboards.getParameterValue('${p:alfrescoClass}')\n        },\n\n        success: function(json) {\n\n            Dashboards.fireChange('alfrescoPropertyList', JSON.stringify(json));\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Alfresco services not available!</strong> Check the log and try again.</div>');\n        }\n    });\n\n} "
-     },
-     {
-      "name": "extraOptions",
-      "type": "OptionArray",
-      "value": "[]"
-     },
-     {
-      "name": "tooltip",
-      "type": "Html",
-      "value": ""
-     }
-    ],
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component"
-   },
-   {
-    "id": "9eb3c7c5-967f-4f84-d57f-1698e920c065",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoPropertyComponent"
-     },
-     {
-      "name": "parameter",
-      "type": "Parameter",
-      "value": "${p:alfrescoProperty}"
-     },
-     {
-      "name": "listeners",
-      "type": "Listeners",
-      "value": "['${p:alfrescoPropertyList}']"
-     },
-     {
-      "name": "parameters",
-      "type": "ValuesArray",
-      "value": "[]"
-     },
-     {
-      "name": "externalPlugin",
-      "type": "externalPluginCustom",
-      "value": ""
-     },
-     {
-      "name": "valueAsId",
-      "type": "Boolean",
-      "value": "false"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "valuesArray",
-      "type": "ValuesArray",
-      "value": "[[\"\",\"Empty list...\"]]"
-     },
-     {
-      "name": "priority",
-      "type": "Integer",
-      "value": 5
-     },
-     {
-      "name": "refreshPeriod",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "htmlObject",
-      "type": "HtmlObject",
-      "value": "${h:alfrescoPropertyObj}"
-     },
-     {
-      "name": "executeAtStart",
-      "type": "Boolean",
-      "value": "true"
-     },
-     {
-      "name": "preExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    var alfrescoPropertyList = $.trim(Dashboards.getParameterValue('${p:alfrescoPropertyList}'));\n\n    var json = {};\n    try {\n        json = JSON.parse(alfrescoPropertyList);\n    }\n    catch (e) {\n    }\n\n    this.valuesArray = [];\n    for(var i in json.list) {\n    this.valuesArray.push([\n            json.list[i].prefixedProperty, \n            json.list[i].prefixedProperty + ' (' + json.list[i].prefixedDataType + ')'\n        ]);\n    }\n    this.valuesArray.sort(function(a, b) {return a[1].localeCompare(b[1]);} );\n\n    if (this.valuesArray.length == 0) {\n        this.valuesArray.push([\n            \"\", \n            \"Empty list...\"\n        ]);\n    }\n\n} "
-     },
-     {
-      "name": "postExecution",
-      "type": "JavaScript",
-      "value": "function f() {\n\n    $('#' + this.htmlObject).children(\":first\").attr('class','form-control');\n\n} "
-     },
-     {
-      "name": "postFetch",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "preChange",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "postChange",
-      "type": "JavaScript",
-      "value": ""
-     },
-     {
-      "name": "extraOptions",
-      "type": "OptionArray",
-      "value": "[]"
-     },
-     {
-      "name": "tooltip",
-      "type": "Html",
-      "value": ""
-     }
-    ],
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component"
-   },
-   {
-    "id": "GENERIC",
-    "name": "Generic",
+    "id": "OTHERCOMPONENTS",
+    "name": "Others",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
       "type": "Label",
-      "value": "Generic"
+      "value": "Others"
      }
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "82001ef9-6b7a-be51-2008-c7b5888b1ee1",
-    "parent": "GENERIC",
+    "id": "c5a582fe-c068-0690-e7e5-5f43684f9362",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "alfrescoInstance"
+      "value": "logsComponent"
      },
      {
-      "name": "propertyValue",
-      "type": "String",
-      "value": "1"
-     },
-     {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
-     },
-     {
-      "name": "bookmarkable",
-      "type": "Boolean",
-      "value": "false"
-     },
-     {
-      "name": "public",
-      "type": "Boolean",
-      "value": "false"
-     }
-    ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
-   },
-   {
-    "id": "510594d4-9480-b6f2-f6b9-41f2173e1f8f",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassType"
-     },
-     {
-      "name": "propertyValue",
-      "type": "String",
+      "name": "expandContainerObject",
+      "type": "HtmlTarget",
       "value": ""
      },
      {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:alfrescoInstance}\",\"${p:dtFrom}\",\"${p:dtTo}\",\"${p:extraction}\"]"
      },
      {
-      "name": "bookmarkable",
+      "name": "oLanguage",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "language",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "colFormats",
+      "type": "ColFormatsArray",
+      "value": "[]"
+     },
+     {
+      "name": "colHeaders",
+      "type": "ColHeadersArray",
+      "value": "[]"
+     },
+     {
+      "name": "colSortable",
+      "type": "ColSortableArray",
+      "value": "[]"
+     },
+     {
+      "name": "colTypes",
+      "type": "colTypesCustom",
+      "value": "[\"string\",\"string\",\"string\",\"formattedText\"]"
+     },
+     {
+      "name": "colWidths",
+      "type": "ColWidthsArray",
+      "value": "[\"33%\",\"33%\",\"33%\",\"1%\"]"
+     },
+     {
+      "name": "expandParameters",
+      "type": "ExpandParameters",
+      "value": "[]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[[\"alfrescoInstanceParam\",\"alfrescoInstance\"],[\"extractionParam\",\"extraction\"]]"
+     },
+     {
+      "name": "displayLength",
+      "type": "Integer",
+      "value": "100"
+     },
+     {
+      "name": "expandOnClick",
       "type": "Boolean",
       "value": "false"
      },
      {
-      "name": "public",
+      "name": "filter",
       "type": "Boolean",
       "value": "false"
+     },
+     {
+      "name": "info",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "lengthChange",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "paginate",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "sort",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "colSearchable",
+      "type": "ColSearchableArray",
+      "value": "[]"
+     },
+     {
+      "name": "drawCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "logsDatasource"
+     },
+     {
+      "name": "sDom",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "sortBy",
+      "type": "SortByArray",
+      "value": "[]"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": "6"
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "paginationType",
+      "type": "PaginationType",
+      "value": "simple_numbers"
+     },
+     {
+      "name": "tableStyle",
+      "type": "TableStyle",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:logsObj}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "paginateServerside",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": " function f(cell_data) {   \n\n    this.setAddInOptions(\"colType\",\"formattedText\", function(cell_data) {\n\n        var value = cell_data.value;\n\n        if (value) {\n            return {\n                textFormat: function(v, st) {\n                     return \"<span class=\\\"label label-success\\\">Success</span>\";\n                }\n            };\n        }\n        else {\n            return {\n                textFormat: function(v, st) {\n                    return \"<span class=\\\"label label-danger\\\">Error</span>\";\n                }\n            };\n        }\n    });\n} "
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "extraOptions",
+      "type": "ExtraOptionsArray",
+      "value": "[]"
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     },
+     {
+      "name": "clickAction",
+      "type": "JavaScript",
+      "value": ""
      }
     ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
+    "rowName": "Table Component",
+    "type": "ComponentsTable",
+    "typeDesc": "table Component"
    },
    {
-    "id": "7dc6a40d-fe52-3cf7-17b3-df8b5852cf85",
-    "parent": "GENERIC",
+    "id": "196e819e-16b4-81ab-ce6c-e74f15b86b01",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "alfrescoClassList"
+      "value": "dataQualityComponent"
      },
      {
-      "name": "propertyValue",
-      "type": "String",
+      "name": "expandContainerObject",
+      "type": "HtmlTarget",
       "value": ""
      },
      {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:alfrescoInstance}\",\"${p:dtFrom}\",\"${p:dtTo}\",\"${p:extraction}\"]"
      },
      {
-      "name": "bookmarkable",
-      "type": "Boolean",
-      "value": "false"
-     },
-     {
-      "name": "public",
-      "type": "Boolean",
-      "value": "false"
-     }
-    ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
-   },
-   {
-    "id": "bcd84fae-f7d1-b1ec-a3ef-9b57da1e9272",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClass"
-     },
-     {
-      "name": "propertyValue",
-      "type": "String",
+      "name": "oLanguage",
+      "type": "JavaScript",
       "value": ""
      },
      {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
-     },
-     {
-      "name": "bookmarkable",
-      "type": "Boolean",
-      "value": "false"
-     },
-     {
-      "name": "public",
-      "type": "Boolean",
-      "value": "false"
-     }
-    ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
-   },
-   {
-    "id": "31b3afd6-4590-0ea9-9722-fe2273fcec29",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoPropertyList"
-     },
-     {
-      "name": "propertyValue",
-      "type": "String",
+      "name": "language",
+      "type": "JavaScript",
       "value": ""
      },
      {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
+      "name": "colFormats",
+      "type": "ColFormatsArray",
+      "value": "[]"
      },
      {
-      "name": "bookmarkable",
+      "name": "colHeaders",
+      "type": "ColHeadersArray",
+      "value": "[]"
+     },
+     {
+      "name": "colSortable",
+      "type": "ColSortableArray",
+      "value": "[]"
+     },
+     {
+      "name": "colTypes",
+      "type": "colTypesCustom",
+      "value": "[\"string\",\"numericAAAR\",\"numericAAAR\",\"numericAAAR\",\"numericAAAR\",\"formattedText\"]"
+     },
+     {
+      "name": "colWidths",
+      "type": "ColWidthsArray",
+      "value": "[\"75%%\",\"5%\",\"5%\",\"5%\",\"5%\",\"5%\"]"
+     },
+     {
+      "name": "expandParameters",
+      "type": "ExpandParameters",
+      "value": "[]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[[\"alfrescoInstanceParam\",\"alfrescoInstance\"],[\"extractionParam\",\"extraction\"]]"
+     },
+     {
+      "name": "displayLength",
+      "type": "Integer",
+      "value": "100"
+     },
+     {
+      "name": "expandOnClick",
       "type": "Boolean",
       "value": "false"
      },
      {
-      "name": "public",
+      "name": "filter",
       "type": "Boolean",
       "value": "false"
-     }
-    ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
-   },
-   {
-    "id": "0a5511f7-8ab0-aabd-0b44-360bf77fd5c0",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoProperty"
      },
      {
-      "name": "propertyValue",
-      "type": "String",
+      "name": "info",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "lengthChange",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "paginate",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "sort",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "colSearchable",
+      "type": "ColSearchableArray",
+      "value": "[]"
+     },
+     {
+      "name": "drawCallback",
+      "type": "JavaScript",
       "value": ""
      },
      {
-      "name": "parameterViewRole",
-      "type": "parameterViewRoleCustom",
-      "value": "unused"
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "dataQualityDatasource"
      },
      {
-      "name": "bookmarkable",
+      "name": "sDom",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "sortBy",
+      "type": "SortByArray",
+      "value": "[]"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": "6"
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "paginationType",
+      "type": "PaginationType",
+      "value": "simple_numbers"
+     },
+     {
+      "name": "tableStyle",
+      "type": "TableStyle",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:dataQualityObj}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "paginateServerside",
       "type": "Boolean",
       "value": "false"
      },
      {
-      "name": "public",
-      "type": "Boolean",
-      "value": "false"
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": " function f(cell_data) {   \n\n    this.setAddInOptions(\"colType\",\"numericAAAR\", function(cell_data) {\n\n        var value = cell_data.value;\n\n        return \"<span >\" + v + \"</span>\";\n\n    });\n\n    this.setAddInOptions(\"colType\",\"formattedText\", function(cell_data) {\n\n        var value = cell_data.value;\n\n        if (value) {\n            return {\n                textFormat: function(v, st) {\n                     return \"<span class=\\\"label label-success\\\">OK</span>\";\n                }\n            };\n        }\n        else {\n            return {\n                textFormat: function(v, st) {\n                    return \"<span class=\\\"label label-danger\\\">KO</span>\";\n                }\n            };\n        }\n    });\n} "
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "extraOptions",
+      "type": "ExtraOptionsArray",
+      "value": "[]"
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     },
+     {
+      "name": "clickAction",
+      "type": "JavaScript",
+      "value": ""
      }
     ],
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter"
+    "rowName": "Table Component",
+    "type": "ComponentsTable",
+    "typeDesc": "table Component"
    }
   ]
  },
@@ -882,7 +945,7 @@
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "75427a29-dbbf-08fc-cd2b-57e7abc328a3",
+    "id": "b0107851-533a-1d92-1f45-08a467d124e5",
     "meta": "CDA",
     "meta_conntype": "sql.jndi",
     "meta_datype": "sql",
@@ -891,7 +954,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "alfrescoInstances"
+      "value": "alfrescoInstanceDatasource"
      },
      {
       "name": "access",
@@ -906,7 +969,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select dm_dim_alfresco.id, dm_dim_alfresco.desc\nfrom dm_dim_alfresco\nwhere dm_dim_alfresco.is_active = 'Y'"
+      "value": "select\n i.id as installationId,\n i.desc as installationDesc\nfrom\n dm_dim_alfresco i\norder by\n i.desc asc"
      },
      {
       "name": "parameters",
@@ -949,12 +1012,229 @@
       "value": "true"
      }
     ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "e386781d-d9f1-2d5e-064b-34e174312210",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "extractionDatasource"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "AAAR_DataMart"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')\n AND batch_start <= to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\",\"\"],[\"dtFromParam\",\"2015-01-01\",\"String\",\"\",\"\"],[\"dtToParam\",\"2015-01-01\",\"String\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "ba83e1d4-1475-6351-b3ad-00d04c780e1b",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "logsDatasource"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "AAAR_DataMart"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "SELECT\n UPPER(description) AS \"Task\",\n batch_start AS \"Start\",\n batch_end AS \"End\",\n (success = 'Y') AS \"Result\"\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_id = ${extractionParam}\nORDER BY\n batch_start ASC"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\",\"\"],[\"extractionParam\",\"extraction\",\"String\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "d3bf5e01-26c8-b2e8-4cc9-cd69fef8b221",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataQualityDatasource"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "AAAR_DataMart"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "SELECT\n UPPER(dq.entities) AS \"Entities\",\n (SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='alfresco') AS \"Alfresco\",\n (SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='staging') AS \"Staging\",\n (SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='operational') AS \"Operational\",\n (SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='datamart') AS \"DataMart\",\n ((SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='alfresco') = (SELECT value FROM dm_data_quality dq2 WHERE dq.entities=dq2.entities AND dq.batch_id=dq2.batch_id AND layer='datamart')) AS \"Check\"\nFROM\n dm_data_quality dq\nWHERE\n dq.alfresco_id = ${alfrescoInstanceParam}\n AND dq.batch_id = ${extractionParam}\nGROUP BY\n dq.batch_id,\n dq.entities\nORDER BY\n MIN(dq.creation) ASC\n"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"alfrescoInstanceParam\",\"1\",\"Integer\",\"\",\"\"],[\"extractionParam\",\"extraction\",\"String\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
     "type": "Componentssql_sqlJndi",
     "typeDesc": "sql over sqlJndi"
    }
   ]
  },
- "filename": "/system/AAAR/dashboards/admin/AAAR_Customize_Properties_Create.cdfde",
+ "filename": "/system/AAAR/dashboards/AAAR_Extract.cdfde",
  "layout": {
   "rows": [
    {
@@ -981,7 +1261,7 @@
     "typeDesc": "Resource"
    },
    {
-    "id": "c7790801-cf0f-4877-32dc-1184256e77d1",
+    "id": "c4c4713c-6847-f820-19e5-2e70e75441e2",
     "parent": "UnIqEiD",
     "properties": [
      {
@@ -1015,7 +1295,7 @@
      {
       "name": "resourceCode",
       "type": "Resource",
-      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat center center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} "
+      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 5px;\n    margin-left: 5px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n}\n\n.numericAAAR {\n    text-align: right;\n} "
      },
      {
       "name": "resourceType",
@@ -1321,138 +1601,6 @@
     ],
     "type": "LayoutRow",
     "typeDesc": "Row"
-   },
-   {
-    "id": "17f8bcfa-83e7-1e04-f30a-fda120f13a70",
-    "parent": "d5d3f5dd-5f0b-ffba-73cf-e32209781e4e",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "submenu"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapPanelStyle",
-      "type": "bootstrapPanelStyleCustom",
-      "value": "panel-default"
-     }
-    ],
-    "type": "BootstrapPanel",
-    "typeDesc": "Bootstrap Panel"
-   },
-   {
-    "id": "6433dd4f-3e73-d4a9-dc65-6c53181de3b2",
-    "parent": "17f8bcfa-83e7-1e04-f30a-fda120f13a70",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "BootstrapPanelBody",
-    "typeDesc": "Panel Body"
-   },
-   {
-    "id": "a01a02f7-0c97-a5ce-3b5f-edcf1fe85eb8",
-    "parent": "6433dd4f-3e73-d4a9-dc65-6c53181de3b2",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "5b7d13be-5cb4-5df7-9676-439fa8842a0b",
-    "parent": "a01a02f7-0c97-a5ce-3b5f-edcf1fe85eb8",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<ul class=\"nav nav-pills\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 5px; margin-bottom: 5px;\">\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Instances');\">Alfresco installations</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Properties');\">Custom types and aspects</a></li>\n  <li role=\"presentation\"><a href=\"#\" onclick=\"loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Customize_Publish');\">Publishing customizations</a></li>\n</ul>\n "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
    },
    {
     "id": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
@@ -1878,13 +2026,1297 @@
     "typeDesc": "Panel Body"
    },
    {
+    "id": "c9931804-9da0-f738-aa97-e540c05b2d93",
+    "parent": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "logsRow"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "parent": "c9931804-9da0-f738-aa97-e540c05b2d93",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "34b0ecb3-a83a-1844-4228-60c828ab0f72",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "14e884a1-2e70-ced2-98b7-98a4b8f2fa69",
+    "parent": "34b0ecb3-a83a-1844-4228-60c828ab0f72",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "6e398d15-bc5e-13f9-8163-6889d10ececb",
+    "parent": "14e884a1-2e70-ced2-98b7-98a4b8f2fa69",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<label for=\"alfrescoInstanceObj\" class=\"control-label\">Instance</label> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "147703ce-4ae5-ed6e-5637-f4d3fb23ca9c",
+    "parent": "34b0ecb3-a83a-1844-4228-60c828ab0f72",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "alfrescoInstanceObj"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "13f4bbf4-5d01-d7b2-3261-3c561c0765cd",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "20"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "7aeb638d-291b-1376-28c8-b64afd24307c",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "f6d90863-7dee-8325-4e2f-f78c702b8f5b",
+    "parent": "7aeb638d-291b-1376-28c8-b64afd24307c",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "2f028b46-c640-8425-fc92-1dda36dcf372",
+    "parent": "f6d90863-7dee-8325-4e2f-f78c702b8f5b",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<label for=\"periodObj\" class=\"control-label\">Period</label> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "1333707d-4121-e091-5a4d-ad54239246a9",
+    "parent": "7aeb638d-291b-1376-28c8-b64afd24307c",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "periodObj"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "0cd7dfdf-0ca5-44c8-8e7d-054d12e1df52",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "20"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "302c0a7d-f292-dad4-e58c-12f472754ceb",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "e181b037-a17b-a29a-43ec-ae5a91a5f9fd",
+    "parent": "302c0a7d-f292-dad4-e58c-12f472754ceb",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "34d48e78-125f-a2a6-b402-bb0867e8646d",
+    "parent": "e181b037-a17b-a29a-43ec-ae5a91a5f9fd",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<label for=\"extractionIdObj\" class=\"control-label\">Extraction</label> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "a2f70935-cd33-e779-f240-0a4d32d61003",
+    "parent": "302c0a7d-f292-dad4-e58c-12f472754ceb",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "extractionObj"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "0f444741-a07e-d599-d0ea-a459e34ce4e1",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "2fb9611f-918f-1ead-c23a-5f6b0bb4a672",
+    "parent": "0f444741-a07e-d599-d0ea-a459e34ce4e1",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "bfa88816-4244-d61e-5303-2a9e5033a3bc",
+    "parent": "2fb9611f-918f-1ead-c23a-5f6b0bb4a672",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<center><h2>Extraction tasks - Duration</h2></center> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "80c2d0fd-c7e7-6ae4-1c0c-2f5944167ef4",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "logsObj"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-panel"
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "084d8983-5514-776a-dd59-2b62aabcada0",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "00050624-b9e2-15b9-55b5-7898abb63f23",
+    "parent": "084d8983-5514-776a-dd59-2b62aabcada0",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "21abc82c-5ce3-31f0-c039-66d1b4e2f731",
+    "parent": "00050624-b9e2-15b9-55b5-7898abb63f23",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<center><h2>Data quality - Entity counters</h2></center> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "02169383-97e7-4e8d-bf9a-7f7a20a3526e",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataQualityObj"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-panel"
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "e5e4c4b0-0b14-6a58-fd8d-d98554953600",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "20"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "8d1ef523-942b-8054-b045-a081ed473930",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "legendObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0efac2a2-d3bd-6c99-c7df-336291dd3ccf",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "8d1ef523-942b-8054-b045-a081ed473930",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "8e431a04-5355-a00a-c715-3ef388d5c59b",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "0efac2a2-d3bd-6c99-c7df-336291dd3ccf",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<span class=\"label label-success\">OK</span> Means that Alfresco and AAAR Data Mart contain the same number of entities, at the moment of the extraction.<br/>\n<br/>\n<span class=\"label label-danger\">KO</span> Means that Alfresco and AAAR Data Mart contain a different number of entites, at the moment of the extraction. Please check. ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
     "parent": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "alertRow"
      },
      {
       "name": "height",
@@ -2048,1127 +3480,11 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "aaar-panel"
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "a5991392-4c22-a29a-46f2-c665827798dc",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoInstanceGroup"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "form-group"
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "21a652d2-f905-fd08-9f8b-fe6ca4c61153",
-    "parent": "a5991392-4c22-a29a-46f2-c665827798dc",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "f9748d06-1e17-6e20-9763-dcfc76114cec",
-    "parent": "21a652d2-f905-fd08-9f8b-fe6ca4c61153",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<label for=\"alfrescoInstanceObj\" class=\"col-sm-2 control-label\">Instance</label> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "70b1e817-5fbb-d4c5-9451-8eef29d2f9ff",
-    "parent": "a5991392-4c22-a29a-46f2-c665827798dc",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoInstanceObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "6bc93bb2-3210-71f1-7315-a3ac71454b21",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassTypeGroup"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "form-group"
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "0a188ad8-3b31-9b88-cea0-63db98b14581",
-    "parent": "6bc93bb2-3210-71f1-7315-a3ac71454b21",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "4636cfa5-1029-5783-5b4f-a1c867e88c12",
-    "parent": "0a188ad8-3b31-9b88-cea0-63db98b14581",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<label for=\"alfrescoClassTypeObj\" class=\"col-sm-2 control-label\">Type</label> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "81979a31-51af-1859-f93f-272ecbfb120e",
-    "parent": "6bc93bb2-3210-71f1-7315-a3ac71454b21",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassTypeObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "41806f02-c972-58a9-c19b-53b6a7d9f88e",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassGroup"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "form-group"
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "733cfe44-cb59-6102-5c02-1c86b8499c29",
-    "parent": "41806f02-c972-58a9-c19b-53b6a7d9f88e",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "5693c29e-7e22-0d12-cc21-90bebe067507",
-    "parent": "733cfe44-cb59-6102-5c02-1c86b8499c29",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<label for=\"alfrescoClassObj\" class=\"col-sm-2 control-label\">Class</label> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "6044b78c-7e67-f0ee-1377-015f0aa2e0b3",
-    "parent": "41806f02-c972-58a9-c19b-53b6a7d9f88e",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoClassObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "925d15f6-95dd-31ee-1b1e-c0d020a85118",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoPropertyGroup"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "form-group"
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "d92d817a-a70a-1717-f305-51af52cdb8ba",
-    "parent": "925d15f6-95dd-31ee-1b1e-c0d020a85118",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "b076ac23-2d09-dc41-5caa-3045fdf325c3",
-    "parent": "d92d817a-a70a-1717-f305-51af52cdb8ba",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<label for=\"alfrescoPropertyObj\" class=\"col-sm-2 control-label\">Property</label> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "270d0063-fd6c-33a0-c7ac-dade977e3b49",
-    "parent": "925d15f6-95dd-31ee-1b1e-c0d020a85118",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "alfrescoPropertyObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "0643d819-5571-026e-bb82-6bf5fbda1c17",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "spacer"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": "10"
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
       "value": ""
      }
     ],
     "type": "LayoutRow",
     "typeDesc": "Row"
-   },
-   {
-    "id": "b6b2b6d8-b075-c798-a474-19ed7653bf40",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "buttons"
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "3b281261-7749-4c1e-6ae5-6e9cc6184dd9",
-    "parent": "b6b2b6d8-b075-c798-a474-19ed7653bf40",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "5a21d889-d0b9-7c04-91f9-0af319c22507",
-    "parent": "b6b2b6d8-b075-c798-a474-19ed7653bf40",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "cancelButtonObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": "40"
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": "center"
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "66db65d2-599d-a188-4132-be2d7f1d4a6a",
-    "parent": "b6b2b6d8-b075-c798-a474-19ed7653bf40",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "createButtonObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": "40"
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": "center"
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "0370df76-3d10-ee0a-4af7-62b5bb9e3870",
-    "parent": "b6b2b6d8-b075-c798-a474-19ed7653bf40",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": "4"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
    },
    {
     "id": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
@@ -3240,7 +3556,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "spacer"
      },
      {
       "name": "height",
@@ -3278,7 +3594,7 @@
      {
       "name": "url",
       "type": "String",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/customizeProperties.png"
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/attention.png"
      },
      {
       "name": "cssClass",
@@ -3485,8 +3801,41 @@
     ],
     "type": "LayoutHtml",
     "typeDesc": "Html"
+   },
+   {
+    "id": "446a0f1c-d21b-2b94-633c-6f772ee1eb46",
+    "parent": "6b11d79d-f582-1548-2b88-c9604af2eef2",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "initScript"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<script language=\"javascript\">\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','databaseExists',{\n\n        params: {\n        },\n\n        success: function(json) {\n            $('#logsRow').show();\n            $('#alertRow').hide();\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#logsRow').hide();\n            $('#alertRow').show();\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n\n</script> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    }
   ],
-  "title": "A.A.A.R. - Customize - Alfresco properties - Create"
+  "title": "A.A.A.R. - Extractions"
  }
 }

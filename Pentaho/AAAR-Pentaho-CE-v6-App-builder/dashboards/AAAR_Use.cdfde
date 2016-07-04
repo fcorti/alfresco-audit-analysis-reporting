@@ -1,1948 +1,1933 @@
 {
- "layout": {
-  "title": "A.A.A.R. - Use",
-  "rows": [
-   {
-    "id": "23f8c196-3ab1-75d9-9a4d-096c2753f288",
-    "type": "LayoutResourceFile",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "customJs",
-      "type": "Id"
-     },
-     {
-      "name": "resourceFile",
-      "value": "/pentaho/api/repos/AAAR/static/custom/js/AAAR.js",
-      "type": "ResourceFile"
-     },
-     {
-      "name": "resourceType",
-      "value": "Javascript",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "20ae264f-0853-bc87-d395-524e167394be",
-    "type": "LayoutResourceCode",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "customCss",
-      "type": "Id"
-     },
-     {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
-      "name": "resourceCode",
-      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} ",
-      "type": "Resource"
-     }
-    ]
-   },
-   {
-    "id": "bb2da340-8b60-2d39-ff82-efee22de8787",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "20",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "header",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c4eb87cb-05c4-4333-ca39-35f81c85e22e",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "logo",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "a0d273ba-6ea7-2540-86e2-62af26c7186c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c4eb87cb-05c4-4333-ca39-35f81c85e22e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "cf2e07e1-7486-06fe-a1bb-8a04d8f9ec32",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
-    "parent": "a0d273ba-6ea7-2540-86e2-62af26c7186c",
-    "properties": [
-     {
-      "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/AAARBig.png",
-      "type": "String"
-     },
-     {
-      "name": "cssClass",
-      "value": "aaar-logo-responsive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "322d786a-6fc7-4572-6ad1-577410c06405",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "title",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "aaar-panel",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d5d3f5dd-5f0b-ffba-73cf-e32209781e4e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "322d786a-6fc7-4572-6ad1-577410c06405",
-    "properties": [
-     {
-      "name": "name",
-      "value": "title",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "content",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "39061b51-1ad0-f2db-d852-3410e27a8d60",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "menu",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "aaar-panel",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "bd5197bb-363a-3a49-8ffc-e3f8b3be8e88",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "39061b51-1ad0-f2db-d852-3410e27a8d60",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "75e25bca-1af7-bf5b-7317-fdde30d853f7",
-    "type": "BootstrapPanel",
-    "typeDesc": "Bootstrap Panel",
-    "parent": "bd5197bb-363a-3a49-8ffc-e3f8b3be8e88",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapPanelStyle",
-      "value": "panel-default",
-      "type": "bootstrapPanelStyleCustom"
-     }
-    ]
-   },
-   {
-    "id": "288c8286-e63d-203b-3b50-8aa694f16f7f",
-    "type": "BootstrapPanelBody",
-    "typeDesc": "Panel Body",
-    "parent": "75e25bca-1af7-bf5b-7317-fdde30d853f7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "aaf20558-0ae6-d204-974c-4d609070e200",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "4e19aefb-688f-a3f0-a767-66c2dfbf7dc8",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<ul class=\"nav nav-pills nav-stacked\" style=\"margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;\">\n <li><a href=\"/pentaho/plugin/AAAR/api/main\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; };\"><span style=\"font-size:1.1em; font-weight: bold;\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span></span> Home</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Configure_Alfresco');\"><span style=\"font-size:1.1em; font-weight: bold;\">1.</span> Configure</a></li>\n <li><a href=\"#\" onclick=\"if (Dashboards.getParameterValue('${p:isChanged}')=='true') { $('#alertPanel').append('<div class=\\'alert alert-warning alert-dismissible\\' role=\\'alert\\' style=\\'margin-left: 20px; margin-right: 20px;\\'><button type=\\'button\\' class=\\'close\\' data-dismiss=\\'alert\\' aria-label=\\'Close\\'><span aria-hidden=\\'true\\'>&times;</span></button><strong>Configuration changed!</strong> Please reset or save before leave the page.</div>'); return false; }; loadAndRedirect(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Install');\"><span style=\"font-size:1.1em; font-weight: bold;\">2.</span> Install</a></li>\n <li class=\"active\"><a href=\"#\"><span style=\"font-size:1.1em; font-weight: bold;\">3.</span> Use</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_Customize\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></span> Customize</a></li>\n <li><a href=\"/pentaho/plugin/AAAR/api/AAAR_About\"><span style=\"font-size:1.1em;\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span></span> About</a></li>\n</ul> ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8a32ffdf-fb32-449a-6563-89c1e1dc212e",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "content",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "aaar-panel",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ea9bfa6b-bb18-aff8-7dc0-9020a94a5e95",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "8a32ffdf-fb32-449a-6563-89c1e1dc212e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "1f908f34-fe6a-5515-3516-b6905aa8844b",
-    "type": "LayoutFreeForm",
-    "typeDesc": "FreeForm",
-    "parent": "ea9bfa6b-bb18-aff8-7dc0-9020a94a5e95",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "elementTag",
-      "value": "form",
-      "type": "String"
-     },
-     {
-      "name": "otherAttributes",
-      "value": "[[\"class\",\"form-horizontal\"]]",
-      "type": "OptionArray"
-     }
-    ]
-   },
-   {
-    "id": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
-    "type": "BootstrapPanel",
-    "typeDesc": "Bootstrap Panel",
-    "parent": "1f908f34-fe6a-5515-3516-b6905aa8844b",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapPanelStyle",
-      "value": "panel-default",
-      "type": "bootstrapPanelStyleCustom"
-     }
-    ]
-   },
-   {
-    "id": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
-    "type": "BootstrapPanelBody",
-    "typeDesc": "Panel Body",
-    "parent": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ed15869f-e96b-071a-f700-24497469c96c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "fa76aca6-56d9-2f9d-e690-8d49cf23f968",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
-    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
-    "properties": [
-     {
-      "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/extract.png",
-      "type": "String"
-     },
-     {
-      "name": "cssClass",
-      "value": "img-responsive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "83fe15d2-b77d-b7c7-d7dd-2cbef09413c9",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "12a84260-ddc2-cd72-d37a-23143aadbfb8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "extractButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "0f2d2ab0-82af-b939-29a1-f1b5e00ac3a5",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "82fa98ad-62f3-06b0-3180-d75f3fd76ebe",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/publish.png",
-      "type": "String"
-     },
-     {
-      "name": "cssClass",
-      "value": "img-responsive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "847ab919-005a-b0dd-c574-a2396161e8a0",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "e79069f5-eab7-6343-5912-38adbd5ad887",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
-    "properties": [
-     {
-      "name": "name",
-      "value": "publishButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "4",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "7ea7544e-4bfa-9ef9-5ebd-407c01dc41d0",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "88091243-012b-1cac-0c86-c205b4edf8ea",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
-    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
-    "properties": [
-     {
-      "name": "url",
-      "value": "/pentaho/api/repos/AAAR/static/custom/img/analyse.png",
-      "type": "String"
-     },
-     {
-      "name": "cssClass",
-      "value": "img-responsive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "f3968971-b8ca-6ad1-e738-94747e36dcae",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
-    "properties": [
-     {
-      "name": "name",
-      "value": "spacer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "10",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ba44b57b-3420-a9a8-1697-498834253ec8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
-    "properties": [
-     {
-      "name": "name",
-      "value": "analyzeButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "footer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "center",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5c9a77f4-c3b6-3bba-3dba-5e83d97f23de",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "3",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "6b11d79d-f582-1548-2b88-c9604af2eef2",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
-    "parent": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapSmall",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapMedium",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapLarge",
-      "value": "9",
-      "type": "String"
-     },
-     {
-      "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "3a67e0ce-f0da-8334-9cd4-47d0bf857675",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "6b11d79d-f582-1548-2b88-c9604af2eef2",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "@2013-2016 Francesco Corti ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   }
-  ]
- },
  "components": {
   "rows": [
    {
     "id": "OTHERCOMPONENTS",
     "name": "Others",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Others",
-      "type": "Label"
+      "type": "Label",
+      "value": "Others"
      }
-    ]
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
    },
    {
     "id": "7db2beb0-988c-9e92-65ce-2b180d0ed54e",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "extractButton",
-      "type": "Id"
+      "type": "Id",
+      "value": "extractButton"
      },
      {
       "name": "label",
-      "value": "1. Extract",
-      "type": "String"
+      "type": "String",
+      "value": "1. Extract"
      },
      {
       "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[]"
      },
      {
       "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "type": "ValuesArray",
+      "value": "[]"
      },
      {
       "name": "expression",
-      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Extract', {});\n}\n ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Extract', {});\n}\n "
      },
      {
       "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
-      "name": "Datasource",
+      "name": "successCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "dataSource",
       "value": "",
       "type": "Datasource"
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
+      "type": "TableStyle",
+      "value": "classic"
      },
      {
       "name": "htmlObject",
-      "value": "${p:extractButtonObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${p:extractButtonObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#extractButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#extractButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} "
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
-    ]
+    ],
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component"
    },
    {
     "id": "a97a678f-acd0-4e0b-2d99-2a88137f61f3",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "publishButton",
-      "type": "Id"
+      "type": "Id",
+      "value": "publishButton"
      },
      {
       "name": "label",
-      "value": "2. Publish",
-      "type": "String"
+      "type": "String",
+      "value": "2. Publish"
      },
      {
       "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[]"
      },
      {
       "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "type": "ValuesArray",
+      "value": "[]"
      },
      {
       "name": "expression",
-      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Publish', {});\n}\n ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Publish', {});\n}\n "
      },
      {
       "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
-      "name": "Datasource",
+      "name": "successCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "dataSource",
       "value": "",
       "type": "Datasource"
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
+      "type": "TableStyle",
+      "value": "classic"
      },
      {
       "name": "htmlObject",
-      "value": "${p:publishButtonObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${p:publishButtonObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#publishButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#publishButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} "
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
-    ]
+    ],
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component"
    },
    {
     "id": "40253e0f-8b0b-9dba-268d-dd296e8db3e5",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "analyzeButton",
-      "type": "Id"
+      "type": "Id",
+      "value": "analyzeButton"
      },
      {
       "name": "label",
-      "value": "3. Analyze",
-      "type": "String"
+      "type": "String",
+      "value": "3. Analyze"
      },
      {
       "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[]"
      },
      {
       "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "type": "ValuesArray",
+      "value": "[]"
      },
      {
       "name": "expression",
-      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Analyze', {});\n}\n ",
-      "type": "JavaScript"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n    AAAR.changeLocation(Dashboards.getWebAppPath() + '/plugin/AAAR/api/AAAR_Use_Analyze', {});\n}\n "
      },
      {
       "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
-      "name": "Datasource",
+      "name": "successCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "dataSource",
       "value": "",
       "type": "Datasource"
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
+      "type": "TableStyle",
+      "value": "classic"
      },
      {
       "name": "htmlObject",
-      "value": "${p:analyzeButtonObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${p:analyzeButtonObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#analyzeButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#analyzeButtonObj').children(\":first\").attr('class','btn btn-primary');\n\n} "
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
-    ]
+    ],
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component"
    },
    {
     "id": "SCRIPT",
     "name": "Scripts",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Scripts",
-      "type": "Label"
+      "type": "Label",
+      "value": "Scripts"
      }
-    ]
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
    },
    {
     "id": "a03f8102-f723-1100-0e15-e879cd328ed2",
-    "type": "ComponentsFunction",
-    "typeDesc": "JavaScript function",
     "parent": "SCRIPT",
     "properties": [
      {
       "name": "name",
-      "value": "loadAndRedirect",
-      "type": "Id"
+      "type": "Id",
+      "value": "loadAndRedirect"
      },
      {
       "name": "javaScript",
-      "value": "function loadAndRedirect(url) {\n\n    var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','readConfiguration',{\n\n        params: {\n            configurationFile: configurationFile\n        },\n\n        success: function(json) {\n\n            // Iteration on results.\n            var jsonParams = {};\n            for (var i=0; i < json.resultset.length; ++i) {\n                jsonParams[json.resultset[i][0]]  = json.resultset[i][1];\n            }\n\n            Dashboards.decrementRunningCalls();\n\n            AAAR.changeLocation(url, jsonParams);\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Please, check the log, solve the problem and try again.</div>');\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function loadAndRedirect(url) {\n\n    var configurationFile = Dashboards.getParameterValue('${p:configurationFile}');\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','readConfiguration',{\n\n        params: {\n            configurationFile: configurationFile\n        },\n\n        success: function(json) {\n\n            // Iteration on results.\n            var jsonParams = {};\n            for (var i=0; i < json.resultset.length; ++i) {\n                jsonParams[json.resultset[i][0]]  = json.resultset[i][1];\n            }\n\n            Dashboards.decrementRunningCalls();\n\n            AAAR.changeLocation(url, jsonParams);\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Configuration load!</strong> Please, check the log, solve the problem and try again.</div>');\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n} "
      }
-    ]
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
    }
   ]
  },
  "datasources": {
   "rows": []
  },
- "filename": "/system/AAAR/dashboards/AAAR_Use.cdfde"
+ "filename": "/system/AAAR/dashboards/AAAR_Use.cdfde",
+ "layout": {
+  "rows": [
+   {
+    "id": "23f8c196-3ab1-75d9-9a4d-096c2753f288",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "customJs"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "/pentaho/api/repos/AAAR/static/custom/js/AAAR.js"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "8ee5b915-747f-8961-c433-f88784d030ee",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "renderMenu"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "/pentaho/api/repos/AAAR/static/custom/js/renderMenu.js"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "20ae264f-0853-bc87-d395-524e167394be",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "customCss"
+     },
+     {
+      "name": "resourceCode",
+      "type": "Resource",
+      "value": ".aaar-logo-responsive {\n    width: 90%;\n    height: auto;\n    margin-bottom: 20px;\n}\n\n.jumbotron{\n    background: url('/pentaho/api/repos/AAAR/static/custom/img/welcome.png') no-repeat left center;\n}\n\n.aaar-panel {\n    margin-right: 10px;\n    margin-left: 10px;\n}\n\n.aaar-field-margin {\n    margin-right: 20px;\n    margin-left: 20px;\n} "
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Css"
+     }
+    ],
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "bb2da340-8b60-2d39-ff82-efee22de8787",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "20"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "header"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "c4eb87cb-05c4-4333-ca39-35f81c85e22e",
+    "parent": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "logo"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "a0d273ba-6ea7-2540-86e2-62af26c7186c",
+    "parent": "c4eb87cb-05c4-4333-ca39-35f81c85e22e",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": "center"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "cf2e07e1-7486-06fe-a1bb-8a04d8f9ec32",
+    "parent": "a0d273ba-6ea7-2540-86e2-62af26c7186c",
+    "properties": [
+     {
+      "name": "url",
+      "type": "String",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/AAARBig.png"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-logo-responsive"
+     }
+    ],
+    "type": "LayoutImage",
+    "typeDesc": "Image"
+   },
+   {
+    "id": "322d786a-6fc7-4572-6ad1-577410c06405",
+    "parent": "eea6931d-22be-d0b7-d33b-be1a6b65942c",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "title"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "d5d3f5dd-5f0b-ffba-73cf-e32209781e4e",
+    "parent": "322d786a-6fc7-4572-6ad1-577410c06405",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "title"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "content"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "39061b51-1ad0-f2db-d852-3410e27a8d60",
+    "parent": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "menu"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "bd5197bb-363a-3a49-8ffc-e3f8b3be8e88",
+    "parent": "39061b51-1ad0-f2db-d852-3410e27a8d60",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "75e25bca-1af7-bf5b-7317-fdde30d853f7",
+    "parent": "bd5197bb-363a-3a49-8ffc-e3f8b3be8e88",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapPanelStyle",
+      "type": "bootstrapPanelStyleCustom",
+      "value": "panel-default"
+     }
+    ],
+    "type": "BootstrapPanel",
+    "typeDesc": "Bootstrap Panel"
+   },
+   {
+    "id": "288c8286-e63d-203b-3b50-8aa694f16f7f",
+    "parent": "75e25bca-1af7-bf5b-7317-fdde30d853f7",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "BootstrapPanelBody",
+    "typeDesc": "Panel Body"
+   },
+   {
+    "id": "aaf20558-0ae6-d204-974c-4d609070e200",
+    "parent": "288c8286-e63d-203b-3b50-8aa694f16f7f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<script type=\"text/javascript\">renderMenu();</script> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "8a32ffdf-fb32-449a-6563-89c1e1dc212e",
+    "parent": "5bc15817-9cd4-44c8-09cd-5ce0a1a3b0c0",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "content"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "aaar-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "ea9bfa6b-bb18-aff8-7dc0-9020a94a5e95",
+    "parent": "8a32ffdf-fb32-449a-6563-89c1e1dc212e",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "1f908f34-fe6a-5515-3516-b6905aa8844b",
+    "parent": "ea9bfa6b-bb18-aff8-7dc0-9020a94a5e95",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "elementTag",
+      "type": "String",
+      "value": "form"
+     },
+     {
+      "name": "otherAttributes",
+      "type": "OptionArray",
+      "value": "[[\"class\",\"form-horizontal\"]]"
+     }
+    ],
+    "type": "LayoutFreeForm",
+    "typeDesc": "FreeForm"
+   },
+   {
+    "id": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
+    "parent": "1f908f34-fe6a-5515-3516-b6905aa8844b",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapPanelStyle",
+      "type": "bootstrapPanelStyleCustom",
+      "value": "panel-default"
+     }
+    ],
+    "type": "BootstrapPanel",
+    "typeDesc": "Bootstrap Panel"
+   },
+   {
+    "id": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
+    "parent": "0e4c360d-47c9-5f38-e44c-ca902066e0b6",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "BootstrapPanelBody",
+    "typeDesc": "Panel Body"
+   },
+   {
+    "id": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
+    "parent": "25d2cdab-9623-af4f-3c40-4452c4d2b123",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
+    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "ed15869f-e96b-071a-f700-24497469c96c",
+    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "fa76aca6-56d9-2f9d-e690-8d49cf23f968",
+    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
+    "properties": [
+     {
+      "name": "url",
+      "type": "String",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/extract.png"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "img-responsive"
+     }
+    ],
+    "type": "LayoutImage",
+    "typeDesc": "Image"
+   },
+   {
+    "id": "83fe15d2-b77d-b7c7-d7dd-2cbef09413c9",
+    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "12a84260-ddc2-cd72-d37a-23143aadbfb8",
+    "parent": "6fbb230f-4222-46fd-87d3-7a849da09c1f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "extractButtonObj"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": "center"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "991bf44c-2bc5-b259-0892-9439eff69702",
+    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "0f2d2ab0-82af-b939-29a1-f1b5e00ac3a5",
+    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "82fa98ad-62f3-06b0-3180-d75f3fd76ebe",
+    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
+    "properties": [
+     {
+      "name": "url",
+      "type": "String",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/publish.png"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "img-responsive"
+     }
+    ],
+    "type": "LayoutImage",
+    "typeDesc": "Image"
+   },
+   {
+    "id": "847ab919-005a-b0dd-c574-a2396161e8a0",
+    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "e79069f5-eab7-6343-5912-38adbd5ad887",
+    "parent": "991bf44c-2bc5-b259-0892-9439eff69702",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "publishButtonObj"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": "center"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
+    "parent": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "7ea7544e-4bfa-9ef9-5ebd-407c01dc41d0",
+    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "88091243-012b-1cac-0c86-c205b4edf8ea",
+    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
+    "properties": [
+     {
+      "name": "url",
+      "type": "String",
+      "value": "/pentaho/api/repos/AAAR/static/custom/img/analyse.png"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "img-responsive"
+     }
+    ],
+    "type": "LayoutImage",
+    "typeDesc": "Image"
+   },
+   {
+    "id": "f3968971-b8ca-6ad1-e738-94747e36dcae",
+    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "spacer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "10"
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "ba44b57b-3420-a9a8-1697-498834253ec8",
+    "parent": "8d131538-ed29-47fe-5c1a-6fc7aa4a2c10",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "analyzeButtonObj"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": "center"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "footer"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": "center"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "5c9a77f4-c3b6-3bba-3dba-5e83d97f23de",
+    "parent": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "6b11d79d-f582-1548-2b88-c9604af2eef2",
+    "parent": "e26b1bf1-182b-e41b-2ed3-0e63246af3a9",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "9"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "3a67e0ce-f0da-8334-9cd4-47d0bf857675",
+    "parent": "6b11d79d-f582-1548-2b88-c9604af2eef2",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "@2013-2016 Francesco Corti "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   }
+  ],
+  "title": "A.A.A.R. - Use"
+ }
 }

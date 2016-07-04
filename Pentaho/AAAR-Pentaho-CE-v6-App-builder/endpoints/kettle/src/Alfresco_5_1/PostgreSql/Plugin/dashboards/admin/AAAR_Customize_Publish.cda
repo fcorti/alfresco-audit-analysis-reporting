@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CDADescriptor>
-   <DataSources>
-      <Connection id="reportsDataSource" type="sql.jndi">
-         <Jndi>AAAR_DataMart</Jndi>
-      </Connection>
-   </DataSources>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="reportsDataSource"
-               id="reportsDataSource"
-               type="sql">
-      <Columns/>
-      <Parameters/>
-      <Query>SELECT
+<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
+  <DataSources>
+    <Connection id="reportsDataSource" type="sql.jndi">
+      <Jndi>AAAR_DataMart</Jndi>
+    </Connection>
+  </DataSources>
+  <DataAccess access="public" connection="reportsDataSource" id="reportsDataSource" type="sql">
+    <Name>reportsDataSource</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[SELECT
  id,
  concat(pentaho_path,'/',prpt_name) as report,
  is_active
 FROM
- dm_reports</Query>
-   </DataAccess>
+ dm_reports]]></Query>
+  </DataAccess>
 </CDADescriptor>
