@@ -329,9 +329,20 @@ public class GetCountersWebScript extends DeclarativeWebScript {
 
         List<QName> result = new ArrayList<QName>();
 
-		for (int i = 0; i < classes.length(); ++i) {
-			result.add(QName.resolveToQName(namespaceService, classes.getString(i)));
-		}
+        for (int i = 0; i < classes.length(); ++i) {
+
+            Object classObj = classes.get(i);
+
+            String className = "";
+            if (classObj instanceof String) {
+            	className = (String)classObj;
+            }
+            else if (classObj instanceof JSONObject) {
+            	className = ((JSONObject)classObj).names().getString(0);
+            }
+            
+            result.add(QName.resolveToQName(namespaceService, className));
+        }
 
         return result;
     }
