@@ -1041,7 +1041,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')\n AND batch_start <= to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
+      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')\n AND to_date(to_char(batch_start,'YYYY-MM-D'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
      },
      {
       "name": "parameters",
@@ -1234,7 +1234,7 @@
    }
   ]
  },
- "filename": "/system/AAAR/dashboards/AAAR_Extract.cdfde",
+ "filename": "/system/AAAR/dashboards/admin/AAAR_Extractions.cdfde",
  "layout": {
   "rows": [
    {
@@ -3177,137 +3177,137 @@
    },
    {
     "id": "8d1ef523-942b-8054-b045-a081ed473930",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
     "parent": "06f8d672-7eba-122f-0a84-7f191e7d3d6f",
     "properties": [
      {
       "name": "name",
-      "value": "legendObj",
-      "type": "Id"
+      "type": "Id",
+      "value": "legendObj"
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
    },
    {
     "id": "0efac2a2-d3bd-6c99-c7df-336291dd3ccf",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "8d1ef523-942b-8054-b045-a081ed473930",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "12",
-      "type": "String"
+      "type": "String",
+      "value": "12"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "8e431a04-5355-a00a-c715-3ef388d5c59b",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
     "parent": "0efac2a2-d3bd-6c99-c7df-336291dd3ccf",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "html",
-      "value": "<span class=\"label label-success\">OK</span> Means that Alfresco and AAAR Data Mart contain the same number of entities, at the moment of the extraction.<br/>\n<br/>\n<span class=\"label label-danger\">KO</span> Means that Alfresco and AAAR Data Mart contain a different number of entites, at the moment of the extraction. Please check. ",
-      "type": "Html"
+      "type": "Html",
+      "value": "<span class=\"label label-success\">OK</span> Means that Alfresco and AAAR Data Mart contain the same number of entities, at the moment of the extraction.<br/>\n<br/>\n<span class=\"label label-danger\">KO</span> Means that Alfresco and AAAR Data Mart contain a different number of entites, at the moment of the extraction. Please check. "
      },
      {
       "name": "fontSize",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "color",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    },
    {
     "id": "8f05c118-dd11-41c3-bef0-e1b63bcc7fd6",
