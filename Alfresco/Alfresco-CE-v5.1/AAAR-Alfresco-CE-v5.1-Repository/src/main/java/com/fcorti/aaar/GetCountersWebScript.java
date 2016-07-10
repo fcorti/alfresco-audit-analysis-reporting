@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -31,6 +32,11 @@ import java.util.Properties;
 import org.alfresco.service.namespace.NamespaceService;
 import org.alfresco.service.namespace.QName;
 import org.alfresco.service.ServiceRegistry;
+import org.alfresco.service.cmr.repository.StoreRef;
+import org.alfresco.service.cmr.search.LimitBy;
+import org.alfresco.service.cmr.search.PermissionEvaluationMode;
+import org.alfresco.service.cmr.search.SearchParameters;
+import org.alfresco.service.cmr.search.SearchService;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.Status;
@@ -40,8 +46,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.sun.star.io.WrongFormatException;
-
-import jdk.nashorn.internal.runtime.JSONFunctions;
 
 /**
  * Get the global properties for A.A.A.R. analytics.
@@ -69,6 +73,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
 
     private NamespaceService namespaceService;
     private Properties properties;
+	private SearchService searchService;
     @SuppressWarnings("unused")
     private ServiceRegistry serviceRegistry;
 
@@ -77,7 +82,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
     protected Map<String, Object> executeImpl(WebScriptRequest req, Status status, Cache cache) {
 
         // Parameters.
-        Map<String, Object> parameters = null;
         try {
             parameters = getParameters(req);
         }
@@ -91,27 +95,8 @@ public class GetCountersWebScript extends DeclarativeWebScript {
         model.put(PARAMETER_APPLICATION, (String) parameters.get(PARAMETER_APPLICATION));
         model.put(PARAMETER_CLASSES,     (String) parameters.get(PARAMETER_CLASSES));
 
-        // Alfresco database enquery.
         try {
-
-            Class.forName(properties.getProperty(DB_DRIVER));
-
-            java.sql.Connection dbConnection = DriverManager.getConnection(properties.getProperty(DB_URL), properties.getProperty(DB_USERNAME), properties.getProperty(DB_PASSWORD));
-            Statement dbStatement = dbConnection.createStatement();
-            String dbQuery = getQuery(parameters);
-            ResultSet dbResultSet = dbStatement.executeQuery(dbQuery);
-
-            if (dbResultSet.next()) {
-                model.put(VALUE_FIELD, String.valueOf(dbResultSet.getDouble(VALUE_FIELD)));
-            }
-
-            if (dbResultSet.next()) {
-                throw new WrongFormatException("Query '" + dbQuery + "' with multiple results when only one is expected.");
-            }
-
-            if (dbStatement != null) dbStatement.close();
-            if (dbConnection != null) dbConnection.close();
-
+            model.put(VALUE_FIELD, getCounter(parameters));
         }
         catch (Exception e) {
             throw new WebScriptException(Status.STATUS_BAD_REQUEST, e.getMessage());
@@ -121,11 +106,79 @@ public class GetCountersWebScript extends DeclarativeWebScript {
     }
 
     /**
-     * Compose the query string.
+     * Get the value of the counter.
+     * @param parameters
+     * @return
+     * @throws ClassNotFoundException 
+     * @throws SQLException 
+     */
+    private String getCounter(Map<String, Object> parameters) throws Exception {
+
+    	String counter = "0";
+
+    	switch ((String) parameters.get(PARAMETER_COUNTER)) {
+
+        case PARAMETER_COUNTER_AUDIT_TRAIL:
+        case PARAMETER_COUNTER_WORKFLOW_INSTANCES:
+        case PARAMETER_COUNTER_WORKFLOW_TASKS:
+
+        	/*
+        	 * TODO: The query should be defined using hibernate.
+        	 */
+
+        	Class.forName(properties.getProperty(DB_DRIVER));
+
+            java.sql.Connection dbConnection = DriverManager.getConnection(properties.getProperty(DB_URL), properties.getProperty(DB_USERNAME), properties.getProperty(DB_PASSWORD));
+            Statement dbStatement = dbConnection.createStatement();
+            String dbQuery = getDatabaseQuery(parameters);
+            java.sql.ResultSet dbResultSet = dbStatement.executeQuery(dbQuery);
+
+            if (dbResultSet.next()) {
+            	counter = String.valueOf(dbResultSet.getDouble(VALUE_FIELD));
+            }
+
+            if (dbResultSet.next()) {
+                throw new WrongFormatException("Database query '" + dbQuery + "' with multiple results when only one is expected.");
+            }
+
+            if (dbStatement != null) dbStatement.close();
+            if (dbConnection != null) dbConnection.close();
+
+            break;
+
+        case PARAMETER_COUNTER_ASPECTS:
+        case PARAMETER_COUNTER_TYPES:
+
+            SearchParameters searchParameters = new SearchParameters();
+
+            searchParameters.addStore(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
+            searchParameters.setLanguage(SearchService.LANGUAGE_FTS_ALFRESCO);
+            searchParameters.setPermissionEvaluation(PermissionEvaluationMode.NONE);
+            searchParameters.setUseInMemorySort(false);
+            searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
+            searchParameters.setQuery(getAlfrescoQuery(parameters));
+
+            org.alfresco.service.cmr.search.ResultSet resultSet = searchService.query(searchParameters);
+            counter = String.valueOf(resultSet.getNumberFound());
+
+            resultSet.close();
+
+            break;
+
+        default:
+            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
+        }
+
+    	return counter;
+
+    }
+
+    /**
+     * Compose the query string for a database.
      * @param parameters
      * @return
      */
-    private String getQuery(Map<String, Object> parameters) throws WrongFormatException {
+    private String getDatabaseQuery(Map<String, Object> parameters) throws WrongFormatException {
 
     	/*
     	 * TODO: The query should be defined using hibernate.
@@ -134,54 +187,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
     	String query = "";
 
         switch ((String) parameters.get(PARAMETER_COUNTER)) {
-
-        case PARAMETER_COUNTER_ASPECTS:
-
-            List<QName> aspects = null;
-            try {
-                JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
-            	aspects = getQNames(jsonTypes.getJSONArray(PARAMETER_CLASSES_ASPECTS));
-            } catch (JSONException e) {
-                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
-            }
-            if (aspects.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
-            }
-
-            query = ""
-                + "SELECT "
-                + " count(*) AS " + VALUE_FIELD + " "
-                + "FROM "
-                + " alf_node nodes,"
-                + " alf_node_aspects aspects,"
-                + " alf_qname aspect_names,"
-                + " alf_qname names,"
-                + " alf_namespace namespaces "
-                + "WHERE"
-                + " nodes.id = aspects.node_id"
-                + " AND aspects.qname_id = aspect_names.id"
-                + " AND nodes.type_qname_id = names.id"
-                + " AND aspect_names.ns_id = namespaces.id"
-                + " AND ("
-                + "  (namespaces.uri = 'http://www.alfresco.org/model/content/1.0' AND (names.local_name = 'content' OR names.local_name = 'folder'))"
-                + " )"
-                + " AND (";
-
-            for (int i = 0; i < aspects.size(); ++i) {
-
-                QName aspectQName = aspects.get(i);
-
-                query += "(namespaces.uri = '" + aspectQName.getNamespaceURI() + "' ";
-                query += "AND aspect_names.local_name = '" + aspectQName.getLocalName() + "')";
-
-                if ((i + 1) < aspects.size()) {
-                    query += " OR ";
-                }
-            }
-
-            query += ")";
-
-            break;
 
         case PARAMETER_COUNTER_AUDIT_TRAIL:
 
@@ -201,47 +206,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
 
             break;
 
-        case PARAMETER_COUNTER_TYPES:
-
-            List<QName> types   = null;
-            try {
-                JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
-                types = getQNames(jsonTypes.getJSONArray(PARAMETER_COUNTER_TYPES));
-            } catch (JSONException e) {
-                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
-            }
-            if (types.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
-            }
-
-            query = ""
-                + "SELECT "
-              	+ " count(*) AS " + VALUE_FIELD + " "
-                + "FROM "
-                + " alf_node nodes,"
-                + " alf_qname names,"
-                + " alf_namespace namespaces "
-                + "WHERE "
-                + " nodes.type_qname_id = names.id"
-                + " AND names.ns_id = namespaces.id"
-                + " AND (";
-
-            for (int i = 0; i < types.size(); ++i) {
-
-                QName typeQName = types.get(i);
-
-                query += "(namespaces.uri = '" + typeQName.getNamespaceURI() + "' ";
-                query += "AND names.local_name = '" + typeQName.getLocalName() + "')";
-
-                if ((i + 1) < types.size()) {
-             	    query += " OR ";
-                }
-            }
-
-            query += ")";
-
-            break;
-
         case PARAMETER_COUNTER_WORKFLOW_INSTANCES:
 
             query = ""
@@ -258,7 +222,10 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 + "SELECT "
                 + " count(*) AS " + VALUE_FIELD + " "
                 + "FROM "
-                + " act_hi_taskinst";
+                + " " + "act_hi_taskinst" + " "
+                + "WHERE "
+                + "act_id_ = 'start' "
+                + "OR task_id_ is not null";
 
             break;
 
@@ -268,6 +235,80 @@ public class GetCountersWebScript extends DeclarativeWebScript {
 
         return query;
     }
+
+    /**
+     * Compose the query string for Afresco.
+     * @param parameters
+     * @return
+     */
+    private String getAlfrescoQuery(Map<String, Object> parameters) throws WrongFormatException {
+
+        String query = "";
+
+        switch ((String) parameters.get(PARAMETER_COUNTER)) {
+
+        case PARAMETER_COUNTER_ASPECTS:
+
+        	// Aspect list definition.
+            List<QName> aspects = null;
+            try {
+                JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
+            	aspects = getQNames(jsonTypes.getJSONArray(PARAMETER_CLASSES_ASPECTS));
+            } catch (JSONException e) {
+                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+            }
+            if (aspects.isEmpty()) {
+                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
+            }
+
+            // Query composition.
+            for (int i = 0; i < aspects.size(); ++i) {
+
+                QName aspectQName = aspects.get(i);
+
+                query += "(ASPECT:\"{" + aspectQName.getNamespaceURI() + "}" + aspectQName.getLocalName() + "\")";
+
+                if ((i + 1) < aspects.size()) {
+                    query += " OR ";
+                }
+            }
+
+            break;
+
+        case PARAMETER_COUNTER_TYPES:
+
+        	// Type list definition.
+            List<QName> types = null;
+            try {
+                JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
+                types = getQNames(jsonTypes.getJSONArray(PARAMETER_COUNTER_TYPES));
+            } catch (JSONException e) {
+                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+            }
+            if (types.isEmpty()) {
+                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
+            }
+
+            // Query composition.
+            for (int i = 0; i < types.size(); ++i) {
+
+                QName typeQName = types.get(i);
+
+                query += "(TYPE:\"{" + typeQName.getNamespaceURI() + "}" + typeQName.getLocalName() + "\")";
+
+                if ((i + 1) < types.size()) {
+                    query += " OR ";
+                }
+            }
+
+        	break;
+
+        default:
+            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
+        }
+
+        return query;
+	}
 
     /**
      * Get QNames from the parameter 'classes'.
@@ -351,6 +392,10 @@ public class GetCountersWebScript extends DeclarativeWebScript {
     {
         this.properties = properties;
     }
+
+	public void setSearchService(SearchService searchService) {
+		this.searchService = searchService;
+	}
 
     public void setServiceRegistry(ServiceRegistry serviceRegistry) {
         this.serviceRegistry = serviceRegistry;
