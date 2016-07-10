@@ -17,20 +17,17 @@ limitations under the License.
 package com.fcorti.aaar;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
 import org.alfresco.service.namespace.NamespaceService;
 import org.alfresco.service.namespace.QName;
+import org.alfresco.model.ContentModel;
 import org.alfresco.service.ServiceRegistry;
 import org.alfresco.service.cmr.repository.StoreRef;
 import org.alfresco.service.cmr.search.LimitBy;
@@ -262,6 +259,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             }
 
             // Query composition.
+    		query += "(";
             for (int i = 0; i < aspects.size(); ++i) {
 
                 QName aspectQName = aspects.get(i);
@@ -272,6 +270,11 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                     query += " OR ";
                 }
             }
+    		query += ") ";
+
+    		// Modification date filter.
+    		query += "AND ";
+    		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
             break;
 
@@ -290,6 +293,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             }
 
             // Query composition.
+    		query += "(";
             for (int i = 0; i < types.size(); ++i) {
 
                 QName typeQName = types.get(i);
@@ -300,6 +304,11 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                     query += " OR ";
                 }
             }
+    		query += ") ";
+
+    		// Modification date filter.
+    		query += "AND ";
+    		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
         	break;
 
