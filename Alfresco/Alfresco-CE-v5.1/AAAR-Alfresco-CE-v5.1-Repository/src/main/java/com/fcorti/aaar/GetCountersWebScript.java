@@ -219,7 +219,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 + "SELECT "
                 + " count(*) AS " + VALUE_FIELD + " "
                 + "FROM "
-                + " " + "act_hi_taskinst" + " "
+                + " " + "act_hi_actinst" + " "
                 + "WHERE "
                 + "act_id_ = 'start' "
                 + "OR task_id_ is not null";
