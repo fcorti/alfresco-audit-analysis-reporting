@@ -5,6 +5,7 @@
     </Connection>
   </DataSources>
   <DataAccess access="public" connection="customMetadata" id="customMetadata" type="sql">
+    <Name>customMetadata</Name>
     <Cache duration="3600" enabled="false"/>
     <Columns/>
     <Parameters/>

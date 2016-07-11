@@ -110,6 +110,7 @@ CREATE TABLE `dm_dim_alfresco` (
   `url_cmis_suffix` varchar(1024) NOT NULL,
   `url_workflow_definitions_suffix` varchar(1024) NOT NULL,
   `url_workflow_instances_suffix` varchar(2014) NOT NULL,
+  `url_get_counters` varchar(2014) NOT NULL,
   `is_active` char(1) NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -120,7 +121,7 @@ CREATE TABLE `dm_dim_alfresco` (
 --
 -- ORDER BY:  `id`
 
-INSERT INTO `dm_dim_alfresco` (`id`, `desc`, `login`, `password`, `url`, `url_audit_suffix`, `audit_limit`, `url_nodes_modified_after_suffix`, `url_nodes_modified_before_suffix`, `node_limit`, `url_cmis_suffix`, `url_workflow_definitions_suffix`, `url_workflow_instances_suffix`, `is_active`) VALUES (1,'Default Alfresco instance','admin','admin','http://192.168.1.6:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true',50000,'/alfresco/service/AAAR/getNodesModifiedAfter','/alfresco/service/AAAR/getNodeIdsModifiedBefore',50000,'/alfresco/api/-default-/cmis/versions/1.1/atom','/alfresco/service/api/workflow-definitions','/alfresco/service/api/workflow-instances','Y');
+INSERT INTO `dm_dim_alfresco` (`id`, `desc`, `login`, `password`, `url`, `url_audit_suffix`, `audit_limit`, `url_nodes_modified_after_suffix`, `url_nodes_modified_before_suffix`, `node_limit`, `url_cmis_suffix`, `url_workflow_definitions_suffix`, `url_workflow_instances_suffix`, `url_get_counters`, `is_active`) VALUES (1,'Default Alfresco instance','admin','admin','http://192.168.1.6:8080','/alfresco/service/api/audit/query/alfresco-access?verbose=true',50000,'/alfresco/service/AAAR/getNodesModifiedAfter','/alfresco/service/AAAR/getNodeIdsModifiedBefore',50000,'/alfresco/api/-default-/cmis/versions/1.1/atom','/alfresco/service/api/workflow-definitions','/alfresco/service/api/workflow-instances','/alfresco/service/AAAR/getCounters','Y');
 
 --
 -- Table structure for table `dm_dim_dates`

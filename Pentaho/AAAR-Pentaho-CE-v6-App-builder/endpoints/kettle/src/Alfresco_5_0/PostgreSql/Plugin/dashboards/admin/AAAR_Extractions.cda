@@ -42,7 +42,7 @@ FROM
 WHERE
  alfresco_id = ${alfrescoInstanceParam}
  AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')
- AND to_date(to_char(batch_start,'YYYY-MM-D'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')
+ AND to_date(to_char(batch_start,'YYYY-MM-DD'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')
 ORDER BY
  batch_id ASC]]></Query>
   </DataAccess>

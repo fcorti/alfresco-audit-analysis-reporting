@@ -41,8 +41,8 @@ FROM
  dm_logs
 WHERE
  alfresco_id = ${alfrescoInstanceParam}
- AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')
- AND to_date(to_char(batch_start,'YYYY-MM-DD'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')
+ AND batch_end >= str_to_date(${dtFromParam},'YYYY-MM-DD')
+ AND str_to_date(date_format(batch_start,'YYYY-MM-DD'),'YYYY-MM-DD') <= str_to_date(${dtToParam},'YYYY-MM-DD')
 ORDER BY
  batch_id ASC]]></Query>
   </DataAccess>

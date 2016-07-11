@@ -1041,7 +1041,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')\n AND to_date(to_char(batch_start,'YYYY-MM-D'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
+      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= to_date(${dtFromParam},'YYYY-MM-DD')\n AND to_date(to_char(batch_start,'YYYY-MM-DD'),'YYYY-MM-DD') <= to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
      },
      {
       "name": "parameters",
@@ -3814,7 +3814,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<script language=\"javascript\">\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','databaseExists',{\n\n        params: {\n        },\n\n        success: function(json) {\n            $('#logsRow').show();\n            $('#alertRow').hide();\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#logsRow').hide();\n            $('#alertRow').show();\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n\n</script> "
+      "value": "<script language=\"javascript\">\n\n    // Read configuration.\n    Dashboards.incrementRunningCalls();\n\n    AAAR.runEndpoint('AAAR','databaseExists',{\n\n        params: {\n        },\n\n        success: function(json) {\n            $('#logsRow').show();\n            $('#alertRow').hide();\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#logsRow').hide();\n            $('#alertRow').show();\n            $('#alertPanel').append('<div class=\"alert alert-warning\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><strong>Warning!</strong> Extraction logs will be available after A.A.A.R. installation.</div>');\n            Dashboards.decrementRunningCalls();  \n        }\n    });\n\n</script> "
      },
      {
       "name": "fontSize",
