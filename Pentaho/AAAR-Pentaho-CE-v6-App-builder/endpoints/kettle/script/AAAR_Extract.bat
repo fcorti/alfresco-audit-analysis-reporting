@@ -1,7 +1,7 @@
 @echo off
 
 REM Settings
-set VERSION='4.3'
+set VERSION='4.4'
 set CURRENT_PATH=%cd%
 set ENDPOINTS_PATH=%CURRENT_PATH%\..
 set LOGS_PATH=%ENDPOINTS_PATH%\logs
@@ -21,7 +21,7 @@ if "%1"=="silent" GOTO SILENT_1
     echo A.A.A.R. - Alfresco Audit Analysis and Reporting
     echo Import procedure version %VERSION%
     echo Author: Francesco Corti (all rights reserved)
-    echo Date: 01 May 2016
+    echo Date: 18 July 2016
     echo Documentation and tips: http://fcorti.com.
     echo.
     echo Disclaimer:
