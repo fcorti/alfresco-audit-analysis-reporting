@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Get counters for A.A.A.R.</shortname>
+  <description>Get the counters for A.A.A.R. analytics.</description>
+  <authentication>user</authentication>
+  <url>/AAAR/getCounters</url>
+  <format default="json">extension</format>
+  <family>AAAR</family>
+</webscript>

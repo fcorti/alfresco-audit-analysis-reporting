@@ -31,6 +31,9 @@
 		<property name="properties">
 			<ref bean="global-properties"/>
 		</property>
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
 		<property name="serviceRegistry">
 			<ref bean="ServiceRegistry"/>
 		</property>

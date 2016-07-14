@@ -27,6 +27,18 @@
 		</property>
 	</bean>
 
+	<bean id="webscript.com.fcorti.AAAR.getCounters.get" class="com.fcorti.aaar.GetCountersWebScript" parent="webscript">
+		<property name="properties">
+			<ref bean="global-properties"/>
+		</property>
+		<property name="searchService">
+			<ref bean="searchService"/>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"/>
+		</property>
+	</bean>
+
 	<bean id="webscript.com.fcorti.AAAR.getNodesModifiedAfter.get" class="com.fcorti.aaar.GetNodesModifiedAfterWebScript" parent="webscript">
 		<property name="dictionaryService">
 			<ref bean="dictionaryService"/>
