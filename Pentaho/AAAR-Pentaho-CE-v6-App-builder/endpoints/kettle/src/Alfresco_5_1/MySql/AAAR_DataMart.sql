@@ -1,5 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `AAAR_DataMart` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `AAAR_DataMart`;
+
 -- MySQL dump 10.13  Distrib 5.7.12, for Linux (x86_64)
 --
 -- Host: localhost    Database: AAAR_DataMart
@@ -188,7 +189,7 @@ CREATE TABLE `dm_dim_documents` (
   CONSTRAINT `fk_dm_dim_documents_dm_dim_alfresco` FOREIGN KEY (`alfresco_id`) REFERENCES `dm_dim_alfresco` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_dates_creation` FOREIGN KEY (`creation_date_id`) REFERENCES `dm_dim_dates` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_dates_last_modification` FOREIGN KEY (`last_modification_date_id`) REFERENCES `dm_dim_dates` (`id`),
-  CONSTRAINT `fk_dm_dim_documents_dm_dim_folders_parent` FOREIGN KEY (`parent_id`) REFERENCES `dm_dim_folders` (`id`),
+  CONSTRAINT `fk_dm_dim_documents_dm_dim_folders_parent` FOREIGN KEY (`parent_id`) REFERENCES `dm_dim_folders` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_dm_dim_documents_dm_dim_mime_types` FOREIGN KEY (`mime_type_id`) REFERENCES `dm_dim_mime_types` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_minutes_creation` FOREIGN KEY (`creation_minute_id`) REFERENCES `dm_dim_minutes` (`id`),
   CONSTRAINT `fk_dm_dim_documents_dm_dim_minutes_last_modification` FOREIGN KEY (`last_modification_minute_id`) REFERENCES `dm_dim_minutes` (`id`),

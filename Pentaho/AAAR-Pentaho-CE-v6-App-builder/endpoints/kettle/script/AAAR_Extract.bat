@@ -12,7 +12,7 @@ set GET_AUDIT=true
 set GET_REPOSITORY=true
 set GET_WORKFLOWS=true
 set GET_PARENTS=true
-set CLEAN_NODES_DELETED=false
+set CLEAN_NODES_DELETED=true
 set KETTLE_PATH=/opt/data-integration
 
 if "%1"=="silent" GOTO SILENT_1

@@ -1041,7 +1041,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= str_to_date(${dtFromParam},'YYYY-MM-DD')\n AND str_to_date(date_format(batch_start,'YYYY-MM-DD'),'YYYY-MM-DD') <= str_to_date(${dtToParam},'YYYY-MM-DD')\nORDER BY\n batch_id ASC"
+      "value": "SELECT DISTINCT\n batch_id\nFROM\n dm_logs\nWHERE\n alfresco_id = ${alfrescoInstanceParam}\n AND batch_end >= str_to_date(${dtFromParam},'%Y-%m-%d')\n AND str_to_date(date_format(batch_start,'%Y-%m-%d'),'%Y-%m-%d') <= str_to_date(${dtToParam},'%Y-%m-%d')\nORDER BY\n batch_id ASC"
      },
      {
       "name": "parameters",

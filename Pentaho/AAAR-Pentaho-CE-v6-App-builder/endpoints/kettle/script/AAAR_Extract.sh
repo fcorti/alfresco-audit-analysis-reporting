@@ -11,7 +11,7 @@ LOG_PATH="$LOGS_PATH/AAAR.log"
 GET_AUDIT="true"
 GET_REPOSITORY="true"
 GET_WORKFLOWS="true"
-CLEAN_NODES_DELETED="false"
+CLEAN_NODES_DELETED="true"
 KETTLE_PATH="/opt/data-integration"
 
 if [ "$1" != "silent" ]; then
