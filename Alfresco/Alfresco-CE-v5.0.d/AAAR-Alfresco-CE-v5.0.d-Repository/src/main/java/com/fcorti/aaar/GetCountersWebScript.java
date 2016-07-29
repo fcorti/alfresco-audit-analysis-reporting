@@ -153,12 +153,20 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             searchParameters.setPermissionEvaluation(PermissionEvaluationMode.NONE);
             searchParameters.setUseInMemorySort(false);
             searchParameters.setLimitBy(LimitBy.FINAL_SIZE);
-            searchParameters.setQuery(getAlfrescoQuery(parameters));
 
-            org.alfresco.service.cmr.search.ResultSet resultSet = searchService.query(searchParameters);
-            counter = String.valueOf(resultSet.getNumberFound());
+            List<String> alfrescoQueries = getAlfrescoQueries(parameters);
+            int sum = 0;
+            for (int i = 0; i < alfrescoQueries.size(); ++i) {
 
-            resultSet.close();
+            	searchParameters.setQuery(alfrescoQueries.get(i));
+
+                org.alfresco.service.cmr.search.ResultSet resultSet = searchService.query(searchParameters);
+                sum += resultSet.getNumberFound();
+                resultSet.close();
+
+            }
+
+            counter = String.valueOf(sum);
 
             break;
 
@@ -238,9 +246,9 @@ public class GetCountersWebScript extends DeclarativeWebScript {
      * @param parameters
      * @return
      */
-    private String getAlfrescoQuery(Map<String, Object> parameters) throws WrongFormatException {
+    private List<String> getAlfrescoQueries(Map<String, Object> parameters) throws WrongFormatException {
 
-        String query = "";
+        List<String> queries = new ArrayList<String>();
 
         switch ((String) parameters.get(PARAMETER_COUNTER)) {
 
@@ -258,23 +266,18 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
             }
 
-            // Query composition.
-    		query += "(";
+            // Query list composition.
             for (int i = 0; i < aspects.size(); ++i) {
 
                 QName aspectQName = aspects.get(i);
 
-                query += "(ASPECT:\"{" + aspectQName.getNamespaceURI() + "}" + aspectQName.getLocalName() + "\")";
+        		String query = "";
+        		query += "(ASPECT:\"{" + aspectQName.getNamespaceURI() + "}" + aspectQName.getLocalName() + "\")";
+        		query += "AND ";
+        		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
-                if ((i + 1) < aspects.size()) {
-                    query += " OR ";
-                }
+        		queries.add(query);
             }
-    		query += ") ";
-
-    		// Modification date filter.
-    		query += "AND ";
-    		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
             break;
 
@@ -292,23 +295,18 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
             }
 
-            // Query composition.
-    		query += "(";
+            // Query list composition.
             for (int i = 0; i < types.size(); ++i) {
 
                 QName typeQName = types.get(i);
 
-                query += "(TYPE:\"{" + typeQName.getNamespaceURI() + "}" + typeQName.getLocalName() + "\")";
+        		String query = "";
+        		query += "(TYPE:\"{" + typeQName.getNamespaceURI() + "}" + typeQName.getLocalName() + "\")";
+        		query += "AND ";
+        		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
-                if ((i + 1) < types.size()) {
-                    query += " OR ";
-                }
+        		queries.add(query);
             }
-    		query += ") ";
-
-    		// Modification date filter.
-    		query += "AND ";
-    		query += "(@" + ContentModel.PROP_MODIFIED + ":[\"2001-01-01T00:00:00.000\" TO MAX]) ";
 
         	break;
 
@@ -316,7 +314,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
         }
 
-        return query;
+        return queries;
 	}
 
     /**
