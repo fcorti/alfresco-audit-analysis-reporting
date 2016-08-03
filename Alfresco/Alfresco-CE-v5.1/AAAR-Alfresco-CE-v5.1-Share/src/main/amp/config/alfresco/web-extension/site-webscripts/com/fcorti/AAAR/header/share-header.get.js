@@ -3,10 +3,9 @@ var headerMenu = widgetUtils.findObject(model.jsonModel, "id", "HEADER_APP_MENU_
 
 if (headerMenu != null) {
 
-    var AAARMenu = {};
+    var AAARMenu = null;
 
     if (config.scoped["AAAR"]["visible"]) {
-
         if (config.scoped["AAAR"]["visible"].getValue() == "true") {
 
             AAARMenu = {
@@ -103,11 +102,12 @@ if (headerMenu != null) {
             }
         }
     }
-
-	// Put the item immediately before the admin console or at the end.
-    for (var i = 0; i < headerMenu.config.widgets.length && headerMenu.config.widgets[i].id != 'HEADER_ADMIN_CONSOLE'; ++i) {
+    if (AAARMenu){
+		// Put the item immediately before the admin console or at the end.
+	    for (var i = 0; i < headerMenu.config.widgets.length && headerMenu.config.widgets[i].id != 'HEADER_ADMIN_CONSOLE'; ++i) {
+	    }
+	    headerMenu.config.widgets.splice(i, 0, AAARMenu);
     }
-    headerMenu.config.widgets.splice(i, 0, AAARMenu);
 }
 
 /**
