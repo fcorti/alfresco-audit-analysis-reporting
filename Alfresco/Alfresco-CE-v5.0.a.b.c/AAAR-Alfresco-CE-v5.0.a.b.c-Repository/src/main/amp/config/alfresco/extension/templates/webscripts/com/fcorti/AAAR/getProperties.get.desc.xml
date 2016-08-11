@@ -1,8 +1,0 @@
-<webscript>
-  <shortname>Get properties for A.A.A.R.</shortname>
-  <description>Get the global properties for A.A.A.R. analytics.</description>
-  <authentication>user</authentication>
-  <url>/AAAR/getProperties</url>
-  <format default="json">extension</format>
-  <family>AAAR</family>
-</webscript>

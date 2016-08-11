@@ -1,6 +1,0 @@
-<webscript>
-    <shortname>A.A.A.R. Dashlet</shortname>
-    <description>Provide links to dashboards, reports and analytics on Pentaho using A.A.A.R.</description>
-    <family>dashlet</family>
-    <url>/components/dashlets/AAAR</url>
-</webscript>   
