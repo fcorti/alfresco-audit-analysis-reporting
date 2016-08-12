@@ -1,0 +1,15 @@
+<extension>
+  <modules>
+    <module>
+      <id>A.A.A.R. menu widgets</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>  
+      <customizations>
+        <customization>
+          <targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
+          <sourcePackageRoot>com.fcorti.AAAR.header</sourcePackageRoot>
+        </customization>
+      </customizations>
+    </module>
+  </modules>
+</extension>
