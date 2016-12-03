@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="alfrescoInstallationsDatasource" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="folderInfo" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerNodeType" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="documentsPerMimeType" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+      <Connection id="childrenFolders" type="sql.jndi">
+         <Jndi>AAAR_DataMart</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="alfrescoInstallationsDatasource"
+               id="alfrescoInstallationsDatasource"
+               type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query>select
+ i.id as installationId,
+ i.desc as installationDesc
+from
+ dm_dim_alfresco i
+order by
+ i.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" connection="folderInfo" id="folderInfo" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
+      </Parameters>
+      <Query>select
+ f.id,
+ f.name,
+ f.path,
+ nt.desc,
+ cu.desc,
+ cdt.desc,
+ cm.desc,
+ mu.desc,
+ mdt.desc,
+ mm.desc,
+ f.parent_id as parentId
+from
+ dm_dim_folders f
+ join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates cdt on f.creation_date_id = cdt.id
+ join dm_dim_minutes cm on f.creation_minute_id = cm.id
+ join dm_dim_users cu on f.user_creator_id = cu.id
+ join dm_dim_dates mdt on f.last_modification_date_id = mdt.id
+ join dm_dim_minutes mm on f.last_modification_minute_id = mm.id
+ join dm_dim_users mu on f.user_last_modifier_id = mu.id
+ join dm_dim_node_types nt on f.node_type_id = nt.id
+where
+ (''=${pathParam} or f.path=${pathParam})
+ and (-1=${folderIdParam} or f.id=${folderIdParam})</Query>
+   </DataAccess>
+   <DataAccess access="public" connection="documentsPerNodeType" id="documentsPerNodeType"
+               type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="KBytes" name="measureTypeParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
+      </Parameters>
+      <Query>select
+ nt.desc as nodeType,
+ coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end ,0) as Value
+from
+ (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates cdt on d.creation_date_id = cdt.id
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_users cu on d.user_creator_id = cu.id
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id
+ join dm_dim_node_types nt on d.node_type_id = nt.id
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id
+group by
+ nt.desc
+order by
+ nt.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" connection="documentsPerMimeType" id="documentsPerMimeType"
+               type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="KBytes" name="measureTypeParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
+      </Parameters>
+      <Query>select
+ mt.desc as mimeType,
+ coalesce(case when ${measureTypeParam}='Number' then sum(d.num) else round(sum(d.size)/(1024),1) end,0) as Value
+from
+ (select *, 1 as num from dm_dim_documents where parent_id=${folderIdParam}) d 
+ join dm_dim_alfresco i on i.id = d.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates cdt on d.creation_date_id = cdt.id
+ join dm_dim_minutes cm on d.creation_minute_id = cm.id and d.creation_minute_id &gt;= 0
+ join dm_dim_users cu on d.user_creator_id = cu.id
+ join dm_dim_dates mdt on d.last_modification_date_id = mdt.id
+ join dm_dim_minutes mm on d.last_modification_minute_id = mm.id and d.last_modification_minute_id &gt;= 0
+ join dm_dim_users mu on d.user_last_modifier_id = mu.id
+ join dm_dim_node_types nt on d.node_type_id = nt.id
+ join dm_dim_mime_types mt on d.mime_type_id = mt.id
+group by
+ mt.desc
+order by
+ mt.desc asc</Query>
+   </DataAccess>
+   <DataAccess access="public" connection="childrenFolders" id="childrenFolders" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="1" name="alfrescoInstallationParam" type="Integer"/>
+         <Parameter default="2015-01-01" name="creationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="creationDtToParam" type="String"/>
+         <Parameter default="0" name="creationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="creationHourToParam" type="Integer"/>
+         <Parameter default="" name="creatorParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtFromParam" type="String"/>
+         <Parameter default="2015-01-01" name="modificationDtToParam" type="String"/>
+         <Parameter default="0" name="modificationHourFromParam" type="Integer"/>
+         <Parameter default="23" name="modificationHourToParam" type="Integer"/>
+         <Parameter default="" name="modifierParam" type="String"/>
+         <Parameter default="" name="nodeTypeParam" type="String"/>
+         <Parameter default="" name="childrenNameParam" type="String"/>
+         <Parameter default="" name="pathParam" type="String"/>
+         <Parameter default="-1" name="folderIdParam" type="Integer"/>
+      </Parameters>
+      <Query>select
+ '..' as name,
+ null as type,
+ null as creationDt,
+ null as folderNum,
+ null as contentNum,
+ -1 as folderId
+union all
+select
+ f.name as name,
+ nt.desc as type,
+ dt.desc as creationDt,
+ (select count(*) from dm_dim_folders f2 where f2.parent_id = f.id) as folderNum,
+ (select count(*) from dm_dim_documents d where d.parent_id = f.id) as contentNum,
+ f.id as folderId
+from
+ (select f1.* from dm_dim_folders f1 where (''=${childrenNameParam} or name=${childrenNameParam}) and f1.parent_id in (select f2.id from dm_dim_folders f2 where (''=${pathParam} or f2.path=${pathParam}) and (-1=${folderIdParam} or f2.id=${folderIdParam}))) f
+ join dm_dim_alfresco i on i.id = f.alfresco_id and i.id = ${alfrescoInstallationParam}
+ join dm_dim_dates dt on f.creation_date_id = dt.id and dt.id between to_date(${creationDtFromParam},'YYYY-MM-DD') and to_date(${creationDtToParam},'YYYY-MM-DD')
+ join dm_dim_minutes cm on f.creation_minute_id = cm.id and f.creation_minute_id &gt;= 0
+ join dm_dim_hours ch on cm.hour_id = ch.id and ch.id &gt;= 0 and ch.id between ${creationHourFromParam} and ${creationHourToParam}
+ join dm_dim_users cu on f.user_creator_id = cu.id and ('' = ${creatorParam} or cu.desc=${creatorParam})
+ join dm_dim_dates mdt on f.last_modification_date_id = mdt.id and mdt.id between to_date(${modificationDtFromParam},'YYYY-MM-DD') and to_date(${modificationDtToParam},'YYYY-MM-DD')
+ join dm_dim_minutes mm on f.last_modification_minute_id = mm.id and f.last_modification_minute_id &gt;= 0
+ join dm_dim_hours mh on mm.hour_id = mh.id and mh.id &gt;= 0 and mh.id between ${modificationHourFromParam} and ${modificationHourToParam}
+ join dm_dim_users mu on f.user_last_modifier_id = mu.id and ('' = ${modifierParam} or mu.desc=${modifierParam})
+ join dm_dim_node_types nt on f.node_type_id = nt.id and ('' = ${nodeTypeParam} or nt.desc=${nodeTypeParam})
+order by
+ name asc</Query>
+   </DataAccess>
+</CDADescriptor>
