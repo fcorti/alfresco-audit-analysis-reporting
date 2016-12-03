@@ -55,14 +55,14 @@ Save it and exit (`CTRL+X` and `Y`).
 sudo apt-get install libwebkitgtk-1.0-0
 
 Installing **Pentaho Data Integration** is an easy task you can find documented [here](http://fcorti.com/2014/01/03/how-to-install-pentaho-data-integration-5-kettle/).
-In any case, pay attention to use the right version (in our case v6.0).
+In any case, pay attention to use the right version (in our case v7.0).
 
 Please always remember to execute a first start, executing `spoon.sh` and closing after its first launch.
 
 ## Installing Pentaho BA Server
 
 Installing **Pentaho BA Server** is an easy task you can find documented [here](http://fcorti.com/2014/01/07/how-to-install-pentaho-business-analytics-platform-5/).
-In any case, pay attention to use the right version (in our case v6.0).
+In any case, pay attention to use the right version (in our case v7.0).
 
 Before considering completed this task, you have to follow the instructions detailed [here](http://fcorti.com/alfresco-audit-analysis-reporting/aaar-how-to-install/aaar-get/).
 
@@ -121,7 +121,7 @@ If **Git** is not installed, proceed to get it using the commands below.
 
 A result similar to this will shown.
 
-    git version 1.9.1
+    git version 2.7.4
 
 ## Cloning the project
 
@@ -138,28 +138,3 @@ Once the download is completed, in the `alfresco-audit-analysis-reporting` folde
 
 Now that everything is ready... go to one of the projects of the repository and follow the instructions to install A.A.A.R. Sparkl Application.
 
-## Appendix 
-
-### Running Pentaho BA Server on port 8082
-
-This customization could be required of you have an Alfresco instance up and running on the default port (8080).
-Also if you setup a development environment, with an Alfresco Share instance up and running on the port 8081, you should consider to have you Pentaho BA Server instance running on the port 8082.
-
-First of all locate `server.xml` file in `<Tomcat installation folder>\conf` folder.
-Edit the `server.xml` file and replace all the instances of strings described below.
-- Find and replace all the instances of `8080` with `8082`(or the port you prefer).
-- Find and replace all the instances of `8009` with `8011`(or the port you prefer).
-- Find and replace all the instances of `8443` with `8445`(or the port you prefer).
-
-Please, always remember that to make the changes available you have to restart the Pentaho BA Server.
-
-### Running Pentaho BA Server with a proxy
-
-According to [Pedro Alves's article](http://pedroalves-bi.blogspot.it/2014/07/using-pentaho-marketplace-over-proxy-or.html), to make the Pentaho Marketplace working through a proxy, we have to change the `start-pentaho.sh` script.
-The mentioned script is stored in the Pentaho BA Server's installation folder.
-
-To correctly setup the configuration, open the `start-pentaho.sh` script and add the settings in the way described below.
-
-    ... -Dhttp.proxyHost=<IP of the proxy> -Dhttp.proxyPort=<port of the proxy> -Dhttp.nonProxyHosts="localhost|127.0.0.1|10.*.*.*" 
-
-Restart Pentaho BA Server to make the changes available in the running instance.
