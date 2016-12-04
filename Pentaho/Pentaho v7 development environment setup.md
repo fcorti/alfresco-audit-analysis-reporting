@@ -31,7 +31,7 @@ After the installation finishes, you can run the following command to check if e
 
     java -version
 
-With the result.
+The result should looks like the following content.
 
     java version "1.8.0_111"
     Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
