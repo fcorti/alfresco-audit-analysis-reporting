@@ -37,12 +37,11 @@ The result should looks like the following content.
     Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
     Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
 
-Let's check the JAVA_HOME variable is exported.
-In a terminal, execute the command below.
+Before moving to the PDI 7 installation, Let's check that the `JAVA_HOME` variable is corretly available into the environment. Using a terminal, let's execute the command below.
 
     env | grep JAVA_HOME
 
-If you don't have any result, execute `nano ~/.bashrc` and then add the line below to the end of the file.
+If you get an empty result, execute `nano ~/.bashrc` and then append the command below to file content.
 
     export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
