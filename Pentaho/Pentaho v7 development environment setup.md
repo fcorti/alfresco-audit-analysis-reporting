@@ -45,7 +45,7 @@ If you get an empty result, execute `nano ~/.bashrc` and then append the command
 
     export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
-Save it and exit (`CTRL+X` and `Y`).
+Save it and exit (`CTRL+X` and `Y`). Please remember to execute the command below to reload the environment into the current bash shell.
 
     source .bashrc
 
