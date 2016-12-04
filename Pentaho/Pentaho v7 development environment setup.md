@@ -51,9 +51,7 @@ Save it and exit (`CTRL+X` and `Y`). Please remember to execute the command belo
 
 ## Installing Pentaho Data Integration
 
-sudo apt-get install libwebkitgtk-1.0-0
-
-Installing **Pentaho Data Integration** is an easy task you can find documented [here](http://fcorti.com/2014/01/03/how-to-install-pentaho-data-integration-5-kettle/).
+Installing **Pentaho Data Integration** is an easy task you can find documented [here](http://fcorti.com/2016/12/05/installing-pentaho-data-integration-7/).
 In any case, pay attention to use the right version (in our case v7.0).
 
 Please always remember to execute a first start, executing `spoon.sh` and closing after its first launch.
