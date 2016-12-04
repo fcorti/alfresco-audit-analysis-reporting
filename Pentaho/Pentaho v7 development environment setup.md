@@ -27,7 +27,7 @@ Starting from a vanilla installation of **Ubuntu 16.04** let's install **Java 8*
     sudo apt-get install oracle-java8-installer
     sudo apt-get install oracle-java8-set-default
 
-After the installation finishes, if you wish to see if it was successful, you can run the following command:
+After the installation finishes, you can run the following command to check if everything is working correctly:
 
     java -version
 
