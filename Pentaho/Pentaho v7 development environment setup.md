@@ -58,7 +58,7 @@ Please always remember to execute a first start, executing `spoon.sh` and closin
 
 ## Installing Pentaho BA Server
 
-Installing **Pentaho BA Server** is an easy task you can find documented [here](http://fcorti.com/2014/01/07/how-to-install-pentaho-business-analytics-platform-5/).
+Installing **Pentaho BA Server** is an easy task you can find documented [here](http://fcorti.com/2016/12/05/install-pentaho-business-analytics-platform-7/).
 In any case, pay attention to use the right version (in our case v7.0).
 
 Before considering completed this task, you have to follow the instructions detailed [here](http://fcorti.com/alfresco-audit-analysis-reporting/aaar-how-to-install/aaar-get/).
