@@ -11,7 +11,7 @@
  <parameter name="alfrescoPassword"   value="admin"> </parameter>
  <parameter name="alfrescoPort"       value="8080"> </parameter>
  <parameter name="alfrescoProtocol"   value="http"> </parameter>
- <parameter name="alfrescoType"       value="Alfresco_5_1"> </parameter>
+ <parameter name="alfrescoType"       value="Alfresco_5_2"> </parameter>
 
  <!-- Database parameters -->
  <parameter name="databaseBin"          value="/usr/bin"> </parameter>

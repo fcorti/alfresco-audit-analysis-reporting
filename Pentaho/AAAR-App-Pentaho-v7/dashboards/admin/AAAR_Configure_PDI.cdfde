@@ -60,7 +60,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "Alfresco_5_0"
+      "value": "Alfresco_5_2"
      },
      {
       "name": "parameterViewRole",
