@@ -26,7 +26,7 @@
 
  <!-- Kettle parameters -->
  <parameter name="kettlePath"    value="/opt/data-integration"> </parameter>
- <parameter name="kettleVersion" value="6"> </parameter>
+ <parameter name="kettleVersion" value="7"> </parameter>
 
  <!-- Pentaho parameters -->
  <parameter name="pentahoAAARPath" value="/public/AAAR"> </parameter>

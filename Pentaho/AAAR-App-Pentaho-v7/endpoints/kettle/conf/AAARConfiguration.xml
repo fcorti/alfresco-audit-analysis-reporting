@@ -23,6 +23,6 @@
  <parameter name="databaseSchemaKettle" value="AAAR_Kettle"> </parameter>
  <parameter name="databaseSchemaMain" value="postgres"> </parameter>
  <parameter name="kettlePath" value="/opt/data-integration"> </parameter>
- <parameter name="kettleVersion" value="6"> </parameter>
+ <parameter name="kettleVersion" value="7"> </parameter>
  <parameter name="pentahoAAARPath" value="/public/AAAR"> </parameter>
 </AAAR>
