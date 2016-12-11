@@ -32,8 +32,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
 /**
  * Get the definition of a property of a type/aspect for A.A.A.R. analytics.
  *

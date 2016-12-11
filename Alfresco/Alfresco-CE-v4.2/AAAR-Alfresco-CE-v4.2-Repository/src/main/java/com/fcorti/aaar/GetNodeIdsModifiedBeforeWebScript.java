@@ -39,8 +39,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
 /**
  * Get nodes modified after a date time for A.A.A.R. analytics.
  *
@@ -198,7 +196,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	    	dateParameterValue = (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
 	    }
 	    catch (Exception e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
+	    	throw new Exception("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
 	    }
 
 		// Limit parameter.

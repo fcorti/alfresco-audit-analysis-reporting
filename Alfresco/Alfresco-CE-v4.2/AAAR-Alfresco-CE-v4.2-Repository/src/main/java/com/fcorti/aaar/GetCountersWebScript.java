@@ -25,8 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import org.alfresco.service.namespace.NamespaceService;
-import org.alfresco.service.namespace.QName;
 import org.alfresco.model.ContentModel;
 import org.alfresco.service.ServiceRegistry;
 import org.alfresco.service.cmr.repository.StoreRef;
@@ -34,14 +32,17 @@ import org.alfresco.service.cmr.search.LimitBy;
 import org.alfresco.service.cmr.search.PermissionEvaluationMode;
 import org.alfresco.service.cmr.search.SearchParameters;
 import org.alfresco.service.cmr.search.SearchService;
-import org.springframework.extensions.webscripts.Cache;
-import org.springframework.extensions.webscripts.DeclarativeWebScript;
-import org.springframework.extensions.webscripts.Status;
-import org.springframework.extensions.webscripts.WebScriptRequest;
-import org.springframework.extensions.webscripts.WebScriptException;
+import org.alfresco.service.namespace.NamespaceService;
+import org.alfresco.service.namespace.QName;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.extensions.webscripts.Cache;
+import org.springframework.extensions.webscripts.DeclarativeWebScript;
+import org.springframework.extensions.webscripts.Status;
+import org.springframework.extensions.webscripts.WebScriptException;
+import org.springframework.extensions.webscripts.WebScriptRequest;
+
 import com.sun.star.io.WrongFormatException;
 
 /**
@@ -70,7 +71,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
 
     private NamespaceService namespaceService;
     private Properties properties;
-	private SearchService searchService;
+    private SearchService searchService;
     @SuppressWarnings("unused")
     private ServiceRegistry serviceRegistry;
 
@@ -262,9 +263,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             } catch (JSONException e) {
                 throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
             }
-            if (aspects.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
-            }
 
             // Query list composition.
             for (int i = 0; i < aspects.size(); ++i) {
@@ -290,9 +288,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 types = getQNames(jsonTypes.getJSONArray(PARAMETER_COUNTER_TYPES));
             } catch (JSONException e) {
                 throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
-            }
-            if (types.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
             }
 
             // Query list composition.
@@ -385,18 +380,12 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_ASPECTS + "'.");
             }
             classesParameter = classesParameter.trim();
-            if (classesParameter.isEmpty()) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_ASPECTS + "'.");
-            }
         }
         if (PARAMETER_COUNTER_TYPES.equals(counterParameter)) {
             if (classesParameter == null) {
                 throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_TYPES + "'.");
             }
             classesParameter = classesParameter.trim();
-            if (classesParameter.isEmpty()) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_TYPES + "'.");
-            }
         }
 
         parameters.put(PARAMETER_COUNTER,     counterParameter);
