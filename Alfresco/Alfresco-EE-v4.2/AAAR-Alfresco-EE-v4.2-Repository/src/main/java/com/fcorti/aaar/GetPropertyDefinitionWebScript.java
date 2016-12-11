@@ -33,8 +33,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
 /**
  * Get the definition of a property of a type/aspect for A.A.A.R. analytics.
  *
@@ -145,7 +143,7 @@ public class GetPropertyDefinitionWebScript extends DeclarativeWebScript {
 	 * @return
 	 * @throws WrongFormatException 
 	 */
-	private final void getParameters(WebScriptRequest req) throws WrongFormatException {
+	private final void getParameters(WebScriptRequest req) throws Exception {
 
 		parameters = new HashMap<String, Object>();
 
@@ -154,7 +152,7 @@ public class GetPropertyDefinitionWebScript extends DeclarativeWebScript {
 		if (classParameter != null) {
 			classParameter = classParameter.trim();
 			if (classParameter.isEmpty()) {
-				throw new WrongFormatException("Parameter '" + PARAMETER_CLASS + "' cannot be empty if specified.");
+				throw new Exception("Parameter '" + PARAMETER_CLASS + "' cannot be empty if specified.");
 			}
 		}
 		else {
@@ -166,7 +164,7 @@ public class GetPropertyDefinitionWebScript extends DeclarativeWebScript {
 		if (propertyParameter != null) {
 			propertyParameter = propertyParameter.trim();
 			if (propertyParameter.isEmpty()) {
-				throw new WrongFormatException("Parameter '" + PARAMETER_PROPERTY + "' cannot be empty if specified.");
+				throw new Exception("Parameter '" + PARAMETER_PROPERTY + "' cannot be empty if specified.");
 			}
 		}
 		else {
@@ -174,7 +172,7 @@ public class GetPropertyDefinitionWebScript extends DeclarativeWebScript {
 		}
 
 		if (classParameter.isEmpty() && propertyParameter.isEmpty()) {
-			throw new WrongFormatException("Parameter '" + PARAMETER_CLASS + "' or '" + PARAMETER_PROPERTY + "' must be specified.");
+			throw new Exception("Parameter '" + PARAMETER_CLASS + "' or '" + PARAMETER_PROPERTY + "' must be specified.");
 		}
 
 		parameters.put(PARAMETER_CLASS,    classParameter);
