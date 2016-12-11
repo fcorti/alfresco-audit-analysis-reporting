@@ -32,10 +32,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
-import freemarker.template.utility.NullArgumentException;
-
 /**
  * Get the definition of a property of a type/aspect for A.A.A.R. analytics.
  *
@@ -110,16 +106,16 @@ public class GetClassesWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws WrongFormatException 
+	 * @throws Exception 
 	 */
-	private final void getParameters(WebScriptRequest req) throws WrongFormatException {
+	private final void getParameters(WebScriptRequest req) throws Exception {
 
 		parameters = new HashMap<String, Object>();
 
 		// Class name parameter.
 		String classTypeParameter = req.getParameter(PARAMETER_CLASS_TYPE);
 		if (classTypeParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_CLASS_TYPE + "' must be specified.");
+			throw new Exception("Parameter '" + PARAMETER_CLASS_TYPE + "' must be specified.");
 		}
 		classTypeParameter = classTypeParameter.trim().toLowerCase();
 		if (classTypeParameter.compareTo(PARAMETER_CLASS_TYPE_ASPECTS) != 0 &&

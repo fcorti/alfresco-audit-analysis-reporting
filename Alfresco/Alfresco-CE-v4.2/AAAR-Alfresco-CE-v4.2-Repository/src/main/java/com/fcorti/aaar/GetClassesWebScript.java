@@ -106,7 +106,7 @@ public class GetClassesWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws WrongFormatException 
+	 * @throws Exception 
 	 */
 	private final void getParameters(WebScriptRequest req) throws Exception {
 
