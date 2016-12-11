@@ -42,7 +42,6 @@ import org.springframework.extensions.webscripts.WebScriptException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.sun.star.io.WrongFormatException;
 
 /**
  * Get the global properties for A.A.A.R. analytics.
@@ -106,8 +105,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
      * Get the value of the counter.
      * @param parameters
      * @return
-     * @throws ClassNotFoundException 
-     * @throws SQLException 
+     * @throws Exception 
      */
     private String getCounter(Map<String, Object> parameters) throws Exception {
 
@@ -135,7 +133,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             }
 
             if (dbResultSet.next()) {
-                throw new WrongFormatException("Database query '" + dbQuery + "' with multiple results when only one is expected.");
+                throw new Exception("Database query '" + dbQuery + "' with multiple results when only one is expected.");
             }
 
             if (dbStatement != null) dbStatement.close();
@@ -163,7 +161,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 org.alfresco.service.cmr.search.ResultSet resultSet = searchService.query(searchParameters);
                 sum += resultSet.getNumberFound();
                 resultSet.close();
-
             }
 
             counter = String.valueOf(sum);
@@ -171,7 +168,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             break;
 
         default:
-            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
+            throw new Exception("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
         }
 
     	return counter;
@@ -183,7 +180,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
      * @param parameters
      * @return
      */
-    private String getDatabaseQuery(Map<String, Object> parameters) throws WrongFormatException {
+    private String getDatabaseQuery(Map<String, Object> parameters) throws Exception {
 
     	/*
     	 * TODO: The query should be defined using hibernate.
@@ -235,7 +232,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             break;
 
         default:
-            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
+            throw new Exception("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
         }
 
         return query;
@@ -246,7 +243,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
      * @param parameters
      * @return
      */
-    private List<String> getAlfrescoQueries(Map<String, Object> parameters) throws WrongFormatException {
+    private List<String> getAlfrescoQueries(Map<String, Object> parameters) throws Exception {
 
         List<String> queries = new ArrayList<String>();
 
@@ -260,10 +257,10 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
             	aspects = getQNames(jsonTypes.getJSONArray(PARAMETER_CLASSES_ASPECTS));
             } catch (JSONException e) {
-                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+                throw new Exception("Error: " + Status.STATUS_INTERNAL_SERVER_ERROR + ": " + e.getMessage());
             }
             if (aspects.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
+                throw new Exception("Error: " + Status.STATUS_BAD_REQUEST + ": Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
             }
 
             // Query list composition.
@@ -289,10 +286,10 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 JSONObject jsonTypes = new JSONObject((String) parameters.get(PARAMETER_CLASSES));
                 types = getQNames(jsonTypes.getJSONArray(PARAMETER_COUNTER_TYPES));
             } catch (JSONException e) {
-                throw new WebScriptException(Status.STATUS_INTERNAL_SERVER_ERROR, e.getMessage());
+                throw new Exception("Error: " + Status.STATUS_INTERNAL_SERVER_ERROR + ": " + e.getMessage());
             }
             if (types.isEmpty()) {
-                throw new WebScriptException(Status.STATUS_BAD_REQUEST, "Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
+                throw new Exception("Error: " + Status.STATUS_BAD_REQUEST + ": Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
             }
 
             // Query list composition.
@@ -311,7 +308,7 @@ public class GetCountersWebScript extends DeclarativeWebScript {
         	break;
 
         default:
-            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
+            throw new Exception("Parameter '" + PARAMETER_COUNTER + "' with value '" + ((String) parameters.get(PARAMETER_COUNTER)) + "' not admitted.");
         }
 
         return queries;
@@ -350,31 +347,31 @@ public class GetCountersWebScript extends DeclarativeWebScript {
      * 
      * @param req
      * @return
-     * @throws WrongFormatException 
+     * @throws Exception 
      */
-    private static final Map<String, Object> getParameters(WebScriptRequest req) throws WrongFormatException {
+    private static final Map<String, Object> getParameters(WebScriptRequest req) throws Exception {
 
         Map<String, Object> parameters = new HashMap<String, Object>();
 
         // Counter parameter.
         String counterParameter = req.getParameter(PARAMETER_COUNTER);
         if (counterParameter == null) {
-            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' not specified.");
+            throw new Exception("Parameter '" + PARAMETER_COUNTER + "' not specified.");
         }
         counterParameter = counterParameter.trim();
         if (counterParameter.isEmpty()) {
-            throw new WrongFormatException("Parameter '" + PARAMETER_COUNTER + "' cannot be empty.");
+            throw new Exception("Parameter '" + PARAMETER_COUNTER + "' cannot be empty.");
         }
 
         // Application parameter.
         String applicationParameter = req.getParameter(PARAMETER_APPLICATION);
         if (PARAMETER_COUNTER_AUDIT_TRAIL.equals(counterParameter)) {
             if (applicationParameter == null) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_APPLICATION + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_AUDIT_TRAIL + "'.");
+                throw new Exception("Parameter '" + PARAMETER_APPLICATION + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_AUDIT_TRAIL + "'.");
             }
             applicationParameter = applicationParameter.trim();
             if (applicationParameter.isEmpty()) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_APPLICATION + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_AUDIT_TRAIL + "'.");
+                throw new Exception("Parameter '" + PARAMETER_APPLICATION + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_AUDIT_TRAIL + "'.");
             }
         }
 
@@ -382,21 +379,15 @@ public class GetCountersWebScript extends DeclarativeWebScript {
         String classesParameter = req.getParameter(PARAMETER_CLASSES);
         if (PARAMETER_COUNTER_ASPECTS.equals(counterParameter)) {
             if (classesParameter == null) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_ASPECTS + "'.");
+                throw new Exception("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_ASPECTS + "'.");
             }
             classesParameter = classesParameter.trim();
-            if (classesParameter.isEmpty()) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_ASPECTS + "'.");
-            }
         }
         if (PARAMETER_COUNTER_TYPES.equals(counterParameter)) {
             if (classesParameter == null) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_TYPES + "'.");
+                throw new Exception("Parameter '" + PARAMETER_CLASSES + "' requested in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_TYPES + "'.");
             }
             classesParameter = classesParameter.trim();
-            if (classesParameter.isEmpty()) {
-                throw new WrongFormatException("Parameter '" + PARAMETER_CLASSES + "' cannot be empty in case of '" + PARAMETER_COUNTER + "=" + PARAMETER_COUNTER_TYPES + "'.");
-            }
         }
 
         parameters.put(PARAMETER_COUNTER,     counterParameter);
