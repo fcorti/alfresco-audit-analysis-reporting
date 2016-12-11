@@ -259,9 +259,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
             } catch (JSONException e) {
                 throw new Exception("Error: " + Status.STATUS_INTERNAL_SERVER_ERROR + ": " + e.getMessage());
             }
-            if (aspects.isEmpty()) {
-                throw new Exception("Error: " + Status.STATUS_BAD_REQUEST + ": Class list empty in '" + PARAMETER_CLASSES_ASPECTS + "' parameter.");
-            }
 
             // Query list composition.
             for (int i = 0; i < aspects.size(); ++i) {
@@ -287,9 +284,6 @@ public class GetCountersWebScript extends DeclarativeWebScript {
                 types = getQNames(jsonTypes.getJSONArray(PARAMETER_COUNTER_TYPES));
             } catch (JSONException e) {
                 throw new Exception("Error: " + Status.STATUS_INTERNAL_SERVER_ERROR + ": " + e.getMessage());
-            }
-            if (types.isEmpty()) {
-                throw new Exception("Error: " + Status.STATUS_BAD_REQUEST + ": Class list empty in '" + PARAMETER_CLASSES_TYPES + "' parameter.");
             }
 
             // Query list composition.
