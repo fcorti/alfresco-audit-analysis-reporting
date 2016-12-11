@@ -54,10 +54,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
-import freemarker.template.utility.NullArgumentException;
-
 /**
  * Get nodes modified after a date time for A.A.A.R. analytics.
  *
@@ -355,20 +351,20 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws WrongFormatException 
+	 * @throws Exception 
 	 */
-	private final void getParameters(WebScriptRequest req) throws WrongFormatException {
+	private final void getParameters(WebScriptRequest req) throws Exception {
 
 		parameters = new HashMap<String, Object>();
 
 		// BaseType parameter.
 		String baseTypeParameter = req.getParameter(PARAMETER_BASETYPE);
 		if (baseTypeParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
+			throw new Exception("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
 		}
 		baseTypeParameter = baseTypeParameter.trim();
 		if (baseTypeParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
 		}
 
 		// Custom properties parameter.
@@ -379,7 +375,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		try {
 			customPropertiesParameter = URLDecoder.decode(customPropertiesParameter.trim(), "UTF-8");
 		} catch (UnsupportedEncodingException e1) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' impossible to decode.");
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' impossible to decode.");
 		}
 		if (customPropertiesParameter.isEmpty()) {
 			customPropertiesParameter = PARAMETER_CUSTOM_PROPERTIES_DEFAULT;
@@ -389,40 +385,40 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 	    	customPropertiesParameterValue = new JSONObject(customPropertiesParameter);
 	    }
 	    catch (Exception e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' with a wrong JSON format. " + e.getMessage());
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' with a wrong JSON format. " + e.getMessage());
 	    }
 		if (!customPropertiesParameterValue.has(PARAMETER_CUSTOM_PROPERTIES_TYPES)) {
-	        throw new NullArgumentException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "'. ");
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "'. ");
 		}
 		if (!customPropertiesParameterValue.has(PARAMETER_CUSTOM_PROPERTIES_ASPECTS)) {
-	        throw new NullArgumentException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "'. ");
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' without the mandatory item '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "'. ");
 		}
 		try {
 			customPropertiesParameterValue.getJSONArray(PARAMETER_CUSTOM_PROPERTIES_TYPES);
 		} catch (JSONException e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "' is not an arrray. ");
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_TYPES + "' is not an arrray. ");
 		}
 		try {
 			customPropertiesParameterValue.getJSONArray(PARAMETER_CUSTOM_PROPERTIES_ASPECTS);
 		} catch (JSONException e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "' is not an arrray. ");
+	        throw new Exception("Parameter '" + PARAMETER_CUSTOM_PROPERTIES + "' where '" + PARAMETER_CUSTOM_PROPERTIES_ASPECTS + "' is not an arrray. ");
 		}
 
 		// Date parameter.
 		String dateParameter = req.getParameter(PARAMETER_DATE);
 		if (dateParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' not specified.");
+			throw new Exception("Parameter '" + PARAMETER_DATE + "' not specified.");
 		}
 		dateParameter = dateParameter.trim();
 		if (dateParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
 		}
 		Date dateParameterValue = null;
 	    try {
 	    	dateParameterValue = (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
 	    }
 	    catch (Exception e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
+	        throw new Exception("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
 	    }
 
 		// Limit parameter.
@@ -432,7 +428,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		limitParameter = limitParameter.trim();
 		if (limitParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
 		}
 		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
@@ -446,7 +442,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		skipParameter = skipParameter.trim();
 		if (skipParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
 		}
 		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
@@ -460,7 +456,7 @@ public class GetNodesModifiedAfterWebScript extends DeclarativeWebScript {
 		}
 		namespaceuriCompactedParameter = namespaceuriCompactedParameter.trim();
 		if (namespaceuriCompactedParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_NAMESPACEURI_COMPACTED + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_NAMESPACEURI_COMPACTED + "' cannot be empty.");
 		}
 		Boolean namespaceuriCompactedParameterValue = Boolean.parseBoolean(namespaceuriCompactedParameter);
 

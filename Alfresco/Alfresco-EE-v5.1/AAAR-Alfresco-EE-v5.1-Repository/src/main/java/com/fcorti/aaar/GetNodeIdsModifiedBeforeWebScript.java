@@ -39,10 +39,6 @@ import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 
-import com.sun.star.io.WrongFormatException;
-
-import freemarker.template.utility.NullArgumentException;
-
 /**
  * Get nodes modified after a date time for A.A.A.R. analytics.
  *
@@ -164,37 +160,37 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 	 * 
 	 * @param req
 	 * @return
-	 * @throws WrongFormatException 
+	 * @throws Exception 
 	 */
-	private static final Map<String, Object> getParameters(WebScriptRequest req) throws WrongFormatException {
+	private static final Map<String, Object> getParameters(WebScriptRequest req) throws Exception {
 
 		Map<String, Object> parameters = new HashMap<String, Object>();
 
 		// BaseType parameter.
 		String baseTypeParameter = req.getParameter(PARAMETER_BASETYPE);
 		if (baseTypeParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
+			throw new Exception("Parameter '" + PARAMETER_BASETYPE + "' not specified.");
 		}
 		baseTypeParameter = baseTypeParameter.trim();
 		if (baseTypeParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_BASETYPE + "' cannot be empty.");
 		}
 
 		// Date parameter.
 		String dateParameter = req.getParameter(PARAMETER_DATE);
 		if (dateParameter == null) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' not specified.");
+			throw new Exception("Parameter '" + PARAMETER_DATE + "' not specified.");
 		}
 		dateParameter = dateParameter.trim();
 		if (dateParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_DATE + "' cannot be empty.");
 		}
 		Date dateParameterValue = null;
 	    try {
 	    	dateParameterValue = (new SimpleDateFormat(DATE_FORMAT)).parse(dateParameter);
 	    }
 	    catch (Exception e) {
-	        throw new WrongFormatException("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
+	        throw new Exception("Parameter '" + PARAMETER_DATE + "' with a wrong format. Request '" + DATE_FORMAT + "'.");
 	    }
 
 		// Limit parameter.
@@ -204,7 +200,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		}
 		limitParameter = limitParameter.trim();
 		if (limitParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_LIMIT + "' cannot be empty.");
 		}
 		int limitParameterValue = Integer.parseInt(limitParameter);
 		if (limitParameterValue <= 0) {
@@ -218,7 +214,7 @@ public class GetNodeIdsModifiedBeforeWebScript extends DeclarativeWebScript {
 		}
 		skipParameter = skipParameter.trim();
 		if (skipParameter.isEmpty()) {
-			throw new NullArgumentException("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
+			throw new Exception("Parameter '" + PARAMETER_SKIP + "' cannot be empty.");
 		}
 		int skipParameterValue = Integer.parseInt(skipParameter);
 		if (skipParameterValue < 0) {
