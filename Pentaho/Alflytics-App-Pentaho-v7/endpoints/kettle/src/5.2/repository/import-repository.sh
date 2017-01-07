@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Script to import the Alflytics repository from a zip file.
+# Script to import the Alflytics repository from the 'Alflytics.zip' file in the current directory.
 #
 
 # Settings
