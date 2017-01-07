@@ -516,8 +516,18 @@
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
+          <variable_name>alflyticsDatasourcesSrcPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;AlflyticsDatasources.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
           <variable_name>alflyticsRepositorySrcPath</variable_name>
           <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>alflyticsDatasourcesTargetPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;AlflyticsDatasources.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
@@ -533,7 +543,7 @@
       <yloc>144</yloc>
     </entry>
     <entry>
-      <name>Copy in repository target folder</name>
+      <name>Copying repositories</name>
       <description/>
       <type>COPY_FILES</type>
       <copy_empty_folders>N</copy_empty_folders>
@@ -552,11 +562,18 @@
           <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
           <wildcard/>
         </field>
+        <field>
+          <source_filefolder>&#x24;&#x7b;alflyticsDatasourcesSrcPath&#x7d;</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-1</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;alflyticsDatasourcesTargetPath&#x7d;</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-1</destination_configuration_name>
+          <wildcard/>
+        </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>400</xloc>
       <yloc>144</yloc>
     </entry>
     <entry>
@@ -601,7 +618,7 @@
     </hop>
     <hop>
       <from>Set alflyticsRepository paths</from>
-      <to>Copy in repository target folder</to>
+      <to>Copying repositories</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -645,7 +662,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Copy in repository target folder</from>
+      <from>Copying repositories</from>
       <to>Set webXmlPath</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
