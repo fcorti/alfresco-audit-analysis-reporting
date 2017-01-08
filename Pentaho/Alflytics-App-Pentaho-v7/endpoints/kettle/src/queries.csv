@@ -1,0 +1,3 @@
+dbType;queryId;query
+hsql;alfrescoIds;select trim(cast("id" as varchar(10))) as "alfrescoId" from "dm_dim_alfresco" where "is_active"='Y'
+

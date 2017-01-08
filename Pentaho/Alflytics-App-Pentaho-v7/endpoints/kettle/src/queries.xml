@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<queries>
-<query dbType="hsql" id="1">abc</query>
-<query dbType="hsql" id="2">def</query>
-<query dbType="hsql" id="3">ghi</query>
-<query dbType="hsql" id="4">lmn</query>
-</queries>
