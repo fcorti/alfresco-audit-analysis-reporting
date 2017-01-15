@@ -1,7 +1,7 @@
 
 CREATE TABLE "dm_dim_alfresco" (
     "id" smallint NOT NULL PRIMARY KEY,
-    "desc" VARCHAR(25) NOT NULL,
+    "description" VARCHAR(25) NOT NULL,
     "login" VARCHAR(128) NOT NULL,
     "password" VARCHAR(128) NOT NULL,
     "protocol" VARCHAR(8) NOT NULL,
@@ -15,12 +15,11 @@ CREATE TABLE "dm_dim_alfresco" (
 );
 
 INSERT INTO "dm_dim_alfresco" (
-"id","desc","login","password","protocol","host","port","rest_api_prefix","audit_limit","node_limit","workflow_limit","is_active"
+"id","description","login","password","protocol","host","port","audit_limit","node_limit","workflow_limit","is_active"
 ) VALUES (
 1,'Alfresco','admin',
 'admin','http',
 'localhost','8080',
-'/alfresco/api/-default-/public/search/versions/1/',
 50000,50000,
 50000,'Y');
 

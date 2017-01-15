@@ -1,0 +1,6 @@
+endpointId;endopint
+alfrescoRestApi;/alfresco/api/-default-/public/search/versions/1
+alfrescoSearch;/search
+alfrescoCounterForUsersBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query": "(TYPE:\"usr:user\")","language":"afts"},"paging": {"maxItems":1,"skipCount":0}
+
+
