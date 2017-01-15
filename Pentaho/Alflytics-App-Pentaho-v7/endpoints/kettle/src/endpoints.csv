@@ -1,6 +1,6 @@
 endpointId;endopint
 alfrescoRestApi;/alfresco/api/-default-/public/search/versions/1
 alfrescoSearch;/search
-alfrescoCounterForUsersBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query": "(TYPE:\"usr:user\")","language":"afts"},"paging": {"maxItems":1,"skipCount":0}
-
+alfrescoForUserCountBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query":"(TYPE:\"usr:user\")","language":"afts"},"paging":{"maxItems":1000000000,"skipCount":1000000000}}
+alfrescoForUsersBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query":"(TYPE:\"usr:user\")","language":"afts"},"sort":[{"type": "FIELD","field":"sys:node-dbid","ascending":true}],"include":["path","properties"],"paging":{"maxItems":${maxItems},"skipCount":${skipCount}}}
 

@@ -1,4 +1,6 @@
 dbType;queryId;query
 hsql;alfrescoIds;select trim(cast("id" as varchar(10))) as "alfrescoId" from "dm_dim_alfresco" where "is_active"='Y'
-hsql;alfrescoServer;select * from "dm_dim_alfresco" where "id"=${alfrescoId}
+hsql;alfrescoServer;select "description", "login", "password", "protocol" + '://' + "host" + ':' + "port" as base_url, 2 as "user_limit", "audit_limit", "node_limit", "workflow_limit" from "dm_dim_alfresco" where "id"=${alfrescoId}
+hsql;dataQualityLog;insert into "dm_data_quality" ("alfresco_id","batch_id","entities","layer","value") values (${alfrescoId},'${batchId}','${entities}','${layer}',${counter})
+hsql;stagingTruncateUsers;truncate "stg_alfresco_users"
 
