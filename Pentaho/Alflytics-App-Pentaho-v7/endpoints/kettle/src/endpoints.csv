@@ -1,6 +1,8 @@
 endpointId;endopint
-alfrescoRestApi;/alfresco/api/-default-/public/search/versions/1
-alfrescoSearch;/search
-alfrescoForUserCountBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query":"(TYPE:\"usr:user\")","language":"afts"},"paging":{"maxItems":1000000000,"skipCount":1000000000}}
-alfrescoForUsersBody;{"scope":{"stores": ["user://alfrescoUserStore"]},"query":{"query":"(TYPE:\"usr:user\")","language":"afts"},"sort":[{"type": "FIELD","field":"sys:node-dbid","ascending":true}],"include":["path","properties"],"paging":{"maxItems":${maxItems},"skipCount":${skipCount}}}
+alfrescoDiscovery;/alfresco/api/discovery
+alfrescoPeople;/alfresco/api/-default-/public/alfresco/versions/1/people?maxItems=${maxItems}&skipCount=${skipCount}
+alfrescoPeopleCount;/alfresco/api/-default-/public/alfresco/versions/1/people?maxItems=1000000000&skipCount=0&fields=%7B%7D
+alfrescoSearch;/alfresco/api/-default-/public/search/versions/1/search
+alfrescoSearchContentCountBody;{"scope":{"stores":["workspace://SpacesStore"]},"query":{"query": "(TYPE:\"cm:content\" AND (@cm:modified:[\"2001-01-01T00:00:00.000Z\" TO MAX]))","language":"afts"},"paging":{"maxItems":1,"skipCount":0}}
+alfrescoSearchFoldersCountBody;{"scope":{"stores":["workspace://SpacesStore"]},"query":{"query": "(TYPE:\"cm:folder\" AND (@cm:modified:[\"2001-01-01T00:00:00.000Z\" TO MAX]))","language":"afts"},"paging":{"maxItems":1,"skipCount":0}}
 

@@ -463,7 +463,7 @@
   </notepads>
   <order>
     <hop>
-      <from>Modified Java Script Value</from>
+      <from>dbType and queryId</from>
       <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
@@ -474,7 +474,7 @@
     </hop>
     <hop>
       <from>Text file input</from>
-      <to>Modified Java Script Value</to>
+      <to>dbType and queryId</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -519,14 +519,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>464</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
+    <name>dbType and queryId</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -561,7 +561,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>288</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -586,7 +586,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>608</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>

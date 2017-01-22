@@ -458,7 +458,7 @@
   </notepads>
   <order>
     <hop>
-      <from>Modified Java Script Value</from>
+      <from>endpointId</from>
       <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
@@ -469,7 +469,7 @@
     </hop>
     <hop>
       <from>Text file input</from>
-      <to>Modified Java Script Value</to>
+      <to>endpointId</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -508,14 +508,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>432</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
+    <name>endpointId</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -544,7 +544,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>272</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -569,7 +569,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>608</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>

@@ -469,7 +469,7 @@
   </connection>
   <order>
     <hop>
-      <from>dm_dim_alfresco</from>
+      <from>DWH_ALF_DIM_INSTANCES</from>
       <to>OUTPUT</to>
       <enabled>Y</enabled>
     </hop>
@@ -493,14 +493,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>304</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>dm_dim_alfresco</name>
+    <name>DWH_ALF_DIM_INSTANCES</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -511,7 +511,7 @@
       <schema_name/>
     </partitioning>
     <connection>Alflytics</connection>
-    <sql>select trim&#x28;&#x27;alfrescoProtocol&#x27;&#x29; as name, &#x22;protocol&#x22; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoHost&#x27;&#x29; as name, &#x22;host&#x22; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoPort&#x27;&#x29; as name, &#x22;port&#x22; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoLogin&#x27;&#x29; as name, &#x22;login&#x22; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoPassword&#x27;&#x29; as name, &#x22;password&#x22; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoAuditLimit&#x27;&#x29; as name, cast&#x28;&#x22;audit_limit&#x22; as varchar&#x28;1024&#x29;&#x29; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoNodeLimit&#x27;&#x29; as name, cast&#x28;&#x22;node_limit&#x22; as varchar&#x28;1024&#x29;&#x29; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoWorkflowLimit&#x27;&#x29; as name, cast&#x28;&#x22;workflow_limit&#x22; as varchar&#x28;1024&#x29;&#x29; value from &#x22;dm_dim_alfresco&#x22; where &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;</sql>
+    <sql>select trim&#x28;&#x27;alfrescoProtocol&#x27;&#x29; as name, PROTOCOL value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoHost&#x27;&#x29; as name, HOST value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoPort&#x27;&#x29; as name, PORT value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoLogin&#x27;&#x29; as name, LOGIN value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoPassword&#x27;&#x29; as name, PASSWORD value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoUserLimit&#x27;&#x29; as name, cast&#x28;USER_LIMIT as varchar&#x28;1024&#x29;&#x29; value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoAuditLimit&#x27;&#x29; as name, cast&#x28;AUDIT_LIMIT as varchar&#x28;1024&#x29;&#x29; value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoNodeLimit&#x27;&#x29; as name, cast&#x28;NODE_LIMIT as varchar&#x28;1024&#x29;&#x29; value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;union all&#xa;select trim&#x28;&#x27;alfrescoWorkflowLimit&#x27;&#x29; as name, cast&#x28;WORKFLOW_LIMIT as varchar&#x28;1024&#x29;&#x29; value from DWH_ALF_DIM_INSTANCES where ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -525,7 +525,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
+      <xloc>128</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>

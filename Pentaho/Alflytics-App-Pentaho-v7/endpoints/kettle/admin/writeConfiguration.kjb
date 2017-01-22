@@ -52,6 +52,11 @@
         <description/>
       </parameter>
       <parameter>
+        <name>alfrescoUserLimit</name>
+        <default_value>50000</default_value>
+        <description/>
+      </parameter>
+      <parameter>
         <name>alfrescoWorkflowLimit</name>
         <default_value>50000</default_value>
         <description/>
@@ -392,7 +397,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update&#xa; &#x22;dm_dim_alfresco&#x22; &#xa;set&#xa; &#x22;protocol&#x22; &#x3d;  &#x27;&#x24;&#x7b;alfrescoProtocol&#x7d;&#x27;,&#xa; &#x22;host&#x22; &#x3d; &#x27;&#x24;&#x7b;alfrescoHost&#x7d;&#x27;,&#xa; &#x22;port&#x22; &#x3d; &#x27;&#x24;&#x7b;alfrescoPort&#x7d;&#x27;,&#xa; &#x22;login&#x22; &#x3d; &#x27;&#x24;&#x7b;alfrescoLogin&#x7d;&#x27;,&#xa; &#x22;password&#x22; &#x3d; &#x27;&#x24;&#x7b;alfrescoPassword&#x7d;&#x27;,&#xa; &#x22;audit_limit&#x22; &#x3d; &#x24;&#x7b;alfrescoAuditLimit&#x7d;,&#xa; &#x22;node_limit&#x22; &#x3d; &#x24;&#x7b;alfrescoNodeLimit&#x7d;,&#xa; &#x22;workflow_limit&#x22; &#x3d; &#x24;&#x7b;alfrescoWorkflowLimit&#x7d;&#xa;where&#xa; &#x22;id&#x22; &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;&#xa;</sql>
+      <sql>UPDATE&#xa; DWH_ALF_DIM_INSTANCES &#xa;set&#xa; PROTOCOL &#x3d; &#x27;&#x24;&#x7b;alfrescoProtocol&#x7d;&#x27;,&#xa; HOST &#x3d; &#x27;&#x24;&#x7b;alfrescoHost&#x7d;&#x27;,&#xa; PORT &#x3d; &#x27;&#x24;&#x7b;alfrescoPort&#x7d;&#x27;,&#xa; LOGIN &#x3d; &#x27;&#x24;&#x7b;alfrescoLogin&#x7d;&#x27;,&#xa; PASSWORD &#x3d; &#x27;&#x24;&#x7b;alfrescoPassword&#x7d;&#x27;,&#xa; USER_LIMIT &#x3d; &#x24;&#x7b;alfrescoUserLimit&#x7d;,&#xa; AUDIT_LIMIT &#x3d; &#x24;&#x7b;alfrescoAuditLimit&#x7d;,&#xa; NODE_LIMIT &#x3d; &#x24;&#x7b;alfrescoNodeLimit&#x7d;,&#xa; WORKFLOW_LIMIT &#x3d; &#x24;&#x7b;alfrescoWorkflowLimit&#x7d;&#xa;where&#xa; ID &#x3d; &#x24;&#x7b;alfrescoId&#x7d;&#xa;&#xa;</sql>
       <useVariableSubstitution>T</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

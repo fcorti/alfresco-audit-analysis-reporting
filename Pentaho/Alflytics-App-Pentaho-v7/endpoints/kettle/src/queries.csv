@@ -1,6 +1,9 @@
 dbType;queryId;query
-hsql;alfrescoIds;select trim(cast("id" as varchar(10))) as "alfrescoId" from "dm_dim_alfresco" where "is_active"='Y'
-hsql;alfrescoServer;select "description", "login", "password", "protocol" + '://' + "host" + ':' + "port" as base_url, 2 as "user_limit", "audit_limit", "node_limit", "workflow_limit" from "dm_dim_alfresco" where "id"=${alfrescoId}
-hsql;dataQualityLog;insert into "dm_data_quality" ("alfresco_id","batch_id","entities","layer","value") values (${alfrescoId},'${batchId}','${entities}','${layer}',${counter})
-hsql;stagingTruncateUsers;truncate "stg_alfresco_users"
+hsql;alfrescoIds;SELECT TRIM(CAST(ID AS VARCHAR(10))) AS "instanceId" FROM DWH_ALF_DIM_INSTANCES WHERE IS_ACTIVE='Y'
+hsql;alfrescoServer;SELECT DESCRIPTION AS "description", LOGIN as "login", PASSWORD AS "password", PROTOCOL + '://' + HOST + ':' + PORT AS "base_url", USER_LIMIT AS "user_limit", AUDIT_LIMIT AS "audit_limit", NODE_LIMIT AS "node_limit", WORKFLOW_LIMIT AS "workflow_limit" FROM DWH_ALF_DIM_INSTANCES WHERE ID=${instanceId}
+hsql;dataQualityLog;INSERT INTO DWH_DATA_QUALITY (SOURCE_TYPE,SOURCE_ID,BATCH_ID,ENTITIES,LAYER,VALUE) VALUES ('${sourceType}',${sourceId},'${batchId}','${entities}','${layer}',${counter})
+hsql;stagingUsersTruncate;TRUNCATE TABLE STG_ALF_USERS
+hsql;stagingUsersCount;SELECT COUNT(*) AS "counter" FROM STG_ALF_USERS WHERE INSTANCE_ID=${sourceId}
+hsql;warehouseUsersCount;SELECT COUNT(*) AS "counter" FROM DWH_ALF_DIM_USERS WHERE INSTANCE_ID=${sourceId}
+hsql;warehouseAlfrescoUsers;SELECT TRIM(ID) AS "username", TRIM(FIRST_NAME) AS "firstName", TRIM(LAST_NAME) AS "lastName", TRIM(EMAIL) AS "email", TRIM(JOB_TITLE) AS "jobTitle", TRIM(ORGANIZATION) AS "organization", CASEWHEN(TRIM(ENABLED) = 'true', 'Y', 'N') AS "isEnabled", CASEWHEN(TRIM(EMAIL_NOTIFICATIONS_ENABLED) = 'true', 'Y', 'N') AS "isEmailNotificationsEnabled", INSTANCE_ID + 0 AS "instanceId", TRIM(ID) AS "srcId" FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId}
 
