@@ -1,6 +1,7 @@
 dbType;queryId;query
 hsql;alfrescoIds;SELECT ID + '' AS "instanceId" FROM DWH_ALF_DIM_INSTANCES WHERE IS_ACTIVE='Y'
 hsql;alfrescoServer;SELECT DESCRIPTION + '' AS "description", LOGIN + '' as "login", PASSWORD + '' AS "password", PROTOCOL + '://' + HOST + ':' + PORT AS "baseUrl", USER_LIMIT + 0 AS "userLimit", AUDIT_LIMIT + 0 AS "auditLimit", NODE_LIMIT + 0 AS "nodeLimit", WORKFLOW_LIMIT + 0 AS "workflowLimit" FROM DWH_ALF_DIM_INSTANCES WHERE ID = ${instanceId}
+hsql;alfrescoClasses;SELECT C.ID+0 AS CLASS_ID,C.NAME+'' AS CLASS_NAME,C.IS_FILE+'' AS CLASS_IS_FILE,C.IS_FOLDER+'' AS CLASS_IS_FOLDER,C.IS_ASPECT+'' AS CLASS_IS_ASPECT,C.IS_ROOT+'' AS CLASS_IS_ROOT,C.OPE_TABLE_NAME+'' AS CLASS_OPE_TABLE_NAME,C.DWH_TABLE_NAME+'' AS CLASS_DWH_TABLE_NAME,C.ORDINAL,C.INSTANCE_ID,C.IS_ACTIVE+'' AS CLASS_IS_ACTIVE,P.ID,P.NAME,P.TYPE,P.IS_MULTIVALUE,P.OPE_TABLE_NAME,P.DWH_TABLE_NAME,P.JSON_PATH,P.FIELD_NAME,P.IS_ACTIVE FROM "DWH_ALF_CLASSES" AS "C" JOIN "DWH_ALF_CLASS_PROPERTIES" AS "P" ON P.CLASS_ID = C.ID WHERE C.INSTANCE_ID=${instanceId} AND C."IS_ACTIVE"='Y' ORDER BY C.ORDINAL ASC 
 hsql;dataQualityLog;INSERT INTO DWH_DATA_QUALITY (SOURCE_TYPE,SOURCE_ID,BATCH_ID,ENTITIES,LAYER,VALUE) VALUES ('${sourceType}',${sourceId},'${batchId}','${entities}','${layer}',${counter})
 hsql;stagingRepositoryTruncateCategories;TRUNCATE TABLE STG_ALF_CATEGORIES
 hsql;stagingRepositoryTruncateNodes;TRUNCATE TABLE STG_ALF_NODES
@@ -8,6 +9,7 @@ hsql;stagingUsersTruncate;TRUNCATE TABLE STG_ALF_USERS
 hsql;stagingCategoriesCount;SELECT COUNT(*) AS "counter" FROM STG_ALF_CATEGORIES WHERE INSTANCE_ID=${sourceId}
 hsql;stagingNodesCount;SELECT COUNT(*) AS "counter" FROM STG_ALF_NODES WHERE INSTANCE_ID=${sourceId}
 hsql;stagingUsersCount;SELECT COUNT(*) AS "counter" FROM STG_ALF_USERS WHERE INSTANCE_ID=${sourceId}
+hsql;operationalRepositoryNodes;select INSTANCE_ID, IS_MODIFIED, ENTRY from STG_ALF_NODES where INSTANCE_ID=${instanceId}
 hsql;warehouseRepositoryMaxDt;SELECT '2001-01-01T00:00:00.000Z' AS "dt" FROM (VALUES(0))
 hsql;warehouseUsersCount;SELECT COUNT(*) AS "counter" FROM DWH_ALF_DIM_USERS WHERE INSTANCE_ID=${sourceId}
 hsql;warehouseAlfrescoUsers;SELECT ID + '' AS "username", FIRST_NAME + '' AS "firstName", LAST_NAME + '' AS "lastName", EMAIL + '' AS "email", JOB_TITLE + '' AS "jobTitle", ORGANIZATION + '' AS "organization", CASEWHEN((ENABLED + '') = 'true', 'Y', 'N') AS "isEnabled", CASEWHEN((EMAIL_NOTIFICATIONS_ENABLED + '') = 'true', 'Y', 'N') AS "isEmailNotificationsEnabled", INSTANCE_ID + 0 AS "instanceId", ID + '' AS "srcId" FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId}
