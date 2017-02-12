@@ -26,8 +26,13 @@
       </parameter>
       <parameter>
         <name>queriesPath</name>
-        <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;queries.csv</default_value>
+        <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;queryCollection&#x7d;.csv</default_value>
         <description>Path of the configuration file containing the queries.</description>
+      </parameter>
+      <parameter>
+        <name>queryCollection</name>
+        <default_value>queries</default_value>
+        <description>Collection identiyfying the set of queries.</description>
       </parameter>
       <parameter>
         <name>queryId</name>
