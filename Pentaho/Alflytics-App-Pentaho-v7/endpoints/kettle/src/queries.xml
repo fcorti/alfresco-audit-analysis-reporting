@@ -1,14 +1,6 @@
 <queries>
-<query dbType="hsql" queryId="alfrescoIds">
- SELECT ID + '' AS "instanceId" 
- FROM DWH_ALF_DIM_INSTANCES 
- WHERE IS_ACTIVE='Y'
-</query>
-<query dbType="hsql" queryId="alfrescoServer">
- SELECT DESCRIPTION, LOGIN, PASSWORD, PROTOCOL + '://' + HOST + ':' + PORT AS BASE_URL, USER_LIMIT, AUDIT_LIMIT, NODE_LIMIT, WORKFLOW_LIMIT 
- FROM DWH_ALF_DIM_INSTANCES 
- WHERE ID = ${instanceId}
-</query>
+<query dbType="hsql" queryId="alfrescoIds">SELECT ID + '' AS "instanceId" FROM DWH_ALF_DIM_INSTANCES WHERE IS_ACTIVE='Y'</query>
+<query dbType="hsql" queryId="alfrescoServer">SELECT DESCRIPTION, LOGIN, PASSWORD, PROTOCOL + '://' + HOST + ':' + PORT AS BASE_URL, USER_LIMIT, AUDIT_LIMIT, NODE_LIMIT, WORKFLOW_LIMIT FROM DWH_ALF_DIM_INSTANCES WHERE ID = ${instanceId}</query>
 <query dbType="hsql" queryId="alfrescoClasses">
  SELECT 
   C.ID+0 AS CLASS_ID,C.NAME+'' AS CLASS_NAME,C.IS_FILE+'' AS CLASS_IS_FILE,C.IS_FOLDER+'' AS CLASS_IS_FOLDER,C.IS_ASPECT+'' AS CLASS_IS_ASPECT,
@@ -21,58 +13,22 @@
   ORDER BY
    C.ORDINAL ASC, P.ID ASC
 </query>
-<query dbType="hsql" queryId="dataQualityLog">
- INSERT INTO DWH_DATA_QUALITY 
- (SOURCE_TYPE,SOURCE_ID,BATCH_ID,ENTITIES,LAYER,VALUE) 
- VALUES 
- ('${sourceType}',${sourceId},'${batchId}','${entities}','${layer}',${counter})
-</query>
-<query dbType="hsql" queryId="stagingRepositoryTruncateCategories">
- DELETE FROM STG_ALF_CATEGORIES 
- WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="stagingRepositoryTruncateNodes">
- DELETE FROM STG_ALF_NODES 
- WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="stagingUsersTruncate">
- DELETE FROM STG_ALF_USERS 
- WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="stagingCategoriesCount">
- SELECT COUNT(*) AS COUNTER 
- FROM STG_ALF_CATEGORIES 
- WHERE INSTANCE_ID=${sourceId};
-</query>
-<query dbType="hsql" queryId="stagingNodesCount">
- SELECT COUNT(*) AS COUNTER 
- FROM STG_ALF_NODES 
- WHERE INSTANCE_ID=${sourceId};
-</query>
-<query dbType="hsql" queryId="stagingUsersCount">
- SELECT COUNT(*) AS COUNTER 
- FROM STG_ALF_USERS 
- WHERE INSTANCE_ID=${sourceId};
-</query>
-<query dbType="hsql" queryId="operationalCategoriesCount">
- SELECT COUNT(*) AS COUNTER 
- FROM OPE_ALF_CATEGORIES 
- WHERE INSTANCE_ID=${sourceId};
-</query>
-<query dbType="hsql" queryId="operationalCategoriesNodes">
- SELECT INSTANCE_ID, IS_MODIFIED, ENTRY 
- FROM STG_ALF_CATEGORIES 
- WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="operationalCategoriesTruncate">
- DELETE FROM OPE_ALF_CATEGORIES
- WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="operationalRepositoryNodes">
- SELECT INSTANCE_ID, IS_MODIFIED, ENTRY
- FROM STG_ALF_NODES 
- WHERE INSTANCE_ID=${instanceId};
-</query>
+<query dbType="hsql" queryId="dataQualityLog">INSERT INTO DWH_DATA_QUALITY (SOURCE_TYPE,SOURCE_ID,BATCH_ID,ENTITIES,LAYER,VALUE) VALUES ('${sourceType}',${sourceId},'${batchId}','${entities}','${layer}',${counter})</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateDeployments">DELETE FROM STG_ALF_WF_DEPLOYMENTS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateDefinitions">DELETE FROM STG_ALF_WF_DEFINITIONS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateInstances">DELETE FROM STG_ALF_WF_INSTANCES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateItems">DELETE FROM STG_ALF_WF_ITEMS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateTasks">DELETE FROM STG_ALF_WF_TASKS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingRepositoryTruncateCategories">DELETE FROM STG_ALF_CATEGORIES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingRepositoryTruncateNodes">DELETE FROM STG_ALF_NODES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingUsersTruncate">DELETE FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingCategoriesCount">SELECT COUNT(*) AS COUNTER FROM STG_ALF_CATEGORIES WHERE INSTANCE_ID=${sourceId}</query>
+<query dbType="hsql" queryId="stagingNodesCount">SELECT COUNT(*) AS COUNTER FROM STG_ALF_NODES WHERE INSTANCE_ID=${sourceId}</query>
+<query dbType="hsql" queryId="stagingUsersCount">SELECT COUNT(*) AS COUNTER FROM STG_ALF_USERS WHERE INSTANCE_ID=${sourceId}</query>
+<query dbType="hsql" queryId="operationalCategoriesCount">SELECT COUNT(*) AS COUNTER FROM OPE_ALF_CATEGORIES WHERE INSTANCE_ID=${sourceId}</query>
+<query dbType="hsql" queryId="operationalCategoriesNodes">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_CATEGORIES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalCategoriesTruncate">DELETE FROM OPE_ALF_CATEGORIES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalRepositoryNodes">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_NODES WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="operationalRepositoryCount">
  SELECT SUM(T.COUNTER) AS COUNTER
  FROM (
@@ -81,21 +37,15 @@
   SELECT COUNT(*) AS COUNTER FROM OPE_ALF_FOLDERS WHERE INSTANCE_ID=${sourceId}
  ) T
 </query>
-<query dbType="hsql" queryId="operationalUsersCount">
- SELECT COUNT(*) AS COUNTER FROM OPE_ALF_USERS WHERE INSTANCE_ID=${sourceId};
-</query>
-<query dbType="hsql" queryId="operationalUsersNodes">
- SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId};
-</query>
-<query dbType="hsql" queryId="operationalUsersTruncate">
- DELETE FROM OPE_ALF_USERS WHERE INSTANCE_ID=${instanceId};
-</query>
+<query dbType="hsql" queryId="operationalUsersCount">SELECT COUNT(*) AS COUNTER FROM OPE_ALF_USERS WHERE INSTANCE_ID=${sourceId}</query>
+<query dbType="hsql" queryId="operationalUsersNodes">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalUsersTruncate">DELETE FROM OPE_ALF_USERS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="warehouseCategoriesCount">
- SELECT SUM(COUNTER)-2+1 AS COUNTER
+ SELECT SUM(COUNTER)+1 AS COUNTER
  FROM (
-  SELECT COUNT(*) AS COUNTER FROM DWH_ALF_DIM_CATEGORIES WHERE INSTANCE_ID=${sourceId}
+  SELECT COUNT(*)-1 AS COUNTER FROM DWH_ALF_DIM_CATEGORIES WHERE INSTANCE_ID=${sourceId}
   UNION ALL
-  SELECT COUNT(*) AS COUNTER FROM DWH_ALF_DIM_TAGS WHERE INSTANCE_ID=${sourceId}
+  SELECT COUNT(*)-1 AS COUNTER FROM DWH_ALF_DIM_TAGS WHERE INSTANCE_ID=${sourceId}
  )
 </query>
 <query dbType="hsql" queryId="warehouseCategoriesDelete">
@@ -377,32 +327,35 @@ FROM
 WHERE
  OPE_ALF_FOLDER_TAGS.INSTANCE_ID=${instanceId}
 </query>
+<query dbType="hsql" queryId="warehouseProcessesMaxDt">
+SELECT COALESCE(null,'2001-01-01') + 'T00:00:00.000Z' AS DT FROM (VALUES(0))
+</query>
 <query dbType="hsql" queryId="warehouseRepositoryCount">
  SELECT SUM(T.COUNTER) AS COUNTER 
  FROM (
-  SELECT COUNT(*) AS COUNTER FROM DWH_ALF_DIM_CONTENTS WHERE INSTANCE_ID=${sourceId} 
+  SELECT COUNT(*)-1 AS COUNTER FROM DWH_ALF_DIM_CONTENTS WHERE INSTANCE_ID=${sourceId} 
   UNION ALL 
-  SELECT COUNT(*) AS COUNTER FROM DWH_ALF_DIM_FOLDERS WHERE INSTANCE_ID=${sourceId}) T
+  SELECT COUNT(*)-1 AS COUNTER FROM DWH_ALF_DIM_FOLDERS WHERE INSTANCE_ID=${sourceId}) T
 </query>
 <query dbType="hsql" queryId="warehouseRepositoryMinDt">
- SELECT '2001-01-01T00:00:00.000Z' AS DT 
- FROM (VALUES(0));
+SELECT COALESCE(TO_CHAR(MAX(DT),'YYYY-MM-DD'),'2001-01-01') + 'T00:00:00.000Z' AS DT FROM (
+ SELECT MIN(MODIFIED_AT) AS DT FROM OPE_ALF_CONTENTS
+ UNION ALL
+ SELECT MIN(MODIFIED_AT) AS DT FROM OPE_ALF_FOLDERS)
 </query>
 <query dbType="hsql" queryId="warehouseRepositoryMaxDt">
- SELECT '2001-01-01T00:00:00.000Z' AS DT 
- FROM (VALUES(0));
+SELECT COALESCE(TO_CHAR(MAX(DT),'YYYY-MM-DD'),'2001-01-01') + 'T00:00:00.000Z' AS DT FROM (
+ SELECT MAX(CREATED_DT) AS DT FROM DWH_ALF_DIM_CONTENTS
+ UNION ALL
+ SELECT MAX(CREATED_DT) AS DT FROM DWH_ALF_DIM_FOLDERS)
 </query>
-<query dbType="hsql" queryId="warehouseTagsCount">
- SELECT COUNT(*) AS COUNTER 
- FROM DWH_ALF_DIM_TAGS 
- WHERE INSTANCE_ID=${sourceId};
-</query>
+<query dbType="hsql" queryId="warehouseTagsCount">SELECT COUNT(*)-1 AS COUNTER FROM DWH_ALF_DIM_TAGS WHERE INSTANCE_ID=${sourceId}</query>
 <query dbType="hsql" queryId="warehouseTagsDelete">
  SELECT * 
  FROM DWH_ALF_DIM_TAGS 
  WHERE
   DWH_ALF_DIM_TAGS.INSTANCE_ID=${instanceId} 
-  AND DWH_ALF_DIM_TAGS.ID != -1 
+  AND DWH_ALF_DIM_TAGS.ID!=-1 
   AND NOT EXISTS (
    SELECT 1 
    FROM OPE_ALF_CATEGORIES 
@@ -460,13 +413,9 @@ MERGE INTO DWH_ALF_DIM_MIME_TYPES USING (SELECT DISTINCT MIME_TYPE AS DESCRIPTIO
 <query dbType="hsql" queryId="warehouseMimeTypesInsUpdUnknown">
 MERGE INTO DWH_ALF_DIM_MIME_TYPES USING (SELECT -1 AS ID, 'Unknown' AS DESCRIPTION, ${instanceId} AS INSTANCE_ID, 'UNKNOWN' AS SRC_ID FROM (VALUES(0))) AS VALS(ID,DESCRIPTION,INSTANCE_ID,SRC_ID) ON DWH_ALF_DIM_MIME_TYPES.INSTANCE_ID=VALS.INSTANCE_ID AND DWH_ALF_DIM_MIME_TYPES.SRC_ID=VALS.SRC_ID WHEN MATCHED THEN UPDATE SET DWH_ALF_DIM_MIME_TYPES.ID=VALS.ID,DWH_ALF_DIM_MIME_TYPES.DESCRIPTION=VALS.DESCRIPTION,DWH_ALF_DIM_MIME_TYPES.INSTANCE_ID=VALS.INSTANCE_ID,DWH_ALF_DIM_MIME_TYPES.SRC_ID=VALS.SRC_ID WHEN NOT MATCHED THEN INSERT (ID,DESCRIPTION,INSTANCE_ID,SRC_ID) VALUES VALS.ID,VALS.DESCRIPTION,VALS.INSTANCE_ID,VALS.SRC_ID;
 </query>
-<query dbType="hsql" queryId="warehouseUsersCount">
- SELECT COUNT(*)-1  AS COUNTER 
- FROM DWH_ALF_DIM_USERS 
- WHERE INSTANCE_ID=${sourceId};
-</query>
+<query dbType="hsql" queryId="warehouseUsersCount">SELECT COUNT(*)-1  AS COUNTER FROM DWH_ALF_DIM_USERS WHERE INSTANCE_ID=${sourceId}</query>
 <query dbType="hsql" queryId="warehouseUsersDelete">
- UPDATE DWH_ALF_DIM_USERS 
+UPDATE DWH_ALF_DIM_USERS 
  SET
   DT_DELETED = CURRENT_DATE 
  WHERE
