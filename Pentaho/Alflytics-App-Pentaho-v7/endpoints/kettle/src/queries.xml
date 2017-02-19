@@ -17,6 +17,7 @@
 <query dbType="hsql" queryId="stagingProcessesTruncateDeployments">DELETE FROM STG_ALF_WF_DEPLOYMENTS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="stagingProcessesTruncateDefinitions">DELETE FROM STG_ALF_WF_DEFINITIONS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="stagingProcessesTruncateInstances">DELETE FROM STG_ALF_WF_INSTANCES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="stagingProcessesTruncateInstancesOpened">DELETE FROM STG_ALF_WF_INSTANCES_OPENED WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="stagingProcessesTruncateItems">DELETE FROM STG_ALF_WF_ITEMS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="stagingProcessesTruncateTasks">DELETE FROM STG_ALF_WF_TASKS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="stagingRepositoryTruncateCategories">DELETE FROM STG_ALF_CATEGORIES WHERE INSTANCE_ID=${instanceId}</query>
@@ -40,6 +41,14 @@
 <query dbType="hsql" queryId="operationalUsersCount">SELECT COUNT(*) AS COUNTER FROM OPE_ALF_USERS WHERE INSTANCE_ID=${sourceId}</query>
 <query dbType="hsql" queryId="operationalUsersNodes">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_USERS WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="operationalUsersTruncate">DELETE FROM OPE_ALF_USERS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfDefinitionsTruncate">DELETE FROM OPE_ALF_WF_DEFINITIONS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfDefinitions">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_WF_DEFINITIONS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfDeploymentsTruncate">DELETE FROM OPE_ALF_WF_DEPLOYMENTS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfDeployments">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_WF_DEPLOYMENTS WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfInstancesTruncate">DELETE FROM OPE_ALF_WF_INSTANCES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfInstances">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_WF_INSTANCES WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfInstancesOpenedTruncate">DELETE FROM OPE_ALF_WF_INSTANCES_OPENED WHERE INSTANCE_ID=${instanceId}</query>
+<query dbType="hsql" queryId="operationalWfInstancesOpened">SELECT INSTANCE_ID, IS_MODIFIED, ENTRY FROM STG_ALF_WF_INSTANCES_OPENED WHERE INSTANCE_ID=${instanceId}</query>
 <query dbType="hsql" queryId="warehouseCategoriesCount">
  SELECT SUM(COUNTER)+1 AS COUNTER
  FROM (

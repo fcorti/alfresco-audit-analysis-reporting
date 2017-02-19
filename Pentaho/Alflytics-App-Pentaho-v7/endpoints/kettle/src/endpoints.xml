@@ -5,6 +5,7 @@
 <endpoint id="alfrescoProcesses">/alfresco/api/-default-/public/workflow/versions/1</endpoint>
 <endpoint id="alfrescoProcessesDeployments">/deployments?maxItems=1000000000&amp;skipCount=0</endpoint>
 <endpoint id="alfrescoProcessesDefinitions">/process-definitions?maxItems=1000000000&amp;skipCount=0</endpoint>
+<endpoint id="alfrescoProcessesInstancesOpened">/processes?maxItems=${maxItems}&amp;skipCount=${skipCount}</endpoint>
 <endpoint id="alfrescoProcessesItemsPrefix">/processes/</endpoint>
 <endpoint id="alfrescoProcessesItemsPostfix">/items</endpoint>
 <endpoint id="alfrescoProcessesTasks">/tasks?maxItems=${maxItems}&amp;skipCount=${skipCount}</endpoint>
