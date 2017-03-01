@@ -21,12 +21,12 @@
       </parameter>
       <parameter>
         <name>dbType</name>
-        <default_value/>
-        <description>Data Base type. If not specified, no filter will be applied.</description>
+        <default_value>hsql</default_value>
+        <description>Data Base type.</description>
       </parameter>
       <parameter>
         <name>queriesPath</name>
-        <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;queryCollection&#x7d;.xml</default_value>
+        <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x24;&#x7b;file.separator&#x7d;endpoints&#x24;&#x7b;file.separator&#x7d;kettle&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;queryCollection&#x7d;.&#x24;&#x7b;dbType&#x7d;.xml</default_value>
         <description>Path of the configuration file containing the queries.</description>
       </parameter>
       <parameter>
@@ -468,7 +468,7 @@
   </notepads>
   <order>
     <hop>
-      <from>dbType and queryId</from>
+      <from>queryId selection</from>
       <to>Filter empty values 2</to>
       <enabled>Y</enabled>
     </hop>
@@ -484,7 +484,7 @@
     </hop>
     <hop>
       <from>Row denormaliser</from>
-      <to>dbType and queryId</to>
+      <to>queryId selection</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -550,12 +550,6 @@
 <condition>
  <negated>N</negated>
  <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>dbType</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
@@ -625,20 +619,6 @@
       <fields>
         <field>
           <field_name>xml_data_value</field_name>
-          <key_value>dbType</key_value>
-          <target_name>dbType</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>xml_data_value</field_name>
           <key_value>queryId</key_value>
           <target_name>queryId</target_name>
           <target_type>String</target_type>
@@ -675,6 +655,34 @@
     </remotesteps>
     <GUI>
       <xloc>528</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>xml_element_id</name>
+      </remove>      <remove>        <name>xml_path</name>
+      </remove>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1104</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -740,7 +748,7 @@
     </step>
 
   <step>
-    <name>dbType and queryId</name>
+    <name>queryId selection</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -754,14 +762,8 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#xa;dbType_new &#x3d; dbType&#x3b;&#xa;if &#x28;getVariable&#x28;&#x22;dbType&#x22;,&#x22;&#x22;&#x29;.length &#x3e; 0 &#x26;&#x26; &#x21;dbType.equals&#x28;getVariable&#x28;&#x22;dbType&#x22;,&#x22;&#x22;&#x29;&#x29;&#x29; &#x7b;&#xa;  dbType_new &#x3d; null&#x3b;&#xa;&#x7d;&#xa;&#xa;queryId_new &#x3d; queryId&#x3b;&#xa;if &#x28;getVariable&#x28;&#x22;queryId&#x22;,&#x22;&#x22;&#x29;.length &#x3e; 0 &#x26;&#x26; &#x21;queryId.equals&#x28;getVariable&#x28;&#x22;queryId&#x22;,&#x22;&#x22;&#x29;&#x29;&#x29; &#x7b;&#xa;  queryId_new &#x3d; null&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>dbType_new</name>
-        <rename>dbType</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>      <field>        <name>queryId_new</name>
+        <jsScript_script>&#xa;queryId_new &#x3d; queryId&#x3b;&#xa;if &#x28;getVariable&#x28;&#x22;queryId&#x22;,&#x22;&#x22;&#x29;.length &#x3e; 0 &#x26;&#x26; &#x21;queryId.equals&#x28;getVariable&#x28;&#x22;queryId&#x22;,&#x22;&#x22;&#x29;&#x29;&#x29; &#x7b;&#xa;  queryId_new &#x3d; null&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>queryId_new</name>
         <rename>queryId</rename>
         <type>String</type>
         <length>-1</length>
@@ -776,34 +778,6 @@
     </remotesteps>
     <GUI>
       <xloc>720</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>xml_element_id</name>
-      </remove>      <remove>        <name>xml_path</name>
-      </remove>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1104</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>

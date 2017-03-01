@@ -2,7 +2,7 @@
 <endpoint id="alfrescoAuditsPrefix">/alfresco/service/api/audit/query</endpoint>
 <endpoint id="alfrescoDiscovery">/alfresco/api/discovery</endpoint>
 <endpoint id="alfrescoPeople">/alfresco/api/-default-/public/alfresco/versions/1/people?maxItems=${maxItems}&amp;skipCount=${skipCount}</endpoint>
-<endpoint id="alfrescoPeopleCount">/alfresco/api/-default-/public/alfresco/versions/1/people?maxItems=1&amp;skipCount=1000000000&amp;fields=%7B%7D</endpoint>
+<endpoint id="alfrescoPeopleCount">/alfresco/api/-default-/public/alfresco/versions/1/people?maxItems=1000000000&amp;skipCount=1&amp;fields=%7B%7D</endpoint>
 <endpoint id="alfrescoProcesses">/alfresco/api/-default-/public/workflow/versions/1</endpoint>
 <endpoint id="alfrescoProcessesDeployments">/deployments?maxItems=1000000000&amp;skipCount=0</endpoint>
 <endpoint id="alfrescoProcessesDefinitions">/process-definitions?maxItems=1000000000&amp;skipCount=0</endpoint>
@@ -10,7 +10,7 @@
 <endpoint id="alfrescoProcessesInstancesCount">/processes?maxItems=1&amp;skipCount=1000000000</endpoint>
 <endpoint id="alfrescoProcessesInstancesNotCompleted">/processes?where=(startedAt%3E'${processesMaxDt}')&amp;maxItems=${maxItems}&amp;skipCount=${skipCount}</endpoint>
 <endpoint id="alfrescoProcessesItemsPrefix">/processes/</endpoint>
-<endpoint id="alfrescoProcessesItemsPostfix">/items</endpoint>
+<endpoint id="alfrescoProcessesItemsSuffix">/items</endpoint>
 <endpoint id="alfrescoProcessesTasks">/tasks?where=(startedAt%3E'${processesMaxDt}')&amp;maxItems=${maxItems}&amp;skipCount=${skipCount}</endpoint>
 <endpoint id="alfrescoProcessesTasksCount">/tasks?maxItems=1&amp;skipCount=0&amp;fields=%7B%7D</endpoint>
 <endpoint id="alfrescoSearch">/alfresco/api/-default-/public/search/versions/1/search</endpoint>
