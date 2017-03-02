@@ -264,7 +264,7 @@ WHERE
 </query>
 <query queryId="warehouseAuditsAccessMaxId">
 SELECT COALESCE(MAX(ID),0) AS ID FROM (
- SELECT 0 AS ID FROM (VALUES(0)))
+ SELECT SELECT COALESCE("ID",0) AS "ID" FROM "DWH_ALF_FACT_ACCESSES" WHERE "INSTANCE_ID"=${sourceId})
 </query>
 <query queryId="warehouseAuditsCount">
 SELECT COUNT(*) AS COUNTER FROM DWH_ALF_FACT_ACCESSES WHERE INSTANCE_ID=${sourceId}
