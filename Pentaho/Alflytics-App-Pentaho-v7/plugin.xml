@@ -3,7 +3,7 @@
 <overlays>
 		<overlay id="startup.Alflytics" resourcebundle="content/Alflytics/resources/lang/messages">
 			<menubar id="toolsmenu">
-	        	<menuitem id="Alflytics" label="${Launcher.Alflytics}" command="mantleXulHandler.openUrl('${Launcher.Alflytics}','${Launcher.Alflytics}','api/repos/%3Apublic%3AAlflytics%3Amain.wcdf/generatedContent')"/>
+	        	<menuitem id="Alflytics" label="${Launcher.Alflytics}" command="mantleXulHandler.openUrl('${Launcher.Alflytics}','${Launcher.Alflytics}','api/repos/%3Apublic%3AAlflytics%3ADashboards%3Amain.wcdf/generatedContent')"/>
 	      	</menubar>
 	    </overlay>
 	</overlays>

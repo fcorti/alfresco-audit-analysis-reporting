@@ -1,7 +1,5 @@
 function renderMenu () {
 
-// <li class="active"><a href="#">Home</a></li>
-
   // Urls and paths.
   var basePath = "/pentaho/plugin";
   var relativePath = "/plugin";

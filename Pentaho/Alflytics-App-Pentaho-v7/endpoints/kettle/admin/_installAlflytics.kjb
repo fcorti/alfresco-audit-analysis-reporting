@@ -517,22 +517,22 @@
       <fields>
         <field>
           <variable_name>alflyticsDatasourcesSrcPath</variable_name>
-          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;AlflyticsDatasources.zip</variable_value>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.Datasources.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>alflyticsRepositorySrcPath</variable_name>
-          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.zip</variable_value>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.ETL.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>alflyticsDatasourcesTargetPath</variable_name>
-          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;AlflyticsDatasources.zip</variable_value>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.Datasources.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>alflyticsRepositoryTargetPath</variable_name>
-          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.zip</variable_value>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.ETL.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
