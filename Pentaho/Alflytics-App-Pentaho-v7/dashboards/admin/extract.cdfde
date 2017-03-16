@@ -124,7 +124,7 @@
      {
       "name": "expression",
       "type": "JavaScript",
-      "value": "function f() {\n\n    Dashboards.incrementRunningCalls();\n    \n    Alflytics.runEndpoint('Alflytics','alflyticsExtract',{\n\n        params: {\n            pentahoHost:     window.location.host,\n            pentahoPassword: Dashboards.getParameterValue('${p:pentahoPassword}'),\n            pentahoProtocol: window.location.protocol,\n            pentahoUser:     Dashboards.getParameterValue('${p:pentahoLogin}'),\n        },\n\n        success: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-info alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Extraction completed!</strong><br/>Check <code>catalina.out</code> for further details.<br/>If extraction succeeded, remember to refresh the Pentaho\\'s cache.<br/>Data quality can be done using the Check item in the upper menu.</div>');\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Ops!</strong> Something went wrong, check <code>catalina.out</code> for further details.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n} "
+      "value": "function f() {\n\n    Dashboards.incrementRunningCalls();\n    \n    Alflytics.runEndpoint('Alflytics','alflyticsExtract',{\n\n        params: {\n            pentahoHost:     window.location.host,\n            pentahoPassword: Dashboards.getParameterValue('${p:pentahoPassword}'),\n            pentahoProtocol: window.location.protocol,\n            pentahoUser:     Dashboards.getParameterValue('${p:pentahoLogin}'),\n        },\n\n        success: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-info alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Extraction started!</strong><br/>Check <code>catalina.out</code> for further details.<br/>If extraction succeeded, remember to refresh the Pentaho\\'s cache.<br/>Data quality can be done using the Check item in the upper menu.</div>');\n            Dashboards.decrementRunningCalls();\n        },\n\n        error: function(json) {\n            $('#alertPanel').append('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Ops!</strong> Something went wrong, check <code>catalina.out</code> for further details.</div>');\n            Dashboards.decrementRunningCalls();\n        }\n    });\n} "
      },
      {
       "name": "failureCallback",
@@ -188,174 +188,174 @@
    {
     "id": "SELECTORS",
     "name": "Selects",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Selects",
-      "type": "Label"
+      "type": "Label",
+      "value": "Selects"
      }
-    ]
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
    },
    {
     "id": "daa34df7-26c0-36a7-b5d3-19fc0fe47efb",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
-      "value": "pentahoLoginComponent",
-      "type": "Id"
+      "type": "Id",
+      "value": "pentahoLoginComponent"
      },
      {
       "name": "parameter",
-      "value": "${p:pentahoLogin}",
-      "type": "Parameter"
+      "type": "Parameter",
+      "value": "${p:pentahoLogin}"
      },
      {
       "name": "listeners",
-      "value": "[\"${p:pentahoLogin}\"]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[\"${p:pentahoLogin}\"]"
      },
      {
       "name": "maxLength",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "size",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "htmlObject",
-      "value": "${h:pentahoLoginObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${h:pentahoLoginObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#render_pentahoLoginComponent').attr('class','form-control');\n    $('#render_pentahoLoginComponent').attr('placeholder','Pentaho login');\n\n    var pentahoLogin = $.trim(Dashboards.getParameterValue('${p:pentahoLogin}'));\n    Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n\n    if (pentahoLogin.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Wrong login</strong> Value cannot be empty.</div>');\n\n        pentahoLogin = 'admin';\n        Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n        $('#render_pentahoLoginComponent').val(pentahoLogin);\n    }\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#render_pentahoLoginComponent').attr('class','form-control');\n    $('#render_pentahoLoginComponent').attr('placeholder','Pentaho login');\n\n    var pentahoLogin = $.trim(Dashboards.getParameterValue('${p:pentahoLogin}'));\n    Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n\n    if (pentahoLogin.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Wrong login</strong> Value cannot be empty.</div>');\n\n        pentahoLogin = 'admin';\n        Dashboards.setParameter('${p:pentahoLogin}',pentahoLogin);\n        $('#render_pentahoLoginComponent').val(pentahoLogin);\n    }\n\n} "
      },
      {
       "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
     ],
-    "rowName": "TextInput Component"
+    "rowName": "TextInput Component",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component"
    },
    {
     "id": "15eca0f1-b580-c4f2-cff5-e6668c9bfefb",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
-      "value": "pentahoPasswordComponent",
-      "type": "Id"
+      "type": "Id",
+      "value": "pentahoPasswordComponent"
      },
      {
       "name": "parameter",
-      "value": "${p:pentahoPassword}",
-      "type": "Parameter"
+      "type": "Parameter",
+      "value": "${p:pentahoPassword}"
      },
      {
       "name": "listeners",
-      "value": "[\"${p:pentahoPassword}\"]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[\"${p:pentahoPassword}\"]"
      },
      {
       "name": "maxLength",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "size",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "htmlObject",
-      "value": "${h:pentahoPasswordObj}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${h:pentahoPasswordObj}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n\n    $('#render_pentahoPasswordComponent').attr('class','form-control');\n    $('#render_pentahoPasswordComponent').attr('placeholder','Pentaho password');\n\n    var pentahoPassword = $.trim(Dashboards.getParameterValue('${p:pentahoPassword}'));\n    Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n\n    if (pentahoPassword.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Wrong password</strong> Value cannot be empty.</div>');\n\n        pentahoPassword = 'password';\n        Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n        $('#render_pentahoPasswordComponent').val(pentahoPassword);\n    }\n\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f() {\n\n    $('#render_pentahoPasswordComponent').attr('class','form-control');\n    $('#render_pentahoPasswordComponent').attr('placeholder','Pentaho password');\n\n    var pentahoPassword = $.trim(Dashboards.getParameterValue('${p:pentahoPassword}'));\n    Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n\n    if (pentahoPassword.length <= 0) {\n\n        $('#alertPanel').append('<div class=\"alert alert-warning alert-dismissible\" role=\"alert\" style=\"margin-left: 20px; margin-right: 20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Wrong password</strong> Value cannot be empty.</div>');\n\n        pentahoPassword = 'password';\n        Dashboards.setParameter('${p:pentahoPassword}',pentahoPassword);\n        $('#render_pentahoPasswordComponent').val(pentahoPassword);\n    }\n\n} "
      },
      {
       "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
     ],
-    "rowName": "TextInput Component"
+    "rowName": "TextInput Component",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component"
    }
   ]
  },
