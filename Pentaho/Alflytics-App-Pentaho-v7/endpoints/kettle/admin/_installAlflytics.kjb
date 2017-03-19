@@ -516,8 +516,23 @@
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
+          <variable_name>alflyticsDashboardsSrcPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.Dashboards.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
           <variable_name>alflyticsDatasourcesSrcPath</variable_name>
           <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.Datasources.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>alflyticsOLAPSrcPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.OLAP.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>alflyticsReportsSrcPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;src&#x24;&#x7b;file.separator&#x7d;&#x24;&#x7b;alfrescoVersion&#x7d;&#x24;&#x7b;file.separator&#x7d;repository&#x24;&#x7b;file.separator&#x7d;Alflytics.Reports.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
@@ -526,8 +541,23 @@
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
+          <variable_name>alflyticsDashboardsTargetPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.Dashboards.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
           <variable_name>alflyticsDatasourcesTargetPath</variable_name>
           <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.Datasources.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>alflyticsOLAPTargetPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.OLAP.zip</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>alflyticsReportsTargetPath</variable_name>
+          <variable_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;..&#x24;&#x7b;file.separator&#x7d;default-content&#x24;&#x7b;file.separator&#x7d;Alflytics.Reports.zip</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
@@ -556,9 +586,9 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;alflyticsRepositorySrcPath&#x7d;</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;alflyticsDashboardsSrcPath&#x7d;</source_filefolder>
           <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
-          <destination_filefolder>&#x24;&#x7b;alflyticsRepositoryTargetPath&#x7d;</destination_filefolder>
+          <destination_filefolder>&#x24;&#x7b;alflyticsDashboardsTargetPath&#x7d;</destination_filefolder>
           <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
           <wildcard/>
         </field>
@@ -567,6 +597,27 @@
           <source_configuration_name>STATIC-SOURCE-FILE-1</source_configuration_name>
           <destination_filefolder>&#x24;&#x7b;alflyticsDatasourcesTargetPath&#x7d;</destination_filefolder>
           <destination_configuration_name>STATIC-DEST-FILE-1</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>&#x24;&#x7b;alflyticsOLAPSrcPath&#x7d;</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-2</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;alflyticsOLAPTargetPath&#x7d;</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-2</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>&#x24;&#x7b;alflyticsReportsrcPath&#x7d;</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-3</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;alflyticsReportsTargetPath&#x7d;</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-3</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>&#x24;&#x7b;alflyticsRepositorySrcPath&#x7d;</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-4</source_configuration_name>
+          <destination_filefolder>&#x24;&#x7b;alflyticsRepositoryTargetPath&#x7d;</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-4</destination_configuration_name>
           <wildcard/>
         </field>
       </fields>
