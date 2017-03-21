@@ -2,8 +2,11 @@ function dashboardHeader () {
 
   // Urls and paths.
   var platformPath = "/pentaho";
-  var alflyticsPath = platformPath + "/api/repos/%3Apublic%3AAlflytics%3ADashboards%3A";
-  var alflyticsSuffix = ".wcdf/generatedContent";
+  var alflyticsPrefix = platformPath + "/api/repos/%3Apublic%3AAlflytics%3A";
+  var alflyticsDashboardPrefix = alflyticsPrefix + "Dashboards%3A";
+  var alflyticsDashboardSuffix = ".wcdf/generatedContent";
+  var alflyticsReportPrefix = alflyticsPrefix + "Reports%3A";
+  var alflyticsReportSuffix = ".prpt/viewer";
   var saikuPath = platformPath + "/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Apublic%3AAlflytics%3AOLAP%3A";
 
   document.write("<nav class=\"navbar navbar-default\" style=\"border-radius: 0px; border-left-width: 0px; border-right-width: 0px; background: #ffffff url('/pentaho/api/repos/Alflytics/static/system/img/pluginLogo.png') no-repeat center right; background-size: 100px;\">");
@@ -12,7 +15,7 @@ function dashboardHeader () {
 
   // Application logo. Modify here to customize the application.
   document.write("<div class=\"navbar-header\">");
-  document.write(" <a class=\"navbar-brand\" href=\"/pentaho/api/repos/%3Apublic%3AAlflytics%3ADashboards%3Amain.wcdf/generatedContent\"><b>Alflytics</b></a>");
+  document.write(" <a class=\"navbar-brand\" href=\"" + alflyticsDashboardPrefix + "main" + alflyticsDashboardSuffix + "\"><b>Alflytics</b></a>");
   document.write("</div>");
 
   // Menu. Modify this section to customize the header menu.
@@ -22,7 +25,7 @@ function dashboardHeader () {
   document.write("<li class=\"dropdown\">");
   document.write(" <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Dashboards <span class=\"caret\"></span></a>");
   document.write(" <ul class=\"dropdown-menu\">");
-  document.write("  <li><a href=\"" + alflyticsPath + "main" + alflyticsSuffix + "\">Main dashboard</a></li>");
+  document.write("  <li><a href=\"" + alflyticsDashboardPrefix + "main" + alflyticsDashboardSuffix + "\">Main dashboard</a></li>");
   document.write(" </ul>");
   document.write("</li>");
 
@@ -30,7 +33,15 @@ function dashboardHeader () {
   document.write("<li class=\"dropdown\">");
   document.write(" <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Reports <span class=\"caret\"></span></a>");
   document.write(" <ul class=\"dropdown-menu\">");
-  document.write("  <li><a href=\"#\">...</a></li>");
+  document.write("  <li class=\"dropdown-header\">Alfresco users</li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_topUsers" + alflyticsReportSuffix + "\" target=\"_blank\">Most active users</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_user" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per user (Excel)</a></li>");
+  document.write("  <li class=\"dropdown-header\">Alfresco audit trail</li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_actions" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per actions</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_topContent" + alflyticsReportSuffix + "\" target=\"_blank\">Most accessed content</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_days" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per day</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_time" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per hour</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_details" + alflyticsReportSuffix + "\" target=\"_blank\">Audit trail (Excel)</a></li>");
   document.write(" </ul>");
   document.write("</li>");
 
