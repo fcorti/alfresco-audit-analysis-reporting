@@ -9,7 +9,7 @@ function renderMenu () {
   var alflyticsApiRelativePath = alflyticsRelativePath + "/api";
 
   // Current page path.
-  var pagePaths = "/main|/configure|/install|/extract|/check|/about";
+  var pagePaths = "/main|/configure|/install|/extract|/check|/publish|/about";
   var pagePath = location.pathname;
   pagePath = pagePath.substring(alflyticsApiPath.length);
   pagePath = pagePath.toLowerCase();
@@ -38,6 +38,11 @@ function renderMenu () {
   document.write("<li " + (pagePath == "/check"  ? "style=\"background-color: #A7CCE1;\"" : "") + ">");
   document.write("<a href=\"" + (pagePath != "/check"  ? alflyticsApiPath +  "/check" : "#") + "\" " + (pagePath == "/check"  ? "style=\"color: white;\"" : "") + ">");
   document.write("<strong>4.</strong> Check</a></li>");
+
+  // Publish.
+  document.write("<li " + (pagePath == "/publish"  ? "style=\"background-color: #A7CCE1;\"" : "") + ">");
+  document.write("<a href=\"" + (pagePath != "/publish"  ? alflyticsApiPath +  "/publish" : "#") + "\" " + (pagePath == "/publish"  ? "style=\"color: white;\"" : "") + ">");
+  document.write("<strong>5.</strong> Publish</a></li>");
 
   // About.
   document.write("<li " + (pagePath == "/about"  ? "style=\"background-color: #A7CCE1;\"" : "") + ">");

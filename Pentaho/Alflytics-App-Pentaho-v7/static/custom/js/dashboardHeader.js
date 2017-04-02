@@ -36,12 +36,28 @@ function dashboardHeader () {
   document.write("  <li class=\"dropdown-header\">Alfresco users</li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_topUsers" + alflyticsReportSuffix + "\" target=\"_blank\">Most active users</a></li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_user" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per user (Excel)</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_creator" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per creator</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_modifier" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per modifier</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_owner" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per owner</a></li>");
   document.write("  <li class=\"dropdown-header\">Alfresco audit trail</li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_actions" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per actions</a></li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_topContent" + alflyticsReportSuffix + "\" target=\"_blank\">Most accessed content</a></li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_days" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per day</a></li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_time" + alflyticsReportSuffix + "\" target=\"_blank\">Audit per hour</a></li>");
   document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_auditTrail_details" + alflyticsReportSuffix + "\" target=\"_blank\">Audit trail (Excel)</a></li>");
+  document.write("  <li class=\"dropdown-header\">Alfresco repository</li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_summary" + alflyticsReportSuffix + "\" target=\"_blank\">Repository summary</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_topCategories" + alflyticsReportSuffix + "\" target=\"_blank\">Most used categories</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_topTags" + alflyticsReportSuffix + "\" target=\"_blank\">Most used tags</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_category" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per category</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_tag" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per tag</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_nodeTypes" + alflyticsReportSuffix + "\" target=\"_blank\">Repository per node type</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_content_mimeTypes" + alflyticsReportSuffix + "\" target=\"_blank\">Content per mime type</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_creation" + alflyticsReportSuffix + "\" target=\"_blank\">Creations per day</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_repository_modification" + alflyticsReportSuffix + "\" target=\"_blank\">Modifications per day</a></li>");
+  document.write("  <li class=\"dropdown-header\">Alfresco processes</li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_process_instances" + alflyticsReportSuffix + "\" target=\"_blank\">Process instances</a></li>");
+  document.write("  <li><a href=\"" + alflyticsReportPrefix + "alfresco_process_tasks" + alflyticsReportSuffix + "\" target=\"_blank\">Process tasks</a></li>");
   document.write(" </ul>");
   document.write("</li>");
 
