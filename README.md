@@ -1,7 +1,7 @@
+# A.A.A.R. project became [Alflytics](https://github.com/fcorti/Alflytics)[/alert]
+
 Alfresco Audit Analysis and Reporting
 ===
-
-[alert danger]#### A.A.A.R. project became [Alflytics](https://github.com/fcorti/Alflytics)[/alert]
 
 ”Who is using the Alfresco E.C.M.?
 
