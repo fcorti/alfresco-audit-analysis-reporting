@@ -1,4 +1,9 @@
-# A.A.A.R. project became [Alflytics](https://github.com/fcorti/Alflytics)[/alert]
+# Attention
+===
+
+A.A.A.R. project became [Alflytics](https://github.com/fcorti/Alflytics)!
+
+This project is not maintained anymore and it higly suggested to consider [Alflytics](https://github.com/fcorti/Alflytics). 
 
 Alfresco Audit Analysis and Reporting
 ===
